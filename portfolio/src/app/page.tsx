@@ -1,106 +1,65 @@
 'use client';
 
-import Link from "next/link";
-import AdvancedNavigation from "@/components/AdvancedNavigation";
-import { ParticleSystem, MagneticButton, TiltCard, AnimatedText, FloatingActionButton, CursorFollower } from "@/components/AdvancedEffects";
+import CleanNavigation from "@/components/CleanNavigation";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900 relative overflow-hidden">
-      {/* Advanced Cursor Follower */}
-      <CursorFollower />
-      
-      {/* Navigation */}
-      <AdvancedNavigation />
+    <div className="min-h-screen bg-white dark:bg-slate-900">
+      {/* Clean Navigation */}
+      <CleanNavigation />
 
-      {/* Hero Section with Particle System */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <ParticleSystem />
-        
-        {/* Floating Geometric Shapes */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-blue-400/20 to-purple-500/20 rounded-full animate-float"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-gradient-to-br from-purple-400/20 to-pink-500/20 transform rotate-45 animate-float-delayed"></div>
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-gradient-to-br from-green-400/20 to-blue-500/20 rounded-3xl animate-float-slow"></div>
-          <div className="absolute bottom-20 right-10 w-12 h-12 bg-gradient-to-br from-yellow-400/20 to-red-500/20 transform rotate-12 animate-pulse"></div>
-        </div>
-
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="max-w-6xl mx-auto">
-            {/* Dynamic Avatar with Glassmorphism */}
-            <div className="mb-12 relative">
-              <div className="relative mx-auto w-40 h-40 group">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full animate-spin-slow"></div>
-                <div className="absolute inset-2 bg-gradient-to-br from-white/90 to-blue-50/90 dark:from-slate-800/90 dark:to-slate-700/90 rounded-full backdrop-blur-xl flex items-center justify-center">
-                  <span className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    GG
-                  </span>
-                </div>
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+      {/* Hero Section */}
+      <section id="hero" className="relative min-h-screen flex items-center justify-center pt-16">
+        <div className="container mx-auto px-6 text-center">
+          <div className="max-w-4xl mx-auto">
+            {/* Simple Avatar */}
+            <div className="mb-8">
+              <div className="w-32 h-32 mx-auto bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center">
+                <span className="text-3xl font-bold text-slate-700 dark:text-slate-200">
+                  GG
+                </span>
               </div>
             </div>
 
-            {/* Animated Title with Advanced Typography */}
-            <div className="mb-8">
-              <AnimatedText
-                text="GUILHERME GRANCHO"
-                className="text-5xl md:text-8xl font-black mb-4 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 dark:from-white dark:via-blue-200 dark:to-purple-200 bg-clip-text text-transparent tracking-tight"
-              />
-            </div>
+            {/* Clean Title */}
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-slate-900 dark:text-white">
+              Guilherme Grancho
+            </h1>
 
-            {/* Dynamic Subtitle with Rotating Text */}
-            <div className="mb-12 h-16 flex items-center justify-center">
-              <h2 className="text-2xl md:text-4xl font-light text-gray-600 dark:text-gray-300">
-                <span className="inline-block">I craft&nbsp;</span>
-                <span className="relative inline-block">
-                  <span className="absolute inset-0 text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text animate-pulse">
-                    Digital Experiences
-                  </span>
-                  <span className="text-blue-600">Digital Experiences</span>
-                </span>
-              </h2>
-            </div>
+            {/* Subtitle */}
+            <h2 className="text-xl md:text-2xl font-light text-slate-600 dark:text-slate-400 mb-8">
+              Full-Stack Developer
+            </h2>
 
-            {/* Enhanced Description */}
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-16 leading-relaxed">
-              Transforming ideas into&nbsp;
-              <span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                extraordinary digital realities
-              </span>
-              &nbsp;through code, creativity, and cutting-edge technology.
+            {/* Description */}
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+              I create digital experiences through clean code and modern technology, 
+              turning ideas into functional and beautiful applications.
             </p>
 
-            {/* Magnetic Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <MagneticButton 
+            {/* Simple Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button 
                 onClick={() => {
                   if (typeof window !== 'undefined') {
-                    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="group relative px-12 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold text-lg shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
+                className="px-8 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg font-medium hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors duration-200"
               >
-                <span className="relative z-10">Explore My Work</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </MagneticButton>
+                View My Work
+              </button>
               
-              <MagneticButton 
+              <button 
                 onClick={() => {
                   if (typeof window !== 'undefined') {
                     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="group relative px-12 py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300"
+                className="px-8 py-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg font-medium hover:border-slate-400 dark:hover:border-slate-500 transition-colors duration-200"
               >
-                <span className="relative z-10">Let&apos;s Connect</span>
-              </MagneticButton>
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
-              <div className="w-6 h-10 border-2 border-blue-600 rounded-full flex justify-center">
-                <div className="w-1 h-3 bg-blue-600 rounded-full mt-2 animate-bounce"></div>
-              </div>
+                Get In Touch
+              </button>
             </div>
           </div>
         </div>
