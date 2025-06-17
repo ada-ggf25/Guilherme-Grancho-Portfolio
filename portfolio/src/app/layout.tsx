@@ -17,7 +17,11 @@ export const metadata: Metadata = {
   description: "Professional portfolio of Guilherme Grancho - Software Developer, Engineer, and Technology Enthusiast",
   keywords: "Guilherme Grancho, Software Developer, Portfolio, Web Development, Technology",
   authors: [{ name: "Guilherme Grancho" }],
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
