@@ -11,7 +11,10 @@ A clean, professional, and minimalist personal portfolio website built with Next
 - **Performance Optimized**: Built with Next.js 15 and React 19 for optimal performance
 - **TypeScript**: Fully typed for better development experience
 - **Professional Sections**: Hero, About, Work, and Contact sections
-- **Clean Animations**: Subtle hover effects and smooth transitions
+- **Enhanced Visual Design**: Subtle particle animations and fluid interactions that impress without overwhelming
+- **Improved Typography**: Better text hierarchy and spacing for enhanced readability
+- **Interactive Elements**: Smooth hover effects, glowing cards, and animated gradients
+- **Professional Aesthetics**: Clean glassmorphism effects and modern visual language
 
 ## 🛠️ Tech Stack
 
