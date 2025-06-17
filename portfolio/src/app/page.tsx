@@ -1,3 +1,5 @@
+'use client';
+
 import Link from "next/link";
 import AdvancedNavigation from "@/components/AdvancedNavigation";
 import { ParticleSystem, MagneticButton, TiltCard, AnimatedText, FloatingActionButton, CursorFollower } from "@/components/AdvancedEffects";
@@ -70,12 +72,26 @@ export default function Home() {
 
             {/* Magnetic Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <MagneticButton className="group relative px-12 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold text-lg shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
+              <MagneticButton 
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="group relative px-12 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold text-lg shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
+              >
                 <span className="relative z-10">Explore My Work</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </MagneticButton>
               
-              <MagneticButton className="group relative px-12 py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300">
+              <MagneticButton 
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="group relative px-12 py-4 border-2 border-blue-600 text-blue-600 rounded-2xl font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300"
+              >
                 <span className="relative z-10">Let&apos;s Connect</span>
               </MagneticButton>
             </div>
@@ -313,10 +329,24 @@ export default function Home() {
                         </div>
                         
                         <div className="flex space-x-4">
-                          <MagneticButton className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+                          <MagneticButton 
+                            onClick={() => {
+                              if (typeof window !== 'undefined') {
+                                window.open('http://localhost:3030', '_blank');
+                              }
+                            }}
+                            className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                          >
                             View Live Demo
                           </MagneticButton>
-                          <MagneticButton className="px-8 py-3 border border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+                          <MagneticButton 
+                            onClick={() => {
+                              if (typeof window !== 'undefined') {
+                                window.open('https://github.com/guilhermegrancho', '_blank');
+                              }
+                            }}
+                            className="px-8 py-3 border border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
+                          >
                             Source Code
                           </MagneticButton>
                         </div>
@@ -431,7 +461,14 @@ export default function Home() {
               ))}
             </div>
 
-            <MagneticButton className="group relative px-16 py-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-3xl font-bold text-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
+            <MagneticButton 
+              onClick={() => {
+                if (typeof window !== 'undefined') {
+                  window.open('mailto:hello@guilhermegrancho.dev', '_blank');
+                }
+              }}
+              className="group relative px-16 py-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-3xl font-bold text-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
+            >
               <span className="relative z-10">Start a Conversation</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </MagneticButton>
@@ -450,7 +487,11 @@ export default function Home() {
 
       {/* Floating Action Button */}
       <FloatingActionButton
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onClick={() => {
+          if (typeof window !== 'undefined') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }}
         className="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 z-50"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
