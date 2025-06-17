@@ -17,12 +17,12 @@ export default function Home() {
       <CleanNavigation />
 
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center pt-16" style={{ zIndex: 10 }}>
+      <section id="hero" className="relative min-h-screen flex items-center justify-center pt-16 pb-20" style={{ zIndex: 10 }}>
         <div className="container mx-auto px-6 text-center">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             {/* Enhanced Avatar */}
             <FloatingElement delay={0}>
-              <div className="mb-12">
+              <div className="mb-16">
                 <div className="relative w-40 h-40 mx-auto group">
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-glow"></div>
                   <div className="absolute inset-1 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center">
@@ -36,13 +36,13 @@ export default function Home() {
 
             {/* Clean Title */}
             <FloatingElement delay={0.2}>
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 leading-tight tracking-tight">
-                <span className="block">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight tracking-tight">
+                <span className="block mb-2">
                   <AnimatedGradientText>
                     Welcome to
                   </AnimatedGradientText>
                 </span>
-                <span className="block">
+                <span className="block mb-2">
                   <AnimatedGradientText>
                     Guilherme Grancho&apos;s
                   </AnimatedGradientText>
@@ -55,21 +55,21 @@ export default function Home() {
 
             {/* Enhanced Subtitle */}
             <FloatingElement delay={0.4}>
-              <p className="text-xl md:text-2xl font-light text-slate-600 dark:text-slate-400 mb-12 tracking-wide max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl font-light text-slate-600 dark:text-slate-400 mb-16 tracking-wide max-w-4xl mx-auto">
                 a full-stack developer with an eye for design
               </p>
             </FloatingElement>
 
             {/* Enhanced Action Buttons */}
             <FloatingElement delay={0.8}>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-8 justify-center items-center mb-20">
                 <button 
                   onClick={() => {
                     if (typeof window !== 'undefined') {
                       document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="group relative px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold text-lg hover-lift overflow-hidden"
+                  className="group relative px-12 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold text-lg hover-lift overflow-hidden"
                 >
                   <span className="relative z-10">View My Work</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -81,7 +81,7 @@ export default function Home() {
                       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="px-10 py-4 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-2xl font-semibold text-lg hover-lift hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
+                  className="px-12 py-5 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-2xl font-semibold text-lg hover-lift hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300"
                 >
                   Let&apos;s Connect
                 </button>
@@ -101,42 +101,52 @@ export default function Home() {
       {/* Work Section */}
       <section id="work" className="py-32 relative">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
+            
+            {/* Section Title */}
+            <div className="text-center mb-20">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                Selected Work
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+            </div>
             
             {/* Project 1 - E-Commerce Platform */}
             <FloatingElement delay={0}>
-              <div className="mb-32">
-                <div className="flex items-center justify-between mb-8">
-                  <span className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                    E-COMMERCE PLATFORM
-                  </span>
-                  <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-medium">
-                    Live
-                  </span>
+              <div className="mb-32 text-center">
+                <div className="flex items-center justify-center mb-12">
+                  <div className="flex items-center gap-4">
+                    <span className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                      E-COMMERCE PLATFORM
+                    </span>
+                    <span className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-medium">
+                      Live
+                    </span>
+                  </div>
                 </div>
                 
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <div className="space-y-8 max-w-3xl mx-auto">
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                     <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
                       ShopFlow
                     </h3>
                   </div>
                   
-                  <div className="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
+                  <div className="flex items-center justify-center gap-4 text-sm text-slate-600 dark:text-slate-400">
                     <span>Lead Developer</span>
                     <span>•</span>
                     <span>23-24</span>
                   </div>
                   
-                  <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+                  <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                     A streamlined e-commerce platform that simplifies online shopping with 
                     AI-powered recommendations and seamless checkout flows.
                   </p>
                   
-                  <div className="pt-6">
-                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-4 uppercase tracking-wide">Tech Stack</h4>
-                    <div className="flex flex-wrap gap-6">
+                  <div className="pt-8">
+                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-6 uppercase tracking-wide text-center">Tech Stack</h4>
+                    <div className="flex flex-wrap justify-center gap-6">
                       {[
                         { name: 'React' },
                         { name: 'TypeScript' },
@@ -160,45 +170,47 @@ export default function Home() {
 
             {/* Separator */}
             <div className="flex items-center justify-center mb-32">
-              <div className="w-12 h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-600 to-transparent"></div>
-              <div className="mx-4 w-1 h-1 bg-slate-400 dark:bg-slate-500 rounded-full"></div>
-              <div className="w-12 h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-600 to-transparent"></div>
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-600 to-transparent"></div>
+              <div className="mx-6 w-2 h-2 bg-slate-400 dark:bg-slate-500 rounded-full"></div>
+              <div className="w-16 h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-600 to-transparent"></div>
             </div>
 
             {/* Project 2 - Analytics Dashboard */}
             <FloatingElement delay={0.2}>
-              <div className="mb-32">
-                <div className="flex items-center justify-between mb-8">
-                  <span className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                    DATA ANALYTICS TOOL
-                  </span>
-                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-xs font-medium">
-                    Open Source
-                  </span>
+              <div className="mb-32 text-center">
+                <div className="flex items-center justify-center mb-12">
+                  <div className="flex items-center gap-4">
+                    <span className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                      DATA ANALYTICS TOOL
+                    </span>
+                    <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-sm font-medium">
+                      Open Source
+                    </span>
+                  </div>
                 </div>
                 
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                <div className="space-y-8 max-w-3xl mx-auto">
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
                     <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
                       DataViz Pro
                     </h3>
                   </div>
                   
-                  <div className="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
+                  <div className="flex items-center justify-center gap-4 text-sm text-slate-600 dark:text-slate-400">
                     <span>Core Contributor</span>
                     <span>•</span>
                     <span>22-24</span>
                   </div>
                   
-                  <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+                  <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                     An online tool for quickly fitting theoretical models to experimental data,
                     making data visualization and analysis intuitive and precise.
                   </p>
                   
-                  <div className="pt-6">
-                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-4 uppercase tracking-wide">Tech Stack</h4>
-                    <div className="flex flex-wrap gap-6">
+                  <div className="pt-8">
+                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-6 uppercase tracking-wide text-center">Tech Stack</h4>
+                    <div className="flex flex-wrap justify-center gap-6">
                       {[
                         { name: 'React' },
                         { name: 'TypeScript' },
@@ -228,38 +240,40 @@ export default function Home() {
 
             {/* Project 3 - Task Management */}
             <FloatingElement delay={0.4}>
-              <div className="mb-32">
-                <div className="flex items-center justify-between mb-8">
-                  <span className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                    COLLABORATION PLATFORM
-                  </span>
-                  <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-full text-xs font-medium">
-                    In Development
-                  </span>
+              <div className="mb-32 text-center">
+                <div className="flex items-center justify-center mb-12">
+                  <div className="flex items-center gap-4">
+                    <span className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+                      COLLABORATION PLATFORM
+                    </span>
+                    <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-full text-sm font-medium">
+                      In Development
+                    </span>
+                  </div>
                 </div>
                 
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                <div className="space-y-8 max-w-3xl mx-auto">
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
                     <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
                       TeamSync
                     </h3>
                   </div>
                   
-                  <div className="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
+                  <div className="flex items-center justify-center gap-4 text-sm text-slate-600 dark:text-slate-400">
                     <span>Lead UI/UX Developer</span>
                     <span>•</span>
                     <span>24-25</span>
                   </div>
                   
-                  <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
+                  <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                     A dynamic collaboration platform that empowers teams to work efficiently with 
                     real-time updates, intelligent task management, and seamless communication tools.
                   </p>
                   
-                  <div className="pt-6">
-                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-4 uppercase tracking-wide">Tech Stack</h4>
-                    <div className="flex flex-wrap gap-6">
+                  <div className="pt-8">
+                    <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-6 uppercase tracking-wide text-center">Tech Stack</h4>
+                    <div className="flex flex-wrap justify-center gap-6">
                       {[
                         { name: 'React' },
                         { name: 'TypeScript' },
@@ -286,17 +300,17 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 relative">
+      <section id="contact" className="py-40 relative">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <FloatingElement delay={0}>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tight">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-12 tracking-tight">
                 <AnimatedGradientText>Let&apos;s Chat</AnimatedGradientText>
               </h2>
             </FloatingElement>
             
             <FloatingElement delay={0.2}>
-              <div className="flex flex-col items-center space-y-6">
+              <div className="flex flex-col items-center space-y-8">
                 <a 
                   href="mailto:guilherme.grancho@example.com"
                   className="text-xl md:text-2xl text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200 underline underline-offset-4 decoration-2"
@@ -304,7 +318,7 @@ export default function Home() {
                   guilherme.grancho@example.com
                 </a>
                 
-                <div className="flex gap-8 mt-8">
+                <div className="flex gap-12 mt-12">
                   <a 
                     href="https://linkedin.com/in/yourprofile"
                     target="_blank"
