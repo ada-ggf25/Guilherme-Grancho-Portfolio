@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Guilherme Grancho - Personal Portfolio
 
-## Getting Started
+A modern, responsive personal portfolio website built with Next.js 15, React 19, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## 🚀 Features
 
+- **Modern Design**: Clean, professional, and minimalist design
+- **Responsive**: Fully responsive design that works on all devices
+- **Interactive Elements**: Typewriter effect, animated counters, smooth scrolling
+- **Dark Mode Support**: Automatic dark/light mode based on user preference
+- **Performance Optimized**: Built with Next.js 15 and React 19 for optimal performance
+- **TypeScript**: Fully typed for better development experience
+- **SEO Friendly**: Optimized meta tags and semantic HTML
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15.3.3
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Font**: Geist Sans & Geist Mono
+- **Icons**: Custom SVG icons
+- **Development**: Turbopack for faster builds
+
+## 📱 Sections
+
+1. **Hero Section**: Introduction with typewriter effect
+2. **About**: Personal introduction and quick facts
+3. **Skills**: Technical skills and technologies
+4. **Projects**: Featured project showcases
+5. **Contact**: Contact information and links
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/portfolio.git
+cd portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3030](http://localhost:3030) in your browser
 
-## Learn More
+## 📝 Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` - Start development server on port 3030
+- `npm run build` - Build the application for production
+- `npm run start` - Start production server on port 3030
+- `npm run lint` - Run ESLint for code linting
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Personal Information
 
-## Deploy on Vercel
+Update the following files with your information:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **`src/app/page.tsx`**: Update personal details, skills, and project information
+2. **`src/app/layout.tsx`**: Update meta tags and title
+3. **`src/components/Navigation.tsx`**: Customize navigation items
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Styling
+
+- **Colors**: Modify CSS variables in `src/app/globals.css`
+- **Layout**: Adjust Tailwind classes in components
+- **Animations**: Customize animations in `tailwind.config.ts`
+
+### Adding Projects
+
+To add your projects, update the projects section in `src/app/page.tsx`:
+
+```tsx
+// Replace the placeholder project cards with your actual projects
+<div className="bg-background rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+  <div className="w-full h-48 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg mb-4">
+    {/* Add project image */}
+  </div>
+  <h3 className="text-xl font-semibold mb-2">Your Project Name</h3>
+  <p className="text-muted mb-4">Project description</p>
+  {/* Add project links */}
+</div>
+```
+
+## 📧 Contact Information
+
+Update the contact section with your actual information:
+
+- Email: Replace `your.email@example.com`
+- LinkedIn: Update the LinkedIn URL
+- GitHub: Add your GitHub username
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com)
+3. Deploy with one click
+
+### Netlify
+
+1. Build the project: `npm run build`
+2. Deploy the `out` folder to [Netlify](https://netlify.com)
+
+### Other Platforms
+
+The project can be deployed to any platform that supports Node.js applications.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+Feel free to fork this project and customize it for your own portfolio!
+
+---
+
+Built with ❤️ by Guilherme Grancho
