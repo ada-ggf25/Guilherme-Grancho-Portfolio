@@ -1,16 +1,17 @@
 # Guilherme Grancho - Personal Portfolio
 
-A modern, responsive personal portfolio website built with Next.js 15, React 19, TypeScript, and Tailwind CSS.
+A clean, professional, and minimalist personal portfolio website built with Next.js 15, React 19, TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
 
-- **Modern Design**: Clean, professional, and minimalist design
-- **Responsive**: Fully responsive design that works on all devices
-- **Interactive Elements**: Typewriter effect, animated counters, smooth scrolling
-- **Dark Mode Support**: Automatic dark/light mode based on user preference
+- **Clean & Minimalist Design**: Professional, uncluttered interface that focuses on content
+- **Dark Theme First**: Defaults to dark theme with seamless light mode toggle  
+- **Fully Responsive**: Works perfectly on all devices and screen sizes
+- **Modern Navigation**: Clean navigation with smooth theme switching
 - **Performance Optimized**: Built with Next.js 15 and React 19 for optimal performance
 - **TypeScript**: Fully typed for better development experience
-- **SEO Friendly**: Optimized meta tags and semantic HTML
+- **Professional Sections**: Hero, About, Work, and Contact sections
+- **Clean Animations**: Subtle hover effects and smooth transitions
 
 ## 🛠️ Tech Stack
 
