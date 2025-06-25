@@ -4,8 +4,6 @@
 
 ## 🌟 About Me
 
-<img src="portfolio/public/images/avatar.jpg" alt="Guilherme Grancho" width="200" height="400" style="border-radius: 50%; margin: 20px auto; display: block;">
-
 I'm a passionate Data Science, Analytics & AI professional based between **Lisbon** and **London**, specializing in:
 
 - **Machine Learning & AI**: Building predictive models and intelligent systems
