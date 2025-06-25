@@ -1,43 +1,72 @@
-# **Magic Portfolio by Once UI**
+# **Guilherme Grancho - Portfolio**
 
-View the [demo here](https://demo.magic-portfolio.com).
+A modern, responsive portfolio website showcasing my work as a Data Science, Analytics & AI professional. Built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org).
 
-![Magic Portfolio](https://demo.magic-portfolio.com/images/og/home.jpg)
+🌐 **Live Demo**: [guilhermegrancho.com](https://guilhermegrancho.com)
+
+![Guilherme Grancho Portfolio](https://guilhermegrancho.com/images/og/home.jpg)
 
 
-# **Getting started**
+## About Me
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+I'm a passionate Data Science, Analytics & AI professional based between Lisbon and London, specializing in machine learning, data analysis, and business intelligence. I love crafting data-driven solutions and building innovative applications that solve real-world problems.
 
-**1. Clone the repository**
+### 🛠️ Tech Stack
+
+- **Data Science**: Python, R, Machine Learning, Statistical Analysis
+- **Analytics**: SQL, Data Visualization, Business Intelligence
+- **AI/ML**: TensorFlow, PyTorch, Scikit-learn, Deep Learning
+- **Tools**: Jupyter, Git, Docker, Cloud Platforms
+
+### 🌟 Features of This Portfolio
+
+- **Responsive Design**: Optimized for all screen sizes and devices
+- **Dark Theme**: Professional dark mode as default theme
+- **Real-time Clock**: Displays current time in Lisbon timezone
+- **Contact Integration**: Easy connection via LinkedIn and email
+- **Project Showcase**: Dedicated sections for work and blog posts
+
+## Getting Started (For Developers)
+
+If you want to explore or contribute to this portfolio, here's how to get started:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/guilhermegrancho/Guilherme-Grancho-Portfolio.git
+cd Guilherme-Grancho-Portfolio/portfolio
 ```
-git clone https://github.com/once-ui-system/magic-portfolio.git
-```
 
-**2. Install dependencies**
-```
+### 2. Install dependencies
+
+```bash
 npm install
 ```
 
-**3. Run dev server**
-```
+### 3. Run development server
+
+```bash
 npm run dev
 ```
 
-**4. Edit config**
-```
-src/app/resources/config
-```
+### 4. View the portfolio
 
-**5. Edit content**
-```
-src/app/resources/content
-```
+Open [http://localhost:3030](http://localhost:3030) in your browser.
 
-**6. Create blog posts / projects**
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
-```
+## Customization
+
+This portfolio is built using the Magic Portfolio template with extensive customizations:
+
+### Configuration Files
+
+- `src/resources/content.js` - Personal information, projects, and content
+- `src/resources/once-ui.config.js` - Theme settings and UI configuration
+
+### Adding Content
+
+- **Blog Posts**: Add `.mdx` files to `src/app/blog/posts/`
+- **Projects**: Add `.mdx` files to `src/app/work/projects/`
+- **Images**: Store in `public/images/`
 
 # **Documentation**
 
