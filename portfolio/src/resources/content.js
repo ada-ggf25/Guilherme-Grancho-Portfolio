@@ -9,17 +9,17 @@ const person = {
   role: "Software Developer",
   avatar: "/images/avatar.jpg",
   email: "guilhermegrancho@gmail.com",
-  location: "America/Sao_Paulo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "Europe/Lisbon", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Portuguese", "English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Get in touch with {person.firstName}</>,
   description: (
     <>
-      I write about software development, technology trends, and share insights about 
-      building scalable applications and modern web development.
+      Let's connect! Feel free to reach out via LinkedIn for professional inquiries 
+      or send me an email to discuss potential collaborations and projects.
     </>
   ),
 };
@@ -85,7 +85,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Guilherme is a dedicated software developer with expertise in modern web technologies.
+        Guilherme is a dedicated software developer based between Lisbon and London, with expertise in modern web technologies.
         He is passionate about creating efficient, scalable applications and enjoys working 
         with cutting-edge technologies to solve real-world problems.
       </>
