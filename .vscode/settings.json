@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "New Template"
+        "New Template",
+        "Fix github push bug."
     ]
 }
