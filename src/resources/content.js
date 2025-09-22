@@ -329,47 +329,48 @@ const about = {
       },
     ],
   },
-  certifications: {
-    display: true, // set to false to hide this section
-    title: "Certifications & Professional Development",
-    certifications: [
-      {
-        name: "AWS Certified Machine Learning - Specialty",
-        issuer: "Amazon Web Services",
-        date: "2024",
-        credential_id: "AWS-ML-2024-001",
-        description: <>Advanced certification in machine learning on AWS, covering ML algorithms, model deployment, and cloud-based ML solutions.</>,
-      },
-      {
-        name: "CFA Institute Investment Foundations",
-        issuer: "CFA Institute",
-        date: "2023",
-        credential_id: "CFA-IF-2023-001",
-        description: <>Comprehensive understanding of investment management, financial analysis, and portfolio management principles.</>,
-      },
-      {
-        name: "Google Cloud Professional Data Engineer",
-        issuer: "Google Cloud",
-        date: "2023",
-        credential_id: "GCP-PDE-2023-001",
-        description: <>Expertise in designing and building data processing systems, machine learning models, and data analytics solutions on Google Cloud Platform.</>,
-      },
-      {
-        name: "Financial Risk Manager (FRM) Part I",
-        issuer: "Global Association of Risk Professionals",
-        date: "2022",
-        credential_id: "FRM-I-2022-001",
-        description: <>Advanced knowledge in financial risk management, quantitative analysis, and risk modeling techniques.</>,
-      },
-      {
-        name: "Python for Data Science and Machine Learning",
-        issuer: "Coursera / University of Michigan",
-        date: "2021",
-        credential_id: "PYTHON-DS-ML-2021-001",
-        description: <>Comprehensive course covering Python programming, data analysis, machine learning algorithms, and statistical modeling.</>,
-      },
-    ],
-  },
+};
+
+const certifications = {
+  display: true, // set to false to hide this section
+  title: "Certifications & Professional Development",
+  certifications: [
+    {
+      name: "AWS Certified Machine Learning - Specialty",
+      issuer: "Amazon Web Services",
+      date: "2024",
+      credential_id: "AWS-ML-2024-001",
+      description: <>Advanced certification in machine learning on AWS, covering ML algorithms, model deployment, and cloud-based ML solutions.</>,
+    },
+    {
+      name: "CFA Institute Investment Foundations",
+      issuer: "CFA Institute",
+      date: "2023",
+      credential_id: "CFA-IF-2023-001",
+      description: <>Comprehensive understanding of investment management, financial analysis, and portfolio management principles.</>,
+    },
+    {
+      name: "Google Cloud Professional Data Engineer",
+      issuer: "Google Cloud",
+      date: "2023",
+      credential_id: "GCP-PDE-2023-001",
+      description: <>Expertise in designing and building data processing systems, machine learning models, and data analytics solutions on Google Cloud Platform.</>,
+    },
+    {
+      name: "Financial Risk Manager (FRM) Part I",
+      issuer: "Global Association of Risk Professionals",
+      date: "2022",
+      credential_id: "FRM-I-2022-001",
+      description: <>Advanced knowledge in financial risk management, quantitative analysis, and risk modeling techniques.</>,
+    },
+    {
+      name: "Python for Data Science and Machine Learning",
+      issuer: "Coursera / University of Michigan",
+      date: "2021",
+      credential_id: "PYTHON-DS-ML-2021-001",
+      description: <>Comprehensive course covering Python programming, data analysis, machine learning algorithms, and statistical modeling.</>,
+    },
+  ],
 };
 
 const publications = {
