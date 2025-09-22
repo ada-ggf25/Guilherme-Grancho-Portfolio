@@ -2,7 +2,8 @@
   "name": "@once-ui-system/magic-portfolio",
   "version": "2.2.0",
   "scripts": {
-    "dev": "next dev -p 3030",
+    "dev": "next dev --turbo -p 3030",
+    "dev:no-turbo": "next dev -p 3030",
     "export": "next export",
     "build": "next build",
     "start": "next start",
@@ -20,7 +21,6 @@
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-icons": "^5.5.0",
-    "react-masonry-css": "^1.0.16",
     "sass": "^1.86.3"
   },
   "devDependencies": {
