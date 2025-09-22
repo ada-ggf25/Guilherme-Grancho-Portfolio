@@ -229,40 +229,6 @@ const about = {
       },
     ],
   },
-  publications: {
-    display: true, // set to false to hide this section
-    title: "Research Publications",
-    description: <>Academic research in AI, machine learning, and quantitative finance published in peer-reviewed venues and conferences.</>,
-    papers: [
-      {
-        title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
-        authors: "G Grancho, V Pereira",
-        venue: "SSRN",
-        year: "2025",
-        description: <>Novel approach to short-term stock price prediction using LSTM neural networks, introducing the Financial Torque Hypothesis for market movement analysis.</>,
-        link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
-        category: "Quantitative Finance",
-      },
-      {
-        title: "Mapping The Layers of The Ocean Floor With a Convolutional Neural Network",
-        authors: "GGD Fernandes, VSPP Oliveira, JPI Astolfo",
-        venue: "arXiv preprint",
-        year: "2024",
-        description: <>Advanced deep learning application for oceanographic mapping using convolutional neural networks to analyze and classify ocean floor layers.</>,
-        link: "https://arxiv.org/abs/2412.05329",
-        category: "Computer Vision",
-      },
-      {
-        title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
-        authors: "GGD Fernandes, TH Medeiros",
-        venue: "Encontro Nacional de Inteligência Artificial e Computacional (ENIAC)",
-        year: "2024",
-        description: <>Research on optimizing multi-objective machine learning algorithms using lexicographic approaches with novel tolerance threshold determination methods.</>,
-        link: "https://scholar.google.com/citations?user=lHeQn9gAAAAJ&hl=en",
-        category: "Machine Learning",
-      },
-    ],
-  },
   achievements: {
     display: true, // set to false to hide this section
     title: "Key Achievements & Recognition",
@@ -299,6 +265,41 @@ const about = {
       },
     ],
   },
+};
+
+const publications = {
+  display: true, // set to false to hide this section
+  title: "Research Publications",
+  description: <>Academic research in AI, machine learning, and quantitative finance published in peer-reviewed venues and conferences.</>,
+  papers: [
+    {
+      title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
+      authors: "G Grancho, V Pereira",
+      venue: "SSRN",
+      year: "2025",
+      description: <>Novel approach to short-term stock price prediction using LSTM neural networks, introducing the Financial Torque Hypothesis for market movement analysis.</>,
+      link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
+      category: "Quantitative Finance",
+    },
+    {
+      title: "Mapping The Layers of The Ocean Floor With a Convolutional Neural Network",
+      authors: "GGD Fernandes, VSPP Oliveira, JPI Astolfo",
+      venue: "arXiv preprint",
+      year: "2024",
+      description: <>Advanced deep learning application for oceanographic mapping using convolutional neural networks to analyze and classify ocean floor layers.</>,
+      link: "https://arxiv.org/abs/2412.05329",
+      category: "Computer Vision",
+    },
+    {
+      title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
+      authors: "GGD Fernandes, TH Medeiros",
+      venue: "Encontro Nacional de Inteligência Artificial e Computacional (ENIAC)",
+      year: "2024",
+      description: <>Research on optimizing multi-objective machine learning algorithms using lexicographic approaches with novel tolerance threshold determination methods.</>,
+      link: "https://scholar.google.com/citations?user=lHeQn9gAAAAJ&hl=en",
+      category: "Machine Learning",
+    },
+  ],
 };
 
 // Blog section removed - no longer needed
