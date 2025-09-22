@@ -44,7 +44,7 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Flex style={{ width: "100%", gap: "48px" }} mobileDirection="column" horizontal="center">
+      <Flex style={{ width: "100%", gap: "48px" }} horizontal="center">
         {about.avatar.display && (
           <Column
             className={styles.avatar}
@@ -607,9 +607,11 @@ export default function About() {
                   <Column key={index} style={{ gap: "12px", marginBottom: "24px" }}>
                     <Flex
                       direction="row"
-                      justifyContent="flex-start"
-                      alignItems="center"
-                      style={{ gap: "16px" }}
+                      style={{ 
+                        gap: "16px",
+                        justifyContent: "flex-start",
+                        alignItems: "center"
+                      }}
                     >
                       <Text variant="display-default-l">
                         {achievement.icon}
