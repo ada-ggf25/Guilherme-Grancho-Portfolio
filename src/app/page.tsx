@@ -101,35 +101,41 @@ export default function About() {
             vertical="center"
           >
             {about.calendar.display && (
-              <Flex
-                className={styles.blockAlign}
-                style={{
-                  backdropFilter: "blur(var(--static-space-1))",
-                  background: "var(--color-brand-alpha-weak)",
-                  borderRadius: "9999px",
-                  padding: "4px",
-                  gap: "8px",
-                  marginBottom: "var(--static-space-m)",
-                  border: "1px solid var(--color-brand-alpha-medium)",
-                  width: "fit-content",
-                }}
-                vertical="center"
+              <SmartLink
+                href={`mailto:${person.email}`}
+                style={{ textDecoration: "none", color: "inherit" }}
               >
-                <Icon 
-                  style={{ paddingLeft: "12px" }}
-                  name="calendar" 
-                  onBackground="brand-weak" 
-                />
-                <Flex style={{ paddingLeft: "8px", paddingRight: "8px" }}>
-                  Talk to me
+                <Flex
+                  className={styles.blockAlign}
+                  style={{
+                    backdropFilter: "blur(var(--static-space-1))",
+                    background: "var(--color-brand-alpha-weak)",
+                    borderRadius: "9999px",
+                    padding: "4px",
+                    gap: "8px",
+                    marginBottom: "var(--static-space-m)",
+                    border: "1px solid var(--color-brand-alpha-medium)",
+                    width: "fit-content",
+                    cursor: "pointer",
+                    transition: "all 0.2s ease",
+                  }}
+                  vertical="center"
+                >
+                  <Icon 
+                    style={{ paddingLeft: "12px" }}
+                    name="calendar" 
+                    onBackground="brand-weak" 
+                  />
+                  <Flex style={{ paddingLeft: "8px", paddingRight: "8px" }}>
+                    Talk to me
+                  </Flex>
+                  <IconButton
+                    data-border="rounded"
+                    variant="secondary"
+                    icon="chevronRight"
+                  />
                 </Flex>
-                <IconButton
-                  href={`mailto:${person.email}`}
-                  data-border="rounded"
-                  variant="secondary"
-                  icon="chevronRight"
-                />
-              </Flex>
+              </SmartLink>
             )}
             <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}
