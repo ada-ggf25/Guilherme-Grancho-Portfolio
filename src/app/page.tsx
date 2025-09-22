@@ -73,7 +73,7 @@ export default function About() {
     },
   ];
   return (
-    <Column maxWidth="m">
+    <Column style={{ maxWidth: "var(--static-space-m)" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -102,7 +102,7 @@ export default function About() {
           <TableOfContents structure={structure} about={about} />
         </Column>
       )}
-      <Flex fillWidth mobileDirection="column" horizontal="center">
+      <Flex style={{ width: "100%" }} mobileDirection="column" horizontal="center">
         {about.avatar.display && (
           <Column
             className={styles.avatar}
@@ -150,16 +150,15 @@ export default function About() {
         >
           <Column
             id={about.intro.title}
-            fillWidth
             style={{
               minHeight: "160px",
               marginBottom: "32px",
+              width: "100%",
             }}
             vertical="center"
           >
             {about.calendar.display && (
               <Flex
-                fitWidth
                 className={styles.blockAlign}
                 style={{
                   backdropFilter: "blur(var(--static-space-1))",
@@ -169,6 +168,7 @@ export default function About() {
                   gap: "8px",
                   marginBottom: "var(--static-space-m)",
                   border: "1px solid var(--color-brand-alpha-medium)",
+                  width: "fit-content",
                 }}
                 vertical="center"
               >
@@ -206,9 +206,9 @@ export default function About() {
                   paddingBottom: "8px",
                   gap: "8px",
                   flexWrap: "wrap",
+                  width: "fit-content",
                 }}
                 horizontal="center" 
-                fitWidth 
                 data-border="rounded"
               >
                 {social.map(
@@ -243,10 +243,10 @@ export default function About() {
           {about.intro.display && (
             <Column 
               textVariant="body-default-l" 
-              fillWidth 
               style={{
                 gap: "var(--static-space-m)",
                 marginBottom: "48px",
+                width: "100%",
               }}
             >
               {about.intro.description}
@@ -264,19 +264,18 @@ export default function About() {
                 {about.work.title}
               </Heading>
               <Column 
-                fillWidth 
                 style={{
                   gap: "var(--static-space-l)",
                   marginBottom: "64px",
+                  width: "100%",
                 }}
               >
                 {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth style={{ marginBottom: "32px" }}>
+                  <Column key={`${experience.company}-${experience.role}-${index}`} style={{ marginBottom: "32px", width: "100%" }}>
                     <Flex 
-                      fillWidth 
                       horizontal="space-between" 
                       vertical="end" 
-                      style={{ marginBottom: "4px" }}
+                      style={{ marginBottom: "4px", width: "100%" }}
                     >
                       <Text id={experience.company} variant="heading-strong-l">
                         {experience.company}
@@ -359,17 +358,16 @@ export default function About() {
                 {about.studies.title}
               </Heading>
               <Column 
-                fillWidth 
                 style={{
                   gap: "var(--static-space-l)",
                   marginBottom: "64px",
+                  width: "100%",
                 }}
               >
                 {about.studies.institutions.map((institution, index) => (
                   <Column 
                     key={`${institution.name}-${index}`} 
-                    fillWidth 
-                    style={{ gap: "8px", marginBottom: "24px" }}
+                    style={{ gap: "8px", marginBottom: "24px", width: "100%" }}
                   >
                     <Text id={institution.name} variant="heading-strong-l">
                       {institution.name}
@@ -394,14 +392,12 @@ export default function About() {
                 {about.technical.title}
               </Heading>
               <Column 
-                fillWidth 
-                style={{ gap: "var(--static-space-l)", marginBottom: "64px" }}
+                style={{ gap: "var(--static-space-l)", marginBottom: "64px", width: "100%" }}
               >
                 {about.technical.skills.map((skill, index) => (
                   <Column 
                     key={`${skill}-${index}`} 
-                    fillWidth 
-                    style={{ gap: "8px", marginBottom: "32px" }}
+                    style={{ gap: "8px", marginBottom: "32px", width: "100%" }}
                   >
                     <Text variant="heading-strong-l">{skill.title}</Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
@@ -409,11 +405,11 @@ export default function About() {
                     </Text>
                     {skill.images && skill.images.length > 0 && (
                       <Flex 
-                        fillWidth 
                         style={{
                           paddingTop: "var(--static-space-m)",
                           gap: "12px",
                           flexWrap: "wrap",
+                          width: "100%",
                         }}
                       >
                         {skill.images.map((image, index) => (
@@ -459,20 +455,17 @@ export default function About() {
                 {about.achievements.title}
               </Heading>
               <Column 
-                fillWidth 
-                style={{ gap: "var(--static-space-l)", marginBottom: "64px" }}
+                style={{ gap: "var(--static-space-l)", marginBottom: "64px", width: "100%" }}
               >
                 {about.achievements.accomplishments.map((achievement, index) => (
                   <Column 
                     key={`${achievement.title}-${index}`} 
-                    fillWidth 
-                    style={{ gap: "8px", marginBottom: "24px" }}
+                    style={{ gap: "8px", marginBottom: "24px", width: "100%" }}
                   >
                     <Flex 
-                      fillWidth 
                       horizontal="space-between" 
                       vertical="end" 
-                      style={{ marginBottom: "4px" }}
+                      style={{ marginBottom: "4px", width: "100%" }}
                     >
                       <Text id={achievement.title} variant="heading-strong-l">
                         {achievement.title}
