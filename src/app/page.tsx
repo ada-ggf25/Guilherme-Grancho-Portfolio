@@ -44,7 +44,7 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Flex style={{ width: "100%" }} mobileDirection="column" horizontal="center">
+      <Flex style={{ width: "100%", gap: "48px" }} mobileDirection="column" horizontal="center">
         {about.avatar.display && (
           <Column
             className={styles.avatar}
@@ -52,7 +52,7 @@ export default function About() {
             style={{
               minWidth: "160px",
               paddingLeft: "var(--static-space-l)",
-              paddingRight: "var(--static-space-l)",
+              paddingRight: "var(--static-space-xl)",
               paddingBottom: "var(--static-space-xl)",
               gap: "var(--static-space-m)",
               flex: 3,
@@ -88,6 +88,7 @@ export default function About() {
           style={{
             flex: 9,
             maxWidth: "40rem",
+            paddingLeft: "var(--static-space-l)",
           }}
         >
           <Column
