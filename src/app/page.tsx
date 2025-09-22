@@ -11,7 +11,8 @@ import {
   Tag,
   Text,
   Meta,
-  Schema
+  Schema,
+  SmartLink
 } from "@once-ui-system/core";
 import { baseURL, about, person, social, publications } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
@@ -391,14 +392,14 @@ export default function About() {
                     >
                       <Column flex="1" gap="8">
                         <Heading variant="heading-default-s">
-                          <a
+                          <SmartLink
                             href={paper.link}
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{ textDecoration: "none", color: "inherit" }}
                           >
                             {paper.title}
-                          </a>
+                          </SmartLink>
                         </Heading>
                         <Text variant="body-default-s" onBackground="neutral-weak">
                           {paper.authors}
