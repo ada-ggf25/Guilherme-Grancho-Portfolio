@@ -86,7 +86,7 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: `mailto:${person.email}`,
   },
   intro: {
     display: true,

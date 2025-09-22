@@ -178,10 +178,10 @@ export default function About() {
                   onBackground="brand-weak" 
                 />
                 <Flex style={{ paddingLeft: "8px", paddingRight: "8px" }}>
-                  Schedule a call
+                  Talk to me
                 </Flex>
                 <IconButton
-                  href={about.calendar.link}
+                  href={`mailto:${person.email}`}
                   data-border="rounded"
                   variant="secondary"
                   icon="chevronRight"

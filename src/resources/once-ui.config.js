@@ -174,7 +174,7 @@ const schema = {
   type: "Person",
   name: "Guilherme Grancho",
   description: home.description,
-  email: "guilherme.grancho@gmail.com",
+  email: "guilhermegranchopro@gmail.com",
   jobTitle: "AI Developer & Fintech Entrepreneur",
   worksFor: {
     "@type": "Organization",
@@ -191,7 +191,7 @@ const schema = {
 const sameAs = {
   linkedin: "https://www.linkedin.com/in/guilhermegrancho/",
   github: "https://github.com/guilhermegranchopro",
-  email: "mailto:guilherme.grancho@gmail.com",
+  email: "mailto:guilhermegranchopro@gmail.com",
 };
 
 export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };

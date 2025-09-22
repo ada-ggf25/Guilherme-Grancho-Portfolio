@@ -182,7 +182,7 @@ npm run build
 ## 📞 Contact & Collaboration
 
 ### Professional Inquiries
-- **Email**: guilherme.grancho@gmail.com
+- **Email**: guilhermegranchopro@gmail.com
 - **LinkedIn**: [Guilherme Grancho](https://www.linkedin.com/in/guilhermegrancho/)
 - **Location**: Lisbon, Portugal / London, UK
 
