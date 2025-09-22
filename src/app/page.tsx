@@ -106,33 +106,42 @@ export default function About() {
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 <Flex
-                  className={styles.blockAlign}
+                  className={`${styles.blockAlign} ${styles.talkToMeButton}`}
                   style={{
                     backdropFilter: "blur(var(--static-space-1))",
                     background: "var(--color-brand-alpha-weak)",
                     borderRadius: "9999px",
-                    padding: "4px",
-                    gap: "8px",
+                    padding: "8px 16px",
+                    gap: "12px",
                     marginBottom: "var(--static-space-m)",
                     border: "1px solid var(--color-brand-alpha-medium)",
                     width: "fit-content",
                     cursor: "pointer",
                     transition: "all 0.2s ease",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
                   }}
                   vertical="center"
                 >
                   <Icon 
-                    style={{ paddingLeft: "12px" }}
                     name="calendar" 
                     onBackground="brand-weak" 
                   />
-                  <Flex style={{ paddingLeft: "8px", paddingRight: "8px" }}>
+                  <Text 
+                    variant="body-default-s"
+                    style={{ 
+                      fontWeight: "500",
+                      color: "var(--color-neutral-strong)",
+                    }}
+                  >
                     Talk to me
-                  </Flex>
-                  <IconButton
-                    data-border="rounded"
-                    variant="secondary"
-                    icon="chevronRight"
+                  </Text>
+                  <Icon 
+                    name="chevronRight" 
+                    onBackground="brand-weak"
+                    style={{ 
+                      width: "16px", 
+                      height: "16px" 
+                    }}
                   />
                 </Flex>
               </SmartLink>
@@ -157,8 +166,7 @@ export default function About() {
                   flexWrap: "wrap",
                   width: "fit-content",
                 }}
-                horizontal="center" 
-                data-border="rounded"
+                horizontal="center"
               >
                 {social.map(
                   (item) =>
@@ -191,11 +199,12 @@ export default function About() {
 
           {about.intro.display && (
             <Column 
-              textVariant="body-default-l" 
               style={{
                 gap: "var(--static-space-m)",
                 marginBottom: "48px",
                 width: "100%",
+                fontSize: "var(--font-size-body-default-l)",
+                lineHeight: "var(--line-height-body-default-l)",
               }}
             >
               {about.intro.description}
