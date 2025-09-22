@@ -4,6 +4,7 @@ import {
   Column,
   Flex,
   Heading,
+  HeadingLink,
   Icon,
   IconButton,
   Media,
