@@ -14,7 +14,7 @@ import {
   Schema,
   SmartLink
 } from "@once-ui-system/core";
-import { baseURL, about, person, social, publications } from "@/resources";
+import { baseURL, about, person, social, publications, certifications } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
@@ -60,6 +60,11 @@ export default function About() {
       title: publications.title,
       display: publications.display,
       items: publications.papers.map((paper) => paper.title),
+    },
+    {
+      title: certifications.title,
+      display: certifications.display,
+      items: certifications.certifications.map((cert) => cert.name),
     },
   ];
   return (
@@ -422,6 +427,52 @@ export default function About() {
                     </Flex>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {paper.description}
+                    </Text>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {/* Certifications Section */}
+          {certifications.display && (
+            <>
+              <HeadingLink
+                as="h2"
+                id="certifications"
+                marginTop="48"
+                marginBottom="24"
+              >
+                {certifications.title}
+              </HeadingLink>
+              <Column gap="24">
+                {certifications.certifications.map((cert, index) => (
+                  <Column key={index} gap="8">
+                    <Flex
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="flex-start"
+                      gap="16"
+                    >
+                      <Column flex="1" gap="8">
+                        <Heading variant="heading-default-s">
+                          {cert.name}
+                        </Heading>
+                        <Text variant="body-default-s" onBackground="neutral-weak">
+                          {cert.issuer}
+                        </Text>
+                        <Flex direction="row" gap="16" alignItems="center">
+                          <Tag variant="neutral" size="s">
+                            {cert.date}
+                          </Tag>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            ID: {cert.credential_id}
+                          </Text>
+                        </Flex>
+                      </Column>
+                    </Flex>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {cert.description}
                     </Text>
                   </Column>
                 ))}
