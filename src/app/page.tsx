@@ -89,15 +89,15 @@ export default function About() {
       />
       {about.tableOfContent.display && (
         <Column
-          style={{ 
-            top: "50%", 
+          style={{
+            top: "50%",
             transform: "translateY(-50%)",
-            left: "0"
+            left: "0",
+            paddingLeft: "24px",
+            gap: "32px",
           }}
           position="fixed"
-          paddingLeft="24"
-          gap="32"
-          hide="s"
+          className="hide-s"
         >
           <TableOfContents structure={structure} about={about} />
         </Column>
@@ -160,7 +160,6 @@ export default function About() {
             {about.calendar.display && (
               <Flex
                 fitWidth
-                border="brand-alpha-medium"
                 className={styles.blockAlign}
                 style={{
                   backdropFilter: "blur(var(--static-space-1))",
@@ -169,6 +168,7 @@ export default function About() {
                   padding: "4px",
                   gap: "8px",
                   marginBottom: "var(--static-space-m)",
+                  border: "1px solid var(--color-brand-alpha-medium)",
                 }}
                 vertical="center"
               >
