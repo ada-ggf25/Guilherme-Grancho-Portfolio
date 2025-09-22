@@ -102,20 +102,31 @@ export default function About() {
           <Column
             className={styles.avatar}
             position="sticky"
-            minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
-            gap="m"
-            flex={3}
+            style={{
+              minWidth: "160px",
+              paddingLeft: "var(--static-space-l)",
+              paddingRight: "var(--static-space-l)",
+              paddingBottom: "var(--static-space-xl)",
+              gap: "var(--static-space-m)",
+              flex: 3,
+            }}
             horizontal="center"
           >
             <Avatar src={person.avatar} size="xl" />
-            <Flex gap="8" vertical="center">
+            <Flex 
+              style={{ gap: "8px" }}
+              vertical="center"
+            >
               <Icon onBackground="accent-weak" name="globe" />
               {person.location}
             </Flex>
             {person.languages.length > 0 && (
-              <Flex wrap gap="8">
+              <Flex 
+                style={{ 
+                  flexWrap: "wrap",
+                  gap: "8px" 
+                }}
+              >
                 {person.languages.map((language, index) => (
                   <Tag key={language} size="l">
                     {language}
@@ -125,13 +136,21 @@ export default function About() {
             )}
           </Column>
         )}
-        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
+        <Column 
+          className={styles.blockAlign} 
+          style={{
+            flex: 9,
+            maxWidth: "40rem",
+          }}
+        >
           <Column
             id={about.intro.title}
             fillWidth
-            minHeight="160"
+            style={{
+              minHeight: "160px",
+              marginBottom: "32px",
+            }}
             vertical="center"
-            marginBottom="32"
           >
             {about.calendar.display && (
               <Flex
@@ -140,16 +159,22 @@ export default function About() {
                 className={styles.blockAlign}
                 style={{
                   backdropFilter: "blur(var(--static-space-1))",
+                  background: "var(--color-brand-alpha-weak)",
+                  borderRadius: "9999px",
+                  padding: "4px",
+                  gap: "8px",
+                  marginBottom: "var(--static-space-m)",
                 }}
-                background="brand-alpha-weak"
-                radius="full"
-                padding="4"
-                gap="8"
-                marginBottom="m"
                 vertical="center"
               >
-                <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Flex paddingX="8">Schedule a call</Flex>
+                <Icon 
+                  style={{ paddingLeft: "12px" }}
+                  name="calendar" 
+                  onBackground="brand-weak" 
+                />
+                <Flex style={{ paddingLeft: "8px", paddingRight: "8px" }}>
+                  Schedule a call
+                </Flex>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"
@@ -169,7 +194,18 @@ export default function About() {
               {person.role}
             </Text>
             {social.length > 0 && (
-              <Flex className={styles.blockAlign} paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth data-border="rounded">
+              <Flex 
+                className={styles.blockAlign} 
+                style={{
+                  paddingTop: "20px",
+                  paddingBottom: "8px",
+                  gap: "8px",
+                  flexWrap: "wrap",
+                }}
+                horizontal="center" 
+                fitWidth 
+                data-border="rounded"
+              >
                 {social.map(
                   (item) =>
                     item.link && (
@@ -200,20 +236,43 @@ export default function About() {
           </Column>
 
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
+            <Column 
+              textVariant="body-default-l" 
+              fillWidth 
+              style={{
+                gap: "var(--static-space-m)",
+                marginBottom: "var(--static-space-xl)",
+              }}
+            >
               {about.intro.description}
             </Column>
           )}
 
           {about.work.display && (
             <>
-              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
+              <Heading 
+                as="h2" 
+                id={about.work.title} 
+                variant="display-strong-s" 
+                style={{ marginBottom: "var(--static-space-m)" }}
+              >
                 {about.work.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+              <Column 
+                fillWidth 
+                style={{
+                  gap: "var(--static-space-l)",
+                  marginBottom: "40px",
+                }}
+              >
                 {about.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
-                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
+                    <Flex 
+                      fillWidth 
+                      horizontal="space-between" 
+                      vertical="end" 
+                      style={{ marginBottom: "4px" }}
+                    >
                       <Text id={experience.company} variant="heading-strong-l">
                         {experience.company}
                       </Text>
@@ -221,10 +280,17 @@ export default function About() {
                         {experience.timeframe}
                       </Text>
                     </Flex>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                    <Text 
+                      variant="body-default-s" 
+                      onBackground="brand-weak" 
+                      style={{ marginBottom: "var(--static-space-m)" }}
+                    >
                       {experience.role}
                     </Text>
-                    <Column as="ul" gap="16">
+                    <Column 
+                      as="ul" 
+                      style={{ gap: "16px" }}
+                    >
                       {experience.achievements.map((achievement: JSX.Element, index: number) => (
                         <Text
                           as="li"
@@ -236,20 +302,30 @@ export default function About() {
                       ))}
                     </Column>
                     {experience.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
+                      <Flex 
+                        fillWidth 
+                        style={{
+                          paddingTop: "var(--static-space-m)",
+                          paddingLeft: "40px",
+                          gap: "12px",
+                          flexWrap: "wrap",
+                        }}
+                      >
                         {experience.images.map((image, index) => (
                           <Flex
                             key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            //@ts-ignore
-                            minWidth={image.width}
-                            //@ts-ignore
-                            height={image.height}
+                            style={{
+                              border: "1px solid var(--color-neutral-medium)",
+                              borderRadius: "var(--static-space-m)",
+                              minWidth: `${image.width}rem`,
+                              height: `${image.height}rem`,
+                            }}
                           >
                             <Media
                               enlarge
-                              radius="m"
+                              style={{
+                                borderRadius: "var(--static-space-m)",
+                              }}
                               //@ts-ignore
                               sizes={image.width.toString()}
                               //@ts-ignore
@@ -269,12 +345,27 @@ export default function About() {
 
           {about.studies.display && (
             <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
+              <Heading 
+                as="h2" 
+                id={about.studies.title} 
+                variant="display-strong-s" 
+                style={{ marginBottom: "var(--static-space-m)" }}
+              >
                 {about.studies.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+              <Column 
+                fillWidth 
+                style={{
+                  gap: "var(--static-space-l)",
+                  marginBottom: "40px",
+                }}
+              >
                 {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
+                  <Column 
+                    key={`${institution.name}-${index}`} 
+                    fillWidth 
+                    style={{ gap: "4px" }}
+                  >
                     <Text id={institution.name} variant="heading-strong-l">
                       {institution.name}
                     </Text>
@@ -293,32 +384,48 @@ export default function About() {
                 as="h2"
                 id={about.technical.title}
                 variant="display-strong-s"
-                marginBottom="40"
+                style={{ marginBottom: "40px" }}
               >
                 {about.technical.title}
               </Heading>
-              <Column fillWidth gap="l">
+              <Column 
+                fillWidth 
+                style={{ gap: "var(--static-space-l)" }}
+              >
                 {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
+                  <Column 
+                    key={`${skill}-${index}`} 
+                    fillWidth 
+                    style={{ gap: "4px" }}
+                  >
                     <Text variant="heading-strong-l">{skill.title}</Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {skill.description}
                     </Text>
                     {skill.images && skill.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" gap="12" wrap>
+                      <Flex 
+                        fillWidth 
+                        style={{
+                          paddingTop: "var(--static-space-m)",
+                          gap: "12px",
+                          flexWrap: "wrap",
+                        }}
+                      >
                         {skill.images.map((image, index) => (
                           <Flex
                             key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            //@ts-ignore
-                            minWidth={image.width}
-                            //@ts-ignore
-                            height={image.height}
+                            style={{
+                              border: "1px solid var(--color-neutral-medium)",
+                              borderRadius: "var(--static-space-m)",
+                              minWidth: `${image.width}rem`,
+                              height: `${image.height}rem`,
+                            }}
                           >
                             <Media
                               enlarge
-                              radius="m"
+                              style={{
+                                borderRadius: "var(--static-space-m)",
+                              }}
                               //@ts-ignore
                               sizes={image.width.toString()}
                               //@ts-ignore
@@ -342,18 +449,33 @@ export default function About() {
                 as="h2"
                 id={about.achievements.title}
                 variant="display-strong-s"
-                marginBottom="40"
+                style={{ marginBottom: "40px" }}
               >
                 {about.achievements.title}
               </Heading>
-              <Column fillWidth gap="l">
+              <Column 
+                fillWidth 
+                style={{ gap: "var(--static-space-l)" }}
+              >
                 {about.achievements.accomplishments.map((achievement, index) => (
-                  <Column key={`${achievement.title}-${index}`} fillWidth gap="4">
-                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
+                  <Column 
+                    key={`${achievement.title}-${index}`} 
+                    fillWidth 
+                    style={{ gap: "4px" }}
+                  >
+                    <Flex 
+                      fillWidth 
+                      horizontal="space-between" 
+                      vertical="end" 
+                      style={{ marginBottom: "4px" }}
+                    >
                       <Text id={achievement.title} variant="heading-strong-l">
                         {achievement.title}
                       </Text>
-                      <Flex gap="8" vertical="center">
+                      <Flex 
+                        style={{ gap: "8px" }}
+                        vertical="center"
+                      >
                         <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
                           {achievement.category}
                         </Tag>
@@ -377,28 +499,35 @@ export default function About() {
               <HeadingLink
                 as="h2"
                 id="publications"
-                marginTop="48"
-                marginBottom="24"
+                style={{
+                  marginTop: "48px",
+                  marginBottom: "24px",
+                }}
               >
                 {publications.title}
               </HeadingLink>
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                marginBottom="32"
+                style={{ marginBottom: "32px" }}
               >
                 {publications.description}
               </Text>
-              <Column gap="24">
+              <Column style={{ gap: "24px" }}>
                 {publications.papers.map((paper, index) => (
-                  <Column key={index} gap="8">
+                  <Column key={index} style={{ gap: "8px" }}>
                     <Flex
                       direction="row"
                       justifyContent="space-between"
                       alignItems="flex-start"
-                      gap="16"
+                      style={{ gap: "16px" }}
                     >
-                      <Column flex="1" gap="8">
+                      <Column 
+                        style={{ 
+                          flex: 1,
+                          gap: "8px",
+                        }}
+                      >
                         <Heading variant="heading-default-s">
                           <SmartLink
                             href={paper.link}
@@ -412,7 +541,11 @@ export default function About() {
                         <Text variant="body-default-s" onBackground="neutral-weak">
                           {paper.authors}
                         </Text>
-                        <Flex direction="row" gap="16" alignItems="center">
+                        <Flex 
+                          direction="row" 
+                          style={{ gap: "16px" }}
+                          alignItems="center"
+                        >
                           <Tag variant="neutral" size="s">
                             {paper.venue}
                           </Tag>
@@ -440,28 +573,39 @@ export default function About() {
               <HeadingLink
                 as="h2"
                 id="certifications"
-                marginTop="48"
-                marginBottom="24"
+                style={{
+                  marginTop: "48px",
+                  marginBottom: "24px",
+                }}
               >
                 {certifications.title}
               </HeadingLink>
-              <Column gap="24">
+              <Column style={{ gap: "24px" }}>
                 {certifications.certifications.map((cert, index) => (
-                  <Column key={index} gap="8">
+                  <Column key={index} style={{ gap: "8px" }}>
                     <Flex
                       direction="row"
                       justifyContent="space-between"
                       alignItems="flex-start"
-                      gap="16"
+                      style={{ gap: "16px" }}
                     >
-                      <Column flex="1" gap="8">
+                      <Column 
+                        style={{ 
+                          flex: 1,
+                          gap: "8px",
+                        }}
+                      >
                         <Heading variant="heading-default-s">
                           {cert.name}
                         </Heading>
                         <Text variant="body-default-s" onBackground="neutral-weak">
                           {cert.issuer}
                         </Text>
-                        <Flex direction="row" gap="16" alignItems="center">
+                        <Flex 
+                          direction="row" 
+                          style={{ gap: "16px" }}
+                          alignItems="center"
+                        >
                           <Tag variant="neutral" size="s">
                             {cert.date}
                           </Tag>
