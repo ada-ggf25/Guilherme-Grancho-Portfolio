@@ -29,7 +29,7 @@ export const Header = () => {
         data-border="rounded"
       >
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          <Flex hide="s">{person.name}</Flex>
+          <Flex>{person.name}</Flex>
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex
@@ -47,21 +47,12 @@ export const Header = () => {
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
               {routes["/work"] && (
-                <>
-                  <ToggleButton
-                    className="s-flex-hide"
-                    prefixIcon="grid"
-                    href="/work"
-                    label={work.label}
-                    selected={pathname.startsWith("/work")}
-                  />
-                  <ToggleButton
-                    className="s-flex-show"
-                    prefixIcon="grid"
-                    href="/work"
-                    selected={pathname.startsWith("/work")}
-                  />
-                </>
+                <ToggleButton
+                  prefixIcon="grid"
+                  href="/work"
+                  label={work.label}
+                  selected={pathname.startsWith("/work")}
+                />
               )}
             </Flex>
           </Flex>
