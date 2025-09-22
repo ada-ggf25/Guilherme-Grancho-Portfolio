@@ -6,14 +6,14 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "AI Developer & Fintech Entrepreneur",
+  role: "AI & Data Scientist | MSc Student at Imperial College London",
   avatar: "/images/avatar.jpg",
   email: "guilhermegranchopro@gmail.com",
   location: "London - Lisbon", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Portuguese", "English", "Spanish", "French"], // optional: Leave the array empty if you don't want to display languages
   phone: "+351 912 345 678", // Add phone number
   website: "https://guilhermegrancho.com", // Add personal website
-  summary: "AI Developer and Fintech Entrepreneur with expertise in machine learning, quantitative finance, and startup innovation. Published researcher in AI applications for financial markets and oceanographic mapping.",
+  summary: "I build data-driven systems—ML, GenAI, and quantitative models—that turn complex signals into measurable outcomes for finance and sustainability. Currently pursuing MSc in Applied Computational Science & Engineering at Imperial College London, with research focus on The Financial Torque Hypothesis and leading development of Eco AI.ly's GAIA sustainability assistant.",
 };
 
 const newsletter = {
@@ -21,8 +21,8 @@ const newsletter = {
   title: <>Let's build the future together</>,
   description: (
     <>
-      Interested in AI, fintech, or startup opportunities? Let's connect and explore how we can 
-      collaborate on innovative projects in quantitative finance, venture capital, or AI development.
+      Always keen to collaborate on applied ML, quantitative finance, sustainable tech and entrepreneurship initiatives. 
+      Let's connect and explore how we can work together on innovative projects that make a measurable impact.
     </>
   ),
 };
@@ -93,10 +93,17 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Guilherme is an AI developer and fintech entrepreneur based between Lisbon and London, specializing in 
-        quantitative finance, machine learning, and startup innovation. With a passion for transforming financial 
-        markets through technology, he combines deep technical expertise with entrepreneurial vision to build 
-        solutions that drive value in the intersection of AI and finance.
+        I build data-driven systems—ML, GenAI, and quantitative models—that turn complex signals into measurable outcomes for finance and sustainability.
+        <br /><br />
+        I'm pursuing an MSc in Applied Computational Science & Engineering at Imperial College London, after a BSc in Engineering Physics & Technology at IST.
+        <br /><br />
+        On the research side, I'm first author of The Financial Torque Hypothesis (SSRN), proposing a feature set that improves short-horizon equity-index prediction, and I'm developing the open-source Prometheus project to take these ideas further.
+        <br /><br />
+        I also led the development of Eco AI.ly, where we build GAIA—a sustainability-focused AI assistant that helps developers and companies reduce the environmental footprint of model training and energy decisions.
+        <br /><br />
+        Industry experience includes AI & Data consulting internships delivering ML/GenAI prototypes for international financial-services clients—with a strong emphasis on Responsible AI, model governance, and clear business KPIs. (Recent summer programs at Deloitte and EY Portugal.)
+        <br /><br />
+        When I'm not immersed in my work, you can always find me playing sports, channeling the same discipline and passion that drives my professional life.
       </>
     ),
   },
@@ -105,26 +112,52 @@ const about = {
     title: "Professional Experience",
     experiences: [
       {
-        company: "Independent AI Research & Development",
-        timeframe: "2022 - Present",
-        role: "AI Developer & Fintech Entrepreneur",
-        location: "Lisbon, Portugal / London, UK",
+        company: "Eco AI.ly",
+        timeframe: "2023 - Present",
+        role: "Lead Developer & Co-founder",
+        location: "London, UK",
         achievements: [
           <>
-            Published 3 peer-reviewed research papers in AI and machine learning, including "The Financial Torque Hypothesis" 
-            for stock price prediction using LSTM neural networks and oceanographic mapping using CNNs.
+            Leading development of GAIA—a sustainability-focused AI assistant that helps developers and companies 
+            reduce the environmental footprint of model training and energy decisions.
           </>,
           <>
-            Developed proprietary AI trading algorithms achieving 23% annual returns with 1.8 Sharpe ratio, 
-            outperforming market benchmarks by 15% through advanced machine learning techniques.
+            Building data-driven systems that turn complex signals into measurable outcomes for sustainability 
+            and environmental impact reduction.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Deloitte & EY Portugal",
+        timeframe: "2023 - 2024",
+        role: "AI & Data Consulting Intern",
+        location: "Lisbon, Portugal",
+        achievements: [
+          <>
+            Delivered ML/GenAI prototypes for international financial-services clients with strong emphasis 
+            on Responsible AI, model governance, and clear business KPIs.
           </>,
           <>
-            Co-founded and scaled a fintech platform serving 500+ SMEs, processing €2.5M in loans with 94% 
-            approval accuracy and securing €500K seed funding from European investors.
+            Participated in summer programs focusing on applied machine learning and quantitative finance 
+            solutions for enterprise clients.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Independent Research",
+        timeframe: "2022 - Present",
+        role: "Research Scientist & Open Source Developer",
+        location: "London, UK / Lisbon, Portugal",
+        achievements: [
+          <>
+            First author of The Financial Torque Hypothesis (SSRN), proposing a feature set that improves 
+            short-horizon equity-index prediction using advanced machine learning techniques.
           </>,
           <>
-            Created AI-powered investment analytics platform serving 12+ VC firms managing €500M+ AUM, 
-            improving portfolio IRR by 23% through data-driven insights and predictive modeling.
+            Developing the open-source Prometheus project to advance research in quantitative finance 
+            and equity prediction algorithms.
           </>,
         ],
         images: [],
@@ -184,10 +217,10 @@ const about = {
       {
         name: "Imperial College London",
         degree: "MSc in Applied Computational Science and Engineering",
-        timeframe: "2022 - 2024",
+        timeframe: "2022 - Present",
         location: "London, UK",
-        description: <>Advanced master's studies in Applied Computational Science and Engineering with focus on quantitative finance, AI applications, and computational methods. Published research in machine learning optimization and multi-objective algorithms.</>,
-        gpa: "Distinction",
+        description: <>Currently pursuing advanced master's studies in Applied Computational Science and Engineering with focus on quantitative finance, AI applications, and computational methods. Research includes The Financial Torque Hypothesis and development of open-source Prometheus project.</>,
+        gpa: "In Progress",
         relevant_courses: ["Machine Learning", "Quantitative Finance", "Computational Methods", "Data Science", "Applied Mathematics"],
       },
       {
@@ -207,8 +240,8 @@ const about = {
     skills: [
       {
         title: "AI & Machine Learning",
-        description: <>Expert in Python, TensorFlow, PyTorch, Scikit-learn, and advanced ML algorithms for quantitative finance, algorithmic trading, and predictive analytics. Published research in LSTM neural networks and computer vision applications.</>,
-        technologies: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "Keras", "Pandas", "NumPy", "Jupyter"],
+        description: <>Expert in building data-driven systems using ML, GenAI, and quantitative models that turn complex signals into measurable outcomes. Specialized in LSTM neural networks, equity-index prediction, and responsible AI with strong emphasis on model governance and business KPIs.</>,
+        technologies: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "GenAI", "LSTM", "Responsible AI", "Model Governance"],
         // optional: leave the array empty if you don't want to display images
         images: [],
       },
@@ -233,6 +266,13 @@ const about = {
         // optional: leave the array empty if you don't want to display images
         images: [],
       },
+      {
+        title: "Sustainability & Environmental Tech",
+        description: <>Leading development of sustainability-focused AI solutions including GAIA assistant for reducing environmental footprint of model training and energy decisions. Expertise in building systems that turn complex signals into measurable sustainability outcomes.</>,
+        technologies: ["Environmental AI", "Sustainability Metrics", "Energy Optimization", "Carbon Footprint Analysis", "Green Computing", "ESG Analytics"],
+        // optional: leave the array empty if you don't want to display images
+        images: [],
+      },
     ],
   },
   achievements: {
@@ -240,40 +280,40 @@ const about = {
     title: "Key Achievements & Recognition",
     accomplishments: [
       {
-        title: "AI Trading Algorithm Performance",
-        description: <>Developed machine learning algorithms achieving 23% annual returns with 1.8 Sharpe ratio, outperforming market benchmarks by 15%.</>,
-        category: "Quantitative Finance",
-        year: "2024",
-      },
-      {
-        title: "Fintech Startup Success",
-        description: <>Co-founded and scaled fintech platform serving 500+ SMEs, processing €2.5M in loans with 94% approval accuracy and securing €500K seed funding.</>,
-        category: "Entrepreneurship",
-        year: "2023",
-      },
-      {
-        title: "VC Analytics Platform Impact",
-        description: <>Created AI-powered investment analytics platform serving 12+ VC firms managing €500M+ AUM, improving portfolio IRR by 23% through data-driven insights.</>,
-        category: "Venture Capital",
-        year: "2023",
-      },
-      {
-        title: "EY AI Challenge 2025 Winner",
-        description: <>Achieved #1 place in category and #2 place overall in EY AI Challenge 2025 with Auto-Calendar-Agent project, demonstrating excellence in AI development and problem-solving.</>,
-        category: "Competition",
-        year: "2025",
-      },
-      {
-        title: "Academic Research Excellence",
-        description: <>Published research in multi-objective machine learning optimization and lexicographic approaches, with work spanning from financial prediction to computational methods.</>,
+        title: "The Financial Torque Hypothesis - First Author",
+        description: <>First author of research paper proposing a feature set that improves short-horizon equity-index prediction, published on SSRN with significant impact on quantitative finance research.</>,
         category: "Research",
         year: "2024-2025",
       },
       {
-        title: "Industry Recognition",
-        description: <>Featured in TechCrunch and Fintech Weekly, nominated for "Best SME Fintech Solution 2024" and invited speaker at major VC conferences.</>,
-        category: "Thought Leadership",
-        year: "2024",
+        title: "Eco AI.ly - GAIA Sustainability Assistant",
+        description: <>Leading development of GAIA, a sustainability-focused AI assistant that helps developers and companies reduce environmental footprint of model training and energy decisions.</>,
+        category: "Sustainability Tech",
+        year: "2023-Present",
+      },
+      {
+        title: "Open Source Prometheus Project",
+        description: <>Developing open-source project to advance research in quantitative finance and equity prediction algorithms, contributing to the broader ML research community.</>,
+        category: "Open Source",
+        year: "2024-Present",
+      },
+      {
+        title: "Deloitte & EY Portugal Internships",
+        description: <>Delivered ML/GenAI prototypes for international financial-services clients with strong emphasis on Responsible AI, model governance, and clear business KPIs.</>,
+        category: "Industry Experience",
+        year: "2023-2024",
+      },
+      {
+        title: "Imperial College London MSc",
+        description: <>Currently pursuing MSc in Applied Computational Science & Engineering at one of the world's leading institutions, focusing on quantitative finance and AI applications.</>,
+        category: "Education",
+        year: "2022-Present",
+      },
+      {
+        title: "IST Engineering Physics BSc",
+        description: <>Completed BSc in Engineering Physics & Technology at Instituto Superior Técnico, providing strong foundation in applied sciences and quantitative analysis.</>,
+        category: "Education",
+        year: "2019-2022",
       },
     ],
   },
