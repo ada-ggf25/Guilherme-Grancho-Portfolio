@@ -1,54 +1,209 @@
-/* :root {
-  /*
-  /* Example setup for custom colors */
-  /* Generate at: https://once-ui.com/customize */
-  /*
-  --scheme-brand-100: #08002f;
-  --scheme-brand-200:  #04025c;
-  --scheme-brand-300:  #1f398e;
-  --scheme-brand-400:  #3856ae;
-  --scheme-brand-500:  #5071cc;
-  --scheme-brand-600:  #6f94f1;
-  --scheme-brand-700:  #8db3ff;
-  --scheme-brand-800:  #b2dbff;
-  --scheme-brand-900:  #bfe8ff;
-  --scheme-brand-1000: #ccf6ff;
-  --scheme-brand-1100: #d2fcff;
-  --scheme-brand-1200: #d2fcff;
-  --scheme-brand-600-10: rgba(111,148,241,0.1);
-  --scheme-brand-600-30: rgba(111,148,241,0.3);
-  --scheme-brand-600-50: rgba(111,148,241,0.5);
+/* Custom enhancements for Guilherme Grancho's Portfolio */
 
-  --scheme-accent-100:  #030b10;
-  --scheme-accent-200:  #0d181d;
-  --scheme-accent-300:  #364248;
-  --scheme-accent-400:  #505d64;
-  --scheme-accent-500:  #69777e;
-  --scheme-accent-600:  #8a989f;
-  --scheme-accent-700:  #a8b7bf;
-  --scheme-accent-800:  #c8d7df;
-  --scheme-accent-900:  #d5e4ec;
-  --scheme-accent-1000: #e2f1f9;
-  --scheme-accent-1100: #e9f8ff;
-  --scheme-accent-1200: #efffff;
-  --scheme-accent-600-10: rgba(138,152,159,0.1);
-  --scheme-accent-600-30: rgba(138,152,159,0.3);
-  --scheme-accent-600-50: rgba(138,152,159,0.5);
+/* Professional color scheme for AI/Fintech focus */
+:root {
+  /* Enhanced brand colors for professional fintech/AI theme */
+  --scheme-brand-100: #0a0a23;
+  --scheme-brand-200: #1a1a3a;
+  --scheme-brand-300: #2a2a4a;
+  --scheme-brand-400: #3a3a5a;
+  --scheme-brand-500: #4a4a6a;
+  --scheme-brand-600: #5a5a7a;
+  --scheme-brand-700: #6a6a8a;
+  --scheme-brand-800: #7a7a9a;
+  --scheme-brand-900: #8a8aaa;
+  --scheme-brand-1000: #9a9aba;
+  --scheme-brand-1100: #aaaaca;
+  --scheme-brand-1200: #babada;
+  
+  /* Accent colors for highlights and CTAs */
+  --scheme-accent-100: #001122;
+  --scheme-accent-200: #002244;
+  --scheme-accent-300: #003366;
+  --scheme-accent-400: #004488;
+  --scheme-accent-500: #0055aa;
+  --scheme-accent-600: #0066cc;
+  --scheme-accent-700: #0077ee;
+  --scheme-accent-800: #0088ff;
+  --scheme-accent-900: #3399ff;
+  --scheme-accent-1000: #66aaff;
+  --scheme-accent-1100: #99bbff;
+  --scheme-accent-1200: #ccccff;
+}
 
-  --scheme-neutral-100:  #020b10;
-  --scheme-neutral-200:  #0b181d;
-  --scheme-neutral-300:  #344248;
-  --scheme-neutral-400:  #4f5d64;
-  --scheme-neutral-500:  #68777e;
-  --scheme-neutral-600:  #89989f;
-  --scheme-neutral-700:  #a7b7be;
-  --scheme-neutral-800:  #c7d7df;
-  --scheme-neutral-900:  #d4e4ec;
-  --scheme-neutral-1000: #e1f2f9;
-  --scheme-neutral-1100: #e7f8ff;
-  --scheme-neutral-1200: #eeffff;
-  --scheme-neutral-600-10: rgba(137,152,159,0.1);
-  --scheme-neutral-600-30: rgba(137,152,159,0.3);
-  --scheme-neutral-600-50: rgba(137,152,159,0.5);
-  /*
-}*/
+/* Enhanced animations and interactions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Professional typography enhancements */
+.professional-heading {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.professional-subheading {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+/* Enhanced button styles */
+.cta-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+/* Card enhancements */
+.project-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 136, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Professional gradient backgrounds */
+.hero-gradient {
+  background: linear-gradient(135deg, #0a0a23 0%, #1a1a3a 50%, #2a2a4a 100%);
+}
+
+.section-gradient {
+  background: linear-gradient(180deg, rgba(0, 102, 204, 0.05) 0%, transparent 100%);
+}
+
+/* Enhanced focus states for accessibility */
+.focus-enhanced:focus {
+  outline: 2px solid var(--scheme-accent-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Professional spacing and layout */
+.section-spacing {
+  padding: 80px 0;
+}
+
+.container-max-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+  .section-spacing {
+    padding: 60px 0;
+  }
+  
+  .container-max-width {
+    padding: 0 16px;
+  }
+}
+
+/* Loading animations */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Professional scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scheme-neutral-200);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scheme-accent-600);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scheme-accent-700);
+}

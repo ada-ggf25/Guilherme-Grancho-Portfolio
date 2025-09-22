@@ -58,15 +58,15 @@ const fonts = {
   code: code,
 };
 
-// default customization applied to the HTML in the main layout.tsx
+// Professional customization for AI/Fintech portfolio
 const style = {
   theme: "dark", // dark | light | system
-  neutral: "gray", // sand | gray | slate | custom
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  neutral: "slate", // sand | gray | slate | custom
+  brand: "blue", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  accent: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
+  border: "conservative", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
   scaling: "100" // 90 | 95 | 100 | 105 | 110
@@ -171,20 +171,30 @@ const mailchimp = {
   }
 };
 
-// default schema data
+// Professional schema data for Guilherme Grancho
 const schema = {
   logo: "",
-  type: "Organization",
-  name: "Once UI",
+  type: "Person",
+  name: "Guilherme Grancho",
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: "guilherme.grancho@gmail.com",
+  jobTitle: "AI Developer & Fintech Entrepreneur",
+  worksFor: {
+    "@type": "Organization",
+    "name": "Independent"
+  },
+  address: {
+    "@type": "PostalAddress",
+    "addressLocality": "Lisbon",
+    "addressCountry": "PT"
+  }
 };
 
-// social links
+// Professional social links
 const sameAs = {
-  threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  linkedin: "https://www.linkedin.com/in/guilhermegrancho/",
+  github: "https://github.com/guilhermegranchopro",
+  email: "mailto:guilherme.grancho@gmail.com",
 };
 
 export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };

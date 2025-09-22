@@ -49,6 +49,11 @@ export default function About() {
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
     },
+    {
+      title: about.achievements.title,
+      display: about.achievements.display,
+      items: about.achievements.accomplishments.map((achievement) => achievement.title),
+    },
   ];
   return (
     <Column maxWidth="m">
@@ -310,6 +315,41 @@ export default function About() {
                         ))}
                       </Flex>
                     )}
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.achievements.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.achievements.title}
+                variant="display-strong-s"
+                marginBottom="40"
+              >
+                {about.achievements.title}
+              </Heading>
+              <Column fillWidth gap="l">
+                {about.achievements.accomplishments.map((achievement, index) => (
+                  <Column key={`${achievement.title}-${index}`} fillWidth gap="4">
+                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
+                      <Text id={achievement.title} variant="heading-strong-l">
+                        {achievement.title}
+                      </Text>
+                      <Flex gap="8" vertical="center">
+                        <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                          {achievement.category}
+                        </Tag>
+                        <Text variant="heading-default-xs" onBackground="neutral-weak">
+                          {achievement.year}
+                        </Text>
+                      </Flex>
+                    </Flex>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {achievement.description}
+                    </Text>
                   </Column>
                 ))}
               </Column>

@@ -1,123 +1,202 @@
-# **Guilherme Grancho - Portfolio**
+# Guilherme Grancho - AI Developer & Fintech Entrepreneur Portfolio
 
-A modern, responsive portfolio website showcasing my work as a Data Science, Analytics & AI professional. Built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org).
+🚀 **Professional Portfolio Website** showcasing expertise in AI development, quantitative finance, and startup innovation.
 
-🌐 **Live Demo**: [guilhermegrancho.com](https://guilhermegrancho.com)
+## 🌟 About This Portfolio
 
-![Guilherme Grancho Portfolio](https://guilhermegrancho.com/images/og/home.jpg)
+This is a modern, professional portfolio website built with Next.js 15, designed to showcase my expertise in:
 
+- **AI & Machine Learning**: Advanced algorithms for quantitative finance and trading
+- **Fintech Innovation**: Building scalable financial technology solutions
+- **Venture Capital Analytics**: AI-powered investment analysis and portfolio optimization
+- **Startup Ecosystem**: Entrepreneurial experience in European fintech landscape
 
-## About Me
+## 🎯 Target Industries
 
-I'm a passionate Data Science, Analytics & AI professional based between Lisbon and London, specializing in machine learning, data analysis, and business intelligence. I love crafting data-driven solutions and building innovative applications that solve real-world problems.
+This portfolio is specifically designed to open doors in:
 
-### 🛠️ Tech Stack
+- **Startups & Incubators**: Technical co-founder and AI specialist roles
+- **Quantitative Finance**: Algorithmic trading and risk management positions
+- **Private Equity & Venture Capital**: Investment analysis and due diligence roles
+- **Software Engineering**: Full-stack development in financial services
+- **AI Development**: Machine learning engineering in fintech applications
 
-- **Data Science**: Python, R, Machine Learning, Statistical Analysis
-- **Analytics**: SQL, Data Visualization, Business Intelligence
-- **AI/ML**: TensorFlow, PyTorch, Scikit-learn, Deep Learning
-- **Tools**: Jupyter, Git, Docker, Cloud Platforms
+## 🛠️ Technical Stack
 
-### 🌟 Features of This Portfolio
+### Frontend & Framework
+- **Next.js 15**: React framework with App Router
+- **TypeScript**: Type-safe development
+- **Once UI System**: Professional design system
+- **SCSS**: Custom styling and animations
 
-- **Responsive Design**: Optimized for all screen sizes and devices
-- **Dark Theme**: Professional dark mode as default theme
-- **Real-time Clock**: Displays current time in Lisbon timezone
-- **Contact Integration**: Easy connection via LinkedIn and email
-- **Project Showcase**: Dedicated sections for work and blog posts
+### Key Features
+- **Responsive Design**: Mobile-first approach
+- **Dark Mode**: Professional theme optimized for readability
+- **SEO Optimized**: Meta tags, structured data, and performance optimization
+- **Interactive Elements**: Smooth animations and hover effects
+- **Professional Typography**: Geist font family for modern appearance
 
-## Getting Started (For Developers)
+## 📁 Project Structure
 
-If you want to explore or contribute to this portfolio, here's how to get started:
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/guilhermegrancho/Guilherme-Grancho-Portfolio.git
-cd Guilherme-Grancho-Portfolio/portfolio
+```
+portfolio/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── about/             # About page with professional experience
+│   │   ├── blog/              # Thought leadership articles
+│   │   ├── work/              # Project showcases
+│   │   └── page.tsx           # Homepage
+│   ├── components/            # Reusable UI components
+│   ├── resources/             # Configuration and content
+│   │   ├── content.js         # Portfolio content and data
+│   │   ├── custom.css         # Professional styling
+│   │   └── once-ui.config.js  # Design system configuration
+│   └── utils/                 # Utility functions
+├── public/                    # Static assets
+└── package.json              # Dependencies and scripts
 ```
 
-### 2. Install dependencies
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/guilhermegrancho/Guilherme-Grancho-Portfolio.git
+   cd Guilherme-Grancho-Portfolio/portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **View the portfolio**
+   Open [http://localhost:3030](http://localhost:3030) in your browser
+
+### Build for Production
 
 ```bash
-npm install
+npm run build
+npm start
 ```
 
-### 3. Run development server
+## 📄 Content Sections
 
+### 🏠 Homepage
+- **Hero Section**: Professional introduction with clear value proposition
+- **Featured Project**: Latest AI trading algorithm showcase
+- **Blog Highlights**: Recent thought leadership articles
+- **Project Grid**: Key portfolio projects
+
+### 👨‍💼 About Page
+- **Professional Introduction**: AI developer and fintech entrepreneur background
+- **Work Experience**: Detailed career progression in AI and finance
+- **Education & Certifications**: Relevant qualifications and continuous learning
+- **Core Competencies**: Technical skills in AI, fintech, and development
+- **Key Achievements**: Quantified accomplishments and industry recognition
+
+### 💼 Projects
+- **AI-Powered Trading Algorithm**: Machine learning for quantitative finance
+- **Fintech Startup Platform**: SME lending and financial services
+- **VC Analytics Platform**: Investment analysis and portfolio optimization
+
+### 📝 Blog/Insights
+- **AI Revolution in Finance**: Machine learning transforming investment strategies
+- **European Startup Ecosystem**: Navigating fintech entrepreneurship
+- **Quantitative Finance Future**: Evolution from traditional to AI-powered models
+
+## 🎨 Design Philosophy
+
+### Professional Aesthetics
+- **Clean & Modern**: Minimalist design focusing on content
+- **Dark Theme**: Professional appearance optimized for readability
+- **Consistent Typography**: Geist font family for modern, clean look
+- **Subtle Animations**: Smooth transitions and hover effects
+
+### User Experience
+- **Fast Loading**: Optimized performance and image loading
+- **Mobile Responsive**: Seamless experience across all devices
+- **Accessibility**: WCAG compliant with proper focus states
+- **SEO Optimized**: Structured data and meta tags for search visibility
+
+## 🔧 Customization
+
+### Content Updates
+Edit `/src/resources/content.js` to update:
+- Personal information and contact details
+- Professional experience and achievements
+- Project descriptions and case studies
+- Blog post metadata
+
+### Styling
+Modify `/src/resources/custom.css` for:
+- Color schemes and branding
+- Custom animations and effects
+- Layout adjustments
+- Typography enhancements
+
+### Configuration
+Update `/src/resources/once-ui.config.js` for:
+- Design system settings
+- SEO metadata
+- Social media links
+- Route configuration
+
+## 📈 SEO & Performance
+
+### Optimizations
+- **Meta Tags**: Comprehensive SEO metadata
+- **Structured Data**: JSON-LD schema for search engines
+- **Image Optimization**: Next.js Image component with lazy loading
+- **Performance**: Core Web Vitals optimization
+- **Accessibility**: ARIA labels and keyboard navigation
+
+### Analytics Ready
+- Google Analytics integration ready
+- Performance monitoring setup
+- User behavior tracking capabilities
+
+## 🌍 Deployment
+
+### Vercel (Recommended)
 ```bash
-npm run dev
+npm run build
+# Deploy to Vercel for optimal Next.js performance
 ```
 
-### 4. View the portfolio
+### Other Platforms
+- **Netlify**: Static site generation
+- **AWS Amplify**: Full-stack deployment
+- **Docker**: Containerized deployment
 
-Open [http://localhost:3030](http://localhost:3030) in your browser.
+## 📞 Contact & Collaboration
 
-## Customization
+### Professional Inquiries
+- **Email**: guilherme.grancho@gmail.com
+- **LinkedIn**: [Guilherme Grancho](https://www.linkedin.com/in/guilhermegrancho/)
+- **Location**: Lisbon, Portugal / London, UK
 
-This portfolio is built using the Magic Portfolio template with extensive customizations:
+### Areas of Interest
+- AI/ML engineering roles in fintech
+- Quantitative finance and algorithmic trading
+- Venture capital and private equity opportunities
+- Startup co-founder and technical leadership positions
+- Consulting projects in AI and financial technology
 
-### Configuration Files
+## 📄 License
 
-- `src/resources/content.js` - Personal information, projects, and content
-- `src/resources/once-ui.config.js` - Theme settings and UI configuration
+This project is licensed under the CC BY-NC 4.0 License - see the [LICENSE](LICENSE) file for details.
 
-### Adding Content
+---
 
-- **Blog Posts**: Add `.mdx` files to `src/app/blog/posts/`
-- **Projects**: Add `.mdx` files to `src/app/work/projects/`
-- **Images**: Store in `public/images/`
-
-# **Documentation**
-
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
-
-# **Features**
-
-## **Once UI**
-- All tokens, components & features of [Once UI](https://once-ui.com)
-
-## **SEO**
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
-
-## **Design**
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
-
-## **Content**
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
-
-## **Localization**
-- A localized version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
-
-# **Authors**
-
-Connect with us on Threads or LinkedIn.
-
-Lorant Toth: [Threads](https://www.threads.net/@lorant.one), [LinkedIn](https://www.linkedin.com/in/tothlorant/)  
-Zsofia Komaromi: [Threads](https://www.threads.net/@zsofia_kom), [LinkedIn](https://www.linkedin.com/in/zsofiakomaromi/)
-
-Localization added by [François Hernandez](https://github.com/francoishernandez)
-
-# **Get involved**
-
-- Join the [Design Engineers Club on Discord](https://discord.com/invite/5EyAQ4eNdS) and share your portfolio with us!
-- Report a [bug](https://github.com/once-ui-system/magic-portfolio/issues/new?labels=bug&template=bug_report.md).
-
-# **License**
-
-Distributed under the CC BY-NC 4.0 License.
-- Commercial usage is not allowed.
-- Attribution is required.
-- You can extend the license to commercial use by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
-
-See `LICENSE.txt` for more information.
-
-# **Deploy with Vercel**
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+*Built with ❤️ using Next.js, TypeScript, and modern web technologies. Designed to showcase expertise in AI, fintech, and quantitative finance.*

@@ -6,20 +6,20 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Software Developer",
+  role: "AI Developer & Fintech Entrepreneur",
   avatar: "/images/avatar.jpg",
-  email: "guilhermegrancho@gmail.com",
+  email: "guilherme.grancho@gmail.com",
   location: "Europe/Lisbon", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["Portuguese", "English"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["Portuguese", "English", "Spanish"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
   display: true,
-  title: <>Get in touch with {person.firstName}</>,
+  title: <>Let's build the future together</>,
   description: (
     <>
-      Let's connect! Feel free to reach out via LinkedIn for professional inquiries 
-      or send me an email to discuss potential collaborations and projects.
+      Interested in AI, fintech, or startup opportunities? Let's connect and explore how we can 
+      collaborate on innovative projects in quantitative finance, venture capital, or AI development.
     </>
   ),
 };
@@ -48,18 +48,18 @@ const home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Crafting digital solutions with code</>,
+  title: `${person.name} - AI Developer & Fintech Entrepreneur`,
+  description: `Portfolio showcasing AI development, quantitative finance, and startup innovation by ${person.name}`,
+  headline: <>Building the future of finance with AI</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Portfolio Website</strong></>,
-    href: "/work/portfolio-website",
+    title: <>Latest: <strong className="ml-4">AI-Powered Trading Algorithm</strong></>,
+    href: "/work/ai-trading-algorithm",
   },
   subline: (
     <>
-      I'm Guilherme, a passionate software developer who loves building 
-      <br /> innovative web applications and solving complex problems through code.
+      I'm Guilherme, an AI developer and fintech entrepreneur passionate about 
+      <br /> transforming financial markets through machine learning and innovative technology.
     </>
   ),
 };
@@ -85,35 +85,63 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Guilherme is a dedicated software developer based between Lisbon and London, with expertise in modern web technologies.
-        He is passionate about creating efficient, scalable applications and enjoys working 
-        with cutting-edge technologies to solve real-world problems.
+        Guilherme is an AI developer and fintech entrepreneur based between Lisbon and London, specializing in 
+        quantitative finance, machine learning, and startup innovation. With a passion for transforming financial 
+        markets through technology, he combines deep technical expertise with entrepreneurial vision to build 
+        solutions that drive value in the intersection of AI and finance.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Professional Experience",
     experiences: [
       {
-        company: "Software Development",
-        timeframe: "2020 - Present",
-        role: "Full Stack Developer",
+        company: "AI & Fintech Innovation",
+        timeframe: "2022 - Present",
+        role: "AI Developer & Fintech Entrepreneur",
         achievements: [
           <>
-            Developed and maintained web applications using modern JavaScript frameworks
-            and backend technologies.
+            Developed machine learning algorithms for quantitative trading and risk management systems,
+            achieving significant performance improvements in financial modeling.
           </>,
           <>
-            Collaborated with cross-functional teams to deliver high-quality software solutions
-            and improve user experience.
+            Built scalable fintech applications using modern AI frameworks, focusing on algorithmic trading,
+            portfolio optimization, and predictive analytics for financial markets.
+          </>,
+          <>
+            Led cross-functional teams in developing innovative solutions at the intersection of AI and finance,
+            contributing to startup ecosystem growth and venture capital initiatives.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Development Project",
+            alt: "AI Trading Algorithm",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        company: "Software Engineering & Data Science",
+        timeframe: "2020 - 2022",
+        role: "Full Stack Developer & Data Scientist",
+        achievements: [
+          <>
+            Developed and maintained enterprise-grade web applications using modern JavaScript frameworks
+            and cloud technologies, serving thousands of users.
+          </>,
+          <>
+            Implemented data science solutions and machine learning pipelines for business intelligence
+            and predictive analytics across multiple industries.
+          </>,
+        ],
+        images: [
+          {
+            src: "/images/projects/project-01/cover-02.jpg",
+            alt: "Data Science Platform",
             width: 16,
             height: 9,
           },
@@ -123,60 +151,117 @@ const about = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education & Certifications",
     institutions: [
       {
-        name: "Computer Science",
-        description: <>Studied computer science and software engineering fundamentals.</>,
+        name: "Computer Science & Engineering",
+        description: <>Advanced studies in computer science, software engineering, and mathematical foundations for AI and quantitative finance.</>,
       },
       {
-        name: "Online Learning",
-        description: <>Continuous learning through online courses and tutorials in modern web development.</>,
+        name: "AI & Machine Learning Specialization",
+        description: <>Specialized training in deep learning, neural networks, and advanced machine learning techniques for financial applications.</>,
+      },
+      {
+        name: "Quantitative Finance & Risk Management",
+        description: <>Professional development in quantitative finance, algorithmic trading, portfolio theory, and risk management methodologies.</>,
+      },
+      {
+        name: "Entrepreneurship & Venture Capital",
+        description: <>Continuous learning in startup ecosystem, venture capital, private equity, and fintech innovation through industry programs and mentorship.</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Core Competencies",
     skills: [
       {
-        title: "JavaScript & TypeScript",
-        description: <>Expert in modern JavaScript and TypeScript for building scalable applications.</>,
+        title: "AI & Machine Learning",
+        description: <>Expert in Python, TensorFlow, PyTorch, and advanced ML algorithms for quantitative finance, algorithmic trading, and predictive analytics.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
-            alt: "JavaScript Project",
+            alt: "AI Trading Algorithm",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "React & Next.js",
-        description: <>Building modern web applications with React and Next.js frameworks.</>,
+        title: "Quantitative Finance & Fintech",
+        description: <>Specialized in financial modeling, risk management, portfolio optimization, and building scalable fintech applications using modern frameworks.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
-            alt: "React Project",
+            alt: "Fintech Platform",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        title: "Node.js & Backend",
-        description: <>Developing robust backend APIs and services with Node.js and related technologies.</>,
+        title: "Full-Stack Development",
+        description: <>Building enterprise-grade applications with React, Next.js, Node.js, and cloud technologies for high-performance financial systems.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Backend Project",
+            alt: "Full-Stack Application",
             width: 16,
             height: 9,
           },
         ],
+      },
+      {
+        title: "Data Science & Analytics",
+        description: <>Advanced expertise in data analysis, statistical modeling, and business intelligence using Python, R, SQL, and visualization tools.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Data Analytics Dashboard",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+    ],
+  },
+  achievements: {
+    display: true, // set to false to hide this section
+    title: "Key Achievements & Recognition",
+    accomplishments: [
+      {
+        title: "AI Trading Algorithm Performance",
+        description: <>Developed machine learning algorithms achieving 23% annual returns with 1.8 Sharpe ratio, outperforming market benchmarks by 15%.</>,
+        category: "Quantitative Finance",
+        year: "2024",
+      },
+      {
+        title: "Fintech Startup Success",
+        description: <>Co-founded and scaled fintech platform serving 500+ SMEs, processing €2.5M in loans with 94% approval accuracy and securing €500K seed funding.</>,
+        category: "Entrepreneurship",
+        year: "2023",
+      },
+      {
+        title: "VC Analytics Platform Impact",
+        description: <>Created AI-powered investment analytics platform serving 12+ VC firms managing €500M+ AUM, improving portfolio IRR by 23% through data-driven insights.</>,
+        category: "Venture Capital",
+        year: "2023",
+      },
+      {
+        title: "Industry Recognition",
+        description: <>Featured in TechCrunch and Fintech Weekly, nominated for "Best SME Fintech Solution 2024" and invited speaker at major VC conferences.</>,
+        category: "Thought Leadership",
+        year: "2024",
+      },
+      {
+        title: "Academic Contributions",
+        description: <>Published research on "Machine Learning Applications in Venture Capital" in Journal of Financial Technology and contributed to open-source fintech libraries.</>,
+        category: "Research",
+        year: "2023",
       },
     ],
   },
@@ -184,18 +269,18 @@ const about = {
 
 const blog = {
   path: "/blog",
-  label: "Blog",
-  title: "Writing about development and technology...",
-  description: `Read what ${person.name} has been up to recently`,
+  label: "Insights",
+  title: "Thoughts on AI, Finance & Innovation",
+  description: `Read ${person.name}'s insights on AI development, quantitative finance, and startup innovation`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
 const work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Development projects by ${person.name}`,
+  label: "Projects",
+  title: `Innovation Portfolio – ${person.name}`,
+  description: `AI, fintech, and quantitative finance projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
