@@ -61,17 +61,18 @@ export default function About() {
           >
             <Avatar src={person.avatar} size="xl" />
             <Flex 
-              style={{ gap: "8px" }}
+              style={{ gap: "8px", marginTop: "16px" }}
               vertical="center"
             >
-              <Icon onBackground="accent-weak" name="globe" />
+              <Icon onBackground="accent-weak" name="location" />
               {person.location}
             </Flex>
             {person.languages.length > 0 && (
               <Flex 
                 style={{ 
                   flexWrap: "wrap",
-                  gap: "8px" 
+                  gap: "8px",
+                  marginTop: "20px"
                 }}
               >
                 {person.languages.map((language, index) => (

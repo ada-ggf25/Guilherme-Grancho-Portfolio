@@ -9,8 +9,8 @@ const person = {
   role: "AI Developer & Fintech Entrepreneur",
   avatar: "/images/avatar.jpg",
   email: "guilhermegranchopro@gmail.com",
-  location: "Europe/Lisbon", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["Portuguese", "English", "Spanish"], // optional: Leave the array empty if you don't want to display languages
+  location: "London - Lisbon", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Portuguese", "English", "Spanish", "French"], // optional: Leave the array empty if you don't want to display languages
   phone: "+351 912 345 678", // Add phone number
   website: "https://guilhermegrancho.com", // Add personal website
   summary: "AI Developer and Fintech Entrepreneur with expertise in machine learning, quantitative finance, and startup innovation. Published researcher in AI applications for financial markets and oceanographic mapping.",
