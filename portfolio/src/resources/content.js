@@ -28,14 +28,14 @@ const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/guilhermegranchopro",
-  },
-  {
     name: "LinkedIn",
     icon: "linkedin",
     link: "https://www.linkedin.com/in/guilhermegrancho/",
+  },
+  {
+    name: "GitHub",
+    icon: "github",
+    link: "https://github.com/guilhermegranchopro",
   },
   {
     name: "Google Scholar",
