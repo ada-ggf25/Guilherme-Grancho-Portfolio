@@ -127,14 +127,7 @@ const about = {
             improving portfolio IRR by 23% through data-driven insights and predictive modeling.
           </>,
         ],
-        images: [
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "AI Trading Algorithm",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
         company: "Imperial College London",
@@ -159,14 +152,7 @@ const about = {
             working on projects spanning from financial modeling to environmental AI.
           </>,
         ],
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Research at Imperial College",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
         company: "Tech Startup Ecosystem",
