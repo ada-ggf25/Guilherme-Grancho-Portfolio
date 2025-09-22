@@ -38,6 +38,11 @@ const social = [
     link: "https://www.linkedin.com/in/guilhermegrancho/",
   },
   {
+    name: "Google Scholar",
+    icon: "scholar",
+    link: "https://scholar.google.com/citations?user=lHeQn9gAAAAJ&hl=en&authuser=3",
+  },
+  {
     name: "Email",
     icon: "email",
     link: `mailto:${person.email}`,
