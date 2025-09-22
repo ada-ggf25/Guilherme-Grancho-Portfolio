@@ -64,7 +64,7 @@ export default function About() {
               style={{ gap: "8px", marginTop: "16px" }}
               vertical="center"
             >
-              <Icon onBackground="accent-weak" name="location" />
+              <Text style={{ fontSize: "16px" }}>📍</Text>
               {person.location}
             </Flex>
             {person.languages.length > 0 && (
@@ -132,6 +132,9 @@ export default function About() {
                     style={{ 
                       fontWeight: "500",
                       color: "var(--color-neutral-strong)",
+                      lineHeight: "1",
+                      display: "flex",
+                      alignItems: "center",
                     }}
                   >
                     Talk to me
