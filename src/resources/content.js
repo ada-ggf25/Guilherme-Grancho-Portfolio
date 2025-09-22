@@ -210,14 +210,7 @@ const about = {
         description: <>Expert in Python, TensorFlow, PyTorch, Scikit-learn, and advanced ML algorithms for quantitative finance, algorithmic trading, and predictive analytics. Published research in LSTM neural networks and computer vision applications.</>,
         technologies: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "Keras", "Pandas", "NumPy", "Jupyter"],
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "AI Trading Algorithm",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
         title: "Quantitative Finance & Fintech",
