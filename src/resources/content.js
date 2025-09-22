@@ -54,7 +54,7 @@ const social = [
 
 const home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "",
   label: "Home",
   title: `${person.name} - AI Developer & Fintech Entrepreneur`,
   description: `Portfolio showcasing AI development, quantitative finance, and startup innovation by ${person.name}`,
@@ -224,42 +224,21 @@ const about = {
         description: <>Specialized in financial modeling, risk management, portfolio optimization, algorithmic trading, and building scalable fintech applications. Experience with derivatives pricing, Monte Carlo simulations, and regulatory compliance.</>,
         technologies: ["QuantLib", "Zipline", "Backtrader", "Riskfolio-Lib", "Financial Modeling", "Risk Management", "Portfolio Optimization"],
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Fintech Platform",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
         title: "Full-Stack Development",
         description: <>Proficient in modern web technologies including React, Next.js, Node.js, TypeScript, and cloud platforms (AWS, Vercel) for building scalable applications and APIs.</>,
         technologies: ["React", "Next.js", "Node.js", "TypeScript", "JavaScript", "AWS", "Vercel", "PostgreSQL", "MongoDB"],
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Full-Stack Application",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
         title: "Data Science & Analytics",
         description: <>Advanced expertise in data analysis, statistical modeling, business intelligence, and data visualization using Python, R, and modern analytics tools. Experience with big data processing and real-time analytics.</>,
         technologies: ["Python", "R", "SQL", "Tableau", "Power BI", "Apache Spark", "Hadoop", "Statistical Analysis", "Data Visualization"],
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Data Analytics Dashboard",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
     ],
   },
