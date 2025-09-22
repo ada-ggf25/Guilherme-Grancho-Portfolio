@@ -12,7 +12,7 @@ import {
   Meta,
   Schema
 } from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
+import { baseURL, about, person, social, publications } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
@@ -53,6 +53,11 @@ export default function About() {
       title: about.achievements.title,
       display: about.achievements.display,
       items: about.achievements.accomplishments.map((achievement) => achievement.title),
+    },
+    {
+      title: publications.title,
+      display: publications.display,
+      items: publications.papers.map((paper) => paper.title),
     },
   ];
   return (
@@ -349,6 +354,69 @@ export default function About() {
                     </Flex>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {achievement.description}
+                    </Text>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {/* Publications Section */}
+          {publications.display && (
+            <>
+              <HeadingLink
+                as="h2"
+                id="publications"
+                marginTop="48"
+                marginBottom="24"
+              >
+                {publications.title}
+              </HeadingLink>
+              <Text
+                variant="body-default-m"
+                onBackground="neutral-weak"
+                marginBottom="32"
+              >
+                {publications.description}
+              </Text>
+              <Column gap="24">
+                {publications.papers.map((paper, index) => (
+                  <Column key={index} gap="8">
+                    <Flex
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="flex-start"
+                      gap="16"
+                    >
+                      <Column flex="1" gap="8">
+                        <Heading variant="heading-default-s">
+                          <a
+                            href={paper.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: "none", color: "inherit" }}
+                          >
+                            {paper.title}
+                          </a>
+                        </Heading>
+                        <Text variant="body-default-s" onBackground="neutral-weak">
+                          {paper.authors}
+                        </Text>
+                        <Flex direction="row" gap="16" alignItems="center">
+                          <Tag variant="neutral" size="s">
+                            {paper.venue}
+                          </Tag>
+                          <Tag variant="brand" size="s">
+                            {paper.category}
+                          </Tag>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {paper.year}
+                          </Text>
+                        </Flex>
+                      </Column>
+                    </Flex>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {paper.description}
                     </Text>
                   </Column>
                 ))}

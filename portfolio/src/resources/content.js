@@ -151,23 +151,23 @@ const about = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Education & Certifications",
+    title: "Education & Academic Background",
     institutions: [
       {
-        name: "Computer Science & Engineering",
-        description: <>Advanced studies in computer science, software engineering, and mathematical foundations for AI and quantitative finance.</>,
+        name: "Imperial College London",
+        description: <>Advanced studies in Physics, Computer Science, Mathematics, and Data Science with focus on quantitative finance and AI applications. Published research in machine learning and financial modeling.</>,
       },
       {
-        name: "AI & Machine Learning Specialization",
-        description: <>Specialized training in deep learning, neural networks, and advanced machine learning techniques for financial applications.</>,
+        name: "AI & Machine Learning Research",
+        description: <>Published research in machine learning optimization, neural networks, and AI applications in financial markets and oceanographic mapping. Co-authored papers in top-tier venues.</>,
       },
       {
         name: "Quantitative Finance & Risk Management",
-        description: <>Professional development in quantitative finance, algorithmic trading, portfolio theory, and risk management methodologies.</>,
+        description: <>Advanced coursework in financial modeling, derivatives pricing, portfolio optimization, and risk assessment methodologies with published research on LSTM neural networks for stock prediction.</>,
       },
       {
-        name: "Entrepreneurship & Venture Capital",
-        description: <>Continuous learning in startup ecosystem, venture capital, private equity, and fintech innovation through industry programs and mentorship.</>,
+        name: "Computer Vision & Deep Learning",
+        description: <>Specialized research in convolutional neural networks and their applications in scientific domains including oceanographic mapping and multi-objective optimization.</>,
       },
     ],
   },
@@ -229,6 +229,40 @@ const about = {
       },
     ],
   },
+  publications: {
+    display: true, // set to false to hide this section
+    title: "Research Publications",
+    description: <>Academic research in AI, machine learning, and quantitative finance published in peer-reviewed venues and conferences.</>,
+    papers: [
+      {
+        title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
+        authors: "G Grancho, V Pereira",
+        venue: "SSRN",
+        year: "2025",
+        description: <>Novel approach to short-term stock price prediction using LSTM neural networks, introducing the Financial Torque Hypothesis for market movement analysis.</>,
+        link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
+        category: "Quantitative Finance",
+      },
+      {
+        title: "Mapping The Layers of The Ocean Floor With a Convolutional Neural Network",
+        authors: "GGD Fernandes, VSPP Oliveira, JPI Astolfo",
+        venue: "arXiv preprint",
+        year: "2024",
+        description: <>Advanced deep learning application for oceanographic mapping using convolutional neural networks to analyze and classify ocean floor layers.</>,
+        link: "https://arxiv.org/abs/2412.05329",
+        category: "Computer Vision",
+      },
+      {
+        title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
+        authors: "GGD Fernandes, TH Medeiros",
+        venue: "Encontro Nacional de Inteligência Artificial e Computacional (ENIAC)",
+        year: "2024",
+        description: <>Research on optimizing multi-objective machine learning algorithms using lexicographic approaches with novel tolerance threshold determination methods.</>,
+        link: "https://scholar.google.com/citations?user=lHeQn9gAAAAJ&hl=en",
+        category: "Machine Learning",
+      },
+    ],
+  },
   achievements: {
     display: true, // set to false to hide this section
     title: "Key Achievements & Recognition",
@@ -252,16 +286,16 @@ const about = {
         year: "2023",
       },
       {
+        title: "Academic Research Excellence",
+        description: <>Published 3 peer-reviewed papers in AI, machine learning, and quantitative finance, with research spanning from financial prediction to oceanographic mapping.</>,
+        category: "Research",
+        year: "2024-2025",
+      },
+      {
         title: "Industry Recognition",
         description: <>Featured in TechCrunch and Fintech Weekly, nominated for "Best SME Fintech Solution 2024" and invited speaker at major VC conferences.</>,
         category: "Thought Leadership",
         year: "2024",
-      },
-      {
-        title: "Academic Contributions",
-        description: <>Published research on "Machine Learning Applications in Venture Capital" in Journal of Financial Technology and contributed to open-source fintech libraries.</>,
-        category: "Research",
-        year: "2023",
       },
     ],
   },
@@ -280,4 +314,4 @@ const work = {
 
 // Gallery section removed - no longer needed
 
-export { person, social, newsletter, home, about, work };
+export { person, social, newsletter, home, about, work, publications };
