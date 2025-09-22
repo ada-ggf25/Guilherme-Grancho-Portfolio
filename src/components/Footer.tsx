@@ -11,7 +11,6 @@ export const Footer = () => {
       fillWidth
       padding="8"
       horizontal="center"
-      mobileDirection="column"
     >
       <Flex
         className={styles.mobile}

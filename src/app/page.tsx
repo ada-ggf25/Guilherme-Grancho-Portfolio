@@ -478,9 +478,11 @@ export default function About() {
                   <Column key={index} style={{ gap: "12px", marginBottom: "24px" }}>
                     <Flex
                       direction="row"
-                      justifyContent="space-between"
-                      alignItems="flex-start"
-                      style={{ gap: "16px" }}
+                      style={{ 
+                        gap: "16px",
+                        justifyContent: "space-between",
+                        alignItems: "flex-start"
+                      }}
                     >
                       <Column 
                         style={{ 
@@ -504,7 +506,6 @@ export default function About() {
                         <Flex 
                           direction="row" 
                           style={{ gap: "16px" }}
-                          alignItems="center"
                         >
                           <Tag variant="neutral" size="s">
                             {paper.venue}
@@ -545,8 +546,6 @@ export default function About() {
                   <Column key={index} style={{ gap: "12px", marginBottom: "24px" }}>
                     <Flex
                       direction="row"
-                      justifyContent="space-between"
-                      alignItems="flex-start"
                       style={{ gap: "16px" }}
                     >
                       <Column 
@@ -564,7 +563,6 @@ export default function About() {
                         <Flex 
                           direction="row" 
                           style={{ gap: "16px" }}
-                          alignItems="center"
                         >
                           <Tag variant="neutral" size="s">
                             {cert.date}
