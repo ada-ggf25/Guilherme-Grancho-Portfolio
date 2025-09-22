@@ -173,14 +173,7 @@ const about = {
             costs by 40% while improving system performance and reliability.
           </>,
         ],
-        images: [
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Software Engineering Projects",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
     ],
   },

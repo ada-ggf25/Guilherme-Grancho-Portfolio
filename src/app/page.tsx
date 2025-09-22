@@ -246,7 +246,7 @@ export default function About() {
               fillWidth 
               style={{
                 gap: "var(--static-space-m)",
-                marginBottom: "var(--static-space-xl)",
+                marginBottom: "48px",
               }}
             >
               {about.intro.description}
@@ -259,7 +259,7 @@ export default function About() {
                 as="h2" 
                 id={about.work.title} 
                 variant="display-strong-s" 
-                style={{ marginBottom: "var(--static-space-m)" }}
+                style={{ marginTop: "64px", marginBottom: "32px" }}
               >
                 {about.work.title}
               </Heading>
@@ -267,11 +267,11 @@ export default function About() {
                 fillWidth 
                 style={{
                   gap: "var(--static-space-l)",
-                  marginBottom: "40px",
+                  marginBottom: "64px",
                 }}
               >
                 {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
+                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth style={{ marginBottom: "32px" }}>
                     <Flex 
                       fillWidth 
                       horizontal="space-between" 
@@ -294,7 +294,7 @@ export default function About() {
                     </Text>
                     <Column 
                       as="ul" 
-                      style={{ gap: "16px" }}
+                      style={{ gap: "20px", marginTop: "16px" }}
                     >
                       {experience.achievements.map((achievement: JSX.Element, index: number) => (
                         <Text
@@ -354,7 +354,7 @@ export default function About() {
                 as="h2" 
                 id={about.studies.title} 
                 variant="display-strong-s" 
-                style={{ marginBottom: "var(--static-space-m)" }}
+                style={{ marginTop: "64px", marginBottom: "32px" }}
               >
                 {about.studies.title}
               </Heading>
@@ -362,14 +362,14 @@ export default function About() {
                 fillWidth 
                 style={{
                   gap: "var(--static-space-l)",
-                  marginBottom: "40px",
+                  marginBottom: "64px",
                 }}
               >
                 {about.studies.institutions.map((institution, index) => (
                   <Column 
                     key={`${institution.name}-${index}`} 
                     fillWidth 
-                    style={{ gap: "4px" }}
+                    style={{ gap: "8px", marginBottom: "24px" }}
                   >
                     <Text id={institution.name} variant="heading-strong-l">
                       {institution.name}
@@ -389,19 +389,19 @@ export default function About() {
                 as="h2"
                 id={about.technical.title}
                 variant="display-strong-s"
-                style={{ marginBottom: "40px" }}
+                style={{ marginTop: "64px", marginBottom: "32px" }}
               >
                 {about.technical.title}
               </Heading>
               <Column 
                 fillWidth 
-                style={{ gap: "var(--static-space-l)" }}
+                style={{ gap: "var(--static-space-l)", marginBottom: "64px" }}
               >
                 {about.technical.skills.map((skill, index) => (
                   <Column 
                     key={`${skill}-${index}`} 
                     fillWidth 
-                    style={{ gap: "4px" }}
+                    style={{ gap: "8px", marginBottom: "32px" }}
                   >
                     <Text variant="heading-strong-l">{skill.title}</Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
@@ -454,19 +454,19 @@ export default function About() {
                 as="h2"
                 id={about.achievements.title}
                 variant="display-strong-s"
-                style={{ marginBottom: "40px" }}
+                style={{ marginTop: "64px", marginBottom: "32px" }}
               >
                 {about.achievements.title}
               </Heading>
               <Column 
                 fillWidth 
-                style={{ gap: "var(--static-space-l)" }}
+                style={{ gap: "var(--static-space-l)", marginBottom: "64px" }}
               >
                 {about.achievements.accomplishments.map((achievement, index) => (
                   <Column 
                     key={`${achievement.title}-${index}`} 
                     fillWidth 
-                    style={{ gap: "4px" }}
+                    style={{ gap: "8px", marginBottom: "24px" }}
                   >
                     <Flex 
                       fillWidth 
@@ -505,8 +505,8 @@ export default function About() {
                 as="h2"
                 id="publications"
                 style={{
-                  marginTop: "48px",
-                  marginBottom: "24px",
+                  marginTop: "80px",
+                  marginBottom: "32px",
                 }}
               >
                 {publications.title}
@@ -514,13 +514,13 @@ export default function About() {
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                style={{ marginBottom: "32px" }}
+                style={{ marginBottom: "40px" }}
               >
                 {publications.description}
               </Text>
-              <Column style={{ gap: "24px" }}>
+              <Column style={{ gap: "32px", marginBottom: "64px" }}>
                 {publications.papers.map((paper, index) => (
-                  <Column key={index} style={{ gap: "8px" }}>
+                  <Column key={index} style={{ gap: "12px", marginBottom: "24px" }}>
                     <Flex
                       direction="row"
                       justifyContent="space-between"
@@ -579,15 +579,15 @@ export default function About() {
                 as="h2"
                 id="certifications"
                 style={{
-                  marginTop: "48px",
-                  marginBottom: "24px",
+                  marginTop: "80px",
+                  marginBottom: "32px",
                 }}
               >
                 {certifications.title}
               </HeadingLink>
-              <Column style={{ gap: "24px" }}>
+              <Column style={{ gap: "32px", marginBottom: "64px" }}>
                 {certifications.certifications.map((cert, index) => (
-                  <Column key={index} style={{ gap: "8px" }}>
+                  <Column key={index} style={{ gap: "12px", marginBottom: "24px" }}>
                     <Flex
                       direction="row"
                       justifyContent="space-between"
@@ -636,8 +636,8 @@ export default function About() {
                 as="h2"
                 id="github-achievements"
                 style={{
-                  marginTop: "48px",
-                  marginBottom: "24px",
+                  marginTop: "80px",
+                  marginBottom: "32px",
                 }}
               >
                 {github.title}
@@ -645,13 +645,13 @@ export default function About() {
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                style={{ marginBottom: "32px" }}
+                style={{ marginBottom: "40px" }}
               >
                 {github.description}
               </Text>
-              <Column style={{ gap: "24px" }}>
+              <Column style={{ gap: "32px", marginBottom: "64px" }}>
                 {github.achievements.map((achievement, index) => (
-                  <Column key={index} style={{ gap: "8px" }}>
+                  <Column key={index} style={{ gap: "12px", marginBottom: "24px" }}>
                     <Flex
                       direction="row"
                       justifyContent="flex-start"
