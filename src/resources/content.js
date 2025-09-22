@@ -326,43 +326,44 @@ const about = {
       },
     ],
   },
-  github: {
-    display: true, // set to false to hide this section
-    title: "GitHub Achievements & Recognition",
-    description: <>Recognition and achievements earned through active contribution to open source projects and GitHub community.</>,
-    achievements: [
-      {
-        name: "Galaxy Brain",
-        description: <>Earned through significant contributions to machine learning and AI projects, demonstrating deep technical expertise.</>,
-        icon: "🧠",
-      },
-      {
-        name: "Pair Extraordinaire",
-        description: <>Recognized for exceptional collaboration and pair programming contributions to open source projects.</>,
-        icon: "👥",
-      },
-      {
-        name: "Public Sponsor",
-        description: <>Active supporter of open source projects and developer community initiatives.</>,
-        icon: "💖",
-      },
-      {
-        name: "Pull Shark x2",
-        description: <>Demonstrated excellence in code contributions with multiple high-quality pull requests.</>,
-        icon: "🦈",
-      },
-      {
-        name: "Quickdraw",
-        description: <>Fast and efficient problem-solving abilities recognized through rapid issue resolution.</>,
-        icon: "⚡",
-      },
-      {
-        name: "YOLO",
-        description: <>Bold and innovative approach to tackling challenging technical problems.</>,
-        icon: "🚀",
-      },
-    ],
-  },
+};
+
+const github = {
+  display: true, // set to false to hide this section
+  title: "GitHub Achievements & Recognition",
+  description: <>Recognition and achievements earned through active contribution to open source projects and GitHub community.</>,
+  achievements: [
+    {
+      name: "Galaxy Brain",
+      description: <>Earned through significant contributions to machine learning and AI projects, demonstrating deep technical expertise.</>,
+      icon: "🧠",
+    },
+    {
+      name: "Pair Extraordinaire",
+      description: <>Recognized for exceptional collaboration and pair programming contributions to open source projects.</>,
+      icon: "👥",
+    },
+    {
+      name: "Public Sponsor",
+      description: <>Active supporter of open source projects and developer community initiatives.</>,
+      icon: "💖",
+    },
+    {
+      name: "Pull Shark x2",
+      description: <>Demonstrated excellence in code contributions with multiple high-quality pull requests.</>,
+      icon: "🦈",
+    },
+    {
+      name: "Quickdraw",
+      description: <>Fast and efficient problem-solving abilities recognized through rapid issue resolution.</>,
+      icon: "⚡",
+    },
+    {
+      name: "YOLO",
+      description: <>Bold and innovative approach to tackling challenging technical problems.</>,
+      icon: "🚀",
+    },
+  ],
 };
 
 const certifications = {
