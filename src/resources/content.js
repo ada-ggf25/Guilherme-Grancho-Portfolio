@@ -8,7 +8,7 @@ const person = {
   },
   role: "AI Developer & Fintech Entrepreneur",
   avatar: "/images/avatar.jpg",
-  email: "guilherme.grancho@gmail.com",
+  email: "guilhermegranchopro@gmail.com",
   location: "Europe/Lisbon", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Portuguese", "English", "Spanish"], // optional: Leave the array empty if you don't want to display languages
   phone: "+351 912 345 678", // Add phone number
@@ -33,7 +33,7 @@ const social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/guilhermegrancho/",
+    link: "https://www.linkedin.com/in/guilherme-grancho-951781292",
   },
   {
     name: "GitHub",
@@ -138,25 +138,25 @@ const about = {
       },
       {
         company: "Imperial College London",
-        timeframe: "2020 - 2024",
-        role: "Research Assistant & PhD Student",
+        timeframe: "2022 - 2024",
+        role: "MSc Student & Research Assistant",
         location: "London, UK",
         achievements: [
           <>
-            Conducted advanced research in Physics, Computer Science, and Data Science with focus on 
-            AI applications in financial markets and quantitative analysis.
+            Pursued MSc in Applied Computational Science and Engineering with focus on 
+            quantitative finance, AI applications, and computational methods.
           </>,
           <>
             Developed novel machine learning algorithms for multi-objective optimization and 
             lexicographic approaches, published in ENIAC conference proceedings.
           </>,
           <>
-            Collaborated with international research teams on computer vision applications for 
-            scientific domains including oceanographic mapping and environmental monitoring.
+            Participated in EY AI Challenge 2025, achieving #1 place in category and #2 place overall 
+            with Auto-Calendar-Agent project.
           </>,
           <>
-            Mentored undergraduate students in machine learning and data science projects, 
-            contributing to academic excellence and knowledge transfer.
+            Contributed to research in computational methods and applied mathematics, 
+            working on projects spanning from financial modeling to environmental AI.
           </>,
         ],
         images: [
@@ -204,30 +204,21 @@ const about = {
     institutions: [
       {
         name: "Imperial College London",
-        degree: "PhD in Physics & Computer Science",
-        timeframe: "2020 - 2024",
+        degree: "MSc in Applied Computational Science and Engineering",
+        timeframe: "2022 - 2024",
         location: "London, UK",
-        description: <>Advanced doctoral studies in Physics, Computer Science, Mathematics, and Data Science with focus on quantitative finance and AI applications. Published 3 peer-reviewed research papers in machine learning and financial modeling.</>,
+        description: <>Advanced master's studies in Applied Computational Science and Engineering with focus on quantitative finance, AI applications, and computational methods. Published research in machine learning optimization and multi-objective algorithms.</>,
         gpa: "Distinction",
-        relevant_courses: ["Machine Learning", "Quantitative Finance", "Computer Vision", "Data Science", "Statistical Physics"],
+        relevant_courses: ["Machine Learning", "Quantitative Finance", "Computational Methods", "Data Science", "Applied Mathematics"],
       },
       {
-        name: "University of Lisbon",
-        degree: "Master's in Computer Science",
-        timeframe: "2018 - 2020",
+        name: "Instituto Superior Técnico (IST)",
+        degree: "BSc in Engineering Physics and Technology",
+        timeframe: "2019 - 2022",
         location: "Lisbon, Portugal",
-        description: <>Specialized in artificial intelligence, machine learning, and software engineering with focus on fintech applications and startup development.</>,
+        description: <>Comprehensive foundation in engineering physics, technology, and computational methods with focus on applied sciences and quantitative analysis.</>,
         gpa: "First Class Honours",
-        relevant_courses: ["Advanced Algorithms", "Machine Learning", "Software Engineering", "Database Systems", "Entrepreneurship"],
-      },
-      {
-        name: "Technical University of Lisbon",
-        degree: "Bachelor's in Computer Engineering",
-        timeframe: "2015 - 2018",
-        location: "Lisbon, Portugal",
-        description: <>Foundation in computer science, mathematics, and engineering principles with emphasis on software development and system design.</>,
-        gpa: "First Class Honours",
-        relevant_courses: ["Programming", "Data Structures", "Mathematics", "Physics", "Engineering Design"],
+        relevant_courses: ["Physics", "Mathematics", "Engineering", "Computational Methods", "Technology"],
       },
     ],
   },
@@ -316,8 +307,14 @@ const about = {
         year: "2023",
       },
       {
+        title: "EY AI Challenge 2025 Winner",
+        description: <>Achieved #1 place in category and #2 place overall in EY AI Challenge 2025 with Auto-Calendar-Agent project, demonstrating excellence in AI development and problem-solving.</>,
+        category: "Competition",
+        year: "2025",
+      },
+      {
         title: "Academic Research Excellence",
-        description: <>Published 3 peer-reviewed papers in AI, machine learning, and quantitative finance, with research spanning from financial prediction to oceanographic mapping.</>,
+        description: <>Published research in multi-objective machine learning optimization and lexicographic approaches, with work spanning from financial prediction to computational methods.</>,
         category: "Research",
         year: "2024-2025",
       },
@@ -326,6 +323,43 @@ const about = {
         description: <>Featured in TechCrunch and Fintech Weekly, nominated for "Best SME Fintech Solution 2024" and invited speaker at major VC conferences.</>,
         category: "Thought Leadership",
         year: "2024",
+      },
+    ],
+  },
+  github: {
+    display: true, // set to false to hide this section
+    title: "GitHub Achievements & Recognition",
+    description: <>Recognition and achievements earned through active contribution to open source projects and GitHub community.</>,
+    achievements: [
+      {
+        name: "Galaxy Brain",
+        description: <>Earned through significant contributions to machine learning and AI projects, demonstrating deep technical expertise.</>,
+        icon: "🧠",
+      },
+      {
+        name: "Pair Extraordinaire",
+        description: <>Recognized for exceptional collaboration and pair programming contributions to open source projects.</>,
+        icon: "👥",
+      },
+      {
+        name: "Public Sponsor",
+        description: <>Active supporter of open source projects and developer community initiatives.</>,
+        icon: "💖",
+      },
+      {
+        name: "Pull Shark x2",
+        description: <>Demonstrated excellence in code contributions with multiple high-quality pull requests.</>,
+        icon: "🦈",
+      },
+      {
+        name: "Quickdraw",
+        description: <>Fast and efficient problem-solving abilities recognized through rapid issue resolution.</>,
+        icon: "⚡",
+      },
+      {
+        name: "YOLO",
+        description: <>Bold and innovative approach to tackling challenging technical problems.</>,
+        icon: "🚀",
       },
     ],
   },
@@ -421,4 +455,4 @@ const work = {
 
 // Gallery section removed - no longer needed
 
-export { person, social, newsletter, home, about, work, publications, certifications };
+export { person, social, newsletter, home, about, work, publications, certifications, github };
