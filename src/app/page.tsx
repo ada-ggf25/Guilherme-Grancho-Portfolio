@@ -15,7 +15,6 @@ import {
   SmartLink
 } from "@once-ui-system/core";
 import { baseURL, about, person, social, publications, certifications, github } from "@/resources";
-import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
@@ -30,48 +29,6 @@ export async function generateMetadata() {
 }
 
 export default function About() {
-  const structure = [
-    {
-      title: about.intro.title,
-      display: about.intro.display,
-      items: [],
-    },
-    {
-      title: about.work.title,
-      display: about.work.display,
-      items: about.work.experiences.map((experience) => experience.company),
-    },
-    {
-      title: about.studies.title,
-      display: about.studies.display,
-      items: about.studies.institutions.map((institution) => institution.name),
-    },
-    {
-      title: about.technical.title,
-      display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
-    },
-    {
-      title: about.achievements.title,
-      display: about.achievements.display,
-      items: about.achievements.accomplishments.map((achievement) => achievement.title),
-    },
-    {
-      title: publications.title,
-      display: publications.display,
-      items: publications.papers.map((paper) => paper.title),
-    },
-    {
-      title: certifications.title,
-      display: certifications.display,
-      items: certifications.certifications.map((cert) => cert.name),
-    },
-    {
-      title: github.title,
-      display: github.display,
-      items: github.achievements.map((achievement) => achievement.name),
-    },
-  ];
   return (
     <Column style={{ maxWidth: "var(--static-space-m)" }}>
       <Schema
@@ -87,21 +44,6 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      {about.tableOfContent.display && (
-        <Column
-          style={{
-            top: "50%",
-            transform: "translateY(-50%)",
-            left: "0",
-            paddingLeft: "24px",
-            gap: "32px",
-          }}
-          position="fixed"
-          className="hide-s"
-        >
-          <TableOfContents structure={structure} about={about} />
-        </Column>
-      )}
       <Flex style={{ width: "100%" }} mobileDirection="column" horizontal="center">
         {about.avatar.display && (
           <Column
