@@ -1,4 +1,4 @@
-import { Flex, Button, SmartLink, Text } from "@once-ui-system/core";
+import { Flex, Button, SmartLink, Text, Icon } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
@@ -32,7 +32,7 @@ export const Footer = () => {
           <Text paddingX="4">{person.name}</Text>
         </Text>
         <Flex 
-          gap="12"
+          gap="16"
           style={{
             marginLeft: "auto"
           }}
@@ -40,19 +40,32 @@ export const Footer = () => {
           {social.map(
             (item) =>
               item.link && (
-                <Button
+                <SmartLink
                   key={item.name}
                   href={item.link}
-                  prefixIcon={item.icon}
-                  size="s"
-                  variant="ghost"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={styles.socialButton}
                   style={{
-                    minWidth: "auto",
-                    padding: "8px",
+                    textDecoration: "none",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "12px",
                     borderRadius: "8px",
+                    border: "1px solid transparent",
+                    transition: "all 0.2s ease",
+                    cursor: "pointer",
+                    minWidth: "44px",
+                    height: "44px",
                   }}
-                />
+                >
+                  <Icon
+                    name={item.icon}
+                    size="20"
+                    onBackground="neutral-strong"
+                  />
+                </SmartLink>
               ),
           )}
         </Flex>

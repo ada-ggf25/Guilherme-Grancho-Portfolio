@@ -19,15 +19,26 @@
 .socialButton {
     transition: all 0.2s ease;
     border: 1px solid transparent;
+    cursor: pointer;
+    color: var(--color-neutral-strong);
     
     &:hover {
         background: var(--color-brand-alpha-weak) !important;
         border-color: var(--color-brand-alpha-medium) !important;
-        transform: translateY(-1px);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        scale: 1.05;
+        color: var(--color-brand-strong) !important;
     }
     
     &:active {
-        transform: translateY(0);
+        transform: translateY(-1px);
+        scale: 1.02;
+    }
+    
+    // Ensure the icon is properly sized
+    svg {
+        width: 20px;
+        height: 20px;
     }
 }
