@@ -1,92 +1,197 @@
-# Guilherme Grancho - Personal Portfolio
+# Guilherme Grancho - AI Developer & Fintech Entrepreneur Portfolio
 
-🚀 Welcome to my personal portfolio repository! This showcases my work and expertise as a **Data Science, Analytics & AI professional**.
+🚀 **Professional Portfolio Website** showcasing expertise in AI development, quantitative finance, and startup innovation.
 
-## 🌟 About Me
+## 🌟 About This Portfolio
 
-I'm a passionate Data Science, Analytics & AI professional based between **Lisbon** and **London**, specializing in:
+This is a modern, professional portfolio website built with Next.js 15, designed to showcase my expertise in:
 
-- **Machine Learning & AI**: Building predictive models and intelligent systems
-- **Data Analysis**: Extracting insights from complex datasets
-- **Business Intelligence**: Creating data-driven solutions for business problems
-- **Statistical Analysis**: Applying statistical methods to solve real-world challenges
+- **AI & Machine Learning**: Advanced algorithms for quantitative finance and trading
+- **Fintech Innovation**: Building scalable financial technology solutions
+- **Venture Capital Analytics**: AI-powered investment analysis and portfolio optimization
+- **Startup Ecosystem**: Entrepreneurial experience in European fintech landscape
 
-## 🔗 Portfolio Website
+## 🎯 Target Industries
 
-**Live Site**: [View My Portfolio](https://guilhermegrancho.com)
+This portfolio is specifically designed to open doors in:
 
-The portfolio website is built with modern web technologies:
-- **Framework**: Next.js 15 with React
-- **Design System**: Once UI for consistent, professional styling
-- **Styling**: SCSS modules with responsive design
-- **Theme**: Dark mode optimized for professional presentation
-- **Features**: Real-time clock, contact integration, project showcase
+- **Startups & Incubators**: Technical co-founder and AI specialist roles
+- **Quantitative Finance**: Algorithmic trading and risk management positions
+- **Private Equity & Venture Capital**: Investment analysis and due diligence roles
+- **Software Engineering**: Full-stack development in financial services
+- **AI Development**: Machine learning engineering in fintech applications
 
-## 📁 Repository Structure
+## 🛠️ Technical Stack
+
+### Frontend & Framework
+- **Next.js 15**: React framework with App Router
+- **TypeScript**: Type-safe development
+- **Once UI System**: Professional design system
+- **SCSS**: Custom styling and animations
+
+### Key Features
+- **Responsive Design**: Mobile-first approach
+- **Dark Mode**: Professional theme optimized for readability
+- **SEO Optimized**: Meta tags, structured data, and performance optimization
+- **Interactive Elements**: Smooth animations and hover effects
+- **Professional Typography**: Geist font family for modern appearance
+
+## 📁 Project Structure
 
 ```
-├── portfolio/          # Main portfolio application
-│   ├── src/
-│   │   ├── app/        # Next.js app directory
-│   │   ├── components/ # Reusable UI components
-│   │   └── resources/  # Configuration and content files
-│   ├── public/         # Static assets
-│   └── package.json    # Dependencies and scripts
-├── LICENSE            # Project license
-└── README.md         # This file
+portfolio/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── about/             # About page with professional experience
+│   │   ├── blog/              # Thought leadership articles
+│   │   ├── work/              # Project showcases
+│   │   └── page.tsx           # Homepage
+│   ├── components/            # Reusable UI components
+│   ├── resources/             # Configuration and content
+│   │   ├── content.js         # Portfolio content and data
+│   │   ├── custom.css         # Professional styling
+│   │   └── once-ui.config.js  # Design system configuration
+│   └── utils/                 # Utility functions
+├── public/                    # Static assets
+└── package.json              # Dependencies and scripts
 ```
 
-## 🚀 Quick Start
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
 
 1. **Clone the repository**
    ```bash
    git clone https://github.com/guilhermegrancho/Guilherme-Grancho-Portfolio.git
-   cd Guilherme-Grancho-Portfolio
+   cd Guilherme-Grancho-Portfolio/portfolio
    ```
 
-2. **Navigate to portfolio directory**
-   ```bash
-   cd portfolio
-   ```
-
-3. **Install dependencies**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-4. **Run development server**
+3. **Run development server**
    ```bash
    npm run dev
    ```
 
-5. **View the portfolio**
-   Open [http://localhost:3000](http://localhost:3000) in your browser
+4. **View the portfolio**
+   Open [http://localhost:3030](http://localhost:3030) in your browser
 
-## 💼 What You'll Find
+### Build for Production
 
-- **Professional Experience**: Data science projects and achievements
-- **Technical Skills**: Comprehensive overview of my tech stack
-- **Project Portfolio**: Detailed case studies and implementations
-- **Contact Information**: Multiple ways to connect and collaborate
+```bash
+npm run build
+npm start
+```
 
-## 🛠️ Tech Stack
+## 📄 Content Sections
 
-### Data Science & Analytics
-- **Languages**: Python, R, SQL
-- **ML Libraries**: TensorFlow, PyTorch, Scikit-learn
-- **Data Tools**: Pandas, NumPy, Jupyter Notebooks
-- **Visualization**: Matplotlib, Seaborn, Plotly
+### 🏠 Homepage
+- **Hero Section**: Professional introduction with clear value proposition
+- **Featured Project**: Latest AI trading algorithm showcase
+- **Blog Highlights**: Recent thought leadership articles
+- **Project Grid**: Key portfolio projects
 
-### Web Development (Portfolio)
-- **Frontend**: Next.js, React, TypeScript
-- **Styling**: Once UI, SCSS
-- **Deployment**: Vercel-ready
+### 👨‍💼 About Page
+- **Professional Introduction**: AI developer and fintech entrepreneur background
+- **Work Experience**: Detailed career progression in AI and finance
+- **Education & Certifications**: Relevant qualifications and continuous learning
+- **Core Competencies**: Technical skills in AI, fintech, and development
+- **Key Achievements**: Quantified accomplishments and industry recognition
 
-## 📫 Connect With Me
+### 💼 Projects
+- **AI-Powered Trading Algorithm**: Machine learning for quantitative finance
+- **Fintech Startup Platform**: SME lending and financial services
+- **VC Analytics Platform**: Investment analysis and portfolio optimization
 
-- **LinkedIn**: [Guilherme Grancho](https://linkedin.com/in/guilhermegrancho)
-- **Email**: [guilherme.grancho@gmail.com](mailto:guilherme.grancho@gmail.com)
+### 📝 Blog/Insights
+- **AI Revolution in Finance**: Machine learning transforming investment strategies
+- **European Startup Ecosystem**: Navigating fintech entrepreneurship
+- **Quantitative Finance Future**: Evolution from traditional to AI-powered models
+
+## 🎨 Design Philosophy
+
+### Professional Aesthetics
+- **Clean & Modern**: Minimalist design focusing on content
+- **Dark Theme**: Professional appearance optimized for readability
+- **Consistent Typography**: Geist font family for modern, clean look
+- **Subtle Animations**: Smooth transitions and hover effects
+
+### User Experience
+- **Fast Loading**: Optimized performance and image loading
+- **Mobile Responsive**: Seamless experience across all devices
+- **Accessibility**: WCAG compliant with proper focus states
+- **SEO Optimized**: Structured data and meta tags for search visibility
+
+## 🔧 Customization
+
+### Content Updates
+Edit `/src/resources/content.js` to update:
+- Personal information and contact details
+- Professional experience and achievements
+- Project descriptions and case studies
+- Blog post metadata
+
+### Styling
+Modify `/src/resources/custom.css` for:
+- Color schemes and branding
+- Custom animations and effects
+- Layout adjustments
+- Typography enhancements
+
+### Configuration
+Update `/src/resources/once-ui.config.js` for:
+- Design system settings
+- SEO metadata
+- Social media links
+- Route configuration
+
+## 📈 SEO & Performance
+
+### Optimizations
+- **Meta Tags**: Comprehensive SEO metadata
+- **Structured Data**: JSON-LD schema for search engines
+- **Image Optimization**: Next.js Image component with lazy loading
+- **Performance**: Core Web Vitals optimization
+- **Accessibility**: ARIA labels and keyboard navigation
+
+### Analytics Ready
+- Google Analytics integration ready
+- Performance monitoring setup
+- User behavior tracking capabilities
+
+## 🌍 Deployment
+
+### Vercel (Recommended)
+```bash
+npm run build
+# Deploy to Vercel for optimal Next.js performance
+```
+
+### Other Platforms
+- **Netlify**: Static site generation
+- **AWS Amplify**: Full-stack deployment
+- **Docker**: Containerized deployment
+
+## 📞 Contact & Collaboration
+
+### Professional Inquiries
+- **Email**: guilhermegranchopro@gmail.com
+- **LinkedIn**: [Guilherme Grancho](https://www.linkedin.com/in/guilhermegrancho/)
 - **Location**: Lisbon, Portugal / London, UK
+
+### Areas of Interest
+- AI/ML engineering roles in fintech
+- Quantitative finance and algorithmic trading
+- Venture capital and private equity opportunities
+- Startup co-founder and technical leadership positions
+- Consulting projects in AI and financial technology
 
 ## 📄 License
 
@@ -94,4 +199,4 @@ This project is licensed under the CC BY-NC 4.0 License - see the [LICENSE](LICE
 
 ---
 
-*Follow my journey through data science, analytics, and AI!* 🚀
+*Built with ❤️ using Next.js, TypeScript, and modern web technologies. Designed to showcase expertise in AI, fintech, and quantitative finance.*

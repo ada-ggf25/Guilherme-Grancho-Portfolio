@@ -1,0 +1,53 @@
+@use "./breakpoints.scss" as breakpoints;
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: breakpoints.$s) {
+    .footerContent {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+}
+
+.socialButton {
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: var(--color-neutral-strong);
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
+    
+    &:hover {
+        background: var(--color-brand-alpha-weak) !important;
+        border-color: var(--color-brand-alpha-medium) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        scale: 1.05;
+        color: var(--color-brand-strong) !important;
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        scale: 1.02;
+    }
+    
+    // Ensure the icon is properly sized and doesn't interfere with clicks
+    svg {
+        width: 20px;
+        height: 20px;
+        pointer-events: none;
+    }
+    
+    // Ensure all child elements don't interfere with clicks
+    * {
+        pointer-events: none;
+    }
+}

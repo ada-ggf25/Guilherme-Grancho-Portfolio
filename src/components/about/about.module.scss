@@ -1,0 +1,40 @@
+@use "../breakpoints.scss" as breakpoints;
+
+.hover {
+    transition: var(--transition-micro-medium);
+
+    &:hover {
+        transform: translateX(var(--static-space-4));
+    }
+}
+
+.talkToMeButton {
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: var(--color-brand-alpha-medium) !important;
+        border-color: var(--color-brand-alpha-strong) !important;
+        box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3) !important;
+        transform: translateY(-1px);
+    }
+}
+
+.avatar {
+    position: sticky;
+    height: fit-content;
+    top: var(--static-space-64);
+}
+
+@media (max-width: breakpoints.$s) {
+    .avatar {
+        top: auto;
+    }
+
+    .textAlign {
+        text-align: center;
+    }
+
+    .blockAlign {
+        align-self: center;
+    }
+}
