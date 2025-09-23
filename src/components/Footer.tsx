@@ -40,7 +40,7 @@ export const Footer = () => {
           {social.map(
             (item) =>
               item.link && (
-                <SmartLink
+                <a
                   key={item.name}
                   href={item.link}
                   target="_blank"
@@ -65,7 +65,7 @@ export const Footer = () => {
                     size="20"
                     onBackground="neutral-strong"
                   />
-                </SmartLink>
+                </a>
               ),
           )}
         </Flex>
