@@ -58,12 +58,22 @@ export const Footer = () => {
                     cursor: "pointer",
                     minWidth: "44px",
                     height: "44px",
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                  onClick={(e) => {
+                    console.log('Footer icon clicked:', item.name, item.link);
+                    e.preventDefault();
+                    window.open(item.link, '_blank', 'noopener,noreferrer');
                   }}
                 >
                   <Icon
                     name={item.icon}
                     size="20"
                     onBackground="neutral-strong"
+                    style={{
+                      pointerEvents: "none",
+                    }}
                   />
                 </a>
               ),

@@ -21,6 +21,9 @@
     border: 1px solid transparent;
     cursor: pointer;
     color: var(--color-neutral-strong);
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
     
     &:hover {
         background: var(--color-brand-alpha-weak) !important;
@@ -36,9 +39,15 @@
         scale: 1.02;
     }
     
-    // Ensure the icon is properly sized
+    // Ensure the icon is properly sized and doesn't interfere with clicks
     svg {
         width: 20px;
         height: 20px;
+        pointer-events: none;
+    }
+    
+    // Ensure all child elements don't interfere with clicks
+    * {
+        pointer-events: none;
     }
 }
