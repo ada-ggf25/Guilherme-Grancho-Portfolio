@@ -13,19 +13,30 @@ export const Footer = () => {
       horizontal="center"
     >
       <Flex
-        className={styles.mobile}
+        className={styles.footerContent}
         maxWidth="m"
         paddingY="8"
         paddingX="16"
         gap="16"
         horizontal="space-between"
         vertical="center"
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center"
+        }}
       >
         <Text variant="body-default-s" onBackground="neutral-strong">
           <Text onBackground="neutral-weak">© {currentYear} /</Text>
           <Text paddingX="4">{person.name}</Text>
         </Text>
-        <Flex gap="12">
+        <Flex 
+          gap="12"
+          style={{
+            marginLeft: "auto"
+          }}
+        >
           {social.map(
             (item) =>
               item.link && (
