@@ -7,3 +7,19 @@
         align-items: center;
     }
 }
+
+.socialButton {
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    
+    &:hover {
+        background: var(--color-brand-alpha-weak) !important;
+        border-color: var(--color-brand-alpha-medium) !important;
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
