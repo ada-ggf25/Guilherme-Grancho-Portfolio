@@ -29,14 +29,20 @@ export const Footer = () => {
           {social.map(
             (item) =>
               item.link && (
-                <IconButton
+                <SmartLink
                   key={item.name}
                   href={item.link}
-                  icon={item.icon}
-                  tooltip={item.name}
-                  size="s"
-                  variant="ghost"
-                />
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <IconButton
+                    icon={item.icon}
+                    tooltip={item.name}
+                    size="s"
+                    variant="ghost"
+                  />
+                </SmartLink>
               ),
           )}
         </Flex>
