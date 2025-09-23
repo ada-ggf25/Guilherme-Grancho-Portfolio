@@ -24,7 +24,7 @@ export const Header = () => {
         as="header"
         zIndex={9}
         fillWidth
-        padding="8"
+        padding="12"
         horizontal="center"
         data-border="rounded"
       >
