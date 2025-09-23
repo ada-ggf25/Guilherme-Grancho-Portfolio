@@ -6,14 +6,14 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "AI & Data Scientist | MSc Student at Imperial College London",
+  role: "AI Researcher & Full-Stack Developer | MSc Student at Imperial College London",
   avatar: "/images/avatar.jpg",
   email: "guilhermegranchopro@gmail.com",
-  location: "London - Lisbon", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["Portuguese", "English", "Spanish", "French"], // optional: Leave the array empty if you don't want to display languages
-  phone: "+351 912 345 678", // Add phone number
-  website: "https://guilhermegrancho.com", // Add personal website
-  summary: "I build data-driven systems—ML, GenAI, and quantitative models—that turn complex signals into measurable outcomes for finance and sustainability. Currently pursuing MSc in Applied Computational Science & Engineering at Imperial College London, with research focus on The Financial Torque Hypothesis and leading development of Eco AI.ly's GAIA sustainability assistant.",
+  location: "London - Lisbon",
+  languages: ["Portuguese", "English", "Spanish", "French"],
+  phone: "+351 912 345 678",
+  website: "https://guilhermegrancho.com",
+  summary: "AI researcher, software engineer, and tech entrepreneur blending data science, engineering, and entrepreneurship to build solutions for finance and sustainability. Currently pursuing MSc in Applied Computational Science & Engineering at Imperial College London, with published research in quantitative finance and co-founder of Eco AI.ly's GAIA sustainability platform.",
 };
 
 const newsletter = {
@@ -93,17 +93,19 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I build data-driven systems—ML, GenAI, and quantitative models—that turn complex signals into measurable outcomes for finance and sustainability.
+        I'm a dedicated AI researcher, software engineer, and tech entrepreneur based between Lisbon and London, with a passion for bridging research and real-world impact.
         <br /><br />
-        I'm pursuing an MSc in Applied Computational Science & Engineering at Imperial College London, after a BSc in Engineering Physics & Technology at IST.
+        With a BSc in Engineering Physics & Technology from Instituto Superior Técnico (IST), I built a strong foundation in applied mathematics, physics, and computing. During my undergraduate years, I balanced academics with innovative projects—from developing a convolutional neural network to map ocean floor layers in Brazil (achieving over 70% accuracy in seismic inversion and drawing interest from Petrobras) to creating an award-winning omnidirectional robotics software.
         <br /><br />
-        On the research side, I'm first author of The Financial Torque Hypothesis (SSRN), proposing a feature set that improves short-horizon equity-index prediction, and I'm developing the open-source Prometheus project to take these ideas further.
+        In 2023, I co-founded Tap2Net, a startup providing smart NFC-card solutions to boost businesses' online reputations, leading it to over 500 units sold within a year. Simultaneously, I joined a 720-hour research programme in Brazil, where I pioneered a novel lexicographic multi-objective optimization approach, resulting in a first-author paper at the Brazilian National AI Conference (ENIAC 2024).
         <br /><br />
-        I also led the development of Eco AI.ly, where we build GAIA—a sustainability-focused AI assistant that helps developers and companies reduce the environmental footprint of model training and energy decisions.
+        Back in Lisbon, I took on teaching duties at IST, where I lectured Physics lab classes for engineering undergraduates, earning a perfect 9/9 score in anonymous student surveys—the highest in the course's history.
         <br /><br />
-        Industry experience includes AI & Data consulting internships delivering ML/GenAI prototypes for international financial-services clients—with a strong emphasis on Responsible AI, model governance, and clear business KPIs. (Recent summer programs at Deloitte and EY Portugal.)
+        In 2025, I helped launch Eco AI.ly, a startup uniting artificial intelligence with environmental sustainability. As Machine Learning and Full-Stack Developer, I led development of "GAIA," an AI-powered platform that monitors grid carbon intensity and forecasts renewable energy trends with over 90% accuracy.
         <br /><br />
-        When I'm not immersed in my work, you can always find me playing sports, channeling the same discipline and passion that drives my professional life.
+        On the research front, I'm the first co-author of "The Financial Torque Hypothesis," a study introducing a novel market indicator to predict short-term stock movements. Using LSTM neural networks, my model achieved 87% accuracy in predicting stock price increases over a three-hour horizon, with the work garnering over 100 downloads on SSRN.
+        <br /><br />
+        In autumn 2025, I will embark on an MSc in Applied Computational Science & Engineering at Imperial College London, driven by curiosity and a clear goal: to master cutting-edge computational tools and accelerate innovation at the nexus of academia and industry.
       </>
     ),
   },
@@ -113,97 +115,144 @@ const about = {
     experiences: [
       {
         company: "Eco AI.ly",
-        timeframe: "2023 - Present",
-        role: "Lead Developer & Co-founder",
-        location: "London, UK",
-        achievements: [
-          <>
-            Leading development of GAIA—a sustainability-focused AI assistant that helps developers and companies 
-            reduce the environmental footprint of model training and energy decisions.
-          </>,
-          <>
-            Building data-driven systems that turn complex signals into measurable outcomes for sustainability 
-            and environmental impact reduction.
-          </>,
-        ],
-        images: [],
-      },
-      {
-        company: "Deloitte & EY Portugal",
-        timeframe: "2023 - 2024",
-        role: "AI & Data Consulting Intern",
+        timeframe: "2025 - Present",
+        role: "Machine Learning Developer & Co-founder",
         location: "Lisbon, Portugal",
         achievements: [
           <>
-            Delivered ML/GenAI prototypes for international financial-services clients with strong emphasis 
-            on Responsible AI, model governance, and clear business KPIs.
+            Co-founded Eco AI.ly, a startup bridging AI and sustainability, leading development of GAIA (Green AI Assistant) platform.
           </>,
           <>
-            Participated in summer programs focusing on applied machine learning and quantitative finance 
-            solutions for enterprise clients.
+            Built LSTM neural networks that forecast carbon intensity and renewable energy output 24 hours ahead with ~91% accuracy.
+          </>,
+          <>
+            Led development of FastAPI microservice serving live predictions and Next.js/Streamlit dual-frontend for interactive dashboards.
+          </>,
+          <>
+            Deployed on cloud with containerization for scalability, focusing on Portugal energy grid with actionable insights for sustainable energy usage.
           </>,
         ],
         images: [],
       },
       {
-        company: "Independent Research",
-        timeframe: "2022 - Present",
-        role: "Research Scientist & Open Source Developer",
-        location: "London, UK / Lisbon, Portugal",
+        company: "Tap2Net",
+        timeframe: "2023 - 2024",
+        role: "Co-founder & Lead Developer",
+        location: "Lisbon, Portugal",
         achievements: [
           <>
-            First author of The Financial Torque Hypothesis (SSRN), proposing a feature set that improves 
-            short-horizon equity-index prediction using advanced machine learning techniques.
+            Co-founded Tap2Net, a startup providing smart NFC-card solutions to boost businesses' online reputations.
           </>,
           <>
-            Developing the open-source Prometheus project to advance research in quantitative finance 
-            and equity prediction algorithms.
+            Led development of the Tap2Net web app and managed hardware integration, achieving over 500 card sales within one year.
+          </>,
+          <>
+            Gained hands-on experience in web development, digital marketing, UX design, and operations (inventory and customer support).
+          </>,
+          <>
+            Validated product-market fit and served as hands-on exercise in launching a tech product from scratch.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Instituto Superior Técnico (IST)",
+        timeframe: "2023 - 2024",
+        role: "Physics Laboratory Instructor",
+        location: "Lisbon, Portugal",
+        achievements: [
+          <>
+            Lectured Physics II & III laboratory classes for engineering undergraduates, earning a perfect 9/9 score in anonymous student surveys.
+          </>,
+          <>
+            Achieved the highest student evaluation in the course's history, demonstrating exceptional teaching and mentoring abilities.
+          </>,
+          <>
+            Balanced teaching responsibilities with research and entrepreneurial activities, showcasing strong time management skills.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Brazilian Center for Physics Research",
+        timeframe: "2023",
+        role: "AI Research Intern",
+        location: "Rio de Janeiro, Brazil",
+        achievements: [
+          <>
+            Developed and trained a U-Net convolutional neural network to perform velocity model inversion from seismic reflections.
+          </>,
+          <>
+            Achieved a Sørensen–Dice coefficient &gt; 0.70, indicating high agreement between predicted and actual subsurface layer structures.
+          </>,
+          <>
+            Pioneered CNN-based method for mapping ocean floor layers, achieving over 70% similarity to ground truth and attracting interest from Petrobras.
+          </>,
+          <>
+            Results were published in conference paper and arXiv preprint, demonstrating deep learning's promise in oil & gas exploration.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Universidade Federal de Ouro Preto (UFOP)",
+        timeframe: "2023 - 2024",
+        role: "Visiting Researcher",
+        location: "Ouro Preto, Brazil",
+        achievements: [
+          <>
+            Joined a 720-hour intensive research program focusing on multi-objective machine learning optimization.
+          </>,
+          <>
+            Developed an algorithm to automatically determine the "tolerance threshold" in lexicographic multi-objective optimization.
+          </>,
+          <>
+            Published first-author paper at ENIAC 2024 (Brazil's national AI conference) detailing automated tolerance selection methods.
+          </>,
+          <>
+            Demonstrated that automated tolerance selection significantly improves model performance consistency and computational efficiency.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Institute for Plasmas and Nuclear Fusion (IPFN)",
+        timeframe: "2023 - 2024",
+        role: "Research Associate",
+        location: "Lisbon, Portugal",
+        achievements: [
+          <>
+            Collaborated with the Lasers and Plasmas Group on AI-driven laser aberration correction for high-power laser systems.
+          </>,
+          <>
+            Trained deep learning models (CNNs) to recognize and counteract wavefront distortions in high-frequency laser operations.
+          </>,
+          <>
+            Applied Bayesian optimization to fine-tune laser control parameters, improving precision for scientific and industrial applications.
+          </>,
+          <>
+            Successfully implemented prototype at IPFN, demonstrating notable improvements in beam focus stability and efficiency.
           </>,
         ],
         images: [],
       },
       {
         company: "Imperial College London",
-        timeframe: "2022 - 2024",
-        role: "MSc Student & Research Assistant",
+        timeframe: "2025 - Present",
+        role: "Research Collaborator",
         location: "London, UK",
         achievements: [
           <>
-            Pursued MSc in Applied Computational Science and Engineering with focus on 
-            quantitative finance, AI applications, and computational methods.
+            Began remote collaboration with Imperial College research mentor on quantitative finance research.
           </>,
           <>
-            Developed novel machine learning algorithms for multi-objective optimization and 
-            lexicographic approaches, published in ENIAC conference proceedings.
+            Co-developed LSTM models for The Financial Torque Hypothesis study, achieving 87% accuracy in predicting stock price direction.
           </>,
           <>
-            Participated in EY AI Challenge 2025, achieving #1 place in category and #2 place overall 
-            with Auto-Calendar-Agent project.
+            Published preprint on SSRN garnering over 100 downloads from the finance research community.
           </>,
           <>
-            Contributed to research in computational methods and applied mathematics, 
-            working on projects spanning from financial modeling to environmental AI.
-          </>,
-        ],
-        images: [],
-      },
-      {
-        company: "Tech Startup Ecosystem",
-        timeframe: "2019 - 2022",
-        role: "Software Engineer & Data Scientist",
-        location: "Lisbon, Portugal",
-        achievements: [
-          <>
-            Developed and maintained enterprise-grade web applications using React, Node.js, and cloud 
-            technologies, serving thousands of users across multiple European markets.
-          </>,
-          <>
-            Implemented comprehensive data science solutions and machine learning pipelines for 
-            business intelligence and predictive analytics across fintech and e-commerce sectors.
-          </>,
-          <>
-            Led technical architecture decisions for scalable SaaS platforms, reducing infrastructure 
-            costs by 40% while improving system performance and reliability.
+            Preparing for MSc in Applied Computational Science & Engineering starting September 2025.
           </>,
         ],
         images: [],
@@ -217,20 +266,29 @@ const about = {
       {
         name: "Imperial College London",
         degree: "MSc in Applied Computational Science and Engineering",
-        timeframe: "2022 - Present",
+        timeframe: "2025 - 2026 (Expected)",
         location: "London, UK",
-        description: <>Currently pursuing advanced master's studies in Applied Computational Science and Engineering with focus on quantitative finance, AI applications, and computational methods. Research includes The Financial Torque Hypothesis and development of open-source Prometheus project.</>,
+        description: <>Enrolling in September 2025 in the Applied Computational Science & Engineering (ACSE) Master's programme at Imperial College London. This intensive 12-month MSc aims to deepen expertise in high-performance computing, machine learning, and multi-disciplinary applications. Expected graduation: October 2026.</>,
         gpa: "In Progress",
-        relevant_courses: ["Machine Learning", "Quantitative Finance", "Computational Methods", "Data Science", "Applied Mathematics"],
+        relevant_courses: ["High-Performance Computing", "Machine Learning", "Computational Methods", "Applied Mathematics", "Multi-disciplinary Applications"],
       },
       {
         name: "Instituto Superior Técnico (IST)",
         degree: "BSc in Engineering Physics and Technology",
-        timeframe: "2019 - 2022",
+        timeframe: "2022 - 2024",
         location: "Lisbon, Portugal",
-        description: <>Comprehensive foundation in engineering physics, technology, and computational methods with focus on applied sciences and quantitative analysis.</>,
+        description: <>Completed BSc in Engineering Physics & Technology at Instituto Superior Técnico (IST), University of Lisbon. Built expertise in applied physics, computational methods, and data analysis. Took on an extra course load due to a curricular gap year, demonstrating strong work ethic. Graduated in July 2024.</>,
         gpa: "First Class Honours",
-        relevant_courses: ["Physics", "Mathematics", "Engineering", "Computational Methods", "Technology"],
+        relevant_courses: ["Applied Physics", "Computational Methods", "Data Analysis", "Mathematics", "Engineering Technology"],
+      },
+      {
+        name: "Colégio Sagrado Coração de Maria",
+        degree: "Secondary Education (Science & Technology)",
+        timeframe: "2018 - 2021",
+        location: "Lisbon, Portugal",
+        description: <>Completed secondary education with a focus on mathematics and physics fundamentals, providing strong foundation for engineering studies.</>,
+        gpa: "Excellent",
+        relevant_courses: ["Mathematics", "Physics", "Chemistry", "Biology", "Technology"],
       },
     ],
   },
@@ -280,40 +338,52 @@ const about = {
     title: "Key Achievements & Recognition",
     accomplishments: [
       {
-        title: "The Financial Torque Hypothesis - First Author",
-        description: <>First author of research paper proposing a feature set that improves short-horizon equity-index prediction, published on SSRN with significant impact on quantitative finance research.</>,
-        category: "Research",
-        year: "2024-2025",
-      },
-      {
-        title: "Eco AI.ly - GAIA Sustainability Assistant",
-        description: <>Leading development of GAIA, a sustainability-focused AI assistant that helps developers and companies reduce environmental footprint of model training and energy decisions.</>,
-        category: "Sustainability Tech",
-        year: "2023-Present",
-      },
-      {
-        title: "Open Source Prometheus Project",
-        description: <>Developing open-source project to advance research in quantitative finance and equity prediction algorithms, contributing to the broader ML research community.</>,
-        category: "Open Source",
-        year: "2024-Present",
-      },
-      {
-        title: "Deloitte & EY Portugal Internships",
-        description: <>Delivered ML/GenAI prototypes for international financial-services clients with strong emphasis on Responsible AI, model governance, and clear business KPIs.</>,
-        category: "Industry Experience",
+        title: "Perfect Teaching Score - 9/9 Rating",
+        description: <>Achieved a perfect 9/9 rating as a laboratory instructor for undergraduate physics at IST—the highest student evaluation in the course's history, demonstrating exceptional teaching and mentoring abilities.</>,
+        category: "Teaching Excellence",
         year: "2023-2024",
       },
       {
-        title: "Imperial College London MSc",
-        description: <>Currently pursuing MSc in Applied Computational Science & Engineering at one of the world's leading institutions, focusing on quantitative finance and AI applications.</>,
-        category: "Education",
-        year: "2022-Present",
+        title: "Tap2Net Startup Success - 500+ Sales",
+        description: <>Co-founded Tap2Net, an NFC-based review platform, and led it to over 500 smart card sales within one year, helping dozens of small businesses boost their online reputations and validating product-market fit.</>,
+        category: "Entrepreneurship",
+        year: "2023-2024",
       },
       {
-        title: "IST Engineering Physics BSc",
-        description: <>Completed BSc in Engineering Physics & Technology at Instituto Superior Técnico, providing strong foundation in applied sciences and quantitative analysis.</>,
-        category: "Education",
-        year: "2019-2022",
+        title: "GAIA Energy AI - 90.9% Accuracy",
+        description: <>Developed GAIA platform under Eco AI.ly, delivering 24-hour carbon intensity forecasts with 90.9% accuracy using LSTM models—enabling companies to plan energy use more sustainably.</>,
+        category: "Sustainability Tech",
+        year: "2025-Present",
+      },
+      {
+        title: "Published AI Optimization Research - ENIAC 2024",
+        description: <>First author of a peer-reviewed paper introducing an automated lexicographic tolerance algorithm for multi-objective ML, published at the 34th Brazilian Conference on AI (ENIAC 2024).</>,
+        category: "Research",
+        year: "2024",
+      },
+      {
+        title: "Quant Finance Breakthrough - 87% Prediction Accuracy",
+        description: <>Co-authored "The Financial Torque Hypothesis" (2025), where a custom LSTM model reached 87% prediction accuracy for short-term stock price direction. The preprint has been downloaded over 100 times on SSRN.</>,
+        category: "Research",
+        year: "2025",
+      },
+      {
+        title: "Top Project Distinction - 19/20 Grade",
+        description: <>Built software for an omnidirectional robotic vehicle during undergrad, earning a 19/20 grade—the highest project score in the Programming Fundamentals course.</>,
+        category: "Academic Excellence",
+        year: "2022",
+      },
+      {
+        title: "Industry Collaboration Interest - Petrobras",
+        description: <>Pioneered a CNN-based method for mapping ocean floor layers (for seismic analysis), achieving over 70% similarity to ground truth and attracting interest from Petrobras, Brazil's largest oil & gas company.</>,
+        category: "Industry Recognition",
+        year: "2023",
+      },
+      {
+        title: "National Athletics Honors - Track & Field",
+        description: <>Competed as a track & field athlete at the national level for 3 years, securing multiple medals (specializing in 200m sprint) while representing the Portuguese Athletics Federation—demonstrating discipline and dedication beyond academics.</>,
+        category: "Athletics",
+        year: "2015-2018",
       },
     ],
   },
@@ -406,30 +476,30 @@ const publications = {
   papers: [
     {
       title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
-      authors: "G Grancho, V Pereira",
-      venue: "SSRN",
+      authors: "G.G.D. Fernandes, V.V.R. Serpa Pereira",
+      venue: "SSRN Preprint",
       year: "2025",
-      description: <>Novel approach to short-term stock price prediction using LSTM neural networks, introducing the Financial Torque Hypothesis for market movement analysis.</>,
+      description: <>Proposes a new market indicator (the "Financial Torque") and demonstrates its effectiveness in predicting intraday stock trends. Using 21 months of U.S. equity data, the LSTM-based model achieved 87% directional accuracy for 3-hour ahead stock price movements. The study also finds that including full trading session data (pre-market + after-hours) boosts predictive accuracy by ~15% over using regular hours only. This work bridges academic research and practical algorithmic trading, and has garnered over 100 downloads from the finance research community.</>,
       link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
       category: "Quantitative Finance",
     },
     {
       title: "Mapping The Layers of The Ocean Floor With a Convolutional Neural Network",
-      authors: "GGD Fernandes, VSPP Oliveira, JPI Astolfo",
-      venue: "arXiv preprint",
+      authors: "G.G.D. Fernandes, V.S.P.P. Oliveira, J.P.I. Astolfo",
+      venue: "6th Advanced School of Experimental Physics (EAFExp) & arXiv",
       year: "2024",
-      description: <>Advanced deep learning application for oceanographic mapping using convolutional neural networks to analyze and classify ocean floor layers.</>,
+      description: <>Proposed a U-Net approach to seismic inversion for geological layer mapping. Achieved above 70% overlap (Dice coefficient) with ground truth models, demonstrating deep learning's promise in speeding up oil & gas exploration analyses. The model achieved a Sørensen–Dice coefficient &gt; 0.70, indicating high agreement between predicted and actual subsurface layer structures. This approach markedly reduced computational cost compared to traditional physics-based methods and attracted interest from Petrobras for potential applications in oil exploration.</>,
       link: "https://arxiv.org/abs/2412.05329",
-      category: "Computer Vision",
+      category: "Computer Vision & Geophysics",
     },
     {
       title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
-      authors: "GGD Fernandes, TH Medeiros",
-      venue: "Encontro Nacional de Inteligência Artificial e Computacional (ENIAC)",
+      authors: "G.G.D. Fernandes, T.H. Medeiros",
+      venue: "34th Brazilian Meeting on Artificial Intelligence and Computational Intelligence (ENIAC 2024)",
       year: "2024",
-      description: <>Research on optimizing multi-objective machine learning algorithms using lexicographic approaches with novel tolerance threshold determination methods.</>,
-      link: "https://scholar.google.com/citations?user=lHeQn9gAAAAJ&hl=en",
-      category: "Machine Learning",
+      description: <>Introduced a method to automatically set tolerance levels in lexicographic multi-objective optimization. The paper reports that this automation improves model accuracy and computational efficiency in multi-criteria machine learning tasks. First-author paper from Guilherme's research internship, reflecting a novel contribution to optimization in AI. Testing across various datasets showed that automated tolerance selection can significantly improve model performance consistency and computational efficiency.</>,
+      link: "https://ouci.dntb.gov.ua/works/4LYayb3V/",
+      category: "Machine Learning Optimization",
     },
   ],
 };
