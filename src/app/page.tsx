@@ -76,9 +76,24 @@ export default function About() {
                 }}
               >
                 {person.languages.map((language, index) => (
-                  <Tag key={language} size="l">
+                  <Button
+                    key={language}
+                    size="s"
+                    weight="default"
+                    variant="secondary"
+                    style={{
+                      borderRadius: "8px",
+                      padding: "6px 12px",
+                      fontSize: "14px",
+                      fontWeight: "500",
+                      border: "1px solid var(--color-neutral-alpha-medium)",
+                      background: "var(--color-neutral-alpha-weak)",
+                      color: "var(--color-neutral-strong)",
+                      transition: "all 0.2s ease"
+                    }}
+                  >
                     {language}
-                  </Tag>
+                  </Button>
                 ))}
               </Flex>
             )}
@@ -175,26 +190,15 @@ export default function About() {
                 {social.map(
                   (item) =>
                     item.link && (
-                        <React.Fragment key={item.name}>
-                            <Button
-                                className="s-flex-hide"
-                                key={item.name}
-                                href={item.link}
-                                prefixIcon={item.icon}
-                                label={item.name}
-                                size="s"
-                                weight="default"
-                                variant="secondary"
-                            />
-                            <IconButton
-                                className="s-flex-show"
-                                size="l"
-                                key={`${item.name}-icon`}
-                                href={item.link}
-                                icon={item.icon}
-                                variant="secondary"
-                            />
-                        </React.Fragment>
+                        <Button
+                            key={item.name}
+                            href={item.link}
+                            prefixIcon={item.icon}
+                            label={item.name}
+                            size="s"
+                            weight="default"
+                            variant="secondary"
+                        />
                     ),
                 )}
               </Flex>
