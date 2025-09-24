@@ -14,7 +14,7 @@ import {
   Schema,
   SmartLink
 } from "@once-ui-system/core";
-import { baseURL, about, person, social, publications, certifications, github } from "@/resources";
+import { baseURL, about, person, social, publications, certifications } from "@/resources";
 import styles from "@/components/about/about.module.scss";
 import { SectionNavigation } from "@/components/SectionNavigation";
 import React from "react";
@@ -37,8 +37,7 @@ export default function About() {
     { id: about.awards.title, label: "Awards & Honours" },
     { id: about.certifications.title, label: "Certifications" },
     { id: about.achievements.title, label: "Achievements" },
-    { id: "publications", label: "Publications" },
-    { id: "github-achievements", label: "GitHub Achievements" }
+    { id: "publications", label: "Publications" }
   ];
 
   return (
@@ -639,54 +638,6 @@ export default function About() {
             </>
           )}
 
-          {/* GitHub Achievements Section */}
-          {github.display && (
-            <>
-              <HeadingLink
-                as="h2"
-                id="github-achievements"
-                style={{
-                  marginTop: "80px",
-                  marginBottom: "32px",
-                }}
-              >
-                {github.title}
-              </HeadingLink>
-              <Text
-                variant="body-default-m"
-                onBackground="neutral-weak"
-                style={{ marginBottom: "40px" }}
-              >
-                {github.description}
-              </Text>
-              <Column style={{ gap: "32px", marginBottom: "64px" }}>
-                {github.achievements.map((achievement, index) => (
-                  <Column key={index} style={{ gap: "12px", marginBottom: "24px" }}>
-                    <Flex
-                      direction="row"
-                      style={{ 
-                        gap: "16px",
-                        justifyContent: "flex-start",
-                        alignItems: "center"
-                      }}
-                    >
-                      <Text variant="display-default-l">
-                        {achievement.icon}
-                      </Text>
-                      <Column style={{ flex: 1, gap: "4px" }}>
-                        <Heading variant="heading-default-s">
-                          {achievement.name}
-                        </Heading>
-                        <Text variant="body-default-m" onBackground="neutral-weak">
-                          {achievement.description}
-                        </Text>
-                      </Column>
-                    </Flex>
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
         </Column>
       </Flex>
     </Column>
