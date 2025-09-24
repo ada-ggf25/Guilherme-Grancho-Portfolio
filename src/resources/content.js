@@ -517,4 +517,4 @@ const work = {
 
 // Gallery section removed - no longer needed
 
-export { person, social, newsletter, home, about, work, publications, certifications, github };
+export { person, social, newsletter, home, about, publications, certifications, github };

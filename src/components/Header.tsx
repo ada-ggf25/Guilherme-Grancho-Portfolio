@@ -1,17 +1,14 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { Fade, Flex } from "@once-ui-system/core";
 
-import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
-
-import { routes, display, person, about, work } from "@/resources";
+import { display, person } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import { SystemClock } from "./SystemClock";
 import styles from "./Header.module.scss";
 
 
 export const Header = () => {
-  const pathname = usePathname() ?? "";
 
   return (
     <>
@@ -30,32 +27,6 @@ export const Header = () => {
       >
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
           <Flex>{person.name}</Flex>
-        </Flex>
-        <Flex fillWidth horizontal="center">
-          <Flex
-            background="page"
-            border="neutral-alpha-weak"
-            radius="m-4"
-            shadow="l"
-            padding="4"
-            horizontal="center"
-            zIndex={1}
-          >
-            <Flex gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
-              {routes["/"] && (
-                <ToggleButton prefixIcon="person" href="/" label={about.label} selected={pathname === "/"} />
-              )}
-              <Line background="neutral-alpha-medium" vert maxHeight="24" />
-              {routes["/work"] && (
-                <ToggleButton
-                  prefixIcon="grid"
-                  href="/work"
-                  label={work.label}
-                  selected={pathname.startsWith("/work")}
-                />
-              )}
-            </Flex>
-          </Flex>
         </Flex>
         <Flex fillWidth horizontal="end" vertical="center">
           <Flex

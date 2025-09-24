@@ -5,7 +5,6 @@ const baseURL = "https://guilhermegrancho.com";
 
 const routes = {
   "/": true,
-  "/work": true,
 };
 
 const display = {
