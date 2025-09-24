@@ -45,36 +45,14 @@ export const SectionNavigation: React.FC<SectionNavigationProps> = ({ sections }
     }
   };
 
-  console.log('SectionNavigation rendering with sections:', sections);
-  
   return (
-    <div 
-      className={styles.navigation}
-      style={{
-        position: 'fixed',
-        left: '50px',
-        top: '50%',
-        transform: 'translateY(-50%)',
-        zIndex: 1000,
-        background: 'rgba(255, 0, 0, 0.3)', // Temporary red background for debugging
-        padding: '20px',
-        borderRadius: '10px'
-      }}
-    >
+    <div className={styles.navigation}>
       {sections.map((section, index) => (
         <button
           key={section.id}
           className={`${styles.navItem} ${activeSection === index ? styles.active : ''}`}
           onClick={() => scrollToSection(section.id)}
           title={section.label}
-          style={{
-            border: '2px solid rgba(255, 255, 255, 0.8)',
-            minWidth: '20px',
-            minHeight: '60px',
-            display: 'block',
-            background: activeSection === index ? 'white' : 'rgba(255, 255, 255, 0.3)',
-            margin: '10px 0'
-          }}
         />
       ))}
     </div>

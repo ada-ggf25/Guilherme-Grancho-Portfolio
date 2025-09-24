@@ -41,8 +41,6 @@ export default function About() {
     { id: "github-achievements", label: "GitHub Achievements" }
   ];
 
-  console.log('About page rendering with sections:', sections);
-
   return (
     <Column style={{ maxWidth: "var(--static-space-m)" }}>
       <Schema
@@ -59,18 +57,6 @@ export default function About() {
         }}
       />
       <SectionNavigation sections={sections} />
-      {/* Debug: Simple test div */}
-      <div style={{
-        position: 'fixed',
-        left: '20px',
-        top: '20px',
-        background: 'red',
-        color: 'white',
-        padding: '10px',
-        zIndex: 9999
-      }}>
-        Navigation Test
-      </div>
       <Flex style={{ width: "100%", gap: "48px" }} horizontal="center">
         {about.avatar.display && (
           <Column
