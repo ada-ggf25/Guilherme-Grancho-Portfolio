@@ -623,79 +623,59 @@ const about = {
 };
 
 
-const certifications = {
-  display: true, // set to false to hide this section
-  title: "Certifications & Professional Development",
-  certifications: [
-    {
-      name: "AWS Certified Machine Learning - Specialty",
-      issuer: "Amazon Web Services",
-      date: "2024",
-      credential_id: "AWS-ML-2024-001",
-      description: <>Advanced certification in machine learning on AWS, covering ML algorithms, model deployment, and cloud-based ML solutions.</>,
-    },
-    {
-      name: "CFA Institute Investment Foundations",
-      issuer: "CFA Institute",
-      date: "2023",
-      credential_id: "CFA-IF-2023-001",
-      description: <>Comprehensive understanding of investment management, financial analysis, and portfolio management principles.</>,
-    },
-    {
-      name: "Google Cloud Professional Data Engineer",
-      issuer: "Google Cloud",
-      date: "2023",
-      credential_id: "GCP-PDE-2023-001",
-      description: <>Expertise in designing and building data processing systems, machine learning models, and data analytics solutions on Google Cloud Platform.</>,
-    },
-    {
-      name: "Financial Risk Manager (FRM) Part I",
-      issuer: "Global Association of Risk Professionals",
-      date: "2022",
-      credential_id: "FRM-I-2022-001",
-      description: <>Advanced knowledge in financial risk management, quantitative analysis, and risk modeling techniques.</>,
-    },
-    {
-      name: "Python for Data Science and Machine Learning",
-      issuer: "Coursera / University of Michigan",
-      date: "2021",
-      credential_id: "PYTHON-DS-ML-2021-001",
-      description: <>Comprehensive course covering Python programming, data analysis, machine learning algorithms, and statistical modeling.</>,
-    },
-  ],
-};
 
 const publications = {
   display: true, // set to false to hide this section
-  title: "Research Publications",
-  description: <>Academic research in AI, machine learning, and quantitative finance published in peer-reviewed venues and conferences.</>,
+  title: "Publications",
+  description: <>Academic research and publications in AI, machine learning, quantitative finance, and physics across peer-reviewed venues, conferences, and preprint servers.</>,
   papers: [
     {
       title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
-      authors: "G.G.D. Fernandes, V.V.R. Serpa Pereira",
-      venue: "SSRN Preprint",
-      year: "2025",
-      description: <>Proposes a new market indicator (the "Financial Torque") and demonstrates its effectiveness in predicting intraday stock trends. Using 21 months of U.S. equity data, the LSTM-based model achieved 87% directional accuracy for 3-hour ahead stock price movements. The study also finds that including full trading session data (pre-market + after-hours) boosts predictive accuracy by ~15% over using regular hours only. This work bridges academic research and practical algorithmic trading, and has garnered over 100 downloads from the finance research community.</>,
+      authors: "Guilherme Grancho, Vasco Pereira",
+      venue: "The Financial Economics Network (SSRN)",
+      date: "Jun 20, 2025",
+      type: "Working paper / preprint",
+      description: <>Introduces the Financial Torque Hypothesis (FTH)—that VWAP and trade count encapsulate short-term "market torque" useful for direction prediction. LSTM over intraday features; full-session vs. regular-hours comparisons; three feature-integration schemes (Standard, MinMax, Robust-to-non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data; 15% improvement in full-session consistency over regular-hours baselines; demonstrates value of extended-hours data + microstructure indicators for robust strategies.</>,
       link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
       category: "Quantitative Finance",
-    },
-    {
-      title: "Mapping The Layers of The Ocean Floor With a Convolutional Neural Network",
-      authors: "G.G.D. Fernandes, V.S.P.P. Oliveira, J.P.I. Astolfo",
-      venue: "6th Advanced School of Experimental Physics (EAFExp) & arXiv",
-      year: "2024",
-      description: <>Proposed a U-Net approach to seismic inversion for geological layer mapping. Achieved above 70% overlap (Dice coefficient) with ground truth models, demonstrating deep learning's promise in speeding up oil & gas exploration analyses. The model achieved a Sørensen–Dice coefficient &gt; 0.70, indicating high agreement between predicted and actual subsurface layer structures. This approach markedly reduced computational cost compared to traditional physics-based methods and attracted interest from Petrobras for potential applications in oil exploration.</>,
-      link: "https://arxiv.org/abs/2412.05329",
-      category: "Computer Vision & Geophysics",
+      highlights: "87% directional accuracy, 15% improvement over baselines, 100+ downloads",
+      artifacts: "SSRN paper + Show publication link",
     },
     {
       title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
-      authors: "G.G.D. Fernandes, T.H. Medeiros",
-      venue: "34th Brazilian Meeting on Artificial Intelligence and Computational Intelligence (ENIAC 2024)",
-      year: "2024",
-      description: <>Introduced a method to automatically set tolerance levels in lexicographic multi-objective optimization. The paper reports that this automation improves model accuracy and computational efficiency in multi-criteria machine learning tasks. First-author paper from Guilherme's research internship, reflecting a novel contribution to optimization in AI. Testing across various datasets showed that automated tolerance selection can significantly improve model performance consistency and computational efficiency.</>,
+      authors: "Guilherme Grancho (First Author), T.H. Medeiros",
+      venue: "ENIAC — 34th National Meeting on Artificial and Computational Intelligence",
+      date: "Nov 21, 2024",
+      type: "Peer-reviewed conference paper",
+      description: <>Robust lexicographic multi-objective optimization with an automated step to determine the tolerance parameter, improving stability. ML-integrated lexicographic strategy; analysis of tolerance–outcome relations; cross-dataset validation. Automated tolerance selection improves computational efficiency and accuracy; emphasizes the importance of tolerance in lexicographic MOO.</>,
       link: "https://ouci.dntb.gov.ua/works/4LYayb3V/",
       category: "Machine Learning Optimization",
+      highlights: "First-author publication, automated tolerance selection, improved computational efficiency",
+      artifacts: "Conference Show publication link",
+    },
+    {
+      title: "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
+      authors: "Guilherme Grancho, Team Project",
+      venue: "6th EAFExp — Brazilian Center for Research in Physics (CBPF) / arXiv",
+      date: "Feb 28, 2023",
+      type: "Research paper",
+      description: <>Apply CNNs to bathymetric imagery to classify/segment seabed layers. Supervised CNN pipeline; dataset curation and analysis; evaluation on geoscience targets and regions. Demonstrates CNN feasibility for ocean-floor mapping and yields actionable geophysical insights.</>,
+      link: "https://arxiv.org/abs/2412.05329",
+      category: "Computer Vision & Geophysics",
+      highlights: "70%+ similarity to ground truth, Petrobras interest",
+      artifacts: "arXiv + Show publication link",
+    },
+    {
+      title: "The Atomic Nucleus — Discoveries of Modern Physics",
+      authors: "Guilherme Grancho",
+      venue: "Instituto Superior Técnico — Congress Center",
+      date: "Nov 28, 2022",
+      type: "Course paper + poster presentation",
+      description: <>Historical and experimental path to discovering the atomic nucleus; synthesis of early scattering experiments and implications. Course completed with 20/20; poster presented publicly at IST Congress Center.</>,
+      link: "#",
+      category: "Physics Education",
+      highlights: "20/20 grade, public poster presentation",
+      artifacts: "Show publication link",
     },
   ],
 };
@@ -713,4 +693,4 @@ const work = {
 
 // Gallery section removed - no longer needed
 
-export { person, social, newsletter, home, about, publications, certifications };
+export { person, social, newsletter, home, about, publications };

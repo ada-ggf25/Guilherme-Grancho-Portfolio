@@ -14,7 +14,7 @@ import {
   Schema,
   SmartLink
 } from "@once-ui-system/core";
-import { baseURL, about, person, social, publications, certifications } from "@/resources";
+import { baseURL, about, person, social, publications } from "@/resources";
 import styles from "@/components/about/about.module.scss";
 import { SectionNavigation } from "@/components/SectionNavigation";
 import React from "react";
@@ -35,7 +35,6 @@ export default function About() {
     { id: about.work.title, label: "Professional Experience" },
     { id: about.studies.title, label: "Education" },
     { id: about.awards.title, label: "Awards & Honours" },
-    { id: about.certifications.title, label: "Certifications" },
     { id: about.achievements.title, label: "Achievements" },
     { id: "publications", label: "Publications" }
   ];
@@ -584,59 +583,6 @@ export default function About() {
             </>
           )}
 
-          {/* Certifications Section */}
-          {certifications.display && (
-            <>
-              <HeadingLink
-                as="h2"
-                id="certifications"
-                style={{
-                  marginTop: "80px",
-                  marginBottom: "32px",
-                }}
-              >
-                {certifications.title}
-              </HeadingLink>
-              <Column style={{ gap: "32px", marginBottom: "64px" }}>
-                {certifications.certifications.map((cert, index) => (
-                  <Column key={index} style={{ gap: "12px", marginBottom: "24px" }}>
-                    <Flex
-                      direction="row"
-                      style={{ gap: "16px" }}
-                    >
-                      <Column 
-                        style={{ 
-                          flex: 1,
-                          gap: "8px",
-                        }}
-                      >
-                        <Heading variant="heading-default-s">
-                          {cert.name}
-                        </Heading>
-                        <Text variant="body-default-s" onBackground="neutral-weak">
-                          {cert.issuer}
-                        </Text>
-                        <Flex 
-                          direction="row" 
-                          style={{ gap: "16px" }}
-                        >
-                          <Tag variant="neutral" size="s">
-                            {cert.date}
-                          </Tag>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            ID: {cert.credential_id}
-                          </Text>
-                        </Flex>
-                      </Column>
-                    </Flex>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {cert.description}
-                    </Text>
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
 
         </Column>
       </Flex>
