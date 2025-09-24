@@ -37,6 +37,7 @@ export default function About() {
     { id: about.awards.title, label: "Awards & Honours" },
     { id: about.achievements.title, label: "Key Achievements" },
     { id: about.hobbies.title, label: "Hobbies & Passions" },
+    { id: about.values.title, label: "Values & Principles" },
     { id: "publications", label: "Publications" }
   ];
 
@@ -626,6 +627,51 @@ export default function About() {
                         </Tag>
                       ))}
                     </Flex>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {/* Values & Principles Section */}
+          {about.values.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.values.title}
+                variant="display-strong-s"
+                style={{ marginTop: "64px", marginBottom: "32px" }}
+              >
+                {about.values.title}
+              </Heading>
+              <Text
+                variant="body-default-m"
+                onBackground="neutral-weak"
+                style={{ marginBottom: "40px" }}
+              >
+                {about.values.description}
+              </Text>
+              <Column style={{ gap: "32px", marginBottom: "64px" }}>
+                {about.values.principles.map((principle, index) => (
+                  <Column key={index} style={{ gap: "16px", marginBottom: "32px" }}>
+                    <Heading variant="heading-strong-l">
+                      {principle.title}
+                    </Heading>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic", marginBottom: "12px" }}>
+                      {principle.definition}
+                    </Text>
+                    <Column style={{ gap: "8px" }}>
+                      {principle.behaviors.map((behavior, behaviorIndex) => (
+                        <Flex key={behaviorIndex} style={{ gap: "8px", alignItems: "flex-start" }}>
+                          <Text variant="body-default-s" onBackground="neutral-weak" style={{ marginTop: "2px" }}>
+                            •
+                          </Text>
+                          <Text variant="body-default-s" onBackground="neutral-weak">
+                            {behavior}
+                          </Text>
+                        </Flex>
+                      ))}
+                    </Column>
                   </Column>
                 ))}
               </Column>

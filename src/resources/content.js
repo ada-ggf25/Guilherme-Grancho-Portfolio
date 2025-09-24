@@ -702,6 +702,89 @@ const about = {
       }
     ]
   },
+  values: {
+    display: true, // set to false to hide this section
+    title: "Values & Principles",
+    description: <>Core values and principles that guide my work, relationships, and decision-making process in both professional and personal contexts.</>,
+    principles: [
+      {
+        title: "Respect",
+        definition: "Treat people, time, and work with consideration.",
+        behaviors: [
+          "Active listening",
+          "Concise, timely communications",
+          "Credit others' contributions",
+          "Thoughtful code reviews",
+          "Clear meeting outcomes"
+        ]
+      },
+      {
+        title: "Inclusion",
+        definition: "Make environments, products, and processes accessible to all.",
+        behaviors: [
+          "Use inclusive language",
+          "Design for accessibility (a11y) in UIs/docs",
+          "Invite quieter voices",
+          "Mentor juniors",
+          "Accommodate time zones"
+        ]
+      },
+      {
+        title: "Collaboration",
+        definition: "Solve problems with others, not around them.",
+        behaviors: [
+          "Co-scope tasks",
+          "Pair program",
+          "Small, reviewable PRs",
+          "\"Disagree & commit\" after decisions",
+          "Share reusable templates and notebooks"
+        ]
+      },
+      {
+        title: "Integrity",
+        definition: "Do the right thing when it's inconvenient.",
+        behaviors: [
+          "Reproducible experiments",
+          "Transparent assumptions/limitations",
+          "Privacy-by-design and data-handling compliance",
+          "Avoid overclaiming results",
+          "Respect IP/licensing"
+        ]
+      },
+      {
+        title: "Excellence",
+        definition: "Pursue high standards without gold-plating.",
+        behaviors: [
+          "Definition of Done (tests, docs, perf checks)",
+          "Automated CI/CD gates",
+          "Measurable OKRs",
+          "Post-mortems with action items",
+          "Continuous learning cadence"
+        ]
+      },
+      {
+        title: "Environmental Responsibility",
+        definition: "Build with sustainability in mind.",
+        behaviors: [
+          "Efficient compute (profiling, batching, mixed precision)",
+          "Prefer greener cloud regions/instances",
+          "Track energy/carbon metrics",
+          "Expose sustainability insights to users (e.g., dashboards)"
+        ]
+      },
+      {
+        title: "Innovation",
+        definition: "Turn ideas into useful, testable outcomes.",
+        behaviors: [
+          "Rapid prototypes → MVP → iterate",
+          "Structured experiments with metrics",
+          "Hackathon participation",
+          "Literature scanning & tech radars",
+          "Celebrate useful failures"
+        ]
+      }
+    ]
+  },
 };
 
 
