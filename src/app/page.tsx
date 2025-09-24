@@ -36,6 +36,7 @@ export default function About() {
     { id: about.studies.title, label: "Education" },
     { id: about.awards.title, label: "Awards & Honours" },
     { id: about.achievements.title, label: "Key Achievements" },
+    { id: about.hobbies.title, label: "Hobbies & Passions" },
     { id: "publications", label: "Publications" }
   ];
 
@@ -583,6 +584,53 @@ export default function About() {
             </>
           )}
 
+          {/* Hobbies & Passions Section */}
+          {about.hobbies.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.hobbies.title}
+                variant="display-strong-s"
+                style={{ marginTop: "64px", marginBottom: "32px" }}
+              >
+                {about.hobbies.title}
+              </Heading>
+              <Text
+                variant="body-default-m"
+                onBackground="neutral-weak"
+                style={{ marginBottom: "40px" }}
+              >
+                {about.hobbies.description}
+              </Text>
+              <Column style={{ gap: "32px", marginBottom: "64px" }}>
+                {about.hobbies.categories.map((category, index) => (
+                  <Column key={index} style={{ gap: "16px", marginBottom: "32px" }}>
+                    <Heading variant="heading-strong-m">
+                      {category.title}
+                    </Heading>
+                    <Flex
+                      direction="row"
+                      style={{ 
+                        gap: "12px",
+                        flexWrap: "wrap"
+                      }}
+                    >
+                      {category.skills.map((skill, skillIndex) => (
+                        <Tag 
+                          key={skillIndex}
+                          size="s" 
+                          background="brand-alpha-weak" 
+                          onBackground="brand-weak"
+                        >
+                          {skill}
+                        </Tag>
+                      ))}
+                    </Flex>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
 
         </Column>
       </Flex>
