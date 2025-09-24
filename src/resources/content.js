@@ -93,7 +93,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Currently working on the goal of "Guilherme Grancho" standing for something.
+        Currently working towards making "Guilherme Grancho" stand for something.
       </>
     ),
   },
