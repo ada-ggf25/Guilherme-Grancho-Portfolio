@@ -93,19 +93,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I'm a dedicated AI researcher, software engineer, and tech entrepreneur based between Lisbon and London, with a passion for bridging research and real-world impact.
-        <br /><br />
-        With a BSc in Engineering Physics & Technology from Instituto Superior Técnico (IST), I built a strong foundation in applied mathematics, physics, and computing. During my undergraduate years, I balanced academics with innovative projects—from developing a convolutional neural network to map ocean floor layers in Brazil (achieving over 70% accuracy in seismic inversion and drawing interest from Petrobras) to creating an award-winning omnidirectional robotics software.
-        <br /><br />
-        In 2023, I co-founded Tap2Net, a startup providing smart NFC-card solutions to boost businesses' online reputations, leading it to over 500 units sold within a year. Simultaneously, I joined a 720-hour research programme in Brazil, where I pioneered a novel lexicographic multi-objective optimization approach, resulting in a first-author paper at the Brazilian National AI Conference (ENIAC 2024).
-        <br /><br />
-        Back in Lisbon, I took on teaching duties at IST, where I lectured Physics lab classes for engineering undergraduates, earning a perfect 9/9 score in anonymous student surveys—the highest in the course's history.
-        <br /><br />
-        In 2025, I helped launch Eco AI.ly, a startup uniting artificial intelligence with environmental sustainability. As Machine Learning and Full-Stack Developer, I led development of "GAIA," an AI-powered platform that monitors grid carbon intensity and forecasts renewable energy trends with over 90% accuracy.
-        <br /><br />
-        On the research front, I'm the first co-author of "The Financial Torque Hypothesis," a study introducing a novel market indicator to predict short-term stock movements. Using LSTM neural networks, my model achieved 87% accuracy in predicting stock price increases over a three-hour horizon, with the work garnering over 100 downloads on SSRN.
-        <br /><br />
-        In autumn 2025, I will embark on an MSc in Applied Computational Science & Engineering at Imperial College London, driven by curiosity and a clear goal: to master cutting-edge computational tools and accelerate innovation at the nexus of academia and industry.
+        Currently working on the goal of "Guilherme Grancho" standing for something.
       </>
     ),
   },
