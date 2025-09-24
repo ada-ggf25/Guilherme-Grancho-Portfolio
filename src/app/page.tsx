@@ -35,9 +35,9 @@ export default function About() {
     { id: about.work.title, label: "Professional Experience" },
     { id: about.studies.title, label: "Education" },
     { id: about.awards.title, label: "Awards & Honours" },
+    { id: about.certifications.title, label: "Certifications" },
     { id: about.achievements.title, label: "Achievements" },
     { id: "publications", label: "Publications" },
-    { id: "certifications", label: "Certifications" },
     { id: "github-achievements", label: "GitHub Achievements" }
   ];
 
@@ -404,6 +404,58 @@ export default function About() {
                     <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
                       Issued by: {award.issuer}
                       {award.associated_with && ` • Associated with: ${award.associated_with}`}
+                    </Text>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.certifications.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.certifications.title}
+                variant="display-strong-s"
+                style={{ marginTop: "64px", marginBottom: "32px" }}
+              >
+                {about.certifications.title}
+              </Heading>
+              <Column 
+                style={{ gap: "var(--static-space-l)", marginBottom: "64px", width: "100%" }}
+              >
+                {about.certifications.accomplishments.map((certification, index) => (
+                  <Column 
+                    key={`${certification.title}-${index}`} 
+                    style={{ gap: "8px", marginBottom: "24px", width: "100%" }}
+                  >
+                    <Flex 
+                      horizontal="space-between" 
+                      vertical="end" 
+                      style={{ marginBottom: "4px", width: "100%" }}
+                    >
+                      <Text id={certification.title} variant="heading-strong-l">
+                        {certification.title}
+                      </Text>
+                      <Flex 
+                        style={{ gap: "8px" }}
+                        vertical="center"
+                      >
+                        <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                          {certification.category}
+                        </Tag>
+                        <Text variant="heading-default-xs" onBackground="neutral-weak">
+                          {certification.year}
+                        </Text>
+                      </Flex>
+                    </Flex>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {certification.description}
+                    </Text>
+                    <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                      Issued by: {certification.issuer}
+                      {certification.associated_with && ` • Associated with: ${certification.associated_with}`}
+                      {certification.credential_id && ` • Credential ID: ${certification.credential_id}`}
                     </Text>
                   </Column>
                 ))}
