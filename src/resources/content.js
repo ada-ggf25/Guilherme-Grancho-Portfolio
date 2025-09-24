@@ -102,145 +102,283 @@ const about = {
     title: "Professional Experience",
     experiences: [
       {
-        company: "Eco AI.ly",
-        timeframe: "2025 - Present",
-        role: "Machine Learning Developer & Co-founder",
-        location: "Lisbon, Portugal",
+        company: "Imperial College London",
+        timeframe: "Jan 2025 - Present",
+        role: "Quantitative Researcher",
+        location: "London, UK · Remote",
         achievements: [
           <>
-            Co-founded Eco AI.ly, a startup bridging AI and sustainability, leading development of GAIA (Green AI Assistant) platform.
+            Research at the intersection of deep learning and financial modelling. Co-authoring papers introducing and applying the Financial Torque Hypothesis (FTH) to short-term stock-price prediction and algorithmic portfolio management (LSTM-based).
           </>,
           <>
-            Built LSTM neural networks that forecast carbon intensity and renewable energy output 24 hours ahead with ~91% accuracy.
+            Built an open-source web app that serves real-time predictions and an interactive interface for practical use.
           </>,
           <>
-            Led development of FastAPI microservice serving live predictions and Next.js/Streamlit dual-frontend for interactive dashboards.
-          </>,
-          <>
-            Deployed on cloud with containerization for scalability, focusing on Portugal energy grid with actionable insights for sustainable energy usage.
+            Representative outputs: Prometheus official website; paper "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks"; GitHub repository.
           </>,
         ],
         images: [],
       },
       {
-        company: "Tap2Net",
-        timeframe: "2023 - 2024",
-        role: "Co-founder & Lead Developer",
-        location: "Lisbon, Portugal",
+        company: "EY",
+        timeframe: "Aug 2025 - Sep 2025",
+        role: "Artificial Intelligence & Data Engineer",
+        location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Co-founded Tap2Net, a startup providing smart NFC-card solutions to boost businesses' online reputations.
+            Worked end-to-end with EY AI specialists: opportunity assessment, dataset curation and feature engineering, model baselining/validation.
           </>,
           <>
-            Led development of the Tap2Net web app and managed hardware integration, achieving over 500 card sales within one year.
+            Delivered GenAI POCs aligned to regulatory and compliance requirements for international clients.
           </>,
           <>
-            Gained hands-on experience in web development, digital marketing, UX design, and operations (inventory and customer support).
+            Representative outputs: "EY Offices" media link.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Deloitte",
+        timeframe: "Jun 2025 - Jul 2025",
+        role: "Artificial Intelligence & Data Engineer",
+        location: "Lisbon, Portugal · On-site",
+        achievements: [
+          <>
+            Supported international financial-services clients: data discovery and exploration, proof-of-concept builds.
           </>,
           <>
-            Validated product-market fit and served as hands-on exercise in launching a tech product from scratch.
+            Emphasised responsible AI (privacy, explainability, auditability) tailored for banking/FS use cases.
+          </>,
+          <>
+            Representative outputs: Internship certificate.
           </>,
         ],
         images: [],
       },
       {
         company: "Instituto Superior Técnico (IST)",
-        timeframe: "2023 - 2024",
-        role: "Physics Laboratory Instructor",
-        location: "Lisbon, Portugal",
+        timeframe: "Apr 2025 - Jul 2025",
+        role: "Teacher Assistant (Physics II with Laboratory)",
+        location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Lectured Physics II & III laboratory classes for engineering undergraduates, earning a perfect 9/9 score in anonymous student surveys.
+            TA for the BSc in Electronic Engineering & Computer Engineering. Covered core topics in thermodynamics and quantum physics.
           </>,
           <>
-            Achieved the highest student evaluation in the course's history, demonstrating exceptional teaching and mentoring abilities.
+            Contributed to course delivery and student support, emphasising rigorous scientific thinking.
           </>,
           <>
-            Balanced teaching responsibilities with research and entrepreneurial activities, showcasing strong time management skills.
+            Representative outputs: "Distinguished Professors" media link.
           </>,
         ],
         images: [],
       },
       {
-        company: "Brazilian Center for Physics Research",
-        timeframe: "2023",
-        role: "AI Research Intern",
-        location: "Rio de Janeiro, Brazil",
+        company: "Eco AI.ly",
+        timeframe: "Jan 2025 - Jun 2025",
+        role: "Full-stack Developer",
+        location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Developed and trained a U-Net convolutional neural network to perform velocity model inversion from seismic reflections.
+            Extended ML work into production: engineered RESTful APIs to serve live predictions from trained models; designed a responsive dashboard for clear, interactive presentation of sustainability metrics.
           </>,
           <>
-            Achieved a Sørensen–Dice coefficient &gt; 0.70, indicating high agreement between predicted and actual subsurface layer structures.
+            Prioritised performance, reliability, and public transparency of environmental data.
           </>,
           <>
-            Pioneered CNN-based method for mapping ocean floor layers, achieving over 70% similarity to ground truth and attracting interest from Petrobras.
-          </>,
-          <>
-            Results were published in conference paper and arXiv preprint, demonstrating deep learning's promise in oil & gas exploration.
+            Representative outputs: "Eco AIly Sustainable Predictions"; GitHub repository.
           </>,
         ],
         images: [],
       },
       {
-        company: "Universidade Federal de Ouro Preto (UFOP)",
-        timeframe: "2023 - 2024",
-        role: "Visiting Researcher",
-        location: "Ouro Preto, Brazil",
+        company: "Eco AI.ly",
+        timeframe: "Jan 2025 - Mar 2025",
+        role: "Machine Learning Engineer",
+        location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Joined a 720-hour intensive research program focusing on multi-objective machine learning optimization.
+            Built LSTM time-series models to forecast sustainability metrics (e.g., carbon intensity, renewable-share trends) at national/regional scales.
           </>,
           <>
-            Developed an algorithm to automatically determine the "tolerance threshold" in lexicographic multi-objective optimization.
+            Developed tools to help organisations optimise energy usage and monitor production, consumption, imports, and exports.
           </>,
           <>
-            Published first-author paper at ENIAC 2024 (Brazil's national AI conference) detailing automated tolerance selection methods.
-          </>,
-          <>
-            Demonstrated that automated tolerance selection significantly improves model performance consistency and computational efficiency.
+            Representative outputs: GitHub repository.
           </>,
         ],
         images: [],
       },
       {
-        company: "Institute for Plasmas and Nuclear Fusion (IPFN)",
-        timeframe: "2023 - 2024",
-        role: "Research Associate",
-        location: "Lisbon, Portugal",
+        company: "DigiQ (Quantum Technologies initiative)",
+        timeframe: "Sep 2024 - Feb 2025",
+        role: "Engineering Intern",
+        location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Collaborated with the Lasers and Plasmas Group on AI-driven laser aberration correction for high-power laser systems.
+            Training and project work across quantum computation, networks, and sensing.
           </>,
           <>
-            Trained deep learning models (CNNs) to recognize and counteract wavefront distortions in high-frequency laser operations.
+            Conducted outreach with partner institutions (e.g., IST, Deloitte, PQI) to promote quantum technologies.
           </>,
           <>
-            Applied Bayesian optimization to fine-tune laser control parameters, improving precision for scientific and industrial applications.
-          </>,
-          <>
-            Successfully implemented prototype at IPFN, demonstrating notable improvements in beam focus stability and efficiency.
+            Representative outputs: Admission letter.
           </>,
         ],
         images: [],
       },
       {
-        company: "Imperial College London",
-        timeframe: "2025 - Present",
-        role: "Research Collaborator",
-        location: "London, UK",
+        company: "UFOP (Universidade Federal de Ouro Preto)",
+        timeframe: "Nov 2023 - Jul 2024",
+        role: "Artificial Intelligence Intern Researcher",
+        location: "Rio de Janeiro, Brazil · Remote",
         achievements: [
           <>
-            Began remote collaboration with Imperial College research mentor on quantitative finance research.
+            720-hour research programme in ML & algorithms. First-author publication at a Brazilian AI conference: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold."
           </>,
           <>
-            Co-developed LSTM models for The Financial Torque Hypothesis study, achieving 87% accuracy in predicting stock price direction.
+            Representative outputs: Presentation; internship certificate.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "KU Leuven",
+        timeframe: "Mar 2024",
+        role: "Virtual Reality Development Intern",
+        location: "Leuven, Belgium · On-site",
+        achievements: [
+          <>
+            Investigated innovative VR locomotion methods and built a virtual world explored via teleportation with an Oculus setup.
           </>,
           <>
-            Published preprint on SSRN garnering over 100 downloads from the finance research community.
+            Gained practical skills in VR navigation and interaction design.
           </>,
           <>
-            Preparing for MSc in Applied Computational Science & Engineering starting September 2025.
+            Representative outputs: Admission letter.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Instituto Superior Técnico (IST)",
+        timeframe: "Nov 2023 - Feb 2024",
+        role: "Teacher & Laboratory Coordinator (Physics III with Laboratory)",
+        location: "Lisbon, Portugal · On-site",
+        achievements: [
+          <>
+            Taught and coordinated lab classes for Electronics Engineering students. Topics included Thomson's experiment, RLC circuits, and geometric & wave optics.
+          </>,
+          <>
+            End-of-course anonymous survey ranked you 9/9.
+          </>,
+          <>
+            Representative outputs: Distinguished Professors 2023/2024; student survey (9/9) media link.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "IPFN (Instituto de Plasmas e Fusão Nuclear), GoLP",
+        timeframe: "Nov 2023 - Jan 2024",
+        role: "Machine Learning Researcher",
+        location: "Lisbon, Portugal · On-site",
+        achievements: [
+          <>
+            Research on high-frequency laser aberration correction using CNNs and Bayesian optimisation.
+          </>,
+          <>
+            Designed a dataset creation method from experimental data and built a high-accuracy neural-network solution.
+          </>,
+          <>
+            Representative outputs: Final paper; final & initial presentations.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "AeroTec",
+        timeframe: "Sep 2023 - Dec 2023",
+        role: "Frontend Web Developer",
+        location: "Lisbon, Portugal · Remote",
+        achievements: [
+          <>
+            Designed and implemented responsive web interfaces for aerospace engineering projects and digital services.
+          </>,
+          <>
+            Built clean, maintainable codebases and collaborated in a remote cross-functional environment.
+          </>,
+          <>
+            Representative outputs: AeroTec website.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Startup Portugal",
+        timeframe: "Nov 2023",
+        role: "Representative at Web Summit",
+        location: "Lisbon, Portugal · On-site",
+        achievements: [
+          <>
+            Represented Startup Lisbon at Web Summit 2023, boosting company visibility, engaging investors, and supporting investment rounds and pitching.
+          </>,
+          <>
+            Representative outputs: Certificate; "Startup Portugal at Web Summit 2023" media link.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Superprof",
+        timeframe: "Jan 2023 - Nov 2023",
+        role: "Math and Physics Teacher",
+        location: "Lisbon, Portugal · Hybrid",
+        achievements: [
+          <>
+            Taught students across levels (e.g., Calculus I–II, differential equations).
+          </>,
+          <>
+            Emphasised clear exposition and helping students build confidence in maths/physics.
+          </>,
+          <>
+            Representative outputs: Superprof page/account.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "CBPF (Centro Brasileiro de Pesquisas Físicas)",
+        timeframe: "Feb 2023",
+        role: "Artificial Intelligence Intern",
+        location: "Rio de Janeiro, Brazil · On-site",
+        achievements: [
+          <>
+            Two projects: CNN for ocean-floor mapping and LSTM light-curve classification to help identify dark matter.
+          </>,
+          <>
+            Contributed model development and dataset creation/analysis.
+          </>,
+          <>
+            Representative outputs: Publication (arXiv link in media); internship certificate.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Federação Portuguesa de Atletismo",
+        timeframe: "Sep 2015 - Sep 2018",
+        role: "Track and Field Athlete",
+        location: "Lisbon, Portugal · On-site",
+        achievements: [
+          <>
+            Represented the national federation in sprints (primary: 200m) and other events (100m–2.5km, long jump).
+          </>,
+          <>
+            Developed discipline, resilience, and teamwork transferable to academic and professional contexts.
+          </>,
+          <>
+            Representative outputs: Medals (media).
           </>,
         ],
         images: [],
