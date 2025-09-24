@@ -34,7 +34,7 @@ export default function About() {
     { id: about.intro.title, label: "Introduction" },
     { id: about.work.title, label: "Professional Experience" },
     { id: about.studies.title, label: "Education" },
-    { id: about.technical.title, label: "Technical Skills" },
+    { id: about.awards.title, label: "Awards & Honours" },
     { id: about.achievements.title, label: "Achievements" },
     { id: "publications", label: "Publications" },
     { id: "certifications", label: "Certifications" },
@@ -360,63 +360,51 @@ export default function About() {
             </>
           )}
 
-          {about.technical.display && (
+          {about.awards.display && (
             <>
               <Heading
                 as="h2"
-                id={about.technical.title}
+                id={about.awards.title}
                 variant="display-strong-s"
                 style={{ marginTop: "64px", marginBottom: "32px" }}
               >
-                {about.technical.title}
+                {about.awards.title}
               </Heading>
               <Column 
                 style={{ gap: "var(--static-space-l)", marginBottom: "64px", width: "100%" }}
               >
-                {about.technical.skills.map((skill, index) => (
+                {about.awards.accomplishments.map((award, index) => (
                   <Column 
-                    key={`${skill}-${index}`} 
-                    style={{ gap: "8px", marginBottom: "32px", width: "100%" }}
+                    key={`${award.title}-${index}`} 
+                    style={{ gap: "8px", marginBottom: "24px", width: "100%" }}
                   >
-                    <Text variant="heading-strong-l">{skill.title}</Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
-                    </Text>
-                    {skill.images && skill.images.length > 0 && (
+                    <Flex 
+                      horizontal="space-between" 
+                      vertical="end" 
+                      style={{ marginBottom: "4px", width: "100%" }}
+                    >
+                      <Text id={award.title} variant="heading-strong-l">
+                        {award.title}
+                      </Text>
                       <Flex 
-                        style={{
-                          paddingTop: "var(--static-space-m)",
-                          gap: "12px",
-                          flexWrap: "wrap",
-                          width: "100%",
-                        }}
+                        style={{ gap: "8px" }}
+                        vertical="center"
                       >
-                        {skill.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            style={{
-                              border: "1px solid var(--color-neutral-medium)",
-                              borderRadius: "var(--static-space-m)",
-                              minWidth: `${image.width}rem`,
-                              height: `${image.height}rem`,
-                            }}
-                          >
-                            <Media
-                              enlarge
-                              style={{
-                                borderRadius: "var(--static-space-m)",
-                              }}
-                              //@ts-ignore
-                              sizes={image.width.toString()}
-                              //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
+                        <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                          {award.category}
+                        </Tag>
+                        <Text variant="heading-default-xs" onBackground="neutral-weak">
+                          {award.year}
+                        </Text>
                       </Flex>
-                    )}
+                    </Flex>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {award.description}
+                    </Text>
+                    <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                      Issued by: {award.issuer}
+                      {award.associated_with && ` • Associated with: ${award.associated_with}`}
+                    </Text>
                   </Column>
                 ))}
               </Column>
