@@ -16,6 +16,7 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, social, publications, certifications, github } from "@/resources";
 import styles from "@/components/about/about.module.scss";
+import { SectionNavigation } from "@/components/SectionNavigation";
 import React from "react";
 
 export async function generateMetadata() {
@@ -29,6 +30,19 @@ export async function generateMetadata() {
 }
 
 export default function About() {
+  const sections = [
+    { id: about.intro.title, label: "Introduction" },
+    { id: about.work.title, label: "Professional Experience" },
+    { id: about.studies.title, label: "Education" },
+    { id: about.technical.title, label: "Technical Skills" },
+    { id: about.achievements.title, label: "Achievements" },
+    { id: "publications", label: "Publications" },
+    { id: "certifications", label: "Certifications" },
+    { id: "github-achievements", label: "GitHub Achievements" }
+  ];
+
+  console.log('About page rendering with sections:', sections);
+
   return (
     <Column style={{ maxWidth: "var(--static-space-m)" }}>
       <Schema
@@ -44,6 +58,19 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
+      <SectionNavigation sections={sections} />
+      {/* Debug: Simple test div */}
+      <div style={{
+        position: 'fixed',
+        left: '20px',
+        top: '20px',
+        background: 'red',
+        color: 'white',
+        padding: '10px',
+        zIndex: 9999
+      }}>
+        Navigation Test
+      </div>
       <Flex style={{ width: "100%", gap: "48px" }} horizontal="center">
         {about.avatar.display && (
           <Column
