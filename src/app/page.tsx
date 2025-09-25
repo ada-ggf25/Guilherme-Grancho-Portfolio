@@ -14,7 +14,7 @@ import {
   Schema,
   SmartLink
 } from "@once-ui-system/core";
-import { baseURL, about, person, social, publications } from "@/resources";
+import { baseURL, about, person, social } from "@/resources";
 import styles from "@/components/about/about.module.scss";
 import { SectionNavigation } from "@/components/SectionNavigation";
 import React from "react";
@@ -38,7 +38,7 @@ export default function About() {
     { id: about.achievements.title, label: "Key Achievements" },
     { id: about.hobbies.title, label: "Hobbies & Passions" },
     { id: about.values.title, label: "Values & Principles" },
-    { id: "publications", label: "Publications" }
+    { id: about.publications.title, label: "Publications" }
   ];
 
   return (
@@ -250,26 +250,33 @@ export default function About() {
                 }}
               >
                 {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} style={{ marginBottom: "32px", width: "100%" }}>
+                  <Column key={`${experience.company}-${experience.role}-${index}`} style={{ marginBottom: "40px", width: "100%" }}>
                     <Flex 
                       horizontal="space-between" 
                       vertical="end" 
-                      style={{ marginBottom: "4px", width: "100%" }}
+                      style={{ marginBottom: "8px", width: "100%" }}
                     >
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
-                      </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
-                      </Text>
+                      <Column style={{ flex: 1, gap: "4px" }}>
+                        <Text id={experience.company} variant="heading-strong-l">
+                          {experience.company}
+                        </Text>
+                        <Text 
+                          variant="body-default-s" 
+                          onBackground="brand-weak" 
+                          style={{ marginBottom: "8px" }}
+                        >
+                          {experience.role}
+                        </Text>
+                        <Text variant="body-default-xs" onBackground="neutral-weak">
+                          {experience.location}
+                        </Text>
+                      </Column>
+                      <Column style={{ alignItems: "flex-end", gap: "4px" }}>
+                        <Text variant="heading-default-xs" onBackground="neutral-weak">
+                          {experience.timeframe}
+                        </Text>
+                      </Column>
                     </Flex>
-                    <Text 
-                      variant="body-default-s" 
-                      onBackground="brand-weak" 
-                      style={{ marginBottom: "var(--static-space-m)" }}
-                    >
-                      {experience.role}
-                    </Text>
                     <Column 
                       as="ul" 
                       style={{ gap: "20px", marginTop: "16px" }}
@@ -346,12 +353,34 @@ export default function About() {
                 {about.studies.institutions.map((institution, index) => (
                   <Column 
                     key={`${institution.name}-${index}`} 
-                    style={{ gap: "8px", marginBottom: "24px", width: "100%" }}
+                    style={{ gap: "12px", marginBottom: "32px", width: "100%" }}
                   >
-                    <Text id={institution.name} variant="heading-strong-l">
-                      {institution.name}
-                    </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
+                    <Flex 
+                      horizontal="space-between" 
+                      vertical="end" 
+                      style={{ marginBottom: "8px", width: "100%" }}
+                    >
+                      <Column style={{ flex: 1, gap: "6px" }}>
+                        <Text id={institution.name} variant="heading-strong-l">
+                          {institution.name}
+                        </Text>
+                        <Text variant="body-default-s" onBackground="brand-weak">
+                          {institution.degree}
+                        </Text>
+                        <Text variant="body-default-xs" onBackground="neutral-weak">
+                          {institution.location}
+                        </Text>
+                      </Column>
+                      <Column style={{ alignItems: "flex-end", gap: "4px" }}>
+                        <Text variant="heading-default-xs" onBackground="neutral-weak">
+                          {institution.timeframe}
+                        </Text>
+                        <Text variant="body-default-xs" onBackground="neutral-weak">
+                          {institution.gpa}
+                        </Text>
+                      </Column>
+                    </Flex>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
                       {institution.description}
                     </Text>
                   </Column>
@@ -376,35 +405,38 @@ export default function About() {
                 {about.awards.accomplishments.map((award, index) => (
                   <Column 
                     key={`${award.title}-${index}`} 
-                    style={{ gap: "8px", marginBottom: "24px", width: "100%" }}
+                    style={{ gap: "12px", marginBottom: "32px", width: "100%" }}
                   >
                     <Flex 
                       horizontal="space-between" 
                       vertical="end" 
-                      style={{ marginBottom: "4px", width: "100%" }}
+                      style={{ marginBottom: "8px", width: "100%" }}
                     >
-                      <Text id={award.title} variant="heading-strong-l">
-                        {award.title}
-                      </Text>
-                      <Flex 
-                        style={{ gap: "8px" }}
-                        vertical="center"
-                      >
+                      <Column style={{ flex: 1, gap: "6px" }}>
+                        <Text id={award.title} variant="heading-strong-l">
+                          {award.title}
+                        </Text>
+                        <Text variant="body-default-s" onBackground="brand-weak">
+                          {award.issuer}
+                        </Text>
+                      </Column>
+                      <Column style={{ alignItems: "flex-end", gap: "6px" }}>
                         <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
                           {award.category}
                         </Tag>
                         <Text variant="heading-default-xs" onBackground="neutral-weak">
                           {award.year}
                         </Text>
-                      </Flex>
+                      </Column>
                     </Flex>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {award.description}
                     </Text>
-                    <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
-                      Issued by: {award.issuer}
-                      {award.associated_with && ` • Associated with: ${award.associated_with}`}
-                    </Text>
+                    {award.associated_with && (
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                        Associated with: {award.associated_with}
+                      </Text>
+                    )}
                   </Column>
                 ))}
               </Column>
@@ -479,27 +511,26 @@ export default function About() {
                 {about.achievements.accomplishments.map((achievement, index) => (
                   <Column 
                     key={`${achievement.title}-${index}`} 
-                    style={{ gap: "8px", marginBottom: "24px", width: "100%" }}
+                    style={{ gap: "12px", marginBottom: "32px", width: "100%" }}
                   >
                     <Flex 
                       horizontal="space-between" 
                       vertical="end" 
-                      style={{ marginBottom: "4px", width: "100%" }}
+                      style={{ marginBottom: "8px", width: "100%" }}
                     >
-                      <Text id={achievement.title} variant="heading-strong-l">
-                        {achievement.title}
-                      </Text>
-                      <Flex 
-                        style={{ gap: "8px" }}
-                        vertical="center"
-                      >
+                      <Column style={{ flex: 1, gap: "6px" }}>
+                        <Text id={achievement.title} variant="heading-strong-l">
+                          {achievement.title}
+                        </Text>
+                      </Column>
+                      <Column style={{ alignItems: "flex-end", gap: "6px" }}>
                         <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
                           {achievement.category}
                         </Tag>
                         <Text variant="heading-default-xs" onBackground="neutral-weak">
                           {achievement.year}
                         </Text>
-                      </Flex>
+                      </Column>
                     </Flex>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {achievement.description}
@@ -511,43 +542,33 @@ export default function About() {
           )}
 
           {/* Publications Section */}
-          {publications.display && (
+          {about.publications.display && (
             <>
-              <HeadingLink
+              <Heading
                 as="h2"
-                id="publications"
-                style={{
-                  marginTop: "80px",
-                  marginBottom: "32px",
-                }}
+                id={about.publications.title}
+                variant="display-strong-s"
+                style={{ marginTop: "64px", marginBottom: "32px" }}
               >
-                {publications.title}
-              </HeadingLink>
+                {about.publications.title}
+              </Heading>
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
                 style={{ marginBottom: "40px" }}
               >
-                {publications.description}
+                {about.publications.description}
               </Text>
               <Column style={{ gap: "32px", marginBottom: "64px" }}>
-                {publications.papers.map((paper, index) => (
-                  <Column key={index} style={{ gap: "12px", marginBottom: "24px" }}>
+                {about.publications.papers.map((paper, index) => (
+                  <Column key={index} style={{ gap: "12px", marginBottom: "32px" }}>
                     <Flex
-                      direction="row"
-                      style={{ 
-                        gap: "16px",
-                        justifyContent: "space-between",
-                        alignItems: "flex-start"
-                      }}
+                      horizontal="space-between"
+                      vertical="end"
+                      style={{ marginBottom: "8px", width: "100%" }}
                     >
-                      <Column 
-                        style={{ 
-                          flex: 1,
-                          gap: "8px",
-                        }}
-                      >
-                        <Heading variant="heading-default-s">
+                      <Column style={{ flex: 1, gap: "6px" }}>
+                        <Heading variant="heading-strong-l">
                           <SmartLink
                             href={paper.link}
                             target="_blank"
@@ -557,28 +578,30 @@ export default function About() {
                             {paper.title}
                           </SmartLink>
                         </Heading>
-                        <Text variant="body-default-s" onBackground="neutral-weak">
+                        <Text variant="body-default-s" onBackground="brand-weak">
                           {paper.authors}
                         </Text>
-                        <Flex 
-                          direction="row" 
-                          style={{ gap: "16px" }}
-                        >
-                          <Tag variant="neutral" size="s">
-                            {paper.venue}
-                          </Tag>
-                          <Tag variant="brand" size="s">
-                            {paper.category}
-                          </Tag>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {paper.year}
-                          </Text>
-                        </Flex>
+                        <Text variant="body-default-xs" onBackground="neutral-weak">
+                          {paper.venue} • {paper.date}
+                        </Text>
+                      </Column>
+                      <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                        <Tag variant="brand" size="s">
+                          {paper.category}
+                        </Tag>
+                        <Text variant="body-default-xs" onBackground="neutral-weak">
+                          {paper.type}
+                        </Text>
                       </Column>
                     </Flex>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {paper.description}
                     </Text>
+                    {paper.highlights && (
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                        Key highlights: {paper.highlights}
+                      </Text>
+                    )}
                   </Column>
                 ))}
               </Column>

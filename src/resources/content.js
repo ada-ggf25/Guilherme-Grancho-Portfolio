@@ -785,65 +785,65 @@ const about = {
       }
     ]
   },
+  publications: {
+    display: true, // set to false to hide this section
+    title: "Publications",
+    description: <>Academic research and publications in AI, machine learning, quantitative finance, and physics across peer-reviewed venues, conferences, and preprint servers.</>,
+    papers: [
+      {
+        title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
+        authors: "Guilherme Grancho, Vasco Pereira",
+        venue: "The Financial Economics Network (SSRN)",
+        date: "Jun 20, 2025",
+        type: "Working paper / preprint",
+        description: <>Introduces the Financial Torque Hypothesis (FTH)—that VWAP and trade count encapsulate short-term "market torque" useful for direction prediction. LSTM over intraday features; full-session vs. regular-hours comparisons; three feature-integration schemes (Standard, MinMax, Robust-to-non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data; 15% improvement in full-session consistency over regular-hours baselines; demonstrates value of extended-hours data + microstructure indicators for robust strategies.</>,
+        link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
+        category: "Quantitative Finance",
+        highlights: "87% directional accuracy, 15% improvement over baselines, 100+ downloads",
+        artifacts: "SSRN paper + Show publication link",
+      },
+      {
+        title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
+        authors: "Guilherme Grancho (First Author), T.H. Medeiros",
+        venue: "ENIAC — 34th National Meeting on Artificial and Computational Intelligence",
+        date: "Nov 21, 2024",
+        type: "Peer-reviewed conference paper",
+        description: <>Robust lexicographic multi-objective optimization with an automated step to determine the tolerance parameter, improving stability. ML-integrated lexicographic strategy; analysis of tolerance–outcome relations; cross-dataset validation. Automated tolerance selection improves computational efficiency and accuracy; emphasizes the importance of tolerance in lexicographic MOO.</>,
+        link: "https://ouci.dntb.gov.ua/works/4LYayb3V/",
+        category: "Machine Learning Optimization",
+        highlights: "First-author publication, automated tolerance selection, improved computational efficiency",
+        artifacts: "Conference Show publication link",
+      },
+      {
+        title: "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
+        authors: "Guilherme Grancho, Team Project",
+        venue: "6th EAFExp — Brazilian Center for Research in Physics (CBPF) / arXiv",
+        date: "Feb 28, 2023",
+        type: "Research paper",
+        description: <>Apply CNNs to bathymetric imagery to classify/segment seabed layers. Supervised CNN pipeline; dataset curation and analysis; evaluation on geoscience targets and regions. Demonstrates CNN feasibility for ocean-floor mapping and yields actionable geophysical insights.</>,
+        link: "https://arxiv.org/abs/2412.05329",
+        category: "Computer Vision & Geophysics",
+        highlights: "70%+ similarity to ground truth, Petrobras interest",
+        artifacts: "arXiv + Show publication link",
+      },
+      {
+        title: "The Atomic Nucleus — Discoveries of Modern Physics",
+        authors: "Guilherme Grancho",
+        venue: "Instituto Superior Técnico — Congress Center",
+        date: "Nov 28, 2022",
+        type: "Course paper + poster presentation",
+        description: <>Historical and experimental path to discovering the atomic nucleus; synthesis of early scattering experiments and implications. Course completed with 20/20; poster presented publicly at IST Congress Center.</>,
+        link: "#",
+        category: "Physics Education",
+        highlights: "20/20 grade, public poster presentation",
+        artifacts: "Show publication link",
+      },
+    ],
+  },
 };
 
 
 
-const publications = {
-  display: true, // set to false to hide this section
-  title: "Publications",
-  description: <>Academic research and publications in AI, machine learning, quantitative finance, and physics across peer-reviewed venues, conferences, and preprint servers.</>,
-  papers: [
-    {
-      title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
-      authors: "Guilherme Grancho, Vasco Pereira",
-      venue: "The Financial Economics Network (SSRN)",
-      date: "Jun 20, 2025",
-      type: "Working paper / preprint",
-      description: <>Introduces the Financial Torque Hypothesis (FTH)—that VWAP and trade count encapsulate short-term "market torque" useful for direction prediction. LSTM over intraday features; full-session vs. regular-hours comparisons; three feature-integration schemes (Standard, MinMax, Robust-to-non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data; 15% improvement in full-session consistency over regular-hours baselines; demonstrates value of extended-hours data + microstructure indicators for robust strategies.</>,
-      link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
-      category: "Quantitative Finance",
-      highlights: "87% directional accuracy, 15% improvement over baselines, 100+ downloads",
-      artifacts: "SSRN paper + Show publication link",
-    },
-    {
-      title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
-      authors: "Guilherme Grancho (First Author), T.H. Medeiros",
-      venue: "ENIAC — 34th National Meeting on Artificial and Computational Intelligence",
-      date: "Nov 21, 2024",
-      type: "Peer-reviewed conference paper",
-      description: <>Robust lexicographic multi-objective optimization with an automated step to determine the tolerance parameter, improving stability. ML-integrated lexicographic strategy; analysis of tolerance–outcome relations; cross-dataset validation. Automated tolerance selection improves computational efficiency and accuracy; emphasizes the importance of tolerance in lexicographic MOO.</>,
-      link: "https://ouci.dntb.gov.ua/works/4LYayb3V/",
-      category: "Machine Learning Optimization",
-      highlights: "First-author publication, automated tolerance selection, improved computational efficiency",
-      artifacts: "Conference Show publication link",
-    },
-    {
-      title: "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
-      authors: "Guilherme Grancho, Team Project",
-      venue: "6th EAFExp — Brazilian Center for Research in Physics (CBPF) / arXiv",
-      date: "Feb 28, 2023",
-      type: "Research paper",
-      description: <>Apply CNNs to bathymetric imagery to classify/segment seabed layers. Supervised CNN pipeline; dataset curation and analysis; evaluation on geoscience targets and regions. Demonstrates CNN feasibility for ocean-floor mapping and yields actionable geophysical insights.</>,
-      link: "https://arxiv.org/abs/2412.05329",
-      category: "Computer Vision & Geophysics",
-      highlights: "70%+ similarity to ground truth, Petrobras interest",
-      artifacts: "arXiv + Show publication link",
-    },
-    {
-      title: "The Atomic Nucleus — Discoveries of Modern Physics",
-      authors: "Guilherme Grancho",
-      venue: "Instituto Superior Técnico — Congress Center",
-      date: "Nov 28, 2022",
-      type: "Course paper + poster presentation",
-      description: <>Historical and experimental path to discovering the atomic nucleus; synthesis of early scattering experiments and implications. Course completed with 20/20; poster presented publicly at IST Congress Center.</>,
-      link: "#",
-      category: "Physics Education",
-      highlights: "20/20 grade, public poster presentation",
-      artifacts: "Show publication link",
-    },
-  ],
-};
 
 // Blog section removed - no longer needed
 
@@ -858,4 +858,4 @@ const work = {
 
 // Gallery section removed - no longer needed
 
-export { person, social, newsletter, home, about, publications };
+export { person, social, newsletter, home, about };
