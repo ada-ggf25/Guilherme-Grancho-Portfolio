@@ -62,7 +62,7 @@ export default function About() {
       <Column
         style={{
           width: "100%",
-          marginTop: "16px",
+          marginTop: "0px",
           marginBottom: "32px",
         }}
         horizontal="center"
