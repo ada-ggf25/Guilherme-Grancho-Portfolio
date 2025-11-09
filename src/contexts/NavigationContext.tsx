@@ -10,18 +10,28 @@ interface NavigationSection {
 interface NavigationContextType {
   sections: NavigationSection[];
   setSections: (sections: NavigationSection[]) => void;
-  isScrolled: boolean;
-  setIsScrolled: (isScrolled: boolean) => void;
+  showInHeader: boolean;
+  setShowInHeader: (show: boolean) => void;
+  transitionProgress: number;
+  setTransitionProgress: (progress: number) => void;
 }
 
 const NavigationContext = createContext<NavigationContextType | undefined>(undefined);
 
 export const NavigationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [sections, setSections] = useState<NavigationSection[]>([]);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [showInHeader, setShowInHeader] = useState(false);
+  const [transitionProgress, setTransitionProgress] = useState(0);
 
   return (
-    <NavigationContext.Provider value={{ sections, setSections, isScrolled, setIsScrolled }}>
+    <NavigationContext.Provider value={{ 
+      sections, 
+      setSections, 
+      showInHeader, 
+      setShowInHeader,
+      transitionProgress,
+      setTransitionProgress
+    }}>
       {children}
     </NavigationContext.Provider>
   );

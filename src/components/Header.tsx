@@ -12,11 +12,11 @@ import navStyles from "./SectionNavigation.module.scss";
 
 
 export const Header = () => {
-  const { sections, isScrolled } = useNavigation();
+  const { sections, showInHeader, transitionProgress } = useNavigation();
   const [activeSection, setActiveSection] = useState(0);
 
   useEffect(() => {
-    if (!isScrolled || sections.length === 0) return;
+    if (!showInHeader || sections.length === 0) return;
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 3;
@@ -35,10 +35,10 @@ export const Header = () => {
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [sections, isScrolled]);
+  }, [sections, showInHeader]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -54,6 +54,11 @@ export const Header = () => {
     }
   };
 
+  const shouldShow = showInHeader && sections.length > 0;
+  const opacity = transitionProgress;
+  const scale = 0.85 + (transitionProgress * 0.15); // Scale from 0.85 to 1.0
+  const translateY = (1 - transitionProgress) * -10; // Slide up from -10px to 0
+
   return (
     <>
       <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
@@ -61,7 +66,7 @@ export const Header = () => {
       <Flex
         fitHeight
         position="unset"
-        className={`${styles.position} ${isScrolled && sections.length > 0 ? styles.withNavigation : ''}`}
+        className={`${styles.position} ${shouldShow ? styles.withNavigation : ''}`}
         as="header"
         zIndex={9}
         fillWidth
@@ -72,8 +77,22 @@ export const Header = () => {
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
           <Flex>{person.name}</Flex>
         </Flex>
-        {isScrolled && sections.length > 0 && (
-          <Flex fillWidth horizontal="center" vertical="center" style={{ position: "absolute", left: 0, right: 0 }}>
+        {shouldShow && (
+          <Flex 
+            fillWidth 
+            horizontal="center" 
+            vertical="center" 
+            style={{ 
+              position: "absolute", 
+              left: 0, 
+              right: 0,
+              opacity: opacity,
+              transform: `scale(${scale}) translateY(${translateY}px)`,
+              transition: 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+              pointerEvents: opacity > 0.3 ? 'auto' : 'none',
+              willChange: 'opacity, transform'
+            }}
+          >
             <nav className={navStyles.navigationInHeader}>
               {sections.map((section, index) => (
                 <button
