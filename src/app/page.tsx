@@ -124,56 +124,6 @@ export default function About() {
           </Flex>
         )}
 
-        {about.calendar.display && (
-          <SmartLink
-            href={`mailto:${person.email}`}
-            style={{ textDecoration: "none", color: "inherit", marginBottom: "32px" }}
-          >
-            <Flex
-              className={`${styles.blockAlign} ${styles.talkToMeButton}`}
-              style={{
-                backdropFilter: "blur(var(--static-space-1))",
-                background: "var(--color-brand-alpha-weak)",
-                borderRadius: "9999px",
-                padding: "8px 16px",
-                gap: "12px",
-                border: "1px solid var(--color-brand-alpha-medium)",
-                width: "fit-content",
-                cursor: "pointer",
-                transition: "all 0.2s ease",
-                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                margin: "0 auto",
-              }}
-              vertical="center"
-            >
-              <Icon 
-                name="calendar" 
-                onBackground="brand-weak" 
-              />
-              <Text 
-                variant="body-default-s"
-                style={{ 
-                  fontWeight: "500",
-                  color: "var(--color-neutral-strong)",
-                  lineHeight: "1",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                Talk to me
-              </Text>
-              <Icon 
-                name="chevronRight" 
-                onBackground="brand-weak"
-                style={{ 
-                  width: "16px", 
-                  height: "16px" 
-                }}
-              />
-            </Flex>
-          </SmartLink>
-        )}
-
         {about.intro.display && (
           <Column 
             style={{
