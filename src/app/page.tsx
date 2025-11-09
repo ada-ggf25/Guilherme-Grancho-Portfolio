@@ -42,7 +42,7 @@ export default function About() {
   ];
 
   return (
-    <Column style={{ maxWidth: "var(--static-space-m)" }}>
+    <Column style={{ maxWidth: "800px", margin: "0 auto", padding: "0 var(--static-space-l)" }}>
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -56,36 +56,40 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <SectionNavigation sections={sections} />
-      <Flex style={{ width: "100%", gap: "48px" }} horizontal="center">
+      
+      {/* Avatar and Introduction Section at Top */}
+      <div id={about.intro.title}>
+      <Column
+        style={{
+          width: "100%",
+          marginTop: "32px",
+          marginBottom: "32px",
+        }}
+        horizontal="center"
+      >
         {about.avatar.display && (
           <Column
-            className={styles.avatar}
-            position="sticky"
             style={{
-              minWidth: "160px",
-              paddingLeft: "var(--static-space-l)",
-              paddingRight: "var(--static-space-xl)",
-              paddingBottom: "var(--static-space-xl)",
               gap: "var(--static-space-m)",
-              flex: 3,
+              marginBottom: "32px",
             }}
             horizontal="center"
           >
             <Avatar src={person.avatar} size="xl" />
             <Flex 
-              style={{ gap: "8px", marginTop: "16px" }}
+              style={{ gap: "8px", marginTop: "8px" }}
               vertical="center"
             >
               <Text style={{ fontSize: "16px" }}>📍</Text>
-              {person.location}
+              <Text variant="body-default-m">{person.location}</Text>
             </Flex>
             {person.languages.length > 0 && (
               <Flex 
+                horizontal="center"
                 style={{ 
                   flexWrap: "wrap",
                   gap: "8px",
-                  marginTop: "20px"
+                  marginTop: "12px"
                 }}
               >
                 {person.languages.map((language, index) => (
@@ -112,125 +116,129 @@ export default function About() {
             )}
           </Column>
         )}
-        <Column 
-          className={styles.blockAlign} 
-          style={{
-            flex: 9,
-            maxWidth: "40rem",
-            paddingLeft: "var(--static-space-l)",
-          }}
-        >
-          <Column
-            id={about.intro.title}
-            style={{
-              minHeight: "160px",
-              marginBottom: "32px",
-              width: "100%",
-            }}
-            vertical="center"
-          >
-            {about.calendar.display && (
-              <SmartLink
-                href={`mailto:${person.email}`}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <Flex
-                  className={`${styles.blockAlign} ${styles.talkToMeButton}`}
-                  style={{
-                    backdropFilter: "blur(var(--static-space-1))",
-                    background: "var(--color-brand-alpha-weak)",
-                    borderRadius: "9999px",
-                    padding: "8px 16px",
-                    gap: "12px",
-                    marginBottom: "var(--static-space-m)",
-                    border: "1px solid var(--color-brand-alpha-medium)",
-                    width: "fit-content",
-                    cursor: "pointer",
-                    transition: "all 0.2s ease",
-                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                  }}
-                  vertical="center"
-                >
-                  <Icon 
-                    name="calendar" 
-                    onBackground="brand-weak" 
-                  />
-                  <Text 
-                    variant="body-default-s"
-                    style={{ 
-                      fontWeight: "500",
-                      color: "var(--color-neutral-strong)",
-                      lineHeight: "1",
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    Talk to me
-                  </Text>
-                  <Icon 
-                    name="chevronRight" 
-                    onBackground="brand-weak"
-                    style={{ 
-                      width: "16px", 
-                      height: "16px" 
-                    }}
-                  />
-                </Flex>
-              </SmartLink>
-            )}
-            <Heading className={styles.textAlign} variant="display-strong-xl">
-              {person.name}
-            </Heading>
-            <Text
-              className={styles.textAlign}
-              variant="display-default-xs"
-              onBackground="neutral-weak"
-            >
-              {person.role}
-            </Text>
-            {social.length > 0 && (
-              <Flex 
-                className={styles.blockAlign} 
-                style={{
-                  paddingTop: "20px",
-                  paddingBottom: "8px",
-                  gap: "8px",
-                  flexWrap: "wrap",
-                  width: "fit-content",
-                }}
-                horizontal="center"
-              >
-                {social.map(
-                  (item) =>
-                    item.link && (
-                        <Button
-                            key={item.name}
-                            href={item.link}
-                            prefixIcon={item.icon}
-                            label={item.name}
-                            size="s"
-                            weight="default"
-                            variant="secondary"
-                        />
-                    ),
-                )}
-              </Flex>
-            )}
-          </Column>
 
-          {about.intro.display && (
-            <Column 
+        <Heading 
+          className={styles.textAlign} 
+          variant="display-strong-xl"
+          style={{ textAlign: "center", marginBottom: "12px" }}
+        >
+          {person.name}
+        </Heading>
+        <Text
+          className={styles.textAlign}
+          variant="display-default-xs"
+          onBackground="neutral-weak"
+          style={{ textAlign: "center", marginBottom: "24px" }}
+        >
+          {person.role}
+        </Text>
+        
+        {social.length > 0 && (
+          <Flex 
+            horizontal="center"
+            style={{
+              paddingTop: "8px",
+              paddingBottom: "8px",
+              gap: "8px",
+              flexWrap: "wrap",
+              width: "fit-content",
+              margin: "0 auto 24px",
+            }}
+          >
+            {social.map(
+              (item) =>
+                item.link && (
+                    <Button
+                        key={item.name}
+                        href={item.link}
+                        prefixIcon={item.icon}
+                        label={item.name}
+                        size="s"
+                        weight="default"
+                        variant="secondary"
+                    />
+                ),
+            )}
+          </Flex>
+        )}
+
+        {about.calendar.display && (
+          <SmartLink
+            href={`mailto:${person.email}`}
+            style={{ textDecoration: "none", color: "inherit", marginBottom: "32px" }}
+          >
+            <Flex
+              className={`${styles.blockAlign} ${styles.talkToMeButton}`}
               style={{
-                gap: "var(--static-space-m)",
-                marginBottom: "48px",
-                width: "100%",
-                fontSize: "var(--font-size-body-default-l)",
-                lineHeight: "var(--line-height-body-default-l)",
+                backdropFilter: "blur(var(--static-space-1))",
+                background: "var(--color-brand-alpha-weak)",
+                borderRadius: "9999px",
+                padding: "8px 16px",
+                gap: "12px",
+                border: "1px solid var(--color-brand-alpha-medium)",
+                width: "fit-content",
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+                margin: "0 auto",
               }}
+              vertical="center"
             >
-              {about.intro.description}
-            </Column>
-          )}
+              <Icon 
+                name="calendar" 
+                onBackground="brand-weak" 
+              />
+              <Text 
+                variant="body-default-s"
+                style={{ 
+                  fontWeight: "500",
+                  color: "var(--color-neutral-strong)",
+                  lineHeight: "1",
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                Talk to me
+              </Text>
+              <Icon 
+                name="chevronRight" 
+                onBackground="brand-weak"
+                style={{ 
+                  width: "16px", 
+                  height: "16px" 
+                }}
+              />
+            </Flex>
+          </SmartLink>
+        )}
+
+        {about.intro.display && (
+          <Column 
+            style={{
+              gap: "var(--static-space-m)",
+              marginBottom: "48px",
+              width: "100%",
+              fontSize: "var(--font-size-body-default-l)",
+              lineHeight: "var(--line-height-body-default-l)",
+              textAlign: "center",
+            }}
+          >
+            {about.intro.description}
+          </Column>
+        )}
+      </Column>
+      </div>
+
+      {/* Navigation Bar */}
+      <SectionNavigation sections={sections} />
+
+      {/* Main Content Sections */}
+      <Column 
+        className={styles.blockAlign} 
+        style={{
+          width: "100%",
+        }}
+      >
 
           {about.work.display && (
             <>
@@ -701,8 +709,7 @@ export default function About() {
             </>
           )}
 
-        </Column>
-      </Flex>
+      </Column>
     </Column>
   );
 }

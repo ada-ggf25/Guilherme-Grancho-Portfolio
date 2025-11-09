@@ -15,7 +15,7 @@ export const SectionNavigation: React.FC<SectionNavigationProps> = ({ sections }
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
       
       sections.forEach((section, index) => {
         const element = document.getElementById(section.id);
@@ -38,23 +38,28 @@ export const SectionNavigation: React.FC<SectionNavigationProps> = ({ sections }
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+      const headerOffset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
       });
     }
   };
 
   return (
-    <div className={styles.navigation}>
+    <nav className={styles.navigation}>
       {sections.map((section, index) => (
         <button
           key={section.id}
           className={`${styles.navItem} ${activeSection === index ? styles.active : ''}`}
           onClick={() => scrollToSection(section.id)}
-          title={section.label}
-        />
+        >
+          {section.label}
+        </button>
       ))}
-    </div>
+    </nav>
   );
 };
