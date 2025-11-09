@@ -31,13 +31,13 @@ export async function generateMetadata() {
 
 export default function About() {
   const sections = [
-    { id: about.intro.title, label: "Introduction" },
-    { id: about.work.title, label: "Professional Experience" },
+    { id: about.intro.title, label: "Intro" },
+    { id: about.work.title, label: "Experience" },
     { id: about.studies.title, label: "Education" },
-    { id: about.awards.title, label: "Awards & Honours" },
-    { id: about.achievements.title, label: "Key Achievements" },
-    { id: about.hobbies.title, label: "Hobbies & Passions" },
-    { id: about.values.title, label: "Values & Principles" },
+    { id: about.awards.title, label: "Awards" },
+    { id: about.achievements.title, label: "Achievements" },
+    { id: about.hobbies.title, label: "Hobbies" },
+    { id: about.values.title, label: "Values" },
     { id: about.publications.title, label: "Publications" }
   ];
 
