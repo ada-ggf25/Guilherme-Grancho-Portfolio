@@ -11,7 +11,6 @@ const person = {
   email: "guilhermegranchopro@gmail.com",
   location: "London - Lisbon",
   languages: ["Portuguese", "English", "Spanish", "French"],
-  phone: "+351 912 345 678",
   website: "https://guilhermegrancho.com",
   summary: "AI researcher, software engineer, and tech entrepreneur blending data science, engineering, and entrepreneurship to build solutions for finance and sustainability. Currently pursuing MSc in Applied Computational Science & Engineering at Imperial College London, with published research in quantitative finance and co-founder of Eco AI.ly's GAIA sustainability platform.",
 };
@@ -33,7 +32,7 @@ const social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/guilherme-grancho-951781292",
+    link: "https://www.linkedin.com/in/guilhermegrancho/",
   },
   {
     name: "GitHub",
@@ -93,7 +92,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Currently working towards making "Guilherme Grancho" stand for something.
+        AI researcher and software engineer passionate about applying machine learning to quantitative finance and sustainability challenges. Currently pursuing an MSc in Applied Computational Science & Engineering at Imperial College London, with published research in financial modelling and algorithmic trading. Co-founder of Eco AI.ly's GAIA platform, combining technical expertise with entrepreneurial drive to build impactful solutions.
       </>
     ),
   },
@@ -270,7 +269,7 @@ const about = {
             Taught and coordinated lab classes for Electronics Engineering students. Topics included Thomson's experiment, RLC circuits, and geometric & wave optics.
           </>,
           <>
-            End-of-course anonymous survey ranked you 9/9.
+            End-of-course anonymous survey ranked me 9/9.
           </>,
           <>
             Representative outputs: Distinguished Professors 2023/2024; student survey (9/9) media link.
@@ -451,7 +450,7 @@ const about = {
     accomplishments: [
       {
         title: "SSRN Financial Economics Network Top Paper — eJournal (4-day streak)",
-        description: <>Your paper "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" (with Vasco Pereira) appearing on the SSRN Top Downloads list for 9–12 Aug 2025.</>,
+        description: <>My paper "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" (with Vasco Pereira) appeared on the SSRN Top Downloads list for 9–12 Aug 2025.</>,
         category: "Research Excellence",
         year: "Aug 2025",
         issuer: "SSRN — The Financial Economics Network",
@@ -487,7 +486,7 @@ const about = {
       },
       {
         title: "Diploma of Teaching Excellence",
-        description: <>Teaching Physics III with Laboratory (BSc in Electronics Engineering) where the anonymous student survey rated you 9/9 overall, the highest in the course that year.</>,
+        description: <>Teaching Physics III with Laboratory (BSc in Electronics Engineering) where the anonymous student survey rated me 9/9 overall, the highest in the course that year.</>,
         category: "Teaching Excellence",
         year: "Feb 2024",
         issuer: "Instituto Superior Técnico",
@@ -620,7 +619,7 @@ const about = {
       },
       {
         title: "MSc in Applied Computational Science & Engineering",
-        description: <>Degree title for your Imperial MSc.</>,
+        description: <>MSc in Applied Computational Science & Engineering from Imperial College London, focusing on numerical methods, scientific computing, and machine learning applications.</>,
         category: "Education",
         year: "2025-2026",
       },
