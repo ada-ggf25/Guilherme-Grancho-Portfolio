@@ -180,12 +180,30 @@ export default function About() {
               gap: "var(--static-space-m)",
               marginBottom: "48px",
               width: "100%",
-              fontSize: "var(--font-size-body-default-l)",
-              lineHeight: "var(--line-height-body-default-l)",
-              textAlign: "justify",
             }}
           >
-            {about.intro.description}
+            <Text
+              style={{
+                fontSize: "var(--font-size-body-default-l)",
+                lineHeight: "var(--line-height-body-default-l)",
+                textAlign: "justify",
+              }}
+            >
+              {about.intro.description}
+            </Text>
+            {about.intro.finalStatement && (
+              <Text
+                style={{
+                  fontSize: "var(--font-size-body-default-l)",
+                  lineHeight: "var(--line-height-body-default-l)",
+                  textAlign: "center",
+                  marginTop: "32px",
+                  fontWeight: "bold",
+                }}
+              >
+                {about.intro.finalStatement}
+              </Text>
+            )}
           </Column>
         )}
       </Column>
