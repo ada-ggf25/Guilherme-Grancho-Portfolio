@@ -199,6 +199,7 @@ export default function About() {
         className={styles.blockAlign} 
         style={{
           width: "100%",
+          paddingTop: "16px",
         }}
       >
 
@@ -208,7 +209,7 @@ export default function About() {
                 as="h2" 
                 id={about.work.title} 
                 variant="display-strong-s" 
-                style={{ marginTop: "64px", marginBottom: "32px" }}
+                style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
               >
                 {about.work.title}
               </Heading>
@@ -309,7 +310,7 @@ export default function About() {
                 as="h2" 
                 id={about.studies.title} 
                 variant="display-strong-s" 
-                style={{ marginTop: "64px", marginBottom: "32px" }}
+                style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
               >
                 {about.studies.title}
               </Heading>
@@ -365,7 +366,7 @@ export default function About() {
                 as="h2"
                 id={about.awards.title}
                 variant="display-strong-s"
-                style={{ marginTop: "64px", marginBottom: "32px" }}
+                style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
               >
                 {about.awards.title}
               </Heading>
@@ -419,7 +420,7 @@ export default function About() {
                 as="h2"
                 id={about.certifications.title}
                 variant="display-strong-s"
-                style={{ marginTop: "64px", marginBottom: "32px" }}
+                style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
               >
                 {about.certifications.title}
               </Heading>
@@ -471,7 +472,7 @@ export default function About() {
                 as="h2"
                 id={about.achievements.title}
                 variant="display-strong-s"
-                style={{ marginTop: "64px", marginBottom: "32px" }}
+                style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
               >
                 {about.achievements.title}
               </Heading>
@@ -518,7 +519,7 @@ export default function About() {
                 as="h2"
                 id={about.publications.title}
                 variant="display-strong-s"
-                style={{ marginTop: "64px", marginBottom: "32px" }}
+                style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
               >
                 {about.publications.title}
               </Heading>
@@ -585,7 +586,7 @@ export default function About() {
                 as="h2"
                 id={about.hobbies.title}
                 variant="display-strong-s"
-                style={{ marginTop: "64px", marginBottom: "32px" }}
+                style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
               >
                 {about.hobbies.title}
               </Heading>
@@ -633,7 +634,7 @@ export default function About() {
                 as="h2"
                 id={about.values.title}
                 variant="display-strong-s"
-                style={{ marginTop: "64px", marginBottom: "32px" }}
+                style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
               >
                 {about.values.title}
               </Heading>
