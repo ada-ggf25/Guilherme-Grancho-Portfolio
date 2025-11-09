@@ -76,44 +76,6 @@ export default function About() {
             horizontal="center"
           >
             <Avatar src={person.avatar} size="xl" />
-            <Flex 
-              style={{ gap: "8px", marginTop: "8px" }}
-              vertical="center"
-            >
-              <Text style={{ fontSize: "16px" }}>📍</Text>
-              <Text variant="body-default-m">{person.location}</Text>
-            </Flex>
-            {person.languages.length > 0 && (
-              <Flex 
-                horizontal="center"
-                style={{ 
-                  flexWrap: "wrap",
-                  gap: "8px",
-                  marginTop: "12px"
-                }}
-              >
-                {person.languages.map((language, index) => (
-                  <Button
-                    key={language}
-                    size="s"
-                    weight="default"
-                    variant="secondary"
-                    style={{
-                      borderRadius: "8px",
-                      padding: "6px 12px",
-                      fontSize: "14px",
-                      fontWeight: "500",
-                      border: "1px solid var(--color-neutral-alpha-medium)",
-                      background: "var(--color-neutral-alpha-weak)",
-                      color: "var(--color-neutral-strong)",
-                      transition: "all 0.2s ease"
-                    }}
-                  >
-                    {language}
-                  </Button>
-                ))}
-              </Flex>
-            )}
           </Column>
         )}
 
