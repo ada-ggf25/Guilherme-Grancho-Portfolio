@@ -37,7 +37,7 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/guilhermegranchopro",
+    link: "https://github.com/ada-ggf25",
   },
   {
     name: "Google Scholar",
