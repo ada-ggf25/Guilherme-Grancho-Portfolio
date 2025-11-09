@@ -93,6 +93,8 @@ const about = {
     description: (
       <>
         AI researcher and software engineer passionate about applying machine learning to quantitative finance and sustainability challenges. Currently pursuing an MSc in Applied Computational Science & Engineering at Imperial College London, with published research in financial modelling and algorithmic trading. Co-founder of Eco AI.ly's GAIA platform, combining technical expertise with entrepreneurial drive to build impactful solutions.
+        <br /><br />
+        <strong>Currently focus on working towards making "Guilherme Grancho" stand for something.</strong>
       </>
     ),
   },

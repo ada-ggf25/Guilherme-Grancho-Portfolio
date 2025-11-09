@@ -182,7 +182,7 @@ export default function About() {
               width: "100%",
               fontSize: "var(--font-size-body-default-l)",
               lineHeight: "var(--line-height-body-default-l)",
-              textAlign: "center",
+              textAlign: "justify",
             }}
           >
             {about.intro.description}
