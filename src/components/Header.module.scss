@@ -5,6 +5,10 @@
     top: 0;
 }
 
+.position.withNavigation {
+    min-height: 80px;
+}
+
 .mask {
     pointer-events: none;
     backdrop-filter: blur(0.5rem);

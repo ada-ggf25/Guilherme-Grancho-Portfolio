@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import styles from "./SectionNavigation.module.scss";
+import { useNavigation } from "@/contexts/NavigationContext";
 
 interface SectionNavigationProps {
   sections: Array<{
@@ -12,7 +13,27 @@ interface SectionNavigationProps {
 
 export const SectionNavigation: React.FC<SectionNavigationProps> = ({ sections }) => {
   const [activeSection, setActiveSection] = useState(0);
+  const { setSections, isScrolled, setIsScrolled } = useNavigation();
 
+  // Update context with sections
+  useEffect(() => {
+    setSections(sections);
+  }, [sections, setSections]);
+
+  // Detect scroll position to determine if navigation should be in header
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const threshold = 200; // Scroll threshold to move navigation to header
+      setIsScrolled(scrollY > threshold);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [setIsScrolled]);
+
+  // Track active section
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 3;
@@ -48,6 +69,11 @@ export const SectionNavigation: React.FC<SectionNavigationProps> = ({ sections }
       });
     }
   };
+
+  // Hide navigation when scrolled (it will be shown in header)
+  if (isScrolled) {
+    return null;
+  }
 
   return (
     <nav className={styles.navigation}>

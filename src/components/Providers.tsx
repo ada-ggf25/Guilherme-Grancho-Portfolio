@@ -3,6 +3,7 @@
 import { BorderStyle, ChartMode, ChartVariant, DataThemeProvider, IconProvider, LayoutProvider, NeutralColor, ScalingSize, Schemes, SolidStyle, SolidType, SurfaceStyle, ThemeProvider, ToastProvider, TransitionStyle } from "@once-ui-system/core";
 import { style, dataStyle } from "../resources";
 import { iconLibrary } from "../resources/icons";
+import { NavigationProvider } from "@/contexts/NavigationContext";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -33,7 +34,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
         <ToastProvider>
           <LayoutProvider>
             <IconProvider icons={iconLibrary}>
-              {children}
+              <NavigationProvider>
+                {children}
+              </NavigationProvider>
             </IconProvider>
           </LayoutProvider>
         </ToastProvider>

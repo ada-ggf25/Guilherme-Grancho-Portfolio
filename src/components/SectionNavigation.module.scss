@@ -30,6 +30,34 @@
   }
 }
 
+.navigationInHeader {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: calc(100vw - 200px);
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  scrollbar-width: none;
+  
+  &:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
 .navItem {
   padding: 6px 12px;
   border: none;
@@ -59,6 +87,11 @@
   }
 }
 
+.navigationInHeader .navItem {
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
 // Responsive design
 @media (max-width: 768px) {
   .navigation {
@@ -71,6 +104,17 @@
   .navItem {
     padding: 5px 10px;
     font-size: 11px;
+  }
+
+  .navigationInHeader {
+    max-width: calc(100vw - 150px);
+    padding: 3px 6px;
+    gap: 2px;
+  }
+
+  .navigationInHeader .navItem {
+    padding: 3px 6px;
+    font-size: 10px;
   }
 }
 
@@ -85,5 +129,16 @@
   .navItem {
     padding: 4px 8px;
     font-size: 10px;
+  }
+
+  .navigationInHeader {
+    max-width: calc(100vw - 120px);
+    padding: 2px 4px;
+    gap: 1px;
+  }
+
+  .navigationInHeader .navItem {
+    padding: 2px 4px;
+    font-size: 9px;
   }
 }
