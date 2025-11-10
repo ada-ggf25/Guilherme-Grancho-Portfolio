@@ -17,6 +17,7 @@ import {
 import { baseURL, about, person, social } from "@/resources";
 import styles from "@/components/about/about.module.scss";
 import { SectionNavigation } from "@/components/SectionNavigation";
+import { CollapsibleSection } from "@/components/CollapsibleSection";
 import React from "react";
 
 export async function generateMetadata() {
@@ -197,39 +198,40 @@ export default function About() {
                 }}
               >
                 {about.studies.institutions.map((institution, index) => (
-                  <Column 
-                    key={`${institution.name}-${index}`} 
-                    style={{ gap: "12px", marginBottom: "32px", width: "100%" }}
+                  <CollapsibleSection
+                    key={`${institution.name}-${index}`}
+                    header={
+                      <Flex 
+                        horizontal="between" 
+                        vertical="end" 
+                        style={{ width: "100%", paddingRight: "8px" }}
+                      >
+                        <Column style={{ flex: 1, gap: "6px" }}>
+                          <Text id={institution.name} variant="heading-strong-l">
+                            {institution.name}
+                          </Text>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            {institution.degree}
+                          </Text>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {institution.location}
+                          </Text>
+                        </Column>
+                        <Column style={{ alignItems: "flex-end", gap: "4px" }}>
+                          <Text variant="heading-default-xs" onBackground="neutral-weak">
+                            {institution.timeframe}
+                          </Text>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {institution.gpa}
+                          </Text>
+                        </Column>
+                      </Flex>
+                    }
                   >
-                    <Flex 
-                      horizontal="between" 
-                      vertical="end" 
-                      style={{ marginBottom: "8px", width: "100%" }}
-                    >
-                      <Column style={{ flex: 1, gap: "6px" }}>
-                        <Text id={institution.name} variant="heading-strong-l">
-                          {institution.name}
-                        </Text>
-                        <Text variant="body-default-s" onBackground="brand-weak">
-                          {institution.degree}
-                        </Text>
-                        <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {institution.location}
-                        </Text>
-                      </Column>
-                      <Column style={{ alignItems: "flex-end", gap: "4px" }}>
-                        <Text variant="heading-default-xs" onBackground="neutral-weak">
-                          {institution.timeframe}
-                        </Text>
-                        <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {institution.gpa}
-                        </Text>
-                      </Column>
-                    </Flex>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {institution.description}
                     </Text>
-                  </Column>
+                  </CollapsibleSection>
                 ))}
               </Column>
             </>
@@ -253,33 +255,37 @@ export default function About() {
                 }}
               >
                 {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} style={{ marginBottom: "40px", width: "100%" }}>
-                    <Flex 
-                      horizontal="between" 
-                      vertical="end" 
-                      style={{ marginBottom: "8px", width: "100%" }}
-                    >
-                      <Column style={{ flex: 1, gap: "4px" }}>
-                        <Text id={experience.company} variant="heading-strong-l">
-                          {experience.company}
-                        </Text>
-                        <Text 
-                          variant="body-default-s" 
-                          onBackground="brand-weak" 
-                          style={{ marginBottom: "8px" }}
-                        >
-                          {experience.role}
-                        </Text>
-                        <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {experience.location}
-                        </Text>
-                      </Column>
-                      <Column style={{ alignItems: "flex-end", gap: "4px" }}>
-                        <Text variant="heading-default-xs" onBackground="neutral-weak">
-                          {experience.timeframe}
-                        </Text>
-                      </Column>
-                    </Flex>
+                  <CollapsibleSection
+                    key={`${experience.company}-${experience.role}-${index}`}
+                    header={
+                      <Flex 
+                        horizontal="between" 
+                        vertical="end" 
+                        style={{ width: "100%", paddingRight: "8px" }}
+                      >
+                        <Column style={{ flex: 1, gap: "4px" }}>
+                          <Text id={experience.company} variant="heading-strong-l">
+                            {experience.company}
+                          </Text>
+                          <Text 
+                            variant="body-default-s" 
+                            onBackground="brand-weak" 
+                            style={{ marginBottom: "8px" }}
+                          >
+                            {experience.role}
+                          </Text>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {experience.location}
+                          </Text>
+                        </Column>
+                        <Column style={{ alignItems: "flex-end", gap: "4px" }}>
+                          <Text variant="heading-default-xs" onBackground="neutral-weak">
+                            {experience.timeframe}
+                          </Text>
+                        </Column>
+                      </Flex>
+                    }
+                  >
                     <Column 
                       as="ul" 
                       style={{ gap: "20px", marginTop: "16px" }}
@@ -327,7 +333,7 @@ export default function About() {
                         ))}
                       </Flex>
                     )}
-                  </Column>
+                  </CollapsibleSection>
                 ))}
               </Column>
             </>
@@ -353,39 +359,43 @@ export default function About() {
               </Text>
               <Column style={{ gap: "32px", marginBottom: "64px" }}>
                 {about.publications.papers.map((paper, index) => (
-                  <Column key={index} style={{ gap: "12px", marginBottom: "32px" }}>
-                    <Flex
-                      horizontal="between"
-                      vertical="end"
-                      style={{ marginBottom: "8px", width: "100%" }}
-                    >
-                      <Column style={{ flex: 1, gap: "6px" }}>
-                        <Heading variant="heading-strong-l">
-                          <SmartLink
-                            href={paper.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ textDecoration: "none", color: "inherit" }}
-                          >
-                            {paper.title}
-                          </SmartLink>
-                        </Heading>
-                        <Text variant="body-default-s" onBackground="brand-weak">
-                          {paper.authors}
-                        </Text>
-                        <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {paper.venue} • {paper.date}
-                        </Text>
-                      </Column>
-                      <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                        <Tag variant="brand" size="s">
-                          {paper.category}
-                        </Tag>
-                        <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {paper.type}
-                        </Text>
-                      </Column>
-                    </Flex>
+                  <CollapsibleSection
+                    key={index}
+                    header={
+                      <Flex
+                        horizontal="between"
+                        vertical="end"
+                        style={{ width: "100%", paddingRight: "8px" }}
+                      >
+                        <Column style={{ flex: 1, gap: "6px" }}>
+                          <Heading variant="heading-strong-l">
+                            <SmartLink
+                              href={paper.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ textDecoration: "none", color: "inherit" }}
+                            >
+                              {paper.title}
+                            </SmartLink>
+                          </Heading>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            {paper.authors}
+                          </Text>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {paper.venue} • {paper.date}
+                          </Text>
+                        </Column>
+                        <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                          <Tag variant="brand" size="s">
+                            {paper.category}
+                          </Tag>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {paper.type}
+                          </Text>
+                        </Column>
+                      </Flex>
+                    }
+                  >
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {paper.description}
                     </Text>
@@ -394,7 +404,7 @@ export default function About() {
                         Key highlights: {paper.highlights}
                       </Text>
                     )}
-                  </Column>
+                  </CollapsibleSection>
                 ))}
               </Column>
             </>
@@ -414,32 +424,33 @@ export default function About() {
                 style={{ gap: "var(--static-space-l)", marginBottom: "64px", width: "100%" }}
               >
                 {about.awards.accomplishments.map((award, index) => (
-                  <Column 
-                    key={`${award.title}-${index}`} 
-                    style={{ gap: "12px", marginBottom: "32px", width: "100%" }}
+                  <CollapsibleSection
+                    key={`${award.title}-${index}`}
+                    header={
+                      <Flex 
+                        horizontal="between" 
+                        vertical="end" 
+                        style={{ width: "100%", paddingRight: "8px" }}
+                      >
+                        <Column style={{ flex: 1, gap: "6px" }}>
+                          <Text id={award.title} variant="heading-strong-l">
+                            {award.title}
+                          </Text>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            {award.issuer}
+                          </Text>
+                        </Column>
+                        <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                          <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                            {award.category}
+                          </Tag>
+                          <Text variant="heading-default-xs" onBackground="neutral-weak">
+                            {award.year}
+                          </Text>
+                        </Column>
+                      </Flex>
+                    }
                   >
-                    <Flex 
-                      horizontal="between" 
-                      vertical="end" 
-                      style={{ marginBottom: "8px", width: "100%" }}
-                    >
-                      <Column style={{ flex: 1, gap: "6px" }}>
-                        <Text id={award.title} variant="heading-strong-l">
-                          {award.title}
-                        </Text>
-                        <Text variant="body-default-s" onBackground="brand-weak">
-                          {award.issuer}
-                        </Text>
-                      </Column>
-                      <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                        <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                          {award.category}
-                        </Tag>
-                        <Text variant="heading-default-xs" onBackground="neutral-weak">
-                          {award.year}
-                        </Text>
-                      </Column>
-                    </Flex>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {award.description}
                     </Text>
@@ -448,7 +459,7 @@ export default function About() {
                         Associated with: {award.associated_with}
                       </Text>
                     )}
-                  </Column>
+                  </CollapsibleSection>
                 ))}
               </Column>
             </>
@@ -468,30 +479,31 @@ export default function About() {
                 style={{ gap: "var(--static-space-l)", marginBottom: "64px", width: "100%" }}
               >
                 {about.certifications.accomplishments.map((certification, index) => (
-                  <Column 
-                    key={`${certification.title}-${index}`} 
-                    style={{ gap: "8px", marginBottom: "24px", width: "100%" }}
-                  >
-                    <Flex 
-                      horizontal="between" 
-                      vertical="end" 
-                      style={{ marginBottom: "4px", width: "100%" }}
-                    >
-                      <Text id={certification.title} variant="heading-strong-l">
-                        {certification.title}
-                      </Text>
+                  <CollapsibleSection
+                    key={`${certification.title}-${index}`}
+                    header={
                       <Flex 
-                        style={{ gap: "8px" }}
-                        vertical="center"
+                        horizontal="between" 
+                        vertical="end" 
+                        style={{ width: "100%", paddingRight: "8px" }}
                       >
-                        <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                          {certification.category}
-                        </Tag>
-                        <Text variant="heading-default-xs" onBackground="neutral-weak">
-                          {certification.year}
+                        <Text id={certification.title} variant="heading-strong-l">
+                          {certification.title}
                         </Text>
+                        <Flex 
+                          style={{ gap: "8px" }}
+                          vertical="center"
+                        >
+                          <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                            {certification.category}
+                          </Tag>
+                          <Text variant="heading-default-xs" onBackground="neutral-weak">
+                            {certification.year}
+                          </Text>
+                        </Flex>
                       </Flex>
-                    </Flex>
+                    }
+                  >
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {certification.description}
                     </Text>
@@ -500,7 +512,7 @@ export default function About() {
                       {certification.associated_with && ` • Associated with: ${certification.associated_with}`}
                       {certification.credential_id && ` • Credential ID: ${certification.credential_id}`}
                     </Text>
-                  </Column>
+                  </CollapsibleSection>
                 ))}
               </Column>
             </>
@@ -520,33 +532,34 @@ export default function About() {
                 style={{ gap: "var(--static-space-l)", marginBottom: "64px", width: "100%" }}
               >
                 {about.achievements.accomplishments.map((achievement, index) => (
-                  <Column 
-                    key={`${achievement.title}-${index}`} 
-                    style={{ gap: "12px", marginBottom: "32px", width: "100%" }}
+                  <CollapsibleSection
+                    key={`${achievement.title}-${index}`}
+                    header={
+                      <Flex 
+                        horizontal="between" 
+                        vertical="end" 
+                        style={{ width: "100%", paddingRight: "8px" }}
+                      >
+                        <Column style={{ flex: 1, gap: "6px" }}>
+                          <Text id={achievement.title} variant="heading-strong-l">
+                            {achievement.title}
+                          </Text>
+                        </Column>
+                        <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                          <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                            {achievement.category}
+                          </Tag>
+                          <Text variant="heading-default-xs" onBackground="neutral-weak">
+                            {achievement.year}
+                          </Text>
+                        </Column>
+                      </Flex>
+                    }
                   >
-                    <Flex 
-                      horizontal="between" 
-                      vertical="end" 
-                      style={{ marginBottom: "8px", width: "100%" }}
-                    >
-                      <Column style={{ flex: 1, gap: "6px" }}>
-                        <Text id={achievement.title} variant="heading-strong-l">
-                          {achievement.title}
-                        </Text>
-                      </Column>
-                      <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                        <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                          {achievement.category}
-                        </Tag>
-                        <Text variant="heading-default-xs" onBackground="neutral-weak">
-                          {achievement.year}
-                        </Text>
-                      </Column>
-                    </Flex>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {achievement.description}
                     </Text>
-                  </Column>
+                  </CollapsibleSection>
                 ))}
               </Column>
             </>
@@ -572,10 +585,14 @@ export default function About() {
               </Text>
               <Column style={{ gap: "32px", marginBottom: "64px" }}>
                 {about.values.principles.map((principle, index) => (
-                  <Column key={index} style={{ gap: "16px", marginBottom: "32px" }}>
-                    <Heading variant="heading-strong-l">
-                      {principle.title}
-                    </Heading>
+                  <CollapsibleSection
+                    key={index}
+                    header={
+                      <Heading variant="heading-strong-l">
+                        {principle.title}
+                      </Heading>
+                    }
+                  >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic", marginBottom: "12px" }}>
                       {principle.definition}
                     </Text>
@@ -591,7 +608,7 @@ export default function About() {
                         </Flex>
                       ))}
                     </Column>
-                  </Column>
+                  </CollapsibleSection>
                 ))}
               </Column>
             </>
@@ -617,10 +634,14 @@ export default function About() {
               </Text>
               <Column style={{ gap: "32px", marginBottom: "64px" }}>
                 {about.hobbies.categories.map((category, index) => (
-                  <Column key={index} style={{ gap: "16px", marginBottom: "32px" }}>
-                    <Heading variant="heading-strong-m">
-                      {category.title}
-                    </Heading>
+                  <CollapsibleSection
+                    key={index}
+                    header={
+                      <Heading variant="heading-strong-m">
+                        {category.title}
+                      </Heading>
+                    }
+                  >
                     <Flex
                       direction="row"
                       style={{ 
@@ -639,7 +660,7 @@ export default function About() {
                         </Tag>
                       ))}
                     </Flex>
-                  </Column>
+                  </CollapsibleSection>
                 ))}
               </Column>
             </>
