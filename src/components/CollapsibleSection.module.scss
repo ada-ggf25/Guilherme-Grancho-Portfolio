@@ -38,14 +38,16 @@
 
 .chevron {
   flex-shrink: 0;
-  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .content {
   overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
-    opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) 0.05s,
-    padding 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: max-height, opacity, padding;
+  transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.08s,
+    padding 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   max-height: 0;
   opacity: 0;
   padding-top: 0;
@@ -55,18 +57,18 @@
   max-height: 5000px;
   opacity: 1;
   padding-top: var(--static-space-m);
-  transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
-    opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) 0.1s,
-    padding 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+    padding 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .content.collapsed {
   max-height: 0;
   opacity: 0;
   padding-top: 0;
-  transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
-    opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
-    padding 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s,
+    padding 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (max-width: breakpoints.$s) {
