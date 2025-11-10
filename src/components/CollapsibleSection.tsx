@@ -51,7 +51,7 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
           <Icon
             name={isExpanded ? "chevronUp" : "chevronDown"}
             size="20"
-            onBackground="neutral-weak"
+            onBackground="neutral-strong"
             className={styles.chevron}
             style={{
               transition: "transform 0.3s ease",
