@@ -417,8 +417,8 @@ const about = {
         degree: "BSc in Engineering Physics & Technology",
         timeframe: "Sep 2022 - Jul 2024",
         location: "Lisbon, Portugal",
-        description: <>Theoretical, experimental, and computational physics + electronics & applied math. Focus on computational, experimental & theoretical physics; physics engineering; applied mathematics.</>,
-        gpa: "First Class Honours",
+        description: <>Learned a lot about theoretical, experimental, and computational physics, and deepened my understanding of advanced theoretical and applied mathematics. Also developed new skills in engineering and electronics.</>,
+        gpa: "Completed",
         relevant_courses: ["Differential & Integral Calculus I–III", "Linear Algebra", "Probability & Statistics", "Mathematical Techniques of Physics", "Earth & the Universe", "Discoveries of Modern Physics", "Electromagnetism", "Oscillations & Waves", "Relativity", "Thermodynamics", "Quantum Mechanics I", "Physics of Continuous Media", "Solid State Physics", "General Chemistry", "Circuit Theory & Electronics Fundamentals", "General Electronics", "Digital Systems", "Applied Optics", "Materials Science", "Materials in Engineering", "Applied Mechanics I", "Introduction to Experimental Physics Lab", "Experimental Physics Lab", "Advanced Experimental Physics Laboratory I & II", "Experimental Physics Lab in Research Units", "Integrated 1st-Cycle Project in Engineering Physics & Technology", "Programming Fundamentals", "Computational Physics", "Geometric Drawing & Modeling", "Introduction to Economics", "Global Challenges"],
       },
       {
