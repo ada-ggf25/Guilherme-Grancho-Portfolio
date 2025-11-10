@@ -432,7 +432,7 @@ const about = {
       },
       {
         name: "Colégio do Sagrado Coração de Maria",
-        degree: "High-School Diploma (Ciências e Tecnologias)",
+        degree: "High-School Diploma (Sciences and Technologies)",
         timeframe: "Sep 2018 - Jul 2021",
         location: "Lisbon, Portugal",
         description: <>Core subjects in sciences and technologies. Focus on mathematics, physics, programming, and chemistry.</>,
@@ -441,7 +441,7 @@ const about = {
       },
       {
         name: "British Council",
-        degree: "English Language & Literature (General)",
+        degree: "English Language & Literature",
         timeframe: "Sep 2016 - Jun 2019",
         location: "Lisbon, Portugal",
         description: <>Communication skills, grammar, vocabulary for academic & professional contexts. Focus on fluency, accuracy, and confidence across speaking, listening, reading, and writing.</>,
