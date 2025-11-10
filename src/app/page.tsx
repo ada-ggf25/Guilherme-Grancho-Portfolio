@@ -524,38 +524,10 @@ export default function About() {
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                style={{ marginBottom: "12px" }}
+                style={{ marginBottom: "12px", textAlign: "justify" }}
               >
                 {about.values.description}
               </Text>
-              <Column style={{ gap: "12px", marginBottom: "20px" }}>
-                {about.values.principles.map((principle, index) => (
-                  <CollapsibleSection
-                    key={index}
-                    header={
-                      <Heading variant="heading-strong-l" onBackground="neutral-strong">
-                        {principle.title}
-                      </Heading>
-                    }
-                  >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic", marginBottom: "12px" }}>
-                      {principle.definition}
-                    </Text>
-                    <Column style={{ gap: "8px" }}>
-                      {principle.behaviors.map((behavior, behaviorIndex) => (
-                        <Flex key={behaviorIndex} style={{ gap: "8px", alignItems: "flex-start" }}>
-                          <Text variant="body-default-s" onBackground="neutral-weak" style={{ marginTop: "2px" }}>
-                            •
-                          </Text>
-                          <Text variant="body-default-s" onBackground="neutral-weak">
-                            {behavior}
-                          </Text>
-                        </Flex>
-                      ))}
-                    </Column>
-                  </CollapsibleSection>
-                ))}
-              </Column>
             </>
           )}
 
