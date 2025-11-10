@@ -669,23 +669,7 @@ const about = {
     display: true, // set to false to hide this section
     title: "Hobbies & Passions",
     description: <>A comprehensive overview of technical skills, personal interests, and passions that drive my work and life. My passions include entrepreneurship, martial arts, running, surfing, cinematography, literature, museums, travelling, cooking, and volunteering.</>,
-    categories: [
-      {
-        title: "Passions",
-        skills: [
-          "Entrepreneurship",
-          "Martial Arts",
-          "Running",
-          "Surfing",
-          "Cinematography",
-          "Literature",
-          "Museums",
-          "Travelling",
-          "Cooking",
-          "Volunteering"
-        ]
-      }
-    ]
+    categories: []
   },
   values: {
     display: true, // set to false to hide this section
