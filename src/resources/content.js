@@ -436,7 +436,7 @@ const about = {
         timeframe: "Sep 2018 - Jul 2021",
         location: "Lisbon, Portugal",
         description: <>Core subjects in sciences and technologies. Focus on mathematics, physics, programming, and chemistry.</>,
-        gpa: "Excellent",
+        gpa: "Completed",
         relevant_courses: ["Portuguese", "English", "Mathematics", "Biology & Geology", "Physics & Chemistry", "Physics", "Computer Applications", "Philosophy", "Physical Education", "Moral & Religious Education", "Civic Education", "Professional & Soft-Skills Development"],
       },
       {
