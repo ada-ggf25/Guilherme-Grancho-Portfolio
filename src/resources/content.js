@@ -400,7 +400,7 @@ const about = {
         timeframe: "Sep 2025 - Sep 2026",
         location: "London, UK",
         description: <>Applied CS + numerical methods for large-scale scientific/ML computing. Focus on numerical optimisation, scientific programming, and scalable/parallel patterns.</>,
-        gpa: "In Progress",
+        gpa: "Distinction Expected",
         relevant_courses: ["Modern Programming Methods", "Computational Mathematics", "Applying Computational/Data Science", "Data Science & Machine Learning", "Deep Learning", "Modelling & Numerical Methods", "Advanced Programming", "Inversion & Optimisation", "Patterns for Parallel Programming"],
       },
       {
