@@ -444,7 +444,7 @@ const about = {
         degree: "English Language & Literature",
         timeframe: "Sep 2016 - Jun 2019",
         location: "Lisbon, Portugal",
-        description: <>Communication skills, grammar, vocabulary for academic & professional contexts. Focus on fluency, accuracy, and confidence across speaking, listening, reading, and writing.</>,
+        description: <>Earn communication, grammar, vocabulary english skills for academic and professional contexts.</>,
         gpa: "Completed",
         relevant_courses: ["English Grammar", "ESL", "Communication Skills", "Academic Writing", "Professional English"],
       },
