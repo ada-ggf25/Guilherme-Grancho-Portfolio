@@ -37,7 +37,6 @@ export default function About() {
     { id: about.work.title, label: "Experience" },
     { id: about.publications.title, label: "Publications" },
     { id: about.awards.title, label: "Awards" },
-    { id: about.achievements.title, label: "Achievements" },
     { id: about.values.title, label: "Values" },
     { id: about.hobbies.title, label: "Hobbies" }
   ];
@@ -504,53 +503,6 @@ export default function About() {
                       Issued by: {certification.issuer}
                       {certification.associated_with && ` • Associated with: ${certification.associated_with}`}
                       {certification.credential_id && ` • Credential ID: ${certification.credential_id}`}
-                    </Text>
-                  </CollapsibleSection>
-                ))}
-              </Column>
-            </>
-          )}
-
-          {about.achievements.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.achievements.title}
-                variant="display-strong-s"
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.achievements.title}
-              </Heading>
-              <Column 
-                style={{ gap: "var(--static-space-s)", marginBottom: "20px", width: "100%" }}
-              >
-                {about.achievements.accomplishments.map((achievement, index) => (
-                  <CollapsibleSection
-                    key={`${achievement.title}-${index}`}
-                    header={
-                      <Flex 
-                        horizontal="between" 
-                        vertical="end" 
-                        style={{ width: "100%", paddingRight: "8px" }}
-                      >
-                        <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text id={achievement.title} variant="heading-strong-l" onBackground="neutral-strong">
-                            {achievement.title}
-                          </Text>
-                        </Column>
-                        <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                          <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                            {achievement.category}
-                          </Tag>
-                          <Text variant="heading-default-xs" onBackground="neutral-weak">
-                            {achievement.year}
-                          </Text>
-                        </Column>
-                      </Flex>
-                    }
-                  >
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {achievement.description}
                     </Text>
                   </CollapsibleSection>
                 ))}
