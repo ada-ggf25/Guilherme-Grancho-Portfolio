@@ -668,7 +668,7 @@ const about = {
   hobbies: {
     display: true, // set to false to hide this section
     title: "Hobbies & Passions",
-    description: <>A comprehensive overview of technical skills, personal interests, and passions that drive my work and life.</>,
+    description: <>A comprehensive overview of technical skills, personal interests, and passions that drive my work and life. My passions include entrepreneurship, martial arts, running, surfing, cinematography, literature, museums, travelling, cooking, and volunteering.</>,
     categories: [
       {
         title: "Passions",
