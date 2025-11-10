@@ -64,7 +64,7 @@ export default function About() {
         style={{
           width: "100%",
           marginTop: "0px",
-          marginBottom: "20px",
+          marginBottom: "16px",
         }}
         horizontal="center"
       >
@@ -72,7 +72,7 @@ export default function About() {
           <Column
             style={{
               gap: "var(--static-space-m)",
-              marginBottom: "20px",
+              marginBottom: "16px",
             }}
             horizontal="center"
           >
@@ -137,7 +137,7 @@ export default function About() {
           <Column 
             style={{
               gap: "var(--static-space-m)",
-              marginBottom: "32px",
+              marginBottom: "24px",
               width: "100%",
             }}
           >
@@ -176,7 +176,7 @@ export default function About() {
         className={styles.blockAlign} 
         style={{
           width: "100%",
-          paddingTop: "8px",
+          paddingTop: "4px",
         }}
       >
 
@@ -186,14 +186,14 @@ export default function About() {
                 as="h2" 
                 id={about.studies.title} 
                 variant="display-strong-s" 
-                style={{ marginTop: "40px", marginBottom: "20px", scrollMarginTop: "140px" }}
+                style={{ marginTop: "28px", marginBottom: "16px", scrollMarginTop: "140px" }}
               >
                 {about.studies.title}
               </Heading>
               <Column 
                 style={{
-                  gap: "var(--static-space-m)",
-                  marginBottom: "40px",
+                  gap: "var(--static-space-s)",
+                  marginBottom: "28px",
                   width: "100%",
                 }}
               >
@@ -243,14 +243,14 @@ export default function About() {
                 as="h2" 
                 id={about.work.title} 
                 variant="display-strong-s" 
-                style={{ marginTop: "40px", marginBottom: "20px", scrollMarginTop: "140px" }}
+                style={{ marginTop: "28px", marginBottom: "16px", scrollMarginTop: "140px" }}
               >
                 {about.work.title}
               </Heading>
               <Column 
                 style={{
-                  gap: "var(--static-space-m)",
-                  marginBottom: "40px",
+                  gap: "var(--static-space-s)",
+                  marginBottom: "28px",
                   width: "100%",
                 }}
               >
@@ -346,18 +346,18 @@ export default function About() {
                 as="h2"
                 id={about.publications.title}
                 variant="display-strong-s"
-                style={{ marginTop: "40px", marginBottom: "20px", scrollMarginTop: "140px" }}
+                style={{ marginTop: "28px", marginBottom: "16px", scrollMarginTop: "140px" }}
               >
                 {about.publications.title}
               </Heading>
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                style={{ marginBottom: "24px" }}
+                style={{ marginBottom: "16px" }}
               >
                 {about.publications.description}
               </Text>
-              <Column style={{ gap: "20px", marginBottom: "40px" }}>
+              <Column style={{ gap: "16px", marginBottom: "28px" }}>
                 {about.publications.papers.map((paper, index) => (
                   <CollapsibleSection
                     key={index}
@@ -416,12 +416,12 @@ export default function About() {
                 as="h2"
                 id={about.awards.title}
                 variant="display-strong-s"
-                style={{ marginTop: "40px", marginBottom: "20px", scrollMarginTop: "140px" }}
+                style={{ marginTop: "28px", marginBottom: "16px", scrollMarginTop: "140px" }}
               >
                 {about.awards.title}
               </Heading>
               <Column 
-                style={{ gap: "var(--static-space-m)", marginBottom: "40px", width: "100%" }}
+                style={{ gap: "var(--static-space-s)", marginBottom: "28px", width: "100%" }}
               >
                 {about.awards.accomplishments.map((award, index) => (
                   <CollapsibleSection
@@ -471,12 +471,12 @@ export default function About() {
                 as="h2"
                 id={about.certifications.title}
                 variant="display-strong-s"
-                style={{ marginTop: "40px", marginBottom: "20px", scrollMarginTop: "140px" }}
+                style={{ marginTop: "28px", marginBottom: "16px", scrollMarginTop: "140px" }}
               >
                 {about.certifications.title}
               </Heading>
               <Column 
-                style={{ gap: "var(--static-space-m)", marginBottom: "40px", width: "100%" }}
+                style={{ gap: "var(--static-space-s)", marginBottom: "28px", width: "100%" }}
               >
                 {about.certifications.accomplishments.map((certification, index) => (
                   <CollapsibleSection
@@ -524,12 +524,12 @@ export default function About() {
                 as="h2"
                 id={about.achievements.title}
                 variant="display-strong-s"
-                style={{ marginTop: "40px", marginBottom: "20px", scrollMarginTop: "140px" }}
+                style={{ marginTop: "28px", marginBottom: "16px", scrollMarginTop: "140px" }}
               >
                 {about.achievements.title}
               </Heading>
               <Column 
-                style={{ gap: "var(--static-space-m)", marginBottom: "40px", width: "100%" }}
+                style={{ gap: "var(--static-space-s)", marginBottom: "28px", width: "100%" }}
               >
                 {about.achievements.accomplishments.map((achievement, index) => (
                   <CollapsibleSection
@@ -572,18 +572,18 @@ export default function About() {
                 as="h2"
                 id={about.values.title}
                 variant="display-strong-s"
-                style={{ marginTop: "40px", marginBottom: "20px", scrollMarginTop: "140px" }}
+                style={{ marginTop: "28px", marginBottom: "16px", scrollMarginTop: "140px" }}
               >
                 {about.values.title}
               </Heading>
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                style={{ marginBottom: "24px" }}
+                style={{ marginBottom: "16px" }}
               >
                 {about.values.description}
               </Text>
-              <Column style={{ gap: "20px", marginBottom: "40px" }}>
+              <Column style={{ gap: "16px", marginBottom: "28px" }}>
                 {about.values.principles.map((principle, index) => (
                   <CollapsibleSection
                     key={index}
@@ -621,18 +621,18 @@ export default function About() {
                 as="h2"
                 id={about.hobbies.title}
                 variant="display-strong-s"
-                style={{ marginTop: "40px", marginBottom: "20px", scrollMarginTop: "140px" }}
+                style={{ marginTop: "28px", marginBottom: "16px", scrollMarginTop: "140px" }}
               >
                 {about.hobbies.title}
               </Heading>
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                style={{ marginBottom: "24px" }}
+                style={{ marginBottom: "16px" }}
               >
                 {about.hobbies.description}
               </Text>
-              <Column style={{ gap: "20px", marginBottom: "40px" }}>
+              <Column style={{ gap: "16px", marginBottom: "28px" }}>
                 {about.hobbies.categories.map((category, index) => (
                   <CollapsibleSection
                     key={index}
