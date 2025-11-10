@@ -161,7 +161,7 @@ const about = {
         images: [],
       },
       {
-        company: "Instituto Superior Técnico (IST)",
+        company: "Instituto Superior Técnico",
         timeframe: "Apr 2025 - Jul 2025",
         role: "Teacher Assistant (Physics II with Laboratory)",
         location: "Lisbon, Portugal · On-site",
@@ -266,7 +266,7 @@ const about = {
         images: [],
       },
       {
-        company: "Instituto Superior Técnico (IST)",
+        company: "Instituto Superior Técnico",
         timeframe: "Nov 2023 - Feb 2024",
         role: "Teacher & Laboratory Coordinator (Physics III with Laboratory)",
         location: "Lisbon, Portugal · On-site",
@@ -404,7 +404,7 @@ const about = {
         relevant_courses: ["Modern Programming Methods", "Computational Mathematics", "Applying Computational/Data Science", "Data Science & Machine Learning", "Deep Learning", "Modelling & Numerical Methods", "Advanced Programming", "Inversion & Optimisation", "Patterns for Parallel Programming"],
       },
       {
-        name: "Instituto Superior Técnico (IST)",
+        name: "Instituto Superior Técnico",
         degree: "Master's (Computer Science & Engineering)",
         timeframe: "Aug 2024 - Jul 2025",
         location: "Lisbon, Portugal",
@@ -413,7 +413,7 @@ const about = {
         relevant_courses: ["Data Analysis & Integration", "Introduction to Financial Mathematics", "Computational Methods in Finance", "Introduction to Quantum Information & Computing", "Software Security", "Communication Skills in Informatics & Computer Engineering I & II", "Deep Learning", "Planning, Learning & Intelligent Decision-Making", "Autonomous Agents & Multi-Agent Systems", "Business Integration"],
       },
       {
-        name: "Instituto Superior Técnico (IST)",
+        name: "Instituto Superior Técnico",
         degree: "Bachelor's (Engineering Physics & Technology)",
         timeframe: "Sep 2022 - Jul 2024",
         location: "Lisbon, Portugal",
@@ -422,7 +422,7 @@ const about = {
         relevant_courses: ["Differential & Integral Calculus I–III", "Linear Algebra", "Probability & Statistics", "Mathematical Techniques of Physics", "Earth & the Universe", "Discoveries of Modern Physics", "Electromagnetism", "Oscillations & Waves", "Relativity", "Thermodynamics", "Quantum Mechanics I", "Physics of Continuous Media", "Solid State Physics", "General Chemistry", "Circuit Theory & Electronics Fundamentals", "General Electronics", "Digital Systems", "Applied Optics", "Materials Science", "Materials in Engineering", "Applied Mechanics I", "Introduction to Experimental Physics Lab", "Experimental Physics Lab", "Advanced Experimental Physics Laboratory I & II", "Experimental Physics Lab in Research Units", "Integrated 1st-Cycle Project in Engineering Physics & Technology", "Programming Fundamentals", "Computational Physics", "Geometric Drawing & Modeling", "Introduction to Economics", "Global Challenges"],
       },
       {
-        name: "Instituto Superior Técnico (IST)",
+        name: "Instituto Superior Técnico",
         degree: "Bachelor's (Mechanical Engineering)",
         timeframe: "Sep 2021 - Jul 2022",
         location: "Lisbon, Portugal",
@@ -431,7 +431,7 @@ const about = {
         relevant_courses: ["Linear Algebra", "Differential & Integral Calculus I–II", "Materials Science", "General Chemistry", "Materials in Engineering", "Applied Mechanics I", "Programming Fundamentals", "Geometric Drawing & Modeling", "Introduction to Economics", "Global Challenges"],
       },
       {
-        name: "Colégio do Sagrado Coração de Maria (Lisboa)",
+        name: "Colégio do Sagrado Coração de Maria",
         degree: "High-School Diploma (Ciências e Tecnologias)",
         timeframe: "Sep 2018 - Jul 2021",
         location: "Lisbon, Portugal",
