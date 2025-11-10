@@ -396,7 +396,7 @@ const about = {
     institutions: [
       {
         name: "Imperial College London",
-        degree: "Master's (Applied Computational Science & Engineering)",
+        degree: "MSc in Applied Computational Science & Engineering",
         timeframe: "Sep 2025 - Sep 2026",
         location: "London, UK",
         description: <>Applied CS + numerical methods for large-scale scientific/ML computing. Focus on numerical optimisation, scientific programming, and scalable/parallel patterns.</>,
@@ -405,7 +405,7 @@ const about = {
       },
       {
         name: "Instituto Superior Técnico",
-        degree: "Master's (Computer Science & Engineering)",
+        degree: "MSc in Computer Science & Engineering",
         timeframe: "Aug 2024 - Jul 2025",
         location: "Lisbon, Portugal",
         description: <>Core CS, finance-oriented computation, AI/ML, multi-agent systems. Focus on computer science foundations, software design, data structures, and algorithm development.</>,
@@ -414,7 +414,7 @@ const about = {
       },
       {
         name: "Instituto Superior Técnico",
-        degree: "Bachelor's (Engineering Physics & Technology)",
+        degree: "BSc in Engineering Physics & Technology",
         timeframe: "Sep 2022 - Jul 2024",
         location: "Lisbon, Portugal",
         description: <>Theoretical, experimental, and computational physics + electronics & applied math. Focus on computational, experimental & theoretical physics; physics engineering; applied mathematics.</>,
@@ -423,7 +423,7 @@ const about = {
       },
       {
         name: "Instituto Superior Técnico",
-        degree: "Bachelor's (Mechanical Engineering)",
+        degree: "BSc in Mechanical Engineering",
         timeframe: "Sep 2021 - Jul 2022",
         location: "Lisbon, Portugal",
         description: <>Math, materials, mechanics, and design fundamentals. Focus on mechanical engineering, mechanical systems, materials science, and product design.</>,
@@ -432,7 +432,7 @@ const about = {
       },
       {
         name: "Colégio do Sagrado Coração de Maria",
-        degree: "High-School Diploma (Sciences and Technologies)",
+        degree: "High-School Diploma in Sciences and Technologies",
         timeframe: "Sep 2018 - Jul 2021",
         location: "Lisbon, Portugal",
         description: <>Core subjects in sciences and technologies. Focus on mathematics, physics, programming, and chemistry.</>,
