@@ -32,13 +32,13 @@ export async function generateMetadata() {
 export default function About() {
   const sections = [
     { id: about.intro.title, label: "Intro" },
-    { id: about.work.title, label: "Experience" },
     { id: about.studies.title, label: "Education" },
+    { id: about.work.title, label: "Experience" },
+    { id: about.publications.title, label: "Publications" },
     { id: about.awards.title, label: "Awards" },
     { id: about.achievements.title, label: "Achievements" },
-    { id: about.publications.title, label: "Publications" },
-    { id: about.hobbies.title, label: "Hobbies" },
-    { id: about.values.title, label: "Values" }
+    { id: about.values.title, label: "Values" },
+    { id: about.hobbies.title, label: "Hobbies" }
   ];
 
   return (
@@ -179,6 +179,62 @@ export default function About() {
         }}
       >
 
+          {about.studies.display && (
+            <>
+              <Heading 
+                as="h2" 
+                id={about.studies.title} 
+                variant="display-strong-s" 
+                style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
+              >
+                {about.studies.title}
+              </Heading>
+              <Column 
+                style={{
+                  gap: "var(--static-space-l)",
+                  marginBottom: "64px",
+                  width: "100%",
+                }}
+              >
+                {about.studies.institutions.map((institution, index) => (
+                  <Column 
+                    key={`${institution.name}-${index}`} 
+                    style={{ gap: "12px", marginBottom: "32px", width: "100%" }}
+                  >
+                    <Flex 
+                      horizontal="between" 
+                      vertical="end" 
+                      style={{ marginBottom: "8px", width: "100%" }}
+                    >
+                      <Column style={{ flex: 1, gap: "6px" }}>
+                        <Text id={institution.name} variant="heading-strong-l">
+                          {institution.name}
+                        </Text>
+                        <Text variant="body-default-s" onBackground="brand-weak">
+                          {institution.degree}
+                        </Text>
+                        <Text variant="body-default-xs" onBackground="neutral-weak">
+                          {institution.location}
+                        </Text>
+                      </Column>
+                      <Column style={{ alignItems: "flex-end", gap: "4px" }}>
+                        <Text variant="heading-default-xs" onBackground="neutral-weak">
+                          {institution.timeframe}
+                        </Text>
+                        <Text variant="body-default-xs" onBackground="neutral-weak">
+                          {institution.gpa}
+                        </Text>
+                      </Column>
+                    </Flex>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {institution.description}
+                    </Text>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
           {about.work.display && (
             <>
               <Heading 
@@ -277,56 +333,67 @@ export default function About() {
             </>
           )}
 
-          {about.studies.display && (
+          {/* Publications Section */}
+          {about.publications.display && (
             <>
-              <Heading 
-                as="h2" 
-                id={about.studies.title} 
-                variant="display-strong-s" 
+              <Heading
+                as="h2"
+                id={about.publications.title}
+                variant="display-strong-s"
                 style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
               >
-                {about.studies.title}
+                {about.publications.title}
               </Heading>
-              <Column 
-                style={{
-                  gap: "var(--static-space-l)",
-                  marginBottom: "64px",
-                  width: "100%",
-                }}
+              <Text
+                variant="body-default-m"
+                onBackground="neutral-weak"
+                style={{ marginBottom: "40px" }}
               >
-                {about.studies.institutions.map((institution, index) => (
-                  <Column 
-                    key={`${institution.name}-${index}`} 
-                    style={{ gap: "12px", marginBottom: "32px", width: "100%" }}
-                  >
-                    <Flex 
-                      horizontal="between" 
-                      vertical="end" 
+                {about.publications.description}
+              </Text>
+              <Column style={{ gap: "32px", marginBottom: "64px" }}>
+                {about.publications.papers.map((paper, index) => (
+                  <Column key={index} style={{ gap: "12px", marginBottom: "32px" }}>
+                    <Flex
+                      horizontal="between"
+                      vertical="end"
                       style={{ marginBottom: "8px", width: "100%" }}
                     >
                       <Column style={{ flex: 1, gap: "6px" }}>
-                        <Text id={institution.name} variant="heading-strong-l">
-                          {institution.name}
-                        </Text>
+                        <Heading variant="heading-strong-l">
+                          <SmartLink
+                            href={paper.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: "none", color: "inherit" }}
+                          >
+                            {paper.title}
+                          </SmartLink>
+                        </Heading>
                         <Text variant="body-default-s" onBackground="brand-weak">
-                          {institution.degree}
+                          {paper.authors}
                         </Text>
                         <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {institution.location}
+                          {paper.venue} • {paper.date}
                         </Text>
                       </Column>
-                      <Column style={{ alignItems: "flex-end", gap: "4px" }}>
-                        <Text variant="heading-default-xs" onBackground="neutral-weak">
-                          {institution.timeframe}
-                        </Text>
+                      <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                        <Tag variant="brand" size="s">
+                          {paper.category}
+                        </Tag>
                         <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {institution.gpa}
+                          {paper.type}
                         </Text>
                       </Column>
                     </Flex>
                     <Text variant="body-default-m" onBackground="neutral-weak">
-                      {institution.description}
+                      {paper.description}
                     </Text>
+                    {paper.highlights && (
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                        Key highlights: {paper.highlights}
+                      </Text>
+                    )}
                   </Column>
                 ))}
               </Column>
@@ -485,67 +552,45 @@ export default function About() {
             </>
           )}
 
-          {/* Publications Section */}
-          {about.publications.display && (
+          {/* Values & Principles Section */}
+          {about.values.display && (
             <>
               <Heading
                 as="h2"
-                id={about.publications.title}
+                id={about.values.title}
                 variant="display-strong-s"
                 style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
               >
-                {about.publications.title}
+                {about.values.title}
               </Heading>
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
                 style={{ marginBottom: "40px" }}
               >
-                {about.publications.description}
+                {about.values.description}
               </Text>
               <Column style={{ gap: "32px", marginBottom: "64px" }}>
-                {about.publications.papers.map((paper, index) => (
-                  <Column key={index} style={{ gap: "12px", marginBottom: "32px" }}>
-                    <Flex
-                      horizontal="between"
-                      vertical="end"
-                      style={{ marginBottom: "8px", width: "100%" }}
-                    >
-                      <Column style={{ flex: 1, gap: "6px" }}>
-                        <Heading variant="heading-strong-l">
-                          <SmartLink
-                            href={paper.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ textDecoration: "none", color: "inherit" }}
-                          >
-                            {paper.title}
-                          </SmartLink>
-                        </Heading>
-                        <Text variant="body-default-s" onBackground="brand-weak">
-                          {paper.authors}
-                        </Text>
-                        <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {paper.venue} • {paper.date}
-                        </Text>
-                      </Column>
-                      <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                        <Tag variant="brand" size="s">
-                          {paper.category}
-                        </Tag>
-                        <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {paper.type}
-                        </Text>
-                      </Column>
-                    </Flex>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {paper.description}
+                {about.values.principles.map((principle, index) => (
+                  <Column key={index} style={{ gap: "16px", marginBottom: "32px" }}>
+                    <Heading variant="heading-strong-l">
+                      {principle.title}
+                    </Heading>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic", marginBottom: "12px" }}>
+                      {principle.definition}
                     </Text>
-                    {paper.highlights && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
-                        Key highlights: {paper.highlights}
-                      </Text>
-                    )}
+                    <Column style={{ gap: "8px" }}>
+                      {principle.behaviors.map((behavior, behaviorIndex) => (
+                        <Flex key={behaviorIndex} style={{ gap: "8px", alignItems: "flex-start" }}>
+                          <Text variant="body-default-s" onBackground="neutral-weak" style={{ marginTop: "2px" }}>
+                            •
+                          </Text>
+                          <Text variant="body-default-s" onBackground="neutral-weak">
+                            {behavior}
+                          </Text>
+                        </Flex>
+                      ))}
+                    </Column>
                   </Column>
                 ))}
               </Column>
@@ -594,51 +639,6 @@ export default function About() {
                         </Tag>
                       ))}
                     </Flex>
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
-
-          {/* Values & Principles Section */}
-          {about.values.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.values.title}
-                variant="display-strong-s"
-                style={{ marginTop: "64px", marginBottom: "32px", scrollMarginTop: "140px" }}
-              >
-                {about.values.title}
-              </Heading>
-              <Text
-                variant="body-default-m"
-                onBackground="neutral-weak"
-                style={{ marginBottom: "40px" }}
-              >
-                {about.values.description}
-              </Text>
-              <Column style={{ gap: "32px", marginBottom: "64px" }}>
-                {about.values.principles.map((principle, index) => (
-                  <Column key={index} style={{ gap: "16px", marginBottom: "32px" }}>
-                    <Heading variant="heading-strong-l">
-                      {principle.title}
-                    </Heading>
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic", marginBottom: "12px" }}>
-                      {principle.definition}
-                    </Text>
-                    <Column style={{ gap: "8px" }}>
-                      {principle.behaviors.map((behavior, behaviorIndex) => (
-                        <Flex key={behaviorIndex} style={{ gap: "8px", alignItems: "flex-start" }}>
-                          <Text variant="body-default-s" onBackground="neutral-weak" style={{ marginTop: "2px" }}>
-                            •
-                          </Text>
-                          <Text variant="body-default-s" onBackground="neutral-weak">
-                            {behavior}
-                          </Text>
-                        </Flex>
-                      ))}
-                    </Column>
                   </Column>
                 ))}
               </Column>
