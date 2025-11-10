@@ -8,11 +8,15 @@ Personal web portfolio showcasing my work.
 
 ## 🛠️ Tech Stack
 
+<div align="center">
+
 ![Next.js](https://img.shields.io/badge/Next.js-15.3.1-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?style=for-the-badge&logo=typescript)
 ![SCSS](https://img.shields.io/badge/SCSS-1.86.3-CC6699?style=for-the-badge&logo=sass)
 ![Once UI System](https://img.shields.io/badge/Once%20UI-1.2.4-000000?style=for-the-badge)
+
+</div>
 
 ## 📁 Project Structure
 
