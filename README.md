@@ -94,6 +94,10 @@ npm run lint
 npm run export
 ```
 
+## 📄 License
+
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** License. See the [LICENSE](LICENSE) file for details.
+
 ## 📞 Contact & Profiles
 
 - **Email**: [guilhermegranchopro@gmail.com](mailto:guilhermegranchopro@gmail.com)
@@ -101,9 +105,3 @@ npm run export
 - **GitHub**: [ada-ggf25](https://github.com/ada-ggf25)
 - **Google Scholar**: [Guilherme Grancho](https://scholar.google.com/citations?user=lHeQn9gAAAAJ&hl=en&authuser=3)
 - **Website**: [guilhermegrancho.com](https://guilhermegrancho.com)
-
-## 📄 License
-
-This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** License.
-
-See the [LICENSE](LICENSE) file for details.
