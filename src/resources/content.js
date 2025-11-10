@@ -328,7 +328,7 @@ const about = {
         company: "AeroTec",
         timeframe: "Sep 2023 - Dec 2023",
         role: "Frontend Web Developer",
-        location: "Lisbon, Portugal · Remote",
+        location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
             Designed and implemented responsive web interfaces for aerospace engineering projects and digital services.
