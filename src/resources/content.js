@@ -435,7 +435,7 @@ const about = {
         degree: "High-School Diploma in Sciences and Technologies",
         timeframe: "Sep 2018 - Jul 2021",
         location: "Lisbon, Portugal",
-        description: <>Core subjects in sciences and technologies. Focus on mathematics, physics, programming, and chemistry.</>,
+        description: <>I studied core science and technology subjects, focusing on maths, physics, programming and chemistry, to prepare for a career in engineering science.</>,
         gpa: "Completed",
         relevant_courses: ["Portuguese", "English", "Mathematics", "Biology & Geology", "Physics & Chemistry", "Physics", "Computer Applications", "Philosophy", "Physical Education", "Moral & Religious Education", "Civic Education", "Professional & Soft-Skills Development"],
       },
