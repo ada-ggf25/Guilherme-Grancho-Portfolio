@@ -793,7 +793,6 @@ const about = {
   publications: {
     display: true, // set to false to hide this section
     title: "Publications",
-    description: <>Academic research and publications in AI, machine learning, quantitative finance, and physics across peer-reviewed venues, conferences, and preprint servers.</>,
     papers: [
       {
         title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
