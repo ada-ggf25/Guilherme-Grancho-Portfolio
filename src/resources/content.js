@@ -408,7 +408,7 @@ const about = {
         degree: "MSc in Computer Science & Engineering",
         timeframe: "Aug 2024 - Jul 2025",
         location: "Lisbon, Portugal",
-        description: <>Core CS, finance-oriented computation, AI/ML, multi-agent systems. Focus on computer science foundations, software design, data structures, and algorithm development.</>,
+        description: <>I studied core computer science, finance-oriented computing and mathematics, AI/ML, and multi-agent systems, with a focus on CS foundations, software design, data structures, and algorithm development. I then had the opportunity to pursue an MSc at Imperial College London, focused on ML and AI.</>,
         gpa: "Interrupted",
         relevant_courses: ["Data Analysis & Integration", "Introduction to Financial Mathematics", "Computational Methods in Finance", "Introduction to Quantum Information & Computing", "Software Security", "Communication Skills in Informatics & Computer Engineering I & II", "Deep Learning", "Planning, Learning & Intelligent Decision-Making", "Autonomous Agents & Multi-Agent Systems", "Business Integration"],
       },
