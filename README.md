@@ -1,6 +1,6 @@
 # Guilherme Grancho - Personal Portfolio
 
-![Profile Picture](public/images/avatar.jpg)
+<img src="public/images/avatar.jpg" alt="Guilherme Grancho" width="100" />
 
 Personal web portfolio showcasing my work as an AI Developer & Fintech Entrepreneur
 
