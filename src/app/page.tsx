@@ -264,15 +264,15 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "4px" }}>
-                          <Text id={experience.company} variant="heading-strong-l" onBackground="neutral-strong">
-                            {experience.company}
+                          <Text id={experience.role} variant="heading-strong-l" onBackground="neutral-strong">
+                            {experience.role}
                           </Text>
                           <Text 
                             variant="body-default-s" 
                             onBackground="brand-weak" 
                             style={{ marginBottom: "8px" }}
                           >
-                            {experience.role}
+                            {experience.company}
                           </Text>
                           <Text variant="body-default-xs" onBackground="neutral-weak">
                             {experience.location}

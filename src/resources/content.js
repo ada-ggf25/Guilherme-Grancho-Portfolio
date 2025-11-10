@@ -72,6 +72,29 @@ const home = {
   ),
 };
 
+// Helper function to parse start date from timeframe string
+function parseStartDate(timeframe) {
+  const monthNames = {
+    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
+    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
+  };
+  
+  // Extract the start date part (before " - " or if no " - ", the whole string)
+  const startPart = timeframe.split(" - ")[0].trim();
+  const parts = startPart.split(" ");
+  
+  if (parts.length >= 2) {
+    const month = monthNames[parts[0]];
+    const year = parseInt(parts[1]);
+    if (month && year) {
+      return new Date(year, month - 1, 1); // Return Date object for comparison
+    }
+  }
+  
+  // Return a very old date if parsing fails
+  return new Date(1900, 0, 1);
+}
+
 const about = {
   path: "/",
   label: "About",
@@ -388,7 +411,12 @@ const about = {
         ],
         images: [],
       },
-    ],
+    ].sort((a, b) => {
+      // Sort by start date in descending order (most recent first)
+      const dateA = parseStartDate(a.timeframe);
+      const dateB = parseStartDate(b.timeframe);
+      return dateB - dateA; // Descending order
+    }),
   },
   studies: {
     display: true, // set to false to hide this section
