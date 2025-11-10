@@ -33,8 +33,8 @@
 .navigationInHeader {
   display: flex;
   flex-direction: row;
-  gap: 3px;
-  padding: 4px 8px;
+  gap: 8px;
+  padding: 6px 12px;
   background: rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   backdrop-filter: blur(8px);
@@ -46,6 +46,7 @@
   -webkit-overflow-scrolling: touch;
   max-width: calc(100vw - 200px);
   will-change: opacity, transform;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
   
   &::-webkit-scrollbar {
     display: none;
@@ -60,27 +61,29 @@
 }
 
 .navItem {
-  padding: 6px 12px;
+  padding: 8px 14px;
   border: none;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.08);
   color: var(--color-neutral-strong);
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
   white-space: nowrap;
   flex-shrink: 0;
   
   &:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.18);
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   }
   
   &.active {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.28);
     color: var(--color-brand-strong);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
   }
   
   &:active {
@@ -89,33 +92,33 @@
 }
 
 .navigationInHeader .navItem {
-  padding: 4px 8px;
-  font-size: 11px;
+  padding: 6px 10px;
+  font-size: 12px;
 }
 
 // Responsive design
 @media (max-width: 768px) {
   .navigation {
     top: 60px;
-    padding: 6px 10px;
-    gap: 3px;
+    padding: 5px 10px;
+    gap: 6px;
     margin-bottom: 24px;
   }
   
   .navItem {
-    padding: 5px 10px;
-    font-size: 11px;
+    padding: 6px 10px;
+    font-size: 12px;
   }
 
   .navigationInHeader {
     max-width: calc(100vw - 150px);
-    padding: 3px 6px;
-    gap: 2px;
+    padding: 5px 8px;
+    gap: 6px;
   }
 
   .navigationInHeader .navItem {
-    padding: 3px 6px;
-    font-size: 10px;
+    padding: 5px 8px;
+    font-size: 11px;
   }
 }
 
@@ -123,23 +126,23 @@
   .navigation {
     top: 50px;
     padding: 6px 8px;
-    gap: 2px;
+    gap: 4px;
     margin-bottom: 20px;
   }
   
   .navItem {
-    padding: 4px 8px;
-    font-size: 10px;
+    padding: 5px 9px;
+    font-size: 11px;
   }
 
   .navigationInHeader {
     max-width: calc(100vw - 120px);
-    padding: 2px 4px;
-    gap: 1px;
+    padding: 4px 6px;
+    gap: 4px;
   }
 
   .navigationInHeader .navItem {
-    padding: 2px 4px;
-    font-size: 9px;
+    padding: 4px 6px;
+    font-size: 10px;
   }
 }

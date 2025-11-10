@@ -16,6 +16,18 @@
     width: 100%;
 }
 
+.underlayBlur {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.0);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 8; /* under the header which is z-index 9 */
+}
+
 .mask {
     pointer-events: none;
     backdrop-filter: blur(0.5rem);

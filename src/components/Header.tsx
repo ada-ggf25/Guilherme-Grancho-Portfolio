@@ -82,6 +82,12 @@ export const Header = () => {
           </Flex>
         </Flex>
       </Flex>
+      {/* Blur the content behind the header; fades with transitionProgress */}
+      <div
+        className={styles.underlayBlur}
+        style={{ opacity }}
+        aria-hidden="true"
+      />
     </>
   );
 };
