@@ -6,7 +6,8 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "AI Researcher & Full-Stack Developer | MSc Student at Imperial College London",
+  role: "AI & ML Researcher",
+  degree: "MSc Student at Imperial College London",
   avatar: "/images/avatar.jpg",
   email: "guilhermegranchopro@gmail.com",
   location: "London - Lisbon",
