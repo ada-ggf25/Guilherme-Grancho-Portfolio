@@ -671,54 +671,6 @@ const about = {
     description: <>A comprehensive overview of technical skills, personal interests, and passions that drive my work and life.</>,
     categories: [
       {
-        title: "Computational Science",
-        skills: [
-          "Machine Learning",
-          "Data Science", 
-          "Computational Inversion (inverse problems)",
-          "Deep Learning",
-          "Parallel Computing",
-          "Optimisation Techniques",
-          "Computational Mathematics",
-          "Big Data Analysis",
-          "Cloud Computing",
-          "Numerical Simulations"
-        ]
-      },
-      {
-        title: "Applied Sciences & Engineering",
-        skills: [
-          "Applied Physics",
-          "Experimental Physics",
-          "Mechanical Engineering",
-          "Electronic Engineering",
-          "Materials Science",
-          "Geosciences",
-          "Signal Processing"
-        ]
-      },
-      {
-        title: "Soft Skills",
-        skills: [
-          "Leadership",
-          "Teamwork", 
-          "Public Speaking",
-          "Management",
-          "Problem Solving",
-          "Critical Thinking",
-          "Adaptability"
-        ]
-      },
-      {
-        title: "Languages",
-        skills: [
-          "Portuguese: Native",
-          "English: Proficient",
-          "Spanish: Advanced",
-          "French: Intermediate"
-        ]
-      },
-      {
         title: "Passions",
         skills: [
           "Entrepreneurship",
