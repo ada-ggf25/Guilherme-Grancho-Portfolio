@@ -36,9 +36,9 @@ export default function About() {
     { id: about.studies.title, label: "Education" },
     { id: about.awards.title, label: "Awards" },
     { id: about.achievements.title, label: "Achievements" },
+    { id: about.publications.title, label: "Publications" },
     { id: about.hobbies.title, label: "Hobbies" },
-    { id: about.values.title, label: "Values" },
-    { id: about.publications.title, label: "Publications" }
+    { id: about.values.title, label: "Values" }
   ];
 
   return (
