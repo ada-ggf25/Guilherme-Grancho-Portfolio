@@ -35,10 +35,12 @@
   flex-direction: row;
   gap: 8px;
   padding: 6px 12px;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  outline: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   justify-content: center;
   flex-wrap: nowrap;
@@ -46,7 +48,7 @@
   -webkit-overflow-scrolling: touch;
   max-width: calc(100vw - 200px);
   will-change: opacity, transform;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.16), inset 0 1px 0 rgba(255,255,255,0.35);
   
   &::-webkit-scrollbar {
     display: none;
@@ -63,8 +65,8 @@
 .navItem {
   padding: 8px 14px;
   border: none;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
   color: var(--color-neutral-strong);
   cursor: pointer;
   transition: all 0.2s ease;
@@ -75,15 +77,15 @@
   flex-shrink: 0;
   
   &:hover {
-    background: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.22);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.14);
   }
   
   &.active {
-    background: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.3);
     color: var(--color-brand-strong);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
   }
   
   &:active {
@@ -112,7 +114,7 @@
 
   .navigationInHeader {
     max-width: calc(100vw - 150px);
-    padding: 5px 8px;
+    padding: 6px 10px;
     gap: 6px;
   }
 
