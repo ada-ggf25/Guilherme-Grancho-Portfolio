@@ -90,17 +90,17 @@ export default function About() {
           className={styles.textAlign}
           variant="display-default-xs"
           onBackground="neutral-weak"
-          style={{ textAlign: "center", marginBottom: "24px" }}
+          style={{ textAlign: "center", marginBottom: "8px" }}
         >
-          {person.role}
+          {person.degree}
         </Text>
         <Text
           className={styles.textAlign}
           variant="display-default-xs"
           onBackground="neutral-weak"
-          style={{ textAlign: "center", marginTop: "-16px", marginBottom: "24px" }}
+          style={{ textAlign: "center", marginBottom: "24px" }}
         >
-          {person.degree}
+          {person.role}
         </Text>
         
         {social.length > 0 && (
