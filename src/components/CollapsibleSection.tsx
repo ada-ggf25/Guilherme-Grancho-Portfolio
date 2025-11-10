@@ -54,7 +54,7 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
             onBackground="neutral-strong"
             className={styles.chevron}
             style={{
-              transition: "transform 0.3s ease",
+              transition: "transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1)",
             }}
           />
         </Flex>
