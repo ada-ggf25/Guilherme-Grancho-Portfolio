@@ -94,6 +94,14 @@ export default function About() {
         >
           {person.role}
         </Text>
+        <Text
+          className={styles.textAlign}
+          variant="display-default-xs"
+          onBackground="neutral-weak"
+          style={{ textAlign: "center", marginTop: "-16px", marginBottom: "24px" }}
+        >
+          {person.degree}
+        </Text>
         
         {social.length > 0 && (
           <Flex 
