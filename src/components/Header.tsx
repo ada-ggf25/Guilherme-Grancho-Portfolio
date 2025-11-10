@@ -15,16 +15,32 @@ import navStyles from "./SectionNavigation.module.scss";
 export const Header = () => {
   const { sections, showInHeader, transitionProgress } = useNavigation();
   const [activeSection, setActiveSection] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     if (!showInHeader || sections.length === 0) return;
     return trackActiveSection(sections, setActiveSection);
   }, [sections, showInHeader]);
 
+  // Track scroll position to blur content under header
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    
+    handleScroll(); // Initial check
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const shouldShow = showInHeader && sections.length > 0;
   const opacity = transitionProgress;
   const scale = 0.85 + (transitionProgress * 0.15); // Scale from 0.85 to 1.0
   const translateY = (1 - transitionProgress) * -10; // Slide up from -10px to 0
+  const blurOpacity = scrollY > 0 ? 1 : 0; // Always blur when content is under header
 
   return (
     <>
@@ -81,10 +97,10 @@ export const Header = () => {
           </Flex>
         </Flex>
       </Flex>
-      {/* Blur the content behind the header; fades with transitionProgress */}
+      {/* Blur the content behind the header when scrolling */}
       <div
         className={styles.underlayBlur}
-        style={{ opacity }}
+        style={{ opacity: blurOpacity }}
         aria-hidden="true"
       />
     </>
