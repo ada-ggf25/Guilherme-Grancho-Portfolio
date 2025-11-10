@@ -1,16 +1,5 @@
 # Guilherme Grancho - Personal Web Portfolio
 
-<div align="center">
-  <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-      <clipPath id="circleClip">
-        <circle cx="50" cy="50" r="50"/>
-      </clipPath>
-    </defs>
-    <image x="0" y="0" width="100" height="100" xlink:href="public/images/avatar.jpg" clip-path="url(#circleClip)"/>
-  </svg>
-</div>
-
 ## 🛠️ Tech Stack
 
 <div align="center">
