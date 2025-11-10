@@ -716,18 +716,6 @@ const about = {
         highlights: "70%+ similarity to ground truth, Petrobras interest",
         artifacts: "arXiv + Show publication link",
       },
-      {
-        title: "The Atomic Nucleus — Discoveries of Modern Physics",
-        authors: "Guilherme Grancho",
-        venue: "Instituto Superior Técnico — Congress Center",
-        date: "Nov 28, 2022",
-        type: "Course paper + poster presentation",
-        description: <>Historical and experimental path to discovering the atomic nucleus; synthesis of early scattering experiments and implications. Course completed with 20/20; poster presented publicly at IST Congress Center.</>,
-        link: "#",
-        category: "Physics Education",
-        highlights: "20/20 grade, public poster presentation",
-        artifacts: "Show publication link",
-      },
     ],
   },
 };
