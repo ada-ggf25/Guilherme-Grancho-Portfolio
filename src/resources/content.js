@@ -11,7 +11,6 @@ const person = {
   email: "guilhermegranchopro@gmail.com",
   location: "London - Lisbon",
   languages: ["Portuguese", "English", "Spanish", "French"],
-  phone: "+351 912 345 678",
   website: "https://guilhermegrancho.com",
   summary: "AI researcher, software engineer, and tech entrepreneur blending data science, engineering, and entrepreneurship to build solutions for finance and sustainability. Currently pursuing MSc in Applied Computational Science & Engineering at Imperial College London, with published research in quantitative finance and co-founder of Eco AI.ly's GAIA sustainability platform.",
 };
@@ -33,12 +32,12 @@ const social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/guilherme-grancho-951781292",
+    link: "https://www.linkedin.com/in/guilhermegrancho/",
   },
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/guilhermegranchopro",
+    link: "https://github.com/ada-ggf25",
   },
   {
     name: "Google Scholar",
@@ -46,7 +45,7 @@ const social = [
     link: "https://scholar.google.com/citations?user=lHeQn9gAAAAJ&hl=en&authuser=3",
   },
   {
-    name: "Email",
+    name: "Talk To Me",
     icon: "email",
     link: `mailto:${person.email}`,
   },
@@ -93,19 +92,12 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I'm a dedicated AI researcher, software engineer, and tech entrepreneur based between Lisbon and London, with a passion for bridging research and real-world impact.
-        <br /><br />
-        With a BSc in Engineering Physics & Technology from Instituto Superior Técnico (IST), I built a strong foundation in applied mathematics, physics, and computing. During my undergraduate years, I balanced academics with innovative projects—from developing a convolutional neural network to map ocean floor layers in Brazil (achieving over 70% accuracy in seismic inversion and drawing interest from Petrobras) to creating an award-winning omnidirectional robotics software.
-        <br /><br />
-        In 2023, I co-founded Tap2Net, a startup providing smart NFC-card solutions to boost businesses' online reputations, leading it to over 500 units sold within a year. Simultaneously, I joined a 720-hour research programme in Brazil, where I pioneered a novel lexicographic multi-objective optimization approach, resulting in a first-author paper at the Brazilian National AI Conference (ENIAC 2024).
-        <br /><br />
-        Back in Lisbon, I took on teaching duties at IST, where I lectured Physics lab classes for engineering undergraduates, earning a perfect 9/9 score in anonymous student surveys—the highest in the course's history.
-        <br /><br />
-        In 2025, I helped launch Eco AI.ly, a startup uniting artificial intelligence with environmental sustainability. As Machine Learning and Full-Stack Developer, I led development of "GAIA," an AI-powered platform that monitors grid carbon intensity and forecasts renewable energy trends with over 90% accuracy.
-        <br /><br />
-        On the research front, I'm the first co-author of "The Financial Torque Hypothesis," a study introducing a novel market indicator to predict short-term stock movements. Using LSTM neural networks, my model achieved 87% accuracy in predicting stock price increases over a three-hour horizon, with the work garnering over 100 downloads on SSRN.
-        <br /><br />
-        In autumn 2025, I will embark on an MSc in Applied Computational Science & Engineering at Imperial College London, driven by curiosity and a clear goal: to master cutting-edge computational tools and accelerate innovation at the nexus of academia and industry.
+        AI researcher and software engineer passionate about applying machine learning to quantitative finance and sustainability challenges. Currently pursuing an MSc in Applied Computational Science & Engineering at Imperial College London, with published research in financial modelling and algorithmic trading. Co-founder of Eco AI.ly's GAIA platform, combining technical expertise with entrepreneurial drive to build impactful solutions.
+      </>
+    ),
+    finalStatement: (
+      <>
+        Currently focus on working towards making "Guilherme Grancho" stand for something.
       </>
     ),
   },
@@ -114,145 +106,283 @@ const about = {
     title: "Professional Experience",
     experiences: [
       {
-        company: "Eco AI.ly",
-        timeframe: "2025 - Present",
-        role: "Machine Learning Developer & Co-founder",
-        location: "Lisbon, Portugal",
+        company: "Imperial College London",
+        timeframe: "Jan 2025 - Present",
+        role: "Quantitative Researcher",
+        location: "London, UK · Remote",
         achievements: [
           <>
-            Co-founded Eco AI.ly, a startup bridging AI and sustainability, leading development of GAIA (Green AI Assistant) platform.
+            Research at the intersection of deep learning and financial modelling. Co-authoring papers introducing and applying the Financial Torque Hypothesis (FTH) to short-term stock-price prediction and algorithmic portfolio management (LSTM-based).
           </>,
           <>
-            Built LSTM neural networks that forecast carbon intensity and renewable energy output 24 hours ahead with ~91% accuracy.
+            Built an open-source web app that serves real-time predictions and an interactive interface for practical use.
           </>,
           <>
-            Led development of FastAPI microservice serving live predictions and Next.js/Streamlit dual-frontend for interactive dashboards.
-          </>,
-          <>
-            Deployed on cloud with containerization for scalability, focusing on Portugal energy grid with actionable insights for sustainable energy usage.
+            Representative outputs: Prometheus official website; paper "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks"; GitHub repository.
           </>,
         ],
         images: [],
       },
       {
-        company: "Tap2Net",
-        timeframe: "2023 - 2024",
-        role: "Co-founder & Lead Developer",
-        location: "Lisbon, Portugal",
+        company: "EY",
+        timeframe: "Aug 2025 - Sep 2025",
+        role: "Artificial Intelligence & Data Engineer",
+        location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Co-founded Tap2Net, a startup providing smart NFC-card solutions to boost businesses' online reputations.
+            Worked end-to-end with EY AI specialists: opportunity assessment, dataset curation and feature engineering, model baselining/validation.
           </>,
           <>
-            Led development of the Tap2Net web app and managed hardware integration, achieving over 500 card sales within one year.
+            Delivered GenAI POCs aligned to regulatory and compliance requirements for international clients.
           </>,
           <>
-            Gained hands-on experience in web development, digital marketing, UX design, and operations (inventory and customer support).
+            Representative outputs: "EY Offices" media link.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Deloitte",
+        timeframe: "Jun 2025 - Jul 2025",
+        role: "Artificial Intelligence & Data Engineer",
+        location: "Lisbon, Portugal · On-site",
+        achievements: [
+          <>
+            Supported international financial-services clients: data discovery and exploration, proof-of-concept builds.
           </>,
           <>
-            Validated product-market fit and served as hands-on exercise in launching a tech product from scratch.
+            Emphasised responsible AI (privacy, explainability, auditability) tailored for banking/FS use cases.
+          </>,
+          <>
+            Representative outputs: Internship certificate.
           </>,
         ],
         images: [],
       },
       {
         company: "Instituto Superior Técnico (IST)",
-        timeframe: "2023 - 2024",
-        role: "Physics Laboratory Instructor",
-        location: "Lisbon, Portugal",
+        timeframe: "Apr 2025 - Jul 2025",
+        role: "Teacher Assistant (Physics II with Laboratory)",
+        location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Lectured Physics II & III laboratory classes for engineering undergraduates, earning a perfect 9/9 score in anonymous student surveys.
+            TA for the BSc in Electronic Engineering & Computer Engineering. Covered core topics in thermodynamics and quantum physics.
           </>,
           <>
-            Achieved the highest student evaluation in the course's history, demonstrating exceptional teaching and mentoring abilities.
+            Contributed to course delivery and student support, emphasising rigorous scientific thinking.
           </>,
           <>
-            Balanced teaching responsibilities with research and entrepreneurial activities, showcasing strong time management skills.
+            Representative outputs: "Distinguished Professors" media link.
           </>,
         ],
         images: [],
       },
       {
-        company: "Brazilian Center for Physics Research",
-        timeframe: "2023",
-        role: "AI Research Intern",
-        location: "Rio de Janeiro, Brazil",
+        company: "Eco AI.ly",
+        timeframe: "Jan 2025 - Jun 2025",
+        role: "Full-stack Developer",
+        location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Developed and trained a U-Net convolutional neural network to perform velocity model inversion from seismic reflections.
+            Extended ML work into production: engineered RESTful APIs to serve live predictions from trained models; designed a responsive dashboard for clear, interactive presentation of sustainability metrics.
           </>,
           <>
-            Achieved a Sørensen–Dice coefficient &gt; 0.70, indicating high agreement between predicted and actual subsurface layer structures.
+            Prioritised performance, reliability, and public transparency of environmental data.
           </>,
           <>
-            Pioneered CNN-based method for mapping ocean floor layers, achieving over 70% similarity to ground truth and attracting interest from Petrobras.
-          </>,
-          <>
-            Results were published in conference paper and arXiv preprint, demonstrating deep learning's promise in oil & gas exploration.
+            Representative outputs: "Eco AIly Sustainable Predictions"; GitHub repository.
           </>,
         ],
         images: [],
       },
       {
-        company: "Universidade Federal de Ouro Preto (UFOP)",
-        timeframe: "2023 - 2024",
-        role: "Visiting Researcher",
-        location: "Ouro Preto, Brazil",
+        company: "Eco AI.ly",
+        timeframe: "Jan 2025 - Mar 2025",
+        role: "Machine Learning Engineer",
+        location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Joined a 720-hour intensive research program focusing on multi-objective machine learning optimization.
+            Built LSTM time-series models to forecast sustainability metrics (e.g., carbon intensity, renewable-share trends) at national/regional scales.
           </>,
           <>
-            Developed an algorithm to automatically determine the "tolerance threshold" in lexicographic multi-objective optimization.
+            Developed tools to help organisations optimise energy usage and monitor production, consumption, imports, and exports.
           </>,
           <>
-            Published first-author paper at ENIAC 2024 (Brazil's national AI conference) detailing automated tolerance selection methods.
-          </>,
-          <>
-            Demonstrated that automated tolerance selection significantly improves model performance consistency and computational efficiency.
+            Representative outputs: GitHub repository.
           </>,
         ],
         images: [],
       },
       {
-        company: "Institute for Plasmas and Nuclear Fusion (IPFN)",
-        timeframe: "2023 - 2024",
-        role: "Research Associate",
-        location: "Lisbon, Portugal",
+        company: "DigiQ (Quantum Technologies initiative)",
+        timeframe: "Sep 2024 - Feb 2025",
+        role: "Engineering Intern",
+        location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Collaborated with the Lasers and Plasmas Group on AI-driven laser aberration correction for high-power laser systems.
+            Training and project work across quantum computation, networks, and sensing.
           </>,
           <>
-            Trained deep learning models (CNNs) to recognize and counteract wavefront distortions in high-frequency laser operations.
+            Conducted outreach with partner institutions (e.g., IST, Deloitte, PQI) to promote quantum technologies.
           </>,
           <>
-            Applied Bayesian optimization to fine-tune laser control parameters, improving precision for scientific and industrial applications.
-          </>,
-          <>
-            Successfully implemented prototype at IPFN, demonstrating notable improvements in beam focus stability and efficiency.
+            Representative outputs: Admission letter.
           </>,
         ],
         images: [],
       },
       {
-        company: "Imperial College London",
-        timeframe: "2025 - Present",
-        role: "Research Collaborator",
-        location: "London, UK",
+        company: "UFOP (Universidade Federal de Ouro Preto)",
+        timeframe: "Nov 2023 - Jul 2024",
+        role: "Artificial Intelligence Intern Researcher",
+        location: "Rio de Janeiro, Brazil · Remote",
         achievements: [
           <>
-            Began remote collaboration with Imperial College research mentor on quantitative finance research.
+            720-hour research programme in ML & algorithms. First-author publication at a Brazilian AI conference: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold."
           </>,
           <>
-            Co-developed LSTM models for The Financial Torque Hypothesis study, achieving 87% accuracy in predicting stock price direction.
+            Representative outputs: Presentation; internship certificate.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "KU Leuven",
+        timeframe: "Mar 2024",
+        role: "Virtual Reality Development Intern",
+        location: "Leuven, Belgium · On-site",
+        achievements: [
+          <>
+            Investigated innovative VR locomotion methods and built a virtual world explored via teleportation with an Oculus setup.
           </>,
           <>
-            Published preprint on SSRN garnering over 100 downloads from the finance research community.
+            Gained practical skills in VR navigation and interaction design.
           </>,
           <>
-            Preparing for MSc in Applied Computational Science & Engineering starting September 2025.
+            Representative outputs: Admission letter.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Instituto Superior Técnico (IST)",
+        timeframe: "Nov 2023 - Feb 2024",
+        role: "Teacher & Laboratory Coordinator (Physics III with Laboratory)",
+        location: "Lisbon, Portugal · On-site",
+        achievements: [
+          <>
+            Taught and coordinated lab classes for Electronics Engineering students. Topics included Thomson's experiment, RLC circuits, and geometric & wave optics.
+          </>,
+          <>
+            End-of-course anonymous survey ranked me 9/9.
+          </>,
+          <>
+            Representative outputs: Distinguished Professors 2023/2024; student survey (9/9) media link.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "IPFN (Instituto de Plasmas e Fusão Nuclear), GoLP",
+        timeframe: "Nov 2023 - Jan 2024",
+        role: "Machine Learning Researcher",
+        location: "Lisbon, Portugal · On-site",
+        achievements: [
+          <>
+            Research on high-frequency laser aberration correction using CNNs and Bayesian optimisation.
+          </>,
+          <>
+            Designed a dataset creation method from experimental data and built a high-accuracy neural-network solution.
+          </>,
+          <>
+            Representative outputs: Final paper; final & initial presentations.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "AeroTec",
+        timeframe: "Sep 2023 - Dec 2023",
+        role: "Frontend Web Developer",
+        location: "Lisbon, Portugal · Remote",
+        achievements: [
+          <>
+            Designed and implemented responsive web interfaces for aerospace engineering projects and digital services.
+          </>,
+          <>
+            Built clean, maintainable codebases and collaborated in a remote cross-functional environment.
+          </>,
+          <>
+            Representative outputs: AeroTec website.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Startup Portugal",
+        timeframe: "Nov 2023",
+        role: "Representative at Web Summit",
+        location: "Lisbon, Portugal · On-site",
+        achievements: [
+          <>
+            Represented Startup Lisbon at Web Summit 2023, boosting company visibility, engaging investors, and supporting investment rounds and pitching.
+          </>,
+          <>
+            Representative outputs: Certificate; "Startup Portugal at Web Summit 2023" media link.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Superprof",
+        timeframe: "Jan 2023 - Nov 2023",
+        role: "Math and Physics Teacher",
+        location: "Lisbon, Portugal · Hybrid",
+        achievements: [
+          <>
+            Taught students across levels (e.g., Calculus I–II, differential equations).
+          </>,
+          <>
+            Emphasised clear exposition and helping students build confidence in maths/physics.
+          </>,
+          <>
+            Representative outputs: Superprof page/account.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "CBPF (Centro Brasileiro de Pesquisas Físicas)",
+        timeframe: "Feb 2023",
+        role: "Artificial Intelligence Intern",
+        location: "Rio de Janeiro, Brazil · On-site",
+        achievements: [
+          <>
+            Two projects: CNN for ocean-floor mapping and LSTM light-curve classification to help identify dark matter.
+          </>,
+          <>
+            Contributed model development and dataset creation/analysis.
+          </>,
+          <>
+            Representative outputs: Publication (arXiv link in media); internship certificate.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Federação Portuguesa de Atletismo",
+        timeframe: "Sep 2015 - Sep 2018",
+        role: "Track and Field Athlete",
+        location: "Lisbon, Portugal · On-site",
+        achievements: [
+          <>
+            Represented the national federation in sprints (primary: 200m) and other events (100m–2.5km, long jump).
+          </>,
+          <>
+            Developed discipline, resilience, and teamwork transferable to academic and professional contexts.
+          </>,
+          <>
+            Representative outputs: Medals (media).
           </>,
         ],
         images: [],
@@ -261,248 +391,463 @@ const about = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Education & Academic Background",
+    title: "Education",
     institutions: [
       {
         name: "Imperial College London",
-        degree: "MSc in Applied Computational Science and Engineering",
-        timeframe: "2025 - 2026 (Expected)",
+        degree: "Master's (Applied Computational Science & Engineering)",
+        timeframe: "Sep 2025 - Sep 2026",
         location: "London, UK",
-        description: <>Enrolling in September 2025 in the Applied Computational Science & Engineering (ACSE) Master's programme at Imperial College London. This intensive 12-month MSc aims to deepen expertise in high-performance computing, machine learning, and multi-disciplinary applications. Expected graduation: October 2026.</>,
+        description: <>Applied CS + numerical methods for large-scale scientific/ML computing. Focus on numerical optimisation, scientific programming, and scalable/parallel patterns.</>,
         gpa: "In Progress",
-        relevant_courses: ["High-Performance Computing", "Machine Learning", "Computational Methods", "Applied Mathematics", "Multi-disciplinary Applications"],
+        relevant_courses: ["Modern Programming Methods", "Computational Mathematics", "Applying Computational/Data Science", "Data Science & Machine Learning", "Deep Learning", "Modelling & Numerical Methods", "Advanced Programming", "Inversion & Optimisation", "Patterns for Parallel Programming"],
       },
       {
         name: "Instituto Superior Técnico (IST)",
-        degree: "BSc in Engineering Physics and Technology",
-        timeframe: "2022 - 2024",
+        degree: "Master's (Computer Science & Engineering)",
+        timeframe: "Aug 2024 - Jul 2025",
         location: "Lisbon, Portugal",
-        description: <>Completed BSc in Engineering Physics & Technology at Instituto Superior Técnico (IST), University of Lisbon. Built expertise in applied physics, computational methods, and data analysis. Took on an extra course load due to a curricular gap year, demonstrating strong work ethic. Graduated in July 2024.</>,
-        gpa: "First Class Honours",
-        relevant_courses: ["Applied Physics", "Computational Methods", "Data Analysis", "Mathematics", "Engineering Technology"],
+        description: <>Core CS, finance-oriented computation, AI/ML, multi-agent systems. Focus on computer science foundations, software design, data structures, and algorithm development.</>,
+        gpa: "Interrupted",
+        relevant_courses: ["Data Analysis & Integration", "Introduction to Financial Mathematics", "Computational Methods in Finance", "Introduction to Quantum Information & Computing", "Software Security", "Communication Skills in Informatics & Computer Engineering I & II", "Deep Learning", "Planning, Learning & Intelligent Decision-Making", "Autonomous Agents & Multi-Agent Systems", "Business Integration"],
       },
       {
-        name: "Colégio Sagrado Coração de Maria",
-        degree: "Secondary Education (Science & Technology)",
-        timeframe: "2018 - 2021",
+        name: "Instituto Superior Técnico (IST)",
+        degree: "Bachelor's (Engineering Physics & Technology)",
+        timeframe: "Sep 2022 - Jul 2024",
         location: "Lisbon, Portugal",
-        description: <>Completed secondary education with a focus on mathematics and physics fundamentals, providing strong foundation for engineering studies.</>,
+        description: <>Theoretical, experimental, and computational physics + electronics & applied math. Focus on computational, experimental & theoretical physics; physics engineering; applied mathematics.</>,
+        gpa: "First Class Honours",
+        relevant_courses: ["Differential & Integral Calculus I–III", "Linear Algebra", "Probability & Statistics", "Mathematical Techniques of Physics", "Earth & the Universe", "Discoveries of Modern Physics", "Electromagnetism", "Oscillations & Waves", "Relativity", "Thermodynamics", "Quantum Mechanics I", "Physics of Continuous Media", "Solid State Physics", "General Chemistry", "Circuit Theory & Electronics Fundamentals", "General Electronics", "Digital Systems", "Applied Optics", "Materials Science", "Materials in Engineering", "Applied Mechanics I", "Introduction to Experimental Physics Lab", "Experimental Physics Lab", "Advanced Experimental Physics Laboratory I & II", "Experimental Physics Lab in Research Units", "Integrated 1st-Cycle Project in Engineering Physics & Technology", "Programming Fundamentals", "Computational Physics", "Geometric Drawing & Modeling", "Introduction to Economics", "Global Challenges"],
+      },
+      {
+        name: "Instituto Superior Técnico (IST)",
+        degree: "Bachelor's (Mechanical Engineering)",
+        timeframe: "Sep 2021 - Jul 2022",
+        location: "Lisbon, Portugal",
+        description: <>Math, materials, mechanics, and design fundamentals. Focus on mechanical engineering, mechanical systems, materials science, and product design.</>,
+        gpa: "Interrupted",
+        relevant_courses: ["Linear Algebra", "Differential & Integral Calculus I–II", "Materials Science", "General Chemistry", "Materials in Engineering", "Applied Mechanics I", "Programming Fundamentals", "Geometric Drawing & Modeling", "Introduction to Economics", "Global Challenges"],
+      },
+      {
+        name: "Colégio do Sagrado Coração de Maria (Lisboa)",
+        degree: "High-School Diploma (Ciências e Tecnologias)",
+        timeframe: "Sep 2018 - Jul 2021",
+        location: "Lisbon, Portugal",
+        description: <>Core subjects in sciences and technologies. Focus on mathematics, physics, programming, and chemistry.</>,
         gpa: "Excellent",
-        relevant_courses: ["Mathematics", "Physics", "Chemistry", "Biology", "Technology"],
+        relevant_courses: ["Portuguese", "English", "Mathematics", "Biology & Geology", "Physics & Chemistry", "Physics", "Computer Applications", "Philosophy", "Physical Education", "Moral & Religious Education", "Civic Education", "Professional & Soft-Skills Development"],
+      },
+      {
+        name: "British Council",
+        degree: "English Language & Literature (General)",
+        timeframe: "Sep 2016 - Jun 2019",
+        location: "Lisbon, Portugal",
+        description: <>Communication skills, grammar, vocabulary for academic & professional contexts. Focus on fluency, accuracy, and confidence across speaking, listening, reading, and writing.</>,
+        gpa: "Completed",
+        relevant_courses: ["English Grammar", "ESL", "Communication Skills", "Academic Writing", "Professional English"],
       },
     ],
   },
-  technical: {
+  awards: {
     display: true, // set to false to hide this section
-    title: "Core Competencies",
-    skills: [
+    title: "Awards & Honours",
+    accomplishments: [
       {
-        title: "AI & Machine Learning",
-        description: <>Expert in building data-driven systems using ML, GenAI, and quantitative models that turn complex signals into measurable outcomes. Specialized in LSTM neural networks, equity-index prediction, and responsible AI with strong emphasis on model governance and business KPIs.</>,
-        technologies: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "GenAI", "LSTM", "Responsible AI", "Model Governance"],
-        // optional: leave the array empty if you don't want to display images
-        images: [],
+        title: "SSRN Financial Economics Network Top Paper — eJournal (4-day streak)",
+        description: <>My paper "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" (with Vasco Pereira) appeared on the SSRN Top Downloads list for 9–12 Aug 2025.</>,
+        category: "Research Excellence",
+        year: "Aug 2025",
+        issuer: "SSRN — The Financial Economics Network",
+        associated_with: "Imperial College London",
+        artifacts: "Paper link; Honors media card/screenshot",
       },
       {
-        title: "Quantitative Finance & Fintech",
-        description: <>Specialized in financial modeling, risk management, portfolio optimization, algorithmic trading, and building scalable fintech applications. Experience with derivatives pricing, Monte Carlo simulations, and regulatory compliance.</>,
-        technologies: ["QuantLib", "Zipline", "Backtrader", "Riskfolio-Lib", "Financial Modeling", "Risk Management", "Portfolio Optimization"],
-        // optional: leave the array empty if you don't want to display images
-        images: [],
+        title: "LXthon Hackathon — 1º Winner",
+        description: <>Overall 1st place; distinction for Best AI Medical Imaging Solution.</>,
+        category: "Hackathon Excellence",
+        year: "Jun 2025",
+        issuer: "LXthon",
+        associated_with: "",
+        artifacts: "GitHub repository; winner certificate",
       },
       {
-        title: "Full-Stack Development",
-        description: <>Proficient in modern web technologies including React, Next.js, Node.js, TypeScript, and cloud platforms (AWS, Vercel) for building scalable applications and APIs.</>,
-        technologies: ["React", "Next.js", "Node.js", "TypeScript", "JavaScript", "AWS", "Vercel", "PostgreSQL", "MongoDB"],
-        // optional: leave the array empty if you don't want to display images
-        images: [],
+        title: "EY AI Challenge — Category 1º Place Winner",
+        description: <>1st place in category at EY's AI Challenge.</>,
+        category: "AI Competition",
+        year: "May 2025",
+        issuer: "EY",
+        associated_with: "",
+        artifacts: "Winner certificate; GitHub repository",
       },
       {
-        title: "Data Science & Analytics",
-        description: <>Advanced expertise in data analysis, statistical modeling, business intelligence, and data visualization using Python, R, and modern analytics tools. Experience with big data processing and real-time analytics.</>,
-        technologies: ["Python", "R", "SQL", "Tableau", "Power BI", "Apache Spark", "Hadoop", "Statistical Analysis", "Data Visualization"],
-        // optional: leave the array empty if you don't want to display images
-        images: [],
+        title: "Athens Mobility Grant",
+        description: <>Funding to attend KU Leuven's Virtual Reality Development program in March 2024 (Leuven, Belgium).</>,
+        category: "Academic Mobility",
+        year: "Mar 2024",
+        issuer: "Athens Program",
+        associated_with: "KU Leuven",
+        artifacts: "Grant documentation",
       },
       {
-        title: "Sustainability & Environmental Tech",
-        description: <>Leading development of sustainability-focused AI solutions including GAIA assistant for reducing environmental footprint of model training and energy decisions. Expertise in building systems that turn complex signals into measurable sustainability outcomes.</>,
-        technologies: ["Environmental AI", "Sustainability Metrics", "Energy Optimization", "Carbon Footprint Analysis", "Green Computing", "ESG Analytics"],
-        // optional: leave the array empty if you don't want to display images
-        images: [],
+        title: "Diploma of Teaching Excellence",
+        description: <>Teaching Physics III with Laboratory (BSc in Electronics Engineering) where the anonymous student survey rated me 9/9 overall, the highest in the course that year.</>,
+        category: "Teaching Excellence",
+        year: "Feb 2024",
+        issuer: "Instituto Superior Técnico",
+        associated_with: "Instituto Superior Técnico",
+        artifacts: "IST badge/media; Teaching Excellence media card",
+      },
+      {
+        title: "Brazilian Center of Physics Research (CBPF) — Mobility Grant",
+        description: <>Funding to attend the Artificial Intelligence module at CBPF in Rio de Janeiro, Brazil (Feb 2023).</>,
+        category: "Research Mobility",
+        year: "Feb 2023",
+        issuer: "Centro Brasileiro de Pesquisas Físicas (CBPF)",
+        associated_with: "CBPF",
+        artifacts: "Grant documentation",
+      },
+    ],
+  },
+  certifications: {
+    display: true, // set to false to hide this section
+    title: "Certifications",
+    accomplishments: [
+      {
+        title: "Compliance & Protocols for Global Clients",
+        description: <>Compliance practices, client-service protocols for international engagements.</>,
+        category: "Professional Development",
+        year: "Aug 2025",
+        issuer: "EY",
+        associated_with: "",
+        artifacts: "Certificate",
+      },
+      {
+        title: "Talent Bootcamp",
+        description: <>Company presentations; corporate communications.</>,
+        category: "Professional Development",
+        year: "Mar 2025",
+        issuer: "Magma Studio",
+        associated_with: "",
+        artifacts: "Certificate",
+      },
+      {
+        title: "IELTS Academic — Overall 7.5",
+        description: <>English, English Literature, Business English, communication.</>,
+        category: "Language Proficiency",
+        year: "Nov 2024",
+        issuer: "IELTS Official",
+        associated_with: "",
+        artifacts: "IELTS results report",
+        credential_id: "24PT5025968GRAG008A",
+      },
+      {
+        title: "Personal Finance MBA",
+        description: <>Personal finance fundamentals (budgeting, saving/investing concepts).</>,
+        category: "Finance Education",
+        year: "Mar 2024",
+        issuer: "Magma Studio",
+        associated_with: "",
+        artifacts: "Certificate",
+      },
+      {
+        title: "Mini-school on Particle and Astroparticle Physics",
+        description: <>Astrophysics; theoretical physics topics in particle/astroparticle physics.</>,
+        category: "Physics Education",
+        year: "Feb 2024",
+        issuer: "Laboratório de Instrumentação e Física Experimental de Partículas (LIP)",
+        associated_with: "",
+        artifacts: "Certificate",
+      },
+      {
+        title: "MOOC Técnico Certificate — Experimental Physics",
+        description: <>Experimental physics methods.</>,
+        category: "Physics Education",
+        year: "Nov 2023",
+        issuer: "Instituto Superior Técnico",
+        associated_with: "",
+        artifacts: "Certificate",
       },
     ],
   },
   achievements: {
     display: true, // set to false to hide this section
-    title: "Key Achievements & Recognition",
+    title: "Key Achievements",
     accomplishments: [
       {
-        title: "Perfect Teaching Score - 9/9 Rating",
-        description: <>Achieved a perfect 9/9 rating as a laboratory instructor for undergraduate physics at IST—the highest student evaluation in the course's history, demonstrating exceptional teaching and mentoring abilities.</>,
-        category: "Teaching Excellence",
-        year: "2023-2024",
+        title: "Multiple papers published in Machine Learning and AI",
+        description: <>Examples include SSRN (Financial Torque Hypothesis, 2025), ENIAC conference (lexicographic multi-objective ML, 2024), and CBPF/arXiv (ocean-floor CNN, 2023).</>,
+        category: "Research",
+        year: "2023-2025",
       },
       {
-        title: "Tap2Net Startup Success - 500+ Sales",
-        description: <>Co-founded Tap2Net, an NFC-based review platform, and led it to over 500 smart card sales within one year, helping dozens of small businesses boost their online reputations and validating product-market fit.</>,
+        title: "Full-Stack Developer",
+        description: <>Built production REST APIs and a responsive analytics/dashboard front-end (e.g., Eco AI.ly) to serve ML predictions and visualise sustainability metrics.</>,
+        category: "Software Development",
+        year: "2025",
+      },
+      {
+        title: "Machine Learning Developer & Researcher",
+        description: <>Worked across LSTM time-series forecasting, CNNs for imaging, lexicographic optimisation, and quantitative finance research.</>,
+        category: "AI/ML",
+        year: "2023-2025",
+      },
+      {
+        title: "Achieved maximum teaching rating in anonymous student surveys",
+        description: <>Physics III with Laboratory at Instituto Superior Técnico; ranked 9/9 overall (2024).</>,
+        category: "Teaching Excellence",
+        year: "2024",
+      },
+      {
+        title: "MSc at Imperial College London",
+        description: <>Enrolled for postgraduate studies (Imperial College London).</>,
+        category: "Education",
+        year: "2025-2026",
+      },
+      {
+        title: "Co-founded a startup",
+        description: <>Tap2Net (NFC product & creator platform).</>,
         category: "Entrepreneurship",
         year: "2023-2024",
       },
       {
-        title: "GAIA Energy AI - 90.9% Accuracy",
-        description: <>Developed GAIA platform under Eco AI.ly, delivering 24-hour carbon intensity forecasts with 90.9% accuracy using LSTM models—enabling companies to plan energy use more sustainably.</>,
-        category: "Sustainability Tech",
-        year: "2025-Present",
+        title: "BSc in Engineering Physics & Technology",
+        description: <>Instituto Superior Técnico.</>,
+        category: "Education",
+        year: "2022-2024",
       },
       {
-        title: "Published AI Optimization Research - ENIAC 2024",
-        description: <>First author of a peer-reviewed paper introducing an automated lexicographic tolerance algorithm for multi-objective ML, published at the 34th Brazilian Conference on AI (ENIAC 2024).</>,
-        category: "Research",
-        year: "2024",
+        title: "National award-winning athlete",
+        description: <>Competed with the Portuguese Track & Field Federation (primary event: 200 m), with national-level recognition.</>,
+        category: "Athletics",
+        year: "2015-2018",
       },
       {
-        title: "Quant Finance Breakthrough - 87% Prediction Accuracy",
-        description: <>Co-authored "The Financial Torque Hypothesis" (2025), where a custom LSTM model reached 87% prediction accuracy for short-term stock price direction. The preprint has been downloaded over 100 times on SSRN.</>,
+        title: "MSc in Applied Computational Science & Engineering",
+        description: <>MSc in Applied Computational Science & Engineering from Imperial College London, focusing on numerical methods, scientific computing, and machine learning applications.</>,
+        category: "Education",
+        year: "2025-2026",
+      },
+      {
+        title: "Papers published on Quantitative Research",
+        description: <>Quant finance work (e.g., Financial Torque Hypothesis) with SSRN recognition.</>,
         category: "Research",
         year: "2025",
       },
+    ],
+  },
+  hobbies: {
+    display: true, // set to false to hide this section
+    title: "Hobbies & Passions",
+    description: <>A comprehensive overview of technical skills, personal interests, and passions that drive my work and life.</>,
+    categories: [
       {
-        title: "Top Project Distinction - 19/20 Grade",
-        description: <>Built software for an omnidirectional robotic vehicle during undergrad, earning a 19/20 grade—the highest project score in the Programming Fundamentals course.</>,
-        category: "Academic Excellence",
-        year: "2022",
+        title: "Computational Science",
+        skills: [
+          "Machine Learning",
+          "Data Science", 
+          "Computational Inversion (inverse problems)",
+          "Deep Learning",
+          "Parallel Computing",
+          "Optimisation Techniques",
+          "Computational Mathematics",
+          "Big Data Analysis",
+          "Cloud Computing",
+          "Numerical Simulations"
+        ]
       },
       {
-        title: "Industry Collaboration Interest - Petrobras",
-        description: <>Pioneered a CNN-based method for mapping ocean floor layers (for seismic analysis), achieving over 70% similarity to ground truth and attracting interest from Petrobras, Brazil's largest oil & gas company.</>,
-        category: "Industry Recognition",
-        year: "2023",
+        title: "Applied Sciences & Engineering",
+        skills: [
+          "Applied Physics",
+          "Experimental Physics",
+          "Mechanical Engineering",
+          "Electronic Engineering",
+          "Materials Science",
+          "Geosciences",
+          "Signal Processing"
+        ]
       },
       {
-        title: "National Athletics Honors - Track & Field",
-        description: <>Competed as a track & field athlete at the national level for 3 years, securing multiple medals (specializing in 200m sprint) while representing the Portuguese Athletics Federation—demonstrating discipline and dedication beyond academics.</>,
-        category: "Athletics",
-        year: "2015-2018",
+        title: "Soft Skills",
+        skills: [
+          "Leadership",
+          "Teamwork", 
+          "Public Speaking",
+          "Management",
+          "Problem Solving",
+          "Critical Thinking",
+          "Adaptability"
+        ]
+      },
+      {
+        title: "Languages",
+        skills: [
+          "Portuguese: Native",
+          "English: Proficient",
+          "Spanish: Advanced",
+          "French: Intermediate"
+        ]
+      },
+      {
+        title: "Passions",
+        skills: [
+          "Entrepreneurship",
+          "Martial Arts",
+          "Running",
+          "Surfing",
+          "Cinematography",
+          "Literature",
+          "Museums",
+          "Travelling",
+          "Cooking",
+          "Volunteering"
+        ]
+      }
+    ]
+  },
+  values: {
+    display: true, // set to false to hide this section
+    title: "Values & Principles",
+    description: <>Core values and principles that guide my work, relationships, and decision-making process in both professional and personal contexts.</>,
+    principles: [
+      {
+        title: "Respect",
+        definition: "Treat people, time, and work with consideration.",
+        behaviors: [
+          "Active listening",
+          "Concise, timely communications",
+          "Credit others' contributions",
+          "Thoughtful code reviews",
+          "Clear meeting outcomes"
+        ]
+      },
+      {
+        title: "Inclusion",
+        definition: "Make environments, products, and processes accessible to all.",
+        behaviors: [
+          "Use inclusive language",
+          "Design for accessibility (a11y) in UIs/docs",
+          "Invite quieter voices",
+          "Mentor juniors",
+          "Accommodate time zones"
+        ]
+      },
+      {
+        title: "Collaboration",
+        definition: "Solve problems with others, not around them.",
+        behaviors: [
+          "Co-scope tasks",
+          "Pair program",
+          "Small, reviewable PRs",
+          "\"Disagree & commit\" after decisions",
+          "Share reusable templates and notebooks"
+        ]
+      },
+      {
+        title: "Integrity",
+        definition: "Do the right thing when it's inconvenient.",
+        behaviors: [
+          "Reproducible experiments",
+          "Transparent assumptions/limitations",
+          "Privacy-by-design and data-handling compliance",
+          "Avoid overclaiming results",
+          "Respect IP/licensing"
+        ]
+      },
+      {
+        title: "Excellence",
+        definition: "Pursue high standards without gold-plating.",
+        behaviors: [
+          "Definition of Done (tests, docs, perf checks)",
+          "Automated CI/CD gates",
+          "Measurable OKRs",
+          "Post-mortems with action items",
+          "Continuous learning cadence"
+        ]
+      },
+      {
+        title: "Environmental Responsibility",
+        definition: "Build with sustainability in mind.",
+        behaviors: [
+          "Efficient compute (profiling, batching, mixed precision)",
+          "Prefer greener cloud regions/instances",
+          "Track energy/carbon metrics",
+          "Expose sustainability insights to users (e.g., dashboards)"
+        ]
+      },
+      {
+        title: "Innovation",
+        definition: "Turn ideas into useful, testable outcomes.",
+        behaviors: [
+          "Rapid prototypes → MVP → iterate",
+          "Structured experiments with metrics",
+          "Hackathon participation",
+          "Literature scanning & tech radars",
+          "Celebrate useful failures"
+        ]
+      }
+    ]
+  },
+  publications: {
+    display: true, // set to false to hide this section
+    title: "Publications",
+    description: <>Academic research and publications in AI, machine learning, quantitative finance, and physics across peer-reviewed venues, conferences, and preprint servers.</>,
+    papers: [
+      {
+        title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
+        authors: "Guilherme Grancho, Vasco Pereira",
+        venue: "The Financial Economics Network (SSRN)",
+        date: "Jun 20, 2025",
+        type: "Working paper / preprint",
+        description: <>Introduces the Financial Torque Hypothesis (FTH)—that VWAP and trade count encapsulate short-term "market torque" useful for direction prediction. LSTM over intraday features; full-session vs. regular-hours comparisons; three feature-integration schemes (Standard, MinMax, Robust-to-non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data; 15% improvement in full-session consistency over regular-hours baselines; demonstrates value of extended-hours data + microstructure indicators for robust strategies.</>,
+        link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
+        category: "Quantitative Finance",
+        highlights: "87% directional accuracy, 15% improvement over baselines, 100+ downloads",
+        artifacts: "SSRN paper + Show publication link",
+      },
+      {
+        title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
+        authors: "Guilherme Grancho (First Author), T.H. Medeiros",
+        venue: "ENIAC — 34th National Meeting on Artificial and Computational Intelligence",
+        date: "Nov 21, 2024",
+        type: "Peer-reviewed conference paper",
+        description: <>Robust lexicographic multi-objective optimization with an automated step to determine the tolerance parameter, improving stability. ML-integrated lexicographic strategy; analysis of tolerance–outcome relations; cross-dataset validation. Automated tolerance selection improves computational efficiency and accuracy; emphasizes the importance of tolerance in lexicographic MOO.</>,
+        link: "https://ouci.dntb.gov.ua/works/4LYayb3V/",
+        category: "Machine Learning Optimization",
+        highlights: "First-author publication, automated tolerance selection, improved computational efficiency",
+        artifacts: "Conference Show publication link",
+      },
+      {
+        title: "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
+        authors: "Guilherme Grancho, Team Project",
+        venue: "6th EAFExp — Brazilian Center for Research in Physics (CBPF) / arXiv",
+        date: "Feb 28, 2023",
+        type: "Research paper",
+        description: <>Apply CNNs to bathymetric imagery to classify/segment seabed layers. Supervised CNN pipeline; dataset curation and analysis; evaluation on geoscience targets and regions. Demonstrates CNN feasibility for ocean-floor mapping and yields actionable geophysical insights.</>,
+        link: "https://arxiv.org/abs/2412.05329",
+        category: "Computer Vision & Geophysics",
+        highlights: "70%+ similarity to ground truth, Petrobras interest",
+        artifacts: "arXiv + Show publication link",
+      },
+      {
+        title: "The Atomic Nucleus — Discoveries of Modern Physics",
+        authors: "Guilherme Grancho",
+        venue: "Instituto Superior Técnico — Congress Center",
+        date: "Nov 28, 2022",
+        type: "Course paper + poster presentation",
+        description: <>Historical and experimental path to discovering the atomic nucleus; synthesis of early scattering experiments and implications. Course completed with 20/20; poster presented publicly at IST Congress Center.</>,
+        link: "#",
+        category: "Physics Education",
+        highlights: "20/20 grade, public poster presentation",
+        artifacts: "Show publication link",
       },
     ],
   },
 };
 
-const github = {
-  display: true, // set to false to hide this section
-  title: "GitHub Achievements & Recognition",
-  description: <>Recognition and achievements earned through active contribution to open source projects and GitHub community.</>,
-  achievements: [
-    {
-      name: "Galaxy Brain",
-      description: <>Earned through significant contributions to machine learning and AI projects, demonstrating deep technical expertise.</>,
-      icon: "🧠",
-    },
-    {
-      name: "Pair Extraordinaire",
-      description: <>Recognized for exceptional collaboration and pair programming contributions to open source projects.</>,
-      icon: "👥",
-    },
-    {
-      name: "Public Sponsor",
-      description: <>Active supporter of open source projects and developer community initiatives.</>,
-      icon: "💖",
-    },
-    {
-      name: "Pull Shark x2",
-      description: <>Demonstrated excellence in code contributions with multiple high-quality pull requests.</>,
-      icon: "🦈",
-    },
-    {
-      name: "Quickdraw",
-      description: <>Fast and efficient problem-solving abilities recognized through rapid issue resolution.</>,
-      icon: "⚡",
-    },
-    {
-      name: "YOLO",
-      description: <>Bold and innovative approach to tackling challenging technical problems.</>,
-      icon: "🚀",
-    },
-  ],
-};
 
-const certifications = {
-  display: true, // set to false to hide this section
-  title: "Certifications & Professional Development",
-  certifications: [
-    {
-      name: "AWS Certified Machine Learning - Specialty",
-      issuer: "Amazon Web Services",
-      date: "2024",
-      credential_id: "AWS-ML-2024-001",
-      description: <>Advanced certification in machine learning on AWS, covering ML algorithms, model deployment, and cloud-based ML solutions.</>,
-    },
-    {
-      name: "CFA Institute Investment Foundations",
-      issuer: "CFA Institute",
-      date: "2023",
-      credential_id: "CFA-IF-2023-001",
-      description: <>Comprehensive understanding of investment management, financial analysis, and portfolio management principles.</>,
-    },
-    {
-      name: "Google Cloud Professional Data Engineer",
-      issuer: "Google Cloud",
-      date: "2023",
-      credential_id: "GCP-PDE-2023-001",
-      description: <>Expertise in designing and building data processing systems, machine learning models, and data analytics solutions on Google Cloud Platform.</>,
-    },
-    {
-      name: "Financial Risk Manager (FRM) Part I",
-      issuer: "Global Association of Risk Professionals",
-      date: "2022",
-      credential_id: "FRM-I-2022-001",
-      description: <>Advanced knowledge in financial risk management, quantitative analysis, and risk modeling techniques.</>,
-    },
-    {
-      name: "Python for Data Science and Machine Learning",
-      issuer: "Coursera / University of Michigan",
-      date: "2021",
-      credential_id: "PYTHON-DS-ML-2021-001",
-      description: <>Comprehensive course covering Python programming, data analysis, machine learning algorithms, and statistical modeling.</>,
-    },
-  ],
-};
 
-const publications = {
-  display: true, // set to false to hide this section
-  title: "Research Publications",
-  description: <>Academic research in AI, machine learning, and quantitative finance published in peer-reviewed venues and conferences.</>,
-  papers: [
-    {
-      title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
-      authors: "G.G.D. Fernandes, V.V.R. Serpa Pereira",
-      venue: "SSRN Preprint",
-      year: "2025",
-      description: <>Proposes a new market indicator (the "Financial Torque") and demonstrates its effectiveness in predicting intraday stock trends. Using 21 months of U.S. equity data, the LSTM-based model achieved 87% directional accuracy for 3-hour ahead stock price movements. The study also finds that including full trading session data (pre-market + after-hours) boosts predictive accuracy by ~15% over using regular hours only. This work bridges academic research and practical algorithmic trading, and has garnered over 100 downloads from the finance research community.</>,
-      link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
-      category: "Quantitative Finance",
-    },
-    {
-      title: "Mapping The Layers of The Ocean Floor With a Convolutional Neural Network",
-      authors: "G.G.D. Fernandes, V.S.P.P. Oliveira, J.P.I. Astolfo",
-      venue: "6th Advanced School of Experimental Physics (EAFExp) & arXiv",
-      year: "2024",
-      description: <>Proposed a U-Net approach to seismic inversion for geological layer mapping. Achieved above 70% overlap (Dice coefficient) with ground truth models, demonstrating deep learning's promise in speeding up oil & gas exploration analyses. The model achieved a Sørensen–Dice coefficient &gt; 0.70, indicating high agreement between predicted and actual subsurface layer structures. This approach markedly reduced computational cost compared to traditional physics-based methods and attracted interest from Petrobras for potential applications in oil exploration.</>,
-      link: "https://arxiv.org/abs/2412.05329",
-      category: "Computer Vision & Geophysics",
-    },
-    {
-      title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
-      authors: "G.G.D. Fernandes, T.H. Medeiros",
-      venue: "34th Brazilian Meeting on Artificial Intelligence and Computational Intelligence (ENIAC 2024)",
-      year: "2024",
-      description: <>Introduced a method to automatically set tolerance levels in lexicographic multi-objective optimization. The paper reports that this automation improves model accuracy and computational efficiency in multi-criteria machine learning tasks. First-author paper from Guilherme's research internship, reflecting a novel contribution to optimization in AI. Testing across various datasets showed that automated tolerance selection can significantly improve model performance consistency and computational efficiency.</>,
-      link: "https://ouci.dntb.gov.ua/works/4LYayb3V/",
-      category: "Machine Learning Optimization",
-    },
-  ],
-};
 
 // Blog section removed - no longer needed
 
@@ -517,4 +862,4 @@ const work = {
 
 // Gallery section removed - no longer needed
 
-export { person, social, newsletter, home, about, work, publications, certifications, github };
+export { person, social, newsletter, home, about };

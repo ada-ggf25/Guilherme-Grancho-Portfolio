@@ -5,7 +5,6 @@ export {
   newsletter,
   home,
   about,
-  work,
   publications,
   certifications,
   github,

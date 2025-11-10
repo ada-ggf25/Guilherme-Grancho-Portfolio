@@ -22,12 +22,6 @@ export const Footer = () => {
         gap="16"
         horizontal="space-between"
         vertical="center"
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center"
-        }}
       >
         <Text variant="body-default-s" onBackground="neutral-strong">
           <Text onBackground="neutral-weak">© {currentYear} /</Text>
@@ -35,9 +29,6 @@ export const Footer = () => {
         </Text>
         <Flex 
           gap="16"
-          style={{
-            marginLeft: "auto"
-          }}
         >
           {social.map(
             (item) =>
@@ -64,7 +55,6 @@ export const Footer = () => {
                     zIndex: 1,
                   }}
                   onClick={(e) => {
-                    console.log('Footer icon clicked:', item.name, item.link);
                     e.preventDefault();
                     window.open(item.link, '_blank', 'noopener,noreferrer');
                   }}

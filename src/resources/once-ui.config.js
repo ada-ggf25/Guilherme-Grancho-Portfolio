@@ -5,7 +5,6 @@ const baseURL = "https://guilhermegrancho.com";
 
 const routes = {
   "/": true,
-  "/work": true,
 };
 
 const display = {
@@ -190,7 +189,7 @@ const schema = {
 // Professional social links
 const sameAs = {
   linkedin: "https://www.linkedin.com/in/guilhermegrancho/",
-  github: "https://github.com/guilhermegranchopro",
+  github: "https://github.com/ada-ggf25",
   email: "mailto:guilhermegranchopro@gmail.com",
 };
 
