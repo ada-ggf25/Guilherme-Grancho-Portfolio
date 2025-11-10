@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./SectionNavigation.module.scss";
 import { useNavigation } from "@/contexts/NavigationContext";
+import { scrollToSection, trackActiveSection } from "@/utils/scrollUtils";
 
 interface SectionNavigationProps {
   sections: Array<{
@@ -114,40 +115,8 @@ export const SectionNavigation: React.FC<SectionNavigationProps> = ({ sections }
 
   // Track active section
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-      
-      sections.forEach((section, index) => {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const elementTop = rect.top + window.scrollY;
-          const elementBottom = elementTop + rect.height;
-          
-          if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
-            setActiveSection(index);
-          }
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return trackActiveSection(sections, setActiveSection);
   }, [sections]);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerOffset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <nav ref={navRef} className={styles.navigation}>

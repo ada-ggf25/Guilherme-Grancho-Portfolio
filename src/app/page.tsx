@@ -191,7 +191,7 @@ export default function About() {
                 {about.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} style={{ marginBottom: "40px", width: "100%" }}>
                     <Flex 
-                      horizontal="space-between" 
+                      horizontal="between" 
                       vertical="end" 
                       style={{ marginBottom: "8px", width: "100%" }}
                     >
@@ -240,14 +240,14 @@ export default function About() {
                           flexWrap: "wrap",
                         }}
                       >
-                        {experience.images.map((image, index) => (
+                        {(experience.images as Array<{ width?: number; height?: number; alt?: string; src?: string }>).map((image, index) => (
                           <Flex
                             key={index}
                             style={{
                               border: "1px solid var(--color-neutral-medium)",
                               borderRadius: "var(--static-space-m)",
-                              minWidth: `${image.width}rem`,
-                              height: `${image.height}rem`,
+                              minWidth: `${image.width ?? 0}rem`,
+                              height: `${image.height ?? 0}rem`,
                             }}
                           >
                             <Media
@@ -255,12 +255,9 @@ export default function About() {
                               style={{
                                 borderRadius: "var(--static-space-m)",
                               }}
-                              //@ts-ignore
-                              sizes={image.width.toString()}
-                              //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
+                              sizes={image.width?.toString() ?? "100"}
+                              alt={image.alt ?? ""}
+                              src={image.src ?? ""}
                             />
                           </Flex>
                         ))}
@@ -295,7 +292,7 @@ export default function About() {
                     style={{ gap: "12px", marginBottom: "32px", width: "100%" }}
                   >
                     <Flex 
-                      horizontal="space-between" 
+                      horizontal="between" 
                       vertical="end" 
                       style={{ marginBottom: "8px", width: "100%" }}
                     >
@@ -347,7 +344,7 @@ export default function About() {
                     style={{ gap: "12px", marginBottom: "32px", width: "100%" }}
                   >
                     <Flex 
-                      horizontal="space-between" 
+                      horizontal="between" 
                       vertical="end" 
                       style={{ marginBottom: "8px", width: "100%" }}
                     >
@@ -401,7 +398,7 @@ export default function About() {
                     style={{ gap: "8px", marginBottom: "24px", width: "100%" }}
                   >
                     <Flex 
-                      horizontal="space-between" 
+                      horizontal="between" 
                       vertical="end" 
                       style={{ marginBottom: "4px", width: "100%" }}
                     >
@@ -453,7 +450,7 @@ export default function About() {
                     style={{ gap: "12px", marginBottom: "32px", width: "100%" }}
                   >
                     <Flex 
-                      horizontal="space-between" 
+                      horizontal="between" 
                       vertical="end" 
                       style={{ marginBottom: "8px", width: "100%" }}
                     >
@@ -502,7 +499,7 @@ export default function About() {
                 {about.publications.papers.map((paper, index) => (
                   <Column key={index} style={{ gap: "12px", marginBottom: "32px" }}>
                     <Flex
-                      horizontal="space-between"
+                      horizontal="between"
                       vertical="end"
                       style={{ marginBottom: "8px", width: "100%" }}
                     >

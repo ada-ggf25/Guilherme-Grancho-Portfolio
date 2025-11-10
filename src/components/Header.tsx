@@ -7,6 +7,7 @@ import { display, person } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import { SystemClock } from "./SystemClock";
 import { useNavigation } from "@/contexts/NavigationContext";
+import { scrollToSection, trackActiveSection } from "@/utils/scrollUtils";
 import styles from "./Header.module.scss";
 import navStyles from "./SectionNavigation.module.scss";
 
@@ -17,42 +18,8 @@ export const Header = () => {
 
   useEffect(() => {
     if (!showInHeader || sections.length === 0) return;
-
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-      
-      sections.forEach((section, index) => {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const elementTop = rect.top + window.scrollY;
-          const elementBottom = elementTop + rect.height;
-          
-          if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
-            setActiveSection(index);
-          }
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial check
-    return () => window.removeEventListener('scroll', handleScroll);
+    return trackActiveSection(sections, setActiveSection);
   }, [sections, showInHeader]);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerOffset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   const shouldShow = showInHeader && sections.length > 0;
   const opacity = transitionProgress;
@@ -98,7 +65,7 @@ export const Header = () => {
                 <button
                   key={section.id}
                   className={`${navStyles.navItem} ${activeSection === index ? navStyles.active : ''}`}
-                  onClick={() => scrollToSection(section.id)}
+                  onClick={() => scrollToSection(section.id, 100)}
                 >
                   {section.label}
                 </button>
