@@ -1,8 +1,10 @@
 # Guilherme Grancho - Personal Portfolio
 
-<img src="public/images/avatar.jpg" alt="Guilherme Grancho" width="100" />
+<div align="center">
+  <img src="public/images/avatar.jpg" alt="Guilherme Grancho" width="100" height="100" style="border-radius: 100%; object-fit: cover;" />
+</div>
 
-Personal web portfolio showcasing my work as an AI Developer & Fintech Entrepreneur
+Personal web portfolio showcasing my work.
 
 ## 🛠️ Tech Stack
 
