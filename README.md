@@ -1,7 +1,7 @@
 # Guilherme Grancho - Personal Web Portfolio
 
 <div align="center">
-  <img src="public/images/avatar.jpg" alt="Guilherme Grancho" width="100" height="100" style="border-radius: 100%; object-fit: cover;" />
+  <img src="public/images/avatar.jpg" alt="Guilherme Grancho" width="100" height="100" style="border-radius: 50%;" />
 </div>
 
 ## 🛠️ Tech Stack
