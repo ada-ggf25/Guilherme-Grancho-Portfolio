@@ -33,7 +33,7 @@ export const Header = () => {
       <Flex
         fitHeight
         position="unset"
-        className={`${styles.position} ${shouldShow ? styles.withNavigation : ''}`}
+        className={`${styles.position} ${shouldShow ? styles.withNavigation : ''} ${styles.bar}`}
         as="header"
         zIndex={9}
         fillWidth
@@ -46,13 +46,9 @@ export const Header = () => {
         </Flex>
         {shouldShow && (
           <Flex 
-            fillWidth 
             horizontal="center" 
             vertical="center" 
             style={{ 
-              position: "absolute", 
-              left: 0, 
-              right: 0,
               opacity: opacity,
               transform: `scale(${scale}) translateY(${translateY}px)`,
               transition: 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',

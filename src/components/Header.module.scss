@@ -9,6 +9,13 @@
     min-height: 80px;
 }
 
+.bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+}
+
 .mask {
     pointer-events: none;
     backdrop-filter: blur(0.5rem);
