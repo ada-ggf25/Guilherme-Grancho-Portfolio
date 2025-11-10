@@ -12,6 +12,8 @@ import {
   HiOutlineDocument,
   HiOutlineGlobeAsiaAustralia,
   HiOutlineRocketLaunch,
+  HiChevronDown,
+  HiChevronUp,
 } from "react-icons/hi2";
 
 import {
@@ -46,7 +48,9 @@ export const iconLibrary: Record<string, IconType> = {
   scholar: FaGraduationCap,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
-  rocket: HiOutlineRocketLaunch
+  rocket: HiOutlineRocketLaunch,
+  chevronDown: HiChevronDown,
+  chevronUp: HiChevronUp,
 };
 
 export type IconLibrary = typeof iconLibrary;

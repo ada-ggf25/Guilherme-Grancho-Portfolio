@@ -1,0 +1,79 @@
+@use "./breakpoints.scss" as breakpoints;
+
+.collapsibleSection {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.headerButton {
+  background: none;
+  border: none;
+  padding: 12px 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: all 0.2s ease;
+  border-radius: var(--static-space-s);
+  
+  &:hover {
+    background: var(--color-neutral-alpha-weak);
+  }
+
+  &:focus {
+    outline: 2px solid var(--color-brand-medium);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    background: var(--color-neutral-alpha-medium);
+  }
+
+  // Allow links inside to be clickable
+  a {
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.content {
+  overflow: hidden;
+  will-change: max-height, opacity, padding;
+  transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.08s,
+    padding 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+}
+
+.content.expanded {
+  max-height: 5000px;
+  opacity: 1;
+  padding-top: var(--static-space-m);
+  transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+    padding 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content.collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s,
+    padding 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: breakpoints.$s) {
+  .headerButton {
+    padding: 8px 0;
+  }
+}
+
