@@ -395,8 +395,8 @@ const about = {
     title: "Education",
     institutions: [
       {
-        name: "Imperial College London",
-        degree: "MSc in Applied Computational Science & Engineering",
+        name: "MSc in Applied Computational Science & Engineering",
+        degree: "Imperial College London",
         timeframe: "Sep 2025 - Sep 2026",
         location: "London, UK",
         description: <>Applied computational science focused on numerical methods for large scale scientific and machine learning computing, with emphasis on numerical optimisation, scientific programming, and scalable, parallel computing.</>,
@@ -404,8 +404,8 @@ const about = {
         relevant_courses: ["Modern Programming Methods", "Computational Mathematics", "Applying Computational/Data Science", "Data Science & Machine Learning", "Deep Learning", "Modelling & Numerical Methods", "Advanced Programming", "Inversion & Optimisation", "Patterns for Parallel Programming"],
       },
       {
-        name: "Instituto Superior Técnico",
-        degree: "MSc in Computer Science & Engineering",
+        name: "MSc in Computer Science & Engineering",
+        degree: "Instituto Superior Técnico",
         timeframe: "Aug 2024 - Jul 2025",
         location: "Lisbon, Portugal",
         description: <>I studied core computer science, finance-oriented computing and mathematics, AI/ML, and multi-agent systems, with a focus on CS foundations, software design, data structures, and algorithm development. I then had the opportunity to pursue an MSc at Imperial College London, focused on ML and AI.</>,
@@ -413,8 +413,8 @@ const about = {
         relevant_courses: ["Data Analysis & Integration", "Introduction to Financial Mathematics", "Computational Methods in Finance", "Introduction to Quantum Information & Computing", "Software Security", "Communication Skills in Informatics & Computer Engineering I & II", "Deep Learning", "Planning, Learning & Intelligent Decision-Making", "Autonomous Agents & Multi-Agent Systems", "Business Integration"],
       },
       {
-        name: "Instituto Superior Técnico",
-        degree: "BSc in Engineering Physics & Technology",
+        name: "BSc in Engineering Physics & Technology",
+        degree: "Instituto Superior Técnico",
         timeframe: "Sep 2022 - Jul 2024",
         location: "Lisbon, Portugal",
         description: <>Learned a lot about theoretical, experimental, and computational physics, and deepened my understanding of advanced theoretical and applied mathematics. Also developed new skills in engineering and electronics.</>,
@@ -422,8 +422,8 @@ const about = {
         relevant_courses: ["Differential & Integral Calculus I–III", "Linear Algebra", "Probability & Statistics", "Mathematical Techniques of Physics", "Earth & the Universe", "Discoveries of Modern Physics", "Electromagnetism", "Oscillations & Waves", "Relativity", "Thermodynamics", "Quantum Mechanics I", "Physics of Continuous Media", "Solid State Physics", "General Chemistry", "Circuit Theory & Electronics Fundamentals", "General Electronics", "Digital Systems", "Applied Optics", "Materials Science", "Materials in Engineering", "Applied Mechanics I", "Introduction to Experimental Physics Lab", "Experimental Physics Lab", "Advanced Experimental Physics Laboratory I & II", "Experimental Physics Lab in Research Units", "Integrated 1st-Cycle Project in Engineering Physics & Technology", "Programming Fundamentals", "Computational Physics", "Geometric Drawing & Modeling", "Introduction to Economics", "Global Challenges"],
       },
       {
-        name: "Instituto Superior Técnico",
-        degree: "BSc in Mechanical Engineering",
+        name: "BSc in Mechanical Engineering",
+        degree: "Instituto Superior Técnico",
         timeframe: "Sep 2021 - Jul 2022",
         location: "Lisbon, Portugal",
         description: <>I developed skills in mathematics, materials engineering, and computational mechanics, focusing on mechanical systems and product design, before switching to Engineering Physics and Technology to pursue my core interests.</>,
@@ -431,8 +431,8 @@ const about = {
         relevant_courses: ["Linear Algebra", "Differential & Integral Calculus I–II", "Materials Science", "General Chemistry", "Materials in Engineering", "Applied Mechanics I", "Programming Fundamentals", "Geometric Drawing & Modeling", "Introduction to Economics", "Global Challenges"],
       },
       {
-        name: "Colégio do Sagrado Coração de Maria",
-        degree: "High-School Diploma in Sciences and Technologies",
+        name: "High-School Diploma in Sciences and Technologies",
+        degree: "Colégio do Sagrado Coração de Maria",
         timeframe: "Sep 2018 - Jul 2021",
         location: "Lisbon, Portugal",
         description: <>I studied core science and technology subjects, focusing on maths, physics, programming and chemistry, to prepare for a career in engineering science.</>,
@@ -440,8 +440,8 @@ const about = {
         relevant_courses: ["Portuguese", "English", "Mathematics", "Biology & Geology", "Physics & Chemistry", "Physics", "Computer Applications", "Philosophy", "Physical Education", "Moral & Religious Education", "Civic Education", "Professional & Soft-Skills Development"],
       },
       {
-        name: "British Council",
-        degree: "English Language & Literature",
+        name: "English Language & Literature",
+        degree: "British Council",
         timeframe: "Sep 2016 - Jun 2019",
         location: "Lisbon, Portugal",
         description: <>Developed English communication, grammar, and vocabulary skills for academic and professional contexts.</>,
