@@ -207,7 +207,7 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text id={institution.name} variant="heading-strong-l">
+                          <Text id={institution.name} variant="heading-strong-l" onBackground="neutral-strong">
                             {institution.name}
                           </Text>
                           <Text variant="body-default-s" onBackground="brand-weak">
@@ -264,7 +264,7 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "4px" }}>
-                          <Text id={experience.company} variant="heading-strong-l">
+                          <Text id={experience.company} variant="heading-strong-l" onBackground="neutral-strong">
                             {experience.company}
                           </Text>
                           <Text 
@@ -368,7 +368,7 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Heading variant="heading-strong-l">
+                          <Heading variant="heading-strong-l" onBackground="neutral-strong">
                             <SmartLink
                               href={paper.link}
                               target="_blank"
@@ -433,7 +433,7 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text id={award.title} variant="heading-strong-l">
+                          <Text id={award.title} variant="heading-strong-l" onBackground="neutral-strong">
                             {award.title}
                           </Text>
                           <Text variant="body-default-s" onBackground="brand-weak">
@@ -487,7 +487,7 @@ export default function About() {
                         vertical="end" 
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
-                        <Text id={certification.title} variant="heading-strong-l">
+                        <Text id={certification.title} variant="heading-strong-l" onBackground="neutral-strong">
                           {certification.title}
                         </Text>
                         <Flex 
@@ -541,7 +541,7 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text id={achievement.title} variant="heading-strong-l">
+                          <Text id={achievement.title} variant="heading-strong-l" onBackground="neutral-strong">
                             {achievement.title}
                           </Text>
                         </Column>
@@ -588,7 +588,7 @@ export default function About() {
                   <CollapsibleSection
                     key={index}
                     header={
-                      <Heading variant="heading-strong-l">
+                      <Heading variant="heading-strong-l" onBackground="neutral-strong">
                         {principle.title}
                       </Heading>
                     }
@@ -637,7 +637,7 @@ export default function About() {
                   <CollapsibleSection
                     key={index}
                     header={
-                      <Heading variant="heading-strong-m">
+                      <Heading variant="heading-strong-m" onBackground="neutral-strong">
                         {category.title}
                       </Heading>
                     }
