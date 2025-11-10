@@ -3,6 +3,8 @@
 .position {
     position: sticky;
     top: 0;
+    background: transparent;
+    transition: backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .position.withNavigation {
@@ -16,19 +18,16 @@
     width: 100%;
 }
 
-.underlayBlur {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    pointer-events: none;
+/* Apply blur when scrolling - content behind header gets blurred */
+.position.blurred {
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    background: transparent;
-    opacity: 0;
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 8; /* under the header which is z-index 9 */
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Dark theme support */
+[data-theme="dark"] .position.blurred {
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .mask {
@@ -48,11 +47,6 @@
 
     .mask {
         transform: rotate(180deg);
-        bottom: 0;
-    }
-
-    .underlayBlur {
-        top: auto;
         bottom: 0;
     }
 }

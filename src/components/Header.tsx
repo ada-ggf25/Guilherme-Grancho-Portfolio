@@ -40,7 +40,6 @@ export const Header = () => {
   const opacity = transitionProgress;
   const scale = 0.85 + (transitionProgress * 0.15); // Scale from 0.85 to 1.0
   const translateY = (1 - transitionProgress) * -10; // Slide up from -10px to 0
-  const blurOpacity = scrollY > 0 ? 1 : 0; // Always blur when content is under header
 
   return (
     <>
@@ -48,7 +47,7 @@ export const Header = () => {
       <Flex
         fitHeight
         position="unset"
-        className={`${styles.position} ${shouldShow ? styles.withNavigation : ''} ${styles.bar}`}
+        className={`${styles.position} ${shouldShow ? styles.withNavigation : ''} ${styles.bar} ${scrollY > 0 ? styles.blurred : ''}`}
         as="header"
         zIndex={9}
         fillWidth
@@ -97,12 +96,6 @@ export const Header = () => {
           </Flex>
         </Flex>
       </Flex>
-      {/* Blur the content behind the header when scrolling */}
-      <div
-        className={styles.underlayBlur}
-        style={{ opacity: blurOpacity }}
-        aria-hidden="true"
-      />
     </>
   );
 };
