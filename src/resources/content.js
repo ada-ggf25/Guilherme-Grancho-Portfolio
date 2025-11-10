@@ -93,7 +93,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Hi! I'm half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and maths. When I'm not working, you'll usually find me playing sports. I'm pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I'm always keen to connect with like minded people who want to build great things. Feel free to reach out!
+        Hi! Welcome to my journey! I'm half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and maths. When I'm not working, you'll usually find me playing sports. I'm pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I'm always keen to connect with like minded people who want to build great things. Feel free to reach out!
       </>
     ),
     finalStatement: (
@@ -399,7 +399,7 @@ const about = {
         degree: "MSc in Applied Computational Science & Engineering",
         timeframe: "Sep 2025 - Sep 2026",
         location: "London, UK",
-        description: <>Applied CS + numerical methods for large-scale scientific/ML computing. Focus on numerical optimisation, scientific programming, and scalable/parallel patterns.</>,
+        description: <>Applied computational science focused on numerical methods for large scale scientific and machine learning computing, with emphasis on numerical optimisation, scientific programming, and scalable, parallel computing.</>,
         gpa: "Distinction Expected",
         relevant_courses: ["Modern Programming Methods", "Computational Mathematics", "Applying Computational/Data Science", "Data Science & Machine Learning", "Deep Learning", "Modelling & Numerical Methods", "Advanced Programming", "Inversion & Optimisation", "Patterns for Parallel Programming"],
       },
