@@ -395,7 +395,7 @@ const about = {
     title: "Education",
     institutions: [
       {
-        name: "MSc in Applied Computational Science & Engineering",
+        name: "MSc, Applied Computational Science & Engineering",
         degree: "Imperial College London",
         timeframe: "Sep 2025 - Sep 2026",
         location: "London, UK",
@@ -404,7 +404,7 @@ const about = {
         relevant_courses: ["Modern Programming Methods", "Computational Mathematics", "Applying Computational/Data Science", "Data Science & Machine Learning", "Deep Learning", "Modelling & Numerical Methods", "Advanced Programming", "Inversion & Optimisation", "Patterns for Parallel Programming"],
       },
       {
-        name: "MSc in Computer Science & Engineering",
+        name: "MSc, Computer Science & Engineering",
         degree: "Instituto Superior Técnico",
         timeframe: "Aug 2024 - Jul 2025",
         location: "Lisbon, Portugal",
@@ -413,7 +413,7 @@ const about = {
         relevant_courses: ["Data Analysis & Integration", "Introduction to Financial Mathematics", "Computational Methods in Finance", "Introduction to Quantum Information & Computing", "Software Security", "Communication Skills in Informatics & Computer Engineering I & II", "Deep Learning", "Planning, Learning & Intelligent Decision-Making", "Autonomous Agents & Multi-Agent Systems", "Business Integration"],
       },
       {
-        name: "BSc in Engineering Physics & Technology",
+        name: "BSc, Engineering Physics & Technology",
         degree: "Instituto Superior Técnico",
         timeframe: "Sep 2022 - Jul 2024",
         location: "Lisbon, Portugal",
@@ -422,7 +422,7 @@ const about = {
         relevant_courses: ["Differential & Integral Calculus I–III", "Linear Algebra", "Probability & Statistics", "Mathematical Techniques of Physics", "Earth & the Universe", "Discoveries of Modern Physics", "Electromagnetism", "Oscillations & Waves", "Relativity", "Thermodynamics", "Quantum Mechanics I", "Physics of Continuous Media", "Solid State Physics", "General Chemistry", "Circuit Theory & Electronics Fundamentals", "General Electronics", "Digital Systems", "Applied Optics", "Materials Science", "Materials in Engineering", "Applied Mechanics I", "Introduction to Experimental Physics Lab", "Experimental Physics Lab", "Advanced Experimental Physics Laboratory I & II", "Experimental Physics Lab in Research Units", "Integrated 1st-Cycle Project in Engineering Physics & Technology", "Programming Fundamentals", "Computational Physics", "Geometric Drawing & Modeling", "Introduction to Economics", "Global Challenges"],
       },
       {
-        name: "BSc in Mechanical Engineering",
+        name: "BSc, Mechanical Engineering",
         degree: "Instituto Superior Técnico",
         timeframe: "Sep 2021 - Jul 2022",
         location: "Lisbon, Portugal",
@@ -431,7 +431,7 @@ const about = {
         relevant_courses: ["Linear Algebra", "Differential & Integral Calculus I–II", "Materials Science", "General Chemistry", "Materials in Engineering", "Applied Mechanics I", "Programming Fundamentals", "Geometric Drawing & Modeling", "Introduction to Economics", "Global Challenges"],
       },
       {
-        name: "High-School Diploma in Sciences and Technologies",
+        name: "High-School Diploma, Sciences and Technologies",
         degree: "Colégio do Sagrado Coração de Maria",
         timeframe: "Sep 2018 - Jul 2021",
         location: "Lisbon, Portugal",
