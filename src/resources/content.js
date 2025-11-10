@@ -56,7 +56,7 @@ const home = {
   path: "/",
   image: "",
   label: "Home",
-  title: `${person.name} - AI Developer & Fintech Entrepreneur`,
+  title: person.name,
   description: `Portfolio showcasing AI development, quantitative finance, and startup innovation by ${person.name}`,
   headline: <>Building the future of finance with AI</>,
   featured: {
