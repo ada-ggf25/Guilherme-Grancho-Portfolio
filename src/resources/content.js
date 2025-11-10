@@ -93,7 +93,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        AI researcher and software engineer passionate about applying machine learning to quantitative finance and sustainability challenges. Currently pursuing an MSc in Applied Computational Science & Engineering at Imperial College London, with published research in financial modelling and algorithmic trading. Co-founder of Eco AI.ly's GAIA platform, combining technical expertise with entrepreneurial drive to build impactful solutions.
+        Hi! I'm half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and maths. When I'm not working, you'll usually find me playing sports. I'm pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I'm always keen to connect with like minded people who want to build great things. Feel free to reach out!
       </>
     ),
     finalStatement: (
