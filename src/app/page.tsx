@@ -255,87 +255,133 @@ export default function About() {
                   width: "100%",
                 }}
               >
-                {about.work.experiences.map((experience, index) => (
-                  <CollapsibleSection
-                    key={`${experience.company}-${experience.role}-${index}`}
-                    header={
-                      <Flex 
-                        horizontal="between" 
-                        vertical="end" 
-                        style={{ width: "100%", paddingRight: "8px" }}
-                      >
-                        <Column style={{ flex: 1, gap: "4px" }}>
-                          <Text id={experience.role} variant="heading-strong-l" onBackground="neutral-strong">
-                            {experience.role}
-                          </Text>
-                          <Text 
-                            variant="body-default-s" 
-                            onBackground="brand-weak" 
-                            style={{ marginBottom: "8px" }}
-                          >
-                            {experience.company}
-                          </Text>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {experience.location}
-                          </Text>
-                        </Column>
-                        <Column style={{ alignItems: "flex-end", gap: "4px" }}>
-                          <Text variant="heading-default-xs" onBackground="neutral-weak">
-                            {experience.timeframe}
-                          </Text>
-                        </Column>
-                      </Flex>
-                    }
-                  >
-                    <Column 
-                      as="ul" 
-                      style={{ gap: "20px", marginTop: "16px" }}
-                    >
-                      {experience.achievements.map((achievement: JSX.Element, index: number) => (
-                        <Text
-                          as="li"
-                          variant="body-default-m"
-                          key={`${experience.company}-${index}`}
-                        >
-                          {achievement}
-                        </Text>
-                      ))}
-                    </Column>
-                    {experience.images.length > 0 && (
-                      <Flex 
-                        fillWidth 
+                {about.work.experiences.map((experience, index) => {
+                  const nextExperience = about.work.experiences[index + 1];
+                  const prevExperience = about.work.experiences[index - 1];
+                  const isConnectedToNext = nextExperience && nextExperience.company === experience.company;
+                  const isConnectedToPrev = prevExperience && prevExperience.company === experience.company;
+                  
+                  return (
+                    <React.Fragment key={`${experience.company}-${experience.role}-${index}`}>
+                      <Flex
                         style={{
-                          paddingTop: "var(--static-space-m)",
-                          paddingLeft: "40px",
-                          gap: "12px",
-                          flexWrap: "wrap",
+                          position: "relative",
+                          width: "100%",
+                          paddingLeft: isConnectedToNext || isConnectedToPrev ? "24px" : "0",
                         }}
                       >
-                        {(experience.images as Array<{ width?: number; height?: number; alt?: string; src?: string }>).map((image, index) => (
-                          <Flex
-                            key={index}
-                            style={{
-                              border: "1px solid var(--color-neutral-medium)",
-                              borderRadius: "var(--static-space-m)",
-                              minWidth: `${image.width ?? 0}rem`,
-                              height: `${image.height ?? 0}rem`,
-                            }}
-                          >
-                            <Media
-                              enlarge
+                        {(isConnectedToNext || isConnectedToPrev) && (
+                          <>
+                            {/* Vertical line */}
+                            <Flex
                               style={{
-                                borderRadius: "var(--static-space-m)",
+                                position: "absolute",
+                                left: "8px",
+                                top: isConnectedToPrev ? "0" : "12px",
+                                bottom: isConnectedToNext ? "calc(-1 * var(--static-space-s))" : "0",
+                                width: "2px",
+                                backgroundColor: "var(--color-neutral-medium)",
+                                zIndex: 0,
                               }}
-                              sizes={image.width?.toString() ?? "100"}
-                              alt={image.alt ?? ""}
-                              src={image.src ?? ""}
                             />
-                          </Flex>
-                        ))}
+                            {/* Circle/bullet point */}
+                            <Flex
+                              style={{
+                                position: "absolute",
+                                left: "4px",
+                                top: "12px",
+                                width: "10px",
+                                height: "10px",
+                                borderRadius: "50%",
+                                backgroundColor: "var(--color-neutral-strong)",
+                                border: "2px solid var(--color-background)",
+                                zIndex: 1,
+                              }}
+                            />
+                          </>
+                        )}
+                        <CollapsibleSection
+                          header={
+                            <Flex 
+                              horizontal="between" 
+                              vertical="end" 
+                              style={{ width: "100%", paddingRight: "8px" }}
+                            >
+                              <Column style={{ flex: 1, gap: "4px" }}>
+                                <Text id={experience.role} variant="heading-strong-l" onBackground="neutral-strong">
+                                  {experience.role}
+                                </Text>
+                                <Text 
+                                  variant="body-default-s" 
+                                  onBackground="brand-weak" 
+                                  style={{ marginBottom: "8px" }}
+                                >
+                                  {experience.company}
+                                </Text>
+                                <Text variant="body-default-xs" onBackground="neutral-weak">
+                                  {experience.location}
+                                </Text>
+                              </Column>
+                              <Column style={{ alignItems: "flex-end", gap: "4px" }}>
+                                <Text variant="heading-default-xs" onBackground="neutral-weak">
+                                  {experience.timeframe}
+                                </Text>
+                              </Column>
+                            </Flex>
+                          }
+                        >
+                          <Column 
+                            as="ul" 
+                            style={{ gap: "20px", marginTop: "16px" }}
+                          >
+                            {experience.achievements.map((achievement: JSX.Element, index: number) => (
+                              <Text
+                                as="li"
+                                variant="body-default-m"
+                                key={`${experience.company}-${index}`}
+                              >
+                                {achievement}
+                              </Text>
+                            ))}
+                          </Column>
+                          {experience.images.length > 0 && (
+                            <Flex 
+                              fillWidth 
+                              style={{
+                                paddingTop: "var(--static-space-m)",
+                                paddingLeft: "40px",
+                                gap: "12px",
+                                flexWrap: "wrap",
+                              }}
+                            >
+                              {(experience.images as Array<{ width?: number; height?: number; alt?: string; src?: string }>).map((image, index) => (
+                                <Flex
+                                  key={index}
+                                  style={{
+                                    border: "1px solid var(--color-neutral-medium)",
+                                    borderRadius: "var(--static-space-m)",
+                                    minWidth: `${image.width ?? 0}rem`,
+                                    height: `${image.height ?? 0}rem`,
+                                  }}
+                                >
+                                  <Media
+                                    enlarge
+                                    style={{
+                                      borderRadius: "var(--static-space-m)",
+                                    }}
+                                    sizes={image.width?.toString() ?? "100"}
+                                    alt={image.alt ?? ""}
+                                    src={image.src ?? ""}
+                                  />
+                                </Flex>
+                              ))}
+                            </Flex>
+                          )}
+                        </CollapsibleSection>
                       </Flex>
-                    )}
-                  </CollapsibleSection>
-                ))}
+                    </React.Fragment>
+                  );
+                })}
               </Column>
             </>
           )}
