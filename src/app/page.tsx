@@ -263,13 +263,13 @@ export default function About() {
                   
                   // Check for Instituto Superior Técnico teaching positions
                   const isISTTeaching = experience.company === "Instituto Superior Técnico" && 
-                    (experience.role.includes("Teacher Assistant") || experience.role.includes("Teacher & Laboratory Coordinator"));
+                    (experience.role.includes("Teacher Assistant") || experience.role.includes("Lab Coordinator"));
                   
                   // Find the other IST teaching position
                   const otherISTTeachingIndex = about.work.experiences.findIndex((exp, idx) => 
                     idx !== index && 
                     exp.company === "Instituto Superior Técnico" && 
-                    (exp.role.includes("Teacher Assistant") || exp.role.includes("Teacher & Laboratory Coordinator"))
+                    (exp.role.includes("Teacher Assistant") || exp.role.includes("Lab Coordinator"))
                   );
                   
                   const otherISTTeaching = otherISTTeachingIndex !== -1 ? about.work.experiences[otherISTTeachingIndex] : null;

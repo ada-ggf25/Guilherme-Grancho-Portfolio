@@ -261,7 +261,7 @@ const about = {
       {
         company: "Instituto Superior Técnico",
         timeframe: "Nov 2023 - Feb 2024",
-        role: "Teacher & Laboratory Coordinator (Physics III with Laboratory)",
+        role: "Teacher Assistant & Lab Coordinator",
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
