@@ -172,7 +172,7 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Supported international financial-services clients: data discovery and exploration, proof-of-concept builds.
+            Engineered RAG pipelines for agentic AI products, exposed as MCP-compliant services consumed by multi-agent orchestrators, for international financial-services clients.
           </>,
           <>
             Emphasised responsible AI (privacy, explainability, auditability) tailored for banking/FS use cases.
