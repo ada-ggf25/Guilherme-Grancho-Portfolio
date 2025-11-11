@@ -154,6 +154,50 @@ npm run export
 rm -rf .next out dist build coverage .nyc_output
 ```
 
+### Using Makefile (optional)
+
+This project includes a `Makefile` with convenient commands that automate the setup and common tasks. You can use these instead of the manual commands above:
+
+**Quick start with Makefile:**
+
+```bash
+# 1. Install Miniconda (Linux)
+make conda-install
+
+# 2. Initialise Conda for zsh
+make conda-init
+# Restart your shell or run: source "$HOME/miniconda3/etc/profile.d/conda.sh"
+
+# 3. Create the Conda environment (uses conda-forge only)
+make env-create
+
+# 4. Install npm dependencies
+make npm-install
+
+# 5. Start the development server
+make dev
+```
+
+**Available Makefile commands:**
+
+- `make help` - Show all available commands
+- `make conda-install` - Install or update Miniconda
+- `make conda-init` - Initialise Conda for zsh
+- `make conda-accept-tos` - Accept Anaconda ToS (optional, if needed)
+- `make env-create` - Create Conda environment from `environment.yaml`
+- `make env-update` - Update existing environment
+- `make env-remove` - Remove the environment
+- `make env-info` - Show Conda info and environments
+- `make env-activate` - Print activation command
+- `make npm-install` - Install npm dependencies inside Conda env
+- `make dev` - Run dev server inside Conda env
+- `make dev-outside` - Run dev server using system Node
+- `make build` - Build the project
+- `make start` - Start production server
+- `make lint` - Run linter
+- `make clean` - Remove build artefacts
+- `make doctor` - Show diagnostics (versions, files, etc.)
+
 ## 📄 License
 
 This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** License. See the [LICENSE](LICENSE) file for details.
