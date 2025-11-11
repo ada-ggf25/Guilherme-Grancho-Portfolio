@@ -209,7 +209,7 @@ const about = {
       },
       {
         company: "Eco AI.ly",
-        timeframe: "Jan 2025 - Mar 2025",
+        timeframe: "Jan 2025 - Jun 2025",
         role: "Machine Learning Engineer",
         location: "Lisbon, Portugal · Hybrid",
         achievements: [

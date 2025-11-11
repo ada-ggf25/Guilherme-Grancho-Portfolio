@@ -293,7 +293,6 @@ export default function About() {
                         style={{
                           position: "relative",
                           width: "100%",
-                          paddingLeft: shouldShowConnection ? "24px" : "0",
                           overflow: "visible",
                         }}
                       >
@@ -303,7 +302,7 @@ export default function About() {
                             <Flex
                               style={{
                                 position: "absolute",
-                                left: "8px",
+                                left: "-16px",
                                 top: shouldExtendLineUp ? (isISTLast ? "-2000px" : "0") : "12px",
                                 bottom: shouldExtendLineDown ? (isISTFirst ? "-2000px" : "calc(-1 * var(--static-space-s))") : "0",
                                 width: "2px",
@@ -316,7 +315,7 @@ export default function About() {
                             <Flex
                               style={{
                                 position: "absolute",
-                                left: "4px",
+                                left: "-20px",
                                 top: "12px",
                                 width: "10px",
                                 height: "10px",
