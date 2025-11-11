@@ -253,13 +253,39 @@ export default function About() {
                   gap: "var(--static-space-s)",
                   marginBottom: "20px",
                   width: "100%",
+                  position: "relative",
+                  overflow: "visible",
                 }}
               >
                 {about.work.experiences.map((experience, index) => {
                   const nextExperience = about.work.experiences[index + 1];
                   const prevExperience = about.work.experiences[index - 1];
+                  
+                  // Check for Instituto Superior Técnico teaching positions
+                  const isISTTeaching = experience.company === "Instituto Superior Técnico" && 
+                    (experience.role.includes("Teacher Assistant") || experience.role.includes("Teacher & Laboratory Coordinator"));
+                  
+                  // Find the other IST teaching position
+                  const otherISTTeachingIndex = about.work.experiences.findIndex((exp, idx) => 
+                    idx !== index && 
+                    exp.company === "Instituto Superior Técnico" && 
+                    (exp.role.includes("Teacher Assistant") || exp.role.includes("Teacher & Laboratory Coordinator"))
+                  );
+                  
+                  const otherISTTeaching = otherISTTeachingIndex !== -1 ? about.work.experiences[otherISTTeachingIndex] : null;
+                  const isISTFirst = isISTTeaching && otherISTTeaching && index < otherISTTeachingIndex;
+                  const isISTLast = isISTTeaching && otherISTTeaching && index > otherISTTeachingIndex;
+                  
+                  // Standard consecutive same-company check
                   const isConnectedToNext = nextExperience && nextExperience.company === experience.company;
                   const isConnectedToPrev = prevExperience && prevExperience.company === experience.company;
+                  
+                  // Combined check: either consecutive same company OR IST teaching positions
+                  const shouldShowConnection = (isConnectedToNext || isConnectedToPrev) || isISTTeaching;
+                  // For IST positions: first one extends down, last one extends up
+                  // For consecutive: use standard logic
+                  const shouldExtendLineDown = isISTFirst ? true : (isConnectedToNext || false);
+                  const shouldExtendLineUp = isISTLast ? true : (isConnectedToPrev || false);
                   
                   return (
                     <React.Fragment key={`${experience.company}-${experience.role}-${index}`}>
@@ -267,21 +293,23 @@ export default function About() {
                         style={{
                           position: "relative",
                           width: "100%",
-                          paddingLeft: isConnectedToNext || isConnectedToPrev ? "24px" : "0",
+                          paddingLeft: shouldShowConnection ? "24px" : "0",
+                          overflow: "visible",
                         }}
                       >
-                        {(isConnectedToNext || isConnectedToPrev) && (
+                        {shouldShowConnection && (
                           <>
-                            {/* Vertical line */}
+                            {/* Vertical line - extends to connect IST positions */}
                             <Flex
                               style={{
                                 position: "absolute",
                                 left: "8px",
-                                top: isConnectedToPrev ? "0" : "12px",
-                                bottom: isConnectedToNext ? "calc(-1 * var(--static-space-s))" : "0",
+                                top: shouldExtendLineUp ? (isISTLast ? "-2000px" : "0") : "12px",
+                                bottom: shouldExtendLineDown ? (isISTFirst ? "-2000px" : "calc(-1 * var(--static-space-s))") : "0",
                                 width: "2px",
                                 backgroundColor: "var(--color-neutral-medium)",
                                 zIndex: 0,
+                                pointerEvents: "none",
                               }}
                             />
                             {/* Circle/bullet point */}
