@@ -418,6 +418,11 @@ const about = {
       return dateB - dateA; // Descending order
     }),
   },
+  keyProjects: {
+    display: true, // set to false to hide this section
+    title: "Key Projects",
+    projects: [],
+  },
   studies: {
     display: true, // set to false to hide this section
     title: "Education",
