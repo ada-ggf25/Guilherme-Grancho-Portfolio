@@ -205,7 +205,7 @@ const about = {
         location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Training and project work across quantum computation, networks, and sensing.
+            Worked across quantum computation, networks, and sensing.
           </>,
           <>
             Conducted outreach with partner institutions (e.g., IST, Deloitte, PQI) to promote quantum technologies.
