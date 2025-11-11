@@ -154,7 +154,7 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Worked end-to-end with EY AI specialists: opportunity assessment, dataset curation and feature engineering, model baselining/validation.
+            Designed and deployed RAG and GraphRAG pipelines powering agentic AI workflows for international clients.
           </>,
           <>
             Delivered GenAI POCs aligned to regulatory and compliance requirements for international clients.
