@@ -41,6 +41,63 @@ Guilherme-Grancho-Portfolio/
 
 ## 🚀 Getting Started
 
+### Using Miniconda (recommended)
+
+These steps ensure a reproducible Node runtime via Conda (Node and npm are provided by the Conda environment).
+
+1) Install Miniconda (Linux)
+   ```bash
+   # Non-interactive install to ~/miniconda3 (safe to re-run)
+   cd /tmp
+   wget -qO miniconda.sh "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+   bash miniconda.sh -u -b -p "$HOME/miniconda3"
+   rm -f miniconda.sh
+   ```
+
+2) Initialise Conda for zsh and load it in your current shell
+   ```bash
+   "$HOME/miniconda3/bin/conda" init zsh
+   source "$HOME/miniconda3/etc/profile.d/conda.sh"
+   conda config --set auto_activate_base false
+   ```
+
+3) Create the environment from this repository’s file
+   ```bash
+   # Uses conda-forge and installs Node.js + npm
+   conda env create -f environment.yaml -y --override-channels
+   # If the environment already exists, update it instead:
+   # conda env update -n "Guilherme-Grancho-Portfolio" -f environment.yaml --prune -y --override-channels
+   ```
+
+4) Activate the environment
+   ```bash
+   conda activate "Guilherme-Grancho-Portfolio"
+   ```
+
+5) Verify runtime versions
+   ```bash
+   node -v   # Expected: v20.x
+   npm -v    # Expected: 10.x
+   ```
+
+6) Install project dependencies
+   ```bash
+   npm install
+   ```
+
+7) Start the development server
+   ```bash
+   npm run dev
+   ```
+   The portfolio will be available at [http://localhost:3030](http://localhost:3030)
+
+Notes:
+- If you encounter Anaconda Terms of Service prompts, either accept them as instructed by Conda or use `--override-channels` to rely on conda-forge only.
+- If a new shell does not recognise `conda`, add this line to your `~/.zshrc`:
+  ```bash
+  source "$HOME/miniconda3/etc/profile.d/conda.sh"
+  ```
+
 ### Prerequisites
 
 - **Node.js** 18 or higher
@@ -68,6 +125,15 @@ Guilherme-Grancho-Portfolio/
    ```
 
    The portfolio will be available at [http://localhost:3030](http://localhost:3030)
+
+### Environment variables
+
+1) Copy the example environment file and update values:
+   ```bash
+   cp .env.example .env
+   # Update .env with your secrets and configuration
+   ```
+2) Never commit real secrets. `.env` is ignored by Git. Update `.env.example` when adding new keys so others know which variables are required.
 
 ### Development Options
 
