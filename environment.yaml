@@ -1,4 +1,4 @@
-name: magic-portfolio
+name: Guilherme-Grancho-Portfolio
 channels:
   - conda-forge
 dependencies:
