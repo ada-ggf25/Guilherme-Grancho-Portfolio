@@ -249,9 +249,6 @@ const about = {
           <>
             End-of-course anonymous survey ranked me 9/9.
           </>,
-          <>
-            Representative outputs: Distinguished Professors 2023/2024; student survey (9/9) media link.
-          </>,
         ],
         images: [],
       },
@@ -266,9 +263,6 @@ const about = {
           </>,
           <>
             Designed a dataset creation method from experimental data and built a high-accuracy neural-network solution.
-          </>,
-          <>
-            Representative outputs: Final paper; final & initial presentations.
           </>,
         ],
         images: [],
@@ -285,9 +279,6 @@ const about = {
           <>
             Built clean, maintainable codebases and collaborated in a remote cross-functional environment.
           </>,
-          <>
-            Representative outputs: AeroTec website.
-          </>,
         ],
         images: [],
       },
@@ -299,9 +290,6 @@ const about = {
         achievements: [
           <>
             Represented Startup Lisbon at Web Summit 2023, boosting company visibility, engaging investors, and supporting investment rounds and pitching.
-          </>,
-          <>
-            Representative outputs: Certificate; "Startup Portugal at Web Summit 2023" media link.
           </>,
         ],
         images: [],
@@ -318,9 +306,6 @@ const about = {
           <>
             Emphasised clear exposition and helping students build confidence in maths/physics.
           </>,
-          <>
-            Representative outputs: Superprof page/account.
-          </>,
         ],
         images: [],
       },
@@ -335,9 +320,6 @@ const about = {
           </>,
           <>
             Contributed model development and dataset creation/analysis.
-          </>,
-          <>
-            Representative outputs: Publication (arXiv link in media); internship certificate.
           </>,
         ],
         images: [],
