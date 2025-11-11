@@ -363,24 +363,6 @@ const about = {
         ],
         images: [],
       },
-      {
-        company: "Federação Portuguesa de Atletismo",
-        timeframe: "Sep 2015 - Sep 2018",
-        role: "Track and Field Athlete",
-        location: "Lisbon, Portugal · On-site",
-        achievements: [
-          <>
-            Represented the national federation in sprints (primary: 200m) and other events (100m–2.5km, long jump).
-          </>,
-          <>
-            Developed discipline, resilience, and teamwork transferable to academic and professional contexts.
-          </>,
-          <>
-            Representative outputs: Medals (media).
-          </>,
-        ],
-        images: [],
-      },
     ].sort((a, b) => {
       // Sort by start date in descending order (most recent first)
       const dateA = parseStartDate(a.timeframe);
@@ -696,7 +678,15 @@ const about = {
   extracurricular: {
     display: true, // set to false to hide this section
     title: "Extracurricular Activities",
-    activities: [],
+    activities: [
+      {
+        title: "Track and Field Athlete",
+        organisation: "Federação Portuguesa de Atletismo",
+        location: "Lisbon, Portugal · On-site",
+        timeframe: "Sep 2015 - Sep 2018",
+        description: <>Represented the national federation in sprints (primary: 200m) and other events (100m–2.5km, long jump). Developed discipline, resilience, and teamwork transferable to academic and professional contexts. Representative outputs: Medals (media).</>,
+      },
+    ],
   },
 };
 
