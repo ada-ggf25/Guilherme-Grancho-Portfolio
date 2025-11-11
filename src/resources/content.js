@@ -214,16 +214,13 @@ const about = {
         images: [],
       },
       {
-        company: "UFOP (Universidade Federal de Ouro Preto)",
+        company: "Universidade Federal de Ouro Preto",
         timeframe: "Nov 2023 - Jul 2024",
-        role: "Artificial Intelligence Intern Researcher",
-        location: "Rio de Janeiro, Brazil · Remote",
+        role: "Machine Learning Researcher",
+        location: "Minas Gerais, Brazil · Remote",
         achievements: [
           <>
             720-hour research programme in ML & algorithms. First-author publication at a Brazilian AI conference: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold."
-          </>,
-          <>
-            Representative outputs: Presentation; internship certificate.
           </>,
         ],
         images: [],
@@ -235,10 +232,7 @@ const about = {
         location: "Leuven, Belgium · On-site",
         achievements: [
           <>
-            Investigated innovative VR locomotion methods and built a virtual world explored via teleportation with an Oculus setup.
-          </>,
-          <>
-            Gained practical skills in VR navigation and interaction design.
+            Investigated innovative VR locomotion methods and built a virtual world explored via teleportation with an Oculus setup. Gained practical skills in VR navigation and interaction design.
           </>,
         ],
         images: [],
@@ -333,7 +327,7 @@ const about = {
       {
         company: "CBPF (Centro Brasileiro de Pesquisas Físicas)",
         timeframe: "Feb 2023",
-        role: "Artificial Intelligence Intern",
+        role: "Artificial Intelligence Researcher",
         location: "Rio de Janeiro, Brazil · On-site",
         achievements: [
           <>
