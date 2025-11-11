@@ -447,11 +447,11 @@ const about = {
       },
       {
         title: "Brazilian Center of Physics Research (CBPF) — Mobility Grant",
-        description: <>Funding to attend the Artificial Intelligence module at CBPF in Rio de Janeiro, Brazil (Feb 2023).</>,
+        description: <>Funding to attend the Artificial Intelligence module at CBPF in Rio de Janeiro, Brazil.</>,
         category: "Research Mobility",
         year: "Feb 2023",
         issuer: "Centro Brasileiro de Pesquisas Físicas (CBPF)",
-        associated_with: "CBPF",
+        associated_with: "",
         artifacts: "Grant documentation",
       },
     ],
