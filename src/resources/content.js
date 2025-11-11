@@ -178,7 +178,7 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            TA for the BSc in Electronic Engineering & Computer Engineering. Covered core topics in thermodynamics and quantum physics.
+            TA for the BSc in Electronic Engineering & Computer Engineering, teaching the module Physics II. Covered core topics in thermodynamics and quantum physics.
           </>,
         ],
         images: [],
