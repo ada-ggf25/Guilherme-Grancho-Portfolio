@@ -486,7 +486,7 @@ const about = {
         issuer: "IELTS Official",
         associated_with: "",
         artifacts: "IELTS results report",
-        credential_id: "24PT5025968GRAG008A",
+        credential_id: "",
       },
       {
         title: "Personal Finance MBA",

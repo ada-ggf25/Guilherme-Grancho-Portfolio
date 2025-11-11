@@ -715,9 +715,14 @@ export default function About() {
                         vertical="end" 
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
-                        <Text id={certification.title} variant="heading-strong-l" onBackground="neutral-strong">
-                          {certification.title}
-                        </Text>
+                        <Column style={{ flex: 1, gap: "6px" }}>
+                          <Text id={certification.title} variant="heading-strong-l" onBackground="neutral-strong">
+                            {certification.title}
+                          </Text>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            {certification.issuer}
+                          </Text>
+                        </Column>
                         <Flex 
                           style={{ gap: "8px" }}
                           vertical="center"
@@ -735,11 +740,13 @@ export default function About() {
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {certification.description}
                     </Text>
-                    <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
-                      Issued by: {certification.issuer}
-                      {certification.associated_with && ` • Associated with: ${certification.associated_with}`}
-                      {certification.credential_id && ` • Credential ID: ${certification.credential_id}`}
-                    </Text>
+                    {(certification.associated_with || certification.credential_id) && (
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                        {certification.associated_with && `Associated with: ${certification.associated_with}`}
+                        {certification.associated_with && certification.credential_id && ` • `}
+                        {certification.credential_id && `Credential ID: ${certification.credential_id}`}
+                      </Text>
+                    )}
                   </CollapsibleSection>
                 ))}
               </Column>
