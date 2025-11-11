@@ -406,7 +406,7 @@ const about = {
         category: "Research Excellence",
         year: "Aug 2025",
         issuer: "SSRN — The Financial Economics Network",
-        associated_with: "Imperial College London",
+        associated_with: "",
         artifacts: "Paper link; Honors media card/screenshot",
       },
       {
@@ -433,7 +433,7 @@ const about = {
         category: "Academic Mobility",
         year: "Mar 2024",
         issuer: "Athens Program",
-        associated_with: "KU Leuven",
+        associated_with: "",
         artifacts: "Grant documentation",
       },
       {
@@ -442,7 +442,7 @@ const about = {
         category: "Teaching Excellence",
         year: "Feb 2024",
         issuer: "Instituto Superior Técnico",
-        associated_with: "Instituto Superior Técnico",
+        associated_with: "",
         artifacts: "IST badge/media; Teaching Excellence media card",
       },
       {
