@@ -401,8 +401,8 @@ const about = {
     title: "Awards & Honours",
     accomplishments: [
       {
-        title: "SSRN Financial Economics Network Top Paper — eJournal (4-day streak)",
-        description: <>My paper "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" (with Vasco Pereira) appeared on the SSRN Top Downloads list for 9–12 Aug 2025.</>,
+        title: "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak",
+        description: <>My paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, with Vasco Pereira, appeared on the SSRN Top Downloads list for 9–12 Aug 2025.</>,
         category: "",
         year: "Aug 2025",
         issuer: "SSRN — The Financial Economics Network",
@@ -411,7 +411,7 @@ const about = {
       },
       {
         title: "LXthon Hackathon — 1º Winner",
-        description: <>Overall 1st place; distinction for Best AI Medical Imaging Solution.</>,
+        description: <>Overall 1st place winner, distinction for Best AI Medical Imaging Solution.</>,
         category: "",
         year: "Jun 2025",
         issuer: "LXthon",
@@ -420,7 +420,7 @@ const about = {
       },
       {
         title: "EY AI Challenge — Category 1º Place Winner",
-        description: <>1st place in category at EY's AI Challenge.</>,
+        description: <>1st place winner in the category of AI for finance at EY's AI Challenge.</>,
         category: "",
         year: "May 2025",
         issuer: "EY",
@@ -429,16 +429,16 @@ const about = {
       },
       {
         title: "Athens Mobility Grant",
-        description: <>Funding to attend KU Leuven's Virtual Reality Development program in March 2024 (Leuven, Belgium).</>,
+        description: <>Funding to attend KU Leuven's Virtual Reality Development program.</>,
         category: "",
         year: "Mar 2024",
-        issuer: "Athens Program",
+        issuer: "KU Leuven",
         associated_with: "",
         artifacts: "Grant documentation",
       },
       {
         title: "Diploma of Teaching Excellence",
-        description: <>Teaching Physics III with Laboratory (BSc in Electronics Engineering) where the anonymous student survey rated me 9/9 overall, the highest in the course that year.</>,
+        description: <>Teaching Physics III for the BSc in Electronics Engineering the anonymous student surveys rated me 9/9 overall teacher, the highest in the module that year.</>,
         category: "",
         year: "Feb 2024",
         issuer: "Instituto Superior Técnico",
@@ -447,10 +447,10 @@ const about = {
       },
       {
         title: "Brazilian Center of Physics Research — Mobility Grant",
-        description: <>Funding to attend the Artificial Intelligence module at CBPF in Rio de Janeiro, Brazil.</>,
+        description: <>Funding to attend the Artificial Intelligence research module at the Brazilian Center of Physics Research.</>,
         category: "",
         year: "Feb 2023",
-        issuer: "Centro Brasileiro de Pesquisas Físicas (CBPF)",
+        issuer: "Brazilian Center of Physics Research",
         associated_with: "",
         artifacts: "Grant documentation",
       },
