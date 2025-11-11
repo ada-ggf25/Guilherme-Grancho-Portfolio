@@ -126,15 +126,6 @@ Notes:
 
    The portfolio will be available at [http://localhost:3030](http://localhost:3030)
 
-### Environment variables
-
-1) Copy the example environment file and update values:
-   ```bash
-   cp .env.example .env
-   # Update .env with your secrets and configuration
-   ```
-2) Never commit real secrets. `.env` is ignored by Git. Update `.env.example` when adding new keys so others know which variables are required.
-
 ### Development Options
 
 - **With Turbo** (default, faster): `npm run dev`
