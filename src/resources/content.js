@@ -190,7 +190,7 @@ const about = {
         location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Built LSTM time-series models to forecast sustainability metrics (e.g., carbon intensity, renewable-share trends) at national/regional scales.
+            Built LSTM time-series models to forecast sustainability metrics (e.g., carbon intensity, renewable-share trends) at national/regional scales, with the goal of reducing the energy/carbon footprint when training large AI models.
           </>,
           <>
             Developed tools to help organisations optimise energy usage and monitor production, consumption, imports, and exports.
