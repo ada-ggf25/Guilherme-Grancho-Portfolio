@@ -667,9 +667,11 @@ export default function About() {
                           </Text>
                         </Column>
                         <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                          <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                            {award.category}
-                          </Tag>
+                          {award.category && (
+                            <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                              {award.category}
+                            </Tag>
+                          )}
                           <Text variant="heading-default-xs" onBackground="neutral-weak">
                             {award.year}
                           </Text>

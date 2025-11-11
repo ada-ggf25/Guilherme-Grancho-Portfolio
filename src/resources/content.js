@@ -403,7 +403,7 @@ const about = {
       {
         title: "SSRN Financial Economics Network Top Paper — eJournal (4-day streak)",
         description: <>My paper "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" (with Vasco Pereira) appeared on the SSRN Top Downloads list for 9–12 Aug 2025.</>,
-        category: "Research Excellence",
+        category: "",
         year: "Aug 2025",
         issuer: "SSRN — The Financial Economics Network",
         associated_with: "",
@@ -412,7 +412,7 @@ const about = {
       {
         title: "LXthon Hackathon — 1º Winner",
         description: <>Overall 1st place; distinction for Best AI Medical Imaging Solution.</>,
-        category: "Hackathon Excellence",
+        category: "",
         year: "Jun 2025",
         issuer: "LXthon",
         associated_with: "",
@@ -421,7 +421,7 @@ const about = {
       {
         title: "EY AI Challenge — Category 1º Place Winner",
         description: <>1st place in category at EY's AI Challenge.</>,
-        category: "AI Competition",
+        category: "",
         year: "May 2025",
         issuer: "EY",
         associated_with: "",
@@ -430,7 +430,7 @@ const about = {
       {
         title: "Athens Mobility Grant",
         description: <>Funding to attend KU Leuven's Virtual Reality Development program in March 2024 (Leuven, Belgium).</>,
-        category: "Academic Mobility",
+        category: "",
         year: "Mar 2024",
         issuer: "Athens Program",
         associated_with: "",
@@ -439,7 +439,7 @@ const about = {
       {
         title: "Diploma of Teaching Excellence",
         description: <>Teaching Physics III with Laboratory (BSc in Electronics Engineering) where the anonymous student survey rated me 9/9 overall, the highest in the course that year.</>,
-        category: "Teaching Excellence",
+        category: "",
         year: "Feb 2024",
         issuer: "Instituto Superior Técnico",
         associated_with: "",
@@ -448,7 +448,7 @@ const about = {
       {
         title: "Brazilian Center of Physics Research — Mobility Grant",
         description: <>Funding to attend the Artificial Intelligence module at CBPF in Rio de Janeiro, Brazil.</>,
-        category: "Research Mobility",
+        category: "",
         year: "Feb 2023",
         issuer: "Centro Brasileiro de Pesquisas Físicas (CBPF)",
         associated_with: "",
@@ -542,7 +542,7 @@ const about = {
       {
         title: "Achieved maximum teaching rating in anonymous student surveys",
         description: <>Physics III with Laboratory at Instituto Superior Técnico; ranked 9/9 overall (2024).</>,
-        category: "Teaching Excellence",
+        category: "",
         year: "2024",
       },
       {
