@@ -36,6 +36,7 @@ export default function About() {
     { id: about.studies.title, label: "Education" },
     { id: about.work.title, label: "Experience" },
     { id: about.publications.title, label: "Publications" },
+    { id: about.extracurricular.title, label: "Extracurricular" },
     { id: about.awards.title, label: "Awards" },
     { id: about.values.title, label: "Values" },
     { id: about.hobbies.title, label: "Hobbies" }
@@ -398,6 +399,74 @@ export default function About() {
                     )}
                   </CollapsibleSection>
                 ))}
+              </Column>
+            </>
+          )}
+
+          {/* Extracurricular Section */}
+          {about.extracurricular.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.extracurricular.title}
+                variant="display-strong-s"
+                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
+              >
+                {about.extracurricular.title}
+              </Heading>
+              <Column style={{ gap: "12px", marginBottom: "20px" }}>
+                {about.extracurricular.activities.length > 0 ? (
+                  about.extracurricular.activities.map((activity, index) => (
+                    <CollapsibleSection
+                      key={index}
+                      header={
+                        <Flex
+                          horizontal="between"
+                          vertical="end"
+                          style={{ width: "100%", paddingRight: "8px" }}
+                        >
+                          <Column style={{ flex: 1, gap: "6px" }}>
+                            <Text variant="heading-strong-l" onBackground="neutral-strong">
+                              {activity.title}
+                            </Text>
+                            {activity.organisation && (
+                              <Text variant="body-default-s" onBackground="brand-weak">
+                                {activity.organisation}
+                              </Text>
+                            )}
+                            {activity.location && (
+                              <Text variant="body-default-xs" onBackground="neutral-weak">
+                                {activity.location}
+                              </Text>
+                            )}
+                          </Column>
+                          {activity.timeframe && (
+                            <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                              <Text variant="heading-default-xs" onBackground="neutral-weak">
+                                {activity.timeframe}
+                              </Text>
+                              {activity.category && (
+                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  {activity.category}
+                                </Tag>
+                              )}
+                            </Column>
+                          )}
+                        </Flex>
+                      }
+                    >
+                      {activity.description && (
+                        <Text variant="body-default-m" onBackground="neutral-weak">
+                          {activity.description}
+                        </Text>
+                      )}
+                    </CollapsibleSection>
+                  ))
+                ) : (
+                  <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                    No extracurricular activities listed yet.
+                  </Text>
+                )}
               </Column>
             </>
           )}

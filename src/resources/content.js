@@ -718,6 +718,11 @@ const about = {
       },
     ],
   },
+  extracurricular: {
+    display: true, // set to false to hide this section
+    title: "Extracurricular Activities",
+    activities: [],
+  },
 };
 
 
