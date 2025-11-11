@@ -156,12 +156,6 @@ const about = {
           <>
             Designed and deployed RAG and GraphRAG pipelines powering agentic AI workflows for international clients.
           </>,
-          <>
-            Delivered GenAI POCs aligned to regulatory and compliance requirements for international clients.
-          </>,
-          <>
-            Representative outputs: "EY Offices" media link.
-          </>,
         ],
         images: [],
       },
@@ -173,12 +167,6 @@ const about = {
         achievements: [
           <>
             Engineered RAG pipelines for agentic AI products, exposed as MCP-compliant services consumed by multi-agent orchestrators, for international financial-services clients.
-          </>,
-          <>
-            Emphasised responsible AI (privacy, explainability, auditability) tailored for banking/FS use cases.
-          </>,
-          <>
-            Representative outputs: Internship certificate.
           </>,
         ],
         images: [],
