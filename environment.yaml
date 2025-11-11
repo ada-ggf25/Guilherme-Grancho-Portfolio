@@ -1,0 +1,7 @@
+name: magic-portfolio
+channels:
+  - conda-forge
+dependencies:
+  - nodejs=20
+  - npm
+
