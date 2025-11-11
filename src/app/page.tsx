@@ -35,7 +35,7 @@ export default function About() {
     { id: about.intro.title, label: "Intro" },
     { id: about.studies.title, label: "Education" },
     { id: about.work.title, label: "Experience" },
-    { id: about.keyProjects.title, label: "Key Projects" },
+    { id: about.keyProjects.title, label: "Projects" },
     { id: about.publications.title, label: "Publications" },
     { id: about.extracurricular.title, label: "Extracurricular" },
     { id: about.awards.title, label: "Awards" },
