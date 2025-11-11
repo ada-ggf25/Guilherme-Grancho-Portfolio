@@ -210,9 +210,6 @@ const about = {
           <>
             Conducted outreach with partner institutions (e.g., IST, Deloitte, PQI) to promote quantum technologies.
           </>,
-          <>
-            Representative outputs: Admission letter.
-          </>,
         ],
         images: [],
       },
@@ -242,9 +239,6 @@ const about = {
           </>,
           <>
             Gained practical skills in VR navigation and interaction design.
-          </>,
-          <>
-            Representative outputs: Admission letter.
           </>,
         ],
         images: [],
