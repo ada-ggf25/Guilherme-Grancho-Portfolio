@@ -35,9 +35,10 @@ export default function About() {
     { id: about.intro.title, label: "Intro" },
     { id: about.studies.title, label: "Education" },
     { id: about.work.title, label: "Experience" },
+    { id: about.keyProjects.title, label: "Projects" },
     { id: about.publications.title, label: "Publications" },
+    { id: about.extracurricular.title, label: "Extracurricular" },
     { id: about.awards.title, label: "Awards" },
-    { id: about.achievements.title, label: "Achievements" },
     { id: about.values.title, label: "Values" },
     { id: about.hobbies.title, label: "Hobbies" }
   ];
@@ -264,15 +265,15 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "4px" }}>
-                          <Text id={experience.company} variant="heading-strong-l" onBackground="neutral-strong">
-                            {experience.company}
+                          <Text id={experience.role} variant="heading-strong-l" onBackground="neutral-strong">
+                            {experience.role}
                           </Text>
                           <Text 
                             variant="body-default-s" 
                             onBackground="brand-weak" 
                             style={{ marginBottom: "8px" }}
                           >
-                            {experience.role}
+                            {experience.company}
                           </Text>
                           <Text variant="body-default-xs" onBackground="neutral-weak">
                             {experience.location}
@@ -339,6 +340,97 @@ export default function About() {
             </>
           )}
 
+          {/* Key Projects Section */}
+          {about.keyProjects.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.keyProjects.title}
+                variant="display-strong-s"
+                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
+              >
+                {about.keyProjects.title}
+              </Heading>
+              <Column style={{ gap: "12px", marginBottom: "20px" }}>
+                {about.keyProjects.projects.length > 0 ? (
+                  about.keyProjects.projects.map((project, index) => (
+                    <CollapsibleSection
+                      key={index}
+                      header={
+                        <Flex
+                          horizontal="between"
+                          vertical="end"
+                          style={{ width: "100%", paddingRight: "8px" }}
+                        >
+                          <Column style={{ flex: 1, gap: "6px" }}>
+                            <Heading variant="heading-strong-l" onBackground="neutral-strong">
+                              {project.link ? (
+                                <SmartLink
+                                  href={project.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{ textDecoration: "none", color: "inherit" }}
+                                >
+                                  {project.title}
+                                </SmartLink>
+                              ) : (
+                                project.title
+                              )}
+                            </Heading>
+                            {project.technologies && (
+                              <Text variant="body-default-s" onBackground="brand-weak">
+                                {project.technologies}
+                              </Text>
+                            )}
+                            {project.timeframe && (
+                              <Text variant="body-default-xs" onBackground="neutral-weak">
+                                {project.timeframe}
+                              </Text>
+                            )}
+                          </Column>
+                          {project.category && (
+                            <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                              <Tag variant="brand" size="s">
+                                {project.category}
+                              </Tag>
+                            </Column>
+                          )}
+                        </Flex>
+                      }
+                    >
+                      {project.description && (
+                        <Text variant="body-default-m" onBackground="neutral-weak">
+                          {project.description}
+                        </Text>
+                      )}
+                      {project.highlights && (
+                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px" }}>
+                          Key highlights: {project.highlights}
+                        </Text>
+                      )}
+                      {project.github && (
+                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ marginTop: "8px" }}>
+                          <SmartLink
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: "none" }}
+                          >
+                            View on GitHub →
+                          </SmartLink>
+                        </Text>
+                      )}
+                    </CollapsibleSection>
+                  ))
+                ) : (
+                  <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                    No key projects listed yet.
+                  </Text>
+                )}
+              </Column>
+            </>
+          )}
+
           {/* Publications Section */}
           {about.publications.display && (
             <>
@@ -399,6 +491,74 @@ export default function About() {
                     )}
                   </CollapsibleSection>
                 ))}
+              </Column>
+            </>
+          )}
+
+          {/* Extracurricular Section */}
+          {about.extracurricular.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.extracurricular.title}
+                variant="display-strong-s"
+                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
+              >
+                {about.extracurricular.title}
+              </Heading>
+              <Column style={{ gap: "12px", marginBottom: "20px" }}>
+                {about.extracurricular.activities.length > 0 ? (
+                  about.extracurricular.activities.map((activity, index) => (
+                    <CollapsibleSection
+                      key={index}
+                      header={
+                        <Flex
+                          horizontal="between"
+                          vertical="end"
+                          style={{ width: "100%", paddingRight: "8px" }}
+                        >
+                          <Column style={{ flex: 1, gap: "6px" }}>
+                            <Text variant="heading-strong-l" onBackground="neutral-strong">
+                              {activity.title}
+                            </Text>
+                            {activity.organisation && (
+                              <Text variant="body-default-s" onBackground="brand-weak">
+                                {activity.organisation}
+                              </Text>
+                            )}
+                            {activity.location && (
+                              <Text variant="body-default-xs" onBackground="neutral-weak">
+                                {activity.location}
+                              </Text>
+                            )}
+                          </Column>
+                          {activity.timeframe && (
+                            <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                              <Text variant="heading-default-xs" onBackground="neutral-weak">
+                                {activity.timeframe}
+                              </Text>
+                              {activity.category && (
+                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  {activity.category}
+                                </Tag>
+                              )}
+                            </Column>
+                          )}
+                        </Flex>
+                      }
+                    >
+                      {activity.description && (
+                        <Text variant="body-default-m" onBackground="neutral-weak">
+                          {activity.description}
+                        </Text>
+                      )}
+                    </CollapsibleSection>
+                  ))
+                ) : (
+                  <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                    No extracurricular activities listed yet.
+                  </Text>
+                )}
               </Column>
             </>
           )}
@@ -511,53 +671,6 @@ export default function About() {
             </>
           )}
 
-          {about.achievements.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.achievements.title}
-                variant="display-strong-s"
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.achievements.title}
-              </Heading>
-              <Column 
-                style={{ gap: "var(--static-space-s)", marginBottom: "20px", width: "100%" }}
-              >
-                {about.achievements.accomplishments.map((achievement, index) => (
-                  <CollapsibleSection
-                    key={`${achievement.title}-${index}`}
-                    header={
-                      <Flex 
-                        horizontal="between" 
-                        vertical="end" 
-                        style={{ width: "100%", paddingRight: "8px" }}
-                      >
-                        <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text id={achievement.title} variant="heading-strong-l" onBackground="neutral-strong">
-                            {achievement.title}
-                          </Text>
-                        </Column>
-                        <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                          <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                            {achievement.category}
-                          </Tag>
-                          <Text variant="heading-default-xs" onBackground="neutral-weak">
-                            {achievement.year}
-                          </Text>
-                        </Column>
-                      </Flex>
-                    }
-                  >
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {achievement.description}
-                    </Text>
-                  </CollapsibleSection>
-                ))}
-              </Column>
-            </>
-          )}
-
           {/* Values & Principles Section */}
           {about.values.display && (
             <>
@@ -572,38 +685,10 @@ export default function About() {
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                style={{ marginBottom: "12px" }}
+                style={{ marginBottom: "12px", textAlign: "justify" }}
               >
                 {about.values.description}
               </Text>
-              <Column style={{ gap: "12px", marginBottom: "20px" }}>
-                {about.values.principles.map((principle, index) => (
-                  <CollapsibleSection
-                    key={index}
-                    header={
-                      <Heading variant="heading-strong-l" onBackground="neutral-strong">
-                        {principle.title}
-                      </Heading>
-                    }
-                  >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic", marginBottom: "12px" }}>
-                      {principle.definition}
-                    </Text>
-                    <Column style={{ gap: "8px" }}>
-                      {principle.behaviors.map((behavior, behaviorIndex) => (
-                        <Flex key={behaviorIndex} style={{ gap: "8px", alignItems: "flex-start" }}>
-                          <Text variant="body-default-s" onBackground="neutral-weak" style={{ marginTop: "2px" }}>
-                            •
-                          </Text>
-                          <Text variant="body-default-s" onBackground="neutral-weak">
-                            {behavior}
-                          </Text>
-                        </Flex>
-                      ))}
-                    </Column>
-                  </CollapsibleSection>
-                ))}
-              </Column>
             </>
           )}
 

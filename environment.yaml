@@ -1,0 +1,9 @@
+name: Guilherme-Grancho-Portfolio
+channels:
+  - conda-forge
+dependencies:
+  - nodejs=20
+  - make
+  - wget
+  - git
+

@@ -72,6 +72,29 @@ const home = {
   ),
 };
 
+// Helper function to parse start date from timeframe string
+function parseStartDate(timeframe) {
+  const monthNames = {
+    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
+    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
+  };
+  
+  // Extract the start date part (before " - " or if no " - ", the whole string)
+  const startPart = timeframe.split(" - ")[0].trim();
+  const parts = startPart.split(" ");
+  
+  if (parts.length >= 2) {
+    const month = monthNames[parts[0]];
+    const year = parseInt(parts[1]);
+    if (month && year) {
+      return new Date(year, month - 1, 1); // Return Date object for comparison
+    }
+  }
+  
+  // Return a very old date if parsing fails
+  return new Date(1900, 0, 1);
+}
+
 const about = {
   path: "/",
   label: "About",
@@ -305,7 +328,7 @@ const about = {
         company: "AeroTec",
         timeframe: "Sep 2023 - Dec 2023",
         role: "Frontend Web Developer",
-        location: "Lisbon, Portugal · Remote",
+        location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
             Designed and implemented responsive web interfaces for aerospace engineering projects and digital services.
@@ -388,7 +411,17 @@ const about = {
         ],
         images: [],
       },
-    ],
+    ].sort((a, b) => {
+      // Sort by start date in descending order (most recent first)
+      const dateA = parseStartDate(a.timeframe);
+      const dateB = parseStartDate(b.timeframe);
+      return dateB - dateA; // Descending order
+    }),
+  },
+  keyProjects: {
+    display: true, // set to false to hide this section
+    title: "Key Projects",
+    projects: [],
   },
   studies: {
     display: true, // set to false to hide this section
@@ -640,155 +673,13 @@ const about = {
   hobbies: {
     display: true, // set to false to hide this section
     title: "Hobbies & Passions",
-    description: <>A comprehensive overview of technical skills, personal interests, and passions that drive my work and life.</>,
-    categories: [
-      {
-        title: "Computational Science",
-        skills: [
-          "Machine Learning",
-          "Data Science", 
-          "Computational Inversion (inverse problems)",
-          "Deep Learning",
-          "Parallel Computing",
-          "Optimisation Techniques",
-          "Computational Mathematics",
-          "Big Data Analysis",
-          "Cloud Computing",
-          "Numerical Simulations"
-        ]
-      },
-      {
-        title: "Applied Sciences & Engineering",
-        skills: [
-          "Applied Physics",
-          "Experimental Physics",
-          "Mechanical Engineering",
-          "Electronic Engineering",
-          "Materials Science",
-          "Geosciences",
-          "Signal Processing"
-        ]
-      },
-      {
-        title: "Soft Skills",
-        skills: [
-          "Leadership",
-          "Teamwork", 
-          "Public Speaking",
-          "Management",
-          "Problem Solving",
-          "Critical Thinking",
-          "Adaptability"
-        ]
-      },
-      {
-        title: "Languages",
-        skills: [
-          "Portuguese: Native",
-          "English: Proficient",
-          "Spanish: Advanced",
-          "French: Intermediate"
-        ]
-      },
-      {
-        title: "Passions",
-        skills: [
-          "Entrepreneurship",
-          "Martial Arts",
-          "Running",
-          "Surfing",
-          "Cinematography",
-          "Literature",
-          "Museums",
-          "Travelling",
-          "Cooking",
-          "Volunteering"
-        ]
-      }
-    ]
+    description: <>A comprehensive overview of technical skills, personal interests, and passions that drive my work and life. My passions include entrepreneurship, martial arts, running, surfing, cinematography, literature, museums, travelling, cooking, and volunteering.</>,
+    categories: []
   },
   values: {
     display: true, // set to false to hide this section
     title: "Values & Principles",
-    description: <>Core values and principles that guide my work, relationships, and decision-making process in both professional and personal contexts.</>,
-    principles: [
-      {
-        title: "Respect",
-        definition: "Treat people, time, and work with consideration.",
-        behaviors: [
-          "Active listening",
-          "Concise, timely communications",
-          "Credit others' contributions",
-          "Thoughtful code reviews",
-          "Clear meeting outcomes"
-        ]
-      },
-      {
-        title: "Inclusion",
-        definition: "Make environments, products, and processes accessible to all.",
-        behaviors: [
-          "Use inclusive language",
-          "Design for accessibility (a11y) in UIs/docs",
-          "Invite quieter voices",
-          "Mentor juniors",
-          "Accommodate time zones"
-        ]
-      },
-      {
-        title: "Collaboration",
-        definition: "Solve problems with others, not around them.",
-        behaviors: [
-          "Co-scope tasks",
-          "Pair program",
-          "Small, reviewable PRs",
-          "\"Disagree & commit\" after decisions",
-          "Share reusable templates and notebooks"
-        ]
-      },
-      {
-        title: "Integrity",
-        definition: "Do the right thing when it's inconvenient.",
-        behaviors: [
-          "Reproducible experiments",
-          "Transparent assumptions/limitations",
-          "Privacy-by-design and data-handling compliance",
-          "Avoid overclaiming results",
-          "Respect IP/licensing"
-        ]
-      },
-      {
-        title: "Excellence",
-        definition: "Pursue high standards without gold-plating.",
-        behaviors: [
-          "Definition of Done (tests, docs, perf checks)",
-          "Automated CI/CD gates",
-          "Measurable OKRs",
-          "Post-mortems with action items",
-          "Continuous learning cadence"
-        ]
-      },
-      {
-        title: "Environmental Responsibility",
-        definition: "Build with sustainability in mind.",
-        behaviors: [
-          "Efficient compute (profiling, batching, mixed precision)",
-          "Prefer greener cloud regions/instances",
-          "Track energy/carbon metrics",
-          "Expose sustainability insights to users (e.g., dashboards)"
-        ]
-      },
-      {
-        title: "Innovation",
-        definition: "Turn ideas into useful, testable outcomes.",
-        behaviors: [
-          "Rapid prototypes → MVP → iterate",
-          "Structured experiments with metrics",
-          "Hackathon participation",
-          "Literature scanning & tech radars",
-          "Celebrate useful failures"
-        ]
-      }
-    ]
+    description: <>Core values and principles that guide my work, relationships, and decision-making process in both professional and personal contexts. These include respect, inclusion, collaboration, integrity, excellence, environmental responsibility, and innovation.</>
   },
   publications: {
     display: true, // set to false to hide this section
@@ -830,19 +721,12 @@ const about = {
         highlights: "70%+ similarity to ground truth, Petrobras interest",
         artifacts: "arXiv + Show publication link",
       },
-      {
-        title: "The Atomic Nucleus — Discoveries of Modern Physics",
-        authors: "Guilherme Grancho",
-        venue: "Instituto Superior Técnico — Congress Center",
-        date: "Nov 28, 2022",
-        type: "Course paper + poster presentation",
-        description: <>Historical and experimental path to discovering the atomic nucleus; synthesis of early scattering experiments and implications. Course completed with 20/20; poster presented publicly at IST Congress Center.</>,
-        link: "#",
-        category: "Physics Education",
-        highlights: "20/20 grade, public poster presentation",
-        artifacts: "Show publication link",
-      },
     ],
+  },
+  extracurricular: {
+    display: true, // set to false to hide this section
+    title: "Extracurricular Activities",
+    activities: [],
   },
 };
 
