@@ -180,12 +180,6 @@ const about = {
           <>
             TA for the BSc in Electronic Engineering & Computer Engineering. Covered core topics in thermodynamics and quantum physics.
           </>,
-          <>
-            Contributed to course delivery and student support, emphasising rigorous scientific thinking.
-          </>,
-          <>
-            Representative outputs: "Distinguished Professors" media link.
-          </>,
         ],
         images: [],
       },
