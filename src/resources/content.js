@@ -446,7 +446,7 @@ const about = {
         artifacts: "IST badge/media; Teaching Excellence media card",
       },
       {
-        title: "Brazilian Center of Physics Research (CBPF) — Mobility Grant",
+        title: "Brazilian Center of Physics Research — Mobility Grant",
         description: <>Funding to attend the Artificial Intelligence module at CBPF in Rio de Janeiro, Brazil.</>,
         category: "Research Mobility",
         year: "Feb 2023",
