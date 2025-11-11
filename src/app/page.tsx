@@ -33,11 +33,11 @@ export async function generateMetadata() {
 export default function About() {
   const sections = [
     { id: about.intro.title, label: "Intro" },
-    { id: about.studies.title, label: "Education" },
     { id: about.work.title, label: "Experience" },
-    { id: about.keyProjects.title, label: "Projects" },
+    { id: about.studies.title, label: "Education" },
     { id: about.publications.title, label: "Publications" },
     { id: about.extracurricular.title, label: "Extracurricular" },
+    { id: about.keyProjects.title, label: "Projects" },
     { id: about.awards.title, label: "Awards" },
     { id: about.values.title, label: "Values" },
     { id: about.hobbies.title, label: "Hobbies" }
@@ -180,63 +180,6 @@ export default function About() {
           paddingTop: "0px",
         }}
       >
-
-          {about.studies.display && (
-            <>
-              <Heading 
-                as="h2" 
-                id={about.studies.title} 
-                variant="display-strong-s" 
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.studies.title}
-              </Heading>
-              <Column 
-                style={{
-                  gap: "var(--static-space-s)",
-                  marginBottom: "20px",
-                  width: "100%",
-                }}
-              >
-                {about.studies.institutions.map((institution, index) => (
-                  <CollapsibleSection
-                    key={`${institution.name}-${index}`}
-                    header={
-                      <Flex 
-                        horizontal="between" 
-                        vertical="end" 
-                        style={{ width: "100%", paddingRight: "8px" }}
-                      >
-                        <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text id={institution.name} variant="heading-strong-l" onBackground="neutral-strong">
-                            {institution.name}
-                          </Text>
-                          <Text variant="body-default-s" onBackground="brand-weak">
-                            {institution.degree}
-                          </Text>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {institution.location}
-                          </Text>
-                        </Column>
-                        <Column style={{ alignItems: "flex-end", gap: "4px" }}>
-                          <Text variant="heading-default-xs" onBackground="neutral-weak">
-                            {institution.timeframe}
-                          </Text>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {institution.gpa}
-                          </Text>
-                        </Column>
-                      </Flex>
-                    }
-                  >
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {institution.description}
-                    </Text>
-                  </CollapsibleSection>
-                ))}
-              </Column>
-            </>
-          )}
 
           {about.work.display && (
             <>
@@ -413,93 +356,59 @@ export default function About() {
             </>
           )}
 
-          {/* Key Projects Section */}
-          {about.keyProjects.display && (
+          {about.studies.display && (
             <>
-              <Heading
-                as="h2"
-                id={about.keyProjects.title}
-                variant="display-strong-s"
+              <Heading 
+                as="h2" 
+                id={about.studies.title} 
+                variant="display-strong-s" 
                 style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
               >
-                {about.keyProjects.title}
+                {about.studies.title}
               </Heading>
-              <Column style={{ gap: "12px", marginBottom: "20px" }}>
-                {about.keyProjects.projects.length > 0 ? (
-                  about.keyProjects.projects.map((project, index) => (
-                    <CollapsibleSection
-                      key={index}
-                      header={
-                        <Flex
-                          horizontal="between"
-                          vertical="end"
-                          style={{ width: "100%", paddingRight: "8px" }}
-                        >
-                          <Column style={{ flex: 1, gap: "6px" }}>
-                            <Heading variant="heading-strong-l" onBackground="neutral-strong">
-                              {project.link ? (
-                                <SmartLink
-                                  href={project.link}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{ textDecoration: "none", color: "inherit" }}
-                                >
-                                  {project.title}
-                                </SmartLink>
-                              ) : (
-                                project.title
-                              )}
-                            </Heading>
-                            {project.technologies && (
-                              <Text variant="body-default-s" onBackground="brand-weak">
-                                {project.technologies}
-                              </Text>
-                            )}
-                            {project.timeframe && (
-                              <Text variant="body-default-xs" onBackground="neutral-weak">
-                                {project.timeframe}
-                              </Text>
-                            )}
-                          </Column>
-                          {project.category && (
-                            <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                              <Tag variant="brand" size="s">
-                                {project.category}
-                              </Tag>
-                            </Column>
-                          )}
-                        </Flex>
-                      }
-                    >
-                      {project.description && (
-                        <Text variant="body-default-m" onBackground="neutral-weak">
-                          {project.description}
-                        </Text>
-                      )}
-                      {project.highlights && (
-                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px" }}>
-                          Key highlights: {project.highlights}
-                        </Text>
-                      )}
-                      {project.github && (
-                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ marginTop: "8px" }}>
-                          <SmartLink
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ textDecoration: "none" }}
-                          >
-                            View on GitHub →
-                          </SmartLink>
-                        </Text>
-                      )}
-                    </CollapsibleSection>
-                  ))
-                ) : (
-                  <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
-                    No key projects listed yet.
-                  </Text>
-                )}
+              <Column 
+                style={{
+                  gap: "var(--static-space-s)",
+                  marginBottom: "20px",
+                  width: "100%",
+                }}
+              >
+                {about.studies.institutions.map((institution, index) => (
+                  <CollapsibleSection
+                    key={`${institution.name}-${index}`}
+                    header={
+                      <Flex 
+                        horizontal="between" 
+                        vertical="end" 
+                        style={{ width: "100%", paddingRight: "8px" }}
+                      >
+                        <Column style={{ flex: 1, gap: "6px" }}>
+                          <Text id={institution.name} variant="heading-strong-l" onBackground="neutral-strong">
+                            {institution.name}
+                          </Text>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            {institution.degree}
+                          </Text>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {institution.location}
+                          </Text>
+                        </Column>
+                        <Column style={{ alignItems: "flex-end", gap: "4px" }}>
+                          <Text variant="heading-default-xs" onBackground="neutral-weak">
+                            {institution.timeframe}
+                          </Text>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {institution.gpa}
+                          </Text>
+                        </Column>
+                      </Flex>
+                    }
+                  >
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {institution.description}
+                    </Text>
+                  </CollapsibleSection>
+                ))}
               </Column>
             </>
           )}
@@ -630,6 +539,97 @@ export default function About() {
                 ) : (
                   <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
                     No extracurricular activities listed yet.
+                  </Text>
+                )}
+              </Column>
+            </>
+          )}
+
+          {/* Key Projects Section */}
+          {about.keyProjects.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.keyProjects.title}
+                variant="display-strong-s"
+                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
+              >
+                {about.keyProjects.title}
+              </Heading>
+              <Column style={{ gap: "12px", marginBottom: "20px" }}>
+                {about.keyProjects.projects.length > 0 ? (
+                  about.keyProjects.projects.map((project, index) => (
+                    <CollapsibleSection
+                      key={index}
+                      header={
+                        <Flex
+                          horizontal="between"
+                          vertical="end"
+                          style={{ width: "100%", paddingRight: "8px" }}
+                        >
+                          <Column style={{ flex: 1, gap: "6px" }}>
+                            <Heading variant="heading-strong-l" onBackground="neutral-strong">
+                              {project.link ? (
+                                <SmartLink
+                                  href={project.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{ textDecoration: "none", color: "inherit" }}
+                                >
+                                  {project.title}
+                                </SmartLink>
+                              ) : (
+                                project.title
+                              )}
+                            </Heading>
+                            {project.technologies && (
+                              <Text variant="body-default-s" onBackground="brand-weak">
+                                {project.technologies}
+                              </Text>
+                            )}
+                            {project.timeframe && (
+                              <Text variant="body-default-xs" onBackground="neutral-weak">
+                                {project.timeframe}
+                              </Text>
+                            )}
+                          </Column>
+                          {project.category && (
+                            <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                              <Tag variant="brand" size="s">
+                                {project.category}
+                              </Tag>
+                            </Column>
+                          )}
+                        </Flex>
+                      }
+                    >
+                      {project.description && (
+                        <Text variant="body-default-m" onBackground="neutral-weak">
+                          {project.description}
+                        </Text>
+                      )}
+                      {project.highlights && (
+                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px" }}>
+                          Key highlights: {project.highlights}
+                        </Text>
+                      )}
+                      {project.github && (
+                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ marginTop: "8px" }}>
+                          <SmartLink
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ textDecoration: "none" }}
+                          >
+                            View on GitHub →
+                          </SmartLink>
+                        </Text>
+                      )}
+                    </CollapsibleSection>
+                  ))
+                ) : (
+                  <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                    No key projects listed yet.
                   </Text>
                 )}
               </Column>
