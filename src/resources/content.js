@@ -174,7 +174,7 @@ const about = {
       {
         company: "Instituto Superior Técnico",
         timeframe: "Apr 2025 - Jul 2025",
-        role: "Teacher Assistant (Physics II with Laboratory)",
+        role: "Teacher Assistant",
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
@@ -185,24 +185,6 @@ const about = {
           </>,
           <>
             Representative outputs: "Distinguished Professors" media link.
-          </>,
-        ],
-        images: [],
-      },
-      {
-        company: "Eco AI.ly",
-        timeframe: "Jan 2025 - Jun 2025",
-        role: "Full-stack Developer",
-        location: "Lisbon, Portugal · Hybrid",
-        achievements: [
-          <>
-            Extended ML work into production: engineered RESTful APIs to serve live predictions from trained models; designed a responsive dashboard for clear, interactive presentation of sustainability metrics.
-          </>,
-          <>
-            Prioritised performance, reliability, and public transparency of environmental data.
-          </>,
-          <>
-            Representative outputs: "Eco AIly Sustainable Predictions"; GitHub repository.
           </>,
         ],
         images: [],
