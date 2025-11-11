@@ -471,7 +471,7 @@ const about = {
       },
       {
         title: "Talent Bootcamp",
-        description: <>Company presentations; corporate communications.</>,
+        description: <>Company presentations, corporate communications.</>,
         category: "Professional Development",
         year: "Mar 2025",
         issuer: "Magma Studio",
@@ -480,7 +480,7 @@ const about = {
       },
       {
         title: "IELTS Academic — Overall 7.5",
-        description: <>English, English Literature, Business English, communication.</>,
+        description: <>English communication, English Literature, Business English, academic English.</>,
         category: "Language Proficiency",
         year: "Nov 2024",
         issuer: "IELTS Official",
@@ -490,7 +490,7 @@ const about = {
       },
       {
         title: "Personal Finance MBA",
-        description: <>Personal finance fundamentals (budgeting, saving/investing concepts).</>,
+        description: <>Personal finance fundamentals.</>,
         category: "Finance Education",
         year: "Mar 2024",
         issuer: "Magma Studio",
@@ -499,10 +499,10 @@ const about = {
       },
       {
         title: "Mini-school on Particle and Astroparticle Physics",
-        description: <>Astrophysics; theoretical physics topics in particle/astroparticle physics.</>,
+        description: <>Theoretical physics topics in particle and astroparticle physics.</>,
         category: "Physics Education",
         year: "Feb 2024",
-        issuer: "Laboratório de Instrumentação e Física Experimental de Partículas (LIP)",
+        issuer: "Laboratory of Instrumentation and Experimental Particle Physics",
         associated_with: "",
         artifacts: "Certificate",
       },
