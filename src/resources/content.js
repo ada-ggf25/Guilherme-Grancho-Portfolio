@@ -195,9 +195,6 @@ const about = {
           <>
             Developed tools to help organisations optimise energy usage and monitor production, consumption, imports, and exports.
           </>,
-          <>
-            Representative outputs: GitHub repository.
-          </>,
         ],
         images: [],
       },
