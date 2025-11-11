@@ -17,82 +17,88 @@
 ```text
 Guilherme-Grancho-Portfolio/
 ├── public/
-│   ├── images/              # Static images including avatar
-│   └── trademarks/          # Brand assets
+│   ├── favicon.ico         # Site favicon
+│   ├── images/             # Static images including avatar
+│   └── trademarks/         # Brand assets
 ├── src/
-│   ├── app/                 # Next.js App Router
+│   ├── app/                # Next.js App Router
 │   │   ├── about/          # About page
 │   │   ├── api/            # API routes
 │   │   ├── gui/            # GUI components
 │   │   ├── resume/         # Resume page
+│   │   ├── icon.tsx        # Dynamic icon generation
 │   │   ├── layout.tsx      # Root layout
-│   │   └── page.tsx        # Homepage
+│   │   ├── not-found.tsx   # 404 page
+│   │   ├── page.tsx        # Homepage
+│   │   ├── robots.ts       # Robots.txt generation
+│   │   └── sitemap.ts      # Sitemap generation
 │   ├── components/         # Reusable UI components
 │   ├── contexts/           # React contexts
 │   ├── resources/          # Configuration and content
 │   │   ├── content.js      # Portfolio content
 │   │   ├── custom.css      # Custom styles
+│   │   ├── icons.ts        # Icon definitions
+│   │   ├── index.ts        # Resource exports
 │   │   └── once-ui.config.js  # Design system config
 │   └── utils/              # Utility functions
-├── package.json
-├── tsconfig.json
-└── next.config.mjs
+├── environment.yaml        # Conda environment specification
+├── Makefile               # Developer convenience commands
+├── next.config.mjs        # Next.js configuration
+├── package.json           # Dependencies and scripts
+├── tsconfig.json          # TypeScript configuration
+└── LICENSE                # Project license
 ```
 
 ## 🚀 Getting Started
 
 ### Using Miniconda (recommended)
 
-These steps ensure a reproducible Node runtime via Conda (Node and npm are provided by the Conda environment).
+This project includes a `Makefile` with convenient commands for managing the Conda environment and running the project. These steps ensure a reproducible Node runtime via Conda (Node and npm are provided by the Conda environment).
 
-1) Install Miniconda (Linux)
-   ```bash
-   # Non-interactive install to ~/miniconda3 (safe to re-run)
-   cd /tmp
-   wget -qO miniconda.sh "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
-   bash miniconda.sh -u -b -p "$HOME/miniconda3"
-   rm -f miniconda.sh
-   ```
+**Quick start with Makefile:**
 
-2) Initialise Conda for zsh and load it in your current shell
-   ```bash
-   "$HOME/miniconda3/bin/conda" init zsh
-   source "$HOME/miniconda3/etc/profile.d/conda.sh"
-   conda config --set auto_activate_base false
-   ```
+```bash
+# 1. Install Miniconda (Linux)
+make conda-install
 
-3) Create the environment from this repository’s file
-   ```bash
-   # Uses conda-forge and installs Node.js + npm
-   conda env create -f environment.yaml -y --override-channels
-   # If the environment already exists, update it instead:
-   # conda env update -n "Guilherme-Grancho-Portfolio" -f environment.yaml --prune -y --override-channels
-   ```
+# 2. Initialise Conda for zsh
+make conda-init
+# Restart your shell or run: source "$HOME/miniconda3/etc/profile.d/conda.sh"
 
-4) Activate the environment
-   ```bash
-   conda activate "Guilherme-Grancho-Portfolio"
-   ```
+# 3. Create the Conda environment (uses conda-forge only)
+make env-create
 
-5) Verify runtime versions
-   ```bash
-   node -v   # Expected: v20.x
-   npm -v    # Expected: 10.x
-   ```
+# 4. Install npm dependencies
+make npm-install
 
-6) Install project dependencies
-   ```bash
-   npm install
-   ```
+# 5. Start the development server
+make dev
+```
 
-7) Start the development server
-   ```bash
-   npm run dev
-   ```
-   The portfolio will be available at [http://localhost:3030](http://localhost:3030)
+The portfolio will be available at [http://localhost:3030](http://localhost:3030)
 
-Notes:
-- If you encounter Anaconda Terms of Service prompts, either accept them as instructed by Conda or use `--override-channels` to rely on conda-forge only.
+**Available Makefile commands:**
+
+- `make help` - Show all available commands
+- `make conda-install` - Install or update Miniconda
+- `make conda-init` - Initialise Conda for zsh
+- `make conda-accept-tos` - Accept Anaconda ToS (optional, if needed)
+- `make env-create` - Create Conda environment from `environment.yaml`
+- `make env-update` - Update existing environment
+- `make env-remove` - Remove the environment
+- `make env-info` - Show Conda info and environments
+- `make env-activate` - Print activation command
+- `make npm-install` - Install npm dependencies inside Conda env
+- `make dev` - Run dev server inside Conda env
+- `make dev-outside` - Run dev server using system Node
+- `make build` - Build the project
+- `make start` - Start production server
+- `make lint` - Run linter
+- `make clean` - Remove build artefacts
+- `make doctor` - Show diagnostics (versions, files, etc.)
+
+**Notes:**
+- The Makefile uses `--override-channels` to rely on conda-forge only, avoiding Anaconda ToS prompts
 - If a new shell does not recognise `conda`, add this line to your `~/.zshrc`:
   ```bash
   source "$HOME/miniconda3/etc/profile.d/conda.sh"
@@ -100,10 +106,13 @@ Notes:
 
 ### Prerequisites
 
-- **Node.js** 18 or higher
-- **npm** or **yarn** package manager
+- **Node.js** 18 or higher (provided by Conda environment)
+- **npm** (provided by Conda environment)
+- **Make** (for convenience commands)
 
-### Installation
+### Installation (without Conda)
+
+If you prefer not to use Conda, you can use your system Node.js:
 
 1. **Clone the repository**
 
@@ -121,34 +130,41 @@ Notes:
 3. **Run the development server**
 
    ```bash
-   npm run dev
+   make dev-outside
+   # or directly: npm run dev
    ```
 
    The portfolio will be available at [http://localhost:3030](http://localhost:3030)
 
 ### Development Options
 
-- **With Turbo** (default, faster): `npm run dev`
+- **With Turbo** (default, faster): `make dev` or `npm run dev`
 - **Without Turbo**: `npm run dev:no-turbo`
 
 ### Build for Production
 
 ```bash
-# Build the application
-npm run build
+# Build the application (inside Conda env)
+make build
+# or directly: npm run build
 
-# Start production server
-npm start
+# Start production server (inside Conda env)
+make start
+# or directly: npm start
 ```
 
 ### Other Commands
 
 ```bash
-# Run linter
-npm run lint
+# Run linter (inside Conda env)
+make lint
+# or directly: npm run lint
 
 # Export static site
 npm run export
+
+# Clean build artefacts
+make clean
 ```
 
 ## 📄 License
