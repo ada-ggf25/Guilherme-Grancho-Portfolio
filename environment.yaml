@@ -3,4 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - nodejs=20
+  - make
+  - wget
+  - git
 
