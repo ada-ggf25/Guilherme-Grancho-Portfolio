@@ -1,5 +1,11 @@
 /* Custom enhancements for Guilherme Grancho's Portfolio */
 
+/* Reset html and body margins/padding to ensure header is at top */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Professional color scheme for AI/Fintech focus */
 :root {
   /* Enhanced brand colors for professional fintech/AI theme */
