@@ -516,9 +516,9 @@ export default function About() {
                             <Text variant="heading-strong-l" onBackground="neutral-strong">
                               {activity.title}
                             </Text>
-                            {activity.organisation && (
+                            {activity.organization && (
                               <Text variant="body-default-s" onBackground="brand-weak">
-                                {activity.organisation}
+                                {activity.organization}
                               </Text>
                             )}
                             {activity.location && (
