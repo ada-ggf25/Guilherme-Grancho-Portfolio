@@ -586,7 +586,7 @@ const about = {
   hobbies: {
     display: true, // set to false to hide this section
     title: "Hobbies & Passions",
-    description: <>A comprehensive overview of technical skills, personal interests, and passions that drive my work and life. My passions include entrepreneurship, martial arts, running, surfing, cinematography, literature, museums, travelling, cooking, and volunteering.</>,
+    description: <>My passions apart from work include entrepreneurship, chess, poker, martial arts, running, surfing, cinematography, literature, museums, travelling and cooking.</>,
     categories: []
   },
   values: {
@@ -639,10 +639,10 @@ const about = {
     activities: [
       {
         title: "Track and Field Athlete",
-        organisation: "Federação Portuguesa de Atletismo",
+        organisation: "Portuguese Track and Field Federation",
         location: "Lisbon, Portugal · On-site",
         timeframe: "Sep 2015 - Sep 2018",
-        description: <>Represented the national federation in sprints (primary: 200m) and other events (100m–2.5km, long jump). Developed discipline, resilience, and teamwork transferable to academic and professional contexts. Representative outputs: Medals (media).</>,
+        description: <>Represented the Portuguese national federation of track and field in sprints (primary 200m) and other events (100m–2.5km, long jump). Developed discipline, resilience, and teamwork transferable to academic and professional contexts.</>,
       },
     ],
   },
