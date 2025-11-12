@@ -161,7 +161,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Hi! Welcome to my journey! I'm half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and maths. When I'm not working, you'll usually find me playing sports. I'm pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I'm always keen to connect with like-minded people who want to build great things. Feel free to reach out!
+        Hi! Welcome to my journey! I'm half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and math. When I'm not working, you'll usually find me playing sports. I'm pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I'm always keen to connect with like-minded people who want to build great things. Feel free to reach out!
       </>
     ),
     finalStatement: (
@@ -181,7 +181,7 @@ const about = {
         location: "London, UK · Remote",
         achievements: [
           <>
-            Research at the intersection of deep learning and financial modelling. Co-authoring papers introducing and applying the Financial Torque Hypothesis (FTH) to short-term stock-price prediction and algorithmic portfolio management (LSTM-based).
+            Research at the intersection of deep learning and financial modeling. Co-authoring papers introducing and applying the Financial Torque Hypothesis (FTH) to short-term stock-price prediction and algorithmic portfolio management (LSTM-based).
           </>,
           <>
             Built an open-source web app that serves real-time predictions and an interactive interface for practical use.
@@ -238,7 +238,7 @@ const about = {
             Built LSTM time-series models to forecast sustainability metrics (e.g., carbon intensity, renewable-share trends) at national/regional scales, with the goal of reducing the energy/carbon footprint when training large AI models.
           </>,
           <>
-            Developed tools to help organisations optimise energy usage and monitor production, consumption, imports, and exports.
+            Developed tools to help organizations optimize energy usage and monitor production, consumption, imports, and exports.
           </>,
         ],
         images: [],
@@ -265,7 +265,7 @@ const about = {
         location: "Minas Gerais, Brazil · Remote",
         achievements: [
           <>
-            720-hour research programme in ML & algorithms. First-author publication at a Brazilian AI conference: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold."
+            720-hour research program in ML & algorithms. First-author publication at a Brazilian AI conference: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold."
           </>,
         ],
         images: [],
@@ -304,7 +304,7 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Research on high-frequency laser aberration correction using CNNs and Bayesian optimisation.
+            Research on high-frequency laser aberration correction using CNNs and Bayesian optimization.
           </>,
           <>
             Designed a dataset creation method from experimental data and built a high-accuracy neural-network solution.
@@ -349,7 +349,7 @@ const about = {
             Taught students across levels (e.g., Calculus I–II, differential equations).
           </>,
           <>
-            Emphasised clear exposition and helping students build confidence in maths/physics.
+            Emphasized clear exposition and helping students build confidence in math/physics.
           </>,
         ],
         images: [],
@@ -387,7 +387,7 @@ const about = {
         timeframe: "Jan 2025 - Present",
         category: "Quantitative Finance",
         location: "Independent Research",
-        description: <>Quantitative finance research platform implementing the Financial Torque Hypothesis (FTH) for short-term stock price prediction using LSTM neural networks. Features an interactive Streamlit dashboard for portfolio monitoring, strategy visualisation, and risk management. Includes comprehensive market data integration, trading strategy research modules (Simons, Sun Tzu), and live trading capabilities. The research achieved ~87% directional accuracy on a 3-hour horizon and demonstrated a 15% improvement in full-session consistency over regular-hours baselines.</>,
+        description: <>Quantitative finance research platform implementing the Financial Torque Hypothesis (FTH) for short-term stock price prediction using LSTM neural networks. Features an interactive Streamlit dashboard for portfolio monitoring, strategy visualization, and risk management. Includes comprehensive market data integration, trading strategy research modules (Simons, Sun Tzu), and live trading capabilities. The research achieved ~87% directional accuracy on a 3-hour horizon and demonstrated a 15% improvement in full-session consistency over regular-hours baselines.</>,
         github: "https://github.com/ada-ggf25/Prometheus",
       },
       {
@@ -397,7 +397,7 @@ const about = {
         timeframe: "Jan 2025 - Jun 2025",
         category: "Sustainability & AI",
         location: "Eco AI.ly",
-        description: <>Sustainability platform featuring GAIA, an AI-powered system for forecasting sustainability metrics at national and regional scales. Built LSTM time-series models to predict carbon intensity and renewable-share trends, with the goal of reducing energy and carbon footprint when training large AI models. Developed tools to help organisations optimise energy usage and monitor production, consumption, imports, and exports.</>,
+        description: <>Sustainability platform featuring GAIA, an AI-powered system for forecasting sustainability metrics at national and regional scales. Built LSTM time-series models to predict carbon intensity and renewable-share trends, with the goal of reducing energy and carbon footprint when training large AI models. Developed tools to help organizations optimize energy usage and monitor production, consumption, imports, and exports.</>,
         github: "https://github.com/ada-ggf25/Eco-AI.ly",
       },
       {
@@ -424,7 +424,7 @@ const about = {
         timeframe: "May 2025",
         category: "AI Automation",
         location: "Ernst & Young",
-        description: <>AI-powered calendar management agent developed for the EY AI Challenge 2025, securing 1st place in the AI for finance category. Automates calendar management tasks through natural language interactions, featuring automated scheduling, conflict resolution, and seamless integration with calendar services. Includes deadline management, reminder notifications, and intelligent time optimisation.</>,
+        description: <>AI-powered calendar management agent developed for the EY AI Challenge 2025, securing 1st place in the AI for finance category. Automates calendar management tasks through natural language interactions, featuring automated scheduling, conflict resolution, and seamless integration with calendar services. Includes deadline management, reminder notifications, and intelligent time optimization.</>,
         github: "https://github.com/ada-ggf25/Auto-Calendar-Agent",
       },
       {
@@ -461,9 +461,9 @@ const about = {
         degree: "Imperial College London",
         timeframe: "Sep 2025 - Sep 2026",
         location: "London, UK",
-        description: <>Applied computational science focused on numerical methods for large scale scientific and machine learning computing, with emphasis on numerical optimisation, scientific programming, and scalable, parallel computing.</>,
+        description: <>Applied computational science focused on numerical methods for large scale scientific and machine learning computing, with emphasis on numerical optimization, scientific programming, and scalable, parallel computing.</>,
         gpa: "Distinction Expected",
-        relevant_courses: ["Modern Programming Methods", "Computational Mathematics", "Applying Computational/Data Science", "Data Science & Machine Learning", "Deep Learning", "Modelling & Numerical Methods", "Advanced Programming", "Inversion & Optimisation", "Patterns for Parallel Programming"],
+        relevant_courses: ["Modern Programming Methods", "Computational Mathematics", "Applying Computational/Data Science", "Data Science & Machine Learning", "Deep Learning", "Modeling & Numerical Methods", "Advanced Programming", "Inversion & Optimization", "Patterns for Parallel Programming"],
       },
       {
         name: "MSc, Computer Science & Engineering",
@@ -497,7 +497,7 @@ const about = {
         degree: "Colégio do Sagrado Coração de Maria",
         timeframe: "Sep 2018 - Jul 2021",
         location: "Lisbon, Portugal",
-        description: <>I studied core science and technology subjects, focusing on maths, physics, programming and chemistry, to prepare for a career in engineering science.</>,
+        description: <>I studied core science and technology subjects, focusing on math, physics, programming and chemistry, to prepare for a career in engineering science.</>,
         gpa: "Completed",
         relevant_courses: ["Portuguese", "English", "Mathematics", "Biology & Geology", "Physics & Chemistry", "Physics", "Computer Applications", "Philosophy", "Physical Education", "Moral & Religious Education", "Civic Education", "Professional & Soft-Skills Development"],
       },
@@ -514,7 +514,7 @@ const about = {
   },
   awards: {
     display: true, // set to false to hide this section
-    title: "Awards & Honours",
+    title: "Awards & Honors",
     accomplishments: [
       {
         title: "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak",
@@ -645,13 +645,13 @@ const about = {
       },
       {
         title: "Full-Stack Developer",
-        description: <>Built production REST APIs and a responsive analytics/dashboard front-end (e.g., Eco AI.ly) to serve ML predictions and visualise sustainability metrics.</>,
+        description: <>Built production REST APIs and a responsive analytics/dashboard front-end (e.g., Eco AI.ly) to serve ML predictions and visualize sustainability metrics.</>,
         category: "Software Development",
         year: "2025",
       },
       {
         title: "Machine Learning Developer & Researcher",
-        description: <>Worked across LSTM time-series forecasting, CNNs for imaging, lexicographic optimisation, and quantitative finance research.</>,
+        description: <>Worked across LSTM time-series forecasting, CNNs for imaging, lexicographic optimization, and quantitative finance research.</>,
         category: "AI/ML",
         year: "2023-2025",
       },
@@ -702,7 +702,7 @@ const about = {
   hobbies: {
     display: true, // set to false to hide this section
     title: "Hobbies & Passions",
-    description: <>My passions apart from work include entrepreneurship, chess, poker, martial arts, running, surfing, cinematography, literature, museums, travelling and cooking.</>,
+        description: <>My passions apart from work include entrepreneurship, chess, poker, martial arts, running, surfing, cinematography, literature, museums, traveling and cooking.</>,
     categories: []
   },
   values: {
@@ -755,7 +755,7 @@ const about = {
     activities: [
       {
         title: "Track and Field Athlete",
-        organisation: "Portuguese Track and Field Federation",
+        organization: "Portuguese Track and Field Federation",
         location: "Lisbon, Portugal · On-site",
         timeframe: "Sep 2015 - Sep 2018",
         description: <>Represented the Portuguese national federation of track and field in sprints (primary 200m) and other events (100m–2.5km, long jump). Developed discipline, resilience, and teamwork transferable to academic and professional contexts.</>,
