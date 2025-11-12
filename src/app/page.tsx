@@ -611,11 +611,6 @@ export default function About() {
                                 </SmartLink>
                               )}
                             </Flex>
-                            {project.technologies && (
-                              <Text variant="body-default-s" onBackground="brand-weak">
-                                {project.technologies}
-                              </Text>
-                            )}
                             {project.timeframe && (
                               <Text variant="body-default-xs" onBackground="neutral-weak">
                                 {project.timeframe}
