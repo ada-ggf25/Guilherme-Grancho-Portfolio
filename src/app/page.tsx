@@ -457,10 +457,15 @@ export default function About() {
                             {paper.authors}
                           </Text>
                           <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {paper.venue} • {paper.date}
+                            {paper.venue}
                           </Text>
                         </Column>
                         <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                          {paper.date && (
+                            <Text variant="heading-default-xs" onBackground="neutral-weak">
+                              {paper.date}
+                            </Text>
+                          )}
                           <Tag variant="brand" size="s">
                             {paper.category}
                           </Tag>
@@ -605,24 +610,24 @@ export default function About() {
                                 </SmartLink>
                               )}
                             </Flex>
-                            {project.timeframe && (
-                              <Text variant="body-default-xs" onBackground="neutral-weak">
-                                {project.timeframe}
-                              </Text>
-                            )}
                             {project.location && (
-                              <Text variant="body-default-xs" onBackground="neutral-weak">
+                              <Text variant="body-default-s" onBackground="brand-weak" style={{ marginBottom: "8px" }}>
                                 {project.location}
                               </Text>
                             )}
                           </Column>
-                          {project.category && (
-                            <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                          <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                            {project.timeframe && (
+                              <Text variant="heading-default-xs" onBackground="neutral-weak">
+                                {project.timeframe}
+                              </Text>
+                            )}
+                            {project.category && (
                               <Tag variant="brand" size="s">
                                 {project.category}
                               </Tag>
-                            </Column>
-                          )}
+                            )}
+                          </Column>
                         </Flex>
                       }
                     >

@@ -95,6 +95,51 @@ function parseStartDate(timeframe) {
   return new Date(1900, 0, 1);
 }
 
+// Helper function to parse end date (last worked on) from timeframe string
+function parseEndDate(timeframe) {
+  const monthNames = {
+    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
+    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
+  };
+  
+  if (!timeframe) {
+    return new Date(1900, 0, 1);
+  }
+  
+  // If it contains " - ", extract the end date part
+  if (timeframe.includes(" - ")) {
+    const parts = timeframe.split(" - ");
+    const endPart = parts[1].trim();
+    
+    // If it's "Present", use a very future date
+    if (endPart === "Present") {
+      return new Date(9999, 11, 31);
+    }
+    
+    const endParts = endPart.split(" ");
+    if (endParts.length >= 2) {
+      const month = monthNames[endParts[0]];
+      const year = parseInt(endParts[1]);
+      if (month && year) {
+        return new Date(year, month - 1, 1);
+      }
+    }
+  } else {
+    // Single date, use it as both start and end
+    const parts = timeframe.split(" ");
+    if (parts.length >= 2) {
+      const month = monthNames[parts[0]];
+      const year = parseInt(parts[1]);
+      if (month && year) {
+        return new Date(year, month - 1, 1);
+      }
+    }
+  }
+  
+  // Return a very old date if parsing fails
+  return new Date(1900, 0, 1);
+}
+
 const about = {
   path: "/",
   label: "About",
@@ -392,13 +437,20 @@ const about = {
         description: <>I completed this paper in the Discoveries of Modern Physics course. I am proud to share that I finished the course with a 20/20 grade, thanks to my paper on the discovery of the atomic nucleus and my poster presentation at the Congress Center of Instituto Superior Técnico.</>,
       },
       {
-        title: "IBMZ-Datathon",
+        title: "Hippocrates' Feather",
         technologies: "Python, Data Science, Machine Learning",
-        category: "Data Science",
+        timeframe: "Oct 2025",
+        category: "Healthcare AI",
+        location: "IBM Hackathon",
         description: <>Project developed for the IBMZ Datathon, showcasing data analysis and machine learning capabilities on IBM Z platform datasets.</>,
         github: "https://github.com/peter-avg/IBMZ-Datathon",
       },
-    ],
+    ].sort((a, b) => {
+      // Sort by end date (last worked on) in descending order (most recent first)
+      const dateA = parseEndDate(a.timeframe);
+      const dateB = parseEndDate(b.timeframe);
+      return dateB - dateA; // Descending order
+    }),
   },
   studies: {
     display: true, // set to false to hide this section
