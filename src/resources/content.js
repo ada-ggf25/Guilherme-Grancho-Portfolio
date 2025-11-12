@@ -441,7 +441,7 @@ const about = {
         technologies: "Python, Data Science, Machine Learning",
         timeframe: "Oct 2025",
         category: "Healthcare AI",
-        location: "IBM Hackathon",
+        location: "IBM",
         description: <>Project developed for the IBMZ Datathon, showcasing data analysis and machine learning capabilities on IBM Z platform datasets.</>,
         github: "https://github.com/peter-avg/IBMZ-Datathon",
       },
