@@ -438,11 +438,11 @@ const about = {
       },
       {
         title: "Hippocrates' Feather",
-        technologies: "Python, Data Science, Machine Learning",
+        technologies: "Python, Streamlit, FastAPI, OpenAI API, PostgreSQL, SQLAlchemy, Pydantic, WebRTC, Natural Language Processing, AI Agent",
         timeframe: "Oct 2025",
         category: "Healthcare AI",
-        location: "IBM",
-        description: <>Project developed for the IBMZ Datathon, showcasing data analysis and machine learning capabilities on IBM Z platform datasets.</>,
+        location: "IBM Z Datathon",
+        description: <>AI-powered healthcare application developed for the IBM Z Datathon that automates medical form filling during patient consultations. Features real-time speech recognition and transcription, intelligent entity extraction from conversations using OpenAI's LLM, and automatic population of clinical forms with symptoms and medications. Built with a Streamlit frontend for intuitive doctor workflows, FastAPI backend for robust API services, and PostgreSQL database for secure patient data management. Reduces administrative burden by allowing doctors to focus on patient care whilst the AI handles form documentation in real-time during consultations.</>,
         github: "https://github.com/peter-avg/IBMZ-Datathon",
       },
     ].sort((a, b) => {
