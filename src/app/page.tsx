@@ -309,6 +309,7 @@ export default function About() {
                                 as="li"
                                 variant="body-default-m"
                                 key={`${experience.company}-${index}`}
+                                style={{ textAlign: "justify" }}
                               >
                                 {achievement}
                               </Text>
@@ -404,7 +405,7 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak">
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {institution.description}
                     </Text>
                   </CollapsibleSection>
@@ -463,11 +464,11 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak">
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {paper.description}
                     </Text>
                     {paper.highlights && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
                         Key highlights: {paper.highlights}
                       </Text>
                     )}
@@ -530,7 +531,7 @@ export default function About() {
                       }
                     >
                       {activity.description && (
-                        <Text variant="body-default-m" onBackground="neutral-weak">
+                        <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                           {activity.description}
                         </Text>
                       )}
@@ -604,12 +605,12 @@ export default function About() {
                       }
                     >
                       {project.description && (
-                        <Text variant="body-default-m" onBackground="neutral-weak">
+                        <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                           {project.description}
                         </Text>
                       )}
                       {project.highlights && (
-                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px" }}>
+                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px", textAlign: "justify" }}>
                           Key highlights: {project.highlights}
                         </Text>
                       )}
@@ -679,11 +680,11 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak">
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {award.description}
                     </Text>
                     {award.associated_with && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
                         Associated with: {award.associated_with}
                       </Text>
                     )}
@@ -737,11 +738,11 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak">
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {certification.description}
                     </Text>
                     {(certification.associated_with || certification.credential_id) && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
                         {certification.associated_with && `Associated with: ${certification.associated_with}`}
                         {certification.associated_with && certification.credential_id && ` • `}
                         {certification.credential_id && `Credential ID: ${certification.credential_id}`}
