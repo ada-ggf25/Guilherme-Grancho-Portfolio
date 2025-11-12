@@ -33,13 +33,13 @@ conda-accept-tos: ## Accept Anaconda default channels Terms of Service
 env-create: ## Create Conda environment from $(ENV_FILE) (uses conda-forge only)
 	@source "$(CONDA_HOME)/etc/profile.d/conda.sh"
 	test -f "$(ENV_FILE)" || (echo "Missing $(ENV_FILE)"; exit 1)
-	conda env create -n "$(ENV_NAME)" -f "$(ENV_FILE)" -y --override-channels || true
+	conda env create -n "$(ENV_NAME)" -f "$(ENV_FILE)" -y || true
 	@echo "Environment '$(ENV_NAME)' created (or already exists)."
 
 env-update: ## Update existing environment from $(ENV_FILE)
 	@source "$(CONDA_HOME)/etc/profile.d/conda.sh"
 	test -f "$(ENV_FILE)" || (echo "Missing $(ENV_FILE)"; exit 1)
-	conda env update -n "$(ENV_NAME)" -f "$(ENV_FILE)" --prune -y --override-channels
+	conda env update -n "$(ENV_NAME)" -f "$(ENV_FILE)" --prune -y
 	@echo "Environment '$(ENV_NAME)' updated."
 
 env-remove: ## Remove the Conda environment
