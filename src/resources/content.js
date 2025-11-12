@@ -193,7 +193,7 @@ const about = {
         images: [],
       },
       {
-        company: "EY",
+        company: "Ernest & Young",
         timeframe: "Aug 2025 - Sep 2025",
         role: "Artificial Intelligence & Data Engineer",
         location: "Lisbon, Portugal · On-site",
