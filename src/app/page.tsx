@@ -574,65 +574,75 @@ export default function About() {
               <Column style={{ gap: "12px", marginBottom: "20px" }}>
                 {about.keyProjects.projects.length > 0 ? (
                   about.keyProjects.projects.map((project, index) => (
-                    <Column
+                    <CollapsibleSection
                       key={index}
-                      style={{
-                        padding: "16px",
-                        border: "1px solid var(--color-neutral-medium)",
-                        borderRadius: "var(--static-space-m)",
-                        gap: "12px",
-                      }}
-                    >
-                      <Flex
-                        horizontal="between"
-                        vertical="center"
-                        style={{ width: "100%", gap: "12px", flexWrap: "wrap" }}
-                      >
-                        <Flex style={{ flex: 1, gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                          <Heading variant="heading-strong-l" onBackground="neutral-strong">
-                            {project.link ? (
-                              <SmartLink
-                                href={project.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none", color: "inherit" }}
-                              >
-                                {project.title}
-                              </SmartLink>
-                            ) : (
-                              project.title
+                      header={
+                        <Flex
+                          horizontal="between"
+                          vertical="end"
+                          style={{ width: "100%", paddingRight: "8px" }}
+                        >
+                          <Column style={{ flex: 1, gap: "6px" }}>
+                            <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
+                              <Heading variant="heading-strong-l" onBackground="neutral-strong">
+                                {project.link ? (
+                                  <SmartLink
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ textDecoration: "none", color: "inherit" }}
+                                  >
+                                    {project.title}
+                                  </SmartLink>
+                                ) : (
+                                  project.title
+                                )}
+                              </Heading>
+                              {project.github && (
+                                <SmartLink
+                                  href={project.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                    View on GitHub
+                                  </Tag>
+                                </SmartLink>
+                              )}
+                            </Flex>
+                            {project.technologies && (
+                              <Text variant="body-default-s" onBackground="brand-weak">
+                                {project.technologies}
+                              </Text>
                             )}
-                          </Heading>
-                          {project.github && (
-                            <SmartLink
-                              href={project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              style={{ textDecoration: "none" }}
-                            >
-                              <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                                View on GitHub
+                            {project.timeframe && (
+                              <Text variant="body-default-xs" onBackground="neutral-weak">
+                                {project.timeframe}
+                              </Text>
+                            )}
+                          </Column>
+                          {project.category && (
+                            <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                              <Tag variant="brand" size="s">
+                                {project.category}
                               </Tag>
-                            </SmartLink>
+                            </Column>
                           )}
                         </Flex>
-                        {project.category && (
-                          <Tag variant="brand" size="s">
-                            {project.category}
-                          </Tag>
-                        )}
-                      </Flex>
-                      {project.technologies && (
-                        <Text variant="body-default-s" onBackground="brand-weak">
-                          {project.technologies}
+                      }
+                    >
+                      {project.description && (
+                        <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                          {project.description}
                         </Text>
                       )}
-                      {project.timeframe && (
-                        <Text variant="body-default-xs" onBackground="neutral-weak">
-                          {project.timeframe}
+                      {project.highlights && (
+                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px", textAlign: "justify" }}>
+                          Key highlights: {project.highlights}
                         </Text>
                       )}
-                    </Column>
+                    </CollapsibleSection>
                   ))
                 ) : (
                   <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
