@@ -1,4 +1,4 @@
-SHELL := /usr/bin/env bash
+SHELL := /bin/bash
 .ONESHELL:
 .PHONY: help conda-install conda-init conda-accept-tos env-create env-update env-remove env-info env-activate npm-install dev dev-outside build start lint clean doctor
 
