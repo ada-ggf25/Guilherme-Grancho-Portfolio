@@ -22,7 +22,7 @@ conda-install: ## Install or update Miniconda (to $(CONDA_HOME))
 conda-init: ## Initialise Conda for zsh and disable auto-activating base
 	"$(CONDA_BIN)" init zsh
 	@source "$(CONDA_HOME)/etc/profile.d/conda.sh"
-	conda config --set auto_activate_base false
+	conda config --set auto_activate false
 	@echo "Conda initialised. Restart your shell if 'conda' is not recognised."
 
 conda-accept-tos: ## Accept Anaconda default channels Terms of Service
