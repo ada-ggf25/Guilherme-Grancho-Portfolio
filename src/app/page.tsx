@@ -436,16 +436,30 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Heading variant="heading-strong-l" onBackground="neutral-strong">
-                            <SmartLink
-                              href={paper.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              style={{ textDecoration: "none", color: "inherit" }}
-                            >
-                              {paper.title}
-                            </SmartLink>
-                          </Heading>
+                          <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
+                            <Heading variant="heading-strong-l" onBackground="neutral-strong">
+                              <SmartLink
+                                href={paper.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none", color: "inherit" }}
+                              >
+                                {paper.title}
+                              </SmartLink>
+                            </Heading>
+                            {paper.link && (
+                              <SmartLink
+                                href={paper.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  View Paper
+                                </Tag>
+                              </SmartLink>
+                            )}
+                          </Flex>
                           <Text variant="body-default-s" onBackground="brand-weak">
                             {paper.authors}
                           </Text>
@@ -560,73 +574,65 @@ export default function About() {
               <Column style={{ gap: "12px", marginBottom: "20px" }}>
                 {about.keyProjects.projects.length > 0 ? (
                   about.keyProjects.projects.map((project, index) => (
-                    <CollapsibleSection
+                    <Column
                       key={index}
-                      header={
-                        <Flex
-                          horizontal="between"
-                          vertical="end"
-                          style={{ width: "100%", paddingRight: "8px" }}
-                        >
-                          <Column style={{ flex: 1, gap: "6px" }}>
-                            <Heading variant="heading-strong-l" onBackground="neutral-strong">
-                              {project.link ? (
-                                <SmartLink
-                                  href={project.link}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{ textDecoration: "none", color: "inherit" }}
-                                >
-                                  {project.title}
-                                </SmartLink>
-                              ) : (
-                                project.title
-                              )}
-                            </Heading>
-                            {project.technologies && (
-                              <Text variant="body-default-s" onBackground="brand-weak">
-                                {project.technologies}
-                              </Text>
+                      style={{
+                        padding: "16px",
+                        border: "1px solid var(--color-neutral-medium)",
+                        borderRadius: "var(--static-space-m)",
+                        gap: "12px",
+                      }}
+                    >
+                      <Flex
+                        horizontal="between"
+                        vertical="center"
+                        style={{ width: "100%", gap: "12px", flexWrap: "wrap" }}
+                      >
+                        <Flex style={{ flex: 1, gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
+                          <Heading variant="heading-strong-l" onBackground="neutral-strong">
+                            {project.link ? (
+                              <SmartLink
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none", color: "inherit" }}
+                              >
+                                {project.title}
+                              </SmartLink>
+                            ) : (
+                              project.title
                             )}
-                            {project.timeframe && (
-                              <Text variant="body-default-xs" onBackground="neutral-weak">
-                                {project.timeframe}
-                              </Text>
-                            )}
-                          </Column>
-                          {project.category && (
-                            <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                              <Tag variant="brand" size="s">
-                                {project.category}
+                          </Heading>
+                          {project.github && (
+                            <SmartLink
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                View on GitHub
                               </Tag>
-                            </Column>
+                            </SmartLink>
                           )}
                         </Flex>
-                      }
-                    >
-                      {project.description && (
-                        <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
-                          {project.description}
+                        {project.category && (
+                          <Tag variant="brand" size="s">
+                            {project.category}
+                          </Tag>
+                        )}
+                      </Flex>
+                      {project.technologies && (
+                        <Text variant="body-default-s" onBackground="brand-weak">
+                          {project.technologies}
                         </Text>
                       )}
-                      {project.highlights && (
-                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px", textAlign: "justify" }}>
-                          Key highlights: {project.highlights}
+                      {project.timeframe && (
+                        <Text variant="body-default-xs" onBackground="neutral-weak">
+                          {project.timeframe}
                         </Text>
                       )}
-                      {project.github && (
-                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ marginTop: "8px" }}>
-                          <SmartLink
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ textDecoration: "none" }}
-                          >
-                            View on GitHub →
-                          </SmartLink>
-                        </Text>
-                      )}
-                    </CollapsibleSection>
+                    </Column>
                   ))
                 ) : (
                   <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
