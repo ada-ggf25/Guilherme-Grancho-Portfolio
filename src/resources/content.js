@@ -419,7 +419,7 @@ const about = {
         github: "https://github.com/ada-ggf25/AI-Agentic-Workflow-GraphRAG",
       },
       {
-        title: "Ernest & Young AI Challenge",
+        title: "Ernest & Young AI Hackathon",
         technologies: "Python, LangChain, FastAPI, OpenAI, Natural Language Processing",
         timeframe: "May 2025",
         category: "AI Automation",
