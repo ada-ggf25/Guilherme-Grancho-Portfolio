@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Fade, Flex } from "@once-ui-system/core";
+import { Fade, Flex, Icon } from "@once-ui-system/core";
 
 import { display, person } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
@@ -56,7 +56,43 @@ export const Header = () => {
         data-border="rounded"
       >
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          <Flex>{person.name}</Flex>
+          <Flex 
+            className="display-flex position-relative"
+            gap="8"
+            vertical="center"
+            style={{ alignItems: "center" }}
+          >
+            <a
+              href="https://github.com/ada-ggf25/Guilherme-Grancho-Portfolio/tree/main"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                transition: "opacity 0.2s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.opacity = "0.7";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.opacity = "1";
+              }}
+            >
+              <Icon
+                name="github"
+                size="20"
+                onBackground="neutral-strong"
+                style={{
+                  pointerEvents: "none",
+                }}
+              />
+            </a>
+            <span>/</span>
+            <span>{person.name}</span>
+          </Flex>
         </Flex>
         {shouldShow && (
           <Flex 
