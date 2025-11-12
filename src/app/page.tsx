@@ -438,14 +438,7 @@ export default function About() {
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                             <Heading variant="heading-strong-l" onBackground="neutral-strong">
-                              <SmartLink
-                                href={paper.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none", color: "inherit" }}
-                              >
-                                {paper.title}
-                              </SmartLink>
+                              {paper.title}
                             </Heading>
                             {paper.link && (
                               <SmartLink
@@ -585,18 +578,7 @@ export default function About() {
                           <Column style={{ flex: 1, gap: "6px" }}>
                             <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                               <Heading variant="heading-strong-l" onBackground="neutral-strong">
-                                {project.link ? (
-                                  <SmartLink
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{ textDecoration: "none", color: "inherit" }}
-                                  >
-                                    {project.title}
-                                  </SmartLink>
-                                ) : (
-                                  project.title
-                                )}
+                                {project.title}
                               </Heading>
                               {project.github && (
                                 <SmartLink
@@ -607,6 +589,18 @@ export default function About() {
                                 >
                                   <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
                                     View on GitHub
+                                  </Tag>
+                                </SmartLink>
+                              )}
+                              {project.link && (
+                                <SmartLink
+                                  href={project.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                    {project.category === "Academic Research" ? "View Paper" : "View Website"}
                                   </Tag>
                                 </SmartLink>
                               )}

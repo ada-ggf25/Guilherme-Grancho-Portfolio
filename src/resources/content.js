@@ -346,6 +346,7 @@ const about = {
       },
       {
         title: "Eco AI.ly",
+        link: "https://eco-aily.streamlit.app/",
         technologies: "Python, LSTM, Time-Series Forecasting, REST API",
         timeframe: "2025",
         category: "Sustainability & AI",
