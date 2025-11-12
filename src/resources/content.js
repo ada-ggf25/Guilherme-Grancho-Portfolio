@@ -342,7 +342,6 @@ const about = {
         timeframe: "2024 - Present",
         category: "Quantitative Finance",
         description: <>Quantitative finance research platform implementing the Financial Torque Hypothesis (FTH) for short-term stock price prediction using LSTM neural networks. Features an interactive Streamlit dashboard for portfolio monitoring, strategy visualisation, and risk management. Includes comprehensive market data integration, trading strategy research modules (Simons, Sun Tzu), and live trading capabilities. The research achieved ~87% directional accuracy on a 3-hour horizon and demonstrated a 15% improvement in full-session consistency over regular-hours baselines.</>,
-        highlights: "Published research on SSRN, 87% directional accuracy, interactive dashboard, open-source",
         github: "https://github.com/ada-ggf25/Prometheus",
       },
       {
@@ -351,7 +350,6 @@ const about = {
         timeframe: "2025",
         category: "Sustainability & AI",
         description: <>Sustainability platform featuring GAIA, an AI-powered system for forecasting sustainability metrics at national and regional scales. Built LSTM time-series models to predict carbon intensity and renewable-share trends, with the goal of reducing energy and carbon footprint when training large AI models. Developed tools to help organisations optimise energy usage and monitor production, consumption, imports, and exports.</>,
-        highlights: "Co-founded startup, LSTM forecasting models, sustainability metrics",
         github: "https://github.com/ada-ggf25/Eco-AI.ly",
       },
       {
@@ -360,7 +358,6 @@ const about = {
         timeframe: "Jun 2025",
         category: "Healthcare AI",
         description: <>Winning solution for the LXthon Hackathon, achieving 1st place overall and distinction for Best AI Medical Imaging Solution. Developed an AI-powered medical imaging system that demonstrates innovative applications of computer vision and machine learning in healthcare diagnostics.</>,
-        highlights: "1st place overall winner, Best AI Medical Imaging Solution distinction",
         github: "https://github.com/ada-ggf25/LXthon",
       },
       {
@@ -369,7 +366,6 @@ const about = {
         timeframe: "2025",
         category: "AI & ML Engineering",
         description: <>Advanced agentic AI workflow system implementing GraphRAG (Graph-based Retrieval-Augmented Generation) pipelines. Designed for enterprise applications with MCP-compliant services consumed by multi-agent orchestrators. Features sophisticated knowledge graph integration for enhanced context retrieval and improved response accuracy in complex query scenarios.</>,
-        highlights: "GraphRAG implementation, MCP-compliant services, multi-agent orchestration",
         github: "https://github.com/ada-ggf25/AI-Agentic-Workflow-GraphRAG",
       },
       {
@@ -378,7 +374,6 @@ const about = {
         timeframe: "May 2025",
         category: "AI Automation",
         description: <>AI-powered calendar management agent developed for the EY AI Challenge 2025, securing 1st place in the AI for finance category. Automates calendar management tasks through natural language interactions, featuring automated scheduling, conflict resolution, and seamless integration with calendar services. Includes deadline management, reminder notifications, and intelligent time optimisation.</>,
-        highlights: "EY AI Challenge 1st place winner (category), natural language calendar management",
         github: "https://github.com/ada-ggf25/Auto-Calendar-Agent",
       },
       {
@@ -388,7 +383,6 @@ const about = {
         timeframe: "Nov 2022",
         category: "Academic Research",
         description: <>I completed this paper in the Discoveries of Modern Physics course. I am proud to share that I finished the course with a 20/20 grade, thanks to my paper on the discovery of the atomic nucleus and my poster presentation at the Congress Center of Instituto Superior Técnico.</>,
-        highlights: "20/20 course grade, poster presentation at IST Congress Center",
       },
     ],
   },
