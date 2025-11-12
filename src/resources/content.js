@@ -161,7 +161,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Hi! Welcome to my journey! I'm half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and maths. When I'm not working, you'll usually find me playing sports. I'm pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I'm always keen to connect with like minded people who want to build great things. Feel free to reach out!
+        Hi! Welcome to my journey! I'm half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and maths. When I'm not working, you'll usually find me playing sports. I'm pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I'm always keen to connect with like-minded people who want to build great things. Feel free to reach out!
       </>
     ),
     finalStatement: (
@@ -193,7 +193,7 @@ const about = {
         images: [],
       },
       {
-        company: "Ernest & Young",
+        company: "Ernst & Young",
         timeframe: "Aug 2025 - Sep 2025",
         role: "Artificial Intelligence & Data Engineer",
         location: "Lisbon, Portugal · On-site",
@@ -410,20 +410,20 @@ const about = {
         github: "https://github.com/ada-ggf25/LXthon",
       },
       {
-        title: "GraphRAG Worflow for AI Agents",
+        title: "GraphRAG Workflow for AI Agents",
         technologies: "Python, GraphRAG, RAG, Agentic AI, MCP",
         timeframe: "Aug 2025 - Sep 2025",
         category: "AI & ML Engineering",
-        location: "Ernest & Young",
+        location: "Ernst & Young",
         description: <>Advanced agentic AI workflow system implementing GraphRAG (Graph-based Retrieval-Augmented Generation) pipelines. Designed for enterprise applications with MCP-compliant services consumed by multi-agent orchestrators. Features sophisticated knowledge graph integration for enhanced context retrieval and improved response accuracy in complex query scenarios.</>,
         github: "https://github.com/ada-ggf25/AI-Agentic-Workflow-GraphRAG",
       },
       {
-        title: "Ernest & Young AI Hackathon",
+        title: "Ernst & Young AI Hackathon",
         technologies: "Python, LangChain, FastAPI, OpenAI, Natural Language Processing",
         timeframe: "May 2025",
         category: "AI Automation",
-        location: "Ernest & Young",
+        location: "Ernst & Young",
         description: <>AI-powered calendar management agent developed for the EY AI Challenge 2025, securing 1st place in the AI for finance category. Automates calendar management tasks through natural language interactions, featuring automated scheduling, conflict resolution, and seamless integration with calendar services. Includes deadline management, reminder notifications, and intelligent time optimisation.</>,
         github: "https://github.com/ada-ggf25/Auto-Calendar-Agent",
       },
