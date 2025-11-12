@@ -610,6 +610,11 @@ export default function About() {
                                 {project.timeframe}
                               </Text>
                             )}
+                            {project.location && (
+                              <Text variant="body-default-xs" onBackground="neutral-weak">
+                                {project.location}
+                              </Text>
+                            )}
                           </Column>
                           {project.category && (
                             <Column style={{ alignItems: "flex-end", gap: "6px" }}>
