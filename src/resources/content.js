@@ -265,7 +265,7 @@ const about = {
         location: "Minas Gerais, Brazil · Remote",
         achievements: [
           <>
-            720-hour research program in ML & algorithms. First-author publication at a Brazilian AI conference: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold."
+            Completed a 720-hour machine learning and algorithms research programme as first author on "Enhancing Multi-Objective Machine Learning with an Optimised Lexicographic Approach: Determining the Tolerance Threshold", presented with Talles Medeiros at ENIAC (34th National Meeting on Artificial and Computational Intelligence).
           </>,
         ],
         images: [],
