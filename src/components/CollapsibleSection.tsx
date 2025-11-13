@@ -50,7 +50,7 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
           </Flex>
           <Icon
             name={isExpanded ? "chevronUp" : "chevronDown"}
-            size="20"
+            size="m"
             onBackground="neutral-strong"
             className={styles.chevron}
             style={{
