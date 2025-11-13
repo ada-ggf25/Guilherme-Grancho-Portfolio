@@ -289,10 +289,10 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Taught and coordinated lab classes for Electronics Engineering students. Topics included Thomson's experiment, RLC circuits, and geometric & wave optics.
+            Taught and coordinated Physics III laboratory sessions for BSc Electronics Engineering undergraduates, covering Thomson's experiment, RLC circuits, and geometric and wave optics.
           </>,
           <>
-            End-of-course anonymous survey ranked me 9/9.
+            Anonymous end-of-course student surveys awarded me 9/9 overall — the highest rating in the module that year.
           </>,
         ],
         images: [],
