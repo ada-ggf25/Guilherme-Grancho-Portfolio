@@ -319,7 +319,7 @@ const about = {
         location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Designed and implemented responsive web interfaces for aerospace engineering projects and digital services.
+            Designed and implemented responsive web interfaces for the Aerospace Engineering Society at Instituto Superior Técnico, supporting its projects and digital services.
           </>,
         ],
         images: [],
