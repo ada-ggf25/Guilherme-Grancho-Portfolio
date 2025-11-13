@@ -766,4 +766,11 @@ const about = {
 
 // Gallery section removed - no longer needed
 
-export { person, social, newsletter, home, about };
+// Extract nested properties for easier imports
+const publications = about.publications;
+const certifications = about.certifications;
+
+// Extract GitHub link from social array
+const github = social.find(item => item.icon === "github") || { link: "https://github.com/ada-ggf25" };
+
+export { person, social, newsletter, home, about, publications, certifications, github };

@@ -536,7 +536,7 @@ export default function About() {
                               </Text>
                               {"category" in activity && activity.category && (
                                 <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                                  {activity.category}
+                                  {String(activity.category)}
                                 </Tag>
                               )}
                             </Column>
