@@ -83,7 +83,7 @@ export const Header = () => {
             >
               <Icon
                 name="github"
-                size="20"
+                size="m"
                 onBackground="neutral-strong"
                 style={{
                   pointerEvents: "none",

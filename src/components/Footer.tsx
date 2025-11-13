@@ -61,7 +61,7 @@ export const Footer = () => {
                 >
                   <Icon
                     name={item.icon}
-                    size="20"
+                    size="m"
                     onBackground="neutral-strong"
                     style={{
                       pointerEvents: "none",
