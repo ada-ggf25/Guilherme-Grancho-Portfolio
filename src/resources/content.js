@@ -304,7 +304,7 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Research on high-frequency laser aberration correction using CNNs and Bayesian optimization.
+            Research on high-power laser aberration correction using CNNs and Bayesian optimisation.
           </>,
           <>
             Designed a dataset creation method from experimental data and built a high-accuracy neural-network solution.
