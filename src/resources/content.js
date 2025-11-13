@@ -172,7 +172,7 @@ const about = {
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Professional Experience",
+    title: "Experience",
     experiences: [
       {
         company: "Imperial College London",
@@ -181,13 +181,13 @@ const about = {
         location: "London, UK · Remote",
         achievements: [
           <>
-            Research at the intersection of deep learning and financial modeling. Co-authoring papers introducing and applying the Financial Torque Hypothesis (FTH) to short-term stock-price prediction and algorithmic portfolio management (LSTM-based).
+            Lead Prometheus, an independent research platform pairing deep learning with quantitative finance to deliver real-time Financial Torque Hypothesis (FTH) insights via an open-source web app, public website, and GitHub codebase.
           </>,
           <>
-            Built an open-source web app that serves real-time predictions and an interactive interface for practical use.
+            Co-authored the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, demonstrating FTH-driven forecasting performance.
           </>,
           <>
-            Representative outputs: Prometheus official website; paper "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks"; GitHub repository.
+            Currently developing the manuscript <em>Integrating the Financial Torque Hypothesis into Advanced Algorithmic Portfolio Management</em> to extend FTH signals into systematic trading pipelines.
           </>,
         ],
         images: [],
@@ -265,7 +265,7 @@ const about = {
         location: "Minas Gerais, Brazil · Remote",
         achievements: [
           <>
-            720-hour research program in ML & algorithms. First-author publication at a Brazilian AI conference: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold."
+            First author of the peer-reviewed paper <em>Enhancing Multi-Objective Machine Learning with an Optimised Lexicographic Approach: Determining the Tolerance Threshold</em>, co-presented with Talles Medeiros at ENIAC (34th National Meeting on Artificial and Computational Intelligence), arising from a 720-hour machine-learning and algorithms research programme.
           </>,
         ],
         images: [],
@@ -289,22 +289,22 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Taught and coordinated lab classes for Electronics Engineering students. Topics included Thomson's experiment, RLC circuits, and geometric & wave optics.
+            Taught and coordinated Physics III laboratory sessions for BSc Electronics Engineering undergraduates, covering Thomson's experiment, RLC circuits, and geometric and wave optics.
           </>,
           <>
-            End-of-course anonymous survey ranked me 9/9.
+            Anonymous end-of-course student surveys awarded me 9/9 teacher, the highest rating in the module that year.
           </>,
         ],
         images: [],
       },
       {
-        company: "IPFN (Instituto de Plasmas e Fusão Nuclear), GoLP",
+        company: "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas",
         timeframe: "Nov 2023 - Jan 2024",
         role: "Machine Learning Researcher",
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Research on high-frequency laser aberration correction using CNNs and Bayesian optimization.
+            Research on high-power laser aberration correction using CNNs and Bayesian optimisation.
           </>,
           <>
             Designed a dataset creation method from experimental data and built a high-accuracy neural-network solution.
@@ -319,10 +319,7 @@ const about = {
         location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Designed and implemented responsive web interfaces for aerospace engineering projects and digital services.
-          </>,
-          <>
-            Built clean, maintainable codebases and collaborated in a remote cross-functional environment.
+            Designed and implemented responsive web interfaces for the Aerospace Engineering Society at Instituto Superior Técnico, supporting its projects and digital services.
           </>,
         ],
         images: [],
@@ -334,7 +331,7 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Represented Startup Lisbon at Web Summit 2023, boosting company visibility, engaging investors, and supporting investment rounds and pitching.
+            Represented Startup Portugal at Web Summit 2023, boosting company visibility, engaging investors, and supporting investment rounds and pitching.
           </>,
         ],
         images: [],
@@ -346,25 +343,22 @@ const about = {
         location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Taught students across levels (e.g., Calculus I–II, differential equations).
-          </>,
-          <>
-            Emphasized clear exposition and helping students build confidence in math/physics.
+            Supported high-school and undergraduate students in mathematics, physics, and Calculus I and II via one-to-one online and in-person lessons.
           </>,
         ],
         images: [],
       },
       {
-        company: "CBPF (Centro Brasileiro de Pesquisas Físicas)",
+        company: "Brazilian Centre for Research in Physics",
         timeframe: "Feb 2023",
         role: "Artificial Intelligence Researcher",
         location: "Rio de Janeiro, Brazil · On-site",
         achievements: [
           <>
-            Two projects: CNN for ocean-floor mapping and LSTM light-curve classification to help identify dark matter.
+            Project: <em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, delivering a CNN pipeline to infer seabed stratification from sonar readings — published on arXiv.
           </>,
           <>
-            Contributed model development and dataset creation/analysis.
+            Project: <em>Lightcurve Classification with an LSTM Neural Network</em>, modelling stellar variability to support dark matter detection.
           </>,
         ],
         images: [],
@@ -428,21 +422,21 @@ const about = {
         github: "https://github.com/ada-ggf25/Auto-Calendar-Agent",
       },
       {
-        title: "The Atomic Nucleus - Discoveries of Modern Physics",
+        title: <>The Atomic Nucleus - Discoveries of Modern Physics</>,
         link: "https://drive.google.com/file/d/1K4T-WWVHK1bp9sFzsJJQpI90CtKN77cQ/view?usp=drive_link",
         technologies: "Physics, Research, Academic Writing",
         timeframe: "Sep 2022 - Nov 2022",
         category: "Academic Research",
         location: "Superior Técnico",
-        description: <>I completed this paper in the Discoveries of Modern Physics course. I am proud to share that I finished the course with a 20/20 grade, thanks to my paper on the discovery of the atomic nucleus and my poster presentation at the Congress Center of Instituto Superior Técnico.</>,
+        description: <>I completed the paper <em>The Atomic Nucleus - Discoveries of Modern Physics</em> in the Discoveries of Modern Physics course. I am proud to share that I finished the course with a 20/20 grade, thanks to this paper and my poster presentation at the Congress Center of Instituto Superior Técnico.</>,
       },
       {
         title: "Hippocrates' Feather",
-        technologies: "Python, Data Science, Machine Learning",
+        technologies: "Python, Streamlit, FastAPI, OpenAI API, PostgreSQL, SQLAlchemy, Pydantic, WebRTC, Natural Language Processing, AI Agent",
         timeframe: "Oct 2025",
         category: "Healthcare AI",
         location: "IBM",
-        description: <>Project developed for the IBMZ Datathon, showcasing data analysis and machine learning capabilities on IBM Z platform datasets.</>,
+        description: <>AI-powered healthcare application developed for the IBM Z Datathon that automates medical form filling during patient consultations. Features real-time speech recognition and transcription, intelligent entity extraction from conversations using OpenAI's LLM, and automatic population of clinical forms with symptoms and medications. Built with a Streamlit frontend for intuitive doctor workflows, FastAPI backend for robust API services, and PostgreSQL database for secure patient data management. Reduces administrative burden by allowing doctors to focus on patient care whilst the AI handles form documentation in real-time during consultations.</>,
         github: "https://github.com/peter-avg/IBMZ-Datathon",
       },
     ].sort((a, b) => {
@@ -639,7 +633,7 @@ const about = {
     accomplishments: [
       {
         title: "Multiple papers published in Machine Learning and AI",
-        description: <>Examples include SSRN (Financial Torque Hypothesis, 2025), ENIAC conference (lexicographic multi-objective ML, 2024), and CBPF/arXiv (ocean-floor CNN, 2023).</>,
+        description: <>Examples include SSRN (<em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, 2025), ENIAC conference (<em>Enhancing Multi-Objective Machine Learning with an Optimised Lexicographic Approach: Determining the Tolerance Threshold</em>, 2024), and CBPF/arXiv (<em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, 2023).</>,
         category: "Research",
         year: "2023-2025",
       },
@@ -693,7 +687,7 @@ const about = {
       },
       {
         title: "Papers published on Quantitative Research",
-        description: <>Quant finance work (e.g., Financial Torque Hypothesis) with SSRN recognition.</>,
+        description: <>Quant finance work (e.g., <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>) with SSRN recognition.</>,
         category: "Research",
         year: "2025",
       },

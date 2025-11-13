@@ -438,7 +438,7 @@ export default function About() {
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                             <Heading variant="heading-strong-l" onBackground="neutral-strong">
-                              {paper.title}
+                              <em>{paper.title}</em>
                             </Heading>
                             {paper.link && (
                               <SmartLink
