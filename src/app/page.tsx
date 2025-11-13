@@ -379,7 +379,7 @@ export default function About() {
                     key={`${institution.name}-${index}`}
                     header={
                       <Flex 
-                        horizontal="between" 
+                        horizontal="space-between" 
                         vertical="end" 
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
@@ -431,7 +431,7 @@ export default function About() {
                     key={index}
                     header={
                       <Flex
-                        horizontal="between"
+                        horizontal="space-between"
                         vertical="end"
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
@@ -508,7 +508,7 @@ export default function About() {
                       key={index}
                       header={
                         <Flex
-                          horizontal="between"
+                          horizontal="space-between"
                           vertical="end"
                           style={{ width: "100%", paddingRight: "8px" }}
                         >
@@ -576,7 +576,7 @@ export default function About() {
                       key={index}
                       header={
                         <Flex
-                          horizontal="between"
+                          horizontal="space-between"
                           vertical="end"
                           style={{ width: "100%", paddingRight: "8px" }}
                         >
@@ -670,7 +670,7 @@ export default function About() {
                     key={`${award.title}-${index}`}
                     header={
                       <Flex 
-                        horizontal="between" 
+                        horizontal="space-between" 
                         vertical="end" 
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
@@ -727,7 +727,7 @@ export default function About() {
                     key={`${certification.title}-${index}`}
                     header={
                       <Flex 
-                        horizontal="between" 
+                        horizontal="space-between" 
                         vertical="end" 
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
