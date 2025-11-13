@@ -334,7 +334,7 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Represented Startup Lisbon at Web Summit 2023, boosting company visibility, engaging investors, and supporting investment rounds and pitching.
+            Represented Startup Portugal at Web Summit 2023, boosting company visibility, engaging investors, and supporting investment rounds and pitching.
           </>,
         ],
         images: [],
