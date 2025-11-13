@@ -355,7 +355,10 @@ const about = {
         location: "Rio de Janeiro, Brazil · On-site",
         achievements: [
           <>
-            Two projects: CNN for ocean-floor mapping and LSTM light-curve classification to help identify dark matter.
+            Project: <em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, delivering a CNN pipeline to infer seabed stratification from sonar readings.
+          </>,
+          <>
+            Project: <em>Lightcurve Classification with an LSTM Neural Network</em>, modelling stellar variability to support dark matter detection.
           </>,
         ],
         images: [],
