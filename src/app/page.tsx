@@ -479,9 +479,9 @@ export default function About() {
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {paper.description}
                     </Text>
-                    {paper.highlights && (
+                    {((paper as any).highlights) && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
-                        Key highlights: {paper.highlights}
+                        Key highlights: {(paper as any).highlights}
                       </Text>
                     )}
                   </CollapsibleSection>
