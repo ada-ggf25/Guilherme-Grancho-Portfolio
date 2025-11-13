@@ -292,7 +292,7 @@ const about = {
             Taught and coordinated Physics III laboratory sessions for BSc Electronics Engineering undergraduates, covering Thomson's experiment, RLC circuits, and geometric and wave optics.
           </>,
           <>
-            Anonymous end-of-course student surveys awarded me 9/9 overall — the highest rating in the module that year.
+            Anonymous end-of-course student surveys awarded me 9/9 teacher, the highest rating in the module that year.
           </>,
         ],
         images: [],
