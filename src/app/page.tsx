@@ -534,9 +534,9 @@ export default function About() {
                               <Text variant="heading-default-xs" onBackground="neutral-weak">
                                 {activity.timeframe}
                               </Text>
-                              {"category" in activity && activity.category && (
+                              {"category" in activity && (activity as { category?: string }).category && (
                                 <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                                  {String(activity.category)}
+                                  {(activity as { category: string }).category}
                                 </Tag>
                               )}
                             </Column>
