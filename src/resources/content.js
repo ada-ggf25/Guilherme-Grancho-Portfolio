@@ -321,9 +321,6 @@ const about = {
           <>
             Designed and implemented responsive web interfaces for aerospace engineering projects and digital services.
           </>,
-          <>
-            Built clean, maintainable codebases and collaborated in a remote cross-functional environment.
-          </>,
         ],
         images: [],
       },
