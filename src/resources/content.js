@@ -181,13 +181,13 @@ const about = {
         location: "London, UK · Remote",
         achievements: [
           <>
-            Research at the intersection of deep learning and financial modeling. Co-authoring papers introducing and applying the Financial Torque Hypothesis (FTH) to short-term stock-price prediction and algorithmic portfolio management (LSTM-based).
+            Lead Prometheus, an independent research platform pairing deep learning with quantitative finance to deliver real-time Financial Torque Hypothesis insights via an open-source web app, public website, and GitHub codebase.
           </>,
           <>
-            Built an open-source web app that serves real-time predictions and an interactive interface for practical use.
+            Co-authored the published study "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks", demonstrating FTH-driven forecasting performance.
           </>,
           <>
-            Representative outputs: Prometheus official website; paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>; GitHub repository.
+            Currently developing the manuscript "Integrating the Financial Torque Hypothesis into Advanced Algorithmic Portfolio Management" to extend FTH signals into systematic trading pipelines.
           </>,
         ],
         images: [],
