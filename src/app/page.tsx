@@ -273,7 +273,7 @@ export default function About() {
                         <CollapsibleSection
                           header={
                             <Flex 
-                              horizontal="between" 
+                              horizontal="space-between" 
                               vertical="end" 
                               style={{ width: "100%", paddingRight: "8px" }}
                             >
