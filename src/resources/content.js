@@ -181,7 +181,7 @@ const about = {
         location: "London, UK · Remote",
         achievements: [
           <>
-            Lead Prometheus, an independent research platform pairing deep learning with quantitative finance to deliver real-time Financial Torque Hypothesis insights via an open-source web app, public website, and GitHub codebase.
+            Lead Prometheus, an independent research platform pairing deep learning with quantitative finance to deliver real-time Financial Torque Hypothesis (FTH) insights via an open-source web app, public website, and GitHub codebase.
           </>,
           <>
             Co-authored the published study "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks", demonstrating FTH-driven forecasting performance.
