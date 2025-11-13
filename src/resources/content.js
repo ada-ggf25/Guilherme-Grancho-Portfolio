@@ -187,7 +187,7 @@ const about = {
             Built an open-source web app that serves real-time predictions and an interactive interface for practical use.
           </>,
           <>
-            Representative outputs: Prometheus official website; paper "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks"; GitHub repository.
+            Representative outputs: Prometheus official website; paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>; GitHub repository.
           </>,
         ],
         images: [],
@@ -265,7 +265,7 @@ const about = {
         location: "Minas Gerais, Brazil · Remote",
         achievements: [
           <>
-            First author of the peer-reviewed paper "Enhancing Multi-Objective Machine Learning with an Optimised Lexicographic Approach: Determining the Tolerance Threshold", co-presented with Talles Medeiros at ENIAC (34th National Meeting on Artificial and Computational Intelligence), arising from a 720-hour machine-learning and algorithms research programme.
+            First author of the peer-reviewed paper <em>Enhancing Multi-Objective Machine Learning with an Optimised Lexicographic Approach: Determining the Tolerance Threshold</em>, co-presented with Talles Medeiros at ENIAC (34th National Meeting on Artificial and Computational Intelligence), arising from a 720-hour machine-learning and algorithms research programme.
           </>,
         ],
         images: [],
@@ -352,7 +352,7 @@ const about = {
         images: [],
       },
       {
-        company: "CBPF (Centro Brasileiro de Pesquisas Físicas)",
+        company: "Brazilian Centre for Research in Physics",
         timeframe: "Feb 2023",
         role: "Artificial Intelligence Researcher",
         location: "Rio de Janeiro, Brazil · On-site",
