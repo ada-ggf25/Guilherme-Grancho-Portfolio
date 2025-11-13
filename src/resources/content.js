@@ -355,7 +355,7 @@ const about = {
         location: "Rio de Janeiro, Brazil · On-site",
         achievements: [
           <>
-            Project: <em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, delivering a CNN pipeline to infer seabed stratification from sonar readings.
+            Project: <em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, delivering a CNN pipeline to infer seabed stratification from sonar readings — published on arXiv.
           </>,
           <>
             Project: <em>Lightcurve Classification with an LSTM Neural Network</em>, modelling stellar variability to support dark matter detection.
