@@ -357,9 +357,6 @@ const about = {
           <>
             Two projects: CNN for ocean-floor mapping and LSTM light-curve classification to help identify dark matter.
           </>,
-          <>
-            Contributed model development and dataset creation/analysis.
-          </>,
         ],
         images: [],
       },
