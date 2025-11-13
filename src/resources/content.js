@@ -343,7 +343,7 @@ const about = {
         location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Taught students across levels (e.g., Calculus I–II, differential equations).
+            Supported high-school through undergraduate learners in mathematics, physics, and Calculus I–II via one-to-one online and in-person lessons.
           </>,
         ],
         images: [],
