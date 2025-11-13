@@ -184,10 +184,10 @@ const about = {
             Lead Prometheus, an independent research platform pairing deep learning with quantitative finance to deliver real-time Financial Torque Hypothesis (FTH) insights via an open-source web app, public website, and GitHub codebase.
           </>,
           <>
-            Co-authored the published study "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks", demonstrating FTH-driven forecasting performance.
+            Co-authored the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, demonstrating FTH-driven forecasting performance.
           </>,
           <>
-            Currently developing the manuscript "Integrating the Financial Torque Hypothesis into Advanced Algorithmic Portfolio Management" to extend FTH signals into systematic trading pipelines.
+            Currently developing the manuscript <em>Integrating the Financial Torque Hypothesis into Advanced Algorithmic Portfolio Management</em> to extend FTH signals into systematic trading pipelines.
           </>,
         ],
         images: [],
@@ -422,13 +422,13 @@ const about = {
         github: "https://github.com/ada-ggf25/Auto-Calendar-Agent",
       },
       {
-        title: "The Atomic Nucleus - Discoveries of Modern Physics",
+        title: <>The Atomic Nucleus - Discoveries of Modern Physics</>,
         link: "https://drive.google.com/file/d/1K4T-WWVHK1bp9sFzsJJQpI90CtKN77cQ/view?usp=drive_link",
         technologies: "Physics, Research, Academic Writing",
         timeframe: "Sep 2022 - Nov 2022",
         category: "Academic Research",
         location: "Superior Técnico",
-        description: <>I completed this paper in the Discoveries of Modern Physics course. I am proud to share that I finished the course with a 20/20 grade, thanks to my paper on the discovery of the atomic nucleus and my poster presentation at the Congress Center of Instituto Superior Técnico.</>,
+        description: <>I completed the paper <em>The Atomic Nucleus - Discoveries of Modern Physics</em> in the Discoveries of Modern Physics course. I am proud to share that I finished the course with a 20/20 grade, thanks to this paper and my poster presentation at the Congress Center of Instituto Superior Técnico.</>,
       },
       {
         title: "Hippocrates' Feather",
@@ -633,7 +633,7 @@ const about = {
     accomplishments: [
       {
         title: "Multiple papers published in Machine Learning and AI",
-        description: <>Examples include SSRN (Financial Torque Hypothesis, 2025), ENIAC conference (lexicographic multi-objective ML, 2024), and CBPF/arXiv (ocean-floor CNN, 2023).</>,
+        description: <>Examples include SSRN (<em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, 2025), ENIAC conference (<em>Enhancing Multi-Objective Machine Learning with an Optimised Lexicographic Approach: Determining the Tolerance Threshold</em>, 2024), and CBPF/arXiv (<em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, 2023).</>,
         category: "Research",
         year: "2023-2025",
       },
@@ -687,7 +687,7 @@ const about = {
       },
       {
         title: "Papers published on Quantitative Research",
-        description: <>Quant finance work (e.g., Financial Torque Hypothesis) with SSRN recognition.</>,
+        description: <>Quant finance work (e.g., <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>) with SSRN recognition.</>,
         category: "Research",
         year: "2025",
       },
