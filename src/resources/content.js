@@ -343,7 +343,7 @@ const about = {
         location: "Lisbon, Portugal · Hybrid",
         achievements: [
           <>
-            Supported high-school through undergraduate learners in mathematics, physics, and Calculus I–II via one-to-one online and in-person lessons.
+            Supported high-school and undergraduate students in mathematics, physics, and Calculus I and II via one-to-one online and in-person lessons.
           </>,
         ],
         images: [],
