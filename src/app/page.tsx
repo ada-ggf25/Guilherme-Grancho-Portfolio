@@ -532,7 +532,7 @@ export default function About() {
                               <Text variant="heading-default-xs" onBackground="neutral-weak">
                                 {activity.timeframe}
                               </Text>
-                              {activity.category && (
+                              {"category" in activity && activity.category && (
                                 <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
                                   {activity.category}
                                 </Tag>
