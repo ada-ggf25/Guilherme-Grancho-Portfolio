@@ -811,7 +811,7 @@ export default function About() {
                 {about.hobbies.description}
               </Text>
               <Column style={{ gap: "12px", marginBottom: "20px" }}>
-                {about.hobbies.categories.map((category, index) => (
+                {about.hobbies.categories.map((category: { title: string; skills: string[] }, index) => (
                   <CollapsibleSection
                     key={index}
                     header={
