@@ -345,9 +345,6 @@ const about = {
           <>
             Taught students across levels (e.g., Calculus I–II, differential equations).
           </>,
-          <>
-            Emphasized clear exposition and helping students build confidence in math/physics.
-          </>,
         ],
         images: [],
       },
