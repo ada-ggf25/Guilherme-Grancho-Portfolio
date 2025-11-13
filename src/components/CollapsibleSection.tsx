@@ -41,7 +41,7 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
         type="button"
       >
         <Flex
-          horizontal="between"
+          horizontal="space-between"
           vertical="center"
           style={{ width: "100%", gap: "12px" }}
         >
