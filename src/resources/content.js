@@ -298,7 +298,7 @@ const about = {
         images: [],
       },
       {
-        company: "IPFN (Instituto de Plasmas e Fusão Nuclear), GoLP",
+        company: "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas",
         timeframe: "Nov 2023 - Jan 2024",
         role: "Machine Learning Researcher",
         location: "Lisbon, Portugal · On-site",
