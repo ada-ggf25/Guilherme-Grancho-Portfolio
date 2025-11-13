@@ -1,4 +1,4 @@
-import { Logo } from "@once-ui-system/core";
+// Logo import removed - not used
 
 const person = {
   firstName: "Guilherme",
@@ -13,16 +13,16 @@ const person = {
   location: "London - Lisbon",
   languages: ["Portuguese", "English", "Spanish", "French"],
   website: "https://guilhermegrancho.com",
-  summary: "AI researcher, software engineer, and tech entrepreneur blending data science, engineering, and entrepreneurship to build solutions for finance and sustainability. Currently pursuing MSc in Applied Computational Science & Engineering at Imperial College London, with published research in quantitative finance and co-founder of Eco AI.ly's GAIA sustainability platform.",
+  summary: "AI researcher, software engineer, and tech entrepreneur blending data science, engineering, and entrepreneurship to build solutions for finance and sustainability. Currently pursuing MSc in Applied Computational Science & Engineering at Imperial College London, with published research in quantitative finance and co-founder of Eco AI.ly&apos;s GAIA sustainability platform.",
 };
 
 const newsletter = {
   display: true,
-  title: <>Let's build the future together</>,
+  title: <>Let&apos;s build the future together</>,
   description: (
     <>
       Always keen to collaborate on applied ML, quantitative finance, sustainable tech and entrepreneurship initiatives. 
-      Let's connect and explore how we can work together on innovative projects that make a measurable impact.
+      Let&apos;s connect and explore how we can work together on innovative projects that make a measurable impact.
     </>
   ),
 };
@@ -66,7 +66,7 @@ const home = {
   },
   subline: (
     <>
-      I'm Guilherme, an AI developer and fintech entrepreneur passionate about 
+      I&apos;m Guilherme, an AI developer and fintech entrepreneur passionate about 
       <br /> transforming financial markets through machine learning and innovative technology.
     </>
   ),
@@ -161,12 +161,12 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Hi! Welcome to my journey! I'm half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and math. When I'm not working, you'll usually find me playing sports. I'm pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I'm always keen to connect with like-minded people who want to build great things. Feel free to reach out!
+        Hi! Welcome to my journey! I&apos;m half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and math. When I&apos;m not working, you&apos;ll usually find me playing sports. I&apos;m pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I&apos;m always keen to connect with like-minded people who want to build great things. Feel free to reach out!
       </>
     ),
     finalStatement: (
       <>
-        Currently focus on working towards making "Guilherme Grancho" stand for something.
+        Currently focus on working towards making &quot;Guilherme Grancho&quot; stand for something.
       </>
     ),
   },
@@ -289,7 +289,7 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Taught and coordinated Physics III laboratory sessions for BSc Electronics Engineering undergraduates, covering Thomson's experiment, RLC circuits, and geometric and wave optics.
+            Taught and coordinated Physics III laboratory sessions for BSc Electronics Engineering undergraduates, covering Thomson&apos;s experiment, RLC circuits, and geometric and wave optics.
           </>,
           <>
             Anonymous end-of-course student surveys awarded me 9/9 teacher, the highest rating in the module that year.
@@ -431,12 +431,12 @@ const about = {
         description: <>I completed the paper <em>The Atomic Nucleus - Discoveries of Modern Physics</em> in the Discoveries of Modern Physics course. I am proud to share that I finished the course with a 20/20 grade, thanks to this paper and my poster presentation at the Congress Center of Instituto Superior Técnico.</>,
       },
       {
-        title: "Hippocrates' Feather",
+        title: "Hippocrates&apos; Feather",
         technologies: "Python, Streamlit, FastAPI, OpenAI API, PostgreSQL, SQLAlchemy, Pydantic, WebRTC, Natural Language Processing, AI Agent",
         timeframe: "Oct 2025",
         category: "Healthcare AI",
         location: "IBM",
-        description: <>AI-powered healthcare application developed for the IBM Z Datathon that automates medical form filling during patient consultations. Features real-time speech recognition and transcription, intelligent entity extraction from conversations using OpenAI's LLM, and automatic population of clinical forms with symptoms and medications. Built with a Streamlit frontend for intuitive doctor workflows, FastAPI backend for robust API services, and PostgreSQL database for secure patient data management. Reduces administrative burden by allowing doctors to focus on patient care whilst the AI handles form documentation in real-time during consultations.</>,
+        description: <>AI-powered healthcare application developed for the IBM Z Datathon that automates medical form filling during patient consultations. Features real-time speech recognition and transcription, intelligent entity extraction from conversations using OpenAI&apos;s LLM, and automatic population of clinical forms with symptoms and medications. Built with a Streamlit frontend for intuitive doctor workflows, FastAPI backend for robust API services, and PostgreSQL database for secure patient data management. Reduces administrative burden by allowing doctors to focus on patient care whilst the AI handles form documentation in real-time during consultations.</>,
         github: "https://github.com/peter-avg/IBMZ-Datathon",
       },
     ].sort((a, b) => {
@@ -530,7 +530,7 @@ const about = {
       },
       {
         title: "EY AI Challenge — Category 1º Place Winner",
-        description: <>1st place winner in the category of AI for finance at EY's AI Challenge.</>,
+        description: <>1st place winner in the category of AI for finance at EY&apos;s AI Challenge.</>,
         category: "",
         year: "May 2025",
         issuer: "Ernst & Young",
@@ -539,7 +539,7 @@ const about = {
       },
       {
         title: "Athens Mobility Grant",
-        description: <>Funding to attend KU Leuven's Virtual Reality Development program.</>,
+        description: <>Funding to attend KU Leuven&apos;s Virtual Reality Development program.</>,
         category: "",
         year: "Mar 2024",
         issuer: "KU Leuven",
@@ -714,7 +714,7 @@ const about = {
         venue: "SSRN - The Financial Economics Network",
         date: "Jun 20, 2025",
         type: "Working Paper / Preprint",
-        description: <>Introduces the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term "market torque" useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies.</>,
+        description: <>Introduces the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies.</>,
         link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
         category: "Quantitative Finance",
         artifacts: "SSRN paper + Show publication link",
@@ -762,15 +762,7 @@ const about = {
 
 
 // Blog section removed - no longer needed
-
-const work = {
-  path: "/work",
-  label: "Projects",
-  title: `Innovation Portfolio – ${person.name}`,
-  description: `AI, fintech, and quantitative finance projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
-};
+// Work section removed - not used
 
 // Gallery section removed - no longer needed
 

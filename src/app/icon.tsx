@@ -49,7 +49,7 @@ export default async function Icon() {
         ...size,
       }
     )
-  } catch (error) {
+  } catch {
     // Fallback to a simple design if image fails to load
     return new ImageResponse(
       (

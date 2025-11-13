@@ -1,6 +1,6 @@
 "use client";
 
-import { Flex, Button, SmartLink, Text, Icon } from "@once-ui-system/core";
+import { Flex, Text, Icon } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 

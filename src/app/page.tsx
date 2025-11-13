@@ -4,9 +4,6 @@ import {
   Column,
   Flex,
   Heading,
-  HeadingLink,
-  Icon,
-  IconButton,
   Media,
   Tag,
   Text,
@@ -19,6 +16,11 @@ import styles from "@/components/about/about.module.scss";
 import { SectionNavigation } from "@/components/SectionNavigation";
 import { CollapsibleSection } from "@/components/CollapsibleSection";
 import React from "react";
+
+// Type definitions for optional properties
+type PaperWithHighlights = typeof about.publications.papers[number] & { highlights?: string };
+type ProjectWithHighlights = typeof about.keyProjects.projects[number] & { highlights?: string };
+type CertificationWithCredential = typeof about.certifications.accomplishments[number] & { credential_id?: string };
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -479,9 +481,9 @@ export default function About() {
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {paper.description}
                     </Text>
-                    {((paper as any).highlights) && (
+                    {((paper as PaperWithHighlights).highlights) && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
-                        Key highlights: {(paper as any).highlights}
+                        Key highlights: {(paper as PaperWithHighlights).highlights}
                       </Text>
                     )}
                   </CollapsibleSection>
@@ -636,9 +638,9 @@ export default function About() {
                           {project.description}
                         </Text>
                       )}
-                      {((project as any).highlights) && (
+                      {((project as ProjectWithHighlights).highlights) && (
                         <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px", textAlign: "justify" }}>
-                          Key highlights: {(project as any).highlights}
+                          Key highlights: {(project as ProjectWithHighlights).highlights}
                         </Text>
                       )}
                     </CollapsibleSection>
@@ -756,11 +758,11 @@ export default function About() {
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {certification.description}
                     </Text>
-                    {(certification.associated_with?.trim() || (certification as any).credential_id?.trim()) && (
+                    {(certification.associated_with?.trim() || (certification as CertificationWithCredential).credential_id?.trim()) && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
                         {certification.associated_with?.trim() && `Associated with: ${certification.associated_with}`}
-                        {certification.associated_with?.trim() && (certification as any).credential_id?.trim() && ` • `}
-                        {(certification as any).credential_id?.trim() && `Credential ID: ${(certification as any).credential_id}`}
+                        {certification.associated_with?.trim() && (certification as CertificationWithCredential).credential_id?.trim() && ` • `}
+                        {(certification as CertificationWithCredential).credential_id?.trim() && `Credential ID: ${(certification as CertificationWithCredential).credential_id}`}
                       </Text>
                     )}
                   </CollapsibleSection>

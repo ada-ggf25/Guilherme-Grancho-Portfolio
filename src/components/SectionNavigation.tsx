@@ -24,7 +24,7 @@ export const SectionNavigation: React.FC<SectionNavigationProps> = ({ sections }
       setShowInHeader(false);
       setTransitionProgress(0);
     };
-  }, [sections, setSections]);
+  }, [sections, setSections, setShowInHeader, setTransitionProgress]);
 
   // Keep intersection tracking active in header for button highlighting
   useEffect(() => {
