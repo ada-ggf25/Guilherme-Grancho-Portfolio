@@ -275,7 +275,7 @@ export default function About() {
                         <CollapsibleSection
                           header={
                             <Flex 
-                              horizontal="space-between" 
+                              horizontal="between" 
                               vertical="end" 
                               style={{ width: "100%", paddingRight: "8px" }}
                             >
@@ -306,7 +306,7 @@ export default function About() {
                             as="ul" 
                             style={{ gap: "20px", marginTop: "16px" }}
                           >
-                            {experience.achievements.map((achievement: JSX.Element, index: number) => (
+                            {experience.achievements.map((achievement: React.ReactElement, index: number) => (
                               <Text
                                 as="li"
                                 variant="body-default-m"
@@ -339,7 +339,6 @@ export default function About() {
                                 >
                                   <Media
                                     enlarge
-                                    loading="lazy"
                                     style={{
                                       borderRadius: "var(--static-space-m)",
                                     }}
@@ -382,7 +381,7 @@ export default function About() {
                     key={`${institution.name}-${index}`}
                     header={
                       <Flex 
-                        horizontal="space-between" 
+                        horizontal="between" 
                         vertical="end" 
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
@@ -434,7 +433,7 @@ export default function About() {
                     key={index}
                     header={
                       <Flex
-                        horizontal="space-between"
+                        horizontal="between"
                         vertical="end"
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
@@ -511,7 +510,7 @@ export default function About() {
                       key={index}
                       header={
                         <Flex
-                          horizontal="space-between"
+                          horizontal="between"
                           vertical="end"
                           style={{ width: "100%", paddingRight: "8px" }}
                         >
@@ -579,7 +578,7 @@ export default function About() {
                       key={index}
                       header={
                         <Flex
-                          horizontal="space-between"
+                          horizontal="between"
                           vertical="end"
                           style={{ width: "100%", paddingRight: "8px" }}
                         >
@@ -673,7 +672,7 @@ export default function About() {
                     key={`${award.title}-${index}`}
                     header={
                       <Flex 
-                        horizontal="space-between" 
+                        horizontal="between" 
                         vertical="end" 
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
@@ -730,7 +729,7 @@ export default function About() {
                     key={`${certification.title}-${index}`}
                     header={
                       <Flex 
-                        horizontal="space-between" 
+                        horizontal="between" 
                         vertical="end" 
                         style={{ width: "100%", paddingRight: "8px" }}
                       >

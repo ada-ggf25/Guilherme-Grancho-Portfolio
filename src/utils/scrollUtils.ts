@@ -44,8 +44,12 @@ export function trackActiveSection(
   sections: Array<{ id: string }>,
   callback: (index: number) => void
 ): () => void {
+  if (typeof window === 'undefined') {
+    return () => {};
+  }
+
   // Use Intersection Observer for better performance
-  if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+  if ('IntersectionObserver' in window) {
     const observers: IntersectionObserver[] = [];
     let currentActiveIndex = 0;
 
@@ -111,9 +115,10 @@ export function trackActiveSection(
     });
   }, 100);
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  const win = window as Window & typeof globalThis;
+  win.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Initial check
   
-  return () => window.removeEventListener('scroll', handleScroll);
+  return () => win.removeEventListener('scroll', handleScroll);
 }
 

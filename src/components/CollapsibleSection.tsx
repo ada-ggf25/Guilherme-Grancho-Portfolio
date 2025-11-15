@@ -41,7 +41,7 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = memo(({
         type="button"
       >
         <Flex
-          horizontal="space-between"
+          horizontal="between"
           vertical="center"
           style={{ width: "100%", gap: "12px" }}
         >

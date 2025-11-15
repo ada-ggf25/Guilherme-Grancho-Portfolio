@@ -39,14 +39,14 @@ function readMDXFile(filePath: string) {
   const { data, content } = matter(rawContent);
 
   const metadata: Metadata = {
-    title: data.title || "",
-    publishedAt: data.publishedAt,
-    summary: data.summary || "",
-    image: data.image || "",
-    images: data.images || [],
-    tag: data.tag || [],
-    team: data.team || [],
-    link: data.link || "",
+    title: (data.title as string) || "",
+    publishedAt: data.publishedAt as string,
+    summary: (data.summary as string) || "",
+    image: (data.image as string) || "",
+    images: (data.images as string[]) || [],
+    tag: (data.tag as string) || "",
+    team: (data.team as Team[]) || [],
+    link: (data.link as string) || "",
   };
 
   return { metadata, content };

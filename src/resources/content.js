@@ -175,7 +175,7 @@ const about = {
     title: "Experience",
     experiences: [
       {
-        company: "Imperial College London",
+        company: "Independent Research",
         timeframe: "Jan 2025 - Present",
         role: "Quantitative Researcher",
         location: "London, UK · Remote",

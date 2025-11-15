@@ -1,14 +1,14 @@
-import { Column, Heading, Text } from "@once-ui-system/core";
+import { Column, Text } from "@once-ui-system/core";
 
 export default function NotFound() {
   return (
-    <Column as="section" fill center paddingBottom="160">
+    <Column as="section" fillWidth horizontal="center" vertical="center" paddingBottom="160" style={{ minHeight: "100vh" }}>
       <Text marginBottom="s" variant="display-strong-xl">
         404
       </Text>
-      <Heading marginBottom="l" variant="display-default-xs">
+      <Text marginBottom="l" variant="display-default-xs">
         Page Not Found
-      </Heading>
+      </Text>
       <Text onBackground="neutral-weak">The page you are looking for does not exist.</Text>
     </Column>
   );
