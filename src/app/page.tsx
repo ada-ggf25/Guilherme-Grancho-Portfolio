@@ -306,16 +306,35 @@ export default function About() {
                             as="ul" 
                             style={{ gap: "20px", marginTop: "16px" }}
                           >
-                            {experience.achievements.map((achievement: React.ReactElement, index: number) => (
-                              <Text
-                                as="li"
-                                variant="body-default-m"
-                                key={`${experience.company}-${index}`}
-                                style={{ textAlign: "justify" }}
-                              >
-                                {achievement}
-                              </Text>
-                            ))}
+                            {experience.achievements.map((achievement: React.ReactElement, index: number) => {
+                              // Check if this is the Prometheus-related achievement
+                              // It's the first achievement (index 0) in the "Independent Research" experience
+                              const isPrometheusAchievement = experience.company === "Independent Research" && index === 0;
+                              
+                              return (
+                                <Text
+                                  as="li"
+                                  variant="body-default-m"
+                                  key={`${experience.company}-${index}`}
+                                  style={{ textAlign: "justify" }}
+                                >
+                                  {achievement}
+                                  {isPrometheusAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#Prometheus"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Prometheus Project
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                </Text>
+                              );
+                            })}
                           </Column>
                           {experience.images.length > 0 && (
                             <Flex 
@@ -584,7 +603,12 @@ export default function About() {
                         >
                           <Column style={{ flex: 1, gap: "6px" }}>
                             <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                              <Heading variant="heading-strong-l" onBackground="neutral-strong">
+                              <Heading 
+                                id={project.title === "Prometheus" ? "Prometheus" : undefined}
+                                variant="heading-strong-l" 
+                                onBackground="neutral-strong"
+                                style={project.title === "Prometheus" ? { scrollMarginTop: "140px" } : {}}
+                              >
                                 {project.title}
                               </Heading>
                               {project.github && (
@@ -637,6 +661,18 @@ export default function About() {
                         <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                           {project.description}
                         </Text>
+                      )}
+                      {project.title === "Prometheus" && (
+                        <Flex style={{ marginTop: "16px", gap: "12px" }}>
+                          <SmartLink
+                            href={`#${about.work.title}`}
+                            style={{ textDecoration: "none" }}
+                          >
+                            <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                              View Related Experience
+                            </Tag>
+                          </SmartLink>
+                        </Flex>
                       )}
                       {((project as ProjectWithHighlights).highlights) && (
                         <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px", textAlign: "justify" }}>
