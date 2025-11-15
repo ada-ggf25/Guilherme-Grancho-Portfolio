@@ -764,7 +764,7 @@ const about = {
         organization: "Imperial College London",
         location: "London, UK",
         timeframe: "Sep 2025 - Present",
-        description: <>Weekly quant lectures with regular assessments on statistics & probability, time-series, derivatives pricing and stochastic calculus. Recurring hedging simulations, portfolio exercises and coding hackathon challenges.</>,
+        description: <>Weekly quantitative lectures with regular assessments in statistics, probability, time series, derivatives pricing, and stochastic calculus, plus recurring hedging simulations, portfolio exercises, and coding hackathon challenges.</>,
       },
       {
         title: "Track and Field Athlete",
