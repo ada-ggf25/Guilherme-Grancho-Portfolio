@@ -271,6 +271,21 @@ const about = {
         images: [],
       },
       {
+        company: "Tap2Net",
+        timeframe: "Sep 2023 - Aug 2024",
+        role: "Co-Founder",
+        location: "Lisbon, Portugal · Hybrid",
+        achievements: [
+          <>
+            Successfully co-founded &apos;Tap2Net&apos;, leading its establishment and operation in the dynamic online sector. Tap2Net helps business owners enhance their online reputation by providing durable, engaging NFC-enabled cards that automatically redirect customers to a personalised web page where they can leave positive reviews. The business achieved notable results, selling over 500 cards along with other products and services.
+          </>,
+          <>
+            This experience provided me with valuable insights into web design, marketing, customer service, stock management, and, overall, gave me a comprehensive view of what it takes to run a business.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "KU Leuven",
         timeframe: "Mar 2024",
         role: "Virtual Reality Development Intern",
