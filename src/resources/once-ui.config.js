@@ -27,24 +27,32 @@ const heading = Geist({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const body = Geist({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const label = Geist({
   variable: "--font-label",
   subsets: ["latin"],
   display: "swap",
+  preload: false,
+  adjustFontFallback: true,
 });
 
 const code = Geist_Mono({
   variable: "--font-code",
   subsets: ["latin"],
   display: "swap",
+  preload: false,
+  adjustFontFallback: true,
 });
 
 const fonts = {

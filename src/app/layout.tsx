@@ -18,6 +18,20 @@ export async function generateMetadata() {
   });
 }
 
+// Pre-compute theme config to avoid JSON.stringify on every render
+const themeConfig = JSON.stringify({
+  brand: style.brand,
+  accent: style.accent,
+  neutral: style.neutral,
+  solid: style.solid,
+  'solid-style': style.solidStyle,
+  border: style.border,
+  surface: style.surface,
+  transition: style.transition,
+  scaling: style.scaling,
+  'viz-style': dataStyle.variant,
+});
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -37,60 +51,13 @@ export default async function RootLayout({
       )}
     >
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
             __html: `
-              (function() {
-                try {
-                  const root = document.documentElement;
-                  const defaultTheme = 'system';
-                  
-                  // Set defaults from config
-                  const config = ${JSON.stringify({
-                    brand: style.brand,
-                    accent: style.accent,
-                    neutral: style.neutral,
-                    solid: style.solid,
-                    'solid-style': style.solidStyle,
-                    border: style.border,
-                    surface: style.surface,
-                    transition: style.transition,
-                    scaling: style.scaling,
-                    'viz-style': dataStyle.variant,
-                  })};
-                  
-                  // Apply default values
-                  Object.entries(config).forEach(([key, value]) => {
-                    root.setAttribute('data-' + key, value);
-                  });
-                  
-                  // Resolve theme
-                  const resolveTheme = (themeValue) => {
-                    if (!themeValue || themeValue === 'system') {
-                      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                    }
-                    return themeValue;
-                  };
-                  
-                  // Apply saved theme
-                  const savedTheme = localStorage.getItem('data-theme');
-                  const resolvedTheme = resolveTheme(savedTheme);
-                  root.setAttribute('data-theme', resolvedTheme);
-                  
-                  // Apply any saved style overrides
-                  const styleKeys = Object.keys(config);
-                  styleKeys.forEach(key => {
-                    const value = localStorage.getItem('data-' + key);
-                    if (value) {
-                      root.setAttribute('data-' + key, value);
-                    }
-                  });
-                } catch (e) {
-                  console.error('Failed to initialize theme:', e);
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                }
-              })();
+              (function(){try{const r=document.documentElement,c=${themeConfig},m=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';Object.entries(c).forEach(([k,v])=>r.setAttribute('data-'+k,v));const t=localStorage.getItem('data-theme'),s=t&&t!=='system'?t:m;r.setAttribute('data-theme',s);Object.keys(c).forEach(k=>{const v=localStorage.getItem('data-'+k);v&&r.setAttribute('data-'+k,v)})}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();
             `,
           }}
         />

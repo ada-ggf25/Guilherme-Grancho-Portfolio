@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState, useRef } from "react";
 import { Text } from "@once-ui-system/core";
 
-export const SystemClock = () => {
+export const SystemClock = memo(() => {
   const [currentTime, setCurrentTime] = useState("");
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const updateTime = () => {
@@ -18,10 +19,26 @@ export const SystemClock = () => {
       setCurrentTime(timeString);
     };
 
+    // Initial update
     updateTime();
-    const intervalId = setInterval(updateTime, 1000);
+    
+    // Use requestAnimationFrame for smoother updates and reduce re-renders
+    const scheduleUpdate = () => {
+      const now = Date.now();
+      const delay = 1000 - (now % 1000);
+      intervalRef.current = setTimeout(() => {
+        updateTime();
+        scheduleUpdate();
+      }, delay);
+    };
+    
+    scheduleUpdate();
 
-    return () => clearInterval(intervalId);
+    return () => {
+      if (intervalRef.current) {
+        clearTimeout(intervalRef.current);
+      }
+    };
   }, []);
 
   return (
@@ -29,4 +46,6 @@ export const SystemClock = () => {
       {currentTime}
     </Text>
   );
-};
+});
+
+SystemClock.displayName = "SystemClock";

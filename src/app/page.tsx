@@ -339,6 +339,7 @@ export default function About() {
                                 >
                                   <Media
                                     enlarge
+                                    loading="lazy"
                                     style={{
                                       borderRadius: "var(--static-space-m)",
                                     }}

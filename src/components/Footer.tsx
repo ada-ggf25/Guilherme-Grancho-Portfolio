@@ -1,10 +1,11 @@
 "use client";
 
+import { memo } from "react";
 import { Flex, Text, Icon } from "@once-ui-system/core";
 import { person, social } from "@/resources";
 import styles from "./Footer.module.scss";
 
-export const Footer = () => {
+export const Footer = memo(() => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -75,4 +76,6 @@ export const Footer = () => {
       <Flex height="80" show="s"></Flex>
     </Flex>
   );
-};
+});
+
+Footer.displayName = "Footer";
