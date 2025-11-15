@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { Column, Flex, Icon } from "@once-ui-system/core";
 import styles from "./CollapsibleSection.module.scss";
 
@@ -11,7 +11,7 @@ interface CollapsibleSectionProps {
   className?: string;
 }
 
-export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
+export const CollapsibleSection: React.FC<CollapsibleSectionProps> = memo(({
   header,
   children,
   defaultExpanded = false,
@@ -41,7 +41,7 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
         type="button"
       >
         <Flex
-          horizontal="space-between"
+          horizontal="between"
           vertical="center"
           style={{ width: "100%", gap: "12px" }}
         >
@@ -55,7 +55,6 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
             className={styles.chevron}
             style={{
               transition: "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
-              willChange: "transform",
             }}
           />
         </Flex>
@@ -68,5 +67,7 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
       </div>
     </Column>
   );
-};
+});
+
+CollapsibleSection.displayName = "CollapsibleSection";
 

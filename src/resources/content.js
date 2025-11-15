@@ -21,7 +21,7 @@ const newsletter = {
   title: <>Let&apos;s build the future together</>,
   description: (
     <>
-      Always keen to collaborate on applied ML, quantitative finance, sustainable tech and entrepreneurship initiatives. 
+      Always eager to collaborate on applied ML, quantitative finance, sustainable tech and entrepreneurship initiatives. 
       Let&apos;s connect and explore how we can work together on innovative projects that make a measurable impact.
     </>
   ),
@@ -161,12 +161,12 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Hi! Welcome to my journey! I&apos;m half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and math. When I&apos;m not working, you&apos;ll usually find me playing sports. I&apos;m pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I&apos;m always keen to connect with like-minded people who want to build great things. Feel free to reach out!
+        Hi! Welcome to my journey! I&apos;m half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and math. When I&apos;m not working, you&apos;ll usually find me playing sports. I&apos;m pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I&apos;m always eager to connect with like-minded people who want to build great things. Feel free to reach out!
       </>
     ),
     finalStatement: (
       <>
-        Currently focus on working towards making &quot;Guilherme Grancho&quot; stand for something.
+        Currently focus on working toward making &quot;Guilherme Grancho&quot; stand for something.
       </>
     ),
   },
@@ -175,7 +175,7 @@ const about = {
     title: "Experience",
     experiences: [
       {
-        company: "Imperial College London",
+        company: "Independent Research",
         timeframe: "Jan 2025 - Present",
         role: "Quantitative Researcher",
         location: "London, UK · Remote",
@@ -265,7 +265,19 @@ const about = {
         location: "Minas Gerais, Brazil · Remote",
         achievements: [
           <>
-            First author of the peer-reviewed paper <em>Enhancing Multi-Objective Machine Learning with an Optimised Lexicographic Approach: Determining the Tolerance Threshold</em>, co-presented with Talles Medeiros at ENIAC (34th National Meeting on Artificial and Computational Intelligence), arising from a 720-hour machine-learning and algorithms research programme.
+            First author of the peer-reviewed paper <em>Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold</em>, co-presented with Talles Medeiros at ENIAC (34th National Meeting on Artificial and Computational Intelligence), arising from a 720-hour machine-learning and algorithms research program.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Tap2Net",
+        timeframe: "Sep 2023 - Aug 2024",
+        role: "Co-Founder",
+        location: "Lisbon, Portugal · On-site",
+        achievements: [
+          <>
+            Co-founded Tap2Net, an online venture providing durable NFC cards that direct customers to personalized review pages, helping businesses boost their online reputation. Led product, web design, marketing, customer support, and stock management, achieving sales of 500+ cards plus related products and services.
           </>,
         ],
         images: [],
@@ -304,7 +316,7 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Research on high-power laser aberration correction using CNNs and Bayesian optimisation.
+            Research on high-power laser aberration correction using CNNs and Bayesian optimization.
           </>,
           <>
             Designed a dataset creation method from experimental data and built a high-accuracy neural-network solution.
@@ -349,7 +361,7 @@ const about = {
         images: [],
       },
       {
-        company: "Brazilian Centre for Research in Physics",
+        company: "Brazilian Center for Research in Physics",
         timeframe: "Feb 2023",
         role: "Artificial Intelligence Researcher",
         location: "Rio de Janeiro, Brazil · On-site",
@@ -358,7 +370,7 @@ const about = {
             Project: <em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, delivering a CNN pipeline to infer seabed stratification from sonar readings — published on arXiv.
           </>,
           <>
-            Project: <em>Lightcurve Classification with an LSTM Neural Network</em>, modelling stellar variability to support dark matter detection.
+            Project: <em>Lightcurve Classification with an LSTM Neural Network</em>, modeling stellar variability to support dark matter detection.
           </>,
         ],
         images: [],
@@ -436,7 +448,7 @@ const about = {
         timeframe: "Oct 2025",
         category: "Healthcare AI",
         location: "IBM",
-        description: <>AI-powered healthcare application developed for the IBM Z Datathon that automates medical form filling during patient consultations. Features real-time speech recognition and transcription, intelligent entity extraction from conversations using OpenAI&apos;s LLM, and automatic population of clinical forms with symptoms and medications. Built with a Streamlit frontend for intuitive doctor workflows, FastAPI backend for robust API services, and PostgreSQL database for secure patient data management. Reduces administrative burden by allowing doctors to focus on patient care whilst the AI handles form documentation in real-time during consultations.</>,
+        description: <>AI-powered healthcare application developed for the IBM Z Datathon that automates medical form filling during patient consultations. Features real-time speech recognition and transcription, intelligent entity extraction from conversations using OpenAI&apos;s LLM, and automatic population of clinical forms with symptoms and medications. Built with a Streamlit frontend for intuitive doctor workflows, FastAPI backend for robust API services, and PostgreSQL database for secure patient data management. Reduces administrative burden by allowing doctors to focus on patient care while the AI handles form documentation in real-time during consultations.</>,
         github: "https://github.com/peter-avg/IBMZ-Datathon",
       },
     ].sort((a, b) => {
@@ -633,7 +645,7 @@ const about = {
     accomplishments: [
       {
         title: "Multiple papers published in Machine Learning and AI",
-        description: <>Examples include SSRN (<em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, 2025), ENIAC conference (<em>Enhancing Multi-Objective Machine Learning with an Optimised Lexicographic Approach: Determining the Tolerance Threshold</em>, 2024), and CBPF/arXiv (<em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, 2023).</>,
+        description: <>Examples include SSRN (<em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, 2025), ENIAC conference (<em>Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold</em>, 2024), and CBPF/arXiv (<em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, 2023).</>,
         category: "Research",
         year: "2023-2025",
       },
@@ -747,6 +759,13 @@ const about = {
     display: true, // set to false to hide this section
     title: "Extracurricular Activities",
     activities: [
+      {
+        title: "Algorithmic Trading Society Member",
+        organization: "Imperial College London",
+        location: "London, UK",
+        timeframe: "Sep 2025 - Present",
+        description: <>Weekly quantitative lectures with regular assessments in statistics, probability, time series, derivatives pricing, and stochastic calculus, plus recurring hedging simulations, portfolio exercises, and coding hackathon challenges.</>,
+      },
       {
         title: "Track and Field Athlete",
         organization: "Portuguese Track and Field Federation",

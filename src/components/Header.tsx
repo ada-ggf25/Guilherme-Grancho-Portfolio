@@ -22,10 +22,17 @@ export const Header = () => {
     return trackActiveSection(sections, setActiveSection);
   }, [sections, showInHeader]);
 
-  // Track scroll position to blur content under header
+  // Track scroll position to blur content under header (throttled for performance)
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     
     handleScroll(); // Initial check
@@ -43,7 +50,7 @@ export const Header = () => {
 
   return (
     <>
-      <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
+      <Fade fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
       <Flex
         fitHeight
         position="unset"
@@ -103,7 +110,6 @@ export const Header = () => {
               transform: `scale(${scale}) translateY(${translateY}px)`,
               transition: 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
               pointerEvents: opacity > 0.3 ? 'auto' : 'none',
-              willChange: 'opacity, transform'
             }}
           >
             <nav className={navStyles.navigationInHeader}>
