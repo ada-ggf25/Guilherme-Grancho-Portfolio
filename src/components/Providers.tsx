@@ -1,6 +1,6 @@
 "use client";
 
-import { BorderStyle, ChartMode, ChartVariant, DataThemeProvider, IconProvider, NeutralColor, ScalingSize, Schemes, SolidStyle, SolidType, SurfaceStyle, ThemeProvider, ToastProvider, TransitionStyle } from "@once-ui-system/core";
+import { BorderStyle, ChartMode, ChartVariant, DataThemeProvider, IconProvider, LayoutProvider, NeutralColor, ScalingSize, Schemes, SolidStyle, SolidType, SurfaceStyle, ThemeProvider, ToastProvider, TransitionStyle } from "@once-ui-system/core";
 import { style, dataStyle } from "../resources";
 import { iconLibrary } from "../resources/icons";
 import { NavigationProvider } from "@/contexts/NavigationContext";
@@ -31,13 +31,15 @@ export function Providers({ children }: { children: React.ReactNode }) {
           line: dataStyle.tick.line
         }}
         >
-        <ToastProvider>
-          <IconProvider icons={iconLibrary}>
-            <NavigationProvider>
-              {children}
-            </NavigationProvider>
-          </IconProvider>
-        </ToastProvider>
+        <LayoutProvider>
+          <ToastProvider>
+            <IconProvider icons={iconLibrary}>
+              <NavigationProvider>
+                {children}
+              </NavigationProvider>
+            </IconProvider>
+          </ToastProvider>
+        </LayoutProvider>
       </DataThemeProvider>
     </ThemeProvider>
   );
