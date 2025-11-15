@@ -166,7 +166,7 @@ const about = {
     ),
     finalStatement: (
       <>
-        Currently focus on working towards making &quot;Guilherme Grancho&quot; stand for something.
+        Currently focus on working toward making &quot;Guilherme Grancho&quot; stand for something.
       </>
     ),
   },
@@ -277,7 +277,7 @@ const about = {
         location: "Lisbon, Portugal · On-site",
         achievements: [
           <>
-            Co-founded Tap2Net, an online venture providing durable NFC cards that direct customers to personalised review pages, helping businesses boost their online reputation. Led product, web design, marketing, customer support, and stock management, achieving sales of 500+ cards plus related products and services.
+            Co-founded Tap2Net, an online venture providing durable NFC cards that direct customers to personalized review pages, helping businesses boost their online reputation. Led product, web design, marketing, customer support, and stock management, achieving sales of 500+ cards plus related products and services.
           </>,
         ],
         images: [],
@@ -370,7 +370,7 @@ const about = {
             Project: <em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, delivering a CNN pipeline to infer seabed stratification from sonar readings — published on arXiv.
           </>,
           <>
-            Project: <em>Lightcurve Classification with an LSTM Neural Network</em>, modelling stellar variability to support dark matter detection.
+            Project: <em>Lightcurve Classification with an LSTM Neural Network</em>, modeling stellar variability to support dark matter detection.
           </>,
         ],
         images: [],
