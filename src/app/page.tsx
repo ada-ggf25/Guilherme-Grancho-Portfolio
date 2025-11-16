@@ -789,10 +789,10 @@ export default function About() {
                           <Column style={{ flex: 1, gap: "6px" }}>
                             <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                               <Heading 
-                                id={project.title === "Prometheus" ? "Prometheus" : project.title === "GAIA" ? "GAIA" : project.title === "GraphRAG Workflow for AI Agents" ? "GraphRAG-Project" : undefined}
+                                id={project.title === "Prometheus" ? "Prometheus" : project.title === "GAIA" ? "GAIA" : project.title === "GraphRAG Workflow for AI Agents" ? "GraphRAG-Project" : project.title === "LXthon" ? "LXthon-Project" : project.title === "Ernst & Young AI Hackathon" ? "EY-AI-Hackathon-Project" : undefined}
                                 variant="heading-strong-l" 
                                 onBackground="neutral-strong"
-                                style={(project.title === "Prometheus" || project.title === "GAIA" || project.title === "GraphRAG Workflow for AI Agents") ? { scrollMarginTop: "140px" } : {}}
+                                style={(project.title === "Prometheus" || project.title === "GAIA" || project.title === "GraphRAG Workflow for AI Agents" || project.title === "LXthon" || project.title === "Ernst & Young AI Hackathon") ? { scrollMarginTop: "140px" } : {}}
                               >
                                 {project.title}
                               </Heading>
@@ -905,6 +905,32 @@ export default function About() {
                               </SmartLink>
                             </>
                           )}
+                          {project.title === "LXthon" && (
+                            <>{" "}
+                              <SmartLink
+                                href="#LXthon-Award"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Award
+                              </SmartLink>
+                            </>
+                          )}
+                          {project.title === "Ernst & Young AI Hackathon" && (
+                            <>{" "}
+                              <SmartLink
+                                href="#EY-AI-Challenge-Award"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Award
+                              </SmartLink>
+                            </>
+                          )}
                         </Text>
                       )}
                       {((project as ProjectWithHighlights).highlights) && (
@@ -947,10 +973,10 @@ export default function About() {
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Text 
-                            id={award.title === "Athens Mobility Grant" ? "Athens-Mobility-Grant" : award.title === "Diploma of Teaching Excellence" ? "Teaching-Excellence-Award" : award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" ? "SSRN-Top-Paper-Award" : award.title} 
+                            id={award.title === "Athens Mobility Grant" ? "Athens-Mobility-Grant" : award.title === "Diploma of Teaching Excellence" ? "Teaching-Excellence-Award" : award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" ? "SSRN-Top-Paper-Award" : award.title === "LXthon Hackathon — 1º Winner" ? "LXthon-Award" : award.title === "EY AI Challenge — Category 1º Place Winner" ? "EY-AI-Challenge-Award" : award.title} 
                             variant="heading-strong-l" 
                             onBackground="neutral-strong"
-                            style={(award.title === "Athens Mobility Grant" || award.title === "Diploma of Teaching Excellence" || award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak") ? { scrollMarginTop: "140px" } : {}}
+                            style={(award.title === "Athens Mobility Grant" || award.title === "Diploma of Teaching Excellence" || award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" || award.title === "LXthon Hackathon — 1º Winner" || award.title === "EY AI Challenge — Category 1º Place Winner") ? { scrollMarginTop: "140px" } : {}}
                           >
                             {award.title}
                           </Text>
@@ -973,6 +999,32 @@ export default function About() {
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {award.description}
+                      {award.title === "LXthon Hackathon — 1º Winner" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#LXthon-Project"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View LXthon Project
+                          </SmartLink>
+                        </>
+                      )}
+                      {award.title === "EY AI Challenge — Category 1º Place Winner" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#EY-AI-Hackathon-Project"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View EY AI Hackathon Project
+                          </SmartLink>
+                        </>
+                      )}
                     </Text>
                     {award.associated_with && award.associated_with.trim() && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
