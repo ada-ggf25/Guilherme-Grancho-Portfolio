@@ -281,10 +281,10 @@ export default function About() {
                             >
                               <Column style={{ flex: 1, gap: "4px" }}>
                                 <Text 
-                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.role} 
+                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.role} 
                                   variant="heading-strong-l" 
                                   onBackground="neutral-strong"
-                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") ? { scrollMarginTop: "140px" } : {}}
+                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") ? { scrollMarginTop: "140px" } : {}}
                                 >
                                   {experience.role}
                                 </Text>
@@ -646,6 +646,19 @@ export default function About() {
                         <>{" "}
                           <SmartLink
                             href="#ML-Researcher-UFOP"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#AI-Researcher-CBPF"
                             style={{ 
                               color: "#0066cc",
                               textDecoration: "underline"
