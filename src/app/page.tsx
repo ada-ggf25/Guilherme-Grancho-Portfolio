@@ -310,6 +310,9 @@ export default function About() {
                               // Check if this is the Prometheus-related achievement
                               // It's the first achievement (index 0) in the "Independent Research" experience
                               const isPrometheusAchievement = experience.company === "Independent Research" && index === 0;
+                              // Check if this is the FTH paper-related achievement
+                              // It's the second achievement (index 1) in the "Independent Research" experience
+                              const isFTHPaperAchievement = experience.company === "Independent Research" && index === 1;
                               
                               return (
                                 <Text
@@ -329,6 +332,19 @@ export default function About() {
                                         }}
                                       >
                                         View Prometheus Project
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isFTHPaperAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#FTH-Paper"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Publication
                                       </SmartLink>
                                     </>
                                   )}
@@ -458,7 +474,12 @@ export default function About() {
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                            <Heading variant="heading-strong-l" onBackground="neutral-strong">
+                            <Heading 
+                              id={paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ? "FTH-Paper" : undefined}
+                              variant="heading-strong-l" 
+                              onBackground="neutral-strong"
+                              style={paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ? { scrollMarginTop: "140px" } : {}}
+                            >
                               <em>{paper.title}</em>
                             </Heading>
                             {paper.link && (
