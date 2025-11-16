@@ -281,10 +281,10 @@ export default function About() {
                             >
                               <Column style={{ flex: 1, gap: "4px" }}>
                                 <Text 
-                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer" ? "AI-Data-Engineer-EY" : experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern" ? "VR-Intern-KULeuven" : experience.role} 
+                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer" ? "AI-Data-Engineer-EY" : experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern" ? "VR-Intern-KULeuven" : experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator" ? "Teacher-Assistant-Lab-Coordinator-IST" : experience.role} 
                                   variant="heading-strong-l" 
                                   onBackground="neutral-strong"
-                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") || (experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer") || (experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer") || (experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern") ? { scrollMarginTop: "140px" } : {}}
+                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") || (experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer") || (experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer") || (experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern") || (experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator") ? { scrollMarginTop: "140px" } : {}}
                                 >
                                   {experience.role}
                                 </Text>
@@ -450,7 +450,8 @@ export default function About() {
                                     </>
                                   )}
                                   {isGraphRAGProjectAchievement && (
-                                    <>{" "}
+                                    <>
+                                      {" "}
                                       <SmartLink
                                         href="#GraphRAG-Project"
                                         style={{ 
@@ -459,6 +460,16 @@ export default function About() {
                                         }}
                                       >
                                         View GraphRAG Project
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
+                                        href="#Compliance-Protocols-EY"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Certification
                                       </SmartLink>
                                     </>
                                   )}
@@ -1072,6 +1083,43 @@ export default function About() {
                           </SmartLink>
                         </>
                       )}
+                      {award.title === "Diploma of Teaching Excellence" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#Teacher-Assistant-Lab-Coordinator-IST"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {award.title === "Brazilian Center of Physics Research — Mobility Grant" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#AI-Researcher-CBPF"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#Ocean-Floor-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Publication
+                          </SmartLink>
+                        </>
+                      )}
                     </Text>
                     {award.associated_with && award.associated_with.trim() && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
@@ -1107,7 +1155,12 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text id={certification.title} variant="heading-strong-l" onBackground="neutral-strong">
+                          <Text 
+                            id={certification.title === "Compliance & Protocols for Global Clients" ? "Compliance-Protocols-EY" : certification.title} 
+                            variant="heading-strong-l" 
+                            onBackground="neutral-strong"
+                            style={certification.title === "Compliance & Protocols for Global Clients" ? { scrollMarginTop: "140px" } : {}}
+                          >
                             {certification.title}
                           </Text>
                           <Text variant="body-default-s" onBackground="brand-weak">
@@ -1130,6 +1183,19 @@ export default function About() {
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {certification.description}
+                      {certification.title === "Compliance & Protocols for Global Clients" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#AI-Data-Engineer-EY"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
                     </Text>
                     {(certification.associated_with?.trim() || (certification as CertificationWithCredential).credential_id?.trim()) && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
