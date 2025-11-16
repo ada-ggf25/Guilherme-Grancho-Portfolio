@@ -316,6 +316,20 @@ export default function About() {
                               // Check if this is the GAIA-related achievement
                               // It's the first achievement (index 0) in the "Eco AI.ly" experience
                               const isGAIAAchievement = experience.company === "Eco AI.ly" && index === 0;
+                              // Check if this is the Athens Mobility Grant-related achievement
+                              // It's the first achievement (index 0) in the "KU Leuven" experience
+                              const isAthensGrantAchievement = experience.company === "KU Leuven" && index === 0;
+                              // Check if this is the ENIAC paper-related achievement
+                              // It's the first achievement (index 0) in the "Universidade Federal de Ouro Preto" experience
+                              const isENIACPaperAchievement = experience.company === "Universidade Federal de Ouro Preto" && index === 0;
+                              // Check if this is the Teaching Excellence award-related achievement
+                              // It's the second achievement (index 1) in the "Instituto Superior Técnico" experience with role "Teacher Assistant & Lab Coordinator"
+                              const isTeachingExcellenceAchievement = experience.company === "Instituto Superior Técnico" && 
+                                experience.role === "Teacher Assistant & Lab Coordinator" && 
+                                index === 1;
+                              // Check if this is the Ocean Floor paper-related achievement
+                              // It's the first achievement (index 0) in the "Brazilian Center for Research in Physics" experience
+                              const isOceanFloorPaperAchievement = experience.company === "Brazilian Center for Research in Physics" && index === 0;
                               
                               return (
                                 <Text
@@ -361,6 +375,58 @@ export default function About() {
                                         }}
                                       >
                                         View GAIA Project
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isAthensGrantAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#Athens-Mobility-Grant"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Award
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isENIACPaperAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#ENIAC-Paper"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Publication
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isTeachingExcellenceAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#Teaching-Excellence-Award"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Award
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isOceanFloorPaperAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#Ocean-Floor-Paper"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Publication
                                       </SmartLink>
                                     </>
                                   )}
@@ -491,10 +557,10 @@ export default function About() {
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                             <Heading 
-                              id={paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ? "FTH-Paper" : undefined}
+                              id={paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ? "FTH-Paper" : paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" ? "ENIAC-Paper" : paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" ? "Ocean-Floor-Paper" : undefined}
                               variant="heading-strong-l" 
                               onBackground="neutral-strong"
-                              style={paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ? { scrollMarginTop: "140px" } : {}}
+                              style={(paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" || paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" || paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network") ? { scrollMarginTop: "140px" } : {}}
                             >
                               <em>{paper.title}</em>
                             </Heading>
@@ -750,7 +816,12 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text id={award.title} variant="heading-strong-l" onBackground="neutral-strong">
+                          <Text 
+                            id={award.title === "Athens Mobility Grant" ? "Athens-Mobility-Grant" : award.title === "Diploma of Teaching Excellence" ? "Teaching-Excellence-Award" : award.title} 
+                            variant="heading-strong-l" 
+                            onBackground="neutral-strong"
+                            style={(award.title === "Athens Mobility Grant" || award.title === "Diploma of Teaching Excellence") ? { scrollMarginTop: "140px" } : {}}
+                          >
                             {award.title}
                           </Text>
                           <Text variant="body-default-s" onBackground="brand-weak">
