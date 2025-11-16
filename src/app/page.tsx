@@ -353,7 +353,8 @@ export default function About() {
                                     </>
                                   )}
                                   {isFTHPaperAchievement && (
-                                    <>{" "}
+                                    <>
+                                      {" "}
                                       <SmartLink
                                         href="#FTH-Paper"
                                         style={{ 
@@ -362,6 +363,16 @@ export default function About() {
                                         }}
                                       >
                                         View Publication
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
+                                        href="#SSRN-Top-Paper-Award"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Award
                                       </SmartLink>
                                     </>
                                   )}
