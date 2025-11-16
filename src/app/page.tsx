@@ -281,10 +281,10 @@ export default function About() {
                             >
                               <Column style={{ flex: 1, gap: "4px" }}>
                                 <Text 
-                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer" ? "AI-Data-Engineer-EY" : experience.role} 
+                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer" ? "AI-Data-Engineer-EY" : experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern" ? "VR-Intern-KULeuven" : experience.role} 
                                   variant="heading-strong-l" 
                                   onBackground="neutral-strong"
-                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") || (experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer") || (experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer") ? { scrollMarginTop: "140px" } : {}}
+                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") || (experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer") || (experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer") || (experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern") ? { scrollMarginTop: "140px" } : {}}
                                 >
                                   {experience.role}
                                 </Text>
@@ -1050,6 +1050,19 @@ export default function About() {
                           {" "}
                           <SmartLink
                             href="#Quantitative-Researcher-Independent"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {award.title === "Athens Mobility Grant" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#VR-Intern-KULeuven"
                             style={{ 
                               color: "#0066cc",
                               textDecoration: "underline"
