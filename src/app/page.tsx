@@ -15,6 +15,8 @@ import { baseURL, about, person, social } from "@/resources";
 import styles from "@/components/about/about.module.scss";
 import { SectionNavigation } from "@/components/SectionNavigation";
 import { CollapsibleSection } from "@/components/CollapsibleSection";
+import { PresentIndicator } from "@/components/PresentIndicator";
+import { isPresent } from "@/utils/timeframeUtils";
 import React from "react";
 
 // Type definitions for optional properties
@@ -300,9 +302,12 @@ export default function About() {
                                 </Text>
                               </Column>
                               <Column style={{ alignItems: "flex-end", gap: "4px" }}>
-                                <Text variant="heading-default-xs" onBackground="neutral-weak">
-                                  {experience.timeframe}
-                                </Text>
+                                <Flex style={{ alignItems: "center", gap: "4px" }}>
+                                  <Text variant="heading-default-xs" onBackground="neutral-weak">
+                                    {experience.timeframe}
+                                  </Text>
+                                  {isPresent(experience.timeframe) && <PresentIndicator />}
+                                </Flex>
                               </Column>
                             </Flex>
                           }
@@ -568,9 +573,12 @@ export default function About() {
                           </Text>
                         </Column>
                         <Column style={{ alignItems: "flex-end", gap: "4px" }}>
-                          <Text variant="heading-default-xs" onBackground="neutral-weak">
-                            {institution.timeframe}
-                          </Text>
+                          <Flex style={{ alignItems: "center", gap: "4px" }}>
+                            <Text variant="heading-default-xs" onBackground="neutral-weak">
+                              {institution.timeframe}
+                            </Text>
+                            {isPresent(institution.timeframe) && <PresentIndicator />}
+                          </Flex>
                           <Text variant="body-default-xs" onBackground="neutral-weak">
                             {institution.gpa}
                           </Text>
@@ -757,9 +765,12 @@ export default function About() {
                           </Column>
                           {activity.timeframe && (
                             <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                              <Text variant="heading-default-xs" onBackground="neutral-weak">
-                                {activity.timeframe}
-                              </Text>
+                              <Flex style={{ alignItems: "center", gap: "4px" }}>
+                                <Text variant="heading-default-xs" onBackground="neutral-weak">
+                                  {activity.timeframe}
+                                </Text>
+                                {isPresent(activity.timeframe) && <PresentIndicator />}
+                              </Flex>
                               {"category" in activity && (activity as { category?: string }).category && (
                                 <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
                                   {(activity as { category: string }).category}
@@ -851,9 +862,12 @@ export default function About() {
                           </Column>
                           <Column style={{ alignItems: "flex-end", gap: "6px" }}>
                             {project.timeframe && (
-                              <Text variant="heading-default-xs" onBackground="neutral-weak">
-                                {project.timeframe}
-                              </Text>
+                              <Flex style={{ alignItems: "center", gap: "4px" }}>
+                                <Text variant="heading-default-xs" onBackground="neutral-weak">
+                                  {project.timeframe}
+                                </Text>
+                                {isPresent(project.timeframe) && <PresentIndicator />}
+                              </Flex>
                             )}
                             {project.category && (
                               <Tag variant="brand" size="s">
