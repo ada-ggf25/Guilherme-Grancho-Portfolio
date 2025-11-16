@@ -830,7 +830,8 @@ export default function About() {
                         <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                           {project.description}
                           {project.title === "Prometheus" && (
-                            <>{" "}
+                            <>
+                              {" "}
                               <SmartLink
                                 href={`#${about.work.title}`}
                                 style={{ 
@@ -839,6 +840,26 @@ export default function About() {
                                 }}
                               >
                                 View Related Experience
+                              </SmartLink>
+                              {" "}
+                              <SmartLink
+                                href="#SSRN-Top-Paper-Award"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Award
+                              </SmartLink>
+                              {" "}
+                              <SmartLink
+                                href="#FTH-Paper"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Publication
                               </SmartLink>
                             </>
                           )}
