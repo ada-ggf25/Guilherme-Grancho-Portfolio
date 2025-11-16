@@ -613,19 +613,20 @@ export default function About() {
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {paper.description}
-                    </Text>
-                    {paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
-                      <Flex style={{ marginTop: "16px", gap: "12px" }}>
-                        <SmartLink
-                          href="#SSRN-Top-Paper-Award"
-                          style={{ textDecoration: "none" }}
-                        >
-                          <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                      {paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#SSRN-Top-Paper-Award"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
                             View Related Award
-                          </Tag>
-                        </SmartLink>
-                      </Flex>
-                    )}
+                          </SmartLink>
+                        </>
+                      )}
+                    </Text>
                     {((paper as PaperWithHighlights).highlights) && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
                         Key highlights: {(paper as PaperWithHighlights).highlights}
