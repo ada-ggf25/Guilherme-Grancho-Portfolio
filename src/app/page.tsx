@@ -280,7 +280,12 @@ export default function About() {
                               style={{ width: "100%", paddingRight: "8px" }}
                             >
                               <Column style={{ flex: 1, gap: "4px" }}>
-                                <Text id={experience.role} variant="heading-strong-l" onBackground="neutral-strong">
+                                <Text 
+                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.role} 
+                                  variant="heading-strong-l" 
+                                  onBackground="neutral-strong"
+                                  style={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? { scrollMarginTop: "140px" } : {}}
+                                >
                                   {experience.role}
                                 </Text>
                                 <Text 
@@ -614,7 +619,8 @@ export default function About() {
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {paper.description}
                       {paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
-                        <>{" "}
+                        <>
+                          {" "}
                           <SmartLink
                             href="#SSRN-Top-Paper-Award"
                             style={{ 
@@ -623,6 +629,16 @@ export default function About() {
                             }}
                           >
                             View Related Award
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#Quantitative-Researcher-Independent"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
                           </SmartLink>
                         </>
                       )}
