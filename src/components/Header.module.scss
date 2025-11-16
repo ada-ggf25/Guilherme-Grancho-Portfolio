@@ -18,25 +18,25 @@
     width: 100%;
 }
 
-/* Apply blur when scrolling - content behind header gets blurred */
+/* Apply blur when scrolling - content behind header gets heavily blurred */
 .position.blurred {
-    backdrop-filter: blur(50px) saturate(200%);
-    -webkit-backdrop-filter: blur(50px) saturate(200%);
-    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(400px) saturate(400%);
+    -webkit-backdrop-filter: blur(400px) saturate(400%);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 /* Dark theme support */
 [data-theme="dark"] .position.blurred {
-    backdrop-filter: blur(50px) saturate(200%);
-    -webkit-backdrop-filter: blur(50px) saturate(200%);
-    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(400px) saturate(400%);
+    -webkit-backdrop-filter: blur(400px) saturate(400%);
+    background: rgba(0, 0, 0, 0.9);
 }
 
 /* Light theme support - make it explicit for clarity */
 [data-theme="light"] .position.blurred {
-    backdrop-filter: blur(50px) saturate(200%);
-    -webkit-backdrop-filter: blur(50px) saturate(200%);
-    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(600px) saturate(500%);
+    -webkit-backdrop-filter: blur(600px) saturate(500%);
+    background: rgba(255, 255, 255, 0.95);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
