@@ -280,7 +280,12 @@ export default function About() {
                               style={{ width: "100%", paddingRight: "8px" }}
                             >
                               <Column style={{ flex: 1, gap: "4px" }}>
-                                <Text id={experience.role} variant="heading-strong-l" onBackground="neutral-strong">
+                                <Text 
+                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer" ? "AI-Data-Engineer-EY" : experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern" ? "VR-Intern-KULeuven" : experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator" ? "Teacher-Assistant-Lab-Coordinator-IST" : experience.role} 
+                                  variant="heading-strong-l" 
+                                  onBackground="neutral-strong"
+                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") || (experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer") || (experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer") || (experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern") || (experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator") ? { scrollMarginTop: "140px" } : {}}
+                                >
                                   {experience.role}
                                 </Text>
                                 <Text 
@@ -306,16 +311,182 @@ export default function About() {
                             as="ul" 
                             style={{ gap: "20px", marginTop: "16px" }}
                           >
-                            {experience.achievements.map((achievement: React.ReactElement, index: number) => (
-                              <Text
-                                as="li"
-                                variant="body-default-m"
-                                key={`${experience.company}-${index}`}
-                                style={{ textAlign: "justify" }}
-                              >
-                                {achievement}
-                              </Text>
-                            ))}
+                            {experience.achievements.map((achievement: React.ReactElement, index: number) => {
+                              // Check if this is the Prometheus-related achievement
+                              // It's the first achievement (index 0) in the "Independent Research" experience
+                              const isPrometheusAchievement = experience.company === "Independent Research" && index === 0;
+                              // Check if this is the FTH paper-related achievement
+                              // It's the second achievement (index 1) in the "Independent Research" experience
+                              const isFTHPaperAchievement = experience.company === "Independent Research" && index === 1;
+                              // Check if this is the GAIA-related achievement
+                              // It's the first achievement (index 0) in the "Eco AI.ly" experience
+                              const isGAIAAchievement = experience.company === "Eco AI.ly" && index === 0;
+                              // Check if this is the Athens Mobility Grant-related achievement
+                              // It's the first achievement (index 0) in the "KU Leuven" experience
+                              const isAthensGrantAchievement = experience.company === "KU Leuven" && index === 0;
+                              // Check if this is the ENIAC paper-related achievement
+                              // It's the first achievement (index 0) in the "Universidade Federal de Ouro Preto" experience
+                              const isENIACPaperAchievement = experience.company === "Universidade Federal de Ouro Preto" && index === 0;
+                              // Check if this is the Teaching Excellence award-related achievement
+                              // It's the second achievement (index 1) in the "Instituto Superior Técnico" experience with role "Teacher Assistant & Lab Coordinator"
+                              const isTeachingExcellenceAchievement = experience.company === "Instituto Superior Técnico" && 
+                                experience.role === "Teacher Assistant & Lab Coordinator" && 
+                                index === 1;
+                              // Check if this is the Ocean Floor paper-related achievement
+                              // It's the first achievement (index 0) in the "Brazilian Center for Research in Physics" experience
+                              const isOceanFloorPaperAchievement = experience.company === "Brazilian Center for Research in Physics" && index === 0;
+                              // Check if this is the GraphRAG project-related achievement
+                              // It's the first achievement (index 0) in the "Ernst & Young" experience
+                              const isGraphRAGProjectAchievement = experience.company === "Ernst & Young" && index === 0;
+                              
+                              return (
+                                <Text
+                                  as="li"
+                                  variant="body-default-m"
+                                  key={`${experience.company}-${index}`}
+                                  style={{ textAlign: "justify" }}
+                                >
+                                  {achievement}
+                                  {isPrometheusAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#Prometheus"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Prometheus Project
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isFTHPaperAchievement && (
+                                    <>
+                                      {" "}
+                                      <SmartLink
+                                        href="#FTH-Paper"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Publication
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
+                                        href="#SSRN-Top-Paper-Award"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Award
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isGAIAAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#GAIA"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View GAIA Project
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isAthensGrantAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#Athens-Mobility-Grant"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Award
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isENIACPaperAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#ENIAC-Paper"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Publication
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isTeachingExcellenceAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#Teaching-Excellence-Award"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Award
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isOceanFloorPaperAchievement && (
+                                    <>
+                                      {" "}
+                                      <SmartLink
+                                        href="#Ocean-Floor-Paper"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Publication
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
+                                        href="#Brazilian-Center-Physics-Grant"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Award
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isGraphRAGProjectAchievement && (
+                                    <>
+                                      {" "}
+                                      <SmartLink
+                                        href="#GraphRAG-Project"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View GraphRAG Project
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
+                                        href="#Compliance-Protocols-EY"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Certification
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                </Text>
+                              );
+                            })}
                           </Column>
                           {experience.images.length > 0 && (
                             <Flex 
@@ -439,7 +610,12 @@ export default function About() {
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                            <Heading variant="heading-strong-l" onBackground="neutral-strong">
+                            <Heading 
+                              id={paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ? "FTH-Paper" : paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" ? "ENIAC-Paper" : paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" ? "Ocean-Floor-Paper" : undefined}
+                              variant="heading-strong-l" 
+                              onBackground="neutral-strong"
+                              style={(paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" || paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" || paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network") ? { scrollMarginTop: "140px" } : {}}
+                            >
                               <em>{paper.title}</em>
                             </Heading>
                             {paper.link && (
@@ -480,6 +656,56 @@ export default function About() {
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {paper.description}
+                      {paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#SSRN-Top-Paper-Award"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Award
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#Quantitative-Researcher-Independent"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#ML-Researcher-UFOP"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#AI-Researcher-CBPF"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
                     </Text>
                     {((paper as PaperWithHighlights).highlights) && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
@@ -584,7 +810,12 @@ export default function About() {
                         >
                           <Column style={{ flex: 1, gap: "6px" }}>
                             <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                              <Heading variant="heading-strong-l" onBackground="neutral-strong">
+                              <Heading 
+                                id={project.title === "Prometheus" ? "Prometheus" : project.title === "GAIA" ? "GAIA" : project.title === "GraphRAG Workflow for AI Agents" ? "GraphRAG-Project" : project.title === "LXthon" ? "LXthon-Project" : project.title === "Ernst & Young AI Hackathon" ? "EY-AI-Hackathon-Project" : undefined}
+                                variant="heading-strong-l" 
+                                onBackground="neutral-strong"
+                                style={(project.title === "Prometheus" || project.title === "GAIA" || project.title === "GraphRAG Workflow for AI Agents" || project.title === "LXthon" || project.title === "Ernst & Young AI Hackathon") ? { scrollMarginTop: "140px" } : {}}
+                              >
                                 {project.title}
                               </Heading>
                               {project.github && (
@@ -636,6 +867,92 @@ export default function About() {
                       {project.description && (
                         <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                           {project.description}
+                          {project.title === "Prometheus" && (
+                            <>
+                              {" "}
+                              <SmartLink
+                                href={`#${about.work.title}`}
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Experience
+                              </SmartLink>
+                              {" "}
+                              <SmartLink
+                                href="#SSRN-Top-Paper-Award"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Award
+                              </SmartLink>
+                              {" "}
+                              <SmartLink
+                                href="#FTH-Paper"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Publication
+                              </SmartLink>
+                            </>
+                          )}
+                          {project.title === "GAIA" && (
+                            <>{" "}
+                              <SmartLink
+                                href="#ML-Engineer-EcoAI"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Experience
+                              </SmartLink>
+                            </>
+                          )}
+                          {project.title === "GraphRAG Workflow for AI Agents" && (
+                            <>{" "}
+                              <SmartLink
+                                href="#AI-Data-Engineer-EY"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Experience
+                              </SmartLink>
+                            </>
+                          )}
+                          {project.title === "LXthon" && (
+                            <>{" "}
+                              <SmartLink
+                                href="#LXthon-Award"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Award
+                              </SmartLink>
+                            </>
+                          )}
+                          {project.title === "Ernst & Young AI Hackathon" && (
+                            <>{" "}
+                              <SmartLink
+                                href="#EY-AI-Challenge-Award"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Award
+                              </SmartLink>
+                            </>
+                          )}
                         </Text>
                       )}
                       {((project as ProjectWithHighlights).highlights) && (
@@ -677,7 +994,12 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text id={award.title} variant="heading-strong-l" onBackground="neutral-strong">
+                          <Text 
+                            id={award.title === "Athens Mobility Grant" ? "Athens-Mobility-Grant" : award.title === "Diploma of Teaching Excellence" ? "Teaching-Excellence-Award" : award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" ? "SSRN-Top-Paper-Award" : award.title === "LXthon Hackathon — 1º Winner" ? "LXthon-Award" : award.title === "EY AI Challenge — Category 1º Place Winner" ? "EY-AI-Challenge-Award" : award.title === "Brazilian Center of Physics Research — Mobility Grant" ? "Brazilian-Center-Physics-Grant" : award.title} 
+                            variant="heading-strong-l" 
+                            onBackground="neutral-strong"
+                            style={(award.title === "Athens Mobility Grant" || award.title === "Diploma of Teaching Excellence" || award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" || award.title === "LXthon Hackathon — 1º Winner" || award.title === "EY AI Challenge — Category 1º Place Winner" || award.title === "Brazilian Center of Physics Research — Mobility Grant") ? { scrollMarginTop: "140px" } : {}}
+                          >
                             {award.title}
                           </Text>
                           <Text variant="body-default-s" onBackground="brand-weak">
@@ -699,6 +1021,116 @@ export default function About() {
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {award.description}
+                      {award.title === "LXthon Hackathon — 1º Winner" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#LXthon-Project"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View LXthon Project
+                          </SmartLink>
+                        </>
+                      )}
+                      {award.title === "EY AI Challenge — Category 1º Place Winner" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#EY-AI-Hackathon-Project"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View EY AI Hackathon Project
+                          </SmartLink>
+                        </>
+                      )}
+                      {award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#Prometheus"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Prometheus Project
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#FTH-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#Quantitative-Researcher-Independent"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {award.title === "Athens Mobility Grant" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#VR-Intern-KULeuven"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {award.title === "Diploma of Teaching Excellence" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#Teacher-Assistant-Lab-Coordinator-IST"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {award.title === "Brazilian Center of Physics Research — Mobility Grant" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#AI-Researcher-CBPF"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#Ocean-Floor-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Publication
+                          </SmartLink>
+                        </>
+                      )}
                     </Text>
                     {award.associated_with && award.associated_with.trim() && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
@@ -734,7 +1166,12 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text id={certification.title} variant="heading-strong-l" onBackground="neutral-strong">
+                          <Text 
+                            id={certification.title === "Compliance & Protocols for Global Clients" ? "Compliance-Protocols-EY" : certification.title} 
+                            variant="heading-strong-l" 
+                            onBackground="neutral-strong"
+                            style={certification.title === "Compliance & Protocols for Global Clients" ? { scrollMarginTop: "140px" } : {}}
+                          >
                             {certification.title}
                           </Text>
                           <Text variant="body-default-s" onBackground="brand-weak">
@@ -757,6 +1194,19 @@ export default function About() {
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {certification.description}
+                      {certification.title === "Compliance & Protocols for Global Clients" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#AI-Data-Engineer-EY"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
                     </Text>
                     {(certification.associated_with?.trim() || (certification as CertificationWithCredential).credential_id?.trim()) && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>

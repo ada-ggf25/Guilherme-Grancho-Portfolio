@@ -443,7 +443,7 @@ const about = {
         description: <>I completed the paper <em>The Atomic Nucleus - Discoveries of Modern Physics</em> in the Discoveries of Modern Physics course. I am proud to share that I finished the course with a 20/20 grade, thanks to this paper and my poster presentation at the Congress Center of Instituto Superior Técnico.</>,
       },
       {
-        title: "Hippocrates&apos; Feather",
+        title: "Hippocrates' Feather",
         technologies: "Python, Streamlit, FastAPI, OpenAI API, PostgreSQL, SQLAlchemy, Pydantic, WebRTC, Natural Language Processing, AI Agent",
         timeframe: "Oct 2025",
         category: "Healthcare AI",
