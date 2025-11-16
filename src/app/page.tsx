@@ -1025,6 +1025,40 @@ export default function About() {
                           </SmartLink>
                         </>
                       )}
+                      {award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#Prometheus"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Prometheus Project
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#FTH-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#Quantitative-Researcher-Independent"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
                     </Text>
                     {award.associated_with && award.associated_with.trim() && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
