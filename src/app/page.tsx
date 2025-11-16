@@ -829,19 +829,20 @@ export default function About() {
                       {project.description && (
                         <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                           {project.description}
+                          {project.title === "Prometheus" && (
+                            <>{" "}
+                              <SmartLink
+                                href={`#${about.work.title}`}
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Experience
+                              </SmartLink>
+                            </>
+                          )}
                         </Text>
-                      )}
-                      {project.title === "Prometheus" && (
-                        <Flex style={{ marginTop: "16px", gap: "12px" }}>
-                          <SmartLink
-                            href={`#${about.work.title}`}
-                            style={{ textDecoration: "none" }}
-                          >
-                            <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                              View Related Experience
-                            </Tag>
-                          </SmartLink>
-                        </Flex>
                       )}
                       {((project as ProjectWithHighlights).highlights) && (
                         <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px", textAlign: "justify" }}>
