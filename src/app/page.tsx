@@ -603,6 +603,18 @@ export default function About() {
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       {paper.description}
                     </Text>
+                    {paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
+                      <Flex style={{ marginTop: "16px", gap: "12px" }}>
+                        <SmartLink
+                          href="#SSRN-Top-Paper-Award"
+                          style={{ textDecoration: "none" }}
+                        >
+                          <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                            View Related Award
+                          </Tag>
+                        </SmartLink>
+                      </Flex>
+                    )}
                     {((paper as PaperWithHighlights).highlights) && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
                         Key highlights: {(paper as PaperWithHighlights).highlights}
@@ -817,10 +829,10 @@ export default function About() {
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Text 
-                            id={award.title === "Athens Mobility Grant" ? "Athens-Mobility-Grant" : award.title === "Diploma of Teaching Excellence" ? "Teaching-Excellence-Award" : award.title} 
+                            id={award.title === "Athens Mobility Grant" ? "Athens-Mobility-Grant" : award.title === "Diploma of Teaching Excellence" ? "Teaching-Excellence-Award" : award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" ? "SSRN-Top-Paper-Award" : award.title} 
                             variant="heading-strong-l" 
                             onBackground="neutral-strong"
-                            style={(award.title === "Athens Mobility Grant" || award.title === "Diploma of Teaching Excellence") ? { scrollMarginTop: "140px" } : {}}
+                            style={(award.title === "Athens Mobility Grant" || award.title === "Diploma of Teaching Excellence" || award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak") ? { scrollMarginTop: "140px" } : {}}
                           >
                             {award.title}
                           </Text>
