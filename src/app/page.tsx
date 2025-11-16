@@ -281,10 +281,10 @@ export default function About() {
                             >
                               <Column style={{ flex: 1, gap: "4px" }}>
                                 <Text 
-                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.role} 
+                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer" ? "AI-Data-Engineer-EY" : experience.role} 
                                   variant="heading-strong-l" 
                                   onBackground="neutral-strong"
-                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") || (experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer") ? { scrollMarginTop: "140px" } : {}}
+                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") || (experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer") || (experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer") ? { scrollMarginTop: "140px" } : {}}
                                 >
                                   {experience.role}
                                 </Text>
@@ -335,6 +335,9 @@ export default function About() {
                               // Check if this is the Ocean Floor paper-related achievement
                               // It's the first achievement (index 0) in the "Brazilian Center for Research in Physics" experience
                               const isOceanFloorPaperAchievement = experience.company === "Brazilian Center for Research in Physics" && index === 0;
+                              // Check if this is the GraphRAG project-related achievement
+                              // It's the first achievement (index 0) in the "Ernst & Young" experience
+                              const isGraphRAGProjectAchievement = experience.company === "Ernst & Young" && index === 0;
                               
                               return (
                                 <Text
@@ -443,6 +446,19 @@ export default function About() {
                                         }}
                                       >
                                         View Publication
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isGraphRAGProjectAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#GraphRAG-Project"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View GraphRAG Project
                                       </SmartLink>
                                     </>
                                   )}
@@ -773,10 +789,10 @@ export default function About() {
                           <Column style={{ flex: 1, gap: "6px" }}>
                             <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                               <Heading 
-                                id={project.title === "Prometheus" ? "Prometheus" : project.title === "GAIA" ? "GAIA" : undefined}
+                                id={project.title === "Prometheus" ? "Prometheus" : project.title === "GAIA" ? "GAIA" : project.title === "GraphRAG Workflow for AI Agents" ? "GraphRAG-Project" : undefined}
                                 variant="heading-strong-l" 
                                 onBackground="neutral-strong"
-                                style={(project.title === "Prometheus" || project.title === "GAIA") ? { scrollMarginTop: "140px" } : {}}
+                                style={(project.title === "Prometheus" || project.title === "GAIA" || project.title === "GraphRAG Workflow for AI Agents") ? { scrollMarginTop: "140px" } : {}}
                               >
                                 {project.title}
                               </Heading>
@@ -867,6 +883,19 @@ export default function About() {
                             <>{" "}
                               <SmartLink
                                 href="#ML-Engineer-EcoAI"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Experience
+                              </SmartLink>
+                            </>
+                          )}
+                          {project.title === "GraphRAG Workflow for AI Agents" && (
+                            <>{" "}
+                              <SmartLink
+                                href="#AI-Data-Engineer-EY"
                                 style={{ 
                                   color: "#0066cc",
                                   textDecoration: "underline"
