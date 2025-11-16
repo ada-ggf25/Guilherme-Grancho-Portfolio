@@ -313,6 +313,9 @@ export default function About() {
                               // Check if this is the FTH paper-related achievement
                               // It's the second achievement (index 1) in the "Independent Research" experience
                               const isFTHPaperAchievement = experience.company === "Independent Research" && index === 1;
+                              // Check if this is the GAIA-related achievement
+                              // It's the first achievement (index 0) in the "Eco AI.ly" experience
+                              const isGAIAAchievement = experience.company === "Eco AI.ly" && index === 0;
                               
                               return (
                                 <Text
@@ -345,6 +348,19 @@ export default function About() {
                                         }}
                                       >
                                         View Publication
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isGAIAAchievement && (
+                                    <>{" "}
+                                      <SmartLink
+                                        href="#GAIA"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View GAIA Project
                                       </SmartLink>
                                     </>
                                   )}
@@ -625,10 +641,10 @@ export default function About() {
                           <Column style={{ flex: 1, gap: "6px" }}>
                             <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                               <Heading 
-                                id={project.title === "Prometheus" ? "Prometheus" : undefined}
+                                id={project.title === "Prometheus" ? "Prometheus" : project.title === "GAIA" ? "GAIA" : undefined}
                                 variant="heading-strong-l" 
                                 onBackground="neutral-strong"
-                                style={project.title === "Prometheus" ? { scrollMarginTop: "140px" } : {}}
+                                style={(project.title === "Prometheus" || project.title === "GAIA") ? { scrollMarginTop: "140px" } : {}}
                               >
                                 {project.title}
                               </Heading>
