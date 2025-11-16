@@ -437,7 +437,8 @@ export default function About() {
                                     </>
                                   )}
                                   {isOceanFloorPaperAchievement && (
-                                    <>{" "}
+                                    <>
+                                      {" "}
                                       <SmartLink
                                         href="#Ocean-Floor-Paper"
                                         style={{ 
@@ -446,6 +447,16 @@ export default function About() {
                                         }}
                                       >
                                         View Publication
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
+                                        href="#Brazilian-Center-Physics-Grant"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Award
                                       </SmartLink>
                                     </>
                                   )}
@@ -984,10 +995,10 @@ export default function About() {
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Text 
-                            id={award.title === "Athens Mobility Grant" ? "Athens-Mobility-Grant" : award.title === "Diploma of Teaching Excellence" ? "Teaching-Excellence-Award" : award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" ? "SSRN-Top-Paper-Award" : award.title === "LXthon Hackathon — 1º Winner" ? "LXthon-Award" : award.title === "EY AI Challenge — Category 1º Place Winner" ? "EY-AI-Challenge-Award" : award.title} 
+                            id={award.title === "Athens Mobility Grant" ? "Athens-Mobility-Grant" : award.title === "Diploma of Teaching Excellence" ? "Teaching-Excellence-Award" : award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" ? "SSRN-Top-Paper-Award" : award.title === "LXthon Hackathon — 1º Winner" ? "LXthon-Award" : award.title === "EY AI Challenge — Category 1º Place Winner" ? "EY-AI-Challenge-Award" : award.title === "Brazilian Center of Physics Research — Mobility Grant" ? "Brazilian-Center-Physics-Grant" : award.title} 
                             variant="heading-strong-l" 
                             onBackground="neutral-strong"
-                            style={(award.title === "Athens Mobility Grant" || award.title === "Diploma of Teaching Excellence" || award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" || award.title === "LXthon Hackathon — 1º Winner" || award.title === "EY AI Challenge — Category 1º Place Winner") ? { scrollMarginTop: "140px" } : {}}
+                            style={(award.title === "Athens Mobility Grant" || award.title === "Diploma of Teaching Excellence" || award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" || award.title === "LXthon Hackathon — 1º Winner" || award.title === "EY AI Challenge — Category 1º Place Winner" || award.title === "Brazilian Center of Physics Research — Mobility Grant") ? { scrollMarginTop: "140px" } : {}}
                           >
                             {award.title}
                           </Text>
