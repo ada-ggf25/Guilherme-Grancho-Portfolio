@@ -43,9 +43,10 @@ export default function About() {
     { id: about.extracurricular.title, label: "Extracurricular" },
     { id: about.keyProjects.title, label: "Projects" },
     { id: about.awards.title, label: "Awards" },
+    { id: about.certifications.title, label: "Certifications" },
+    { id: about.podcasts.title, label: "Podcasts" },
     { id: about.values.title, label: "Values" },
-    { id: about.hobbies.title, label: "Hobbies" },
-    { id: about.podcasts.title, label: "Podcasts" }
+    { id: about.hobbies.title, label: "Hobbies" }
   ];
 
   return (
