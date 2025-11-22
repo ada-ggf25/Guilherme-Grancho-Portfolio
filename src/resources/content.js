@@ -639,6 +639,11 @@ const about = {
       },
     ],
   },
+  podcasts: {
+    display: true, // set to false to hide this section
+    title: "Podcasts",
+    episodes: [],
+  },
   achievements: {
     display: true, // set to false to hide this section
     title: "Key Achievements",

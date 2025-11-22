@@ -44,7 +44,8 @@ export default function About() {
     { id: about.keyProjects.title, label: "Projects" },
     { id: about.awards.title, label: "Awards" },
     { id: about.values.title, label: "Values" },
-    { id: about.hobbies.title, label: "Hobbies" }
+    { id: about.hobbies.title, label: "Hobbies" },
+    { id: about.podcasts.title, label: "Podcasts" }
   ];
 
   return (
@@ -1231,6 +1232,25 @@ export default function About() {
                     )}
                   </CollapsibleSection>
                 ))}
+              </Column>
+            </>
+          )}
+
+          {/* Podcasts Section */}
+          {about.podcasts.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.podcasts.title}
+                variant="display-strong-s"
+                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
+              >
+                {about.podcasts.title}
+              </Heading>
+              <Column 
+                style={{ gap: "var(--static-space-s)", marginBottom: "20px", width: "100%" }}
+              >
+                {/* Podcasts content will be added here */}
               </Column>
             </>
           )}
