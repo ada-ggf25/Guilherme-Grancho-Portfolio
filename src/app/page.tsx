@@ -1309,7 +1309,7 @@ export default function About() {
                     }
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
-                      {episode.title}.
+                      Podcast Presenting the Paper <em>{episode.paperTitle}</em>.
                     </Text>
                   </CollapsibleSection>
                 ))}
