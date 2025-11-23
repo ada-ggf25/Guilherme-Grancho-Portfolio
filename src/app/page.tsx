@@ -457,7 +457,7 @@ export default function About() {
                                     <>
                                       {" "}
                                       <SmartLink
-                                        href="#ML-Fine-Tuning-Podcast"
+                                        href="#Mapping-Deep-AI-Podcast"
                                         style={{ 
                                           color: "#0066cc",
                                           textDecoration: "underline"
@@ -746,7 +746,7 @@ export default function About() {
                       {paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
                         <>{" "}
                           <SmartLink
-                            href="#ML-Fine-Tuning-Podcast"
+                            href="#Mapping-Deep-AI-Podcast"
                             style={{ 
                               color: "#0066cc",
                               textDecoration: "underline"
@@ -1331,10 +1331,10 @@ export default function About() {
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                             <Text 
-                              id={episode.title === "Prometheus Presents The Financial Torque Hypothesis" ? "FTH-Podcast" : episode.title === "Automating Machine Learning Fine Tuning" ? "ML-Fine-Tuning-Podcast" : undefined}
+                              id={episode.title === "Prometheus Presents The Financial Torque Hypothesis" ? "FTH-Podcast" : episode.title === "Mapping the Deep with AI" ? "Mapping-Deep-AI-Podcast" : undefined}
                               variant="heading-strong-l" 
                               onBackground="neutral-strong"
-                              style={(episode.title === "Prometheus Presents The Financial Torque Hypothesis" || episode.title === "Automating Machine Learning Fine Tuning") ? { scrollMarginTop: "140px" } : {}}
+                              style={(episode.title === "Prometheus Presents The Financial Torque Hypothesis" || episode.title === "Mapping the Deep with AI") ? { scrollMarginTop: "140px" } : {}}
                             >
                               {episode.title}
                             </Text>
@@ -1385,7 +1385,7 @@ export default function About() {
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       Podcast Presenting the Paper <em>{episode.paperTitle}</em>.
-                      {episode.title === "Automating Machine Learning Fine Tuning" && (
+                      {episode.paperTitle === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
                         <>
                           {" "}
                           <SmartLink
