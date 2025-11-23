@@ -457,6 +457,16 @@ export default function About() {
                                     <>
                                       {" "}
                                       <SmartLink
+                                        href="#ML-Fine-Tuning-Podcast"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Podcast
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
                                         href="#Ocean-Floor-Paper"
                                         style={{ 
                                           color: "#0066cc",
@@ -735,6 +745,16 @@ export default function About() {
                       )}
                       {paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
                         <>{" "}
+                          <SmartLink
+                            href="#ML-Fine-Tuning-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
                           <SmartLink
                             href="#AI-Researcher-CBPF"
                             style={{ 
@@ -1311,10 +1331,10 @@ export default function About() {
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                             <Text 
-                              id={episode.title === "Prometheus Presents The Financial Torque Hypothesis" ? "FTH-Podcast" : undefined}
+                              id={episode.title === "Prometheus Presents The Financial Torque Hypothesis" ? "FTH-Podcast" : episode.title === "Automating Machine Learning Fine Tuning" ? "ML-Fine-Tuning-Podcast" : undefined}
                               variant="heading-strong-l" 
                               onBackground="neutral-strong"
-                              style={episode.title === "Prometheus Presents The Financial Torque Hypothesis" ? { scrollMarginTop: "140px" } : {}}
+                              style={(episode.title === "Prometheus Presents The Financial Torque Hypothesis" || episode.title === "Automating Machine Learning Fine Tuning") ? { scrollMarginTop: "140px" } : {}}
                             >
                               {episode.title}
                             </Text>
@@ -1365,6 +1385,30 @@ export default function About() {
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       Podcast Presenting the Paper <em>{episode.paperTitle}</em>.
+                      {episode.title === "Automating Machine Learning Fine Tuning" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#Ocean-Floor-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#AI-Researcher-CBPF"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
                       {episode.paperTitle === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
                         <>
                           {" "}
