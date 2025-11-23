@@ -1266,18 +1266,6 @@ export default function About() {
                             >
                               <em>{episode.title}</em>
                             </Heading>
-                            {episode.link && (
-                              <SmartLink
-                                href={episode.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none" }}
-                              >
-                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                                  View Podcast
-                                </Tag>
-                              </SmartLink>
-                            )}
                             {episode.trailerLink && (
                               <SmartLink
                                 href={episode.trailerLink}
@@ -1287,6 +1275,18 @@ export default function About() {
                               >
                                 <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
                                   View Trailer
+                                </Tag>
+                              </SmartLink>
+                            )}
+                            {episode.link && (
+                              <SmartLink
+                                href={episode.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  View Podcast
                                 </Tag>
                               </SmartLink>
                             )}
