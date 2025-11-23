@@ -1248,10 +1248,65 @@ export default function About() {
               >
                 {about.podcasts.title}
               </Heading>
-              <Column 
-                style={{ gap: "var(--static-space-s)", marginBottom: "20px", width: "100%" }}
-              >
-                {/* Podcasts content will be added here */}
+              <Column style={{ gap: "12px", marginBottom: "20px" }}>
+                {about.podcasts.episodes.map((episode, index) => (
+                  <CollapsibleSection
+                    key={index}
+                    header={
+                      <Flex
+                        horizontal="between"
+                        vertical="end"
+                        style={{ width: "100%", paddingRight: "8px" }}
+                      >
+                        <Column style={{ flex: 1, gap: "6px" }}>
+                          <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
+                            <Heading 
+                              variant="heading-strong-l" 
+                              onBackground="neutral-strong"
+                            >
+                              <em>{episode.title}</em>
+                            </Heading>
+                            {episode.link && (
+                              <SmartLink
+                                href={episode.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  View Podcast
+                                </Tag>
+                              </SmartLink>
+                            )}
+                          </Flex>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            {episode.authors}
+                          </Text>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {episode.venue}
+                          </Text>
+                        </Column>
+                        <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                          {episode.date && (
+                            <Text variant="heading-default-xs" onBackground="neutral-weak">
+                              {episode.date}
+                            </Text>
+                          )}
+                          <Tag variant="brand" size="s">
+                            {episode.category}
+                          </Tag>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {episode.type}
+                          </Text>
+                        </Column>
+                      </Flex>
+                    }
+                  >
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                      {episode.description}
+                    </Text>
+                  </CollapsibleSection>
+                ))}
               </Column>
             </>
           )}

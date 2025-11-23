@@ -642,7 +642,41 @@ const about = {
   podcasts: {
     display: true, // set to false to hide this section
     title: "Podcasts",
-    episodes: [],
+    episodes: [
+      {
+        title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
+        authors: "Guilherme Grancho, Vasco Pereira",
+        venue: "YouTube",
+        date: "Jun 20, 2025",
+        type: "Podcast Episode",
+        description: <>Podcast discussion about the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies.</>,
+        link: "https://www.youtube.com/watch?v=f25aLdta0rI",
+        category: "Quantitative Finance",
+        artifacts: "YouTube video + Show podcast link",
+      },
+      {
+        title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
+        authors: "Guilherme Grancho, Talles Medeiros",
+        venue: "YouTube",
+        date: "Nov 21, 2024",
+        type: "Podcast Episode",
+        description: <>Podcast discussion about ML-integrated lexicographic strategy, analysis of tolerance–outcome relations, cross-dataset validation. Automated tolerance selection improves computational efficiency and accuracy, emphasizes the importance of tolerance in lexicographic MOO.</>,
+        link: "https://www.youtube.com/watch?v=2PXVltl75NU",
+        category: "Machine Learning Optimization",
+        artifacts: "YouTube video + Show podcast link",
+      },
+      {
+        title: "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
+        authors: "Guilherme Grancho, Vitor Oliveira, João Astolfo",
+        venue: "YouTube",
+        date: "Feb 28, 2023",
+        type: "Podcast Episode",
+        description: <>Podcast discussion about applying CNNs to bathymetric imagery to classify/segment seabed layers. Supervised CNN pipeline, dataset curation and analysis, evaluation on geoscience targets and regions. Demonstrates CNN feasibility for ocean-floor mapping and yields actionable geophysical insights.</>,
+        link: "https://www.youtube.com/watch?v=M8IC5wnn5l4&t=47s",
+        category: "Deep Learning",
+        artifacts: "YouTube video + Show podcast link",
+      },
+    ],
   },
   achievements: {
     display: true, // set to false to hide this section
