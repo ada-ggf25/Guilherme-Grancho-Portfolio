@@ -43,6 +43,8 @@ export default function About() {
     { id: about.extracurricular.title, label: "Extracurricular" },
     { id: about.keyProjects.title, label: "Projects" },
     { id: about.awards.title, label: "Awards" },
+    { id: about.certifications.title, label: "Certifications" },
+    { id: about.podcasts.title, label: "Podcasts" },
     { id: about.values.title, label: "Values" },
     { id: about.hobbies.title, label: "Hobbies" }
   ];
@@ -369,6 +371,16 @@ export default function About() {
                                     <>
                                       {" "}
                                       <SmartLink
+                                        href="#FTH-Podcast"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Podcast
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
                                         href="#FTH-Paper"
                                         style={{ 
                                           color: "#0066cc",
@@ -416,7 +428,18 @@ export default function About() {
                                     </>
                                   )}
                                   {isENIACPaperAchievement && (
-                                    <>{" "}
+                                    <>
+                                      {" "}
+                                      <SmartLink
+                                        href="#ML-Fine-Tuning-Podcast"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Podcast
+                                      </SmartLink>
+                                      {" "}
                                       <SmartLink
                                         href="#ENIAC-Paper"
                                         style={{ 
@@ -443,6 +466,16 @@ export default function About() {
                                   )}
                                   {isOceanFloorPaperAchievement && (
                                     <>
+                                      {" "}
+                                      <SmartLink
+                                        href="#Mapping-Deep-AI-Podcast"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Podcast
+                                      </SmartLink>
                                       {" "}
                                       <SmartLink
                                         href="#Ocean-Floor-Paper"
@@ -668,6 +701,26 @@ export default function About() {
                         <>
                           {" "}
                           <SmartLink
+                            href="#Prometheus"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Prometheus Project
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#FTH-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
                             href="#SSRN-Top-Paper-Award"
                             style={{ 
                               color: "#0066cc",
@@ -691,6 +744,16 @@ export default function About() {
                       {paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
                         <>{" "}
                           <SmartLink
+                            href="#ML-Fine-Tuning-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
                             href="#ML-Researcher-UFOP"
                             style={{ 
                               color: "#0066cc",
@@ -703,6 +766,16 @@ export default function About() {
                       )}
                       {paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
                         <>{" "}
+                          <SmartLink
+                            href="#Mapping-Deep-AI-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
                           <SmartLink
                             href="#AI-Researcher-CBPF"
                             style={{ 
@@ -885,6 +958,16 @@ export default function About() {
                             <>
                               {" "}
                               <SmartLink
+                                href="#FTH-Podcast"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Podcast
+                              </SmartLink>
+                              {" "}
+                              <SmartLink
                                 href={`#${about.work.title}`}
                                 style={{ 
                                   color: "#0066cc",
@@ -1065,6 +1148,16 @@ export default function About() {
                         <>
                           {" "}
                           <SmartLink
+                            href="#FTH-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
                             href="#Prometheus"
                             style={{ 
                               color: "#0066cc",
@@ -1229,6 +1322,183 @@ export default function About() {
                         {(certification as CertificationWithCredential).credential_id?.trim() && `Credential ID: ${(certification as CertificationWithCredential).credential_id}`}
                       </Text>
                     )}
+                  </CollapsibleSection>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {/* Podcasts Section */}
+          {about.podcasts.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.podcasts.title}
+                variant="display-strong-s"
+                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
+              >
+                {about.podcasts.title}
+              </Heading>
+              <Column style={{ gap: "12px", marginBottom: "20px" }}>
+                {about.podcasts.episodes.map((episode, index) => (
+                  <CollapsibleSection
+                    key={index}
+                    header={
+                      <Flex
+                        horizontal="between"
+                        vertical="end"
+                        style={{ width: "100%", paddingRight: "8px" }}
+                      >
+                        <Column style={{ flex: 1, gap: "6px" }}>
+                          <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
+                            <Text 
+                              id={episode.title === "Prometheus Presents The Financial Torque Hypothesis" ? "FTH-Podcast" : episode.title === "Mapping the Deep with AI" ? "Mapping-Deep-AI-Podcast" : episode.title === "Automating Machine Learning Fine Tuning" ? "ML-Fine-Tuning-Podcast" : undefined}
+                              variant="heading-strong-l" 
+                              onBackground="neutral-strong"
+                              style={(episode.title === "Prometheus Presents The Financial Torque Hypothesis" || episode.title === "Mapping the Deep with AI" || episode.title === "Automating Machine Learning Fine Tuning") ? { scrollMarginTop: "140px" } : {}}
+                            >
+                              {episode.title}
+                            </Text>
+                            {episode.trailerLink && (
+                              <SmartLink
+                                href={episode.trailerLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  View Trailer
+                                </Tag>
+                              </SmartLink>
+                            )}
+                            {episode.link && (
+                              <SmartLink
+                                href={episode.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  View Podcast
+                                </Tag>
+                              </SmartLink>
+                            )}
+                          </Flex>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            YouTube
+                          </Text>
+                        </Column>
+                        <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                          {episode.date && (
+                            <Text variant="heading-default-xs" onBackground="neutral-weak">
+                              {episode.date}
+                            </Text>
+                          )}
+                          <Tag variant="brand" size="s">
+                            {episode.category}
+                          </Tag>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {episode.type}
+                          </Text>
+                        </Column>
+                      </Flex>
+                    }
+                  >
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                      Podcast Presenting the Paper <em>{episode.paperTitle}</em>.
+                      {episode.paperTitle === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#ENIAC-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#ML-Researcher-UFOP"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {episode.paperTitle === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#Ocean-Floor-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#AI-Researcher-CBPF"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {episode.paperTitle === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#Prometheus"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Prometheus Project
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#FTH-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#SSRN-Top-Paper-Award"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Award
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#Quantitative-Researcher-Independent"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                    </Text>
                   </CollapsibleSection>
                 ))}
               </Column>

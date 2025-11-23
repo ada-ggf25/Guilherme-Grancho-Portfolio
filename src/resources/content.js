@@ -184,7 +184,7 @@ const about = {
             Lead Prometheus, an independent research platform pairing deep learning with quantitative finance to deliver real-time Financial Torque Hypothesis (FTH) insights via an open-source web app, public website, and GitHub codebase.
           </>,
           <>
-            Co-authored the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, demonstrating FTH-driven forecasting performance.
+            Co-authored the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, demonstrating FTH-driven forecasting performance with ~87% directional accuracy on a 3-hour horizon. This research was recognised with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award, appearing on the SSRN Top Downloads list for 9–12 Aug 2025.
           </>,
           <>
             Currently developing the manuscript <em>Integrating the Financial Torque Hypothesis into Advanced Algorithmic Portfolio Management</em> to extend FTH signals into systematic trading pipelines.
@@ -524,7 +524,7 @@ const about = {
     accomplishments: [
       {
         title: "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak",
-        description: <>My paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, with Vasco Pereira, appeared on the SSRN Top Downloads list for 9–12 Aug 2025.</>,
+        description: <>My paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, with Vasco Pereira, appeared on the SSRN Top Downloads list for 9–12 Aug 2025. This work, which introduces the Financial Torque Hypothesis proposing that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction, was developed during my role as Quantitative Researcher at Independent Research, where I co-authored this published study demonstrating FTH-driven forecasting performance with ~87% directional accuracy on a 3-hour horizon.</>,
         category: "",
         year: "Aug 2025",
         issuer: "SSRN — The Financial Economics Network",
@@ -639,6 +639,51 @@ const about = {
       },
     ],
   },
+  podcasts: {
+    display: true, // set to false to hide this section
+    title: "Podcasts",
+    episodes: [
+      {
+        title: "Prometheus Presents The Financial Torque Hypothesis",
+        paperTitle: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
+        authors: "Guilherme Grancho, Vasco Pereira",
+        venue: "YouTube",
+        date: "Jun 20, 2025",
+        type: "Podcast Episode",
+        description: <>Podcast discussion about the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies.</>,
+        link: "https://www.youtube.com/watch?v=f25aLdta0rI",
+        trailerLink: "https://www.youtube.com/watch?v=gGyM_93hNKU&t=189s",
+        category: "Quantitative Finance",
+        artifacts: "YouTube video + Show podcast link",
+      },
+      {
+        title: "Automating Machine Learning Fine Tuning",
+        paperTitle: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
+        authors: "Guilherme Grancho, Talles Medeiros",
+        venue: "YouTube",
+        date: "Nov 21, 2024",
+        type: "Podcast Episode",
+        description: <>Podcast discussion about ML-integrated lexicographic strategy, analysis of tolerance–outcome relations, cross-dataset validation. Automated tolerance selection improves computational efficiency and accuracy, emphasizes the importance of tolerance in lexicographic MOO.</>,
+        link: "https://www.youtube.com/watch?v=2PXVltl75NU",
+        trailerLink: "https://www.youtube.com/watch?v=DifMTKa5-ys",
+        category: "Machine Learning Optimization",
+        artifacts: "YouTube video + Show podcast link",
+      },
+      {
+        title: "Mapping the Deep with AI",
+        paperTitle: "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
+        authors: "Guilherme Grancho, Vitor Oliveira, João Astolfo",
+        venue: "YouTube",
+        date: "Feb 28, 2023",
+        type: "Podcast Episode",
+        description: <>Podcast discussion about applying CNNs to bathymetric imagery to classify/segment seabed layers. Supervised CNN pipeline, dataset curation and analysis, evaluation on geoscience targets and regions. Demonstrates CNN feasibility for ocean-floor mapping and yields actionable geophysical insights.</>,
+        link: "https://www.youtube.com/watch?v=M8IC5wnn5l4&t=47s",
+        trailerLink: "https://www.youtube.com/watch?v=CXfxdQrAotE",
+        category: "Deep Learning",
+        artifacts: "YouTube video + Show podcast link",
+      },
+    ],
+  },
   achievements: {
     display: true, // set to false to hide this section
     title: "Key Achievements",
@@ -726,7 +771,7 @@ const about = {
         venue: "SSRN - The Financial Economics Network",
         date: "Jun 20, 2025",
         type: "Working Paper / Preprint",
-        description: <>Introduces the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies.</>,
+        description: <>Introduces the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies. This research, developed during my role as Quantitative Researcher at Independent Research, was recognised with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award, appearing on the SSRN Top Downloads list for 9–12 Aug 2025. The findings are implemented in Prometheus, a quantitative finance research platform featuring an interactive Streamlit dashboard for portfolio monitoring, strategy visualization, and risk management.</>,
         link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
         category: "Quantitative Finance",
         artifacts: "SSRN paper + Show publication link",
