@@ -1292,10 +1292,7 @@ export default function About() {
                             )}
                           </Flex>
                           <Text variant="body-default-s" onBackground="brand-weak">
-                            {episode.authors}
-                          </Text>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {episode.venue}
+                            YouTube
                           </Text>
                         </Column>
                         <Column style={{ alignItems: "flex-end", gap: "6px" }}>
