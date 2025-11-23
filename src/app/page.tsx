@@ -1260,12 +1260,9 @@ export default function About() {
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                            <Heading 
-                              variant="heading-strong-l" 
-                              onBackground="neutral-strong"
-                            >
-                              <em>{episode.title}</em>
-                            </Heading>
+                            <Text variant="heading-strong-l" onBackground="neutral-strong">
+                              Podcast Presenting the paper <em>{episode.title}</em>
+                            </Text>
                             {episode.trailerLink && (
                               <SmartLink
                                 href={episode.trailerLink}
@@ -1312,7 +1309,7 @@ export default function About() {
                     }
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
-                      {episode.description}
+                      Podcast Presenting the paper <em>{episode.title}</em>.
                     </Text>
                   </CollapsibleSection>
                 ))}
