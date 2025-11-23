@@ -1278,6 +1278,18 @@ export default function About() {
                                 </Tag>
                               </SmartLink>
                             )}
+                            {episode.trailerLink && (
+                              <SmartLink
+                                href={episode.trailerLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  View Trailer
+                                </Tag>
+                              </SmartLink>
+                            )}
                           </Flex>
                           <Text variant="body-default-s" onBackground="brand-weak">
                             {episode.authors}
