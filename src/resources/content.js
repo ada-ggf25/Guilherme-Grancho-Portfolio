@@ -644,7 +644,8 @@ const about = {
     title: "Podcasts",
     episodes: [
       {
-        title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
+        title: "Prometheus Presents The Financial Torque Hypothesis",
+        paperTitle: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
         authors: "Guilherme Grancho, Vasco Pereira",
         venue: "YouTube",
         date: "Jun 20, 2025",
@@ -656,7 +657,8 @@ const about = {
         artifacts: "YouTube video + Show podcast link",
       },
       {
-        title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
+        title: "Automating Machine Learning Fine Tuning",
+        paperTitle: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
         authors: "Guilherme Grancho, Talles Medeiros",
         venue: "YouTube",
         date: "Nov 21, 2024",
@@ -668,7 +670,8 @@ const about = {
         artifacts: "YouTube video + Show podcast link",
       },
       {
-        title: "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
+        title: "Mapping the Deep with AI",
+        paperTitle: "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
         authors: "Guilherme Grancho, Vitor Oliveira, João Astolfo",
         venue: "YouTube",
         date: "Feb 28, 2023",

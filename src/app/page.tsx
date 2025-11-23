@@ -1261,7 +1261,7 @@ export default function About() {
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                             <Text variant="heading-strong-l" onBackground="neutral-strong">
-                              Podcast Presenting the paper <em>{episode.title}</em>
+                              {episode.title}
                             </Text>
                             {episode.trailerLink && (
                               <SmartLink
@@ -1309,7 +1309,7 @@ export default function About() {
                     }
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
-                      Podcast Presenting the paper <em>{episode.title}</em>.
+                      {episode.title}.
                     </Text>
                   </CollapsibleSection>
                 ))}
