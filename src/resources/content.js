@@ -184,7 +184,7 @@ const about = {
             Lead Prometheus, an independent research platform pairing deep learning with quantitative finance to deliver real-time Financial Torque Hypothesis (FTH) insights via an open-source web app, public website, and GitHub codebase.
           </>,
           <>
-            Co-authored the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, demonstrating FTH-driven forecasting performance.
+            Co-authored the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, demonstrating FTH-driven forecasting performance with ~87% directional accuracy on a 3-hour horizon. This research was recognised with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award, appearing on the SSRN Top Downloads list for 9–12 Aug 2025.
           </>,
           <>
             Currently developing the manuscript <em>Integrating the Financial Torque Hypothesis into Advanced Algorithmic Portfolio Management</em> to extend FTH signals into systematic trading pipelines.
@@ -524,7 +524,7 @@ const about = {
     accomplishments: [
       {
         title: "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak",
-        description: <>My paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, with Vasco Pereira, appeared on the SSRN Top Downloads list for 9–12 Aug 2025.</>,
+        description: <>My paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, with Vasco Pereira, appeared on the SSRN Top Downloads list for 9–12 Aug 2025. This work, which introduces the Financial Torque Hypothesis proposing that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction, was developed during my role as Quantitative Researcher at Independent Research, where I co-authored this published study demonstrating FTH-driven forecasting performance with ~87% directional accuracy on a 3-hour horizon.</>,
         category: "",
         year: "Aug 2025",
         issuer: "SSRN — The Financial Economics Network",
@@ -771,7 +771,7 @@ const about = {
         venue: "SSRN - The Financial Economics Network",
         date: "Jun 20, 2025",
         type: "Working Paper / Preprint",
-        description: <>Introduces the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies.</>,
+        description: <>Introduces the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies. This research, developed during my role as Quantitative Researcher at Independent Research, was recognised with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award, appearing on the SSRN Top Downloads list for 9–12 Aug 2025. The findings are implemented in Prometheus, a quantitative finance research platform featuring an interactive Streamlit dashboard for portfolio monitoring, strategy visualization, and risk management.</>,
         link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
         category: "Quantitative Finance",
         artifacts: "SSRN paper + Show publication link",

@@ -371,6 +371,16 @@ export default function About() {
                                     <>
                                       {" "}
                                       <SmartLink
+                                        href="#FTH-Podcast"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Podcast
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
                                         href="#FTH-Paper"
                                         style={{ 
                                           color: "#0066cc",
@@ -670,6 +680,26 @@ export default function About() {
                         <>
                           {" "}
                           <SmartLink
+                            href="#Prometheus"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Prometheus Project
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#FTH-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
                             href="#SSRN-Top-Paper-Award"
                             style={{ 
                               color: "#0066cc",
@@ -887,6 +917,16 @@ export default function About() {
                             <>
                               {" "}
                               <SmartLink
+                                href="#FTH-Podcast"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Podcast
+                              </SmartLink>
+                              {" "}
+                              <SmartLink
                                 href={`#${about.work.title}`}
                                 style={{ 
                                   color: "#0066cc",
@@ -1065,6 +1105,16 @@ export default function About() {
                       )}
                       {award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" && (
                         <>
+                          {" "}
+                          <SmartLink
+                            href="#FTH-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
                           {" "}
                           <SmartLink
                             href="#Prometheus"
@@ -1260,7 +1310,12 @@ export default function About() {
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                            <Text variant="heading-strong-l" onBackground="neutral-strong">
+                            <Text 
+                              id={episode.title === "Prometheus Presents The Financial Torque Hypothesis" ? "FTH-Podcast" : undefined}
+                              variant="heading-strong-l" 
+                              onBackground="neutral-strong"
+                              style={episode.title === "Prometheus Presents The Financial Torque Hypothesis" ? { scrollMarginTop: "140px" } : {}}
+                            >
                               {episode.title}
                             </Text>
                             {episode.trailerLink && (
@@ -1310,6 +1365,50 @@ export default function About() {
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                       Podcast Presenting the Paper <em>{episode.paperTitle}</em>.
+                      {episode.paperTitle === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#Prometheus"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Prometheus Project
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#FTH-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#SSRN-Top-Paper-Award"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Award
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#Quantitative-Researcher-Independent"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
                     </Text>
                   </CollapsibleSection>
                 ))}
