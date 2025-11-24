@@ -644,6 +644,19 @@ const about = {
     title: "Podcasts",
     episodes: [
       {
+        title: "GB Training an AI Astronomer",
+        paperTitle: "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks",
+        authors: "Guilherme Grancho",
+        venue: "YouTube",
+        date: "Nov 25, 2025",
+        type: "Podcast Episode",
+        description: <>Podcast presenting the classification pipeline for transient astronomical light curves leveraging LSTM architectures and observational data curation.</>,
+        link: "https://www.youtube.com/watch?v=O9JhVDVGHME",
+        trailerLink: "https://www.youtube.com/watch?v=wndOZsX0H6c",
+        category: "Astrophysics",
+        artifacts: "YouTube video + Show podcast link",
+      },
+      {
         title: "Prometheus Presents The Financial Torque Hypothesis",
         paperTitle: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
         authors: "Guilherme Grancho, Vasco Pereira",
