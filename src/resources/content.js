@@ -644,7 +644,7 @@ const about = {
     title: "Podcasts",
     episodes: [
       {
-        title: "GB Training an AI Astronomer",
+        title: "Training an AI Astronomer",
         paperTitle: "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks",
         authors: "Guilherme Grancho",
         venue: "YouTube",
