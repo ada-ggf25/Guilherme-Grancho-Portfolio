@@ -166,7 +166,7 @@ const about = {
     ),
     finalStatement: (
       <>
-        Currently focus on working toward making &quot;Guilherme Grancho&quot; stand for something.
+        Currently focused on making &quot;Guilherme Grancho&quot; stand for something meaningful.
       </>
     ),
   },
