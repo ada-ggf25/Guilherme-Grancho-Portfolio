@@ -16,6 +16,7 @@ import styles from "@/components/about/about.module.scss";
 import { SectionNavigation } from "@/components/SectionNavigation";
 import { CollapsibleSection } from "@/components/CollapsibleSection";
 import { PresentIndicator } from "@/components/PresentIndicator";
+import { CurrentWorkCarousel, CurrentWorkItem } from "@/components/CurrentWorkCarousel";
 import { isPresent } from "@/utils/timeframeUtils";
 import React from "react";
 
@@ -23,6 +24,105 @@ import React from "react";
 type PaperWithHighlights = typeof about.publications.papers[number] & { highlights?: string };
 type ProjectWithHighlights = typeof about.keyProjects.projects[number] & { highlights?: string };
 type CertificationWithCredential = typeof about.certifications.accomplishments[number] & { credential_id?: string };
+
+const monthLookup: Record<string, number> = {
+  Jan: 0,
+  Feb: 1,
+  Mar: 2,
+  Apr: 3,
+  May: 4,
+  Jun: 5,
+  Jul: 6,
+  Aug: 7,
+  Sep: 8,
+  Oct: 9,
+  Nov: 10,
+  Dec: 11,
+};
+
+const toPlainText = (value: React.ReactNode | undefined): string | undefined => {
+  if (typeof value === "string") {
+    return value;
+  }
+  if (!value) {
+    return undefined;
+  }
+  const text = React.Children.toArray(value).join("").trim();
+  return text.length ? text : undefined;
+};
+
+const parseStartDateValue = (timeframe?: string): number => {
+  if (!timeframe) {
+    return 0;
+  }
+  const [start] = timeframe.split(" - ");
+  const parts = start.trim().split(" ");
+  if (parts.length < 2) {
+    return 0;
+  }
+  const month = monthLookup[parts[0] as keyof typeof monthLookup] ?? 0;
+  const year = Number(parts[1]) || 0;
+  return Date.UTC(year, month, 1);
+};
+
+const buildCurrentWorkItems = (): CurrentWorkItem[] => {
+  const items: CurrentWorkItem[] = [];
+
+  about.work.experiences.forEach((experience, index) => {
+    if (isPresent(experience.timeframe)) {
+      items.push({
+        id: `experience-${index}`,
+        title: experience.role,
+        subtitle: experience.company,
+        timeframe: experience.timeframe,
+        category: "Experience",
+        href: `#${about.work.title}`,
+      });
+    }
+  });
+
+  about.studies.institutions.forEach((institution, index) => {
+    if (isPresent(institution.timeframe)) {
+      items.push({
+        id: `education-${index}`,
+        title: institution.name,
+        subtitle: institution.degree,
+        timeframe: institution.timeframe,
+        category: "Education",
+        href: `#${about.studies.title}`,
+      });
+    }
+  });
+
+  about.extracurricular.activities.forEach((activity, index) => {
+    if (activity.timeframe && isPresent(activity.timeframe)) {
+      items.push({
+        id: `activity-${index}`,
+        title: activity.title,
+        subtitle: activity.organization,
+        timeframe: activity.timeframe,
+        category: "Extracurricular",
+        href: `#${about.extracurricular.title}`,
+      });
+    }
+  });
+
+  about.keyProjects.projects.forEach((project, index) => {
+    if (project.timeframe && isPresent(project.timeframe)) {
+      const projectTitle = toPlainText(project.title) ?? "Key Project";
+      items.push({
+        id: `project-${index}`,
+        title: projectTitle,
+        subtitle: project.location,
+        timeframe: project.timeframe,
+        category: "Project",
+        href: `#${about.keyProjects.title}`,
+      });
+    }
+  });
+
+  return items.sort((a, b) => parseStartDateValue(b.timeframe) - parseStartDateValue(a.timeframe));
+};
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -48,6 +148,7 @@ export default function About() {
     { id: about.values.title, label: "Values" },
     { id: about.hobbies.title, label: "Hobbies" }
   ];
+  const currentWorkItems = buildCurrentWorkItems();
 
   return (
     <Column style={{ maxWidth: "800px", margin: "0 auto", padding: "0 var(--static-space-l)" }}>
@@ -169,6 +270,9 @@ export default function About() {
               >
                 {about.intro.finalStatement}
               </Text>
+            )}
+            {currentWorkItems.length > 0 && (
+              <CurrentWorkCarousel items={currentWorkItems} />
             )}
           </Column>
         )}

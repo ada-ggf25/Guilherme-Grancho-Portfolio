@@ -166,7 +166,7 @@ const about = {
     ),
     finalStatement: (
       <>
-        Currently focus on working toward making &quot;Guilherme Grancho&quot; stand for something.
+        Currently focused on making &quot;Guilherme Grancho&quot; stand for something meaningful.
       </>
     ),
   },
@@ -781,11 +781,11 @@ const about = {
       {
         title: "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks",
         authors: "Guilherme Grancho, Marco Barroca, Mateus dos Santos, Rafael Oliveira",
-        venue: "arXiv",
+        venue: "arXiv: Computer Science - Machine Learning (cs.LG)",
         date: "Nov 25, 2025",
         type: "Pre-print",
         description: <>This study details a bidirectional LSTM workflow for classifying transient astronomical object light curves from the PLAsTiCC dataset. The original fourteen classes are consolidated into five macro categories (S-Like, Fast, Long, Periodic, Non-Periodic) to mitigate imbalance. After padding, temporal rescaling, and flux normalisation, the masked BiLSTM attains ROC AUC scores of 0.95 for S-Like and 0.99 for Periodic sources, with Precision-Recall AUC up to 0.98. Performance drops for Fast and Long objects (e.g., 0.68 ROC AUC on Long) and for truncated 5–20 day sequences, underscoring how class imbalance and limited cadence drive misclassifications. The work highlights balancing strategies and detection-aware preprocessing as critical paths for future gains.</>,
-        link: "#", // Placeholder until official link is available
+        link: "https://arxiv.org/abs/2511.17564",
         category: "Astrophysics & Deep Learning",
         artifacts: "arXiv pre-print + Show publication link",
       },
@@ -814,7 +814,7 @@ const about = {
       {
         title: "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
         authors: "Guilherme Grancho, Vitor Oliveira, João Astolfo",
-        venue: "6th EAFExp — Brazilian Center for Research in Physics / arXiv",
+        venue: "6th EAFExp — Brazilian Center for Research in Physics / arXiv: Computer Science - Machine Learning (cs.LG)",
         date: "Feb 28, 2023",
         type: "Research paper / Preprint",
         description: <>Apply CNNs to bathymetric imagery to classify/segment seabed layers. Supervised CNN pipeline, dataset curation and analysis, evaluation on geoscience targets and regions. Demonstrates CNN feasibility for ocean-floor mapping and yields actionable geophysical insights.</>,
