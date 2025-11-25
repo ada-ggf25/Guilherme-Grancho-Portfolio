@@ -26,6 +26,9 @@ dist/
 *.tsbuildinfo
 next-env.d.ts
 
+# Private files
+private/
+
 # Environment variables
 .env
 .env*.local
