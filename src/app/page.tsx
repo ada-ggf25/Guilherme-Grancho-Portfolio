@@ -16,6 +16,7 @@ import styles from "@/components/about/about.module.scss";
 import { SectionNavigation } from "@/components/SectionNavigation";
 import { CollapsibleSection } from "@/components/CollapsibleSection";
 import { PresentIndicator } from "@/components/PresentIndicator";
+import { CurrentWorkCarousel, CurrentWorkItem } from "@/components/CurrentWorkCarousel";
 import { isPresent } from "@/utils/timeframeUtils";
 import React from "react";
 
@@ -23,6 +24,105 @@ import React from "react";
 type PaperWithHighlights = typeof about.publications.papers[number] & { highlights?: string };
 type ProjectWithHighlights = typeof about.keyProjects.projects[number] & { highlights?: string };
 type CertificationWithCredential = typeof about.certifications.accomplishments[number] & { credential_id?: string };
+
+const monthLookup: Record<string, number> = {
+  Jan: 0,
+  Feb: 1,
+  Mar: 2,
+  Apr: 3,
+  May: 4,
+  Jun: 5,
+  Jul: 6,
+  Aug: 7,
+  Sep: 8,
+  Oct: 9,
+  Nov: 10,
+  Dec: 11,
+};
+
+const toPlainText = (value: React.ReactNode | undefined): string | undefined => {
+  if (typeof value === "string") {
+    return value;
+  }
+  if (!value) {
+    return undefined;
+  }
+  const text = React.Children.toArray(value).join("").trim();
+  return text.length ? text : undefined;
+};
+
+const parseStartDateValue = (timeframe?: string): number => {
+  if (!timeframe) {
+    return 0;
+  }
+  const [start] = timeframe.split(" - ");
+  const parts = start.trim().split(" ");
+  if (parts.length < 2) {
+    return 0;
+  }
+  const month = monthLookup[parts[0] as keyof typeof monthLookup] ?? 0;
+  const year = Number(parts[1]) || 0;
+  return Date.UTC(year, month, 1);
+};
+
+const buildCurrentWorkItems = (): CurrentWorkItem[] => {
+  const items: CurrentWorkItem[] = [];
+
+  about.work.experiences.forEach((experience, index) => {
+    if (isPresent(experience.timeframe)) {
+      items.push({
+        id: `experience-${index}`,
+        title: experience.role,
+        subtitle: experience.company,
+        timeframe: experience.timeframe,
+        category: "Experience",
+        href: `#${about.work.title}`,
+      });
+    }
+  });
+
+  about.studies.institutions.forEach((institution, index) => {
+    if (isPresent(institution.timeframe)) {
+      items.push({
+        id: `education-${index}`,
+        title: institution.name,
+        subtitle: institution.degree,
+        timeframe: institution.timeframe,
+        category: "Education",
+        href: `#${about.studies.title}`,
+      });
+    }
+  });
+
+  about.extracurricular.activities.forEach((activity, index) => {
+    if (activity.timeframe && isPresent(activity.timeframe)) {
+      items.push({
+        id: `activity-${index}`,
+        title: activity.title,
+        subtitle: activity.organization,
+        timeframe: activity.timeframe,
+        category: "Extracurricular",
+        href: `#${about.extracurricular.title}`,
+      });
+    }
+  });
+
+  about.keyProjects.projects.forEach((project, index) => {
+    if (project.timeframe && isPresent(project.timeframe)) {
+      const projectTitle = toPlainText(project.title) ?? "Key Project";
+      items.push({
+        id: `project-${index}`,
+        title: projectTitle,
+        subtitle: project.location,
+        timeframe: project.timeframe,
+        category: "Project",
+        href: `#${about.keyProjects.title}`,
+      });
+    }
+  });
+
+  return items.sort((a, b) => parseStartDateValue(b.timeframe) - parseStartDateValue(a.timeframe));
+};
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -43,9 +143,12 @@ export default function About() {
     { id: about.extracurricular.title, label: "Extracurricular" },
     { id: about.keyProjects.title, label: "Projects" },
     { id: about.awards.title, label: "Awards" },
+    { id: about.certifications.title, label: "Certifications" },
+    { id: about.podcasts.title, label: "Podcasts" },
     { id: about.values.title, label: "Values" },
     { id: about.hobbies.title, label: "Hobbies" }
   ];
+  const currentWorkItems = buildCurrentWorkItems();
 
   return (
     <Column style={{ maxWidth: "800px", margin: "0 auto", padding: "0 var(--static-space-l)" }}>
@@ -167,6 +270,9 @@ export default function About() {
               >
                 {about.intro.finalStatement}
               </Text>
+            )}
+            {currentWorkItems.length > 0 && (
+              <CurrentWorkCarousel items={currentWorkItems} />
             )}
           </Column>
         )}
@@ -340,6 +446,7 @@ export default function About() {
                               // Check if this is the Ocean Floor paper-related achievement
                               // It's the first achievement (index 0) in the "Brazilian Center for Research in Physics" experience
                               const isOceanFloorPaperAchievement = experience.company === "Brazilian Center for Research in Physics" && index === 0;
+                              const isAstronomerPaperAchievement = experience.company === "Brazilian Center for Research in Physics" && index === 1;
                               // Check if this is the GraphRAG project-related achievement
                               // It's the first achievement (index 0) in the "Ernst & Young" experience
                               const isGraphRAGProjectAchievement = experience.company === "Ernst & Young" && index === 0;
@@ -367,6 +474,16 @@ export default function About() {
                                   )}
                                   {isFTHPaperAchievement && (
                                     <>
+                                      {" "}
+                                      <SmartLink
+                                        href="#FTH-Podcast"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Podcast
+                                      </SmartLink>
                                       {" "}
                                       <SmartLink
                                         href="#FTH-Paper"
@@ -416,7 +533,18 @@ export default function About() {
                                     </>
                                   )}
                                   {isENIACPaperAchievement && (
-                                    <>{" "}
+                                    <>
+                                      {" "}
+                                      <SmartLink
+                                        href="#ML-Fine-Tuning-Podcast"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Podcast
+                                      </SmartLink>
+                                      {" "}
                                       <SmartLink
                                         href="#ENIAC-Paper"
                                         style={{ 
@@ -445,6 +573,16 @@ export default function About() {
                                     <>
                                       {" "}
                                       <SmartLink
+                                        href="#Mapping-Deep-AI-Podcast"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Podcast
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
                                         href="#Ocean-Floor-Paper"
                                         style={{ 
                                           color: "#0066cc",
@@ -462,6 +600,30 @@ export default function About() {
                                         }}
                                       >
                                         View Related Award
+                                      </SmartLink>
+                                    </>
+                                  )}
+                                  {isAstronomerPaperAchievement && (
+                                    <>
+                                      {" "}
+                                      <SmartLink
+                                        href="#AI-Astronomer-Podcast"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Podcast
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
+                                        href="#AI-Astronomer-Paper"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Publication
                                       </SmartLink>
                                     </>
                                   )}
@@ -619,10 +781,27 @@ export default function About() {
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                             <Heading 
-                              id={paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ? "FTH-Paper" : paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" ? "ENIAC-Paper" : paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" ? "Ocean-Floor-Paper" : undefined}
+                              id={
+                                paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks"
+                                  ? "FTH-Paper"
+                                  : paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold"
+                                  ? "ENIAC-Paper"
+                                  : paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network"
+                                  ? "Ocean-Floor-Paper"
+                                  : paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks"
+                                  ? "AI-Astronomer-Paper"
+                                  : undefined
+                              }
                               variant="heading-strong-l" 
                               onBackground="neutral-strong"
-                              style={(paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" || paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" || paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network") ? { scrollMarginTop: "140px" } : {}}
+                              style={
+                                paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ||
+                                paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" ||
+                                paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" ||
+                                paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks"
+                                  ? { scrollMarginTop: "140px" }
+                                  : {}
+                              }
                             >
                               <em>{paper.title}</em>
                             </Heading>
@@ -668,6 +847,26 @@ export default function About() {
                         <>
                           {" "}
                           <SmartLink
+                            href="#Prometheus"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Prometheus Project
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#FTH-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
                             href="#SSRN-Top-Paper-Award"
                             style={{ 
                               color: "#0066cc",
@@ -691,6 +890,16 @@ export default function About() {
                       {paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
                         <>{" "}
                           <SmartLink
+                            href="#ML-Fine-Tuning-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
                             href="#ML-Researcher-UFOP"
                             style={{ 
                               color: "#0066cc",
@@ -703,6 +912,39 @@ export default function About() {
                       )}
                       {paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
                         <>{" "}
+                          <SmartLink
+                            href="#Mapping-Deep-AI-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#AI-Researcher-CBPF"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#AI-Astronomer-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
                           <SmartLink
                             href="#AI-Researcher-CBPF"
                             style={{ 
@@ -885,6 +1127,16 @@ export default function About() {
                             <>
                               {" "}
                               <SmartLink
+                                href="#FTH-Podcast"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Podcast
+                              </SmartLink>
+                              {" "}
+                              <SmartLink
                                 href={`#${about.work.title}`}
                                 style={{ 
                                   color: "#0066cc",
@@ -1065,6 +1317,16 @@ export default function About() {
                         <>
                           {" "}
                           <SmartLink
+                            href="#FTH-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
                             href="#Prometheus"
                             style={{ 
                               color: "#0066cc",
@@ -1229,6 +1491,224 @@ export default function About() {
                         {(certification as CertificationWithCredential).credential_id?.trim() && `Credential ID: ${(certification as CertificationWithCredential).credential_id}`}
                       </Text>
                     )}
+                  </CollapsibleSection>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {/* Podcasts Section */}
+          {about.podcasts.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.podcasts.title}
+                variant="display-strong-s"
+                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
+              >
+                {about.podcasts.title}
+              </Heading>
+              <Column style={{ gap: "12px", marginBottom: "20px" }}>
+                {about.podcasts.episodes.map((episode, index) => (
+                  <CollapsibleSection
+                    key={index}
+                    header={
+                      <Flex
+                        horizontal="between"
+                        vertical="end"
+                        style={{ width: "100%", paddingRight: "8px" }}
+                      >
+                        <Column style={{ flex: 1, gap: "6px" }}>
+                          <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
+                            <Text 
+                              id={
+                                episode.title === "Prometheus Presents The Financial Torque Hypothesis"
+                                  ? "FTH-Podcast"
+                                  : episode.title === "Mapping the Deep with AI"
+                                  ? "Mapping-Deep-AI-Podcast"
+                                  : episode.title === "Automating Machine Learning Fine Tuning"
+                                  ? "ML-Fine-Tuning-Podcast"
+                                  : episode.title === "Training an AI Astronomer"
+                                  ? "AI-Astronomer-Podcast"
+                                  : undefined
+                              }
+                              variant="heading-strong-l" 
+                              onBackground="neutral-strong"
+                              style={
+                                episode.title === "Prometheus Presents The Financial Torque Hypothesis" ||
+                                episode.title === "Mapping the Deep with AI" ||
+                                episode.title === "Automating Machine Learning Fine Tuning" ||
+                                episode.title === "Training an AI Astronomer"
+                                  ? { scrollMarginTop: "140px" }
+                                  : {}
+                              }
+                            >
+                              {episode.title}
+                            </Text>
+                            {episode.trailerLink && (
+                              <SmartLink
+                                href={episode.trailerLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  View Trailer
+                                </Tag>
+                              </SmartLink>
+                            )}
+                            {episode.link && (
+                              <SmartLink
+                                href={episode.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  View Podcast
+                                </Tag>
+                              </SmartLink>
+                            )}
+                          </Flex>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            YouTube
+                          </Text>
+                        </Column>
+                        <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                          {episode.date && (
+                            <Text variant="heading-default-xs" onBackground="neutral-weak">
+                              {episode.date}
+                            </Text>
+                          )}
+                          <Tag variant="brand" size="s">
+                            {episode.category}
+                          </Tag>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {episode.type}
+                          </Text>
+                        </Column>
+                      </Flex>
+                    }
+                  >
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                      Podcast Presenting the Paper <em>{episode.paperTitle}</em>.
+                      {episode.paperTitle === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#ENIAC-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#ML-Researcher-UFOP"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {episode.paperTitle === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#Ocean-Floor-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#AI-Researcher-CBPF"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {episode.paperTitle === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#Prometheus"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Prometheus Project
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#FTH-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#SSRN-Top-Paper-Award"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Award
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#Quantitative-Researcher-Independent"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {episode.paperTitle === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#AI-Astronomer-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#AI-Researcher-CBPF"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                    </Text>
                   </CollapsibleSection>
                 ))}
               </Column>

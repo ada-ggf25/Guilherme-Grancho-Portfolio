@@ -1,3 +1,6 @@
+# Private files
+private/
+
 # Dependencies
 node_modules/
 jspm_packages/
