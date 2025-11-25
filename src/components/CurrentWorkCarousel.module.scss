@@ -1,0 +1,114 @@
+.wrapper {
+  width: 100%;
+  margin: 24px auto 0;
+  padding: 20px;
+  border: 1px solid var(--color-neutral-medium);
+  border-radius: var(--static-space-l);
+  background: var(--color-surface-raised, var(--color-background));
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.controlButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--color-neutral-medium);
+  background: transparent;
+  color: var(--color-neutral-strong);
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.controlButton:focus-visible {
+  outline: 2px solid var(--color-brand-strong);
+  outline-offset: 2px;
+}
+
+.controlButton:hover {
+  background: var(--color-neutral-strong-alpha-weak, rgba(15, 23, 42, 0.08));
+}
+
+.carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 280px;
+  border: 1px solid var(--color-neutral-medium);
+  border-radius: var(--static-space-m);
+  padding: 16px;
+  background: var(--color-background);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 180px;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeframe {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cardTitle {
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0;
+}
+
+.cta {
+  margin-top: auto;
+  font-size: var(--font-size-body-default-s);
+  color: var(--color-brand-strong, #0f172a);
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    padding: 16px;
+  }
+
+  .card {
+    flex: 0 0 80%;
+  }
+}
+
+
