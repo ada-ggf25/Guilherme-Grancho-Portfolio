@@ -33,10 +33,10 @@
 .navigationInHeader {
   display: flex;
   flex-direction: row;
-  gap: 8px;
-  padding: 6px 12px;
+  gap: 5px;
+  padding: 4px 10px;
   background: rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
+  border-radius: 6px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -62,7 +62,7 @@
 }
 
 .navItem {
-  padding: 8px 14px;
+  padding: 7px 13px;
   border: none;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.08);
@@ -93,8 +93,8 @@
 }
 
 .navigationInHeader .navItem {
-  padding: 6px 10px;
-  font-size: 12px;
+  padding: 5px 9px;
+  font-size: 11px;
 }
 
 // Responsive design
