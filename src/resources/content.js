@@ -290,7 +290,7 @@ const about = {
       {
         company: "KU Leuven",
         timeframe: "Mar 2024",
-        role: "Virtual Reality Development Intern",
+        role: "Virtual Reality Researcher",
         location: "Leuven, Belgium · On-site",
         achievements: [
           <>
