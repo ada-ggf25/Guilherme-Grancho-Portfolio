@@ -389,7 +389,7 @@ export default function About() {
                             >
                               <Column style={{ flex: 1, gap: "4px" }}>
                                 <Text 
-                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer" ? "AI-Data-Engineer-EY" : experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern" ? "VR-Intern-KULeuven" : experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator" ? "Teacher-Assistant-Lab-Coordinator-IST" : experience.role} 
+                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer" ? "AI-Data-Engineer-EY" : experience.company === "KU Leuven" && experience.role === "Virtual Reality Researcher" ? "VR-Intern-KULeuven" : experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator" ? "Teacher-Assistant-Lab-Coordinator-IST" : experience.role} 
                                   variant="heading-strong-l" 
                                   onBackground="neutral-strong"
                                   style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") || (experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer") || (experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer") || (experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern") || (experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator") ? { scrollMarginTop: "140px" } : {}}
@@ -402,6 +402,7 @@ export default function About() {
                                   style={{ marginBottom: "8px" }}
                                 >
                                   {experience.company}
+                                  {experience.employmentType && ` · ${experience.employmentType}`}
                                 </Text>
                                 <Text variant="body-default-xs" onBackground="neutral-weak">
                                   {experience.location}
@@ -419,7 +420,6 @@ export default function About() {
                           }
                         >
                           <Column 
-                            as="ul" 
                             style={{ gap: "20px", marginTop: "16px" }}
                           >
                             {experience.achievements.map((achievement: React.ReactElement, index: number) => {
@@ -453,8 +453,8 @@ export default function About() {
                               
                               return (
                                 <Text
-                                  as="li"
                                   variant="body-default-m"
+                                  onBackground="neutral-weak"
                                   key={`${experience.company}-${index}`}
                                   style={{ textAlign: "justify" }}
                                 >
