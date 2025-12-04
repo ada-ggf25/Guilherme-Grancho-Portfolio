@@ -184,6 +184,7 @@ const about = {
         timeframe: "Jan 2025 - Present",
         role: "Quantitative Researcher",
         location: "London, UK · Remote",
+        employmentType: "Full-time",
         achievements: [
           <>
             Lead Prometheus, an independent research platform pairing deep learning with quantitative finance to deliver real-time Financial Torque Hypothesis (FTH) insights via an open-source web app, public website, and GitHub codebase.
@@ -202,6 +203,7 @@ const about = {
         timeframe: "Aug 2025 - Sep 2025",
         role: "Artificial Intelligence & Data Engineer",
         location: "Lisbon, Portugal · On-site",
+        employmentType: "Internship",
         achievements: [
           <>
             Designed and deployed RAG and GraphRAG pipelines powering agentic AI workflows for international clients.
@@ -214,6 +216,7 @@ const about = {
         timeframe: "Jun 2025 - Jul 2025",
         role: "Artificial Intelligence & Data Engineer",
         location: "Lisbon, Portugal · On-site",
+        employmentType: "Internship",
         achievements: [
           <>
             Engineered RAG pipelines for agentic AI products, exposed as MCP-compliant services consumed by multi-agent orchestrators, for international financial-services clients.
@@ -226,6 +229,7 @@ const about = {
         timeframe: "Apr 2025 - Jul 2025",
         role: "Teacher Assistant",
         location: "Lisbon, Portugal · On-site",
+        employmentType: "Part-time",
         achievements: [
           <>
             TA for the BSc in Electronic Engineering & Computer Engineering, teaching the module Physics II. Covered core topics in thermodynamics and quantum physics.
@@ -238,6 +242,7 @@ const about = {
         timeframe: "Jan 2025 - Jun 2025",
         role: "Machine Learning Engineer",
         location: "Lisbon, Portugal · Hybrid",
+        employmentType: "Part-time",
         achievements: [
           <>
             Built LSTM time-series models to forecast sustainability metrics (e.g., carbon intensity, renewable-share trends) at national/regional scales, with the goal of reducing the energy/carbon footprint when training large AI models.
@@ -253,6 +258,7 @@ const about = {
         timeframe: "Sep 2024 - Feb 2025",
         role: "Engineering Intern",
         location: "Lisbon, Portugal · Hybrid",
+        employmentType: "Internship",
         achievements: [
           <>
             Worked across quantum computation, networks, and sensing.
@@ -268,6 +274,7 @@ const about = {
         timeframe: "Nov 2023 - Jul 2024",
         role: "Machine Learning Researcher",
         location: "Minas Gerais, Brazil · Remote",
+        employmentType: "Part-time",
         achievements: [
           <>
             First author of the peer-reviewed paper <em>Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold</em>, co-presented with Talles Medeiros at ENIAC (34th National Meeting on Artificial and Computational Intelligence), arising from a 720-hour machine-learning and algorithms research program.
@@ -280,6 +287,7 @@ const about = {
         timeframe: "Sep 2023 - Aug 2024",
         role: "Co-Founder",
         location: "Lisbon, Portugal · On-site",
+        employmentType: "Part-time",
         achievements: [
           <>
             Co-founded Tap2Net, an online venture providing durable NFC cards that direct customers to personalized review pages, helping businesses boost their online reputation. Led product, web design, marketing, customer support, and stock management, achieving sales of 500+ cards plus related products and services.
@@ -292,6 +300,7 @@ const about = {
         timeframe: "Mar 2024",
         role: "Virtual Reality Researcher",
         location: "Leuven, Belgium · On-site",
+        employmentType: "Internship",
         achievements: [
           <>
             Investigated innovative VR locomotion methods and built a virtual world explored via teleportation with an Oculus setup. Gained practical skills in VR navigation and interaction design.
@@ -304,6 +313,7 @@ const about = {
         timeframe: "Nov 2023 - Feb 2024",
         role: "Teacher Assistant & Lab Coordinator",
         location: "Lisbon, Portugal · On-site",
+        employmentType: "Part-time",
         achievements: [
           <>
             Taught and coordinated Physics III laboratory sessions for BSc Electronics Engineering undergraduates, covering Thomson&apos;s experiment, RLC circuits, and geometric and wave optics.
@@ -319,6 +329,7 @@ const about = {
         timeframe: "Nov 2023 - Jan 2024",
         role: "Machine Learning Researcher",
         location: "Lisbon, Portugal · On-site",
+        employmentType: "Part-time",
         achievements: [
           <>
             Research on high-power laser aberration correction using CNNs and Bayesian optimization.
@@ -334,6 +345,7 @@ const about = {
         timeframe: "Sep 2023 - Dec 2023",
         role: "Frontend Web Developer",
         location: "Lisbon, Portugal · Hybrid",
+        employmentType: "Part-time",
         achievements: [
           <>
             Designed and implemented responsive web interfaces for the Aerospace Engineering Society at Instituto Superior Técnico, supporting its projects and digital services.
@@ -346,6 +358,7 @@ const about = {
         timeframe: "Nov 2023",
         role: "Representative at Web Summit",
         location: "Lisbon, Portugal · On-site",
+        employmentType: "Part-time",
         achievements: [
           <>
             Represented Startup Portugal at Web Summit 2023, boosting company visibility, engaging investors, and supporting investment rounds and pitching.
@@ -358,6 +371,7 @@ const about = {
         timeframe: "Jan 2023 - Nov 2023",
         role: "Math and Physics Teacher",
         location: "Lisbon, Portugal · Hybrid",
+        employmentType: "Part-time",
         achievements: [
           <>
             Supported high-school and undergraduate students in mathematics, physics, and Calculus I and II via one-to-one online and in-person lessons.
@@ -370,6 +384,7 @@ const about = {
         timeframe: "Feb 2023",
         role: "Artificial Intelligence Researcher",
         location: "Rio de Janeiro, Brazil · On-site",
+        employmentType: "Internship",
         achievements: [
           <>
             Project: <em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, delivering a CNN pipeline to infer seabed stratification from sonar readings — published on arXiv.

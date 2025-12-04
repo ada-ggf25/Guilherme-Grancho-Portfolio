@@ -402,6 +402,7 @@ export default function About() {
                                   style={{ marginBottom: "8px" }}
                                 >
                                   {experience.company}
+                                  {experience.employmentType && ` · ${experience.employmentType}`}
                                 </Text>
                                 <Text variant="body-default-xs" onBackground="neutral-weak">
                                   {experience.location}
