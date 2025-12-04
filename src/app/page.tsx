@@ -419,7 +419,6 @@ export default function About() {
                           }
                         >
                           <Column 
-                            as="ul" 
                             style={{ gap: "20px", marginTop: "16px" }}
                           >
                             {experience.achievements.map((achievement: React.ReactElement, index: number) => {
@@ -453,8 +452,8 @@ export default function About() {
                               
                               return (
                                 <Text
-                                  as="li"
                                   variant="body-default-m"
+                                  onBackground="neutral-weak"
                                   key={`${experience.company}-${index}`}
                                   style={{ textAlign: "justify" }}
                                 >
