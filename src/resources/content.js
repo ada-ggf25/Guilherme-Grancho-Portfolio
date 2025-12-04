@@ -184,7 +184,7 @@ const about = {
         timeframe: "Jan 2025 - Present",
         role: "Quantitative Researcher",
         location: "London, UK · Remote",
-        employmentType: "Full-time",
+        employmentType: "Part-time",
         achievements: [
           <>
             Lead Prometheus, an independent research platform pairing deep learning with quantitative finance to deliver real-time Financial Torque Hypothesis (FTH) insights via an open-source web app, public website, and GitHub codebase.
@@ -258,7 +258,7 @@ const about = {
         timeframe: "Sep 2024 - Feb 2025",
         role: "Engineering Intern",
         location: "Lisbon, Portugal · Hybrid",
-        employmentType: "Internship",
+        employmentType: "Part-time",
         achievements: [
           <>
             Worked across quantum computation, networks, and sensing.
@@ -358,7 +358,7 @@ const about = {
         timeframe: "Nov 2023",
         role: "Representative at Web Summit",
         location: "Lisbon, Portugal · On-site",
-        employmentType: "Part-time",
+        employmentType: "Full-time",
         achievements: [
           <>
             Represented Startup Portugal at Web Summit 2023, boosting company visibility, engaging investors, and supporting investment rounds and pitching.
