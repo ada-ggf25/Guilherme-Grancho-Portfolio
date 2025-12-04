@@ -46,6 +46,11 @@ const social = [
     link: "https://scholar.google.com/citations?user=lHeQn9gAAAAJ&hl=en&authuser=3",
   },
   {
+    name: "YouTube",
+    icon: "youtube",
+    link: "https://www.youtube.com/@GuilhermeGranchoPro",
+  },
+  {
     name: "Talk To Me",
     icon: "email",
     link: `mailto:${person.email}`,
