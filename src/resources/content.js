@@ -813,7 +813,7 @@ const about = {
         title: "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation",
         authors: "Guilherme Grancho, Marco Barroca, Mateus dos Santos, Rafael Oliveira",
         venue: "arXiv: Computer Science - Machine Learning (cs.LG)",
-        date: "Nov 25, 2025",
+        date: "Dec 8, 2025",
         type: "Pre-print",
         description: <>This study details a bidirectional LSTM workflow for classifying transient astronomical object light curves from the PLAsTiCC dataset. The original fourteen classes are consolidated into five macro categories (S-Like, Fast, Long, Periodic, Non-Periodic) to mitigate imbalance. After padding, temporal rescaling, and flux normalisation, the masked BiLSTM attains ROC AUC scores of 0.95 for S-Like and 0.99 for Periodic sources, with Precision-Recall AUC up to 0.98. Performance drops for Fast and Long objects (e.g., 0.68 ROC AUC on Long) and for truncated 5–20 day sequences, underscoring how class imbalance and limited cadence drive misclassifications. The work highlights balancing strategies and detection-aware preprocessing as critical paths for future gains.</>,
         link: "https://arxiv.org/abs/2511.17564",
