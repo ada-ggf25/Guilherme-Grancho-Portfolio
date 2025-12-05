@@ -664,6 +664,19 @@ const about = {
     title: "Podcasts",
     episodes: [
       {
+        title: "Using AI to Fix a High-Power Laser",
+        paperTitle: "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation",
+        authors: "Guilherme Grancho, Duarte Alexandrino, Eduardo Silva, João Matias, Joaquim Pereira",
+        venue: "YouTube",
+        date: "Dec 8, 2025",
+        type: "Podcast Episode",
+        description: <>Podcast discussing machine learning approaches to optimise aberration correction in high-power laser systems for high harmonic generation. The episode covers Bayesian optimisation and convolutional neural network methods for predicting optimal Zernike polynomial coefficients for wavefront correction, demonstrating the potential for automated aberration correction in HHG systems.</>,
+        link: "https://www.youtube.com/watch?v=2vLdLmBaT0Y",
+        trailerLink: "https://www.youtube.com/watch?v=b6G6ueaRhLg",
+        category: "Optics & Deep Learning",
+        artifacts: "YouTube video + Show podcast link",
+      },
+      {
         title: "Training an AI Astronomer",
         paperTitle: "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks",
         authors: "Guilherme Grancho",

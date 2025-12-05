@@ -976,7 +976,18 @@ export default function About() {
                         </>
                       )}
                       {paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation" && (
-                        <>{" "}
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#HHG-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
                           <SmartLink
                             href="#ML-Researcher-IPFN"
                             style={{ 
@@ -1554,7 +1565,9 @@ export default function About() {
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                             <Text 
                               id={
-                                episode.title === "Prometheus Presents The Financial Torque Hypothesis"
+                                episode.title === "Using AI to Fix a High-Power Laser"
+                                  ? "HHG-Podcast"
+                                  : episode.title === "Prometheus Presents The Financial Torque Hypothesis"
                                   ? "FTH-Podcast"
                                   : episode.title === "Mapping the Deep with AI"
                                   ? "Mapping-Deep-AI-Podcast"
@@ -1567,6 +1580,7 @@ export default function About() {
                               variant="heading-strong-l" 
                               onBackground="neutral-strong"
                               style={
+                                episode.title === "Using AI to Fix a High-Power Laser" ||
                                 episode.title === "Prometheus Presents The Financial Torque Hypothesis" ||
                                 episode.title === "Mapping the Deep with AI" ||
                                 episode.title === "Automating Machine Learning Fine Tuning" ||
@@ -1623,7 +1637,31 @@ export default function About() {
                     }
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
-                      Podcast Presenting the Paper <em>{episode.paperTitle}</em>.
+                      {episode.description || <>Podcast Presenting the Paper <em>{episode.paperTitle}</em>.</>}
+                      {episode.paperTitle === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#HHG-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#ML-Researcher-IPFN"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
                       {episode.paperTitle === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
                         <>
                           {" "}
