@@ -842,7 +842,7 @@ export default function About() {
                                 rel="noopener noreferrer"
                                 style={{ textDecoration: "none" }}
                               >
-                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                                   View Paper
                                 </Tag>
                               </SmartLink>
@@ -861,7 +861,7 @@ export default function About() {
                               {paper.date}
                             </Text>
                           )}
-                          <Tag variant="brand" size="s">
+                          <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                             {paper.category}
                           </Tag>
                           <Text variant="body-default-xs" onBackground="neutral-weak">
@@ -1132,7 +1132,7 @@ export default function About() {
                                   rel="noopener noreferrer"
                                   style={{ textDecoration: "none" }}
                                 >
-                                  <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                                     View on GitHub
                                   </Tag>
                                 </SmartLink>
@@ -1166,7 +1166,7 @@ export default function About() {
                               </Flex>
                             )}
                             {project.category && (
-                              <Tag variant="brand" size="s">
+                              <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                                 {project.category}
                               </Tag>
                             )}
@@ -1328,7 +1328,7 @@ export default function About() {
                         </Column>
                         <Column style={{ alignItems: "flex-end", gap: "6px" }}>
                           {award.category && (
-                            <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                            <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                               {award.category}
                             </Tag>
                           )}
@@ -1609,7 +1609,7 @@ export default function About() {
                                 rel="noopener noreferrer"
                                 style={{ textDecoration: "none" }}
                               >
-                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                                   View Trailer
                                 </Tag>
                               </SmartLink>
@@ -1637,7 +1637,7 @@ export default function About() {
                               {episode.date}
                             </Text>
                           )}
-                          <Tag variant="brand" size="s">
+                          <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                             {episode.category}
                           </Tag>
                           <Text variant="body-default-xs" onBackground="neutral-weak">
@@ -1857,6 +1857,7 @@ export default function About() {
                           key={skillIndex}
                           size="s" 
                           background="brand-alpha-weak" 
+                          border="neutral-alpha-medium"
                           onBackground="brand-weak"
                         >
                           {skill}

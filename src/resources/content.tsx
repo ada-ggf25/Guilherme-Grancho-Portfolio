@@ -1,3 +1,5 @@
+import React from "react";
+
 // Logo import removed - not used
 
 const person = {
@@ -78,8 +80,8 @@ const home = {
 };
 
 // Helper function to parse start date from timeframe string
-function parseStartDate(timeframe) {
-  const monthNames = {
+function parseStartDate(timeframe: string): Date {
+  const monthNames: Record<string, number> = {
     "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
     "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
   };
@@ -101,8 +103,8 @@ function parseStartDate(timeframe) {
 }
 
 // Helper function to parse end date (last worked on) from timeframe string
-function parseEndDate(timeframe) {
-  const monthNames = {
+function parseEndDate(timeframe: string | undefined): Date {
+  const monthNames: Record<string, number> = {
     "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
     "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
   };
@@ -399,7 +401,7 @@ const about = {
       // Sort by start date in descending order (most recent first)
       const dateA = parseStartDate(a.timeframe);
       const dateB = parseStartDate(b.timeframe);
-      return dateB - dateA; // Descending order
+      return dateB.getTime() - dateA.getTime(); // Descending order
     }),
   },
   keyProjects: {
@@ -475,7 +477,7 @@ const about = {
       // Sort by end date (last worked on) in descending order (most recent first)
       const dateA = parseEndDate(a.timeframe);
       const dateB = parseEndDate(b.timeframe);
-      return dateB - dateA; // Descending order
+      return dateB.getTime() - dateA.getTime(); // Descending order
     }),
   },
   studies: {
@@ -889,9 +891,6 @@ const about = {
     ],
   },
 };
-
-
-
 
 // Blog section removed - no longer needed
 // Work section removed - not used
