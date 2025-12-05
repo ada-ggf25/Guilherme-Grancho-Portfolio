@@ -811,7 +811,7 @@ const about = {
       },
       {
         title: "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation",
-        authors: "Guilherme Grancho, Marco Barroca, Mateus dos Santos, Rafael Oliveira",
+        authors: "Guilherme Grancho, Duarte Alexandrino, Eduardo Silva, João Matias, Joaquim Pereira",
         venue: "arXiv: Computer Science - Machine Learning (cs.LG)",
         date: "Dec 8, 2025",
         type: "Pre-print",
