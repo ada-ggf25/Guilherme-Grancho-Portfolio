@@ -655,7 +655,18 @@ export default function About() {
                                     </>
                                   )}
                                   {isHHGPaperAchievement && (
-                                    <>{" "}
+                                    <>
+                                      {" "}
+                                      <SmartLink
+                                        href="#HHG-Podcast"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Podcast
+                                      </SmartLink>
+                                      {" "}
                                       <SmartLink
                                         href="#HHG-Paper"
                                         style={{ 
