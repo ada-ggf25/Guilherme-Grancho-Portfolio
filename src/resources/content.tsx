@@ -816,7 +816,7 @@ const about = {
       {
         title: "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation",
         authors: "Guilherme Grancho, Duarte Alexandrino, Eduardo Silva, João Matias, Joaquim Pereira",
-        venue: "arXiv: Computer Science - Machine Learning (cs.LG)",
+        venue: "arXiv: Computer Science - Machine Learning (cs.LG) / Physics - Optics (physics.optics)",
         date: "Dec 8, 2025",
         type: "Pre-print",
         description: <>High harmonic generation (HHG) is a nonlinear process that enables table-top generation of tunable, high-energy, coherent, ultrashort radiation pulses in the extreme ultraviolet (EUV) to soft X-ray range. These pulses find applications in photoemission spectroscopy in condensed matter physics, pump-probe spectroscopy for high-energy-density plasmas, and attosecond science. However, optical aberrations in the high-power laser systems required for HHG degrade beam quality and reduce efficiency. We present a machine learning approach to optimize aberration correction using a spatial light modulator. We implemented and compared Bayesian optimization and convolutional neural network (CNN) methods to predict optimal Zernike polynomial coefficients for wavefront correction. Our CNN achieved promising results with 80.39% accuracy on test data, demonstrating the potential for automated aberration correction in HHG systems.</>,
