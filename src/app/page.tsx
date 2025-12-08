@@ -389,10 +389,10 @@ export default function About() {
                             >
                               <Column style={{ flex: 1, gap: "4px" }}>
                                 <Text 
-                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer" ? "AI-Data-Engineer-EY" : experience.company === "KU Leuven" && experience.role === "Virtual Reality Researcher" ? "VR-Intern-KULeuven" : experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator" ? "Teacher-Assistant-Lab-Coordinator-IST" : experience.role} 
+                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer" ? "AI-Data-Engineer-EY" : experience.company === "KU Leuven" && experience.role === "Virtual Reality Researcher" ? "VR-Intern-KULeuven" : experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator" ? "Teacher-Assistant-Lab-Coordinator-IST" : experience.company === "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-IPFN" : experience.role} 
                                   variant="heading-strong-l" 
                                   onBackground="neutral-strong"
-                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") || (experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer") || (experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer") || (experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern") || (experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator") ? { scrollMarginTop: "140px" } : {}}
+                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") || (experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer") || (experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer") || (experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern") || (experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator") || (experience.company === "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas" && experience.role === "Machine Learning Researcher") ? { scrollMarginTop: "140px" } : {}}
                                 >
                                   {experience.role}
                                 </Text>
@@ -450,6 +450,9 @@ export default function About() {
                               // Check if this is the GraphRAG project-related achievement
                               // It's the first achievement (index 0) in the "Ernst & Young" experience
                               const isGraphRAGProjectAchievement = experience.company === "Ernst & Young" && index === 0;
+                              // Check if this is the HHG paper-related achievement
+                              // It's the first achievement (index 0) in the "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas" experience
+                              const isHHGPaperAchievement = experience.company === "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas" && index === 0;
                               
                               return (
                                 <Text
@@ -651,6 +654,30 @@ export default function About() {
                                       </SmartLink>
                                     </>
                                   )}
+                                  {isHHGPaperAchievement && (
+                                    <>
+                                      {" "}
+                                      <SmartLink
+                                        href="#HHG-Podcast"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Related Podcast
+                                      </SmartLink>
+                                      {" "}
+                                      <SmartLink
+                                        href="#HHG-Paper"
+                                        style={{ 
+                                          color: "#0066cc",
+                                          textDecoration: "underline"
+                                        }}
+                                      >
+                                        View Publication
+                                      </SmartLink>
+                                    </>
+                                  )}
                                 </Text>
                               );
                             })}
@@ -790,6 +817,8 @@ export default function About() {
                                   ? "Ocean-Floor-Paper"
                                   : paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks"
                                   ? "AI-Astronomer-Paper"
+                                  : paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
+                                  ? "HHG-Paper"
                                   : undefined
                               }
                               variant="heading-strong-l" 
@@ -798,7 +827,8 @@ export default function About() {
                                 paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ||
                                 paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" ||
                                 paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" ||
-                                paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks"
+                                paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" ||
+                                paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
                                   ? { scrollMarginTop: "140px" }
                                   : {}
                               }
@@ -812,7 +842,7 @@ export default function About() {
                                 rel="noopener noreferrer"
                                 style={{ textDecoration: "none" }}
                               >
-                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                                   View Paper
                                 </Tag>
                               </SmartLink>
@@ -831,7 +861,7 @@ export default function About() {
                               {paper.date}
                             </Text>
                           )}
-                          <Tag variant="brand" size="s">
+                          <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                             {paper.category}
                           </Tag>
                           <Text variant="body-default-xs" onBackground="neutral-weak">
@@ -947,6 +977,30 @@ export default function About() {
                           {" "}
                           <SmartLink
                             href="#AI-Researcher-CBPF"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#HHG-Podcast"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Podcast
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#ML-Researcher-IPFN"
                             style={{ 
                               color: "#0066cc",
                               textDecoration: "underline"
@@ -1078,7 +1132,7 @@ export default function About() {
                                   rel="noopener noreferrer"
                                   style={{ textDecoration: "none" }}
                                 >
-                                  <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                                     View on GitHub
                                   </Tag>
                                 </SmartLink>
@@ -1112,7 +1166,7 @@ export default function About() {
                               </Flex>
                             )}
                             {project.category && (
-                              <Tag variant="brand" size="s">
+                              <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                                 {project.category}
                               </Tag>
                             )}
@@ -1274,7 +1328,7 @@ export default function About() {
                         </Column>
                         <Column style={{ alignItems: "flex-end", gap: "6px" }}>
                           {award.category && (
-                            <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                            <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                               {award.category}
                             </Tag>
                           )}
@@ -1522,7 +1576,9 @@ export default function About() {
                           <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
                             <Text 
                               id={
-                                episode.title === "Prometheus Presents The Financial Torque Hypothesis"
+                                episode.title === "Using AI to Fix a High-Power Laser"
+                                  ? "HHG-Podcast"
+                                  : episode.title === "Prometheus Presents The Financial Torque Hypothesis"
                                   ? "FTH-Podcast"
                                   : episode.title === "Mapping the Deep with AI"
                                   ? "Mapping-Deep-AI-Podcast"
@@ -1535,6 +1591,7 @@ export default function About() {
                               variant="heading-strong-l" 
                               onBackground="neutral-strong"
                               style={
+                                episode.title === "Using AI to Fix a High-Power Laser" ||
                                 episode.title === "Prometheus Presents The Financial Torque Hypothesis" ||
                                 episode.title === "Mapping the Deep with AI" ||
                                 episode.title === "Automating Machine Learning Fine Tuning" ||
@@ -1552,7 +1609,7 @@ export default function About() {
                                 rel="noopener noreferrer"
                                 style={{ textDecoration: "none" }}
                               >
-                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                                   View Trailer
                                 </Tag>
                               </SmartLink>
@@ -1580,7 +1637,7 @@ export default function About() {
                               {episode.date}
                             </Text>
                           )}
-                          <Tag variant="brand" size="s">
+                          <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                             {episode.category}
                           </Tag>
                           <Text variant="body-default-xs" onBackground="neutral-weak">
@@ -1591,7 +1648,31 @@ export default function About() {
                     }
                   >
                     <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
-                      Podcast Presenting the Paper <em>{episode.paperTitle}</em>.
+                      {episode.description || <>Podcast Presenting the Paper <em>{episode.paperTitle}</em>.</>}
+                      {episode.paperTitle === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation" && (
+                        <>
+                          {" "}
+                          <SmartLink
+                            href="#HHG-Paper"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Publication
+                          </SmartLink>
+                          {" "}
+                          <SmartLink
+                            href="#ML-Researcher-IPFN"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
                       {episode.paperTitle === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
                         <>
                           {" "}
@@ -1776,6 +1857,7 @@ export default function About() {
                           key={skillIndex}
                           size="s" 
                           background="brand-alpha-weak" 
+                          border="neutral-alpha-medium"
                           onBackground="brand-weak"
                         >
                           {skill}

@@ -1,3 +1,5 @@
+import React from "react";
+
 // Logo import removed - not used
 
 const person = {
@@ -78,8 +80,8 @@ const home = {
 };
 
 // Helper function to parse start date from timeframe string
-function parseStartDate(timeframe) {
-  const monthNames = {
+function parseStartDate(timeframe: string): Date {
+  const monthNames: Record<string, number> = {
     "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
     "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
   };
@@ -101,8 +103,8 @@ function parseStartDate(timeframe) {
 }
 
 // Helper function to parse end date (last worked on) from timeframe string
-function parseEndDate(timeframe) {
-  const monthNames = {
+function parseEndDate(timeframe: string | undefined): Date {
+  const monthNames: Record<string, number> = {
     "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
     "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
   };
@@ -399,7 +401,7 @@ const about = {
       // Sort by start date in descending order (most recent first)
       const dateA = parseStartDate(a.timeframe);
       const dateB = parseStartDate(b.timeframe);
-      return dateB - dateA; // Descending order
+      return dateB.getTime() - dateA.getTime(); // Descending order
     }),
   },
   keyProjects: {
@@ -475,7 +477,7 @@ const about = {
       // Sort by end date (last worked on) in descending order (most recent first)
       const dateA = parseEndDate(a.timeframe);
       const dateB = parseEndDate(b.timeframe);
-      return dateB - dateA; // Descending order
+      return dateB.getTime() - dateA.getTime(); // Descending order
     }),
   },
   studies: {
@@ -664,6 +666,19 @@ const about = {
     title: "Podcasts",
     episodes: [
       {
+        title: "Using AI to Fix a High-Power Laser",
+        paperTitle: "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation",
+        authors: "Guilherme Grancho, Duarte Alexandrino, Eduardo Silva, João Matias, Joaquim Pereira",
+        venue: "YouTube",
+        date: "Dec 8, 2025",
+        type: "Podcast Episode",
+        description: <>Podcast discussing machine learning approaches to optimise aberration correction in high-power laser systems for high harmonic generation. The episode covers Bayesian optimisation and convolutional neural network methods for predicting optimal Zernike polynomial coefficients for wavefront correction, demonstrating the potential for automated aberration correction in HHG systems.</>,
+        link: "https://www.youtube.com/watch?v=2vLdLmBaT0Y",
+        trailerLink: "https://www.youtube.com/watch?v=b6G6ueaRhLg",
+        category: "Optics & Deep Learning",
+        artifacts: "YouTube video + Show podcast link",
+      },
+      {
         title: "Training an AI Astronomer",
         paperTitle: "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks",
         authors: "Guilherme Grancho",
@@ -799,6 +814,17 @@ const about = {
     title: "Publications",
     papers: [
       {
+        title: "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation",
+        authors: "Guilherme Grancho, Duarte Alexandrino, Eduardo Silva, João Matias, Joaquim Pereira",
+        venue: "arXiv: Computer Science - Machine Learning (cs.LG) / Physics - Optics (physics.optics)",
+        date: "Dec 8, 2025",
+        type: "Pre-print",
+        description: <>High harmonic generation (HHG) is a nonlinear process that enables table-top generation of tunable, high-energy, coherent, ultrashort radiation pulses in the extreme ultraviolet (EUV) to soft X-ray range. These pulses find applications in photoemission spectroscopy in condensed matter physics, pump-probe spectroscopy for high-energy-density plasmas, and attosecond science. However, optical aberrations in the high-power laser systems required for HHG degrade beam quality and reduce efficiency. We present a machine learning approach to optimize aberration correction using a spatial light modulator. We implemented and compared Bayesian optimization and convolutional neural network (CNN) methods to predict optimal Zernike polynomial coefficients for wavefront correction. Our CNN achieved promising results with 80.39% accuracy on test data, demonstrating the potential for automated aberration correction in HHG systems.</>,
+        link: "https://arxiv.org/abs/2512.05127",
+        category: "Optics & Deep Learning",
+        artifacts: "arXiv pre-print + Show publication link",
+      },
+      {
         title: "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks",
         authors: "Guilherme Grancho, Marco Barroca, Mateus dos Santos, Rafael Oliveira",
         venue: "arXiv: Computer Science - Machine Learning (cs.LG)",
@@ -812,7 +838,7 @@ const about = {
       {
         title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
         authors: "Guilherme Grancho, Vasco Pereira",
-        venue: "SSRN - The Financial Economics Network",
+        venue: "SSRN - The Financial Economics Network: Quantitative Methods",
         date: "Jun 20, 2025",
         type: "Working Paper / Preprint",
         description: <>Introduces the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies. This research, developed during my role as Quantitative Researcher at Independent Research, was recognised with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award, appearing on the SSRN Top Downloads list for 9–12 Aug 2025. The findings are implemented in Prometheus, a quantitative finance research platform featuring an interactive Streamlit dashboard for portfolio monitoring, strategy visualization, and risk management.</>,
@@ -836,7 +862,7 @@ const about = {
         authors: "Guilherme Grancho, Vitor Oliveira, João Astolfo",
         venue: "6th EAFExp — Brazilian Center for Research in Physics / arXiv: Computer Science - Machine Learning (cs.LG)",
         date: "Feb 28, 2023",
-        type: "Research paper / Preprint",
+        type: "Preprint",
         description: <>Apply CNNs to bathymetric imagery to classify/segment seabed layers. Supervised CNN pipeline, dataset curation and analysis, evaluation on geoscience targets and regions. Demonstrates CNN feasibility for ocean-floor mapping and yields actionable geophysical insights.</>,
         link: "https://arxiv.org/abs/2412.05329",
         category: "Deep Learning",
@@ -866,9 +892,6 @@ const about = {
   },
 };
 
-
-
-
 // Blog section removed - no longer needed
 // Work section removed - not used
 
@@ -882,3 +905,6 @@ const certifications = about.certifications;
 const github = social.find(item => item.icon === "github") || { link: "https://github.com/ada-ggf25" };
 
 export { person, social, newsletter, home, about, publications, certifications, github };
+
+
+

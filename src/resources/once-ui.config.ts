@@ -1,4 +1,6 @@
 import { home } from "./content";
+import { Geist } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL = "https://guilhermegrancho.com";
@@ -20,9 +22,6 @@ const protectedRoutes = {
 };
 
 // Import and set font for each variant
-import { Geist } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
-
 const heading = Geist({
   variable: "--font-heading",
   subsets: ["latin"],
@@ -202,3 +201,6 @@ const sameAs = {
 };
 
 export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };
+
+
+

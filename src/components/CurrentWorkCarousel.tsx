@@ -72,7 +72,7 @@ export const CurrentWorkCarousel: React.FC<CurrentWorkCarouselProps> = ({ items 
         {items.map((item) => (
           <article key={item.id} className={styles.card}>
             <div className={styles.cardTop}>
-              <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+              <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
                 {item.category}
               </Tag>
               {item.timeframe && (
