@@ -820,7 +820,7 @@ const about = {
         date: "Dec 8, 2025",
         type: "Pre-print",
         description: <>High harmonic generation (HHG) is a nonlinear process that enables table-top generation of tunable, high-energy, coherent, ultrashort radiation pulses in the extreme ultraviolet (EUV) to soft X-ray range. These pulses find applications in photoemission spectroscopy in condensed matter physics, pump-probe spectroscopy for high-energy-density plasmas, and attosecond science. However, optical aberrations in the high-power laser systems required for HHG degrade beam quality and reduce efficiency. We present a machine learning approach to optimize aberration correction using a spatial light modulator. We implemented and compared Bayesian optimization and convolutional neural network (CNN) methods to predict optimal Zernike polynomial coefficients for wavefront correction. Our CNN achieved promising results with 80.39% accuracy on test data, demonstrating the potential for automated aberration correction in HHG systems.</>,
-        link: "https://arxiv.org/abs/2511.17564",
+        link: "https://arxiv.org/abs/2512.05127",
         category: "Optics & Deep Learning",
         artifacts: "arXiv pre-print + Show publication link",
       },
