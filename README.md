@@ -4,7 +4,7 @@
 
 <div align="center">
 
-![Next.js](https://img.shields.io/badge/Next.js-16.0.3-black?style=for-the-badge&logo=next.js)
+![Next.js](https://img.shields.io/badge/Next.js-16.0.7-black?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?style=for-the-badge&logo=typescript)
 ![SCSS](https://img.shields.io/badge/SCSS-1.86.3-CC6699?style=for-the-badge&logo=sass)
@@ -16,37 +16,32 @@
 
 ```text
 Guilherme-Grancho-Portfolio/
-├── public/
-│   ├── favicon.ico         # Site favicon
-│   ├── images/             # Static images including avatar
-│   └── trademarks/         # Brand assets
+├── public/                  # Static assets (avatar, favicons, trademarks)
 ├── src/
-│   ├── app/                # Next.js App Router
-│   │   ├── about/          # About page
-│   │   ├── api/            # API routes
-│   │   ├── gui/            # GUI components
-│   │   ├── resume/         # Resume page
-│   │   ├── icon.tsx        # Dynamic icon generation
-│   │   ├── layout.tsx      # Root layout
-│   │   ├── not-found.tsx   # 404 page
-│   │   ├── page.tsx        # Homepage
-│   │   ├── robots.ts       # Robots.txt generation
-│   │   └── sitemap.ts      # Sitemap generation
-│   ├── components/         # Reusable UI components
-│   ├── contexts/           # React contexts
-│   ├── resources/          # Configuration and content
-│   │   ├── content.js      # Portfolio content
-│   │   ├── custom.css      # Custom styles
-│   │   ├── icons.ts        # Icon definitions
-│   │   ├── index.ts        # Resource exports
-│   │   └── once-ui.config.js  # Design system config
-│   └── utils/              # Utility functions
-├── environment.yaml        # Conda environment specification
-├── Makefile               # Developer convenience commands
-├── next.config.mjs        # Next.js configuration
-├── package.json           # Dependencies and scripts
-├── tsconfig.json          # TypeScript configuration
-└── LICENSE                # Project license
+│   ├── app/                 # Next.js App Router
+│   │   ├── api/             # Auth + OG image routes
+│   │   │   ├── authenticate/route.ts   # Password cookie setter
+│   │   │   ├── check-auth/route.ts     # Cookie verification
+│   │   │   └── og/generate/route.tsx   # Dynamic OG images
+│   │   ├── icon.tsx         # App icon
+│   │   ├── layout.tsx       # Root layout
+│   │   ├── not-found.tsx    # 404
+│   │   ├── page.tsx         # Home (single-page experience)
+│   │   ├── robots.ts        # robots.txt
+│   │   └── sitemap.ts       # sitemap.xml
+│   ├── components/          # UI components (navigation, cards, carousel, theming)
+│   ├── contexts/            # React contexts
+│   ├── resources/           # Content + design system configuration
+│   │   ├── content.tsx      # Portfolio data model (edit here)
+│   │   ├── once-ui.config.ts# Once UI config, base URL, routes, fonts
+│   │   ├── custom.css       # Global overrides
+│   │   └── icons.ts         # Icon definitions
+│   └── utils/               # Utilities (dates, scrolling)
+├── environment.yaml         # Conda environment (optional)
+├── next.config.mjs          # Next.js configuration
+├── package.json             # Scripts and dependencies
+├── tsconfig.json            # TypeScript configuration
+└── LICENSE                  # CC BY-NC 4.0
 ```
 
 ## 🚀 Getting Started
@@ -200,12 +195,13 @@ make dev
 
 ## 📄 License
 
-This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** License. See the [LICENSE](LICENSE) file for details.
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). See `LICENSE`.
 
 ## 📞 Contact & Profiles
 
-- **Email**: [guilhermegranchopro@gmail.com](mailto:guilhermegranchopro@gmail.com)
-- **LinkedIn**: [guilhermegrancho](https://www.linkedin.com/in/guilhermegrancho/)
-- **GitHub**: [ada-ggf25](https://github.com/ada-ggf25)
-- **Google Scholar**: [Guilherme Grancho](https://scholar.google.com/citations?user=lHeQn9gAAAAJ&hl=en&authuser=3)
-- **Website**: [guilhermegrancho.com](https://guilhermegrancho.com)
+- Email: [guilhermegranchopro@gmail.com](mailto:guilhermegranchopro@gmail.com)
+- LinkedIn: [guilhermegrancho](https://www.linkedin.com/in/guilhermegrancho/)
+- GitHub: [ada-ggf25](https://github.com/ada-ggf25)
+- Google Scholar: [Guilherme Grancho](https://scholar.google.com/citations?user=lHeQn9gAAAAJ&hl=en&authuser=3)
+- YouTube: [GuilhermeGranchoPro](https://www.youtube.com/@GuilhermeGranchoPro)
+- Website: [guilherme-grancho-portfolio.vercel.app](https://guilherme-grancho-portfolio.vercel.app/)
