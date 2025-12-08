@@ -905,3 +905,6 @@ const certifications = about.certifications;
 const github = social.find(item => item.icon === "github") || { link: "https://github.com/ada-ggf25" };
 
 export { person, social, newsletter, home, about, publications, certifications, github };
+
+
+
