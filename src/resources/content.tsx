@@ -862,7 +862,7 @@ const about = {
         authors: "Guilherme Grancho, Vitor Oliveira, João Astolfo",
         venue: "6th EAFExp — Brazilian Center for Research in Physics / arXiv: Computer Science - Machine Learning (cs.LG)",
         date: "Feb 28, 2023",
-        type: "Research paper / Preprint",
+        type: "Preprint",
         description: <>Apply CNNs to bathymetric imagery to classify/segment seabed layers. Supervised CNN pipeline, dataset curation and analysis, evaluation on geoscience targets and regions. Demonstrates CNN feasibility for ocean-floor mapping and yields actionable geophysical insights.</>,
         link: "https://arxiv.org/abs/2412.05329",
         category: "Deep Learning",
