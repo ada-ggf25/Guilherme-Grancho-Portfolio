@@ -503,7 +503,7 @@ const about = {
         relevant_courses: ["Data Analysis & Integration", "Introduction to Financial Mathematics", "Computational Methods in Finance", "Introduction to Quantum Information & Computing", "Software Security", "Communication Skills in Informatics & Computer Engineering I & II", "Deep Learning", "Planning, Learning & Intelligent Decision-Making", "Autonomous Agents & Multi-Agent Systems", "Business Integration"],
       },
       {
-        name: "BSc, Engineering Physics & Technology",
+        name: "BSc, Engineering Physics",
         degree: "Instituto Superior Técnico",
         timeframe: "Sep 2022 - Jul 2024",
         location: "Lisbon, Portugal",
