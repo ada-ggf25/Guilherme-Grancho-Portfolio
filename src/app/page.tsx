@@ -1590,71 +1590,73 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                            <Text 
-                              id={
-                                episode.title === "Using AI to Fix a High-Power Laser"
-                                  ? "HHG-Podcast"
-                                  : episode.title === "Prometheus Presents The Financial Torque Hypothesis"
-                                  ? "FTH-Podcast"
-                                  : episode.title === "Mapping the Deep with AI"
-                                  ? "Mapping-Deep-AI-Podcast"
-                                  : episode.title === "Automating Machine Learning Fine Tuning"
-                                  ? "ML-Fine-Tuning-Podcast"
-                                  : episode.title === "Training an AI Astronomer"
-                                  ? "AI-Astronomer-Podcast"
-                                  : undefined
-                              }
-                              variant="heading-strong-l" 
-                              onBackground="neutral-strong"
-                              style={
-                                episode.title === "Using AI to Fix a High-Power Laser" ||
-                                episode.title === "Prometheus Presents The Financial Torque Hypothesis" ||
-                                episode.title === "Mapping the Deep with AI" ||
-                                episode.title === "Automating Machine Learning Fine Tuning" ||
-                                episode.title === "Training an AI Astronomer"
-                                  ? { scrollMarginTop: "140px" }
-                                  : {}
-                              }
-                            >
-                              {episode.title}
-                            </Text>
-                            {episode.trailerLink && (
-                              <SmartLink
-                                href={episode.trailerLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none" }}
-                              >
-                                <Tag
-                                  size="s"
-                                  background="brand-alpha-weak"
-                                  border="neutral-alpha-medium"
-                                  onBackground="brand-weak"
-                                  className={styles.clickableTag}
+                          <Text 
+                            id={
+                              episode.title === "Using AI to Fix a High-Power Laser"
+                                ? "HHG-Podcast"
+                                : episode.title === "Prometheus Presents The Financial Torque Hypothesis"
+                                ? "FTH-Podcast"
+                                : episode.title === "Mapping the Deep with AI"
+                                ? "Mapping-Deep-AI-Podcast"
+                                : episode.title === "Automating Machine Learning Fine Tuning"
+                                ? "ML-Fine-Tuning-Podcast"
+                                : episode.title === "Training an AI Astronomer"
+                                ? "AI-Astronomer-Podcast"
+                                : undefined
+                            }
+                            variant="heading-strong-l" 
+                            onBackground="neutral-strong"
+                            style={
+                              episode.title === "Using AI to Fix a High-Power Laser" ||
+                              episode.title === "Prometheus Presents The Financial Torque Hypothesis" ||
+                              episode.title === "Mapping the Deep with AI" ||
+                              episode.title === "Automating Machine Learning Fine Tuning" ||
+                              episode.title === "Training an AI Astronomer"
+                                ? { scrollMarginTop: "140px" }
+                                : {}
+                            }
+                          >
+                            {episode.title}
+                          </Text>
+                          {(episode.trailerLink || episode.link) && (
+                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+                              {episode.trailerLink && (
+                                <SmartLink
+                                  href={episode.trailerLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{ textDecoration: "none" }}
                                 >
-                                  View Trailer
-                                </Tag>
-                              </SmartLink>
-                            )}
-                            {episode.link && (
-                              <SmartLink
-                                href={episode.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none" }}
-                              >
-                                <Tag
-                                  size="s"
-                                  background="brand-alpha-weak"
-                                  onBackground="brand-weak"
-                                  className={styles.clickableTag}
+                                  <Tag
+                                    size="s"
+                                    background="brand-alpha-weak"
+                                    border="neutral-alpha-medium"
+                                    onBackground="brand-weak"
+                                    className={styles.clickableTag}
+                                  >
+                                    View Trailer
+                                  </Tag>
+                                </SmartLink>
+                              )}
+                              {episode.link && (
+                                <SmartLink
+                                  href={episode.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{ textDecoration: "none" }}
                                 >
-                                  View Podcast
-                                </Tag>
-                              </SmartLink>
-                            )}
-                          </Flex>
+                                  <Tag
+                                    size="s"
+                                    background="brand-alpha-weak"
+                                    onBackground="brand-weak"
+                                    className={styles.clickableTag}
+                                  >
+                                    View Podcast
+                                  </Tag>
+                                </SmartLink>
+                              )}
+                            </Flex>
+                          )}
                           <Text variant="body-default-s" onBackground="brand-weak">
                             YouTube
                           </Text>
