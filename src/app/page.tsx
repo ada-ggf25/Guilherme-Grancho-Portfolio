@@ -806,36 +806,36 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                            <Heading 
-                              id={
-                                paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks"
-                                  ? "FTH-Paper"
-                                  : paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold"
-                                  ? "ENIAC-Paper"
-                                  : paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network"
-                                  ? "Ocean-Floor-Paper"
-                                  : paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks"
-                                  ? "AI-Astronomer-Paper"
-                                  : paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
-                                  ? "HHG-Paper"
-                                  : undefined
-                              }
-                              variant="heading-strong-l" 
-                              onBackground="neutral-strong"
-                              style={
-                                paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ||
-                                paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" ||
-                                paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" ||
-                                paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" ||
-                                paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
-                                  ? { scrollMarginTop: "140px" }
-                                  : {}
-                              }
-                            >
-                              <em>{paper.title}</em>
-                            </Heading>
-                            {paper.link && (
+                          <Heading 
+                            id={
+                              paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks"
+                                ? "FTH-Paper"
+                                : paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold"
+                                ? "ENIAC-Paper"
+                                : paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network"
+                                ? "Ocean-Floor-Paper"
+                                : paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks"
+                                ? "AI-Astronomer-Paper"
+                                : paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
+                                ? "HHG-Paper"
+                                : undefined
+                            }
+                            variant="heading-strong-l" 
+                            onBackground="neutral-strong"
+                            style={
+                              paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ||
+                              paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" ||
+                              paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" ||
+                              paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" ||
+                              paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
+                                ? { scrollMarginTop: "140px" }
+                                : {}
+                            }
+                          >
+                            <em>{paper.title}</em>
+                          </Heading>
+                          {paper.link && (
+                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
                               <SmartLink
                                 href={paper.link}
                                 target="_blank"
@@ -852,8 +852,8 @@ export default function About() {
                                   View Paper
                                 </Tag>
                               </SmartLink>
-                            )}
-                          </Flex>
+                            </Flex>
+                          )}
                           <Text variant="body-default-s" onBackground="brand-weak">
                             {paper.authors}
                           </Text>
