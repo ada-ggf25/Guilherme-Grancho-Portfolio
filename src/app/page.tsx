@@ -1609,7 +1609,13 @@ export default function About() {
                                 rel="noopener noreferrer"
                                 style={{ textDecoration: "none" }}
                               >
-                                <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
+                                <Tag
+                                  size="s"
+                                  background="brand-alpha-weak"
+                                  border="neutral-alpha-medium"
+                                  onBackground="brand-weak"
+                                  className={styles.clickableTag}
+                                >
                                   View Trailer
                                 </Tag>
                               </SmartLink>
@@ -1621,7 +1627,12 @@ export default function About() {
                                 rel="noopener noreferrer"
                                 style={{ textDecoration: "none" }}
                               >
-                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                <Tag
+                                  size="s"
+                                  background="brand-alpha-weak"
+                                  onBackground="brand-weak"
+                                  className={styles.clickableTag}
+                                >
                                   View Podcast
                                 </Tag>
                               </SmartLink>
