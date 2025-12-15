@@ -1122,15 +1122,16 @@ export default function About() {
                           style={{ width: "100%", paddingRight: "8px" }}
                         >
                           <Column style={{ flex: 1, gap: "6px" }}>
-                            <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                              <Heading 
-                                id={project.title === "Prometheus" ? "Prometheus" : project.title === "GAIA" ? "GAIA" : project.title === "GraphRAG Workflow for AI Agents" ? "GraphRAG-Project" : project.title === "LXthon" ? "LXthon-Project" : project.title === "Ernst & Young AI Hackathon" ? "EY-AI-Hackathon-Project" : undefined}
-                                variant="heading-strong-l" 
-                                onBackground="neutral-strong"
-                                style={(project.title === "Prometheus" || project.title === "GAIA" || project.title === "GraphRAG Workflow for AI Agents" || project.title === "LXthon" || project.title === "Ernst & Young AI Hackathon") ? { scrollMarginTop: "140px" } : {}}
-                              >
-                                {project.title}
-                              </Heading>
+                          <Heading 
+                            id={project.title === "Prometheus" ? "Prometheus" : project.title === "GAIA" ? "GAIA" : project.title === "GraphRAG Workflow for AI Agents" ? "GraphRAG-Project" : project.title === "LXthon" ? "LXthon-Project" : project.title === "Ernst & Young AI Hackathon" ? "EY-AI-Hackathon-Project" : undefined}
+                            variant="heading-strong-l" 
+                            onBackground="neutral-strong"
+                            style={(project.title === "Prometheus" || project.title === "GAIA" || project.title === "GraphRAG Workflow for AI Agents" || project.title === "LXthon" || project.title === "Ernst & Young AI Hackathon") ? { scrollMarginTop: "140px" } : {}}
+                          >
+                            {project.title}
+                          </Heading>
+                          {(project.github || project.link) && (
+                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
                               {project.github && (
                                 <SmartLink
                                   href={project.github}
@@ -1167,6 +1168,7 @@ export default function About() {
                                 </SmartLink>
                               )}
                             </Flex>
+                          )}
                             {project.location && (
                               <Text variant="body-default-s" onBackground="brand-weak" style={{ marginBottom: "8px" }}>
                                 {project.location}
