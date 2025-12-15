@@ -842,7 +842,13 @@ export default function About() {
                                 rel="noopener noreferrer"
                                 style={{ textDecoration: "none" }}
                               >
-                                <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
+                                <Tag
+                                  size="s"
+                                  background="brand-alpha-weak"
+                                  border="neutral-alpha-medium"
+                                  onBackground="brand-weak"
+                                  className={styles.clickableTag}
+                                >
                                   View Paper
                                 </Tag>
                               </SmartLink>
@@ -1132,7 +1138,13 @@ export default function About() {
                                   rel="noopener noreferrer"
                                   style={{ textDecoration: "none" }}
                                 >
-                                  <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
+                                  <Tag
+                                    size="s"
+                                    background="brand-alpha-weak"
+                                    border="neutral-alpha-medium"
+                                    onBackground="brand-weak"
+                                    className={styles.clickableTag}
+                                  >
                                     View on GitHub
                                   </Tag>
                                 </SmartLink>
@@ -1144,7 +1156,12 @@ export default function About() {
                                   rel="noopener noreferrer"
                                   style={{ textDecoration: "none" }}
                                 >
-                                  <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  <Tag
+                                    size="s"
+                                    background="brand-alpha-weak"
+                                    onBackground="brand-weak"
+                                    className={styles.clickableTag}
+                                  >
                                     {project.category === "Academic Research" ? "View Paper" : "View Website"}
                                   </Tag>
                                 </SmartLink>
