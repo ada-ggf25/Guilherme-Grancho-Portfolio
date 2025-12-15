@@ -19,6 +19,22 @@
     }
 }
 
+.clickableTag {
+    cursor: pointer;
+    transition:
+        transform var(--transition-micro-medium),
+        box-shadow var(--transition-micro-medium),
+        background-color var(--transition-micro-medium),
+        border-color var(--transition-micro-medium);
+
+    &:hover {
+        background: var(--color-brand-alpha-medium) !important;
+        border-color: var(--color-brand-alpha-strong) !important;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25) !important;
+        transform: translateY(-1px);
+    }
+}
+
 .avatar {
     position: sticky;
     height: fit-content;

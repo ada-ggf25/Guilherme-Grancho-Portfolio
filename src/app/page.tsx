@@ -806,48 +806,54 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                            <Heading 
-                              id={
-                                paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks"
-                                  ? "FTH-Paper"
-                                  : paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold"
-                                  ? "ENIAC-Paper"
-                                  : paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network"
-                                  ? "Ocean-Floor-Paper"
-                                  : paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks"
-                                  ? "AI-Astronomer-Paper"
-                                  : paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
-                                  ? "HHG-Paper"
-                                  : undefined
-                              }
-                              variant="heading-strong-l" 
-                              onBackground="neutral-strong"
-                              style={
-                                paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ||
-                                paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" ||
-                                paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" ||
-                                paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" ||
-                                paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
-                                  ? { scrollMarginTop: "140px" }
-                                  : {}
-                              }
-                            >
-                              <em>{paper.title}</em>
-                            </Heading>
-                            {paper.link && (
+                          <Heading 
+                            id={
+                              paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks"
+                                ? "FTH-Paper"
+                                : paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold"
+                                ? "ENIAC-Paper"
+                                : paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network"
+                                ? "Ocean-Floor-Paper"
+                                : paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks"
+                                ? "AI-Astronomer-Paper"
+                                : paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
+                                ? "HHG-Paper"
+                                : undefined
+                            }
+                            variant="heading-strong-l" 
+                            onBackground="neutral-strong"
+                            style={
+                              paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ||
+                              paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" ||
+                              paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" ||
+                              paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" ||
+                              paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
+                                ? { scrollMarginTop: "140px" }
+                                : {}
+                            }
+                          >
+                            <em>{paper.title}</em>
+                          </Heading>
+                          {paper.link && (
+                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
                               <SmartLink
                                 href={paper.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 style={{ textDecoration: "none" }}
                               >
-                                <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
+                                <Tag
+                                  size="s"
+                                  background="brand-alpha-weak"
+                                  border="neutral-alpha-medium"
+                                  onBackground="brand-weak"
+                                  className={styles.clickableTag}
+                                >
                                   View Paper
                                 </Tag>
                               </SmartLink>
-                            )}
-                          </Flex>
+                            </Flex>
+                          )}
                           <Text variant="body-default-s" onBackground="brand-weak">
                             {paper.authors}
                           </Text>
@@ -1116,15 +1122,16 @@ export default function About() {
                           style={{ width: "100%", paddingRight: "8px" }}
                         >
                           <Column style={{ flex: 1, gap: "6px" }}>
-                            <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                              <Heading 
-                                id={project.title === "Prometheus" ? "Prometheus" : project.title === "GAIA" ? "GAIA" : project.title === "GraphRAG Workflow for AI Agents" ? "GraphRAG-Project" : project.title === "LXthon" ? "LXthon-Project" : project.title === "Ernst & Young AI Hackathon" ? "EY-AI-Hackathon-Project" : undefined}
-                                variant="heading-strong-l" 
-                                onBackground="neutral-strong"
-                                style={(project.title === "Prometheus" || project.title === "GAIA" || project.title === "GraphRAG Workflow for AI Agents" || project.title === "LXthon" || project.title === "Ernst & Young AI Hackathon") ? { scrollMarginTop: "140px" } : {}}
-                              >
-                                {project.title}
-                              </Heading>
+                          <Heading 
+                            id={project.title === "Prometheus" ? "Prometheus" : project.title === "GAIA" ? "GAIA" : project.title === "GraphRAG Workflow for AI Agents" ? "GraphRAG-Project" : project.title === "LXthon" ? "LXthon-Project" : project.title === "Ernst & Young AI Hackathon" ? "EY-AI-Hackathon-Project" : undefined}
+                            variant="heading-strong-l" 
+                            onBackground="neutral-strong"
+                            style={(project.title === "Prometheus" || project.title === "GAIA" || project.title === "GraphRAG Workflow for AI Agents" || project.title === "LXthon" || project.title === "Ernst & Young AI Hackathon") ? { scrollMarginTop: "140px" } : {}}
+                          >
+                            {project.title}
+                          </Heading>
+                          {(project.github || project.link) && (
+                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
                               {project.github && (
                                 <SmartLink
                                   href={project.github}
@@ -1132,7 +1139,13 @@ export default function About() {
                                   rel="noopener noreferrer"
                                   style={{ textDecoration: "none" }}
                                 >
-                                  <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
+                                  <Tag
+                                    size="s"
+                                    background="brand-alpha-weak"
+                                    border="neutral-alpha-medium"
+                                    onBackground="brand-weak"
+                                    className={styles.clickableTag}
+                                  >
                                     View on GitHub
                                   </Tag>
                                 </SmartLink>
@@ -1144,12 +1157,18 @@ export default function About() {
                                   rel="noopener noreferrer"
                                   style={{ textDecoration: "none" }}
                                 >
-                                  <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
+                                  <Tag
+                                    size="s"
+                                    background="brand-alpha-weak"
+                                    onBackground="brand-weak"
+                                    className={styles.clickableTag}
+                                  >
                                     {project.category === "Academic Research" ? "View Paper" : "View Website"}
                                   </Tag>
                                 </SmartLink>
                               )}
                             </Flex>
+                          )}
                             {project.location && (
                               <Text variant="body-default-s" onBackground="brand-weak" style={{ marginBottom: "8px" }}>
                                 {project.location}
@@ -1573,60 +1592,73 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Flex style={{ gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-                            <Text 
-                              id={
-                                episode.title === "Using AI to Fix a High-Power Laser"
-                                  ? "HHG-Podcast"
-                                  : episode.title === "Prometheus Presents The Financial Torque Hypothesis"
-                                  ? "FTH-Podcast"
-                                  : episode.title === "Mapping the Deep with AI"
-                                  ? "Mapping-Deep-AI-Podcast"
-                                  : episode.title === "Automating Machine Learning Fine Tuning"
-                                  ? "ML-Fine-Tuning-Podcast"
-                                  : episode.title === "Training an AI Astronomer"
-                                  ? "AI-Astronomer-Podcast"
-                                  : undefined
-                              }
-                              variant="heading-strong-l" 
-                              onBackground="neutral-strong"
-                              style={
-                                episode.title === "Using AI to Fix a High-Power Laser" ||
-                                episode.title === "Prometheus Presents The Financial Torque Hypothesis" ||
-                                episode.title === "Mapping the Deep with AI" ||
-                                episode.title === "Automating Machine Learning Fine Tuning" ||
-                                episode.title === "Training an AI Astronomer"
-                                  ? { scrollMarginTop: "140px" }
-                                  : {}
-                              }
-                            >
-                              {episode.title}
-                            </Text>
-                            {episode.trailerLink && (
-                              <SmartLink
-                                href={episode.trailerLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none" }}
-                              >
-                                <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
-                                  View Trailer
-                                </Tag>
-                              </SmartLink>
-                            )}
-                            {episode.link && (
-                              <SmartLink
-                                href={episode.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none" }}
-                              >
-                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                                  View Podcast
-                                </Tag>
-                              </SmartLink>
-                            )}
-                          </Flex>
+                          <Text 
+                            id={
+                              episode.title === "Using AI to Fix a High-Power Laser"
+                                ? "HHG-Podcast"
+                                : episode.title === "Prometheus Presents The Financial Torque Hypothesis"
+                                ? "FTH-Podcast"
+                                : episode.title === "Mapping the Deep with AI"
+                                ? "Mapping-Deep-AI-Podcast"
+                                : episode.title === "Automating Machine Learning Fine Tuning"
+                                ? "ML-Fine-Tuning-Podcast"
+                                : episode.title === "Training an AI Astronomer"
+                                ? "AI-Astronomer-Podcast"
+                                : undefined
+                            }
+                            variant="heading-strong-l" 
+                            onBackground="neutral-strong"
+                            style={
+                              episode.title === "Using AI to Fix a High-Power Laser" ||
+                              episode.title === "Prometheus Presents The Financial Torque Hypothesis" ||
+                              episode.title === "Mapping the Deep with AI" ||
+                              episode.title === "Automating Machine Learning Fine Tuning" ||
+                              episode.title === "Training an AI Astronomer"
+                                ? { scrollMarginTop: "140px" }
+                                : {}
+                            }
+                          >
+                            {episode.title}
+                          </Text>
+                          {(episode.trailerLink || episode.link) && (
+                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+                              {episode.trailerLink && (
+                                <SmartLink
+                                  href={episode.trailerLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <Tag
+                                    size="s"
+                                    background="brand-alpha-weak"
+                                    border="neutral-alpha-medium"
+                                    onBackground="brand-weak"
+                                    className={styles.clickableTag}
+                                  >
+                                    View Trailer
+                                  </Tag>
+                                </SmartLink>
+                              )}
+                              {episode.link && (
+                                <SmartLink
+                                  href={episode.link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <Tag
+                                    size="s"
+                                    background="brand-alpha-weak"
+                                    onBackground="brand-weak"
+                                    className={styles.clickableTag}
+                                  >
+                                    View Podcast
+                                  </Tag>
+                                </SmartLink>
+                              )}
+                            </Flex>
+                          )}
                           <Text variant="body-default-s" onBackground="brand-weak">
                             YouTube
                           </Text>
