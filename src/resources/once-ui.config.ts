@@ -7,6 +7,7 @@ const baseURL = "https://guilhermegrancho.com";
 
 const routes = {
   "/": true,
+  "/mobile-not-supported": true,
 };
 
 const display = {
