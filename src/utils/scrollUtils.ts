@@ -69,10 +69,35 @@ export function trackActiveSection(
       if (element) {
         const observer = new IntersectionObserver(
           (entries) => {
+            // If at the very top of the page, always prioritize first section (Intro)
+            // This check must happen before processing entries to prevent wrong highlighting
+            if (window.scrollY < 100) {
+              const firstSectionElement = document.getElementById(sections[0]?.id);
+              if (firstSectionElement) {
+                const rect = firstSectionElement.getBoundingClientRect();
+                const elementTop = rect.top + window.scrollY;
+                const elementBottom = elementTop + firstSectionElement.offsetHeight;
+                
+                // If scroll position is within first section bounds, set it as active and return
+                if (window.scrollY >= elementTop - 100 && window.scrollY < elementBottom) {
+                  callback(0);
+                  return;
+                }
+              }
+              // Fallback: if at very top (scrollY < 50), always default to first section
+              if (window.scrollY < 50) {
+                callback(0);
+                return;
+              }
+            }
+            
             entries.forEach((entry) => {
               if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-                currentActiveIndex = index;
-                callback(index);
+                // Double-check we're not at the top before setting non-first section as active
+                if (index === 0 || window.scrollY >= 100) {
+                  currentActiveIndex = index;
+                  callback(index);
+                }
               }
             });
           },
@@ -86,7 +111,29 @@ export function trackActiveSection(
       }
     });
 
-    // Initial check
+    // Immediate synchronous check for initial state (especially when at top)
+    const immediateCheck = () => {
+      if (window.scrollY < 100) {
+        const firstSectionElement = document.getElementById(sections[0]?.id);
+        if (firstSectionElement) {
+          const rect = firstSectionElement.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          const elementBottom = elementTop + firstSectionElement.offsetHeight;
+          
+          if (window.scrollY >= elementTop - 100 && window.scrollY < elementBottom) {
+            callback(0);
+            return;
+          }
+        }
+        if (window.scrollY < 50) {
+          callback(0);
+          return;
+        }
+      }
+    };
+    immediateCheck();
+
+    // Initial check (throttled for performance)
     const initialCheck = throttle(() => {
       // Check if we're at the very top - prioritize first section
       if (window.scrollY < 100) {
