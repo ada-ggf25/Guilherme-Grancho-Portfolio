@@ -179,28 +179,77 @@ export function trackActiveSection(
     }, 100);
     initialCheck();
 
-    // Add scroll listener to handle top case when Intersection Observer might not trigger
-    // This ensures the first section is highlighted when at the very top
-    const handleScroll = throttle(() => {
-      // If at the very top of the page, default to first section (Intro)
-      if (window.scrollY < 100) {
-        // Check if we're actually in the first section's bounds
-        const firstSectionElement = document.getElementById(sections[0]?.id);
-        if (firstSectionElement) {
-          const rect = firstSectionElement.getBoundingClientRect();
-          const elementTop = rect.top + window.scrollY;
-          const elementBottom = elementTop + firstSectionElement.offsetHeight;
-          
-          // If scroll position is within first section bounds, set it as active
-          if (window.scrollY >= elementTop - 100 && window.scrollY < elementBottom) {
-            callback(0);
+    // Add scroll listener using requestAnimationFrame for smooth updates during fast scrolling
+    // This ensures sections are correctly highlighted even during rapid scrolling
+    let rafId: number | null = null;
+    
+    const handleScroll = () => {
+      // Cancel any pending animation frame
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+      
+      rafId = requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        
+        // If at the very top of the page, default to first section (Intro)
+        if (currentScrollY < 100) {
+          const firstSectionElement = document.getElementById(sections[0]?.id);
+          if (firstSectionElement) {
+            const rect = firstSectionElement.getBoundingClientRect();
+            const elementTop = rect.top + currentScrollY;
+            const elementBottom = elementTop + firstSectionElement.offsetHeight;
+            
+            // If scroll position is within first section bounds, set it as active
+            if (currentScrollY >= elementTop - 100 && currentScrollY < elementBottom) {
+              callback(0);
+              rafId = null;
+              return;
+            }
           }
-        } else if (window.scrollY < 50) {
-          // Fallback: if at very top and first section element not found, default to 0
+          if (currentScrollY < 50) {
+            callback(0);
+            rafId = null;
+            return;
+          }
+        }
+        
+        // Check all sections to find which one is currently active
+        // This is important during fast scrolling when Intersection Observer might lag
+        const scrollPosition = currentScrollY + window.innerHeight / 3;
+        let foundActive = false;
+        
+        // Check sections in reverse order (bottom to top) to find the most relevant one
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = sections[i];
+          const element = document.getElementById(section.id);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            const elementTop = rect.top + currentScrollY;
+            const elementBottom = elementTop + rect.height;
+            
+            // Check if scroll position is within this section's bounds
+            if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
+              // Special handling for first section at top
+              if (i === 0 && currentScrollY < 100) {
+                callback(0);
+              } else {
+                callback(i);
+              }
+              foundActive = true;
+              break;
+            }
+          }
+        }
+        
+        // If no section found and we're near the top, default to first section
+        if (!foundActive && currentScrollY < 200) {
           callback(0);
         }
-      }
-    }, 50);
+        
+        rafId = null;
+      });
+    };
     
     const win = window as Window & typeof globalThis;
     win.addEventListener('scroll', handleScroll, { passive: true });
@@ -208,59 +257,90 @@ export function trackActiveSection(
     return () => {
       observers.forEach((observer) => observer.disconnect());
       win.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
     };
   }
 
-  // Fallback to scroll event with throttling
-  const handleScroll = throttle(() => {
-    // Check if we're at the very top - prioritize first section
-    if (window.scrollY < 100) {
-      const firstSectionElement = document.getElementById(sections[0]?.id);
-      if (firstSectionElement) {
-        const rect = firstSectionElement.getBoundingClientRect();
-        const elementTop = rect.top + window.scrollY;
-        const elementBottom = elementTop + firstSectionElement.offsetHeight;
-        
-        // If scroll position is within first section bounds, set it as active
-        if (window.scrollY >= elementTop - 100 && window.scrollY < elementBottom) {
+  // Fallback to scroll event using requestAnimationFrame for smooth updates
+  let fallbackRafId: number | null = null;
+  
+  const handleScroll = () => {
+    // Cancel any pending animation frame
+    if (fallbackRafId !== null) {
+      cancelAnimationFrame(fallbackRafId);
+    }
+    
+    fallbackRafId = requestAnimationFrame(() => {
+      const currentScrollY = window.scrollY;
+      
+      // Check if we're at the very top - prioritize first section
+      if (currentScrollY < 100) {
+        const firstSectionElement = document.getElementById(sections[0]?.id);
+        if (firstSectionElement) {
+          const rect = firstSectionElement.getBoundingClientRect();
+          const elementTop = rect.top + currentScrollY;
+          const elementBottom = elementTop + firstSectionElement.offsetHeight;
+          
+          // If scroll position is within first section bounds, set it as active
+          if (currentScrollY >= elementTop - 100 && currentScrollY < elementBottom) {
+            callback(0);
+            fallbackRafId = null;
+            return;
+          }
+        }
+        // If at very top (scrollY < 50) and first section check didn't work, default to 0
+        if (currentScrollY < 50) {
           callback(0);
+          fallbackRafId = null;
           return;
         }
       }
-      // If at very top (scrollY < 50) and first section check didn't work, default to 0
-      if (window.scrollY < 50) {
-        callback(0);
-        return;
-      }
-    }
-    
-    const scrollPosition = window.scrollY + window.innerHeight / 3;
-    let foundActive = false;
-    
-    sections.forEach((section, index) => {
-      const element = document.getElementById(section.id);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        const elementTop = rect.top + window.scrollY;
-        const elementBottom = elementTop + rect.height;
-        
-        if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
-          callback(index);
-          foundActive = true;
+      
+      const scrollPosition = currentScrollY + window.innerHeight / 3;
+      let foundActive = false;
+      
+      // Check sections in reverse order (bottom to top) to find the most relevant one
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        const element = document.getElementById(section.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const elementTop = rect.top + currentScrollY;
+          const elementBottom = elementTop + rect.height;
+          
+          if (scrollPosition >= elementTop && scrollPosition <= elementBottom) {
+            // Special handling for first section at top
+            if (i === 0 && currentScrollY < 100) {
+              callback(0);
+            } else {
+              callback(i);
+            }
+            foundActive = true;
+            break;
+          }
         }
       }
+      
+      // If no section found and we're near the top, default to first section
+      if (!foundActive && currentScrollY < 200) {
+        callback(0);
+      }
+      
+      fallbackRafId = null;
     });
-    
-    // If no section found and we're near the top, default to first section
-    if (!foundActive && window.scrollY < 200) {
-      callback(0);
-    }
-  }, 100);
+  };
 
   const win = window as Window & typeof globalThis;
   win.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Initial check
   
-  return () => win.removeEventListener('scroll', handleScroll);
+  return () => {
+    win.removeEventListener('scroll', handleScroll);
+    if (fallbackRafId !== null) {
+      cancelAnimationFrame(fallbackRafId);
+    }
+  };
 }
 
