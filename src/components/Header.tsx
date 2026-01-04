@@ -67,7 +67,7 @@ export const Header = () => {
             className="display-flex position-relative"
             gap="8"
             vertical="center"
-            style={{ alignItems: "center", justifyContent: "center" }}
+            horizontal="center"
           >
             <a
               href="https://github.com/ada-ggf25/Guilherme-Grancho-Portfolio/tree/main"
