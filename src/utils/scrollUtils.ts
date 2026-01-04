@@ -1,6 +1,9 @@
 // Store the callback function globally so scrollToSection can trigger immediate highlighting
 let activeSectionCallback: ((index: number) => void) | null = null;
 let sectionsList: Array<{ id: string }> = [];
+// Track the last clicked section and suppress scroll detection temporarily
+let lastClickedSectionIndex: number | null = null;
+let suppressScrollDetectionUntil: number = 0;
 
 /**
  * Utility function to scroll to a section with header offset
@@ -15,6 +18,9 @@ export function scrollToSection(sectionId: string, headerOffset = 100): void {
     if (sectionIndex !== -1 && activeSectionCallback) {
       // Immediately highlight the clicked section
       activeSectionCallback(sectionIndex);
+      // Suppress scroll detection for 1 second to prevent override
+      lastClickedSectionIndex = sectionIndex;
+      suppressScrollDetectionUntil = Date.now() + 1000;
     }
     
     const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
@@ -30,8 +36,10 @@ export function scrollToSection(sectionId: string, headerOffset = 100): void {
       setTimeout(() => {
         if (sectionIndex !== -1 && activeSectionCallback) {
           activeSectionCallback(sectionIndex);
+          lastClickedSectionIndex = sectionIndex;
+          suppressScrollDetectionUntil = Date.now() + 500;
         }
-      }, 100);
+      }, 300);
       return;
     }
     
@@ -42,12 +50,30 @@ export function scrollToSection(sectionId: string, headerOffset = 100): void {
       behavior: 'smooth'
     });
     
-    // Ensure highlighting is set after scroll completes
+    // Ensure highlighting is set after scroll completes (multiple checks for reliability)
     setTimeout(() => {
       if (sectionIndex !== -1 && activeSectionCallback) {
         activeSectionCallback(sectionIndex);
+        lastClickedSectionIndex = sectionIndex;
+        suppressScrollDetectionUntil = Date.now() + 500;
       }
-    }, 100);
+    }, 300);
+    
+    // Additional check after scroll animation completes
+    setTimeout(() => {
+      if (sectionIndex !== -1 && activeSectionCallback) {
+        const targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+          const rect = targetElement.getBoundingClientRect();
+          // If element is visible in viewport, ensure it's highlighted
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            activeSectionCallback(sectionIndex);
+            lastClickedSectionIndex = sectionIndex;
+            suppressScrollDetectionUntil = Date.now() + 300;
+          }
+        }
+      }
+    }, 800);
   }
 }
 
@@ -120,6 +146,25 @@ export function trackActiveSection(
             }
             
             entries.forEach((entry) => {
+              // If we recently clicked a section, don't override it unless we've scrolled away
+              if (Date.now() < suppressScrollDetectionUntil && lastClickedSectionIndex !== null) {
+                if (index === lastClickedSectionIndex) {
+                  // Allow the clicked section to be set
+                  const clickedElement = document.getElementById(sections[lastClickedSectionIndex]?.id);
+                  if (clickedElement) {
+                    const rect = clickedElement.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                      currentActiveIndex = index;
+                      callback(index);
+                      return;
+                    }
+                  }
+                } else {
+                  // Don't override the clicked section
+                  return;
+                }
+              }
+              
               // Lower threshold for better detection of small sections
               // Also check if element is near the bottom of the page (last section)
               const isLastSection = index === sections.length - 1;
@@ -226,6 +271,20 @@ export function trackActiveSection(
       rafId = requestAnimationFrame(() => {
         const currentScrollY = window.scrollY;
         
+        // If we recently clicked a section, respect that choice for a short time
+        if (Date.now() < suppressScrollDetectionUntil && lastClickedSectionIndex !== null) {
+          const clickedElement = document.getElementById(sectionsList[lastClickedSectionIndex]?.id);
+          if (clickedElement) {
+            const rect = clickedElement.getBoundingClientRect();
+            // If the clicked section is still visible, keep it highlighted
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              callback(lastClickedSectionIndex);
+              rafId = null;
+              return;
+            }
+          }
+        }
+        
         // If at the very top of the page, default to first section (Intro)
         if (currentScrollY < 100) {
           const firstSectionElement = document.getElementById(sections[0]?.id);
@@ -257,8 +316,9 @@ export function trackActiveSection(
             const elementTop = rect.top + currentScrollY;
             const elementBottom = elementTop + rect.height;
             
-            // If we're near bottom and within last section bounds, highlight it
-            if (currentScrollY >= elementTop - 200) {
+            // If last section is visible in viewport and we're near bottom, highlight it
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            if (isVisible && (currentScrollY >= elementTop - 300 || isNearBottom)) {
               callback(sections.length - 1);
               rafId = null;
               return;
@@ -326,6 +386,8 @@ export function trackActiveSection(
       if (activeSectionCallback === callback) {
         activeSectionCallback = null;
         sectionsList = [];
+        lastClickedSectionIndex = null;
+        suppressScrollDetectionUntil = 0;
       }
     };
   }
@@ -341,6 +403,20 @@ export function trackActiveSection(
     
     fallbackRafId = requestAnimationFrame(() => {
       const currentScrollY = window.scrollY;
+      
+      // If we recently clicked a section, respect that choice for a short time
+      if (Date.now() < suppressScrollDetectionUntil && lastClickedSectionIndex !== null) {
+        const clickedElement = document.getElementById(sectionsList[lastClickedSectionIndex]?.id);
+        if (clickedElement) {
+          const rect = clickedElement.getBoundingClientRect();
+          // If the clicked section is still visible, keep it highlighted
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            callback(lastClickedSectionIndex);
+            fallbackRafId = null;
+            return;
+          }
+        }
+      }
       
       // Check if we're at the very top - prioritize first section
       if (currentScrollY < 100) {
@@ -374,8 +450,9 @@ export function trackActiveSection(
           const elementTop = rect.top + currentScrollY;
           const elementBottom = elementTop + rect.height;
           
-          // If we're near bottom and within last section bounds, highlight it
-          if (currentScrollY >= elementTop - 200) {
+          // If last section is visible in viewport and we're near bottom, highlight it
+          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+          if (isVisible && (currentScrollY >= elementTop - 300 || isNearBottom)) {
             callback(sections.length - 1);
             fallbackRafId = null;
             return;
