@@ -6,11 +6,22 @@
 export function scrollToSection(sectionId: string, headerOffset = 100): void {
   const element = document.getElementById(sectionId);
   if (element) {
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+    
+    // If the element is at or near the top of the page, scroll to 0
+    // This handles the Intro section which should be at the very top
+    if (elementTop < 200) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      return;
+    }
+    
+    const offsetPosition = elementTop - headerOffset;
 
     window.scrollTo({
-      top: offsetPosition,
+      top: Math.max(0, offsetPosition), // Ensure we don't scroll to negative position
       behavior: 'smooth'
     });
   }
@@ -58,12 +69,6 @@ export function trackActiveSection(
       if (element) {
         const observer = new IntersectionObserver(
           (entries) => {
-            // If at the very top, always prioritize first section (Intro)
-            if (window.scrollY < 50) {
-              callback(0);
-              return;
-            }
-            
             entries.forEach((entry) => {
               if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
                 currentActiveIndex = index;
@@ -83,10 +88,25 @@ export function trackActiveSection(
 
     // Initial check
     const initialCheck = throttle(() => {
-      // If at the very top of the page, default to first section (Intro)
-      if (window.scrollY < 50) {
-        callback(0);
-        return;
+      // Check if we're at the very top - prioritize first section
+      if (window.scrollY < 100) {
+        const firstSectionElement = document.getElementById(sections[0]?.id);
+        if (firstSectionElement) {
+          const rect = firstSectionElement.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          const elementBottom = elementTop + firstSectionElement.offsetHeight;
+          
+          // If scroll position is within first section bounds, set it as active
+          if (window.scrollY >= elementTop - 100 && window.scrollY < elementBottom) {
+            callback(0);
+            return;
+          }
+        }
+        // If at very top (scrollY < 50) and first section check didn't work, default to 0
+        if (window.scrollY < 50) {
+          callback(0);
+          return;
+        }
       }
       
       const scrollPosition = window.scrollY + window.innerHeight / 3;
@@ -113,13 +133,27 @@ export function trackActiveSection(
     initialCheck();
 
     // Add scroll listener to handle top case when Intersection Observer might not trigger
+    // This ensures the first section is highlighted when at the very top
     const handleScroll = throttle(() => {
       // If at the very top of the page, default to first section (Intro)
-      if (window.scrollY < 50) {
-        callback(0);
-        return;
+      if (window.scrollY < 100) {
+        // Check if we're actually in the first section's bounds
+        const firstSectionElement = document.getElementById(sections[0]?.id);
+        if (firstSectionElement) {
+          const rect = firstSectionElement.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          const elementBottom = elementTop + firstSectionElement.offsetHeight;
+          
+          // If scroll position is within first section bounds, set it as active
+          if (window.scrollY >= elementTop - 100 && window.scrollY < elementBottom) {
+            callback(0);
+          }
+        } else if (window.scrollY < 50) {
+          // Fallback: if at very top and first section element not found, default to 0
+          callback(0);
+        }
       }
-    }, 100);
+    }, 50);
     
     const win = window as Window & typeof globalThis;
     win.addEventListener('scroll', handleScroll, { passive: true });
@@ -132,10 +166,25 @@ export function trackActiveSection(
 
   // Fallback to scroll event with throttling
   const handleScroll = throttle(() => {
-    // If at the very top of the page, default to first section (Intro)
-    if (window.scrollY < 50) {
-      callback(0);
-      return;
+    // Check if we're at the very top - prioritize first section
+    if (window.scrollY < 100) {
+      const firstSectionElement = document.getElementById(sections[0]?.id);
+      if (firstSectionElement) {
+        const rect = firstSectionElement.getBoundingClientRect();
+        const elementTop = rect.top + window.scrollY;
+        const elementBottom = elementTop + firstSectionElement.offsetHeight;
+        
+        // If scroll position is within first section bounds, set it as active
+        if (window.scrollY >= elementTop - 100 && window.scrollY < elementBottom) {
+          callback(0);
+          return;
+        }
+      }
+      // If at very top (scrollY < 50) and first section check didn't work, default to 0
+      if (window.scrollY < 50) {
+        callback(0);
+        return;
+      }
     }
     
     const scrollPosition = window.scrollY + window.innerHeight / 3;
