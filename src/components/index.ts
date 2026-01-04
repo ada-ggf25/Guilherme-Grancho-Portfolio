@@ -7,3 +7,4 @@ export { Providers } from "@/components/Providers";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
 export { SectionNavigation } from "@/components/SectionNavigation";
+export { ConditionalHeaderFooter } from "@/components/ConditionalHeaderFooter";
