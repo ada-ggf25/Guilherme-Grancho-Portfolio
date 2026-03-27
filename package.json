@@ -17,7 +17,7 @@
     "cookie": "^1.0.2",
     "gray-matter": "^2.0.1",
     "next": "^16.0.7",
-    "next-mdx-remote": "^5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-icons": "^5.5.0",
@@ -28,7 +28,7 @@
     "@types/node": "^20.17.30",
     "@types/react": "19.2.5",
     "@types/react-dom": "19.2.3",
-    "baseline-browser-mapping": "^2.9.3",
+    "baseline-browser-mapping": "^2.10.11",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.0.3",
     "typescript": "^5.8.3"

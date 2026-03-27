@@ -168,7 +168,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Hi! Welcome to my journey! I&apos;m half Brazilian and half Portuguese, born and raised in Portugal, where I developed a passion for physics and math. When I&apos;m not working, you&apos;ll usually find me playing sports. I&apos;m pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I&apos;m always eager to connect with like-minded people who want to build great things. Feel free to reach out!
+        Hi! Welcome to my journey! I was born and raised in Portugal, where I developed a passion for physics and math. When I&apos;m not working, you&apos;ll usually find me playing sports. I&apos;m pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I&apos;m always eager to connect with like-minded people who want to build great things. Feel free to reach out!
       </>
     ),
     finalStatement: (
@@ -604,6 +604,15 @@ const about = {
     display: true, // set to false to hide this section
     title: "Certifications",
     accomplishments: [
+      {
+        title: "Securities Education Certificate",
+        description: <>Securities and financial markets: instruments, market structure, and core trading and regulatory concepts from the Imperial College Investment Society programme.</>,
+        category: "Finance Education",
+        year: "Mar 2026",
+        issuer: "Imperial College Investment Society",
+        associated_with: "",
+        artifacts: "Certificate",
+      },
       {
         title: "Compliance & Protocols for Global Clients",
         description: <>Compliance practices, client-service protocols for international engagements.</>,
