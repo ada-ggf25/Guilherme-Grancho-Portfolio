@@ -605,14 +605,13 @@ const about = {
     title: "Certifications",
     accomplishments: [
       {
-        title: "Securities Education Certificate (Merit)",
+        title: "Securities Education Certificate",
         description: <>Securities and financial markets: instruments, market structure, and core trading and regulatory concepts from the Imperial College Investment Society programme.</>,
         category: "Finance Education",
         year: "Mar 2026",
         issuer: "Imperial College Investment Society",
         associated_with: "",
         artifacts: "Certificate",
-        credential_id: "ICISSEC20261559",
       },
       {
         title: "Compliance & Protocols for Global Clients",
