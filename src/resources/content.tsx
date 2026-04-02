@@ -898,8 +898,8 @@ const about = {
         title: "Algorithmic Trading Society Member",
         organization: "Imperial College London",
         location: "London, UK",
-        timeframe: "Sep 2025 - Present",
-        description: <>Weekly quantitative lectures with regular assessments in statistics, probability, time series, derivatives pricing, and stochastic calculus, plus recurring hedging simulations, portfolio exercises, and coding hackathon challenges.</>,
+        timeframe: "Sep 2025 - Apr 2026",
+        description: <>Weekly quantitative lectures with regular assessments in statistics, probability, time series, derivatives pricing, and stochastic calculus, plus recurring hedging simulations, portfolio exercises, and coding hackathon challenges. Participation concluded with AlgoCourse completion and issuance of the Algorithmic Trading Certificate.</>,
       },
       {
         title: "Track and Field Athlete",
