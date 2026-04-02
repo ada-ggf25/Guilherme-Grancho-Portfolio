@@ -614,14 +614,6 @@ const about = {
         issuer: "Imperial College Algorithmic Trading Society",
         associated_with: "",
         artifacts: "Certificate",
-        images: [
-          {
-            src: "/images/certifications/algorithmic-trading-algocourse-2025-26.png",
-            alt: "AlgoCourse 2025/26 Certificate of Completion — Imperial College Algorithmic Trading Society",
-            width: 18,
-            height: 12,
-          },
-        ],
       },
       {
         title: "Securities Education Certificate",
