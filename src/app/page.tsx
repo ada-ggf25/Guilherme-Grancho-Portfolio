@@ -24,7 +24,6 @@ import React from "react";
 type PaperWithHighlights = typeof about.publications.papers[number] & { highlights?: string };
 type ProjectWithHighlights = typeof about.keyProjects.projects[number] & { highlights?: string };
 type CertificationWithCredential = typeof about.certifications.accomplishments[number] & { credential_id?: string };
-type CertificationImage = { src?: string; alt?: string; width?: number; height?: number };
 
 const monthLookup: Record<string, number> = {
   Jan: 0,
@@ -1565,48 +1564,6 @@ export default function About() {
                         {(certification as CertificationWithCredential).credential_id?.trim() && `Credential ID: ${(certification as CertificationWithCredential).credential_id}`}
                       </Text>
                     )}
-                    {(() => {
-                      const certImages =
-                        "images" in certification &&
-                        Array.isArray((certification as { images?: CertificationImage[] }).images)
-                          ? (certification as { images: CertificationImage[] }).images
-                          : [];
-                      if (certImages.length === 0) {
-                        return null;
-                      }
-                      return (
-                        <Flex
-                          fillWidth
-                          style={{
-                            paddingTop: "var(--static-space-m)",
-                            gap: "12px",
-                            flexWrap: "wrap",
-                          }}
-                        >
-                          {certImages.map((image, imageIndex) => (
-                            <Flex
-                              key={imageIndex}
-                              style={{
-                                border: "1px solid var(--color-neutral-medium)",
-                                borderRadius: "var(--static-space-m)",
-                                minWidth: `${image.width ?? 0}rem`,
-                                height: `${image.height ?? 0}rem`,
-                              }}
-                            >
-                              <Media
-                                enlarge
-                                style={{
-                                  borderRadius: "var(--static-space-m)",
-                                }}
-                                sizes={image.width?.toString() ?? "100"}
-                                alt={image.alt ?? ""}
-                                src={image.src ?? ""}
-                              />
-                            </Flex>
-                          ))}
-                        </Flex>
-                      );
-                    })()}
                   </CollapsibleSection>
                 ))}
               </Column>
