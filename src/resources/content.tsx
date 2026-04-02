@@ -902,6 +902,13 @@ const about = {
         description: <>Weekly quantitative lectures with regular assessments in statistics, probability, time series, derivatives pricing, and stochastic calculus, plus recurring hedging simulations, portfolio exercises, and coding hackathon challenges. Participation concluded with AlgoCourse completion and issuance of the Algorithmic Trading Certificate.</>,
       },
       {
+        title: "Investment Society Member",
+        organization: "Imperial College London",
+        location: "London, UK",
+        timeframe: "Sep 2025 - Mar 2026",
+        description: <>Society programme covering securities and financial markets: instruments, market structure, and core trading and regulatory concepts through the Imperial College Investment Society. Participation concluded with programme completion and issuance of the Securities Education Certificate.</>,
+      },
+      {
         title: "Track and Field Athlete",
         organization: "Portuguese Track and Field Federation",
         location: "Lisbon, Portugal · On-site",
