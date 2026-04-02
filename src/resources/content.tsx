@@ -607,7 +607,7 @@ const about = {
       {
         title: "Algorithmic Trading Certificate",
         description: <>
-          Certificate of completion for AlgoCourse 2025/6, the Imperial College Algorithmic Trading Society programme for 2025/26, demonstrating fluency in options theory, market making, arbitrage, trade execution, and machine learning.
+          Certificate of completion for the Imperial College Algorithmic Trading Society AlgoCourse, demonstrating fluency in options theory, market making, arbitrage, trade execution, and machine learning.
         </>,
         category: "Finance Education",
         year: "Apr 2026",
