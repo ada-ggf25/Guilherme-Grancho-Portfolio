@@ -605,6 +605,17 @@ const about = {
     title: "Certifications",
     accomplishments: [
       {
+        title: "Algorithmic Trading Certificate",
+        description: <>
+          Certificate of completion for the Imperial College Algorithmic Trading Society AlgoCourse, demonstrating fluency in options theory, market making, arbitrage, trade execution, and machine learning.
+        </>,
+        category: "Finance Education",
+        year: "Apr 2026",
+        issuer: "Imperial College Algorithmic Trading Society",
+        associated_with: "",
+        artifacts: "Certificate",
+      },
+      {
         title: "Securities Education Certificate",
         description: <>Securities and financial markets: instruments, market structure, and core trading and regulatory concepts from the Imperial College Investment Society programme.</>,
         category: "Finance Education",
@@ -887,8 +898,15 @@ const about = {
         title: "Algorithmic Trading Society Member",
         organization: "Imperial College London",
         location: "London, UK",
-        timeframe: "Sep 2025 - Present",
-        description: <>Weekly quantitative lectures with regular assessments in statistics, probability, time series, derivatives pricing, and stochastic calculus, plus recurring hedging simulations, portfolio exercises, and coding hackathon challenges.</>,
+        timeframe: "Sep 2025 - Apr 2026",
+        description: <>Weekly quantitative lectures with regular assessments in statistics, probability, time series, derivatives pricing, and stochastic calculus, plus recurring hedging simulations, portfolio exercises, and coding hackathon challenges. Participation concluded with AlgoCourse completion and issuance of the Algorithmic Trading Certificate.</>,
+      },
+      {
+        title: "Investment Society Member",
+        organization: "Imperial College London",
+        location: "London, UK",
+        timeframe: "Sep 2025 - Mar 2026",
+        description: <>Society programme covering securities and financial markets: instruments, market structure, and core trading and regulatory concepts through the Imperial College Investment Society. Participation concluded with programme completion and issuance of the Securities Education Certificate.</>,
       },
       {
         title: "Track and Field Athlete",

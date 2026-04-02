@@ -1051,7 +1051,23 @@ export default function About() {
                           style={{ width: "100%", paddingRight: "8px" }}
                         >
                           <Column style={{ flex: 1, gap: "6px" }}>
-                            <Text variant="heading-strong-l" onBackground="neutral-strong">
+                            <Text
+                              id={
+                                activity.title === "Algorithmic Trading Society Member"
+                                  ? "Algorithmic-Trading-Society-Member"
+                                  : activity.title === "Investment Society Member"
+                                    ? "Investment-Society-Member"
+                                    : undefined
+                              }
+                              variant="heading-strong-l"
+                              onBackground="neutral-strong"
+                              style={
+                                activity.title === "Algorithmic Trading Society Member" ||
+                                activity.title === "Investment Society Member"
+                                  ? { scrollMarginTop: "140px" }
+                                  : {}
+                              }
+                            >
                               {activity.title}
                             </Text>
                             {activity.organization && (
@@ -1086,6 +1102,32 @@ export default function About() {
                       {activity.description && (
                         <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
                           {activity.description}
+                          {activity.title === "Algorithmic Trading Society Member" && (
+                            <>{" "}
+                              <SmartLink
+                                href="#Algorithmic-Trading-Certificate"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Certification
+                              </SmartLink>
+                            </>
+                          )}
+                          {activity.title === "Investment Society Member" && (
+                            <>{" "}
+                              <SmartLink
+                                href="#Securities-Education-Certificate"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Certification
+                              </SmartLink>
+                            </>
+                          )}
                         </Text>
                       )}
                     </CollapsibleSection>
@@ -1516,10 +1558,24 @@ export default function About() {
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
                           <Text 
-                            id={certification.title === "Compliance & Protocols for Global Clients" ? "Compliance-Protocols-EY" : certification.title} 
+                            id={
+                              certification.title === "Compliance & Protocols for Global Clients"
+                                ? "Compliance-Protocols-EY"
+                                : certification.title === "Algorithmic Trading Certificate"
+                                  ? "Algorithmic-Trading-Certificate"
+                                  : certification.title === "Securities Education Certificate"
+                                    ? "Securities-Education-Certificate"
+                                    : certification.title
+                            }
                             variant="heading-strong-l" 
                             onBackground="neutral-strong"
-                            style={certification.title === "Compliance & Protocols for Global Clients" ? { scrollMarginTop: "140px" } : {}}
+                            style={
+                              certification.title === "Compliance & Protocols for Global Clients" ||
+                              certification.title === "Algorithmic Trading Certificate" ||
+                              certification.title === "Securities Education Certificate"
+                                ? { scrollMarginTop: "140px" }
+                                : {}
+                            }
                           >
                             {certification.title}
                           </Text>
@@ -1553,6 +1609,32 @@ export default function About() {
                             }}
                           >
                             View Related Experience
+                          </SmartLink>
+                        </>
+                      )}
+                      {certification.title === "Algorithmic Trading Certificate" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#Algorithmic-Trading-Society-Member"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Extracurricular
+                          </SmartLink>
+                        </>
+                      )}
+                      {certification.title === "Securities Education Certificate" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#Investment-Society-Member"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Extracurricular
                           </SmartLink>
                         </>
                       )}
