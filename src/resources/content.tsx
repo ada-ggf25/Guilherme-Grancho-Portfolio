@@ -605,6 +605,25 @@ const about = {
     title: "Certifications",
     accomplishments: [
       {
+        title: "Algorithmic Trading Certificate",
+        description: <>
+          AlgoCourse 2025/26 — completion certificate from the Imperial College Algorithmic Trading Society, demonstrating fluency in options theory, market making, and arbitrage.
+        </>,
+        category: "Finance Education",
+        year: "Apr 2026",
+        issuer: "Imperial College Algorithmic Trading Society",
+        associated_with: "",
+        artifacts: "Certificate",
+        images: [
+          {
+            src: "/images/certifications/algorithmic-trading-algocourse-2025-26.png",
+            alt: "AlgoCourse 2025/26 Certificate of Completion — Imperial College Algorithmic Trading Society",
+            width: 18,
+            height: 12,
+          },
+        ],
+      },
+      {
         title: "Securities Education Certificate",
         description: <>Securities and financial markets: instruments, market structure, and core trading and regulatory concepts from the Imperial College Investment Society programme.</>,
         category: "Finance Education",
