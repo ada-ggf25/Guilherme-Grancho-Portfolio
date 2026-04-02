@@ -1055,12 +1055,15 @@ export default function About() {
                               id={
                                 activity.title === "Algorithmic Trading Society Member"
                                   ? "Algorithmic-Trading-Society-Member"
-                                  : undefined
+                                  : activity.title === "Investment Society Member"
+                                    ? "Investment-Society-Member"
+                                    : undefined
                               }
                               variant="heading-strong-l"
                               onBackground="neutral-strong"
                               style={
-                                activity.title === "Algorithmic Trading Society Member"
+                                activity.title === "Algorithmic Trading Society Member" ||
+                                activity.title === "Investment Society Member"
                                   ? { scrollMarginTop: "140px" }
                                   : {}
                               }
@@ -1103,6 +1106,19 @@ export default function About() {
                             <>{" "}
                               <SmartLink
                                 href="#Algorithmic-Trading-Certificate"
+                                style={{ 
+                                  color: "#0066cc",
+                                  textDecoration: "underline"
+                                }}
+                              >
+                                View Related Certification
+                              </SmartLink>
+                            </>
+                          )}
+                          {activity.title === "Investment Society Member" && (
+                            <>{" "}
+                              <SmartLink
+                                href="#Securities-Education-Certificate"
                                 style={{ 
                                   color: "#0066cc",
                                   textDecoration: "underline"
@@ -1547,13 +1563,16 @@ export default function About() {
                                 ? "Compliance-Protocols-EY"
                                 : certification.title === "Algorithmic Trading Certificate"
                                   ? "Algorithmic-Trading-Certificate"
-                                  : certification.title
+                                  : certification.title === "Securities Education Certificate"
+                                    ? "Securities-Education-Certificate"
+                                    : certification.title
                             }
                             variant="heading-strong-l" 
                             onBackground="neutral-strong"
                             style={
                               certification.title === "Compliance & Protocols for Global Clients" ||
-                              certification.title === "Algorithmic Trading Certificate"
+                              certification.title === "Algorithmic Trading Certificate" ||
+                              certification.title === "Securities Education Certificate"
                                 ? { scrollMarginTop: "140px" }
                                 : {}
                             }
@@ -1597,6 +1616,19 @@ export default function About() {
                         <>{" "}
                           <SmartLink
                             href="#Algorithmic-Trading-Society-Member"
+                            style={{ 
+                              color: "#0066cc",
+                              textDecoration: "underline"
+                            }}
+                          >
+                            View Related Extracurricular
+                          </SmartLink>
+                        </>
+                      )}
+                      {certification.title === "Securities Education Certificate" && (
+                        <>{" "}
+                          <SmartLink
+                            href="#Investment-Society-Member"
                             style={{ 
                               color: "#0066cc",
                               textDecoration: "underline"
