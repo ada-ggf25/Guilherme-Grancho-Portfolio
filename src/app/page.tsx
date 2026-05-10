@@ -23,7 +23,10 @@ import React from "react";
 // Type definitions for optional properties
 type PaperWithHighlights = typeof about.publications.papers[number] & { highlights?: string };
 type ProjectWithHighlights = typeof about.keyProjects.projects[number] & { highlights?: string };
-type CertificationWithCredential = typeof about.certifications.accomplishments[number] & { credential_id?: string };
+type CertificationWithDetails = typeof about.certifications.accomplishments[number] & {
+  credential_id?: string;
+  certificateUrl?: string;
+};
 
 const monthLookup: Record<string, number> = {
   Jan: 0,
@@ -1524,7 +1527,9 @@ export default function About() {
               <Column 
                 style={{ gap: "var(--static-space-s)", marginBottom: "20px", width: "100%" }}
               >
-                {about.certifications.accomplishments.map((certification, index) => (
+                {about.certifications.accomplishments.map((certification, index) => {
+                  const certificationDetails = certification as CertificationWithDetails;
+                  return (
                   <CollapsibleSection
                     key={`${certification.title}-${index}`}
                     header={
@@ -1556,6 +1561,26 @@ export default function About() {
                           >
                             {certification.title}
                           </Text>
+                          {certificationDetails.certificateUrl && (
+                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+                              <SmartLink
+                                href={certificationDetails.certificateUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag
+                                  size="s"
+                                  background="brand-alpha-weak"
+                                  border="neutral-alpha-medium"
+                                  onBackground="brand-weak"
+                                  className={styles.clickableTag}
+                                >
+                                  View Certificate
+                                </Tag>
+                              </SmartLink>
+                            </Flex>
+                          )}
                           <Text variant="body-default-s" onBackground="brand-weak">
                             {certification.issuer}
                           </Text>
@@ -1616,15 +1641,16 @@ export default function About() {
                         </>
                       )}
                     </Text>
-                    {(certification.associated_with?.trim() || (certification as CertificationWithCredential).credential_id?.trim()) && (
+                    {(certification.associated_with?.trim() || certificationDetails.credential_id?.trim()) && (
                       <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic" }}>
                         {certification.associated_with?.trim() && `Associated with: ${certification.associated_with}`}
-                        {certification.associated_with?.trim() && (certification as CertificationWithCredential).credential_id?.trim() && ` • `}
-                        {(certification as CertificationWithCredential).credential_id?.trim() && `Credential ID: ${(certification as CertificationWithCredential).credential_id}`}
+                        {certification.associated_with?.trim() && certificationDetails.credential_id?.trim() && ` • `}
+                        {certificationDetails.credential_id?.trim() && `Credential ID: ${certificationDetails.credential_id}`}
                       </Text>
                     )}
                   </CollapsibleSection>
-                ))}
+                );
+                })}
               </Column>
             </>
           )}

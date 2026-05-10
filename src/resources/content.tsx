@@ -608,6 +608,7 @@ const about = {
         issuer: "Imperial College Algorithmic Trading Society",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/algorithmic_cert.jpeg",
       },
       {
         title: "Securities Education Certificate",
@@ -617,6 +618,7 @@ const about = {
         issuer: "Imperial College Investment Society",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/securities_cert.png",
       },
       {
         title: "Compliance & Protocols for Global Clients",
@@ -626,6 +628,7 @@ const about = {
         issuer: "Ernst & Young",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/compliance_cert.jpeg",
       },
       {
         title: "Talent Bootcamp",
@@ -635,6 +638,7 @@ const about = {
         issuer: "Magma Studio",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/talent_cert.jpeg",
       },
       {
         title: "IELTS Academic — Overall 7.5",
@@ -645,6 +649,7 @@ const about = {
         associated_with: "",
         artifacts: "IELTS results report",
         credential_id: "",
+        certificateUrl: "/images/certificates/IELTS_cert.jpeg",
       },
       {
         title: "Personal Finance MBA",
@@ -654,6 +659,7 @@ const about = {
         issuer: "Magma Studio",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/personal_cert.jpeg",
       },
       {
         title: "Mini-school on Particle and Astroparticle Physics",
@@ -663,6 +669,7 @@ const about = {
         issuer: "Laboratory of Instrumentation and Experimental Particle Physics",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/mini_cert.jpeg",
       },
       {
         title: "MOOC Técnico Certificate — Experimental Physics",
@@ -672,6 +679,7 @@ const about = {
         issuer: "Instituto Superior Técnico",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/MOCC_cert.png",
       },
     ],
   },
