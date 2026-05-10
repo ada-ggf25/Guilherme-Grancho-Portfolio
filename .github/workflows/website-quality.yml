@@ -1,0 +1,48 @@
+name: Website Quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  american-english:
+    name: American English Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate website copy uses American English
+        run: npm run check:american-english
+
+  vercel-build:
+    name: Vercel Build Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run production build
+        run: npm run ci:vercel-build
