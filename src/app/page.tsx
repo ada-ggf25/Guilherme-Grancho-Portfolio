@@ -23,7 +23,10 @@ import React from "react";
 // Type definitions for optional properties
 type PaperWithHighlights = typeof about.publications.papers[number] & { highlights?: string };
 type ProjectWithHighlights = typeof about.keyProjects.projects[number] & { highlights?: string };
-type CertificationWithCredential = typeof about.certifications.accomplishments[number] & { credential_id?: string };
+type CertificationWithDetails = typeof about.certifications.accomplishments[number] & {
+  credential_id?: string;
+  certificateUrl?: string;
+};
 
 const monthLookup: Record<string, number> = {
   Jan: 0,
@@ -149,6 +152,13 @@ export default function About() {
     { id: about.hobbies.title, label: "Hobbies" }
   ];
   const currentWorkItems = buildCurrentWorkItems();
+  const justifiedDescriptionStyle: React.CSSProperties = {
+    display: "block",
+    textAlign: "justify",
+    textJustify: "inter-word",
+    hyphens: "auto",
+    WebkitHyphens: "auto",
+  };
 
   return (
     <Column style={{ maxWidth: "800px", margin: "0 auto", padding: "0 var(--static-space-l)" }}>
@@ -201,7 +211,7 @@ export default function About() {
           onBackground="neutral-weak"
           style={{ textAlign: "center", marginBottom: "6px" }}
         >
-          {person.degree}
+          {person.role}
         </Text>
         <Text
           className={styles.textAlign}
@@ -209,7 +219,7 @@ export default function About() {
           onBackground="neutral-weak"
           style={{ textAlign: "center", marginBottom: "16px" }}
         >
-          {person.role}
+          {person.degree}
         </Text>
         
         {social.length > 0 && (
@@ -251,9 +261,9 @@ export default function About() {
           >
             <Text
               style={{
+                ...justifiedDescriptionStyle,
                 fontSize: "var(--font-size-body-default-l)",
                 lineHeight: "var(--line-height-body-default-l)",
-                textAlign: "justify",
               }}
             >
               {about.intro.description}
@@ -459,7 +469,7 @@ export default function About() {
                                   variant="body-default-m"
                                   onBackground="neutral-weak"
                                   key={`${experience.company}-${index}`}
-                                  style={{ textAlign: "justify" }}
+                                  style={justifiedDescriptionStyle}
                                 >
                                   {achievement}
                                   {isPrometheusAchievement && (
@@ -775,7 +785,7 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                       {institution.description}
                     </Text>
                   </CollapsibleSection>
@@ -834,6 +844,12 @@ export default function About() {
                           >
                             <em>{paper.title}</em>
                           </Heading>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            {paper.authors}
+                          </Text>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {paper.venue}
+                          </Text>
                           {paper.link && (
                             <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
                               <SmartLink
@@ -854,12 +870,6 @@ export default function About() {
                               </SmartLink>
                             </Flex>
                           )}
-                          <Text variant="body-default-s" onBackground="brand-weak">
-                            {paper.authors}
-                          </Text>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {paper.venue}
-                          </Text>
                         </Column>
                         <Column style={{ alignItems: "flex-end", gap: "6px" }}>
                           {paper.date && (
@@ -877,7 +887,7 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                       {paper.description}
                       {paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
                         <>
@@ -910,16 +920,6 @@ export default function About() {
                             }}
                           >
                             View Related Award
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#Quantitative-Researcher-Independent"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
                           </SmartLink>
                         </>
                       )}
@@ -1018,7 +1018,7 @@ export default function About() {
                       )}
                     </Text>
                     {((paper as PaperWithHighlights).highlights) && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic" }}>
                         Key highlights: {(paper as PaperWithHighlights).highlights}
                       </Text>
                     )}
@@ -1100,7 +1100,7 @@ export default function About() {
                       }
                     >
                       {activity.description && (
-                        <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                        <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                           {activity.description}
                           {activity.title === "Algorithmic Trading Society Member" && (
                             <>{" "}
@@ -1172,49 +1172,49 @@ export default function About() {
                           >
                             {project.title}
                           </Heading>
-                          {(project.github || project.link) && (
-                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
-                              {project.github && (
-                                <SmartLink
-                                  href={project.github}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{ textDecoration: "none" }}
-                                >
-                                  <Tag
-                                    size="s"
-                                    background="brand-alpha-weak"
-                                    border="neutral-alpha-medium"
-                                    onBackground="brand-weak"
-                                    className={styles.clickableTag}
-                                  >
-                                    View on GitHub
-                                  </Tag>
-                                </SmartLink>
-                              )}
-                              {project.link && (
-                                <SmartLink
-                                  href={project.link}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{ textDecoration: "none" }}
-                                >
-                                  <Tag
-                                    size="s"
-                                    background="brand-alpha-weak"
-                                    onBackground="brand-weak"
-                                    className={styles.clickableTag}
-                                  >
-                                    {project.category === "Academic Research" ? "View Paper" : "View Website"}
-                                  </Tag>
-                                </SmartLink>
-                              )}
-                            </Flex>
-                          )}
                             {project.location && (
                               <Text variant="body-default-s" onBackground="brand-weak" style={{ marginBottom: "8px" }}>
                                 {project.location}
                               </Text>
+                            )}
+                            {(project.github || project.link) && (
+                              <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+                                {project.github && (
+                                  <SmartLink
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ textDecoration: "none" }}
+                                  >
+                                    <Tag
+                                      size="s"
+                                      background="brand-alpha-weak"
+                                      border="neutral-alpha-medium"
+                                      onBackground="brand-weak"
+                                      className={styles.clickableTag}
+                                    >
+                                      View on GitHub
+                                    </Tag>
+                                  </SmartLink>
+                                )}
+                                {project.link && (
+                                  <SmartLink
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ textDecoration: "none" }}
+                                  >
+                                    <Tag
+                                      size="s"
+                                      background="brand-alpha-weak"
+                                      onBackground="brand-weak"
+                                      className={styles.clickableTag}
+                                    >
+                                      {project.category === "Academic Research" ? "View Paper" : "View Website"}
+                                    </Tag>
+                                  </SmartLink>
+                                )}
+                              </Flex>
                             )}
                           </Column>
                           <Column style={{ alignItems: "flex-end", gap: "6px" }}>
@@ -1236,7 +1236,7 @@ export default function About() {
                       }
                     >
                       {project.description && (
-                        <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                        <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                           {project.description}
                           {project.title === "Prometheus" && (
                             <>
@@ -1249,16 +1249,6 @@ export default function About() {
                                 }}
                               >
                                 View Related Podcast
-                              </SmartLink>
-                              {" "}
-                              <SmartLink
-                                href={`#${about.work.title}`}
-                                style={{ 
-                                  color: "#0066cc",
-                                  textDecoration: "underline"
-                                }}
-                              >
-                                View Related Experience
                               </SmartLink>
                               {" "}
                               <SmartLink
@@ -1337,7 +1327,7 @@ export default function About() {
                         </Text>
                       )}
                       {((project as ProjectWithHighlights).highlights) && (
-                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px", textAlign: "justify" }}>
+                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic", marginTop: "8px" }}>
                           Key highlights: {(project as ProjectWithHighlights).highlights}
                         </Text>
                       )}
@@ -1400,7 +1390,7 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                       {award.description}
                       {award.title === "LXthon Hackathon — 1º Winner" && (
                         <>{" "}
@@ -1460,16 +1450,6 @@ export default function About() {
                           >
                             View Publication
                           </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#Quantitative-Researcher-Independent"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
                         </>
                       )}
                       {award.title === "Athens Mobility Grant" && (
@@ -1524,7 +1504,7 @@ export default function About() {
                       )}
                     </Text>
                     {award.associated_with && award.associated_with.trim() && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic" }}>
                         Associated with: {award.associated_with}
                       </Text>
                     )}
@@ -1547,7 +1527,9 @@ export default function About() {
               <Column 
                 style={{ gap: "var(--static-space-s)", marginBottom: "20px", width: "100%" }}
               >
-                {about.certifications.accomplishments.map((certification, index) => (
+                {about.certifications.accomplishments.map((certification, index) => {
+                  const certificationDetails = certification as CertificationWithDetails;
+                  return (
                   <CollapsibleSection
                     key={`${certification.title}-${index}`}
                     header={
@@ -1582,6 +1564,26 @@ export default function About() {
                           <Text variant="body-default-s" onBackground="brand-weak">
                             {certification.issuer}
                           </Text>
+                          {certificationDetails.certificateUrl && (
+                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+                              <SmartLink
+                                href={certificationDetails.certificateUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag
+                                  size="s"
+                                  background="brand-alpha-weak"
+                                  border="neutral-alpha-medium"
+                                  onBackground="brand-weak"
+                                  className={styles.clickableTag}
+                                >
+                                  View Certificate
+                                </Tag>
+                              </SmartLink>
+                            </Flex>
+                          )}
                         </Column>
                         <Flex 
                           style={{ gap: "8px" }}
@@ -1597,7 +1599,7 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                       {certification.description}
                       {certification.title === "Compliance & Protocols for Global Clients" && (
                         <>{" "}
@@ -1639,15 +1641,16 @@ export default function About() {
                         </>
                       )}
                     </Text>
-                    {(certification.associated_with?.trim() || (certification as CertificationWithCredential).credential_id?.trim()) && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
+                    {(certification.associated_with?.trim() || certificationDetails.credential_id?.trim()) && (
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic" }}>
                         {certification.associated_with?.trim() && `Associated with: ${certification.associated_with}`}
-                        {certification.associated_with?.trim() && (certification as CertificationWithCredential).credential_id?.trim() && ` • `}
-                        {(certification as CertificationWithCredential).credential_id?.trim() && `Credential ID: ${(certification as CertificationWithCredential).credential_id}`}
+                        {certification.associated_with?.trim() && certificationDetails.credential_id?.trim() && ` • `}
+                        {certificationDetails.credential_id?.trim() && `Credential ID: ${certificationDetails.credential_id}`}
                       </Text>
                     )}
                   </CollapsibleSection>
-                ))}
+                );
+                })}
               </Column>
             </>
           )}
@@ -1702,6 +1705,9 @@ export default function About() {
                           >
                             {episode.title}
                           </Text>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            YouTube
+                          </Text>
                           {(episode.trailerLink || episode.link) && (
                             <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
                               {episode.trailerLink && (
@@ -1741,9 +1747,6 @@ export default function About() {
                               )}
                             </Flex>
                           )}
-                          <Text variant="body-default-s" onBackground="brand-weak">
-                            YouTube
-                          </Text>
                         </Column>
                         <Column style={{ alignItems: "flex-end", gap: "6px" }}>
                           {episode.date && (
@@ -1761,7 +1764,7 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                       {episode.description || <>Podcast Presenting the Paper <em>{episode.paperTitle}</em>.</>}
                       {episode.paperTitle === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation" && (
                         <>
@@ -1867,16 +1870,6 @@ export default function About() {
                           >
                             View Related Award
                           </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#Quantitative-Researcher-Independent"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
                         </>
                       )}
                       {episode.paperTitle === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" && (
@@ -1924,7 +1917,7 @@ export default function About() {
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                style={{ marginBottom: "12px", textAlign: "justify" }}
+                style={{ ...justifiedDescriptionStyle, marginBottom: "12px" }}
               >
                 {about.values.description}
               </Text>
@@ -1945,7 +1938,7 @@ export default function About() {
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                style={{ marginBottom: "12px" }}
+                style={{ ...justifiedDescriptionStyle, marginBottom: "12px" }}
               >
                 {about.hobbies.description}
               </Text>

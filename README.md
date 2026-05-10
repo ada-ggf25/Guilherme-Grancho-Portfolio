@@ -58,7 +58,7 @@ These steps ensure a reproducible Node runtime via Conda (Node and npm are provi
    rm -f miniconda.sh
    ```
 
-2) Initialise Conda for zsh and load it in your current shell
+2) Initialize Conda for zsh and load it in your current shell
    ```bash
    "$HOME/miniconda3/bin/conda" init zsh
    source "$HOME/miniconda3/etc/profile.d/conda.sh"
@@ -85,14 +85,14 @@ These steps ensure a reproducible Node runtime via Conda (Node and npm are provi
 
 Notes:
 - If you encounter Anaconda Terms of Service prompts, either accept them as instructed by Conda or use `--override-channels` to rely on conda-forge only.
-- If a new shell does not recognise `conda`, add this to your `~/.zshrc`:
+- If a new shell does not recognize `conda`, add this to your `~/.zshrc`:
   ```bash
   source "$HOME/miniconda3/etc/profile.d/conda.sh"
   ```
 
 ### Prerequisites
 
-- **Node.js** 18 or higher (provided by Conda environment)
+- **Node.js** 20 or higher (provided by Conda environment)
 - **npm** (provided by Conda environment)
 - **Make** (for convenience commands)
 
@@ -139,13 +139,13 @@ npm start
 ### Other Commands
 
 ```bash
-# Run linter
+# Run lint check message
 npm run lint
 
 # Export static site
 npm run export
 
-# Clean build artefacts (manual)
+# Clean build artifacts (manual)
 rm -rf .next out dist build coverage .nyc_output
 ```
 
@@ -159,7 +159,7 @@ This project includes a `Makefile` with convenient commands that automate the se
 # 1. Install Miniconda (Linux)
 make conda-install
 
-# 2. Initialise Conda for zsh
+# 2. Initialize Conda for zsh
 make conda-init
 # Restart your shell or run: source "$HOME/miniconda3/etc/profile.d/conda.sh"
 
@@ -177,7 +177,7 @@ make dev
 
 - `make help` - Show all available commands
 - `make conda-install` - Install or update Miniconda
-- `make conda-init` - Initialise Conda for zsh
+- `make conda-init` - Initialize Conda for zsh
 - `make conda-accept-tos` - Accept Anaconda ToS (optional, if needed)
 - `make env-create` - Create Conda environment from `environment.yaml`
 - `make env-update` - Update existing environment
@@ -190,7 +190,7 @@ make dev
 - `make build` - Build the project
 - `make start` - Start production server
 - `make lint` - Run linter
-- `make clean` - Remove build artefacts
+- `make clean` - Remove build artifacts
 - `make doctor` - Show diagnostics (versions, files, etc.)
 
 ## 📄 License

@@ -8,8 +8,8 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "AI & ML Researcher",
-  degree: "MSc Student at Imperial College London",
+  role: "Harvard Research Fellow in AI",
+  degree: "Imperial College London Master’s Student",
   avatar: "/images/avatar.jpg",
   email: "guilhermegranchopro@gmail.com",
   location: "London - Lisbon",
@@ -168,7 +168,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Hi! Welcome to my journey! I was born and raised in Portugal, where I developed a passion for physics and math. When I&apos;m not working, you&apos;ll usually find me playing sports. I&apos;m pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I&apos;m always eager to connect with like-minded people who want to build great things. Feel free to reach out!
+        Hi! Welcome to my journey! I&apos;m currently based in the United States, where I&apos;m building a career in machine learning and artificial intelligence. My curiosity for physics and mathematics first shaped the way I think about the world, and today I&apos;m especially interested in how AI can drive progress across science and engineering. Outside of work, I&apos;m usually playing sports, staying active, and looking for new challenges. I&apos;m always happy to connect with people who are curious, ambitious, and interested in building meaningful things, so feel free to reach out!
       </>
     ),
     finalStatement: (
@@ -182,20 +182,14 @@ const about = {
     title: "Experience",
     experiences: [
       {
-        company: "Independent Research",
-        timeframe: "Jan 2025 - Present",
-        role: "Quantitative Researcher",
-        location: "London, UK · Remote",
-        employmentType: "Part-time",
+        company: "Harvard University, John A. Paulson School of Engineering and Applied Sciences",
+        timeframe: "May 2026 - Present",
+        role: "Research Fellow",
+        location: "Boston, Massachusetts, USA · On-site",
+        employmentType: "Full-time",
         achievements: [
           <>
-            Lead Prometheus, an independent research platform pairing deep learning with quantitative finance to deliver real-time Financial Torque Hypothesis (FTH) insights via an open-source web app, public website, and GitHub codebase.
-          </>,
-          <>
-            Co-authored the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, demonstrating FTH-driven forecasting performance with ~87% directional accuracy on a 3-hour horizon. This research was recognised with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award, appearing on the SSRN Top Downloads list for 9–12 Aug 2025.
-          </>,
-          <>
-            Currently developing the manuscript <em>Integrating the Financial Torque Hypothesis into Advanced Algorithmic Portfolio Management</em> to extend FTH signals into systematic trading pipelines.
+            Leading on-site research on AI models for brain-machine interfaces at Harvard&apos;s Laboratory of Bioelectronics.
           </>,
         ],
         images: [],
@@ -412,10 +406,10 @@ const about = {
         title: "Prometheus",
         link: "https://prometheus-quant.streamlit.app/",
         technologies: "Python, TensorFlow, LSTM, Streamlit, Alpaca Markets API",
-        timeframe: "Jan 2025 - Present",
+        timeframe: "Jan 2025 - May 2026",
         category: "Quantitative Finance",
         location: "Independent Research",
-        description: <>Quantitative finance research platform implementing the Financial Torque Hypothesis (FTH) for short-term stock price prediction using LSTM neural networks. Features an interactive Streamlit dashboard for portfolio monitoring, strategy visualization, and risk management. Includes comprehensive market data integration, trading strategy research modules (Simons, Sun Tzu), and live trading capabilities. The research achieved ~87% directional accuracy on a 3-hour horizon and demonstrated a 15% improvement in full-session consistency over regular-hours baselines.</>,
+        description: <>Prometheus is my flagship independent quantitative-research platform and open-source project, built to operationalize the Financial Torque Hypothesis (FTH) for short-term stock-price direction forecasting with LSTM neural networks. It unifies real-time market-data ingestion with an interactive Streamlit interface for portfolio monitoring, strategy visualization, risk management, and live trading experimentation, complemented by dedicated research modules inspired by Simons and Sun Tzu frameworks. The platform also anchors the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, which reported ~87% directional accuracy on a 3-hour horizon and a 15% uplift in full-session consistency versus regular-hours baselines, and it now serves as the core environment for extending FTH signals into advanced algorithmic portfolio-management workflows.</>,
         github: "https://github.com/ada-ggf25/Prometheus",
       },
       {
@@ -546,7 +540,7 @@ const about = {
     accomplishments: [
       {
         title: "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak",
-        description: <>My paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, with Vasco Pereira, appeared on the SSRN Top Downloads list for 9–12 Aug 2025. This work, which introduces the Financial Torque Hypothesis proposing that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction, was developed during my role as Quantitative Researcher at Independent Research, where I co-authored this published study demonstrating FTH-driven forecasting performance with ~87% directional accuracy on a 3-hour horizon.</>,
+        description: <>Our paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, co-authored with Vasco Pereira, appeared on the SSRN Top Downloads list for 9–12 Aug 2025. The study introduces the Financial Torque Hypothesis, showing how VWAP and trade count can encode short-term &quot;market torque&quot; for direction prediction, with ~87% directional accuracy on a 3-hour horizon. These results are operationalized through Prometheus, my flagship quantitative-research platform for ongoing model validation and strategy development.</>,
         category: "",
         year: "Aug 2025",
         issuer: "SSRN — The Financial Economics Network",
@@ -614,15 +608,17 @@ const about = {
         issuer: "Imperial College Algorithmic Trading Society",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/algorithmic_cert.jpeg",
       },
       {
         title: "Securities Education Certificate",
-        description: <>Securities and financial markets: instruments, market structure, and core trading and regulatory concepts from the Imperial College Investment Society programme.</>,
+        description: <>Securities and financial markets: instruments, market structure, and core trading and regulatory concepts from the Imperial College Investment Society program.</>,
         category: "Finance Education",
         year: "Mar 2026",
         issuer: "Imperial College Investment Society",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/securities_cert.png",
       },
       {
         title: "Compliance & Protocols for Global Clients",
@@ -632,6 +628,7 @@ const about = {
         issuer: "Ernst & Young",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/compliance_cert.jpeg",
       },
       {
         title: "Talent Bootcamp",
@@ -641,6 +638,7 @@ const about = {
         issuer: "Magma Studio",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/talent_cert.jpeg",
       },
       {
         title: "IELTS Academic — Overall 7.5",
@@ -651,6 +649,7 @@ const about = {
         associated_with: "",
         artifacts: "IELTS results report",
         credential_id: "",
+        certificateUrl: "/images/certificates/IELTS_cert.jpeg",
       },
       {
         title: "Personal Finance MBA",
@@ -660,6 +659,7 @@ const about = {
         issuer: "Magma Studio",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/personal_cert.jpeg",
       },
       {
         title: "Mini-school on Particle and Astroparticle Physics",
@@ -669,6 +669,7 @@ const about = {
         issuer: "Laboratory of Instrumentation and Experimental Particle Physics",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/mini_cert.jpeg",
       },
       {
         title: "MOOC Técnico Certificate — Experimental Physics",
@@ -678,6 +679,7 @@ const about = {
         issuer: "Instituto Superior Técnico",
         associated_with: "",
         artifacts: "Certificate",
+        certificateUrl: "/images/certificates/MOCC_cert.png",
       },
     ],
   },
@@ -692,7 +694,7 @@ const about = {
         venue: "YouTube",
         date: "Dec 8, 2025",
         type: "Podcast Episode",
-        description: <>Podcast discussing machine learning approaches to optimise aberration correction in high-power laser systems for high harmonic generation. The episode covers Bayesian optimisation and convolutional neural network methods for predicting optimal Zernike polynomial coefficients for wavefront correction, demonstrating the potential for automated aberration correction in HHG systems.</>,
+        description: <>Podcast discussing machine learning approaches to optimize aberration correction in high-power laser systems for high harmonic generation. The episode covers Bayesian optimization and convolutional neural network methods for predicting optimal Zernike polynomial coefficients for wavefront correction, demonstrating the potential for automated aberration correction in HHG systems.</>,
         link: "https://www.youtube.com/watch?v=2vLdLmBaT0Y",
         trailerLink: "https://www.youtube.com/watch?v=b6G6ueaRhLg",
         category: "Optics & Deep Learning",
@@ -718,7 +720,7 @@ const about = {
         venue: "YouTube",
         date: "Jun 20, 2025",
         type: "Podcast Episode",
-        description: <>Podcast discussion about the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies.</>,
+        description: <>Podcast episode presenting the Financial Torque Hypothesis and the Prometheus research workflow behind it. The discussion covers VWAP and trade count as short-term &quot;market torque&quot; signals, LSTM modeling over intraday features, and full-session vs. regular-hours comparisons across four feature-integration schemes (Standard, MinMax, Robust, and non-normalized). Results include ~87% directional accuracy on a 3-hour horizon over 21 months of unseen data and a 15% uplift in full-session consistency, highlighting the value of extended-hours data and microstructure-aware indicators for robust strategy design.</>,
         link: "https://www.youtube.com/watch?v=f25aLdta0rI",
         trailerLink: "https://www.youtube.com/watch?v=gGyM_93hNKU&t=189s",
         category: "Quantitative Finance",
@@ -850,7 +852,7 @@ const about = {
         venue: "arXiv: Computer Science - Machine Learning (cs.LG)",
         date: "Nov 25, 2025",
         type: "Pre-print",
-        description: <>This study details a bidirectional LSTM workflow for classifying transient astronomical object light curves from the PLAsTiCC dataset. The original fourteen classes are consolidated into five macro categories (S-Like, Fast, Long, Periodic, Non-Periodic) to mitigate imbalance. After padding, temporal rescaling, and flux normalisation, the masked BiLSTM attains ROC AUC scores of 0.95 for S-Like and 0.99 for Periodic sources, with Precision-Recall AUC up to 0.98. Performance drops for Fast and Long objects (e.g., 0.68 ROC AUC on Long) and for truncated 5–20 day sequences, underscoring how class imbalance and limited cadence drive misclassifications. The work highlights balancing strategies and detection-aware preprocessing as critical paths for future gains.</>,
+        description: <>This study details a bidirectional LSTM workflow for classifying transient astronomical object light curves from the PLAsTiCC dataset. The original fourteen classes are consolidated into five macro categories (S-Like, Fast, Long, Periodic, Non-Periodic) to mitigate imbalance. After padding, temporal rescaling, and flux normalization, the masked BiLSTM attains ROC AUC scores of 0.95 for S-Like and 0.99 for Periodic sources, with Precision-Recall AUC up to 0.98. Performance drops for Fast and Long objects (e.g., 0.68 ROC AUC on Long) and for truncated 5–20 day sequences, underscoring how class imbalance and limited cadence drive misclassifications. The work highlights balancing strategies and detection-aware preprocessing as critical paths for future gains.</>,
         link: "https://arxiv.org/abs/2511.17564",
         category: "Astrophysics & Deep Learning",
         artifacts: "arXiv pre-print + Show publication link",
@@ -861,7 +863,7 @@ const about = {
         venue: "SSRN - The Financial Economics Network: Quantitative Methods",
         date: "Jun 20, 2025",
         type: "Working Paper / Preprint",
-        description: <>Introduces the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies. This research, developed during my role as Quantitative Researcher at Independent Research, was recognised with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award, appearing on the SSRN Top Downloads list for 9–12 Aug 2025. The findings are implemented in Prometheus, a quantitative finance research platform featuring an interactive Streamlit dashboard for portfolio monitoring, strategy visualization, and risk management.</>,
+        description: <>This paper introduces the Financial Torque Hypothesis, proposing that VWAP and trade count encapsulate short-term &quot;market torque&quot; signals that improve direction prediction. Using LSTM models over intraday features, with full-session vs. regular-hours comparisons and four feature-integration schemes (Standard, MinMax, Robust, and non-normalized), the study reports ~87% directional accuracy on a 3-hour horizon across 21 months of unseen data and a 15% uplift in full-session consistency. The work was recognized with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award and is implemented in Prometheus, which serves as the central environment for portfolio monitoring, strategy visualization, and continued FTH development.</>,
         link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
         category: "Quantitative Finance",
         artifacts: "SSRN paper + Show publication link",
@@ -906,7 +908,7 @@ const about = {
         organization: "Imperial College London",
         location: "London, UK",
         timeframe: "Sep 2025 - Mar 2026",
-        description: <>Society programme covering securities and financial markets: instruments, market structure, and core trading and regulatory concepts through the Imperial College Investment Society. Participation concluded with programme completion and issuance of the Securities Education Certificate.</>,
+        description: <>Society program covering securities and financial markets: instruments, market structure, and core trading and regulatory concepts through the Imperial College Investment Society. Participation concluded with program completion and issuance of the Securities Education Certificate.</>,
       },
       {
         title: "Track and Field Athlete",
