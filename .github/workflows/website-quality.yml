@@ -2,14 +2,24 @@ name: Website Quality
 
 on:
   pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+    branches:
+      - main
+      - Guilherme_Grancho_PRs
   push:
     branches:
+      - Guilherme_Grancho
       - main
 
 jobs:
   american-english:
     name: American English Check
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event.action != 'closed' || github.event.pull_request.merged == true
 
     steps:
       - name: Checkout repository
@@ -30,6 +40,7 @@ jobs:
   vercel-build:
     name: Vercel Build Check
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event.action != 'closed' || github.event.pull_request.merged == true
 
     steps:
       - name: Checkout repository
