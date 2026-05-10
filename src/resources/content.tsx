@@ -182,6 +182,19 @@ const about = {
     title: "Experience",
     experiences: [
       {
+        company: "Harvard University, John A. Paulson School of Engineering and Applied Sciences",
+        timeframe: "May 2026 - Present",
+        role: "Research Fellow",
+        location: "Boston, Massachusetts, USA · On-site",
+        employmentType: "Full-time",
+        achievements: [
+          <>
+            Leading on-site research on AI models for brain-machine interfaces at Harvard&apos;s Laboratory of Bioelectronics.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "Ernst & Young",
         timeframe: "Aug 2025 - Sep 2025",
         role: "Artificial Intelligence & Data Engineer",
@@ -393,7 +406,7 @@ const about = {
         title: "Prometheus",
         link: "https://prometheus-quant.streamlit.app/",
         technologies: "Python, TensorFlow, LSTM, Streamlit, Alpaca Markets API",
-        timeframe: "Jan 2025 - Present",
+        timeframe: "Jan 2025 - May 2026",
         category: "Quantitative Finance",
         location: "Independent Research",
         description: <>Prometheus is my flagship independent quantitative-research platform and open-source project, built to operationalize the Financial Torque Hypothesis (FTH) for short-term stock-price direction forecasting with LSTM neural networks. It unifies real-time market-data ingestion with an interactive Streamlit interface for portfolio monitoring, strategy visualization, risk management, and live trading experimentation, complemented by dedicated research modules inspired by Simons and Sun Tzu frameworks. The platform also anchors the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, which reported ~87% directional accuracy on a 3-hour horizon and a 15% uplift in full-session consistency versus regular-hours baselines, and it now serves as the core environment for extending FTH signals into advanced algorithmic portfolio-management workflows.</>,
