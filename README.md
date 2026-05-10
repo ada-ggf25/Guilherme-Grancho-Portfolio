@@ -92,7 +92,7 @@ Notes:
 
 ### Prerequisites
 
-- **Node.js** 18 or higher (provided by Conda environment)
+- **Node.js** 20 or higher (provided by Conda environment)
 - **npm** (provided by Conda environment)
 - **Make** (for convenience commands)
 
@@ -139,7 +139,7 @@ npm start
 ### Other Commands
 
 ```bash
-# Run linter
+# Run lint check message
 npm run lint
 
 # Export static site
