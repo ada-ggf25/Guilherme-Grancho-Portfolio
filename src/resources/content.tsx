@@ -168,7 +168,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Hi! Welcome to my journey! I was born and raised in Portugal, where I developed a passion for physics and math. When I&apos;m not working, you&apos;ll usually find me playing sports. I&apos;m pursuing a career in machine learning and AI, exploring how these tools can be most useful across financial markets, quantitative research, academia, and entrepreneurship. I&apos;m always eager to connect with like-minded people who want to build great things. Feel free to reach out!
+        Hi! Welcome to my journey! I&apos;m currently based in the United States, where I&apos;m building a career in machine learning and artificial intelligence. My curiosity for physics and mathematics first shaped the way I think about the world, and today I&apos;m especially interested in how AI can drive progress across science and engineering. Outside of work, I&apos;m usually playing sports, staying active, and looking for new challenges. I&apos;m always happy to connect with people who are curious, ambitious, and interested in building meaningful things, so feel free to reach out!
       </>
     ),
     finalStatement: (
