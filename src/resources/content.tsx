@@ -9,7 +9,7 @@ const person = {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "Harvard Research Fellow in AI",
-  degree: "MSc Student at Imperial College London",
+  degree: "Imperial College London Master’s Student",
   avatar: "/images/avatar.jpg",
   email: "guilhermegranchopro@gmail.com",
   location: "London - Lisbon",
