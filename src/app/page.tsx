@@ -208,7 +208,7 @@ export default function About() {
           onBackground="neutral-weak"
           style={{ textAlign: "center", marginBottom: "6px" }}
         >
-          {person.degree}
+          {person.role}
         </Text>
         <Text
           className={styles.textAlign}
@@ -216,7 +216,7 @@ export default function About() {
           onBackground="neutral-weak"
           style={{ textAlign: "center", marginBottom: "16px" }}
         >
-          {person.role}
+          {person.degree}
         </Text>
         
         {social.length > 0 && (

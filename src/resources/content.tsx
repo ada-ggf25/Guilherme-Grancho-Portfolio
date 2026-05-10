@@ -8,7 +8,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "AI & ML Researcher",
+  role: "Harvard Research Fellow in AI",
   degree: "MSc Student at Imperial College London",
   avatar: "/images/avatar.jpg",
   email: "guilhermegranchopro@gmail.com",
