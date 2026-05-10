@@ -911,16 +911,6 @@ export default function About() {
                           >
                             View Related Award
                           </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#Quantitative-Researcher-Independent"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
                         </>
                       )}
                       {paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
@@ -1252,16 +1242,6 @@ export default function About() {
                               </SmartLink>
                               {" "}
                               <SmartLink
-                                href={`#${about.work.title}`}
-                                style={{ 
-                                  color: "#0066cc",
-                                  textDecoration: "underline"
-                                }}
-                              >
-                                View Related Experience
-                              </SmartLink>
-                              {" "}
-                              <SmartLink
                                 href="#SSRN-Top-Paper-Award"
                                 style={{ 
                                   color: "#0066cc",
@@ -1459,16 +1439,6 @@ export default function About() {
                             }}
                           >
                             View Publication
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#Quantitative-Researcher-Independent"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
                           </SmartLink>
                         </>
                       )}
@@ -1866,16 +1836,6 @@ export default function About() {
                             }}
                           >
                             View Related Award
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#Quantitative-Researcher-Independent"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
                           </SmartLink>
                         </>
                       )}

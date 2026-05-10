@@ -182,25 +182,6 @@ const about = {
     title: "Experience",
     experiences: [
       {
-        company: "Independent Research",
-        timeframe: "Jan 2025 - Present",
-        role: "Quantitative Researcher",
-        location: "London, UK · Remote",
-        employmentType: "Part-time",
-        achievements: [
-          <>
-            Lead Prometheus, an independent research platform pairing deep learning with quantitative finance to deliver real-time Financial Torque Hypothesis (FTH) insights via an open-source web app, public website, and GitHub codebase.
-          </>,
-          <>
-            Co-authored the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, demonstrating FTH-driven forecasting performance with ~87% directional accuracy on a 3-hour horizon. This research was recognised with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award, appearing on the SSRN Top Downloads list for 9–12 Aug 2025.
-          </>,
-          <>
-            Currently developing the manuscript <em>Integrating the Financial Torque Hypothesis into Advanced Algorithmic Portfolio Management</em> to extend FTH signals into systematic trading pipelines.
-          </>,
-        ],
-        images: [],
-      },
-      {
         company: "Ernst & Young",
         timeframe: "Aug 2025 - Sep 2025",
         role: "Artificial Intelligence & Data Engineer",
@@ -415,7 +396,7 @@ const about = {
         timeframe: "Jan 2025 - Present",
         category: "Quantitative Finance",
         location: "Independent Research",
-        description: <>Quantitative finance research platform implementing the Financial Torque Hypothesis (FTH) for short-term stock price prediction using LSTM neural networks. Features an interactive Streamlit dashboard for portfolio monitoring, strategy visualization, and risk management. Includes comprehensive market data integration, trading strategy research modules (Simons, Sun Tzu), and live trading capabilities. The research achieved ~87% directional accuracy on a 3-hour horizon and demonstrated a 15% improvement in full-session consistency over regular-hours baselines.</>,
+        description: <>Prometheus is my flagship independent quantitative-research platform and open-source project, built to operationalise the Financial Torque Hypothesis (FTH) for short-term stock-price direction forecasting with LSTM neural networks. It unifies real-time market-data ingestion with an interactive Streamlit interface for portfolio monitoring, strategy visualisation, risk management, and live trading experimentation, complemented by dedicated research modules inspired by Simons and Sun Tzu frameworks. The platform also anchors the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, which reported ~87% directional accuracy on a 3-hour horizon and a 15% uplift in full-session consistency versus regular-hours baselines, and it now serves as the core environment for extending FTH signals into advanced algorithmic portfolio-management workflows.</>,
         github: "https://github.com/ada-ggf25/Prometheus",
       },
       {
@@ -546,7 +527,7 @@ const about = {
     accomplishments: [
       {
         title: "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak",
-        description: <>My paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, with Vasco Pereira, appeared on the SSRN Top Downloads list for 9–12 Aug 2025. This work, which introduces the Financial Torque Hypothesis proposing that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction, was developed during my role as Quantitative Researcher at Independent Research, where I co-authored this published study demonstrating FTH-driven forecasting performance with ~87% directional accuracy on a 3-hour horizon.</>,
+        description: <>Our paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, co-authored with Vasco Pereira, appeared on the SSRN Top Downloads list for 9–12 Aug 2025. The study introduces the Financial Torque Hypothesis, showing how VWAP and trade count can encode short-term &quot;market torque&quot; for direction prediction, with ~87% directional accuracy on a 3-hour horizon. These results are operationalised through Prometheus, my flagship quantitative-research platform for ongoing model validation and strategy development.</>,
         category: "",
         year: "Aug 2025",
         issuer: "SSRN — The Financial Economics Network",
@@ -718,7 +699,7 @@ const about = {
         venue: "YouTube",
         date: "Jun 20, 2025",
         type: "Podcast Episode",
-        description: <>Podcast discussion about the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies.</>,
+        description: <>Podcast episode presenting the Financial Torque Hypothesis and the Prometheus research workflow behind it. The discussion covers VWAP and trade count as short-term &quot;market torque&quot; signals, LSTM modelling over intraday features, and full-session vs. regular-hours comparisons across four feature-integration schemes (Standard, MinMax, Robust, and non-normalised). Results include ~87% directional accuracy on a 3-hour horizon over 21 months of unseen data and a 15% uplift in full-session consistency, highlighting the value of extended-hours data and microstructure-aware indicators for robust strategy design.</>,
         link: "https://www.youtube.com/watch?v=f25aLdta0rI",
         trailerLink: "https://www.youtube.com/watch?v=gGyM_93hNKU&t=189s",
         category: "Quantitative Finance",
@@ -861,7 +842,7 @@ const about = {
         venue: "SSRN - The Financial Economics Network: Quantitative Methods",
         date: "Jun 20, 2025",
         type: "Working Paper / Preprint",
-        description: <>Introduces the Financial Torque Hypothesis that proposes that VWAP and trade count encapsulate short-term &quot;market torque&quot; useful for direction prediction. LSTM over intraday features, full-session vs. regular-hours comparisons, 4 feature-integration schemes (Standard, MinMax, Robust and non-normalized). ~87% directional accuracy on a 3-hour horizon using 21 months of unseen data, 15% improvement in full-session consistency over regular-hours baselines, demonstrates value of extended-hours data and microstructure indicators for robust strategies. This research, developed during my role as Quantitative Researcher at Independent Research, was recognised with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award, appearing on the SSRN Top Downloads list for 9–12 Aug 2025. The findings are implemented in Prometheus, a quantitative finance research platform featuring an interactive Streamlit dashboard for portfolio monitoring, strategy visualization, and risk management.</>,
+        description: <>This paper introduces the Financial Torque Hypothesis, proposing that VWAP and trade count encapsulate short-term &quot;market torque&quot; signals that improve direction prediction. Using LSTM models over intraday features, with full-session vs. regular-hours comparisons and four feature-integration schemes (Standard, MinMax, Robust, and non-normalised), the study reports ~87% directional accuracy on a 3-hour horizon across 21 months of unseen data and a 15% uplift in full-session consistency. The work was recognised with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award and is implemented in Prometheus, which serves as the central environment for portfolio monitoring, strategy visualisation, and continued FTH development.</>,
         link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
         category: "Quantitative Finance",
         artifacts: "SSRN paper + Show publication link",
