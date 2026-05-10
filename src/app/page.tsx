@@ -844,6 +844,12 @@ export default function About() {
                           >
                             <em>{paper.title}</em>
                           </Heading>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            {paper.authors}
+                          </Text>
+                          <Text variant="body-default-xs" onBackground="neutral-weak">
+                            {paper.venue}
+                          </Text>
                           {paper.link && (
                             <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
                               <SmartLink
@@ -864,12 +870,6 @@ export default function About() {
                               </SmartLink>
                             </Flex>
                           )}
-                          <Text variant="body-default-s" onBackground="brand-weak">
-                            {paper.authors}
-                          </Text>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {paper.venue}
-                          </Text>
                         </Column>
                         <Column style={{ alignItems: "flex-end", gap: "6px" }}>
                           {paper.date && (
@@ -1172,49 +1172,49 @@ export default function About() {
                           >
                             {project.title}
                           </Heading>
-                          {(project.github || project.link) && (
-                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
-                              {project.github && (
-                                <SmartLink
-                                  href={project.github}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{ textDecoration: "none" }}
-                                >
-                                  <Tag
-                                    size="s"
-                                    background="brand-alpha-weak"
-                                    border="neutral-alpha-medium"
-                                    onBackground="brand-weak"
-                                    className={styles.clickableTag}
-                                  >
-                                    View on GitHub
-                                  </Tag>
-                                </SmartLink>
-                              )}
-                              {project.link && (
-                                <SmartLink
-                                  href={project.link}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{ textDecoration: "none" }}
-                                >
-                                  <Tag
-                                    size="s"
-                                    background="brand-alpha-weak"
-                                    onBackground="brand-weak"
-                                    className={styles.clickableTag}
-                                  >
-                                    {project.category === "Academic Research" ? "View Paper" : "View Website"}
-                                  </Tag>
-                                </SmartLink>
-                              )}
-                            </Flex>
-                          )}
                             {project.location && (
                               <Text variant="body-default-s" onBackground="brand-weak" style={{ marginBottom: "8px" }}>
                                 {project.location}
                               </Text>
+                            )}
+                            {(project.github || project.link) && (
+                              <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+                                {project.github && (
+                                  <SmartLink
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ textDecoration: "none" }}
+                                  >
+                                    <Tag
+                                      size="s"
+                                      background="brand-alpha-weak"
+                                      border="neutral-alpha-medium"
+                                      onBackground="brand-weak"
+                                      className={styles.clickableTag}
+                                    >
+                                      View on GitHub
+                                    </Tag>
+                                  </SmartLink>
+                                )}
+                                {project.link && (
+                                  <SmartLink
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ textDecoration: "none" }}
+                                  >
+                                    <Tag
+                                      size="s"
+                                      background="brand-alpha-weak"
+                                      onBackground="brand-weak"
+                                      className={styles.clickableTag}
+                                    >
+                                      {project.category === "Academic Research" ? "View Paper" : "View Website"}
+                                    </Tag>
+                                  </SmartLink>
+                                )}
+                              </Flex>
                             )}
                           </Column>
                           <Column style={{ alignItems: "flex-end", gap: "6px" }}>
@@ -1561,6 +1561,9 @@ export default function About() {
                           >
                             {certification.title}
                           </Text>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            {certification.issuer}
+                          </Text>
                           {certificationDetails.certificateUrl && (
                             <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
                               <SmartLink
@@ -1581,9 +1584,6 @@ export default function About() {
                               </SmartLink>
                             </Flex>
                           )}
-                          <Text variant="body-default-s" onBackground="brand-weak">
-                            {certification.issuer}
-                          </Text>
                         </Column>
                         <Flex 
                           style={{ gap: "8px" }}
@@ -1705,6 +1705,9 @@ export default function About() {
                           >
                             {episode.title}
                           </Text>
+                          <Text variant="body-default-s" onBackground="brand-weak">
+                            YouTube
+                          </Text>
                           {(episode.trailerLink || episode.link) && (
                             <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
                               {episode.trailerLink && (
@@ -1744,9 +1747,6 @@ export default function About() {
                               )}
                             </Flex>
                           )}
-                          <Text variant="body-default-s" onBackground="brand-weak">
-                            YouTube
-                          </Text>
                         </Column>
                         <Column style={{ alignItems: "flex-end", gap: "6px" }}>
                           {episode.date && (
