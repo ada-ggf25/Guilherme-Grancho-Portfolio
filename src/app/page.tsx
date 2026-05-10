@@ -149,6 +149,13 @@ export default function About() {
     { id: about.hobbies.title, label: "Hobbies" }
   ];
   const currentWorkItems = buildCurrentWorkItems();
+  const justifiedDescriptionStyle: React.CSSProperties = {
+    display: "block",
+    textAlign: "justify",
+    textJustify: "inter-word",
+    hyphens: "auto",
+    WebkitHyphens: "auto",
+  };
 
   return (
     <Column style={{ maxWidth: "800px", margin: "0 auto", padding: "0 var(--static-space-l)" }}>
@@ -251,9 +258,9 @@ export default function About() {
           >
             <Text
               style={{
+                ...justifiedDescriptionStyle,
                 fontSize: "var(--font-size-body-default-l)",
                 lineHeight: "var(--line-height-body-default-l)",
-                textAlign: "justify",
               }}
             >
               {about.intro.description}
@@ -459,7 +466,7 @@ export default function About() {
                                   variant="body-default-m"
                                   onBackground="neutral-weak"
                                   key={`${experience.company}-${index}`}
-                                  style={{ textAlign: "justify" }}
+                                  style={justifiedDescriptionStyle}
                                 >
                                   {achievement}
                                   {isPrometheusAchievement && (
@@ -775,7 +782,7 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                       {institution.description}
                     </Text>
                   </CollapsibleSection>
@@ -877,7 +884,7 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                       {paper.description}
                       {paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
                         <>
@@ -1008,7 +1015,7 @@ export default function About() {
                       )}
                     </Text>
                     {((paper as PaperWithHighlights).highlights) && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic" }}>
                         Key highlights: {(paper as PaperWithHighlights).highlights}
                       </Text>
                     )}
@@ -1090,7 +1097,7 @@ export default function About() {
                       }
                     >
                       {activity.description && (
-                        <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                        <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                           {activity.description}
                           {activity.title === "Algorithmic Trading Society Member" && (
                             <>{" "}
@@ -1226,7 +1233,7 @@ export default function About() {
                       }
                     >
                       {project.description && (
-                        <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                        <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                           {project.description}
                           {project.title === "Prometheus" && (
                             <>
@@ -1317,7 +1324,7 @@ export default function About() {
                         </Text>
                       )}
                       {((project as ProjectWithHighlights).highlights) && (
-                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", marginTop: "8px", textAlign: "justify" }}>
+                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic", marginTop: "8px" }}>
                           Key highlights: {(project as ProjectWithHighlights).highlights}
                         </Text>
                       )}
@@ -1380,7 +1387,7 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                       {award.description}
                       {award.title === "LXthon Hackathon — 1º Winner" && (
                         <>{" "}
@@ -1494,7 +1501,7 @@ export default function About() {
                       )}
                     </Text>
                     {award.associated_with && award.associated_with.trim() && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic" }}>
                         Associated with: {award.associated_with}
                       </Text>
                     )}
@@ -1567,7 +1574,7 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                       {certification.description}
                       {certification.title === "Compliance & Protocols for Global Clients" && (
                         <>{" "}
@@ -1610,7 +1617,7 @@ export default function About() {
                       )}
                     </Text>
                     {(certification.associated_with?.trim() || (certification as CertificationWithCredential).credential_id?.trim()) && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ fontStyle: "italic", textAlign: "justify" }}>
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic" }}>
                         {certification.associated_with?.trim() && `Associated with: ${certification.associated_with}`}
                         {certification.associated_with?.trim() && (certification as CertificationWithCredential).credential_id?.trim() && ` • `}
                         {(certification as CertificationWithCredential).credential_id?.trim() && `Credential ID: ${(certification as CertificationWithCredential).credential_id}`}
@@ -1731,7 +1738,7 @@ export default function About() {
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={{ textAlign: "justify" }}>
+                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
                       {episode.description || <>Podcast Presenting the Paper <em>{episode.paperTitle}</em>.</>}
                       {episode.paperTitle === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation" && (
                         <>
@@ -1884,7 +1891,7 @@ export default function About() {
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                style={{ marginBottom: "12px", textAlign: "justify" }}
+                style={{ ...justifiedDescriptionStyle, marginBottom: "12px" }}
               >
                 {about.values.description}
               </Text>
@@ -1905,7 +1912,7 @@ export default function About() {
               <Text
                 variant="body-default-m"
                 onBackground="neutral-weak"
-                style={{ marginBottom: "12px" }}
+                style={{ ...justifiedDescriptionStyle, marginBottom: "12px" }}
               >
                 {about.hobbies.description}
               </Text>
