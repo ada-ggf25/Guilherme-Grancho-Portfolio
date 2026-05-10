@@ -7,7 +7,9 @@
     "export": "next export",
     "build": "next build",
     "start": "next start",
-    "lint": "echo 'Linting skipped - TypeScript compilation handles type checking'"
+    "lint": "echo 'Linting skipped - TypeScript compilation handles type checking'",
+    "check:american-english": "node scripts/check-american-english.mjs",
+    "ci:vercel-build": "npm run build"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
