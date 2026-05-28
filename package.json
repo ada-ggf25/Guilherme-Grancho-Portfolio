@@ -8,6 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "echo 'Linting skipped - TypeScript compilation handles type checking'",
+    "lint:check": "npx eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0",
+    "format": "prettier . --write --ignore-unknown",
+    "format:check": "prettier . --check --ignore-unknown",
     "check:american-english": "node scripts/check-american-english.mjs",
     "ci:vercel-build": "npm run build"
   },
@@ -33,6 +36,7 @@
     "baseline-browser-mapping": "^2.10.11",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.0.3",
+    "prettier": "^3.8.3",
     "typescript": "^5.8.3"
   },
   "overrides": {
