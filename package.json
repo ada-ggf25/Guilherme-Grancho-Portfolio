@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "echo 'Linting skipped - TypeScript compilation handles type checking'",
     "lint:check": "npx eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0",
+    "lint:fix": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier . --write --ignore-unknown",
     "format:check": "prettier . --check --ignore-unknown",
     "check:american-english": "node scripts/check-american-english.mjs",
