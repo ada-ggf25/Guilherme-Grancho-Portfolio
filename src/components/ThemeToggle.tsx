@@ -1,15 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ToggleButton, useTheme } from '@once-ui-system/core';
 
 export const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
-  const [currentTheme, setCurrentTheme] = useState('light');
-
-  useEffect(() => {
-    setCurrentTheme(document.documentElement.getAttribute('data-theme') || 'light');
-  }, [theme]);
+  const currentTheme = theme === 'dark' ? 'dark' : 'light';
 
   const icon = currentTheme === 'dark' ? 'light' : 'dark';
   const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
