@@ -8,6 +8,9 @@ const withMDX = mdx({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  turbopack: {
+    root: ".",
+  },
   transpilePackages: ["next-mdx-remote"],
   sassOptions: {
     compiler: "modern",
