@@ -87,7 +87,7 @@ function throttle<T extends (...args: unknown[]) => void>(
   let inThrottle: boolean;
   return function (...args: Parameters<T>) {
     if (!inThrottle) {
-      func.apply(null, args);
+      func(...args);
       inThrottle = true;
       setTimeout(() => (inThrottle = false), limit);
     }
