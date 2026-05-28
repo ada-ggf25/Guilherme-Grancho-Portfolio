@@ -189,7 +189,7 @@ const about = {
         employmentType: "Full-time",
         achievements: [
           <>
-            Leading on-site research on AI models for brain-machine interfaces at Harvard&apos;s Laboratory of Bioelectronics.
+            Developing and studying AI models for brain-machine interfaces at Harvard&rsquo;s Laboratory of Bioelectronics.
           </>,
         ],
         images: [],
