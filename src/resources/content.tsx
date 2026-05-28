@@ -15,7 +15,8 @@ const person = {
   location: "London - Lisbon",
   languages: ["Portuguese", "English", "Spanish", "French"],
   website: "https://guilhermegrancho.com",
-  summary: "AI researcher, software engineer, and tech entrepreneur blending data science, engineering, and entrepreneurship to build solutions for finance and sustainability. Currently pursuing MSc in Applied Computational Science & Engineering at Imperial College London, with published research in quantitative finance and co-founder of Eco AI.ly&apos;s GAIA sustainability platform.",
+  summary:
+    "AI researcher, software engineer, and tech entrepreneur blending data science, engineering, and entrepreneurship to build solutions for finance and sustainability. Currently pursuing MSc in Applied Computational Science & Engineering at Imperial College London, with published research in quantitative finance and co-founder of Eco AI.ly&apos;s GAIA sustainability platform.",
 };
 
 const newsletter = {
@@ -23,8 +24,10 @@ const newsletter = {
   title: <>Let&apos;s build the future together</>,
   description: (
     <>
-      Always eager to collaborate on applied ML, quantitative finance, sustainable tech and entrepreneurship initiatives. 
-      Let&apos;s connect and explore how we can work together on innovative projects that make a measurable impact.
+      Always eager to collaborate on applied ML, quantitative finance,
+      sustainable tech and entrepreneurship initiatives. Let&apos;s connect and
+      explore how we can work together on innovative projects that make a
+      measurable impact.
     </>
   ),
 };
@@ -68,13 +71,19 @@ const home = {
   headline: <>Building the future of finance with AI</>,
   featured: {
     display: true,
-    title: <>Latest: <strong className="ml-4">AI-Powered Trading Algorithm</strong></>,
+    title: (
+      <>
+        Latest: <strong className="ml-4">AI-Powered Trading Algorithm</strong>
+      </>
+    ),
     href: "/work/ai-trading-algorithm",
   },
   subline: (
     <>
-      I&apos;m Guilherme, an AI developer and fintech entrepreneur passionate about 
-      <br /> transforming financial markets through machine learning and innovative technology.
+      I&apos;m Guilherme, an AI developer and fintech entrepreneur passionate
+      about
+      <br /> transforming financial markets through machine learning and
+      innovative technology.
     </>
   ),
 };
@@ -82,14 +91,24 @@ const home = {
 // Helper function to parse start date from timeframe string
 function parseStartDate(timeframe: string): Date {
   const monthNames: Record<string, number> = {
-    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
-    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
+    Jan: 1,
+    Feb: 2,
+    Mar: 3,
+    Apr: 4,
+    May: 5,
+    Jun: 6,
+    Jul: 7,
+    Aug: 8,
+    Sep: 9,
+    Oct: 10,
+    Nov: 11,
+    Dec: 12,
   };
-  
+
   // Extract the start date part (before " - " or if no " - ", the whole string)
   const startPart = timeframe.split(" - ")[0].trim();
   const parts = startPart.split(" ");
-  
+
   if (parts.length >= 2) {
     const month = monthNames[parts[0]];
     const year = parseInt(parts[1]);
@@ -97,7 +116,7 @@ function parseStartDate(timeframe: string): Date {
       return new Date(year, month - 1, 1); // Return Date object for comparison
     }
   }
-  
+
   // Return a very old date if parsing fails
   return new Date(1900, 0, 1);
 }
@@ -105,24 +124,34 @@ function parseStartDate(timeframe: string): Date {
 // Helper function to parse end date (last worked on) from timeframe string
 function parseEndDate(timeframe: string | undefined): Date {
   const monthNames: Record<string, number> = {
-    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
-    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
+    Jan: 1,
+    Feb: 2,
+    Mar: 3,
+    Apr: 4,
+    May: 5,
+    Jun: 6,
+    Jul: 7,
+    Aug: 8,
+    Sep: 9,
+    Oct: 10,
+    Nov: 11,
+    Dec: 12,
   };
-  
+
   if (!timeframe) {
     return new Date(1900, 0, 1);
   }
-  
+
   // If it contains " - ", extract the end date part
   if (timeframe.includes(" - ")) {
     const parts = timeframe.split(" - ");
     const endPart = parts[1].trim();
-    
+
     // If it's "Present", use a very future date
     if (endPart === "Present") {
       return new Date(9999, 11, 31);
     }
-    
+
     const endParts = endPart.split(" ");
     if (endParts.length >= 2) {
       const month = monthNames[endParts[0]];
@@ -142,7 +171,7 @@ function parseEndDate(timeframe: string | undefined): Date {
       }
     }
   }
-  
+
   // Return a very old date if parsing fails
   return new Date(1900, 0, 1);
 }
@@ -168,12 +197,21 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Hi! Welcome to my journey! I&apos;m currently based in the United States, where I&apos;m building a career in machine learning and artificial intelligence. My curiosity for physics and mathematics first shaped the way I think about the world, and today I&apos;m especially interested in how AI can drive progress across science and engineering. Outside of work, I&apos;m usually playing sports, staying active, and looking for new challenges. I&apos;m always happy to connect with people who are curious, ambitious, and interested in building meaningful things, so feel free to reach out!
+        Hi! Welcome to my journey! I&apos;m currently based in the United
+        States, where I&apos;m building a career in machine learning and
+        artificial intelligence. My curiosity for physics and mathematics first
+        shaped the way I think about the world, and today I&apos;m especially
+        interested in how AI can drive progress across science and engineering.
+        Outside of work, I&apos;m usually playing sports, staying active, and
+        looking for new challenges. I&apos;m always happy to connect with people
+        who are curious, ambitious, and interested in building meaningful
+        things, so feel free to reach out!
       </>
     ),
     finalStatement: (
       <>
-        Currently focused on making &quot;Guilherme Grancho&quot; stand for something meaningful.
+        Currently focused on making &quot;Guilherme Grancho&quot; stand for
+        something meaningful.
       </>
     ),
   },
@@ -182,14 +220,16 @@ const about = {
     title: "Experience",
     experiences: [
       {
-        company: "Harvard University, John A. Paulson School of Engineering and Applied Sciences",
+        company:
+          "Harvard University, John A. Paulson School of Engineering and Applied Sciences",
         timeframe: "May 2026 - Present",
         role: "Research Fellow",
         location: "Boston, Massachusetts, USA · On-site",
         employmentType: "Full-time",
         achievements: [
           <>
-            Developing and studying AI models for brain-machine interfaces at Harvard&rsquo;s Laboratory of Bioelectronics.
+            Developing and studying AI models for brain-machine interfaces at
+            Harvard&rsquo;s Laboratory of Bioelectronics.
           </>,
         ],
         images: [],
@@ -202,7 +242,8 @@ const about = {
         employmentType: "Internship",
         achievements: [
           <>
-            Designed and deployed RAG and GraphRAG pipelines powering agentic AI workflows for international clients.
+            Designed and deployed RAG and GraphRAG pipelines powering agentic AI
+            workflows for international clients.
           </>,
         ],
         images: [],
@@ -215,7 +256,9 @@ const about = {
         employmentType: "Internship",
         achievements: [
           <>
-            Engineered RAG pipelines for agentic AI products, exposed as MCP-compliant services consumed by multi-agent orchestrators, for international financial-services clients.
+            Engineered RAG pipelines for agentic AI products, exposed as
+            MCP-compliant services consumed by multi-agent orchestrators, for
+            international financial-services clients.
           </>,
         ],
         images: [],
@@ -228,7 +271,9 @@ const about = {
         employmentType: "Part-time",
         achievements: [
           <>
-            TA for the BSc in Electronic Engineering & Computer Engineering, teaching the module Physics II. Covered core topics in thermodynamics and quantum physics.
+            TA for the BSc in Electronic Engineering & Computer Engineering,
+            teaching the module Physics II. Covered core topics in
+            thermodynamics and quantum physics.
           </>,
         ],
         images: [],
@@ -241,10 +286,14 @@ const about = {
         employmentType: "Part-time",
         achievements: [
           <>
-            Built LSTM time-series models to forecast sustainability metrics (e.g., carbon intensity, renewable-share trends) at national/regional scales, with the goal of reducing the energy/carbon footprint when training large AI models.
+            Built LSTM time-series models to forecast sustainability metrics
+            (e.g., carbon intensity, renewable-share trends) at
+            national/regional scales, with the goal of reducing the
+            energy/carbon footprint when training large AI models.
           </>,
           <>
-            Developed tools to help organizations optimize energy usage and monitor production, consumption, imports, and exports.
+            Developed tools to help organizations optimize energy usage and
+            monitor production, consumption, imports, and exports.
           </>,
         ],
         images: [],
@@ -256,11 +305,10 @@ const about = {
         location: "Lisbon, Portugal · Hybrid",
         employmentType: "Part-time",
         achievements: [
+          <>Worked across quantum computation, networks, and sensing.</>,
           <>
-            Worked across quantum computation, networks, and sensing.
-          </>,
-          <>
-            Conducted outreach with partner institutions (e.g., IST, Deloitte, PQI) to promote quantum technologies.
+            Conducted outreach with partner institutions (e.g., IST, Deloitte,
+            PQI) to promote quantum technologies.
           </>,
         ],
         images: [],
@@ -273,7 +321,14 @@ const about = {
         employmentType: "Part-time",
         achievements: [
           <>
-            First author of the peer-reviewed paper <em>Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold</em>, co-presented with Talles Medeiros at ENIAC (34th National Meeting on Artificial and Computational Intelligence), arising from a 720-hour machine-learning and algorithms research program.
+            First author of the peer-reviewed paper{" "}
+            <em>
+              Enhancing Multi-Objective Machine Learning with an Optimized
+              Lexicographic Approach: Determining the Tolerance Threshold
+            </em>
+            , co-presented with Talles Medeiros at ENIAC (34th National Meeting
+            on Artificial and Computational Intelligence), arising from a
+            720-hour machine-learning and algorithms research program.
           </>,
         ],
         images: [],
@@ -286,7 +341,11 @@ const about = {
         employmentType: "Part-time",
         achievements: [
           <>
-            Co-founded Tap2Net, an online venture providing durable NFC cards that direct customers to personalized review pages, helping businesses boost their online reputation. Led product, web design, marketing, customer support, and stock management, achieving sales of 500+ cards plus related products and services.
+            Co-founded Tap2Net, an online venture providing durable NFC cards
+            that direct customers to personalized review pages, helping
+            businesses boost their online reputation. Led product, web design,
+            marketing, customer support, and stock management, achieving sales
+            of 500+ cards plus related products and services.
           </>,
         ],
         images: [],
@@ -299,7 +358,9 @@ const about = {
         employmentType: "Internship",
         achievements: [
           <>
-            Investigated innovative VR locomotion methods and built a virtual world explored via teleportation with an Oculus setup. Gained practical skills in VR navigation and interaction design.
+            Investigated innovative VR locomotion methods and built a virtual
+            world explored via teleportation with an Oculus setup. Gained
+            practical skills in VR navigation and interaction design.
           </>,
         ],
         images: [],
@@ -312,26 +373,32 @@ const about = {
         employmentType: "Part-time",
         achievements: [
           <>
-            Taught and coordinated Physics III laboratory sessions for BSc Electronics Engineering undergraduates, covering Thomson&apos;s experiment, RLC circuits, and geometric and wave optics.
+            Taught and coordinated Physics III laboratory sessions for BSc
+            Electronics Engineering undergraduates, covering Thomson&apos;s
+            experiment, RLC circuits, and geometric and wave optics.
           </>,
           <>
-            Anonymous end-of-course student surveys awarded me 9/9 teacher, the highest rating in the module that year.
+            Anonymous end-of-course student surveys awarded me 9/9 teacher, the
+            highest rating in the module that year.
           </>,
         ],
         images: [],
       },
       {
-        company: "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas",
+        company:
+          "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas",
         timeframe: "Nov 2023 - Jan 2024",
         role: "Machine Learning Researcher",
         location: "Lisbon, Portugal · On-site",
         employmentType: "Part-time",
         achievements: [
           <>
-            Research on high-power laser aberration correction using CNNs and Bayesian optimization.
+            Research on high-power laser aberration correction using CNNs and
+            Bayesian optimization.
           </>,
           <>
-            Designed a dataset creation method from experimental data and built a high-accuracy neural-network solution.
+            Designed a dataset creation method from experimental data and built
+            a high-accuracy neural-network solution.
           </>,
         ],
         images: [],
@@ -344,7 +411,9 @@ const about = {
         employmentType: "Part-time",
         achievements: [
           <>
-            Designed and implemented responsive web interfaces for the Aerospace Engineering Society at Instituto Superior Técnico, supporting its projects and digital services.
+            Designed and implemented responsive web interfaces for the Aerospace
+            Engineering Society at Instituto Superior Técnico, supporting its
+            projects and digital services.
           </>,
         ],
         images: [],
@@ -357,7 +426,9 @@ const about = {
         employmentType: "Full-time",
         achievements: [
           <>
-            Represented Startup Portugal at Web Summit 2023, boosting company visibility, engaging investors, and supporting investment rounds and pitching.
+            Represented Startup Portugal at Web Summit 2023, boosting company
+            visibility, engaging investors, and supporting investment rounds and
+            pitching.
           </>,
         ],
         images: [],
@@ -370,7 +441,9 @@ const about = {
         employmentType: "Part-time",
         achievements: [
           <>
-            Supported high-school and undergraduate students in mathematics, physics, and Calculus I and II via one-to-one online and in-person lessons.
+            Supported high-school and undergraduate students in mathematics,
+            physics, and Calculus I and II via one-to-one online and in-person
+            lessons.
           </>,
         ],
         images: [],
@@ -383,10 +456,18 @@ const about = {
         employmentType: "Internship",
         achievements: [
           <>
-            Project: <em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, delivering a CNN pipeline to infer seabed stratification from sonar readings — published on arXiv.
+            Project:{" "}
+            <em>
+              Mapping the Layers of the Ocean Floor with a Convolutional Neural
+              Network
+            </em>
+            , delivering a CNN pipeline to infer seabed stratification from
+            sonar readings — published on arXiv.
           </>,
           <>
-            Project: <em>Lightcurve Classification with an LSTM Neural Network</em>, modeling stellar variability to support dark matter detection.
+            Project:{" "}
+            <em>Lightcurve Classification with an LSTM Neural Network</em>,
+            modeling stellar variability to support dark matter detection.
           </>,
         ],
         images: [],
@@ -409,7 +490,28 @@ const about = {
         timeframe: "Jan 2025 - May 2026",
         category: "Quantitative Finance",
         location: "Independent Research",
-        description: <>Prometheus is my flagship independent quantitative-research platform and open-source project, built to operationalize the Financial Torque Hypothesis (FTH) for short-term stock-price direction forecasting with LSTM neural networks. It unifies real-time market-data ingestion with an interactive Streamlit interface for portfolio monitoring, strategy visualization, risk management, and live trading experimentation, complemented by dedicated research modules inspired by Simons and Sun Tzu frameworks. The platform also anchors the published study <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, which reported ~87% directional accuracy on a 3-hour horizon and a 15% uplift in full-session consistency versus regular-hours baselines, and it now serves as the core environment for extending FTH signals into advanced algorithmic portfolio-management workflows.</>,
+        description: (
+          <>
+            Prometheus is my flagship independent quantitative-research platform
+            and open-source project, built to operationalize the Financial
+            Torque Hypothesis (FTH) for short-term stock-price direction
+            forecasting with LSTM neural networks. It unifies real-time
+            market-data ingestion with an interactive Streamlit interface for
+            portfolio monitoring, strategy visualization, risk management, and
+            live trading experimentation, complemented by dedicated research
+            modules inspired by Simons and Sun Tzu frameworks. The platform also
+            anchors the published study{" "}
+            <em>
+              The Financial Torque Hypothesis: Predicting Short-Term Stock Price
+              Movements Using LSTM Neural Networks
+            </em>
+            , which reported ~87% directional accuracy on a 3-hour horizon and a
+            15% uplift in full-session consistency versus regular-hours
+            baselines, and it now serves as the core environment for extending
+            FTH signals into advanced algorithmic portfolio-management
+            workflows.
+          </>
+        ),
         github: "https://github.com/ada-ggf25/Prometheus",
       },
       {
@@ -419,7 +521,17 @@ const about = {
         timeframe: "Jan 2025 - Jun 2025",
         category: "Sustainability & AI",
         location: "Eco AI.ly",
-        description: <>Sustainability platform featuring GAIA, an AI-powered system for forecasting sustainability metrics at national and regional scales. Built LSTM time-series models to predict carbon intensity and renewable-share trends, with the goal of reducing energy and carbon footprint when training large AI models. Developed tools to help organizations optimize energy usage and monitor production, consumption, imports, and exports.</>,
+        description: (
+          <>
+            Sustainability platform featuring GAIA, an AI-powered system for
+            forecasting sustainability metrics at national and regional scales.
+            Built LSTM time-series models to predict carbon intensity and
+            renewable-share trends, with the goal of reducing energy and carbon
+            footprint when training large AI models. Developed tools to help
+            organizations optimize energy usage and monitor production,
+            consumption, imports, and exports.
+          </>
+        ),
         github: "https://github.com/ada-ggf25/Eco-AI.ly",
       },
       {
@@ -428,7 +540,15 @@ const about = {
         timeframe: "Jun 2025",
         category: "Healthcare AI",
         location: "LXthon",
-        description: <>Winning solution for the LXthon Hackathon, achieving 1st place overall and distinction for Best AI Medical Imaging Solution. Developed an AI-powered medical imaging system that demonstrates innovative applications of computer vision and machine learning in healthcare diagnostics.</>,
+        description: (
+          <>
+            Winning solution for the LXthon Hackathon, achieving 1st place
+            overall and distinction for Best AI Medical Imaging Solution.
+            Developed an AI-powered medical imaging system that demonstrates
+            innovative applications of computer vision and machine learning in
+            healthcare diagnostics.
+          </>
+        ),
         github: "https://github.com/ada-ggf25/LXthon",
       },
       {
@@ -437,16 +557,36 @@ const about = {
         timeframe: "Aug 2025 - Sep 2025",
         category: "AI & ML Engineering",
         location: "Ernst & Young",
-        description: <>Advanced agentic AI workflow system implementing GraphRAG (Graph-based Retrieval-Augmented Generation) pipelines. Designed for enterprise applications with MCP-compliant services consumed by multi-agent orchestrators. Features sophisticated knowledge graph integration for enhanced context retrieval and improved response accuracy in complex query scenarios.</>,
+        description: (
+          <>
+            Advanced agentic AI workflow system implementing GraphRAG
+            (Graph-based Retrieval-Augmented Generation) pipelines. Designed for
+            enterprise applications with MCP-compliant services consumed by
+            multi-agent orchestrators. Features sophisticated knowledge graph
+            integration for enhanced context retrieval and improved response
+            accuracy in complex query scenarios.
+          </>
+        ),
         github: "https://github.com/ada-ggf25/AI-Agentic-Workflow-GraphRAG",
       },
       {
         title: "Ernst & Young AI Hackathon",
-        technologies: "Python, LangChain, FastAPI, OpenAI, Natural Language Processing",
+        technologies:
+          "Python, LangChain, FastAPI, OpenAI, Natural Language Processing",
         timeframe: "May 2025",
         category: "AI Automation",
         location: "Ernst & Young",
-        description: <>AI-powered calendar management agent developed for the EY AI Challenge 2025, securing 1st place in the AI for finance category. Automates calendar management tasks through natural language interactions, featuring automated scheduling, conflict resolution, and seamless integration with calendar services. Includes deadline management, reminder notifications, and intelligent time optimization.</>,
+        description: (
+          <>
+            AI-powered calendar management agent developed for the EY AI
+            Challenge 2025, securing 1st place in the AI for finance category.
+            Automates calendar management tasks through natural language
+            interactions, featuring automated scheduling, conflict resolution,
+            and seamless integration with calendar services. Includes deadline
+            management, reminder notifications, and intelligent time
+            optimization.
+          </>
+        ),
         github: "https://github.com/ada-ggf25/Auto-Calendar-Agent",
       },
       {
@@ -456,15 +596,38 @@ const about = {
         timeframe: "Sep 2022 - Nov 2022",
         category: "Academic Research",
         location: "Superior Técnico",
-        description: <>I completed the paper <em>The Atomic Nucleus - Discoveries of Modern Physics</em> in the Discoveries of Modern Physics course. I am proud to share that I finished the course with a 20/20 grade, thanks to this paper and my poster presentation at the Congress Center of Instituto Superior Técnico.</>,
+        description: (
+          <>
+            I completed the paper{" "}
+            <em>The Atomic Nucleus - Discoveries of Modern Physics</em> in the
+            Discoveries of Modern Physics course. I am proud to share that I
+            finished the course with a 20/20 grade, thanks to this paper and my
+            poster presentation at the Congress Center of Instituto Superior
+            Técnico.
+          </>
+        ),
       },
       {
         title: "Hippocrates' Feather",
-        technologies: "Python, Streamlit, FastAPI, OpenAI API, PostgreSQL, SQLAlchemy, Pydantic, WebRTC, Natural Language Processing, AI Agent",
+        technologies:
+          "Python, Streamlit, FastAPI, OpenAI API, PostgreSQL, SQLAlchemy, Pydantic, WebRTC, Natural Language Processing, AI Agent",
         timeframe: "Oct 2025",
         category: "Healthcare AI",
         location: "IBM",
-        description: <>AI-powered healthcare application developed for the IBM Z Datathon that automates medical form filling during patient consultations. Features real-time speech recognition and transcription, intelligent entity extraction from conversations using OpenAI&apos;s LLM, and automatic population of clinical forms with symptoms and medications. Built with a Streamlit frontend for intuitive doctor workflows, FastAPI backend for robust API services, and PostgreSQL database for secure patient data management. Reduces administrative burden by allowing doctors to focus on patient care while the AI handles form documentation in real-time during consultations.</>,
+        description: (
+          <>
+            AI-powered healthcare application developed for the IBM Z Datathon
+            that automates medical form filling during patient consultations.
+            Features real-time speech recognition and transcription, intelligent
+            entity extraction from conversations using OpenAI&apos;s LLM, and
+            automatic population of clinical forms with symptoms and
+            medications. Built with a Streamlit frontend for intuitive doctor
+            workflows, FastAPI backend for robust API services, and PostgreSQL
+            database for secure patient data management. Reduces administrative
+            burden by allowing doctors to focus on patient care while the AI
+            handles form documentation in real-time during consultations.
+          </>
+        ),
         github: "https://github.com/peter-avg/IBMZ-Datathon",
       },
     ].sort((a, b) => {
@@ -483,54 +646,177 @@ const about = {
         degree: "Imperial College London",
         timeframe: "Sep 2025 - Sep 2026",
         location: "London, UK",
-        description: <>Applied computational science focused on numerical methods for large scale scientific and machine learning computing, with emphasis on numerical optimization, scientific programming, and scalable, parallel computing.</>,
+        description: (
+          <>
+            Applied computational science focused on numerical methods for large
+            scale scientific and machine learning computing, with emphasis on
+            numerical optimization, scientific programming, and scalable,
+            parallel computing.
+          </>
+        ),
         gpa: "Distinction Expected",
-        relevant_courses: ["Modern Programming Methods", "Computational Mathematics", "Applying Computational/Data Science", "Data Science & Machine Learning", "Deep Learning", "Modeling & Numerical Methods", "Advanced Programming", "Inversion & Optimization", "Patterns for Parallel Programming"],
+        relevant_courses: [
+          "Modern Programming Methods",
+          "Computational Mathematics",
+          "Applying Computational/Data Science",
+          "Data Science & Machine Learning",
+          "Deep Learning",
+          "Modeling & Numerical Methods",
+          "Advanced Programming",
+          "Inversion & Optimization",
+          "Patterns for Parallel Programming",
+        ],
       },
       {
         name: "MSc, Computer Science & Engineering",
         degree: "Instituto Superior Técnico",
         timeframe: "Aug 2024 - Jul 2025",
         location: "Lisbon, Portugal",
-        description: <>I studied core computer science, finance-oriented computing and mathematics, AI/ML, and multi-agent systems, with a focus on CS foundations, software design, data structures, and algorithm development. I then had the opportunity to pursue an MSc at Imperial College London, focused on ML and AI.</>,
+        description: (
+          <>
+            I studied core computer science, finance-oriented computing and
+            mathematics, AI/ML, and multi-agent systems, with a focus on CS
+            foundations, software design, data structures, and algorithm
+            development. I then had the opportunity to pursue an MSc at Imperial
+            College London, focused on ML and AI.
+          </>
+        ),
         gpa: "Interrupted",
-        relevant_courses: ["Data Analysis & Integration", "Introduction to Financial Mathematics", "Computational Methods in Finance", "Introduction to Quantum Information & Computing", "Software Security", "Communication Skills in Informatics & Computer Engineering I & II", "Deep Learning", "Planning, Learning & Intelligent Decision-Making", "Autonomous Agents & Multi-Agent Systems", "Business Integration"],
+        relevant_courses: [
+          "Data Analysis & Integration",
+          "Introduction to Financial Mathematics",
+          "Computational Methods in Finance",
+          "Introduction to Quantum Information & Computing",
+          "Software Security",
+          "Communication Skills in Informatics & Computer Engineering I & II",
+          "Deep Learning",
+          "Planning, Learning & Intelligent Decision-Making",
+          "Autonomous Agents & Multi-Agent Systems",
+          "Business Integration",
+        ],
       },
       {
         name: "BSc, Engineering Physics",
         degree: "Instituto Superior Técnico",
         timeframe: "Sep 2022 - Jul 2024",
         location: "Lisbon, Portugal",
-        description: <>Learned a lot about theoretical, experimental, and computational physics, and deepened my understanding of advanced theoretical and applied mathematics. Also developed new skills in engineering and electronics.</>,
+        description: (
+          <>
+            Learned a lot about theoretical, experimental, and computational
+            physics, and deepened my understanding of advanced theoretical and
+            applied mathematics. Also developed new skills in engineering and
+            electronics.
+          </>
+        ),
         gpa: "Completed",
-        relevant_courses: ["Differential & Integral Calculus I–III", "Linear Algebra", "Probability & Statistics", "Mathematical Techniques of Physics", "Earth & the Universe", "Discoveries of Modern Physics", "Electromagnetism", "Oscillations & Waves", "Relativity", "Thermodynamics", "Quantum Mechanics I", "Physics of Continuous Media", "Solid State Physics", "General Chemistry", "Circuit Theory & Electronics Fundamentals", "General Electronics", "Digital Systems", "Applied Optics", "Materials Science", "Materials in Engineering", "Applied Mechanics I", "Introduction to Experimental Physics Lab", "Experimental Physics Lab", "Advanced Experimental Physics Laboratory I & II", "Experimental Physics Lab in Research Units", "Integrated 1st-Cycle Project in Engineering Physics & Technology", "Programming Fundamentals", "Computational Physics", "Geometric Drawing & Modeling", "Introduction to Economics", "Global Challenges"],
+        relevant_courses: [
+          "Differential & Integral Calculus I–III",
+          "Linear Algebra",
+          "Probability & Statistics",
+          "Mathematical Techniques of Physics",
+          "Earth & the Universe",
+          "Discoveries of Modern Physics",
+          "Electromagnetism",
+          "Oscillations & Waves",
+          "Relativity",
+          "Thermodynamics",
+          "Quantum Mechanics I",
+          "Physics of Continuous Media",
+          "Solid State Physics",
+          "General Chemistry",
+          "Circuit Theory & Electronics Fundamentals",
+          "General Electronics",
+          "Digital Systems",
+          "Applied Optics",
+          "Materials Science",
+          "Materials in Engineering",
+          "Applied Mechanics I",
+          "Introduction to Experimental Physics Lab",
+          "Experimental Physics Lab",
+          "Advanced Experimental Physics Laboratory I & II",
+          "Experimental Physics Lab in Research Units",
+          "Integrated 1st-Cycle Project in Engineering Physics & Technology",
+          "Programming Fundamentals",
+          "Computational Physics",
+          "Geometric Drawing & Modeling",
+          "Introduction to Economics",
+          "Global Challenges",
+        ],
       },
       {
         name: "BSc, Mechanical Engineering",
         degree: "Instituto Superior Técnico",
         timeframe: "Sep 2021 - Jul 2022",
         location: "Lisbon, Portugal",
-        description: <>I developed skills in mathematics, materials engineering, and computational mechanics, focusing on mechanical systems and product design, before switching to Engineering Physics and Technology to pursue my core interests.</>,
+        description: (
+          <>
+            I developed skills in mathematics, materials engineering, and
+            computational mechanics, focusing on mechanical systems and product
+            design, before switching to Engineering Physics and Technology to
+            pursue my core interests.
+          </>
+        ),
         gpa: "Interrupted",
-        relevant_courses: ["Linear Algebra", "Differential & Integral Calculus I–II", "Materials Science", "General Chemistry", "Materials in Engineering", "Applied Mechanics I", "Programming Fundamentals", "Geometric Drawing & Modeling", "Introduction to Economics", "Global Challenges"],
+        relevant_courses: [
+          "Linear Algebra",
+          "Differential & Integral Calculus I–II",
+          "Materials Science",
+          "General Chemistry",
+          "Materials in Engineering",
+          "Applied Mechanics I",
+          "Programming Fundamentals",
+          "Geometric Drawing & Modeling",
+          "Introduction to Economics",
+          "Global Challenges",
+        ],
       },
       {
         name: "High-School Diploma, Sciences and Technologies",
         degree: "Colégio do Sagrado Coração de Maria",
         timeframe: "Sep 2018 - Jul 2021",
         location: "Lisbon, Portugal",
-        description: <>I studied core science and technology subjects, focusing on math, physics, programming and chemistry, to prepare for a career in engineering science.</>,
+        description: (
+          <>
+            I studied core science and technology subjects, focusing on math,
+            physics, programming and chemistry, to prepare for a career in
+            engineering science.
+          </>
+        ),
         gpa: "Completed",
-        relevant_courses: ["Portuguese", "English", "Mathematics", "Biology & Geology", "Physics & Chemistry", "Physics", "Computer Applications", "Philosophy", "Physical Education", "Moral & Religious Education", "Civic Education", "Professional & Soft-Skills Development"],
+        relevant_courses: [
+          "Portuguese",
+          "English",
+          "Mathematics",
+          "Biology & Geology",
+          "Physics & Chemistry",
+          "Physics",
+          "Computer Applications",
+          "Philosophy",
+          "Physical Education",
+          "Moral & Religious Education",
+          "Civic Education",
+          "Professional & Soft-Skills Development",
+        ],
       },
       {
         name: "English Language & Literature",
         degree: "British Council",
         timeframe: "Sep 2016 - Jun 2019",
         location: "Lisbon, Portugal",
-        description: <>Developed English communication, grammar, and vocabulary skills for academic and professional contexts.</>,
+        description: (
+          <>
+            Developed English communication, grammar, and vocabulary skills for
+            academic and professional contexts.
+          </>
+        ),
         gpa: "Completed",
-        relevant_courses: ["English Grammar", "ESL", "Communication Skills", "Academic Writing", "Professional English"],
+        relevant_courses: [
+          "English Grammar",
+          "ESL",
+          "Communication Skills",
+          "Academic Writing",
+          "Professional English",
+        ],
       },
     ],
   },
@@ -539,8 +825,25 @@ const about = {
     title: "Awards & Honors",
     accomplishments: [
       {
-        title: "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak",
-        description: <>Our paper <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, co-authored with Vasco Pereira, appeared on the SSRN Top Downloads list for 9–12 Aug 2025. The study introduces the Financial Torque Hypothesis, showing how VWAP and trade count can encode short-term &quot;market torque&quot; for direction prediction, with ~87% directional accuracy on a 3-hour horizon. These results are operationalized through Prometheus, my flagship quantitative-research platform for ongoing model validation and strategy development.</>,
+        title:
+          "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak",
+        description: (
+          <>
+            Our paper{" "}
+            <em>
+              The Financial Torque Hypothesis: Predicting Short-Term Stock Price
+              Movements Using LSTM Neural Networks
+            </em>
+            , co-authored with Vasco Pereira, appeared on the SSRN Top Downloads
+            list for 9–12 Aug 2025. The study introduces the Financial Torque
+            Hypothesis, showing how VWAP and trade count can encode short-term
+            &quot;market torque&quot; for direction prediction, with ~87%
+            directional accuracy on a 3-hour horizon. These results are
+            operationalized through Prometheus, my flagship
+            quantitative-research platform for ongoing model validation and
+            strategy development.
+          </>
+        ),
         category: "",
         year: "Aug 2025",
         issuer: "SSRN — The Financial Economics Network",
@@ -549,7 +852,12 @@ const about = {
       },
       {
         title: "LXthon Hackathon — 1º Winner",
-        description: <>Overall 1st place winner, distinction for Best AI Medical Imaging Solution.</>,
+        description: (
+          <>
+            Overall 1st place winner, distinction for Best AI Medical Imaging
+            Solution.
+          </>
+        ),
         category: "",
         year: "Jun 2025",
         issuer: "LXthon",
@@ -558,7 +866,12 @@ const about = {
       },
       {
         title: "EY AI Challenge — Category 1º Place Winner",
-        description: <>1st place winner in the category of AI for finance at EY&apos;s AI Challenge.</>,
+        description: (
+          <>
+            1st place winner in the category of AI for finance at EY&apos;s AI
+            Challenge.
+          </>
+        ),
         category: "",
         year: "May 2025",
         issuer: "Ernst & Young",
@@ -567,7 +880,12 @@ const about = {
       },
       {
         title: "Athens Mobility Grant",
-        description: <>Funding to attend KU Leuven&apos;s Virtual Reality Development program.</>,
+        description: (
+          <>
+            Funding to attend KU Leuven&apos;s Virtual Reality Development
+            program.
+          </>
+        ),
         category: "",
         year: "Mar 2024",
         issuer: "KU Leuven",
@@ -576,7 +894,13 @@ const about = {
       },
       {
         title: "Diploma of Teaching Excellence",
-        description: <>Teaching Physics III for the BSc in Electronics Engineering the anonymous student surveys rated me 9/9 overall teacher, the highest in the module that year.</>,
+        description: (
+          <>
+            Teaching Physics III for the BSc in Electronics Engineering the
+            anonymous student surveys rated me 9/9 overall teacher, the highest
+            in the module that year.
+          </>
+        ),
         category: "",
         year: "Feb 2024",
         issuer: "Instituto Superior Técnico",
@@ -585,7 +909,12 @@ const about = {
       },
       {
         title: "Brazilian Center of Physics Research — Mobility Grant",
-        description: <>Funding to attend the Artificial Intelligence research module at the Brazilian Center of Physics Research.</>,
+        description: (
+          <>
+            Funding to attend the Artificial Intelligence research module at the
+            Brazilian Center of Physics Research.
+          </>
+        ),
         category: "",
         year: "Feb 2023",
         issuer: "Brazilian Center of Physics Research",
@@ -600,9 +929,13 @@ const about = {
     accomplishments: [
       {
         title: "Algorithmic Trading Certificate",
-        description: <>
-          Certificate of completion for the Imperial College Algorithmic Trading Society AlgoCourse, demonstrating fluency in options theory, market making, arbitrage, trade execution, and machine learning.
-        </>,
+        description: (
+          <>
+            Certificate of completion for the Imperial College Algorithmic
+            Trading Society AlgoCourse, demonstrating fluency in options theory,
+            market making, arbitrage, trade execution, and machine learning.
+          </>
+        ),
         category: "Finance Education",
         year: "Apr 2026",
         issuer: "Imperial College Algorithmic Trading Society",
@@ -612,7 +945,13 @@ const about = {
       },
       {
         title: "Securities Education Certificate",
-        description: <>Securities and financial markets: instruments, market structure, and core trading and regulatory concepts from the Imperial College Investment Society program.</>,
+        description: (
+          <>
+            Securities and financial markets: instruments, market structure, and
+            core trading and regulatory concepts from the Imperial College
+            Investment Society program.
+          </>
+        ),
         category: "Finance Education",
         year: "Mar 2026",
         issuer: "Imperial College Investment Society",
@@ -622,7 +961,12 @@ const about = {
       },
       {
         title: "Compliance & Protocols for Global Clients",
-        description: <>Compliance practices, client-service protocols for international engagements.</>,
+        description: (
+          <>
+            Compliance practices, client-service protocols for international
+            engagements.
+          </>
+        ),
         category: "Professional Development",
         year: "Aug 2025",
         issuer: "Ernst & Young",
@@ -642,7 +986,12 @@ const about = {
       },
       {
         title: "IELTS Academic — Overall 7.5",
-        description: <>English communication, English Literature, Business English, academic English.</>,
+        description: (
+          <>
+            English communication, English Literature, Business English,
+            academic English.
+          </>
+        ),
         category: "Language Proficiency",
         year: "Nov 2024",
         issuer: "IELTS Official",
@@ -663,10 +1012,13 @@ const about = {
       },
       {
         title: "Mini-school on Particle and Astroparticle Physics",
-        description: <>Theoretical physics topics in particle and astroparticle physics.</>,
+        description: (
+          <>Theoretical physics topics in particle and astroparticle physics.</>
+        ),
         category: "Physics Education",
         year: "Feb 2024",
-        issuer: "Laboratory of Instrumentation and Experimental Particle Physics",
+        issuer:
+          "Laboratory of Instrumentation and Experimental Particle Physics",
         associated_with: "",
         artifacts: "Certificate",
         certificateUrl: "/images/certificates/mini_cert.jpeg",
@@ -689,12 +1041,23 @@ const about = {
     episodes: [
       {
         title: "Using AI to Fix a High-Power Laser",
-        paperTitle: "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation",
-        authors: "Guilherme Grancho, Duarte Alexandrino, Eduardo Silva, João Matias, Joaquim Pereira",
+        paperTitle:
+          "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation",
+        authors:
+          "Guilherme Grancho, Duarte Alexandrino, Eduardo Silva, João Matias, Joaquim Pereira",
         venue: "YouTube",
         date: "Dec 8, 2025",
         type: "Podcast Episode",
-        description: <>Podcast discussing machine learning approaches to optimize aberration correction in high-power laser systems for high harmonic generation. The episode covers Bayesian optimization and convolutional neural network methods for predicting optimal Zernike polynomial coefficients for wavefront correction, demonstrating the potential for automated aberration correction in HHG systems.</>,
+        description: (
+          <>
+            Podcast discussing machine learning approaches to optimize
+            aberration correction in high-power laser systems for high harmonic
+            generation. The episode covers Bayesian optimization and
+            convolutional neural network methods for predicting optimal Zernike
+            polynomial coefficients for wavefront correction, demonstrating the
+            potential for automated aberration correction in HHG systems.
+          </>
+        ),
         link: "https://www.youtube.com/watch?v=2vLdLmBaT0Y",
         trailerLink: "https://www.youtube.com/watch?v=b6G6ueaRhLg",
         category: "Optics & Deep Learning",
@@ -702,12 +1065,19 @@ const about = {
       },
       {
         title: "Training an AI Astronomer",
-        paperTitle: "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks",
+        paperTitle:
+          "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks",
         authors: "Guilherme Grancho",
         venue: "YouTube",
         date: "Nov 25, 2025",
         type: "Podcast Episode",
-        description: <>Podcast presenting the classification pipeline for transient astronomical light curves leveraging LSTM architectures and observational data curation.</>,
+        description: (
+          <>
+            Podcast presenting the classification pipeline for transient
+            astronomical light curves leveraging LSTM architectures and
+            observational data curation.
+          </>
+        ),
         link: "https://www.youtube.com/watch?v=O9JhVDVGHME",
         trailerLink: "https://www.youtube.com/watch?v=wndOZsX0H6c",
         category: "Astrophysics",
@@ -715,12 +1085,26 @@ const about = {
       },
       {
         title: "Prometheus Presents The Financial Torque Hypothesis",
-        paperTitle: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
+        paperTitle:
+          "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
         authors: "Guilherme Grancho, Vasco Pereira",
         venue: "YouTube",
         date: "Jun 20, 2025",
         type: "Podcast Episode",
-        description: <>Podcast episode presenting the Financial Torque Hypothesis and the Prometheus research workflow behind it. The discussion covers VWAP and trade count as short-term &quot;market torque&quot; signals, LSTM modeling over intraday features, and full-session vs. regular-hours comparisons across four feature-integration schemes (Standard, MinMax, Robust, and non-normalized). Results include ~87% directional accuracy on a 3-hour horizon over 21 months of unseen data and a 15% uplift in full-session consistency, highlighting the value of extended-hours data and microstructure-aware indicators for robust strategy design.</>,
+        description: (
+          <>
+            Podcast episode presenting the Financial Torque Hypothesis and the
+            Prometheus research workflow behind it. The discussion covers VWAP
+            and trade count as short-term &quot;market torque&quot; signals,
+            LSTM modeling over intraday features, and full-session vs.
+            regular-hours comparisons across four feature-integration schemes
+            (Standard, MinMax, Robust, and non-normalized). Results include ~87%
+            directional accuracy on a 3-hour horizon over 21 months of unseen
+            data and a 15% uplift in full-session consistency, highlighting the
+            value of extended-hours data and microstructure-aware indicators for
+            robust strategy design.
+          </>
+        ),
         link: "https://www.youtube.com/watch?v=f25aLdta0rI",
         trailerLink: "https://www.youtube.com/watch?v=gGyM_93hNKU&t=189s",
         category: "Quantitative Finance",
@@ -728,12 +1112,21 @@ const about = {
       },
       {
         title: "Automating Machine Learning Fine Tuning",
-        paperTitle: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
+        paperTitle:
+          "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
         authors: "Guilherme Grancho, Talles Medeiros",
         venue: "YouTube",
         date: "Nov 21, 2024",
         type: "Podcast Episode",
-        description: <>Podcast discussion about ML-integrated lexicographic strategy, analysis of tolerance–outcome relations, cross-dataset validation. Automated tolerance selection improves computational efficiency and accuracy, emphasizes the importance of tolerance in lexicographic MOO.</>,
+        description: (
+          <>
+            Podcast discussion about ML-integrated lexicographic strategy,
+            analysis of tolerance–outcome relations, cross-dataset validation.
+            Automated tolerance selection improves computational efficiency and
+            accuracy, emphasizes the importance of tolerance in lexicographic
+            MOO.
+          </>
+        ),
         link: "https://www.youtube.com/watch?v=2PXVltl75NU",
         trailerLink: "https://www.youtube.com/watch?v=DifMTKa5-ys",
         category: "Machine Learning Optimization",
@@ -741,12 +1134,21 @@ const about = {
       },
       {
         title: "Mapping the Deep with AI",
-        paperTitle: "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
+        paperTitle:
+          "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
         authors: "Guilherme Grancho, Vitor Oliveira, João Astolfo",
         venue: "YouTube",
         date: "Feb 28, 2023",
         type: "Podcast Episode",
-        description: <>Podcast discussion about applying CNNs to bathymetric imagery to classify/segment seabed layers. Supervised CNN pipeline, dataset curation and analysis, evaluation on geoscience targets and regions. Demonstrates CNN feasibility for ocean-floor mapping and yields actionable geophysical insights.</>,
+        description: (
+          <>
+            Podcast discussion about applying CNNs to bathymetric imagery to
+            classify/segment seabed layers. Supervised CNN pipeline, dataset
+            curation and analysis, evaluation on geoscience targets and regions.
+            Demonstrates CNN feasibility for ocean-floor mapping and yields
+            actionable geophysical insights.
+          </>
+        ),
         link: "https://www.youtube.com/watch?v=M8IC5wnn5l4&t=47s",
         trailerLink: "https://www.youtube.com/watch?v=CXfxdQrAotE",
         category: "Deep Learning",
@@ -760,31 +1162,68 @@ const about = {
     accomplishments: [
       {
         title: "Multiple papers published in Machine Learning and AI",
-        description: <>Examples include SSRN (<em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>, 2025), ENIAC conference (<em>Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold</em>, 2024), and CBPF/arXiv (<em>Mapping the Layers of the Ocean Floor with a Convolutional Neural Network</em>, 2023).</>,
+        description: (
+          <>
+            Examples include SSRN (
+            <em>
+              The Financial Torque Hypothesis: Predicting Short-Term Stock Price
+              Movements Using LSTM Neural Networks
+            </em>
+            , 2025), ENIAC conference (
+            <em>
+              Enhancing Multi-Objective Machine Learning with an Optimized
+              Lexicographic Approach: Determining the Tolerance Threshold
+            </em>
+            , 2024), and CBPF/arXiv (
+            <em>
+              Mapping the Layers of the Ocean Floor with a Convolutional Neural
+              Network
+            </em>
+            , 2023).
+          </>
+        ),
         category: "Research",
         year: "2023-2025",
       },
       {
         title: "Full-Stack Developer",
-        description: <>Built production REST APIs and a responsive analytics/dashboard front-end (e.g., Eco AI.ly) to serve ML predictions and visualize sustainability metrics.</>,
+        description: (
+          <>
+            Built production REST APIs and a responsive analytics/dashboard
+            front-end (e.g., Eco AI.ly) to serve ML predictions and visualize
+            sustainability metrics.
+          </>
+        ),
         category: "Software Development",
         year: "2025",
       },
       {
         title: "Machine Learning Developer & Researcher",
-        description: <>Worked across LSTM time-series forecasting, CNNs for imaging, lexicographic optimization, and quantitative finance research.</>,
+        description: (
+          <>
+            Worked across LSTM time-series forecasting, CNNs for imaging,
+            lexicographic optimization, and quantitative finance research.
+          </>
+        ),
         category: "AI/ML",
         year: "2023-2025",
       },
       {
         title: "Achieved maximum teaching rating in anonymous student surveys",
-        description: <>Physics III with Laboratory at Instituto Superior Técnico; ranked 9/9 overall (2024).</>,
+        description: (
+          <>
+            Physics III with Laboratory at Instituto Superior Técnico; ranked
+            9/9 overall (2024).
+          </>
+        ),
         category: "",
         year: "2024",
       },
       {
         title: "MSc at Imperial College London",
-        description: <>Enrolled for postgraduate studies (Imperial College London).</>,
+        description: (
+          <>Enrolled for postgraduate studies (Imperial College London).</>
+        ),
         category: "Education",
         year: "2025-2026",
       },
@@ -802,19 +1241,39 @@ const about = {
       },
       {
         title: "National award-winning athlete",
-        description: <>Competed with the Portuguese Track & Field Federation (primary event: 200 m), with national-level recognition.</>,
+        description: (
+          <>
+            Competed with the Portuguese Track & Field Federation (primary
+            event: 200 m), with national-level recognition.
+          </>
+        ),
         category: "Athletics",
         year: "2015-2018",
       },
       {
         title: "MSc in Applied Computational Science & Engineering",
-        description: <>MSc in Applied Computational Science & Engineering from Imperial College London, focusing on numerical methods, scientific computing, and machine learning applications.</>,
+        description: (
+          <>
+            MSc in Applied Computational Science & Engineering from Imperial
+            College London, focusing on numerical methods, scientific computing,
+            and machine learning applications.
+          </>
+        ),
         category: "Education",
         year: "2025-2026",
       },
       {
         title: "Papers published on Quantitative Research",
-        description: <>Quant finance work (e.g., <em>The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks</em>) with SSRN recognition.</>,
+        description: (
+          <>
+            Quant finance work (e.g.,{" "}
+            <em>
+              The Financial Torque Hypothesis: Predicting Short-Term Stock Price
+              Movements Using LSTM Neural Networks
+            </em>
+            ) with SSRN recognition.
+          </>
+        ),
         category: "Research",
         year: "2025",
       },
@@ -823,69 +1282,154 @@ const about = {
   hobbies: {
     display: true, // set to false to hide this section
     title: "Hobbies & Passions",
-        description: <>My passions apart from work include entrepreneurship, chess, poker, martial arts, running, surfing, cinematography, literature, museums, traveling and cooking.</>,
-    categories: []
+    description: (
+      <>
+        My passions apart from work include entrepreneurship, chess, poker,
+        martial arts, running, surfing, cinematography, literature, museums,
+        traveling and cooking.
+      </>
+    ),
+    categories: [],
   },
   values: {
     display: true, // set to false to hide this section
     title: "Values & Principles",
-    description: <>Core values and principles that guide my work, relationships, and decision-making process in both professional and personal contexts. These include respect, inclusion, collaboration, integrity, excellence, environmental responsibility, and innovation.</>
+    description: (
+      <>
+        Core values and principles that guide my work, relationships, and
+        decision-making process in both professional and personal contexts.
+        These include respect, inclusion, collaboration, integrity, excellence,
+        environmental responsibility, and innovation.
+      </>
+    ),
   },
   publications: {
     display: true, // set to false to hide this section
     title: "Publications",
     papers: [
       {
-        title: "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation",
-        authors: "Guilherme Grancho, Duarte Alexandrino, Eduardo Silva, João Matias, Joaquim Pereira",
-        venue: "arXiv: Computer Science - Machine Learning (cs.LG) / Physics - Optics (physics.optics)",
+        title:
+          "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation",
+        authors:
+          "Guilherme Grancho, Duarte Alexandrino, Eduardo Silva, João Matias, Joaquim Pereira",
+        venue:
+          "arXiv: Computer Science - Machine Learning (cs.LG) / Physics - Optics (physics.optics)",
         date: "Dec 8, 2025",
         type: "Pre-print",
-        description: <>High harmonic generation (HHG) is a nonlinear process that enables table-top generation of tunable, high-energy, coherent, ultrashort radiation pulses in the extreme ultraviolet (EUV) to soft X-ray range. These pulses find applications in photoemission spectroscopy in condensed matter physics, pump-probe spectroscopy for high-energy-density plasmas, and attosecond science. However, optical aberrations in the high-power laser systems required for HHG degrade beam quality and reduce efficiency. We present a machine learning approach to optimize aberration correction using a spatial light modulator. We implemented and compared Bayesian optimization and convolutional neural network (CNN) methods to predict optimal Zernike polynomial coefficients for wavefront correction. Our CNN achieved promising results with 80.39% accuracy on test data, demonstrating the potential for automated aberration correction in HHG systems.</>,
+        description: (
+          <>
+            High harmonic generation (HHG) is a nonlinear process that enables
+            table-top generation of tunable, high-energy, coherent, ultrashort
+            radiation pulses in the extreme ultraviolet (EUV) to soft X-ray
+            range. These pulses find applications in photoemission spectroscopy
+            in condensed matter physics, pump-probe spectroscopy for
+            high-energy-density plasmas, and attosecond science. However,
+            optical aberrations in the high-power laser systems required for HHG
+            degrade beam quality and reduce efficiency. We present a machine
+            learning approach to optimize aberration correction using a spatial
+            light modulator. We implemented and compared Bayesian optimization
+            and convolutional neural network (CNN) methods to predict optimal
+            Zernike polynomial coefficients for wavefront correction. Our CNN
+            achieved promising results with 80.39% accuracy on test data,
+            demonstrating the potential for automated aberration correction in
+            HHG systems.
+          </>
+        ),
         link: "https://arxiv.org/abs/2512.05127",
         category: "Optics & Deep Learning",
         artifacts: "arXiv pre-print + Show publication link",
       },
       {
-        title: "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks",
-        authors: "Guilherme Grancho, Marco Barroca, Mateus dos Santos, Rafael Oliveira",
+        title:
+          "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks",
+        authors:
+          "Guilherme Grancho, Marco Barroca, Mateus dos Santos, Rafael Oliveira",
         venue: "arXiv: Computer Science - Machine Learning (cs.LG)",
         date: "Nov 25, 2025",
         type: "Pre-print",
-        description: <>This study details a bidirectional LSTM workflow for classifying transient astronomical object light curves from the PLAsTiCC dataset. The original fourteen classes are consolidated into five macro categories (S-Like, Fast, Long, Periodic, Non-Periodic) to mitigate imbalance. After padding, temporal rescaling, and flux normalization, the masked BiLSTM attains ROC AUC scores of 0.95 for S-Like and 0.99 for Periodic sources, with Precision-Recall AUC up to 0.98. Performance drops for Fast and Long objects (e.g., 0.68 ROC AUC on Long) and for truncated 5–20 day sequences, underscoring how class imbalance and limited cadence drive misclassifications. The work highlights balancing strategies and detection-aware preprocessing as critical paths for future gains.</>,
+        description: (
+          <>
+            This study details a bidirectional LSTM workflow for classifying
+            transient astronomical object light curves from the PLAsTiCC
+            dataset. The original fourteen classes are consolidated into five
+            macro categories (S-Like, Fast, Long, Periodic, Non-Periodic) to
+            mitigate imbalance. After padding, temporal rescaling, and flux
+            normalization, the masked BiLSTM attains ROC AUC scores of 0.95 for
+            S-Like and 0.99 for Periodic sources, with Precision-Recall AUC up
+            to 0.98. Performance drops for Fast and Long objects (e.g., 0.68 ROC
+            AUC on Long) and for truncated 5–20 day sequences, underscoring how
+            class imbalance and limited cadence drive misclassifications. The
+            work highlights balancing strategies and detection-aware
+            preprocessing as critical paths for future gains.
+          </>
+        ),
         link: "https://arxiv.org/abs/2511.17564",
         category: "Astrophysics & Deep Learning",
         artifacts: "arXiv pre-print + Show publication link",
       },
       {
-        title: "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
+        title:
+          "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks",
         authors: "Guilherme Grancho, Vasco Pereira",
         venue: "SSRN - The Financial Economics Network: Quantitative Methods",
         date: "Jun 20, 2025",
         type: "Working Paper / Preprint",
-        description: <>This paper introduces the Financial Torque Hypothesis, proposing that VWAP and trade count encapsulate short-term &quot;market torque&quot; signals that improve direction prediction. Using LSTM models over intraday features, with full-session vs. regular-hours comparisons and four feature-integration schemes (Standard, MinMax, Robust, and non-normalized), the study reports ~87% directional accuracy on a 3-hour horizon across 21 months of unseen data and a 15% uplift in full-session consistency. The work was recognized with the SSRN Financial Economics Network e Journal Top Paper - 4-day Streak award and is implemented in Prometheus, which serves as the central environment for portfolio monitoring, strategy visualization, and continued FTH development.</>,
+        description: (
+          <>
+            This paper introduces the Financial Torque Hypothesis, proposing
+            that VWAP and trade count encapsulate short-term &quot;market
+            torque&quot; signals that improve direction prediction. Using LSTM
+            models over intraday features, with full-session vs. regular-hours
+            comparisons and four feature-integration schemes (Standard, MinMax,
+            Robust, and non-normalized), the study reports ~87% directional
+            accuracy on a 3-hour horizon across 21 months of unseen data and a
+            15% uplift in full-session consistency. The work was recognized with
+            the SSRN Financial Economics Network e Journal Top Paper - 4-day
+            Streak award and is implemented in Prometheus, which serves as the
+            central environment for portfolio monitoring, strategy
+            visualization, and continued FTH development.
+          </>
+        ),
         link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5288444",
         category: "Quantitative Finance",
         artifacts: "SSRN paper + Show publication link",
       },
       {
-        title: "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
+        title:
+          "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold",
         authors: "Guilherme Grancho, Talles Medeiros",
-        venue: "ENIAC — 34th National Meeting on Artificial and Computational Intelligence",
+        venue:
+          "ENIAC — 34th National Meeting on Artificial and Computational Intelligence",
         date: "Nov 21, 2024",
         type: "Peer-reviewed conference paper",
-        description: <>ML-integrated lexicographic strategy, analysis of tolerance–outcome relations, cross-dataset validation. Automated tolerance selection improves computational efficiency and accuracy, emphasizes the importance of tolerance in lexicographic MOO.</>,
+        description: (
+          <>
+            ML-integrated lexicographic strategy, analysis of tolerance–outcome
+            relations, cross-dataset validation. Automated tolerance selection
+            improves computational efficiency and accuracy, emphasizes the
+            importance of tolerance in lexicographic MOO.
+          </>
+        ),
         link: "https://ouci.dntb.gov.ua/works/4LYayb3V/",
         category: "Machine Learning Optimization",
         artifacts: "Conference Show publication link",
       },
       {
-        title: "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
+        title:
+          "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network",
         authors: "Guilherme Grancho, Vitor Oliveira, João Astolfo",
-        venue: "6th EAFExp — Brazilian Center for Research in Physics / arXiv: Computer Science - Machine Learning (cs.LG)",
+        venue:
+          "6th EAFExp — Brazilian Center for Research in Physics / arXiv: Computer Science - Machine Learning (cs.LG)",
         date: "Feb 28, 2023",
         type: "Preprint",
-        description: <>Apply CNNs to bathymetric imagery to classify/segment seabed layers. Supervised CNN pipeline, dataset curation and analysis, evaluation on geoscience targets and regions. Demonstrates CNN feasibility for ocean-floor mapping and yields actionable geophysical insights.</>,
+        description: (
+          <>
+            Apply CNNs to bathymetric imagery to classify/segment seabed layers.
+            Supervised CNN pipeline, dataset curation and analysis, evaluation
+            on geoscience targets and regions. Demonstrates CNN feasibility for
+            ocean-floor mapping and yields actionable geophysical insights.
+          </>
+        ),
         link: "https://arxiv.org/abs/2412.05329",
         category: "Deep Learning",
         artifacts: "arXiv + Show publication link",
@@ -901,21 +1445,45 @@ const about = {
         organization: "Imperial College London",
         location: "London, UK",
         timeframe: "Sep 2025 - Apr 2026",
-        description: <>Weekly quantitative lectures with regular assessments in statistics, probability, time series, derivatives pricing, and stochastic calculus, plus recurring hedging simulations, portfolio exercises, and coding hackathon challenges. Participation concluded with AlgoCourse completion and issuance of the Algorithmic Trading Certificate.</>,
+        description: (
+          <>
+            Weekly quantitative lectures with regular assessments in statistics,
+            probability, time series, derivatives pricing, and stochastic
+            calculus, plus recurring hedging simulations, portfolio exercises,
+            and coding hackathon challenges. Participation concluded with
+            AlgoCourse completion and issuance of the Algorithmic Trading
+            Certificate.
+          </>
+        ),
       },
       {
         title: "Investment Society Member",
         organization: "Imperial College London",
         location: "London, UK",
         timeframe: "Sep 2025 - Mar 2026",
-        description: <>Society program covering securities and financial markets: instruments, market structure, and core trading and regulatory concepts through the Imperial College Investment Society. Participation concluded with program completion and issuance of the Securities Education Certificate.</>,
+        description: (
+          <>
+            Society program covering securities and financial markets:
+            instruments, market structure, and core trading and regulatory
+            concepts through the Imperial College Investment Society.
+            Participation concluded with program completion and issuance of the
+            Securities Education Certificate.
+          </>
+        ),
       },
       {
         title: "Track and Field Athlete",
         organization: "Portuguese Track and Field Federation",
         location: "Lisbon, Portugal · On-site",
         timeframe: "Sep 2015 - Sep 2018",
-        description: <>Represented the Portuguese national federation of track and field in sprints (primary 200m) and other events (100m–2.5km, long jump). Developed discipline, resilience, and teamwork transferable to academic and professional contexts.</>,
+        description: (
+          <>
+            Represented the Portuguese national federation of track and field in
+            sprints (primary 200m) and other events (100m–2.5km, long jump).
+            Developed discipline, resilience, and teamwork transferable to
+            academic and professional contexts.
+          </>
+        ),
       },
     ],
   },
@@ -931,9 +1499,17 @@ const publications = about.publications;
 const certifications = about.certifications;
 
 // Extract GitHub link from social array
-const github = social.find(item => item.icon === "github") || { link: "https://github.com/ada-ggf25" };
+const github = social.find((item) => item.icon === "github") || {
+  link: "https://github.com/ada-ggf25",
+};
 
-export { person, social, newsletter, home, about, publications, certifications, github };
-
-
-
+export {
+  person,
+  social,
+  newsletter,
+  home,
+  about,
+  publications,
+  certifications,
+  github,
+};

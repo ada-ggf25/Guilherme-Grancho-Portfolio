@@ -1,4 +1,4 @@
-declare module 'gray-matter' {
+declare module "gray-matter" {
   interface GrayMatterFile<T = Record<string, unknown>> {
     data: T;
     content: string;
@@ -21,9 +21,8 @@ declare module 'gray-matter' {
 
   function matter<T = Record<string, unknown>>(
     input: string | Buffer,
-    options?: GrayMatterOption
+    options?: GrayMatterOption,
   ): GrayMatterFile<T>;
 
   export = matter;
 }
-

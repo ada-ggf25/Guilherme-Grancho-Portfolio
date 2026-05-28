@@ -1,7 +1,8 @@
 /* Custom enhancements for Guilherme Grancho's Portfolio */
 
 /* Reset html and body margins/padding to ensure header is at top */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -21,7 +22,7 @@ html, body {
   --scheme-brand-1000: #9a9aba;
   --scheme-brand-1100: #aaaaca;
   --scheme-brand-1200: #babada;
-  
+
   /* Accent colors for highlights and CTAs */
   --scheme-accent-100: #001122;
   --scheme-accent-200: #002244;
@@ -61,7 +62,8 @@ html, body {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -98,13 +100,18 @@ html, body {
 }
 
 .cta-button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s;
 }
 
@@ -126,13 +133,17 @@ html, body {
 }
 
 .project-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 136, 255, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 204, 0.1),
+    rgba(0, 136, 255, 0.1)
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 1;
@@ -148,7 +159,11 @@ html, body {
 }
 
 .section-gradient {
-  background: linear-gradient(180deg, rgba(0, 102, 204, 0.05) 0%, transparent 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 102, 204, 0.05) 0%,
+    transparent 100%
+  );
 }
 
 /* Enhanced focus states for accessibility */
@@ -174,7 +189,7 @@ html, body {
   .section-spacing {
     padding: 60px 0;
   }
-  
+
   .container-max-width {
     padding: 0 16px;
   }

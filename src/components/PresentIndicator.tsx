@@ -13,4 +13,3 @@ export const PresentIndicator: React.FC = () => {
     </span>
   );
 };
-

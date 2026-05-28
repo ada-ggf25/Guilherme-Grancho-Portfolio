@@ -9,24 +9,32 @@ import {
   Text,
   Meta,
   Schema,
-  SmartLink
+  SmartLink,
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import styles from "@/components/about/about.module.scss";
 import { SectionNavigation } from "@/components/SectionNavigation";
 import { CollapsibleSection } from "@/components/CollapsibleSection";
 import { PresentIndicator } from "@/components/PresentIndicator";
-import { CurrentWorkCarousel, CurrentWorkItem } from "@/components/CurrentWorkCarousel";
+import {
+  CurrentWorkCarousel,
+  CurrentWorkItem,
+} from "@/components/CurrentWorkCarousel";
 import { isPresent } from "@/utils/timeframeUtils";
 import React from "react";
 
 // Type definitions for optional properties
-type PaperWithHighlights = typeof about.publications.papers[number] & { highlights?: string };
-type ProjectWithHighlights = typeof about.keyProjects.projects[number] & { highlights?: string };
-type CertificationWithDetails = typeof about.certifications.accomplishments[number] & {
-  credential_id?: string;
-  certificateUrl?: string;
+type PaperWithHighlights = (typeof about.publications.papers)[number] & {
+  highlights?: string;
 };
+type ProjectWithHighlights = (typeof about.keyProjects.projects)[number] & {
+  highlights?: string;
+};
+type CertificationWithDetails =
+  (typeof about.certifications.accomplishments)[number] & {
+    credential_id?: string;
+    certificateUrl?: string;
+  };
 
 const monthLookup: Record<string, number> = {
   Jan: 0,
@@ -43,7 +51,9 @@ const monthLookup: Record<string, number> = {
   Dec: 11,
 };
 
-const toPlainText = (value: React.ReactNode | undefined): string | undefined => {
+const toPlainText = (
+  value: React.ReactNode | undefined,
+): string | undefined => {
   if (typeof value === "string") {
     return value;
   }
@@ -124,7 +134,10 @@ const buildCurrentWorkItems = (): CurrentWorkItem[] => {
     }
   });
 
-  return items.sort((a, b) => parseStartDateValue(b.timeframe) - parseStartDateValue(a.timeframe));
+  return items.sort(
+    (a, b) =>
+      parseStartDateValue(b.timeframe) - parseStartDateValue(a.timeframe),
+  );
 };
 
 export async function generateMetadata() {
@@ -149,7 +162,7 @@ export default function About() {
     { id: about.certifications.title, label: "Certifications" },
     { id: about.podcasts.title, label: "Podcasts" },
     { id: about.values.title, label: "Values" },
-    { id: about.hobbies.title, label: "Hobbies" }
+    { id: about.hobbies.title, label: "Hobbies" },
   ];
   const currentWorkItems = buildCurrentWorkItems();
   const justifiedDescriptionStyle: React.CSSProperties = {
@@ -161,7 +174,13 @@ export default function About() {
   };
 
   return (
-    <Column style={{ maxWidth: "800px", margin: "0 auto", padding: "0 var(--static-space-l)" }}>
+    <Column
+      style={{
+        maxWidth: "800px",
+        margin: "0 auto",
+        padding: "0 var(--static-space-l)",
+      }}
+    >
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -175,295 +194,442 @@ export default function About() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      
+
       {/* Avatar and Introduction Section at Top */}
       <div id={about.intro.title}>
-      <Column
-        style={{
-          width: "100%",
-          marginTop: "0px",
-          marginBottom: "12px",
-        }}
-        horizontal="center"
-      >
-        {about.avatar.display && (
-          <Column
-            style={{
-              gap: "var(--static-space-m)",
-              marginBottom: "12px",
-            }}
-            horizontal="center"
-          >
-            <Avatar src={person.avatar} size="xl" />
-          </Column>
-        )}
-
-        <Heading 
-          className={styles.textAlign} 
-          variant="display-strong-xl"
-          style={{ textAlign: "center", marginBottom: "8px" }}
+        <Column
+          style={{
+            width: "100%",
+            marginTop: "0px",
+            marginBottom: "12px",
+          }}
+          horizontal="center"
         >
-          {person.name}
-        </Heading>
-        <Text
-          className={styles.textAlign}
-          variant="display-default-xs"
-          onBackground="neutral-weak"
-          style={{ textAlign: "center", marginBottom: "6px" }}
-        >
-          {person.role}
-        </Text>
-        <Text
-          className={styles.textAlign}
-          variant="display-default-xs"
-          onBackground="neutral-weak"
-          style={{ textAlign: "center", marginBottom: "16px" }}
-        >
-          {person.degree}
-        </Text>
-        
-        {social.length > 0 && (
-          <Flex 
-            horizontal="center"
-            style={{
-              paddingTop: "8px",
-              paddingBottom: "8px",
-              gap: "8px",
-              flexWrap: "wrap",
-              width: "fit-content",
-              margin: "0 auto 16px",
-            }}
-          >
-            {social.map(
-              (item) =>
-                item.link && (
-                    <Button
-                        key={item.name}
-                        href={item.link}
-                        prefixIcon={item.icon}
-                        label={item.name}
-                        size="s"
-                        weight="default"
-                        variant="secondary"
-                    />
-                ),
-            )}
-          </Flex>
-        )}
-
-        {about.intro.display && (
-          <Column 
-            style={{
-              gap: "var(--static-space-m)",
-              marginBottom: "16px",
-              width: "100%",
-            }}
-          >
-            <Text
+          {about.avatar.display && (
+            <Column
               style={{
-                ...justifiedDescriptionStyle,
-                fontSize: "var(--font-size-body-default-l)",
-                lineHeight: "var(--line-height-body-default-l)",
+                gap: "var(--static-space-m)",
+                marginBottom: "12px",
+              }}
+              horizontal="center"
+            >
+              <Avatar src={person.avatar} size="xl" />
+            </Column>
+          )}
+
+          <Heading
+            className={styles.textAlign}
+            variant="display-strong-xl"
+            style={{ textAlign: "center", marginBottom: "8px" }}
+          >
+            {person.name}
+          </Heading>
+          <Text
+            className={styles.textAlign}
+            variant="display-default-xs"
+            onBackground="neutral-weak"
+            style={{ textAlign: "center", marginBottom: "6px" }}
+          >
+            {person.role}
+          </Text>
+          <Text
+            className={styles.textAlign}
+            variant="display-default-xs"
+            onBackground="neutral-weak"
+            style={{ textAlign: "center", marginBottom: "16px" }}
+          >
+            {person.degree}
+          </Text>
+
+          {social.length > 0 && (
+            <Flex
+              horizontal="center"
+              style={{
+                paddingTop: "8px",
+                paddingBottom: "8px",
+                gap: "8px",
+                flexWrap: "wrap",
+                width: "fit-content",
+                margin: "0 auto 16px",
               }}
             >
-              {about.intro.description}
-            </Text>
-            {about.intro.finalStatement && (
+              {social.map(
+                (item) =>
+                  item.link && (
+                    <Button
+                      key={item.name}
+                      href={item.link}
+                      prefixIcon={item.icon}
+                      label={item.name}
+                      size="s"
+                      weight="default"
+                      variant="secondary"
+                    />
+                  ),
+              )}
+            </Flex>
+          )}
+
+          {about.intro.display && (
+            <Column
+              style={{
+                gap: "var(--static-space-m)",
+                marginBottom: "16px",
+                width: "100%",
+              }}
+            >
               <Text
                 style={{
+                  ...justifiedDescriptionStyle,
                   fontSize: "var(--font-size-body-default-l)",
                   lineHeight: "var(--line-height-body-default-l)",
-                  textAlign: "center",
-                  marginTop: "20px",
-                  fontWeight: "bold",
                 }}
               >
-                {about.intro.finalStatement}
+                {about.intro.description}
               </Text>
-            )}
-            {currentWorkItems.length > 0 && (
-              <CurrentWorkCarousel items={currentWorkItems} />
-            )}
-          </Column>
-        )}
-      </Column>
+              {about.intro.finalStatement && (
+                <Text
+                  style={{
+                    fontSize: "var(--font-size-body-default-l)",
+                    lineHeight: "var(--line-height-body-default-l)",
+                    textAlign: "center",
+                    marginTop: "20px",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {about.intro.finalStatement}
+                </Text>
+              )}
+              {currentWorkItems.length > 0 && (
+                <CurrentWorkCarousel items={currentWorkItems} />
+              )}
+            </Column>
+          )}
+        </Column>
       </div>
 
       {/* Navigation Bar */}
       <SectionNavigation sections={sections} />
 
       {/* Main Content Sections */}
-      <Column 
-        className={styles.blockAlign} 
+      <Column
+        className={styles.blockAlign}
         style={{
           width: "100%",
           paddingTop: "0px",
         }}
       >
+        {about.work.display && (
+          <>
+            <Heading
+              as="h2"
+              id={about.work.title}
+              variant="display-strong-s"
+              style={{
+                marginTop: "20px",
+                marginBottom: "12px",
+                scrollMarginTop: "140px",
+              }}
+            >
+              {about.work.title}
+            </Heading>
+            <Column
+              style={{
+                gap: "var(--static-space-s)",
+                marginBottom: "20px",
+                width: "100%",
+                position: "relative",
+                overflow: "visible",
+              }}
+            >
+              {about.work.experiences.map((experience, index) => {
+                const nextExperience = about.work.experiences[index + 1];
+                const prevExperience = about.work.experiences[index - 1];
 
-          {about.work.display && (
-            <>
-              <Heading 
-                as="h2" 
-                id={about.work.title} 
-                variant="display-strong-s" 
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.work.title}
-              </Heading>
-              <Column 
-                style={{
-                  gap: "var(--static-space-s)",
-                  marginBottom: "20px",
-                  width: "100%",
-                  position: "relative",
-                  overflow: "visible",
-                }}
-              >
-                {about.work.experiences.map((experience, index) => {
-                  const nextExperience = about.work.experiences[index + 1];
-                  const prevExperience = about.work.experiences[index - 1];
-                  
-                  // Check for Instituto Superior Técnico teaching positions
-                  const isISTTeaching = experience.company === "Instituto Superior Técnico" && 
-                    (experience.role.includes("Teacher Assistant") || experience.role.includes("Lab Coordinator"));
-                  
-                  // Find the other IST teaching position
-                  const otherISTTeachingIndex = about.work.experiences.findIndex((exp, idx) => 
-                    idx !== index && 
-                    exp.company === "Instituto Superior Técnico" && 
-                    (exp.role.includes("Teacher Assistant") || exp.role.includes("Lab Coordinator"))
-                  );
-                  
-                  const otherISTTeaching = otherISTTeachingIndex !== -1 ? about.work.experiences[otherISTTeachingIndex] : null;
-                  const isISTFirst = isISTTeaching && otherISTTeaching && index < otherISTTeachingIndex;
-                  const isISTLast = isISTTeaching && otherISTTeaching && index > otherISTTeachingIndex;
-                  
-                  // Standard consecutive same-company check
-                  const isConnectedToNext = nextExperience && nextExperience.company === experience.company;
-                  const isConnectedToPrev = prevExperience && prevExperience.company === experience.company;
-                  
-                  // Combined check: either consecutive same company OR IST teaching positions
-                  const shouldShowConnection = (isConnectedToNext || isConnectedToPrev) || isISTTeaching;
-                  // For IST positions: first one extends down, last one extends up
-                  // For consecutive: use standard logic
-                  const shouldExtendLineDown = isISTFirst ? true : (isConnectedToNext || false);
-                  const shouldExtendLineUp = isISTLast ? true : (isConnectedToPrev || false);
-                  
-                  return (
-                    <React.Fragment key={`${experience.company}-${experience.role}-${index}`}>
-                      <Flex
-                        style={{
-                          position: "relative",
-                          width: "100%",
-                          overflow: "visible",
-                        }}
-                      >
-                        {shouldShowConnection && (
-                          <>
-                            {/* Vertical line - extends to connect IST positions */}
-                            <Flex
-                              style={{
-                                position: "absolute",
-                                left: "-16px",
-                                top: shouldExtendLineUp ? (isISTLast ? "-2000px" : "0") : "12px",
-                                bottom: shouldExtendLineDown ? (isISTFirst ? "-2000px" : "calc(-1 * var(--static-space-s))") : "0",
-                                width: "2px",
-                                backgroundColor: "var(--color-neutral-medium)",
-                                zIndex: 0,
-                                pointerEvents: "none",
-                              }}
-                            />
-                            {/* Circle/bullet point */}
-                            <Flex
-                              style={{
-                                position: "absolute",
-                                left: "-20px",
-                                top: "12px",
-                                width: "10px",
-                                height: "10px",
-                                borderRadius: "50%",
-                                backgroundColor: "var(--color-neutral-strong)",
-                                border: "2px solid var(--color-background)",
-                                zIndex: 1,
-                              }}
-                            />
-                          </>
-                        )}
-                        <CollapsibleSection
-                          header={
-                            <Flex 
-                              horizontal="between" 
-                              vertical="end" 
-                              style={{ width: "100%", paddingRight: "8px" }}
-                            >
-                              <Column style={{ flex: 1, gap: "4px" }}>
-                                <Text 
-                                  id={experience.company === "Independent Research" && experience.role === "Quantitative Researcher" ? "Quantitative-Researcher-Independent" : experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-UFOP" : experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher" ? "AI-Researcher-CBPF" : experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer" ? "ML-Engineer-EcoAI" : experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer" ? "AI-Data-Engineer-EY" : experience.company === "KU Leuven" && experience.role === "Virtual Reality Researcher" ? "VR-Intern-KULeuven" : experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator" ? "Teacher-Assistant-Lab-Coordinator-IST" : experience.company === "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas" && experience.role === "Machine Learning Researcher" ? "ML-Researcher-IPFN" : experience.role} 
-                                  variant="heading-strong-l" 
-                                  onBackground="neutral-strong"
-                                  style={(experience.company === "Independent Research" && experience.role === "Quantitative Researcher") || (experience.company === "Universidade Federal de Ouro Preto" && experience.role === "Machine Learning Researcher") || (experience.company === "Brazilian Center for Research in Physics" && experience.role === "Artificial Intelligence Researcher") || (experience.company === "Eco AI.ly" && experience.role === "Machine Learning Engineer") || (experience.company === "Ernst & Young" && experience.role === "Artificial Intelligence & Data Engineer") || (experience.company === "KU Leuven" && experience.role === "Virtual Reality Development Intern") || (experience.company === "Instituto Superior Técnico" && experience.role === "Teacher Assistant & Lab Coordinator") || (experience.company === "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas" && experience.role === "Machine Learning Researcher") ? { scrollMarginTop: "140px" } : {}}
-                                >
-                                  {experience.role}
-                                </Text>
-                                <Text 
-                                  variant="body-default-s" 
-                                  onBackground="brand-weak" 
-                                  style={{ marginBottom: "8px" }}
-                                >
-                                  {experience.company}
-                                  {experience.employmentType && ` · ${experience.employmentType}`}
-                                </Text>
-                                <Text variant="body-default-xs" onBackground="neutral-weak">
-                                  {experience.location}
-                                </Text>
-                              </Column>
-                              <Column style={{ alignItems: "flex-end", gap: "4px" }}>
-                                <Flex style={{ alignItems: "center", gap: "4px" }}>
-                                  <Text variant="heading-default-xs" onBackground="neutral-weak">
-                                    {experience.timeframe}
-                                  </Text>
-                                  {isPresent(experience.timeframe) && <PresentIndicator />}
-                                </Flex>
-                              </Column>
-                            </Flex>
-                          }
-                        >
-                          <Column 
-                            style={{ gap: "20px", marginTop: "16px" }}
+                // Check for Instituto Superior Técnico teaching positions
+                const isISTTeaching =
+                  experience.company === "Instituto Superior Técnico" &&
+                  (experience.role.includes("Teacher Assistant") ||
+                    experience.role.includes("Lab Coordinator"));
+
+                // Find the other IST teaching position
+                const otherISTTeachingIndex = about.work.experiences.findIndex(
+                  (exp, idx) =>
+                    idx !== index &&
+                    exp.company === "Instituto Superior Técnico" &&
+                    (exp.role.includes("Teacher Assistant") ||
+                      exp.role.includes("Lab Coordinator")),
+                );
+
+                const otherISTTeaching =
+                  otherISTTeachingIndex !== -1
+                    ? about.work.experiences[otherISTTeachingIndex]
+                    : null;
+                const isISTFirst =
+                  isISTTeaching &&
+                  otherISTTeaching &&
+                  index < otherISTTeachingIndex;
+                const isISTLast =
+                  isISTTeaching &&
+                  otherISTTeaching &&
+                  index > otherISTTeachingIndex;
+
+                // Standard consecutive same-company check
+                const isConnectedToNext =
+                  nextExperience &&
+                  nextExperience.company === experience.company;
+                const isConnectedToPrev =
+                  prevExperience &&
+                  prevExperience.company === experience.company;
+
+                // Combined check: either consecutive same company OR IST teaching positions
+                const shouldShowConnection =
+                  isConnectedToNext || isConnectedToPrev || isISTTeaching;
+                // For IST positions: first one extends down, last one extends up
+                // For consecutive: use standard logic
+                const shouldExtendLineDown = isISTFirst
+                  ? true
+                  : isConnectedToNext || false;
+                const shouldExtendLineUp = isISTLast
+                  ? true
+                  : isConnectedToPrev || false;
+
+                return (
+                  <React.Fragment
+                    key={`${experience.company}-${experience.role}-${index}`}
+                  >
+                    <Flex
+                      style={{
+                        position: "relative",
+                        width: "100%",
+                        overflow: "visible",
+                      }}
+                    >
+                      {shouldShowConnection && (
+                        <>
+                          {/* Vertical line - extends to connect IST positions */}
+                          <Flex
+                            style={{
+                              position: "absolute",
+                              left: "-16px",
+                              top: shouldExtendLineUp
+                                ? isISTLast
+                                  ? "-2000px"
+                                  : "0"
+                                : "12px",
+                              bottom: shouldExtendLineDown
+                                ? isISTFirst
+                                  ? "-2000px"
+                                  : "calc(-1 * var(--static-space-s))"
+                                : "0",
+                              width: "2px",
+                              backgroundColor: "var(--color-neutral-medium)",
+                              zIndex: 0,
+                              pointerEvents: "none",
+                            }}
+                          />
+                          {/* Circle/bullet point */}
+                          <Flex
+                            style={{
+                              position: "absolute",
+                              left: "-20px",
+                              top: "12px",
+                              width: "10px",
+                              height: "10px",
+                              borderRadius: "50%",
+                              backgroundColor: "var(--color-neutral-strong)",
+                              border: "2px solid var(--color-background)",
+                              zIndex: 1,
+                            }}
+                          />
+                        </>
+                      )}
+                      <CollapsibleSection
+                        header={
+                          <Flex
+                            horizontal="between"
+                            vertical="end"
+                            style={{ width: "100%", paddingRight: "8px" }}
                           >
-                            {experience.achievements.map((achievement: React.ReactElement, index: number) => {
+                            <Column style={{ flex: 1, gap: "4px" }}>
+                              <Text
+                                id={
+                                  experience.company ===
+                                    "Independent Research" &&
+                                  experience.role === "Quantitative Researcher"
+                                    ? "Quantitative-Researcher-Independent"
+                                    : experience.company ===
+                                          "Universidade Federal de Ouro Preto" &&
+                                        experience.role ===
+                                          "Machine Learning Researcher"
+                                      ? "ML-Researcher-UFOP"
+                                      : experience.company ===
+                                            "Brazilian Center for Research in Physics" &&
+                                          experience.role ===
+                                            "Artificial Intelligence Researcher"
+                                        ? "AI-Researcher-CBPF"
+                                        : experience.company === "Eco AI.ly" &&
+                                            experience.role ===
+                                              "Machine Learning Engineer"
+                                          ? "ML-Engineer-EcoAI"
+                                          : experience.company ===
+                                                "Ernst & Young" &&
+                                              experience.role ===
+                                                "Artificial Intelligence & Data Engineer"
+                                            ? "AI-Data-Engineer-EY"
+                                            : experience.company ===
+                                                  "KU Leuven" &&
+                                                experience.role ===
+                                                  "Virtual Reality Researcher"
+                                              ? "VR-Intern-KULeuven"
+                                              : experience.company ===
+                                                    "Instituto Superior Técnico" &&
+                                                  experience.role ===
+                                                    "Teacher Assistant & Lab Coordinator"
+                                                ? "Teacher-Assistant-Lab-Coordinator-IST"
+                                                : experience.company ===
+                                                      "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas" &&
+                                                    experience.role ===
+                                                      "Machine Learning Researcher"
+                                                  ? "ML-Researcher-IPFN"
+                                                  : experience.role
+                                }
+                                variant="heading-strong-l"
+                                onBackground="neutral-strong"
+                                style={
+                                  (experience.company ===
+                                    "Independent Research" &&
+                                    experience.role ===
+                                      "Quantitative Researcher") ||
+                                  (experience.company ===
+                                    "Universidade Federal de Ouro Preto" &&
+                                    experience.role ===
+                                      "Machine Learning Researcher") ||
+                                  (experience.company ===
+                                    "Brazilian Center for Research in Physics" &&
+                                    experience.role ===
+                                      "Artificial Intelligence Researcher") ||
+                                  (experience.company === "Eco AI.ly" &&
+                                    experience.role ===
+                                      "Machine Learning Engineer") ||
+                                  (experience.company === "Ernst & Young" &&
+                                    experience.role ===
+                                      "Artificial Intelligence & Data Engineer") ||
+                                  (experience.company === "KU Leuven" &&
+                                    experience.role ===
+                                      "Virtual Reality Development Intern") ||
+                                  (experience.company ===
+                                    "Instituto Superior Técnico" &&
+                                    experience.role ===
+                                      "Teacher Assistant & Lab Coordinator") ||
+                                  (experience.company ===
+                                    "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas" &&
+                                    experience.role ===
+                                      "Machine Learning Researcher")
+                                    ? { scrollMarginTop: "140px" }
+                                    : {}
+                                }
+                              >
+                                {experience.role}
+                              </Text>
+                              <Text
+                                variant="body-default-s"
+                                onBackground="brand-weak"
+                                style={{ marginBottom: "8px" }}
+                              >
+                                {experience.company}
+                                {experience.employmentType &&
+                                  ` · ${experience.employmentType}`}
+                              </Text>
+                              <Text
+                                variant="body-default-xs"
+                                onBackground="neutral-weak"
+                              >
+                                {experience.location}
+                              </Text>
+                            </Column>
+                            <Column
+                              style={{ alignItems: "flex-end", gap: "4px" }}
+                            >
+                              <Flex
+                                style={{ alignItems: "center", gap: "4px" }}
+                              >
+                                <Text
+                                  variant="heading-default-xs"
+                                  onBackground="neutral-weak"
+                                >
+                                  {experience.timeframe}
+                                </Text>
+                                {isPresent(experience.timeframe) && (
+                                  <PresentIndicator />
+                                )}
+                              </Flex>
+                            </Column>
+                          </Flex>
+                        }
+                      >
+                        <Column style={{ gap: "20px", marginTop: "16px" }}>
+                          {experience.achievements.map(
+                            (
+                              achievement: React.ReactElement,
+                              index: number,
+                            ) => {
                               // Check if this is the Prometheus-related achievement
                               // It's the first achievement (index 0) in the "Independent Research" experience
-                              const isPrometheusAchievement = experience.company === "Independent Research" && index === 0;
+                              const isPrometheusAchievement =
+                                experience.company === "Independent Research" &&
+                                index === 0;
                               // Check if this is the FTH paper-related achievement
                               // It's the second achievement (index 1) in the "Independent Research" experience
-                              const isFTHPaperAchievement = experience.company === "Independent Research" && index === 1;
+                              const isFTHPaperAchievement =
+                                experience.company === "Independent Research" &&
+                                index === 1;
                               // Check if this is the GAIA-related achievement
                               // It's the first achievement (index 0) in the "Eco AI.ly" experience
-                              const isGAIAAchievement = experience.company === "Eco AI.ly" && index === 0;
+                              const isGAIAAchievement =
+                                experience.company === "Eco AI.ly" &&
+                                index === 0;
                               // Check if this is the Athens Mobility Grant-related achievement
                               // It's the first achievement (index 0) in the "KU Leuven" experience
-                              const isAthensGrantAchievement = experience.company === "KU Leuven" && index === 0;
+                              const isAthensGrantAchievement =
+                                experience.company === "KU Leuven" &&
+                                index === 0;
                               // Check if this is the ENIAC paper-related achievement
                               // It's the first achievement (index 0) in the "Universidade Federal de Ouro Preto" experience
-                              const isENIACPaperAchievement = experience.company === "Universidade Federal de Ouro Preto" && index === 0;
+                              const isENIACPaperAchievement =
+                                experience.company ===
+                                  "Universidade Federal de Ouro Preto" &&
+                                index === 0;
                               // Check if this is the Teaching Excellence award-related achievement
                               // It's the second achievement (index 1) in the "Instituto Superior Técnico" experience with role "Teacher Assistant & Lab Coordinator"
-                              const isTeachingExcellenceAchievement = experience.company === "Instituto Superior Técnico" && 
-                                experience.role === "Teacher Assistant & Lab Coordinator" && 
+                              const isTeachingExcellenceAchievement =
+                                experience.company ===
+                                  "Instituto Superior Técnico" &&
+                                experience.role ===
+                                  "Teacher Assistant & Lab Coordinator" &&
                                 index === 1;
                               // Check if this is the Ocean Floor paper-related achievement
                               // It's the first achievement (index 0) in the "Brazilian Center for Research in Physics" experience
-                              const isOceanFloorPaperAchievement = experience.company === "Brazilian Center for Research in Physics" && index === 0;
-                              const isAstronomerPaperAchievement = experience.company === "Brazilian Center for Research in Physics" && index === 1;
+                              const isOceanFloorPaperAchievement =
+                                experience.company ===
+                                  "Brazilian Center for Research in Physics" &&
+                                index === 0;
+                              const isAstronomerPaperAchievement =
+                                experience.company ===
+                                  "Brazilian Center for Research in Physics" &&
+                                index === 1;
                               // Check if this is the GraphRAG project-related achievement
                               // It's the first achievement (index 0) in the "Ernst & Young" experience
-                              const isGraphRAGProjectAchievement = experience.company === "Ernst & Young" && index === 0;
+                              const isGraphRAGProjectAchievement =
+                                experience.company === "Ernst & Young" &&
+                                index === 0;
                               // Check if this is the HHG paper-related achievement
                               // It's the first achievement (index 0) in the "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas" experience
-                              const isHHGPaperAchievement = experience.company === "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas" && index === 0;
-                              
+                              const isHHGPaperAchievement =
+                                experience.company ===
+                                  "Institute for Plasmas and Nuclear Fusion, Group of Lasers and Plasmas" &&
+                                index === 0;
+
                               return (
                                 <Text
                                   variant="body-default-m"
@@ -473,12 +639,13 @@ export default function About() {
                                 >
                                   {achievement}
                                   {isPrometheusAchievement && (
-                                    <>{" "}
+                                    <>
+                                      {" "}
                                       <SmartLink
                                         href="#Prometheus"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Prometheus Project
@@ -490,29 +657,27 @@ export default function About() {
                                       {" "}
                                       <SmartLink
                                         href="#FTH-Podcast"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Related Podcast
-                                      </SmartLink>
-                                      {" "}
+                                      </SmartLink>{" "}
                                       <SmartLink
                                         href="#FTH-Paper"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Publication
-                                      </SmartLink>
-                                      {" "}
+                                      </SmartLink>{" "}
                                       <SmartLink
                                         href="#SSRN-Top-Paper-Award"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Award
@@ -520,12 +685,13 @@ export default function About() {
                                     </>
                                   )}
                                   {isGAIAAchievement && (
-                                    <>{" "}
+                                    <>
+                                      {" "}
                                       <SmartLink
                                         href="#GAIA"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View GAIA Project
@@ -533,12 +699,13 @@ export default function About() {
                                     </>
                                   )}
                                   {isAthensGrantAchievement && (
-                                    <>{" "}
+                                    <>
+                                      {" "}
                                       <SmartLink
                                         href="#Athens-Mobility-Grant"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Award
@@ -550,19 +717,18 @@ export default function About() {
                                       {" "}
                                       <SmartLink
                                         href="#ML-Fine-Tuning-Podcast"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Related Podcast
-                                      </SmartLink>
-                                      {" "}
+                                      </SmartLink>{" "}
                                       <SmartLink
                                         href="#ENIAC-Paper"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Publication
@@ -570,12 +736,13 @@ export default function About() {
                                     </>
                                   )}
                                   {isTeachingExcellenceAchievement && (
-                                    <>{" "}
+                                    <>
+                                      {" "}
                                       <SmartLink
                                         href="#Teaching-Excellence-Award"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Award
@@ -587,29 +754,27 @@ export default function About() {
                                       {" "}
                                       <SmartLink
                                         href="#Mapping-Deep-AI-Podcast"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Related Podcast
-                                      </SmartLink>
-                                      {" "}
+                                      </SmartLink>{" "}
                                       <SmartLink
                                         href="#Ocean-Floor-Paper"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Publication
-                                      </SmartLink>
-                                      {" "}
+                                      </SmartLink>{" "}
                                       <SmartLink
                                         href="#Brazilian-Center-Physics-Grant"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Related Award
@@ -621,19 +786,18 @@ export default function About() {
                                       {" "}
                                       <SmartLink
                                         href="#AI-Astronomer-Podcast"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Related Podcast
-                                      </SmartLink>
-                                      {" "}
+                                      </SmartLink>{" "}
                                       <SmartLink
                                         href="#AI-Astronomer-Paper"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Publication
@@ -645,19 +809,18 @@ export default function About() {
                                       {" "}
                                       <SmartLink
                                         href="#GraphRAG-Project"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View GraphRAG Project
-                                      </SmartLink>
-                                      {" "}
+                                      </SmartLink>{" "}
                                       <SmartLink
                                         href="#Compliance-Protocols-EY"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Related Certification
@@ -669,19 +832,18 @@ export default function About() {
                                       {" "}
                                       <SmartLink
                                         href="#HHG-Podcast"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Related Podcast
-                                      </SmartLink>
-                                      {" "}
+                                      </SmartLink>{" "}
                                       <SmartLink
                                         href="#HHG-Paper"
-                                        style={{ 
+                                        style={{
                                           color: "#0066cc",
-                                          textDecoration: "underline"
+                                          textDecoration: "underline",
                                         }}
                                       >
                                         View Publication
@@ -690,123 +852,448 @@ export default function About() {
                                   )}
                                 </Text>
                               );
-                            })}
-                          </Column>
-                          {experience.images.length > 0 && (
-                            <Flex 
-                              fillWidth 
-                              style={{
-                                paddingTop: "var(--static-space-m)",
-                                paddingLeft: "40px",
-                                gap: "12px",
-                                flexWrap: "wrap",
-                              }}
-                            >
-                              {(experience.images as Array<{ width?: number; height?: number; alt?: string; src?: string }>).map((image, index) => (
-                                <Flex
-                                  key={index}
-                                  style={{
-                                    border: "1px solid var(--color-neutral-medium)",
-                                    borderRadius: "var(--static-space-m)",
-                                    minWidth: `${image.width ?? 0}rem`,
-                                    height: `${image.height ?? 0}rem`,
-                                  }}
-                                >
-                                  <Media
-                                    enlarge
-                                    style={{
-                                      borderRadius: "var(--static-space-m)",
-                                    }}
-                                    sizes={image.width?.toString() ?? "100"}
-                                    alt={image.alt ?? ""}
-                                    src={image.src ?? ""}
-                                  />
-                                </Flex>
-                              ))}
-                            </Flex>
+                            },
                           )}
-                        </CollapsibleSection>
-                      </Flex>
-                    </React.Fragment>
-                  );
-                })}
-              </Column>
-            </>
-          )}
-
-          {about.studies.display && (
-            <>
-              <Heading 
-                as="h2" 
-                id={about.studies.title} 
-                variant="display-strong-s" 
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.studies.title}
-              </Heading>
-              <Column 
-                style={{
-                  gap: "var(--static-space-s)",
-                  marginBottom: "20px",
-                  width: "100%",
-                }}
-              >
-                {about.studies.institutions.map((institution, index) => (
-                  <CollapsibleSection
-                    key={`${institution.name}-${index}`}
-                    header={
-                      <Flex 
-                        horizontal="between" 
-                        vertical="end" 
-                        style={{ width: "100%", paddingRight: "8px" }}
-                      >
-                        <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text id={institution.name} variant="heading-strong-l" onBackground="neutral-strong">
-                            {institution.name}
-                          </Text>
-                          <Text variant="body-default-s" onBackground="brand-weak">
-                            {institution.degree}
-                          </Text>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {institution.location}
-                          </Text>
                         </Column>
-                        <Column style={{ alignItems: "flex-end", gap: "4px" }}>
-                          <Flex style={{ alignItems: "center", gap: "4px" }}>
-                            <Text variant="heading-default-xs" onBackground="neutral-weak">
-                              {institution.timeframe}
-                            </Text>
-                            {isPresent(institution.timeframe) && <PresentIndicator />}
+                        {experience.images.length > 0 && (
+                          <Flex
+                            fillWidth
+                            style={{
+                              paddingTop: "var(--static-space-m)",
+                              paddingLeft: "40px",
+                              gap: "12px",
+                              flexWrap: "wrap",
+                            }}
+                          >
+                            {(
+                              experience.images as Array<{
+                                width?: number;
+                                height?: number;
+                                alt?: string;
+                                src?: string;
+                              }>
+                            ).map((image, index) => (
+                              <Flex
+                                key={index}
+                                style={{
+                                  border:
+                                    "1px solid var(--color-neutral-medium)",
+                                  borderRadius: "var(--static-space-m)",
+                                  minWidth: `${image.width ?? 0}rem`,
+                                  height: `${image.height ?? 0}rem`,
+                                }}
+                              >
+                                <Media
+                                  enlarge
+                                  style={{
+                                    borderRadius: "var(--static-space-m)",
+                                  }}
+                                  sizes={image.width?.toString() ?? "100"}
+                                  alt={image.alt ?? ""}
+                                  src={image.src ?? ""}
+                                />
+                              </Flex>
+                            ))}
                           </Flex>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {institution.gpa}
-                          </Text>
-                        </Column>
-                      </Flex>
-                    }
-                  >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
-                      {institution.description}
-                    </Text>
-                  </CollapsibleSection>
-                ))}
-              </Column>
-            </>
-          )}
+                        )}
+                      </CollapsibleSection>
+                    </Flex>
+                  </React.Fragment>
+                );
+              })}
+            </Column>
+          </>
+        )}
 
-          {/* Publications Section */}
-          {about.publications.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.publications.title}
-                variant="display-strong-s"
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.publications.title}
-              </Heading>
-              <Column style={{ gap: "12px", marginBottom: "20px" }}>
-                {about.publications.papers.map((paper, index) => (
+        {about.studies.display && (
+          <>
+            <Heading
+              as="h2"
+              id={about.studies.title}
+              variant="display-strong-s"
+              style={{
+                marginTop: "20px",
+                marginBottom: "12px",
+                scrollMarginTop: "140px",
+              }}
+            >
+              {about.studies.title}
+            </Heading>
+            <Column
+              style={{
+                gap: "var(--static-space-s)",
+                marginBottom: "20px",
+                width: "100%",
+              }}
+            >
+              {about.studies.institutions.map((institution, index) => (
+                <CollapsibleSection
+                  key={`${institution.name}-${index}`}
+                  header={
+                    <Flex
+                      horizontal="between"
+                      vertical="end"
+                      style={{ width: "100%", paddingRight: "8px" }}
+                    >
+                      <Column style={{ flex: 1, gap: "6px" }}>
+                        <Text
+                          id={institution.name}
+                          variant="heading-strong-l"
+                          onBackground="neutral-strong"
+                        >
+                          {institution.name}
+                        </Text>
+                        <Text
+                          variant="body-default-s"
+                          onBackground="brand-weak"
+                        >
+                          {institution.degree}
+                        </Text>
+                        <Text
+                          variant="body-default-xs"
+                          onBackground="neutral-weak"
+                        >
+                          {institution.location}
+                        </Text>
+                      </Column>
+                      <Column style={{ alignItems: "flex-end", gap: "4px" }}>
+                        <Flex style={{ alignItems: "center", gap: "4px" }}>
+                          <Text
+                            variant="heading-default-xs"
+                            onBackground="neutral-weak"
+                          >
+                            {institution.timeframe}
+                          </Text>
+                          {isPresent(institution.timeframe) && (
+                            <PresentIndicator />
+                          )}
+                        </Flex>
+                        <Text
+                          variant="body-default-xs"
+                          onBackground="neutral-weak"
+                        >
+                          {institution.gpa}
+                        </Text>
+                      </Column>
+                    </Flex>
+                  }
+                >
+                  <Text
+                    variant="body-default-m"
+                    onBackground="neutral-weak"
+                    style={justifiedDescriptionStyle}
+                  >
+                    {institution.description}
+                  </Text>
+                </CollapsibleSection>
+              ))}
+            </Column>
+          </>
+        )}
+
+        {/* Publications Section */}
+        {about.publications.display && (
+          <>
+            <Heading
+              as="h2"
+              id={about.publications.title}
+              variant="display-strong-s"
+              style={{
+                marginTop: "20px",
+                marginBottom: "12px",
+                scrollMarginTop: "140px",
+              }}
+            >
+              {about.publications.title}
+            </Heading>
+            <Column style={{ gap: "12px", marginBottom: "20px" }}>
+              {about.publications.papers.map((paper, index) => (
+                <CollapsibleSection
+                  key={index}
+                  header={
+                    <Flex
+                      horizontal="between"
+                      vertical="end"
+                      style={{ width: "100%", paddingRight: "8px" }}
+                    >
+                      <Column style={{ flex: 1, gap: "6px" }}>
+                        <Heading
+                          id={
+                            paper.title ===
+                            "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks"
+                              ? "FTH-Paper"
+                              : paper.title ===
+                                  "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold"
+                                ? "ENIAC-Paper"
+                                : paper.title ===
+                                    "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network"
+                                  ? "Ocean-Floor-Paper"
+                                  : paper.title ===
+                                      "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks"
+                                    ? "AI-Astronomer-Paper"
+                                    : paper.title ===
+                                        "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
+                                      ? "HHG-Paper"
+                                      : undefined
+                          }
+                          variant="heading-strong-l"
+                          onBackground="neutral-strong"
+                          style={
+                            paper.title ===
+                              "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ||
+                            paper.title ===
+                              "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" ||
+                            paper.title ===
+                              "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" ||
+                            paper.title ===
+                              "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" ||
+                            paper.title ===
+                              "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
+                              ? { scrollMarginTop: "140px" }
+                              : {}
+                          }
+                        >
+                          <em>{paper.title}</em>
+                        </Heading>
+                        <Text
+                          variant="body-default-s"
+                          onBackground="brand-weak"
+                        >
+                          {paper.authors}
+                        </Text>
+                        <Text
+                          variant="body-default-xs"
+                          onBackground="neutral-weak"
+                        >
+                          {paper.venue}
+                        </Text>
+                        {paper.link && (
+                          <Flex
+                            style={{
+                              gap: "8px",
+                              alignItems: "center",
+                              flexWrap: "wrap",
+                            }}
+                          >
+                            <SmartLink
+                              href={paper.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ textDecoration: "none" }}
+                            >
+                              <Tag
+                                size="s"
+                                background="brand-alpha-weak"
+                                border="neutral-alpha-medium"
+                                onBackground="brand-weak"
+                                className={styles.clickableTag}
+                              >
+                                View Paper
+                              </Tag>
+                            </SmartLink>
+                          </Flex>
+                        )}
+                      </Column>
+                      <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                        {paper.date && (
+                          <Text
+                            variant="heading-default-xs"
+                            onBackground="neutral-weak"
+                          >
+                            {paper.date}
+                          </Text>
+                        )}
+                        <Tag
+                          size="s"
+                          background="brand-alpha-weak"
+                          border="neutral-alpha-medium"
+                          onBackground="brand-weak"
+                        >
+                          {paper.category}
+                        </Tag>
+                        <Text
+                          variant="body-default-xs"
+                          onBackground="neutral-weak"
+                        >
+                          {paper.type}
+                        </Text>
+                      </Column>
+                    </Flex>
+                  }
+                >
+                  <Text
+                    variant="body-default-m"
+                    onBackground="neutral-weak"
+                    style={justifiedDescriptionStyle}
+                  >
+                    {paper.description}
+                    {paper.title ===
+                      "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#Prometheus"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Prometheus Project
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#FTH-Podcast"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Podcast
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#SSRN-Top-Paper-Award"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Award
+                        </SmartLink>
+                      </>
+                    )}
+                    {paper.title ===
+                      "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#ML-Fine-Tuning-Podcast"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Podcast
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#ML-Researcher-UFOP"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Experience
+                        </SmartLink>
+                      </>
+                    )}
+                    {paper.title ===
+                      "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#Mapping-Deep-AI-Podcast"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Podcast
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#AI-Researcher-CBPF"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Experience
+                        </SmartLink>
+                      </>
+                    )}
+                    {paper.title ===
+                      "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#AI-Astronomer-Podcast"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Podcast
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#AI-Researcher-CBPF"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Experience
+                        </SmartLink>
+                      </>
+                    )}
+                    {paper.title ===
+                      "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#HHG-Podcast"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Podcast
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#ML-Researcher-IPFN"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Experience
+                        </SmartLink>
+                      </>
+                    )}
+                  </Text>
+                  {(paper as PaperWithHighlights).highlights && (
+                    <Text
+                      variant="body-default-s"
+                      onBackground="neutral-weak"
+                      style={{
+                        ...justifiedDescriptionStyle,
+                        fontStyle: "italic",
+                      }}
+                    >
+                      Key highlights:{" "}
+                      {(paper as PaperWithHighlights).highlights}
+                    </Text>
+                  )}
+                </CollapsibleSection>
+              ))}
+            </Column>
+          </>
+        )}
+
+        {/* Extracurricular Section */}
+        {about.extracurricular.display && (
+          <>
+            <Heading
+              as="h2"
+              id={about.extracurricular.title}
+              variant="display-strong-s"
+              style={{
+                marginTop: "20px",
+                marginBottom: "12px",
+                scrollMarginTop: "140px",
+              }}
+            >
+              {about.extracurricular.title}
+            </Heading>
+            <Column style={{ gap: "12px", marginBottom: "20px" }}>
+              {about.extracurricular.activities.length > 0 ? (
+                about.extracurricular.activities.map((activity, index) => (
                   <CollapsibleSection
                     key={index}
                     header={
@@ -816,858 +1303,145 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Heading 
+                          <Text
                             id={
-                              paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks"
-                                ? "FTH-Paper"
-                                : paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold"
-                                ? "ENIAC-Paper"
-                                : paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network"
-                                ? "Ocean-Floor-Paper"
-                                : paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks"
-                                ? "AI-Astronomer-Paper"
-                                : paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
-                                ? "HHG-Paper"
-                                : undefined
+                              activity.title ===
+                              "Algorithmic Trading Society Member"
+                                ? "Algorithmic-Trading-Society-Member"
+                                : activity.title === "Investment Society Member"
+                                  ? "Investment-Society-Member"
+                                  : undefined
                             }
-                            variant="heading-strong-l" 
+                            variant="heading-strong-l"
                             onBackground="neutral-strong"
                             style={
-                              paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" ||
-                              paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" ||
-                              paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" ||
-                              paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" ||
-                              paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation"
+                              activity.title ===
+                                "Algorithmic Trading Society Member" ||
+                              activity.title === "Investment Society Member"
                                 ? { scrollMarginTop: "140px" }
                                 : {}
                             }
                           >
-                            <em>{paper.title}</em>
-                          </Heading>
-                          <Text variant="body-default-s" onBackground="brand-weak">
-                            {paper.authors}
+                            {activity.title}
                           </Text>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {paper.venue}
-                          </Text>
-                          {paper.link && (
-                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
-                              <SmartLink
-                                href={paper.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none" }}
+                          {activity.organization && (
+                            <Text
+                              variant="body-default-s"
+                              onBackground="brand-weak"
+                            >
+                              {activity.organization}
+                            </Text>
+                          )}
+                          {activity.location && (
+                            <Text
+                              variant="body-default-xs"
+                              onBackground="neutral-weak"
+                            >
+                              {activity.location}
+                            </Text>
+                          )}
+                        </Column>
+                        {activity.timeframe && (
+                          <Column
+                            style={{ alignItems: "flex-end", gap: "6px" }}
+                          >
+                            <Flex style={{ alignItems: "center", gap: "4px" }}>
+                              <Text
+                                variant="heading-default-xs"
+                                onBackground="neutral-weak"
                               >
+                                {activity.timeframe}
+                              </Text>
+                              {isPresent(activity.timeframe) && (
+                                <PresentIndicator />
+                              )}
+                            </Flex>
+                            {"category" in activity &&
+                              (activity as { category?: string }).category && (
                                 <Tag
                                   size="s"
                                   background="brand-alpha-weak"
-                                  border="neutral-alpha-medium"
                                   onBackground="brand-weak"
-                                  className={styles.clickableTag}
                                 >
-                                  View Paper
-                                </Tag>
-                              </SmartLink>
-                            </Flex>
-                          )}
-                        </Column>
-                        <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                          {paper.date && (
-                            <Text variant="heading-default-xs" onBackground="neutral-weak">
-                              {paper.date}
-                            </Text>
-                          )}
-                          <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
-                            {paper.category}
-                          </Tag>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {paper.type}
-                          </Text>
-                        </Column>
-                      </Flex>
-                    }
-                  >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
-                      {paper.description}
-                      {paper.title === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
-                        <>
-                          {" "}
-                          <SmartLink
-                            href="#Prometheus"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Prometheus Project
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#FTH-Podcast"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Podcast
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#SSRN-Top-Paper-Award"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Award
-                          </SmartLink>
-                        </>
-                      )}
-                      {paper.title === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
-                        <>{" "}
-                          <SmartLink
-                            href="#ML-Fine-Tuning-Podcast"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Podcast
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#ML-Researcher-UFOP"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                        </>
-                      )}
-                      {paper.title === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
-                        <>{" "}
-                          <SmartLink
-                            href="#Mapping-Deep-AI-Podcast"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Podcast
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#AI-Researcher-CBPF"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                        </>
-                      )}
-                      {paper.title === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" && (
-                        <>{" "}
-                          <SmartLink
-                            href="#AI-Astronomer-Podcast"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Podcast
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#AI-Researcher-CBPF"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                        </>
-                      )}
-                      {paper.title === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation" && (
-                        <>
-                          {" "}
-                          <SmartLink
-                            href="#HHG-Podcast"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Podcast
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#ML-Researcher-IPFN"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                        </>
-                      )}
-                    </Text>
-                    {((paper as PaperWithHighlights).highlights) && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic" }}>
-                        Key highlights: {(paper as PaperWithHighlights).highlights}
-                      </Text>
-                    )}
-                  </CollapsibleSection>
-                ))}
-              </Column>
-            </>
-          )}
-
-          {/* Extracurricular Section */}
-          {about.extracurricular.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.extracurricular.title}
-                variant="display-strong-s"
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.extracurricular.title}
-              </Heading>
-              <Column style={{ gap: "12px", marginBottom: "20px" }}>
-                {about.extracurricular.activities.length > 0 ? (
-                  about.extracurricular.activities.map((activity, index) => (
-                    <CollapsibleSection
-                      key={index}
-                      header={
-                        <Flex
-                          horizontal="between"
-                          vertical="end"
-                          style={{ width: "100%", paddingRight: "8px" }}
-                        >
-                          <Column style={{ flex: 1, gap: "6px" }}>
-                            <Text
-                              id={
-                                activity.title === "Algorithmic Trading Society Member"
-                                  ? "Algorithmic-Trading-Society-Member"
-                                  : activity.title === "Investment Society Member"
-                                    ? "Investment-Society-Member"
-                                    : undefined
-                              }
-                              variant="heading-strong-l"
-                              onBackground="neutral-strong"
-                              style={
-                                activity.title === "Algorithmic Trading Society Member" ||
-                                activity.title === "Investment Society Member"
-                                  ? { scrollMarginTop: "140px" }
-                                  : {}
-                              }
-                            >
-                              {activity.title}
-                            </Text>
-                            {activity.organization && (
-                              <Text variant="body-default-s" onBackground="brand-weak">
-                                {activity.organization}
-                              </Text>
-                            )}
-                            {activity.location && (
-                              <Text variant="body-default-xs" onBackground="neutral-weak">
-                                {activity.location}
-                              </Text>
-                            )}
-                          </Column>
-                          {activity.timeframe && (
-                            <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                              <Flex style={{ alignItems: "center", gap: "4px" }}>
-                                <Text variant="heading-default-xs" onBackground="neutral-weak">
-                                  {activity.timeframe}
-                                </Text>
-                                {isPresent(activity.timeframe) && <PresentIndicator />}
-                              </Flex>
-                              {"category" in activity && (activity as { category?: string }).category && (
-                                <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
                                   {(activity as { category: string }).category}
                                 </Tag>
                               )}
-                            </Column>
-                          )}
-                        </Flex>
-                      }
-                    >
-                      {activity.description && (
-                        <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
-                          {activity.description}
-                          {activity.title === "Algorithmic Trading Society Member" && (
-                            <>{" "}
-                              <SmartLink
-                                href="#Algorithmic-Trading-Certificate"
-                                style={{ 
-                                  color: "#0066cc",
-                                  textDecoration: "underline"
-                                }}
-                              >
-                                View Related Certification
-                              </SmartLink>
-                            </>
-                          )}
-                          {activity.title === "Investment Society Member" && (
-                            <>{" "}
-                              <SmartLink
-                                href="#Securities-Education-Certificate"
-                                style={{ 
-                                  color: "#0066cc",
-                                  textDecoration: "underline"
-                                }}
-                              >
-                                View Related Certification
-                              </SmartLink>
-                            </>
-                          )}
-                        </Text>
-                      )}
-                    </CollapsibleSection>
-                  ))
-                ) : (
-                  <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
-                    No extracurricular activities listed yet.
-                  </Text>
-                )}
-              </Column>
-            </>
-          )}
-
-          {/* Key Projects Section */}
-          {about.keyProjects.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.keyProjects.title}
-                variant="display-strong-s"
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.keyProjects.title}
-              </Heading>
-              <Column style={{ gap: "12px", marginBottom: "20px" }}>
-                {about.keyProjects.projects.length > 0 ? (
-                  about.keyProjects.projects.map((project, index) => (
-                    <CollapsibleSection
-                      key={index}
-                      header={
-                        <Flex
-                          horizontal="between"
-                          vertical="end"
-                          style={{ width: "100%", paddingRight: "8px" }}
-                        >
-                          <Column style={{ flex: 1, gap: "6px" }}>
-                          <Heading 
-                            id={project.title === "Prometheus" ? "Prometheus" : project.title === "GAIA" ? "GAIA" : project.title === "GraphRAG Workflow for AI Agents" ? "GraphRAG-Project" : project.title === "LXthon" ? "LXthon-Project" : project.title === "Ernst & Young AI Hackathon" ? "EY-AI-Hackathon-Project" : undefined}
-                            variant="heading-strong-l" 
-                            onBackground="neutral-strong"
-                            style={(project.title === "Prometheus" || project.title === "GAIA" || project.title === "GraphRAG Workflow for AI Agents" || project.title === "LXthon" || project.title === "Ernst & Young AI Hackathon") ? { scrollMarginTop: "140px" } : {}}
-                          >
-                            {project.title}
-                          </Heading>
-                            {project.location && (
-                              <Text variant="body-default-s" onBackground="brand-weak" style={{ marginBottom: "8px" }}>
-                                {project.location}
-                              </Text>
-                            )}
-                            {(project.github || project.link) && (
-                              <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
-                                {project.github && (
-                                  <SmartLink
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{ textDecoration: "none" }}
-                                  >
-                                    <Tag
-                                      size="s"
-                                      background="brand-alpha-weak"
-                                      border="neutral-alpha-medium"
-                                      onBackground="brand-weak"
-                                      className={styles.clickableTag}
-                                    >
-                                      View on GitHub
-                                    </Tag>
-                                  </SmartLink>
-                                )}
-                                {project.link && (
-                                  <SmartLink
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{ textDecoration: "none" }}
-                                  >
-                                    <Tag
-                                      size="s"
-                                      background="brand-alpha-weak"
-                                      onBackground="brand-weak"
-                                      className={styles.clickableTag}
-                                    >
-                                      {project.category === "Academic Research" ? "View Paper" : "View Website"}
-                                    </Tag>
-                                  </SmartLink>
-                                )}
-                              </Flex>
-                            )}
                           </Column>
-                          <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                            {project.timeframe && (
-                              <Flex style={{ alignItems: "center", gap: "4px" }}>
-                                <Text variant="heading-default-xs" onBackground="neutral-weak">
-                                  {project.timeframe}
-                                </Text>
-                                {isPresent(project.timeframe) && <PresentIndicator />}
-                              </Flex>
-                            )}
-                            {project.category && (
-                              <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
-                                {project.category}
-                              </Tag>
-                            )}
-                          </Column>
-                        </Flex>
-                      }
-                    >
-                      {project.description && (
-                        <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
-                          {project.description}
-                          {project.title === "Prometheus" && (
-                            <>
-                              {" "}
-                              <SmartLink
-                                href="#FTH-Podcast"
-                                style={{ 
-                                  color: "#0066cc",
-                                  textDecoration: "underline"
-                                }}
-                              >
-                                View Related Podcast
-                              </SmartLink>
-                              {" "}
-                              <SmartLink
-                                href="#SSRN-Top-Paper-Award"
-                                style={{ 
-                                  color: "#0066cc",
-                                  textDecoration: "underline"
-                                }}
-                              >
-                                View Related Award
-                              </SmartLink>
-                              {" "}
-                              <SmartLink
-                                href="#FTH-Paper"
-                                style={{ 
-                                  color: "#0066cc",
-                                  textDecoration: "underline"
-                                }}
-                              >
-                                View Publication
-                              </SmartLink>
-                            </>
-                          )}
-                          {project.title === "GAIA" && (
-                            <>{" "}
-                              <SmartLink
-                                href="#ML-Engineer-EcoAI"
-                                style={{ 
-                                  color: "#0066cc",
-                                  textDecoration: "underline"
-                                }}
-                              >
-                                View Related Experience
-                              </SmartLink>
-                            </>
-                          )}
-                          {project.title === "GraphRAG Workflow for AI Agents" && (
-                            <>{" "}
-                              <SmartLink
-                                href="#AI-Data-Engineer-EY"
-                                style={{ 
-                                  color: "#0066cc",
-                                  textDecoration: "underline"
-                                }}
-                              >
-                                View Related Experience
-                              </SmartLink>
-                            </>
-                          )}
-                          {project.title === "LXthon" && (
-                            <>{" "}
-                              <SmartLink
-                                href="#LXthon-Award"
-                                style={{ 
-                                  color: "#0066cc",
-                                  textDecoration: "underline"
-                                }}
-                              >
-                                View Related Award
-                              </SmartLink>
-                            </>
-                          )}
-                          {project.title === "Ernst & Young AI Hackathon" && (
-                            <>{" "}
-                              <SmartLink
-                                href="#EY-AI-Challenge-Award"
-                                style={{ 
-                                  color: "#0066cc",
-                                  textDecoration: "underline"
-                                }}
-                              >
-                                View Related Award
-                              </SmartLink>
-                            </>
-                          )}
-                        </Text>
-                      )}
-                      {((project as ProjectWithHighlights).highlights) && (
-                        <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic", marginTop: "8px" }}>
-                          Key highlights: {(project as ProjectWithHighlights).highlights}
-                        </Text>
-                      )}
-                    </CollapsibleSection>
-                  ))
-                ) : (
-                  <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
-                    No key projects listed yet.
-                  </Text>
-                )}
-              </Column>
-            </>
-          )}
-
-          {about.awards.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.awards.title}
-                variant="display-strong-s"
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.awards.title}
-              </Heading>
-              <Column 
-                style={{ gap: "var(--static-space-s)", marginBottom: "20px", width: "100%" }}
-              >
-                {about.awards.accomplishments.map((award, index) => (
-                  <CollapsibleSection
-                    key={`${award.title}-${index}`}
-                    header={
-                      <Flex 
-                        horizontal="between" 
-                        vertical="end" 
-                        style={{ width: "100%", paddingRight: "8px" }}
-                      >
-                        <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text 
-                            id={award.title === "Athens Mobility Grant" ? "Athens-Mobility-Grant" : award.title === "Diploma of Teaching Excellence" ? "Teaching-Excellence-Award" : award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" ? "SSRN-Top-Paper-Award" : award.title === "LXthon Hackathon — 1º Winner" ? "LXthon-Award" : award.title === "EY AI Challenge — Category 1º Place Winner" ? "EY-AI-Challenge-Award" : award.title === "Brazilian Center of Physics Research — Mobility Grant" ? "Brazilian-Center-Physics-Grant" : award.title} 
-                            variant="heading-strong-l" 
-                            onBackground="neutral-strong"
-                            style={(award.title === "Athens Mobility Grant" || award.title === "Diploma of Teaching Excellence" || award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" || award.title === "LXthon Hackathon — 1º Winner" || award.title === "EY AI Challenge — Category 1º Place Winner" || award.title === "Brazilian Center of Physics Research — Mobility Grant") ? { scrollMarginTop: "140px" } : {}}
-                          >
-                            {award.title}
-                          </Text>
-                          <Text variant="body-default-s" onBackground="brand-weak">
-                            {award.issuer}
-                          </Text>
-                        </Column>
-                        <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                          {award.category && (
-                            <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
-                              {award.category}
-                            </Tag>
-                          )}
-                          <Text variant="heading-default-xs" onBackground="neutral-weak">
-                            {award.year}
-                          </Text>
-                        </Column>
+                        )}
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
-                      {award.description}
-                      {award.title === "LXthon Hackathon — 1º Winner" && (
-                        <>{" "}
-                          <SmartLink
-                            href="#LXthon-Project"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View LXthon Project
-                          </SmartLink>
-                        </>
-                      )}
-                      {award.title === "EY AI Challenge — Category 1º Place Winner" && (
-                        <>{" "}
-                          <SmartLink
-                            href="#EY-AI-Hackathon-Project"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View EY AI Hackathon Project
-                          </SmartLink>
-                        </>
-                      )}
-                      {award.title === "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" && (
-                        <>
-                          {" "}
-                          <SmartLink
-                            href="#FTH-Podcast"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Podcast
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#Prometheus"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Prometheus Project
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#FTH-Paper"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Publication
-                          </SmartLink>
-                        </>
-                      )}
-                      {award.title === "Athens Mobility Grant" && (
-                        <>{" "}
-                          <SmartLink
-                            href="#VR-Intern-KULeuven"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                        </>
-                      )}
-                      {award.title === "Diploma of Teaching Excellence" && (
-                        <>{" "}
-                          <SmartLink
-                            href="#Teacher-Assistant-Lab-Coordinator-IST"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                        </>
-                      )}
-                      {award.title === "Brazilian Center of Physics Research — Mobility Grant" && (
-                        <>
-                          {" "}
-                          <SmartLink
-                            href="#AI-Researcher-CBPF"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#Ocean-Floor-Paper"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Publication
-                          </SmartLink>
-                        </>
-                      )}
-                    </Text>
-                    {award.associated_with && award.associated_with.trim() && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic" }}>
-                        Associated with: {award.associated_with}
-                      </Text>
-                    )}
-                  </CollapsibleSection>
-                ))}
-              </Column>
-            </>
-          )}
-
-          {about.certifications.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.certifications.title}
-                variant="display-strong-s"
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.certifications.title}
-              </Heading>
-              <Column 
-                style={{ gap: "var(--static-space-s)", marginBottom: "20px", width: "100%" }}
-              >
-                {about.certifications.accomplishments.map((certification, index) => {
-                  const certificationDetails = certification as CertificationWithDetails;
-                  return (
-                  <CollapsibleSection
-                    key={`${certification.title}-${index}`}
-                    header={
-                      <Flex 
-                        horizontal="between" 
-                        vertical="end" 
-                        style={{ width: "100%", paddingRight: "8px" }}
+                    {activity.description && (
+                      <Text
+                        variant="body-default-m"
+                        onBackground="neutral-weak"
+                        style={justifiedDescriptionStyle}
                       >
-                        <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text 
-                            id={
-                              certification.title === "Compliance & Protocols for Global Clients"
-                                ? "Compliance-Protocols-EY"
-                                : certification.title === "Algorithmic Trading Certificate"
-                                  ? "Algorithmic-Trading-Certificate"
-                                  : certification.title === "Securities Education Certificate"
-                                    ? "Securities-Education-Certificate"
-                                    : certification.title
-                            }
-                            variant="heading-strong-l" 
-                            onBackground="neutral-strong"
-                            style={
-                              certification.title === "Compliance & Protocols for Global Clients" ||
-                              certification.title === "Algorithmic Trading Certificate" ||
-                              certification.title === "Securities Education Certificate"
-                                ? { scrollMarginTop: "140px" }
-                                : {}
-                            }
-                          >
-                            {certification.title}
-                          </Text>
-                          <Text variant="body-default-s" onBackground="brand-weak">
-                            {certification.issuer}
-                          </Text>
-                          {certificationDetails.certificateUrl && (
-                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
-                              <SmartLink
-                                href={certificationDetails.certificateUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{ textDecoration: "none" }}
-                              >
-                                <Tag
-                                  size="s"
-                                  background="brand-alpha-weak"
-                                  border="neutral-alpha-medium"
-                                  onBackground="brand-weak"
-                                  className={styles.clickableTag}
-                                >
-                                  View Certificate
-                                </Tag>
-                              </SmartLink>
-                            </Flex>
-                          )}
-                        </Column>
-                        <Flex 
-                          style={{ gap: "8px" }}
-                          vertical="center"
-                        >
-                          <Tag size="s" background="brand-alpha-weak" onBackground="brand-weak">
-                            {certification.category}
-                          </Tag>
-                          <Text variant="heading-default-xs" onBackground="neutral-weak">
-                            {certification.year}
-                          </Text>
-                        </Flex>
-                      </Flex>
-                    }
-                  >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
-                      {certification.description}
-                      {certification.title === "Compliance & Protocols for Global Clients" && (
-                        <>{" "}
-                          <SmartLink
-                            href="#AI-Data-Engineer-EY"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                        </>
-                      )}
-                      {certification.title === "Algorithmic Trading Certificate" && (
-                        <>{" "}
-                          <SmartLink
-                            href="#Algorithmic-Trading-Society-Member"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Extracurricular
-                          </SmartLink>
-                        </>
-                      )}
-                      {certification.title === "Securities Education Certificate" && (
-                        <>{" "}
-                          <SmartLink
-                            href="#Investment-Society-Member"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Extracurricular
-                          </SmartLink>
-                        </>
-                      )}
-                    </Text>
-                    {(certification.associated_with?.trim() || certificationDetails.credential_id?.trim()) && (
-                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ ...justifiedDescriptionStyle, fontStyle: "italic" }}>
-                        {certification.associated_with?.trim() && `Associated with: ${certification.associated_with}`}
-                        {certification.associated_with?.trim() && certificationDetails.credential_id?.trim() && ` • `}
-                        {certificationDetails.credential_id?.trim() && `Credential ID: ${certificationDetails.credential_id}`}
+                        {activity.description}
+                        {activity.title ===
+                          "Algorithmic Trading Society Member" && (
+                          <>
+                            {" "}
+                            <SmartLink
+                              href="#Algorithmic-Trading-Certificate"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Related Certification
+                            </SmartLink>
+                          </>
+                        )}
+                        {activity.title === "Investment Society Member" && (
+                          <>
+                            {" "}
+                            <SmartLink
+                              href="#Securities-Education-Certificate"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Related Certification
+                            </SmartLink>
+                          </>
+                        )}
                       </Text>
                     )}
                   </CollapsibleSection>
-                );
-                })}
-              </Column>
-            </>
-          )}
+                ))
+              ) : (
+                <Text
+                  variant="body-default-m"
+                  onBackground="neutral-weak"
+                  style={{ fontStyle: "italic" }}
+                >
+                  No extracurricular activities listed yet.
+                </Text>
+              )}
+            </Column>
+          </>
+        )}
 
-          {/* Podcasts Section */}
-          {about.podcasts.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.podcasts.title}
-                variant="display-strong-s"
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.podcasts.title}
-              </Heading>
-              <Column style={{ gap: "12px", marginBottom: "20px" }}>
-                {about.podcasts.episodes.map((episode, index) => (
+        {/* Key Projects Section */}
+        {about.keyProjects.display && (
+          <>
+            <Heading
+              as="h2"
+              id={about.keyProjects.title}
+              variant="display-strong-s"
+              style={{
+                marginTop: "20px",
+                marginBottom: "12px",
+                scrollMarginTop: "140px",
+              }}
+            >
+              {about.keyProjects.title}
+            </Heading>
+            <Column style={{ gap: "12px", marginBottom: "20px" }}>
+              {about.keyProjects.projects.length > 0 ? (
+                about.keyProjects.projects.map((project, index) => (
                   <CollapsibleSection
                     key={index}
                     header={
@@ -1677,42 +1451,57 @@ export default function About() {
                         style={{ width: "100%", paddingRight: "8px" }}
                       >
                         <Column style={{ flex: 1, gap: "6px" }}>
-                          <Text 
+                          <Heading
                             id={
-                              episode.title === "Using AI to Fix a High-Power Laser"
-                                ? "HHG-Podcast"
-                                : episode.title === "Prometheus Presents The Financial Torque Hypothesis"
-                                ? "FTH-Podcast"
-                                : episode.title === "Mapping the Deep with AI"
-                                ? "Mapping-Deep-AI-Podcast"
-                                : episode.title === "Automating Machine Learning Fine Tuning"
-                                ? "ML-Fine-Tuning-Podcast"
-                                : episode.title === "Training an AI Astronomer"
-                                ? "AI-Astronomer-Podcast"
-                                : undefined
+                              project.title === "Prometheus"
+                                ? "Prometheus"
+                                : project.title === "GAIA"
+                                  ? "GAIA"
+                                  : project.title ===
+                                      "GraphRAG Workflow for AI Agents"
+                                    ? "GraphRAG-Project"
+                                    : project.title === "LXthon"
+                                      ? "LXthon-Project"
+                                      : project.title ===
+                                          "Ernst & Young AI Hackathon"
+                                        ? "EY-AI-Hackathon-Project"
+                                        : undefined
                             }
-                            variant="heading-strong-l" 
+                            variant="heading-strong-l"
                             onBackground="neutral-strong"
                             style={
-                              episode.title === "Using AI to Fix a High-Power Laser" ||
-                              episode.title === "Prometheus Presents The Financial Torque Hypothesis" ||
-                              episode.title === "Mapping the Deep with AI" ||
-                              episode.title === "Automating Machine Learning Fine Tuning" ||
-                              episode.title === "Training an AI Astronomer"
+                              project.title === "Prometheus" ||
+                              project.title === "GAIA" ||
+                              project.title ===
+                                "GraphRAG Workflow for AI Agents" ||
+                              project.title === "LXthon" ||
+                              project.title === "Ernst & Young AI Hackathon"
                                 ? { scrollMarginTop: "140px" }
                                 : {}
                             }
                           >
-                            {episode.title}
-                          </Text>
-                          <Text variant="body-default-s" onBackground="brand-weak">
-                            YouTube
-                          </Text>
-                          {(episode.trailerLink || episode.link) && (
-                            <Flex style={{ gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
-                              {episode.trailerLink && (
+                            {project.title}
+                          </Heading>
+                          {project.location && (
+                            <Text
+                              variant="body-default-s"
+                              onBackground="brand-weak"
+                              style={{ marginBottom: "8px" }}
+                            >
+                              {project.location}
+                            </Text>
+                          )}
+                          {(project.github || project.link) && (
+                            <Flex
+                              style={{
+                                gap: "8px",
+                                alignItems: "center",
+                                flexWrap: "wrap",
+                              }}
+                            >
+                              {project.github && (
                                 <SmartLink
-                                  href={episode.trailerLink}
+                                  href={project.github}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   style={{ textDecoration: "none" }}
@@ -1724,13 +1513,13 @@ export default function About() {
                                     onBackground="brand-weak"
                                     className={styles.clickableTag}
                                   >
-                                    View Trailer
+                                    View on GitHub
                                   </Tag>
                                 </SmartLink>
                               )}
-                              {episode.link && (
+                              {project.link && (
                                 <SmartLink
-                                  href={episode.link}
+                                  href={project.link}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   style={{ textDecoration: "none" }}
@@ -1741,7 +1530,9 @@ export default function About() {
                                     onBackground="brand-weak"
                                     className={styles.clickableTag}
                                   >
-                                    View Podcast
+                                    {project.category === "Academic Research"
+                                      ? "View Paper"
+                                      : "View Website"}
                                   </Tag>
                                 </SmartLink>
                               )}
@@ -1749,221 +1540,949 @@ export default function About() {
                           )}
                         </Column>
                         <Column style={{ alignItems: "flex-end", gap: "6px" }}>
-                          {episode.date && (
-                            <Text variant="heading-default-xs" onBackground="neutral-weak">
-                              {episode.date}
-                            </Text>
+                          {project.timeframe && (
+                            <Flex style={{ alignItems: "center", gap: "4px" }}>
+                              <Text
+                                variant="heading-default-xs"
+                                onBackground="neutral-weak"
+                              >
+                                {project.timeframe}
+                              </Text>
+                              {isPresent(project.timeframe) && (
+                                <PresentIndicator />
+                              )}
+                            </Flex>
                           )}
-                          <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
-                            {episode.category}
-                          </Tag>
-                          <Text variant="body-default-xs" onBackground="neutral-weak">
-                            {episode.type}
-                          </Text>
+                          {project.category && (
+                            <Tag
+                              size="s"
+                              background="brand-alpha-weak"
+                              border="neutral-alpha-medium"
+                              onBackground="brand-weak"
+                            >
+                              {project.category}
+                            </Tag>
+                          )}
                         </Column>
                       </Flex>
                     }
                   >
-                    <Text variant="body-default-m" onBackground="neutral-weak" style={justifiedDescriptionStyle}>
-                      {episode.description || <>Podcast Presenting the Paper <em>{episode.paperTitle}</em>.</>}
-                      {episode.paperTitle === "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation" && (
-                        <>
-                          {" "}
-                          <SmartLink
-                            href="#HHG-Paper"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Publication
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#ML-Researcher-IPFN"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                        </>
-                      )}
-                      {episode.paperTitle === "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
-                        <>
-                          {" "}
-                          <SmartLink
-                            href="#ENIAC-Paper"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Publication
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#ML-Researcher-UFOP"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                        </>
-                      )}
-                      {episode.paperTitle === "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
-                        <>
-                          {" "}
-                          <SmartLink
-                            href="#Ocean-Floor-Paper"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Publication
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#AI-Researcher-CBPF"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                        </>
-                      )}
-                      {episode.paperTitle === "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
-                        <>
-                          {" "}
-                          <SmartLink
-                            href="#Prometheus"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Prometheus Project
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#FTH-Paper"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Publication
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#SSRN-Top-Paper-Award"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Award
-                          </SmartLink>
-                        </>
-                      )}
-                      {episode.paperTitle === "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" && (
-                        <>
-                          {" "}
-                          <SmartLink
-                            href="#AI-Astronomer-Paper"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Publication
-                          </SmartLink>
-                          {" "}
-                          <SmartLink
-                            href="#AI-Researcher-CBPF"
-                            style={{ 
-                              color: "#0066cc",
-                              textDecoration: "underline"
-                            }}
-                          >
-                            View Related Experience
-                          </SmartLink>
-                        </>
-                      )}
-                    </Text>
+                    {project.description && (
+                      <Text
+                        variant="body-default-m"
+                        onBackground="neutral-weak"
+                        style={justifiedDescriptionStyle}
+                      >
+                        {project.description}
+                        {project.title === "Prometheus" && (
+                          <>
+                            {" "}
+                            <SmartLink
+                              href="#FTH-Podcast"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Related Podcast
+                            </SmartLink>{" "}
+                            <SmartLink
+                              href="#SSRN-Top-Paper-Award"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Related Award
+                            </SmartLink>{" "}
+                            <SmartLink
+                              href="#FTH-Paper"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Publication
+                            </SmartLink>
+                          </>
+                        )}
+                        {project.title === "GAIA" && (
+                          <>
+                            {" "}
+                            <SmartLink
+                              href="#ML-Engineer-EcoAI"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Related Experience
+                            </SmartLink>
+                          </>
+                        )}
+                        {project.title ===
+                          "GraphRAG Workflow for AI Agents" && (
+                          <>
+                            {" "}
+                            <SmartLink
+                              href="#AI-Data-Engineer-EY"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Related Experience
+                            </SmartLink>
+                          </>
+                        )}
+                        {project.title === "LXthon" && (
+                          <>
+                            {" "}
+                            <SmartLink
+                              href="#LXthon-Award"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Related Award
+                            </SmartLink>
+                          </>
+                        )}
+                        {project.title === "Ernst & Young AI Hackathon" && (
+                          <>
+                            {" "}
+                            <SmartLink
+                              href="#EY-AI-Challenge-Award"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Related Award
+                            </SmartLink>
+                          </>
+                        )}
+                      </Text>
+                    )}
+                    {(project as ProjectWithHighlights).highlights && (
+                      <Text
+                        variant="body-default-s"
+                        onBackground="neutral-weak"
+                        style={{
+                          ...justifiedDescriptionStyle,
+                          fontStyle: "italic",
+                          marginTop: "8px",
+                        }}
+                      >
+                        Key highlights:{" "}
+                        {(project as ProjectWithHighlights).highlights}
+                      </Text>
+                    )}
                   </CollapsibleSection>
-                ))}
-              </Column>
-            </>
-          )}
+                ))
+              ) : (
+                <Text
+                  variant="body-default-m"
+                  onBackground="neutral-weak"
+                  style={{ fontStyle: "italic" }}
+                >
+                  No key projects listed yet.
+                </Text>
+              )}
+            </Column>
+          </>
+        )}
 
-          {/* Values & Principles Section */}
-          {about.values.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.values.title}
-                variant="display-strong-s"
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.values.title}
-              </Heading>
-              <Text
-                variant="body-default-m"
-                onBackground="neutral-weak"
-                style={{ ...justifiedDescriptionStyle, marginBottom: "12px" }}
-              >
-                {about.values.description}
-              </Text>
-            </>
-          )}
+        {about.awards.display && (
+          <>
+            <Heading
+              as="h2"
+              id={about.awards.title}
+              variant="display-strong-s"
+              style={{
+                marginTop: "20px",
+                marginBottom: "12px",
+                scrollMarginTop: "140px",
+              }}
+            >
+              {about.awards.title}
+            </Heading>
+            <Column
+              style={{
+                gap: "var(--static-space-s)",
+                marginBottom: "20px",
+                width: "100%",
+              }}
+            >
+              {about.awards.accomplishments.map((award, index) => (
+                <CollapsibleSection
+                  key={`${award.title}-${index}`}
+                  header={
+                    <Flex
+                      horizontal="between"
+                      vertical="end"
+                      style={{ width: "100%", paddingRight: "8px" }}
+                    >
+                      <Column style={{ flex: 1, gap: "6px" }}>
+                        <Text
+                          id={
+                            award.title === "Athens Mobility Grant"
+                              ? "Athens-Mobility-Grant"
+                              : award.title === "Diploma of Teaching Excellence"
+                                ? "Teaching-Excellence-Award"
+                                : award.title ===
+                                    "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak"
+                                  ? "SSRN-Top-Paper-Award"
+                                  : award.title ===
+                                      "LXthon Hackathon — 1º Winner"
+                                    ? "LXthon-Award"
+                                    : award.title ===
+                                        "EY AI Challenge — Category 1º Place Winner"
+                                      ? "EY-AI-Challenge-Award"
+                                      : award.title ===
+                                          "Brazilian Center of Physics Research — Mobility Grant"
+                                        ? "Brazilian-Center-Physics-Grant"
+                                        : award.title
+                          }
+                          variant="heading-strong-l"
+                          onBackground="neutral-strong"
+                          style={
+                            award.title === "Athens Mobility Grant" ||
+                            award.title === "Diploma of Teaching Excellence" ||
+                            award.title ===
+                              "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" ||
+                            award.title === "LXthon Hackathon — 1º Winner" ||
+                            award.title ===
+                              "EY AI Challenge — Category 1º Place Winner" ||
+                            award.title ===
+                              "Brazilian Center of Physics Research — Mobility Grant"
+                              ? { scrollMarginTop: "140px" }
+                              : {}
+                          }
+                        >
+                          {award.title}
+                        </Text>
+                        <Text
+                          variant="body-default-s"
+                          onBackground="brand-weak"
+                        >
+                          {award.issuer}
+                        </Text>
+                      </Column>
+                      <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                        {award.category && (
+                          <Tag
+                            size="s"
+                            background="brand-alpha-weak"
+                            border="neutral-alpha-medium"
+                            onBackground="brand-weak"
+                          >
+                            {award.category}
+                          </Tag>
+                        )}
+                        <Text
+                          variant="heading-default-xs"
+                          onBackground="neutral-weak"
+                        >
+                          {award.year}
+                        </Text>
+                      </Column>
+                    </Flex>
+                  }
+                >
+                  <Text
+                    variant="body-default-m"
+                    onBackground="neutral-weak"
+                    style={justifiedDescriptionStyle}
+                  >
+                    {award.description}
+                    {award.title === "LXthon Hackathon — 1º Winner" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#LXthon-Project"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View LXthon Project
+                        </SmartLink>
+                      </>
+                    )}
+                    {award.title ===
+                      "EY AI Challenge — Category 1º Place Winner" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#EY-AI-Hackathon-Project"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View EY AI Hackathon Project
+                        </SmartLink>
+                      </>
+                    )}
+                    {award.title ===
+                      "SSRN Financial Economics Network e Journal Top Paper - 4-day Streak" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#FTH-Podcast"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Podcast
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#Prometheus"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Prometheus Project
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#FTH-Paper"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Publication
+                        </SmartLink>
+                      </>
+                    )}
+                    {award.title === "Athens Mobility Grant" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#VR-Intern-KULeuven"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Experience
+                        </SmartLink>
+                      </>
+                    )}
+                    {award.title === "Diploma of Teaching Excellence" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#Teacher-Assistant-Lab-Coordinator-IST"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Experience
+                        </SmartLink>
+                      </>
+                    )}
+                    {award.title ===
+                      "Brazilian Center of Physics Research — Mobility Grant" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#AI-Researcher-CBPF"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Experience
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#Ocean-Floor-Paper"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Publication
+                        </SmartLink>
+                      </>
+                    )}
+                  </Text>
+                  {award.associated_with && award.associated_with.trim() && (
+                    <Text
+                      variant="body-default-s"
+                      onBackground="neutral-weak"
+                      style={{
+                        ...justifiedDescriptionStyle,
+                        fontStyle: "italic",
+                      }}
+                    >
+                      Associated with: {award.associated_with}
+                    </Text>
+                  )}
+                </CollapsibleSection>
+              ))}
+            </Column>
+          </>
+        )}
 
-          {/* Hobbies & Passions Section */}
-          {about.hobbies.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.hobbies.title}
-                variant="display-strong-s"
-                style={{ marginTop: "20px", marginBottom: "12px", scrollMarginTop: "140px" }}
-              >
-                {about.hobbies.title}
-              </Heading>
-              <Text
-                variant="body-default-m"
-                onBackground="neutral-weak"
-                style={{ ...justifiedDescriptionStyle, marginBottom: "12px" }}
-              >
-                {about.hobbies.description}
-              </Text>
-              <Column style={{ gap: "12px", marginBottom: "20px" }}>
-                {about.hobbies.categories.map((category: { title: string; skills: string[] }, index) => (
+        {about.certifications.display && (
+          <>
+            <Heading
+              as="h2"
+              id={about.certifications.title}
+              variant="display-strong-s"
+              style={{
+                marginTop: "20px",
+                marginBottom: "12px",
+                scrollMarginTop: "140px",
+              }}
+            >
+              {about.certifications.title}
+            </Heading>
+            <Column
+              style={{
+                gap: "var(--static-space-s)",
+                marginBottom: "20px",
+                width: "100%",
+              }}
+            >
+              {about.certifications.accomplishments.map(
+                (certification, index) => {
+                  const certificationDetails =
+                    certification as CertificationWithDetails;
+                  return (
+                    <CollapsibleSection
+                      key={`${certification.title}-${index}`}
+                      header={
+                        <Flex
+                          horizontal="between"
+                          vertical="end"
+                          style={{ width: "100%", paddingRight: "8px" }}
+                        >
+                          <Column style={{ flex: 1, gap: "6px" }}>
+                            <Text
+                              id={
+                                certification.title ===
+                                "Compliance & Protocols for Global Clients"
+                                  ? "Compliance-Protocols-EY"
+                                  : certification.title ===
+                                      "Algorithmic Trading Certificate"
+                                    ? "Algorithmic-Trading-Certificate"
+                                    : certification.title ===
+                                        "Securities Education Certificate"
+                                      ? "Securities-Education-Certificate"
+                                      : certification.title
+                              }
+                              variant="heading-strong-l"
+                              onBackground="neutral-strong"
+                              style={
+                                certification.title ===
+                                  "Compliance & Protocols for Global Clients" ||
+                                certification.title ===
+                                  "Algorithmic Trading Certificate" ||
+                                certification.title ===
+                                  "Securities Education Certificate"
+                                  ? { scrollMarginTop: "140px" }
+                                  : {}
+                              }
+                            >
+                              {certification.title}
+                            </Text>
+                            <Text
+                              variant="body-default-s"
+                              onBackground="brand-weak"
+                            >
+                              {certification.issuer}
+                            </Text>
+                            {certificationDetails.certificateUrl && (
+                              <Flex
+                                style={{
+                                  gap: "8px",
+                                  alignItems: "center",
+                                  flexWrap: "wrap",
+                                }}
+                              >
+                                <SmartLink
+                                  href={certificationDetails.certificateUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{ textDecoration: "none" }}
+                                >
+                                  <Tag
+                                    size="s"
+                                    background="brand-alpha-weak"
+                                    border="neutral-alpha-medium"
+                                    onBackground="brand-weak"
+                                    className={styles.clickableTag}
+                                  >
+                                    View Certificate
+                                  </Tag>
+                                </SmartLink>
+                              </Flex>
+                            )}
+                          </Column>
+                          <Flex style={{ gap: "8px" }} vertical="center">
+                            <Tag
+                              size="s"
+                              background="brand-alpha-weak"
+                              onBackground="brand-weak"
+                            >
+                              {certification.category}
+                            </Tag>
+                            <Text
+                              variant="heading-default-xs"
+                              onBackground="neutral-weak"
+                            >
+                              {certification.year}
+                            </Text>
+                          </Flex>
+                        </Flex>
+                      }
+                    >
+                      <Text
+                        variant="body-default-m"
+                        onBackground="neutral-weak"
+                        style={justifiedDescriptionStyle}
+                      >
+                        {certification.description}
+                        {certification.title ===
+                          "Compliance & Protocols for Global Clients" && (
+                          <>
+                            {" "}
+                            <SmartLink
+                              href="#AI-Data-Engineer-EY"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Related Experience
+                            </SmartLink>
+                          </>
+                        )}
+                        {certification.title ===
+                          "Algorithmic Trading Certificate" && (
+                          <>
+                            {" "}
+                            <SmartLink
+                              href="#Algorithmic-Trading-Society-Member"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Related Extracurricular
+                            </SmartLink>
+                          </>
+                        )}
+                        {certification.title ===
+                          "Securities Education Certificate" && (
+                          <>
+                            {" "}
+                            <SmartLink
+                              href="#Investment-Society-Member"
+                              style={{
+                                color: "#0066cc",
+                                textDecoration: "underline",
+                              }}
+                            >
+                              View Related Extracurricular
+                            </SmartLink>
+                          </>
+                        )}
+                      </Text>
+                      {(certification.associated_with?.trim() ||
+                        certificationDetails.credential_id?.trim()) && (
+                        <Text
+                          variant="body-default-s"
+                          onBackground="neutral-weak"
+                          style={{
+                            ...justifiedDescriptionStyle,
+                            fontStyle: "italic",
+                          }}
+                        >
+                          {certification.associated_with?.trim() &&
+                            `Associated with: ${certification.associated_with}`}
+                          {certification.associated_with?.trim() &&
+                            certificationDetails.credential_id?.trim() &&
+                            ` • `}
+                          {certificationDetails.credential_id?.trim() &&
+                            `Credential ID: ${certificationDetails.credential_id}`}
+                        </Text>
+                      )}
+                    </CollapsibleSection>
+                  );
+                },
+              )}
+            </Column>
+          </>
+        )}
+
+        {/* Podcasts Section */}
+        {about.podcasts.display && (
+          <>
+            <Heading
+              as="h2"
+              id={about.podcasts.title}
+              variant="display-strong-s"
+              style={{
+                marginTop: "20px",
+                marginBottom: "12px",
+                scrollMarginTop: "140px",
+              }}
+            >
+              {about.podcasts.title}
+            </Heading>
+            <Column style={{ gap: "12px", marginBottom: "20px" }}>
+              {about.podcasts.episodes.map((episode, index) => (
+                <CollapsibleSection
+                  key={index}
+                  header={
+                    <Flex
+                      horizontal="between"
+                      vertical="end"
+                      style={{ width: "100%", paddingRight: "8px" }}
+                    >
+                      <Column style={{ flex: 1, gap: "6px" }}>
+                        <Text
+                          id={
+                            episode.title ===
+                            "Using AI to Fix a High-Power Laser"
+                              ? "HHG-Podcast"
+                              : episode.title ===
+                                  "Prometheus Presents The Financial Torque Hypothesis"
+                                ? "FTH-Podcast"
+                                : episode.title === "Mapping the Deep with AI"
+                                  ? "Mapping-Deep-AI-Podcast"
+                                  : episode.title ===
+                                      "Automating Machine Learning Fine Tuning"
+                                    ? "ML-Fine-Tuning-Podcast"
+                                    : episode.title ===
+                                        "Training an AI Astronomer"
+                                      ? "AI-Astronomer-Podcast"
+                                      : undefined
+                          }
+                          variant="heading-strong-l"
+                          onBackground="neutral-strong"
+                          style={
+                            episode.title ===
+                              "Using AI to Fix a High-Power Laser" ||
+                            episode.title ===
+                              "Prometheus Presents The Financial Torque Hypothesis" ||
+                            episode.title === "Mapping the Deep with AI" ||
+                            episode.title ===
+                              "Automating Machine Learning Fine Tuning" ||
+                            episode.title === "Training an AI Astronomer"
+                              ? { scrollMarginTop: "140px" }
+                              : {}
+                          }
+                        >
+                          {episode.title}
+                        </Text>
+                        <Text
+                          variant="body-default-s"
+                          onBackground="brand-weak"
+                        >
+                          YouTube
+                        </Text>
+                        {(episode.trailerLink || episode.link) && (
+                          <Flex
+                            style={{
+                              gap: "8px",
+                              alignItems: "center",
+                              flexWrap: "wrap",
+                            }}
+                          >
+                            {episode.trailerLink && (
+                              <SmartLink
+                                href={episode.trailerLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag
+                                  size="s"
+                                  background="brand-alpha-weak"
+                                  border="neutral-alpha-medium"
+                                  onBackground="brand-weak"
+                                  className={styles.clickableTag}
+                                >
+                                  View Trailer
+                                </Tag>
+                              </SmartLink>
+                            )}
+                            {episode.link && (
+                              <SmartLink
+                                href={episode.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                              >
+                                <Tag
+                                  size="s"
+                                  background="brand-alpha-weak"
+                                  onBackground="brand-weak"
+                                  className={styles.clickableTag}
+                                >
+                                  View Podcast
+                                </Tag>
+                              </SmartLink>
+                            )}
+                          </Flex>
+                        )}
+                      </Column>
+                      <Column style={{ alignItems: "flex-end", gap: "6px" }}>
+                        {episode.date && (
+                          <Text
+                            variant="heading-default-xs"
+                            onBackground="neutral-weak"
+                          >
+                            {episode.date}
+                          </Text>
+                        )}
+                        <Tag
+                          size="s"
+                          background="brand-alpha-weak"
+                          border="neutral-alpha-medium"
+                          onBackground="brand-weak"
+                        >
+                          {episode.category}
+                        </Tag>
+                        <Text
+                          variant="body-default-xs"
+                          onBackground="neutral-weak"
+                        >
+                          {episode.type}
+                        </Text>
+                      </Column>
+                    </Flex>
+                  }
+                >
+                  <Text
+                    variant="body-default-m"
+                    onBackground="neutral-weak"
+                    style={justifiedDescriptionStyle}
+                  >
+                    {episode.description || (
+                      <>
+                        Podcast Presenting the Paper{" "}
+                        <em>{episode.paperTitle}</em>.
+                      </>
+                    )}
+                    {episode.paperTitle ===
+                      "Bayesian Optimization and Convolutional Neural Networks for Zernike-Based Wavefront Correction in High Harmonic Generation" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#HHG-Paper"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Publication
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#ML-Researcher-IPFN"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Experience
+                        </SmartLink>
+                      </>
+                    )}
+                    {episode.paperTitle ===
+                      "Enhancing Multi-Objective Machine Learning with an Optimized Lexicographic Approach: Determining the Tolerance Threshold" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#ENIAC-Paper"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Publication
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#ML-Researcher-UFOP"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Experience
+                        </SmartLink>
+                      </>
+                    )}
+                    {episode.paperTitle ===
+                      "Mapping the Layers of the Ocean Floor with a Convolutional Neural Network" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#Ocean-Floor-Paper"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Publication
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#AI-Researcher-CBPF"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Experience
+                        </SmartLink>
+                      </>
+                    )}
+                    {episode.paperTitle ===
+                      "The Financial Torque Hypothesis: Predicting Short-Term Stock Price Movements Using LSTM Neural Networks" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#Prometheus"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Prometheus Project
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#FTH-Paper"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Publication
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#SSRN-Top-Paper-Award"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Award
+                        </SmartLink>
+                      </>
+                    )}
+                    {episode.paperTitle ===
+                      "Classification of Transient Astronomical Object Light Curves Using LSTM Neural Networks" && (
+                      <>
+                        {" "}
+                        <SmartLink
+                          href="#AI-Astronomer-Paper"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Publication
+                        </SmartLink>{" "}
+                        <SmartLink
+                          href="#AI-Researcher-CBPF"
+                          style={{
+                            color: "#0066cc",
+                            textDecoration: "underline",
+                          }}
+                        >
+                          View Related Experience
+                        </SmartLink>
+                      </>
+                    )}
+                  </Text>
+                </CollapsibleSection>
+              ))}
+            </Column>
+          </>
+        )}
+
+        {/* Values & Principles Section */}
+        {about.values.display && (
+          <>
+            <Heading
+              as="h2"
+              id={about.values.title}
+              variant="display-strong-s"
+              style={{
+                marginTop: "20px",
+                marginBottom: "12px",
+                scrollMarginTop: "140px",
+              }}
+            >
+              {about.values.title}
+            </Heading>
+            <Text
+              variant="body-default-m"
+              onBackground="neutral-weak"
+              style={{ ...justifiedDescriptionStyle, marginBottom: "12px" }}
+            >
+              {about.values.description}
+            </Text>
+          </>
+        )}
+
+        {/* Hobbies & Passions Section */}
+        {about.hobbies.display && (
+          <>
+            <Heading
+              as="h2"
+              id={about.hobbies.title}
+              variant="display-strong-s"
+              style={{
+                marginTop: "20px",
+                marginBottom: "12px",
+                scrollMarginTop: "140px",
+              }}
+            >
+              {about.hobbies.title}
+            </Heading>
+            <Text
+              variant="body-default-m"
+              onBackground="neutral-weak"
+              style={{ ...justifiedDescriptionStyle, marginBottom: "12px" }}
+            >
+              {about.hobbies.description}
+            </Text>
+            <Column style={{ gap: "12px", marginBottom: "20px" }}>
+              {about.hobbies.categories.map(
+                (category: { title: string; skills: string[] }, index) => (
                   <CollapsibleSection
                     key={index}
                     header={
-                      <Heading variant="heading-strong-m" onBackground="neutral-strong">
+                      <Heading
+                        variant="heading-strong-m"
+                        onBackground="neutral-strong"
+                      >
                         {category.title}
                       </Heading>
                     }
                   >
                     <Flex
                       direction="row"
-                      style={{ 
+                      style={{
                         gap: "12px",
-                        flexWrap: "wrap"
+                        flexWrap: "wrap",
                       }}
                     >
                       {category.skills.map((skill, skillIndex) => (
-                        <Tag 
+                        <Tag
                           key={skillIndex}
-                          size="s" 
-                          background="brand-alpha-weak" 
+                          size="s"
+                          background="brand-alpha-weak"
                           border="neutral-alpha-medium"
                           onBackground="brand-weak"
                         >
@@ -1972,11 +2491,11 @@ export default function About() {
                       ))}
                     </Flex>
                   </CollapsibleSection>
-                ))}
-              </Column>
-            </>
-          )}
-
+                ),
+              )}
+            </Column>
+          </>
+        )}
       </Column>
     </Column>
   );

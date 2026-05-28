@@ -21,7 +21,7 @@ export const SystemClock = memo(() => {
 
     // Initial update
     updateTime();
-    
+
     // Use requestAnimationFrame for smoother updates and reduce re-renders
     const scheduleUpdate = () => {
       const now = Date.now();
@@ -31,7 +31,7 @@ export const SystemClock = memo(() => {
         scheduleUpdate();
       }, delay);
     };
-    
+
     scheduleUpdate();
 
     return () => {
