@@ -37,6 +37,7 @@ jobs:
 
       - name: Apply ESLint fixes
         run: npm run lint:fix
+        continue-on-error: true
 
       - name: Commit and push fixes
         uses: stefanzweifel/git-auto-commit-action@v5
