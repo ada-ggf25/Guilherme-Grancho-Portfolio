@@ -4,12 +4,16 @@ import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 
 const ROOT_DIR = process.cwd();
-const TARGET_PATHS = [
-  "src/app",
-  "src/components",
-  "src/resources",
-];
-const ALLOWED_EXTENSIONS = new Set([".ts", ".tsx", ".js", ".jsx", ".md", ".mdx", ".txt"]);
+const TARGET_PATHS = ["src/app", "src/components", "src/resources"];
+const ALLOWED_EXTENSIONS = new Set([
+  ".ts",
+  ".tsx",
+  ".js",
+  ".jsx",
+  ".md",
+  ".mdx",
+  ".txt",
+]);
 
 const BRITISH_TO_AMERICAN = new Map([
   ["analyse", "analyze"],

@@ -1,4 +1,8 @@
 import mdx from "@next/mdx";
+import { fileURLToPath } from "url";
+import path from "path";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
@@ -8,6 +12,15 @@ const withMDX = mdx({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  turbopack: {
+    root: __dirname,
+    resolveAlias: {
+      "@once-ui-system/core/css/styles.css":
+        "@once-ui-system/core/dist/css/styles.css",
+      "@once-ui-system/core/css/tokens.css":
+        "@once-ui-system/core/dist/css/tokens.css",
+    },
+  },
   transpilePackages: ["next-mdx-remote"],
   sassOptions: {
     compiler: "modern",

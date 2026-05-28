@@ -33,7 +33,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .controlButton:focus-visible {
@@ -109,5 +111,3 @@
     flex: 0 0 80%;
   }
 }
-
-

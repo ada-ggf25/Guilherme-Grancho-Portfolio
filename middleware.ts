@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
 /**
  * Detects if the request is from a mobile device based on User-Agent header
@@ -11,16 +11,17 @@ function isMobileDevice(userAgent: string | null): boolean {
     return false;
   }
 
-  const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i;
+  const mobileRegex =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i;
   return mobileRegex.test(userAgent);
 }
 
 export function middleware(request: NextRequest) {
-  const userAgent = request.headers.get('user-agent');
+  const userAgent = request.headers.get("user-agent");
   const pathname = request.nextUrl.pathname;
 
   // Allow access to the mobile-not-supported page itself
-  if (pathname === '/mobile-not-supported') {
+  if (pathname === "/mobile-not-supported") {
     return NextResponse.next();
   }
 
@@ -28,7 +29,7 @@ export function middleware(request: NextRequest) {
   if (isMobileDevice(userAgent)) {
     // Redirect to mobile-not-supported page
     const url = request.nextUrl.clone();
-    url.pathname = '/mobile-not-supported';
+    url.pathname = "/mobile-not-supported";
     return NextResponse.redirect(url);
   }
 
@@ -45,7 +46,6 @@ export const config = {
      * - favicon.ico (favicon file)
      * - public files (images, etc.)
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)).*)',
+    "/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)).*)",
   ],
 };
-

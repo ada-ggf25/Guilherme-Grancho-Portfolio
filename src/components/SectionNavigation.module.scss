@@ -17,13 +17,13 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  
+
   &::-webkit-scrollbar {
     display: none;
   }
-  
+
   scrollbar-width: none;
-  
+
   &:hover {
     background: rgba(0, 0, 0, 0.1);
     border-color: rgba(255, 255, 255, 0.1);
@@ -48,14 +48,14 @@
   -webkit-overflow-scrolling: touch;
   max-width: calc(100vw - 200px);
   will-change: opacity, transform;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-  
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+
   &::-webkit-scrollbar {
     display: none;
   }
-  
+
   scrollbar-width: none;
-  
+
   &:hover {
     background: rgba(0, 0, 0, 0.1);
     border-color: rgba(255, 255, 255, 0.1);
@@ -75,19 +75,19 @@
   letter-spacing: 0.2px;
   white-space: nowrap;
   flex-shrink: 0;
-  
+
   &:hover {
     background: rgba(255, 255, 255, 0.18);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   }
-  
+
   &.active {
     background: rgba(255, 255, 255, 0.28);
     color: var(--color-brand-strong);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
   }
-  
+
   &:active {
     transform: translateY(0);
   }
@@ -106,7 +106,7 @@
     gap: 6px;
     margin-bottom: 24px;
   }
-  
+
   .navItem {
     padding: 6px 10px;
     font-size: 12px;
@@ -131,7 +131,7 @@
     gap: 4px;
     margin-bottom: 20px;
   }
-  
+
   .navItem {
     padding: 5px 9px;
     font-size: 11px;

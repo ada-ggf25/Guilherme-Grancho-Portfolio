@@ -1,18 +1,37 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { ToggleButton, useTheme } from '@once-ui-system/core';
+import React, { useSyncExternalStore } from "react";
+import { ToggleButton, useTheme } from "@once-ui-system/core";
+
+function subscribeToTheme(callback: () => void): () => void {
+  const observer = new MutationObserver(callback);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+  return () => observer.disconnect();
+}
+
+function getThemeSnapshot(): "light" | "dark" {
+  return document.documentElement.getAttribute("data-theme") === "dark"
+    ? "dark"
+    : "light";
+}
+
+function getThemeServerSnapshot(): "light" {
+  return "light";
+}
 
 export const ThemeToggle: React.FC = () => {
-  const { theme, setTheme } = useTheme();
-  const [currentTheme, setCurrentTheme] = useState('light');
+  const { setTheme } = useTheme();
+  const currentTheme = useSyncExternalStore(
+    subscribeToTheme,
+    getThemeSnapshot,
+    getThemeServerSnapshot,
+  );
 
-  useEffect(() => {
-    setCurrentTheme(document.documentElement.getAttribute('data-theme') || 'light');
-  }, [theme]);
-
-  const icon = currentTheme === 'dark' ? 'light' : 'dark';
-  const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+  const icon = currentTheme === "dark" ? "light" : "dark";
+  const nextTheme = currentTheme === "light" ? "dark" : "light";
 
   return (
     <ToggleButton

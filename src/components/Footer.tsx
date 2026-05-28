@@ -9,12 +9,7 @@ export const Footer = memo(() => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Flex
-      as="footer"
-      fillWidth
-      padding="8"
-      horizontal="center"
-    >
+    <Flex as="footer" fillWidth padding="8" horizontal="center">
       <Flex
         className={styles.footerContent}
         maxWidth="m"
@@ -28,9 +23,7 @@ export const Footer = memo(() => {
           <Text onBackground="neutral-weak">© {currentYear} /</Text>
           <Text paddingX="4">{person.name}</Text>
         </Text>
-        <Flex 
-          gap="16"
-        >
+        <Flex gap="16">
           {social.map(
             (item) =>
               item.link && (
@@ -57,7 +50,7 @@ export const Footer = memo(() => {
                   }}
                   onClick={(e) => {
                     e.preventDefault();
-                    window.open(item.link, '_blank', 'noopener,noreferrer');
+                    window.open(item.link, "_blank", "noopener,noreferrer");
                   }}
                 >
                   <Icon

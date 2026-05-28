@@ -1,12 +1,19 @@
-import '@once-ui-system/core/css/styles.css';
-import '@once-ui-system/core/css/tokens.css';
-import '@/resources/custom.css'
+import "@once-ui-system/core/css/styles.css";
+import "@once-ui-system/core/css/tokens.css";
+import "@/resources/custom.css";
 
 import classNames from "classnames";
 
-import { Background, Column, Flex, Meta, opacity, SpacingToken } from "@once-ui-system/core";
-import { RouteGuard, Providers, ConditionalHeaderFooter } from '@/components';
-import { baseURL, effects, fonts, style, dataStyle, home } from '@/resources';
+import {
+  Background,
+  Column,
+  Flex,
+  Meta,
+  opacity,
+  SpacingToken,
+} from "@once-ui-system/core";
+import { RouteGuard, Providers, ConditionalHeaderFooter } from "@/components";
+import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -24,12 +31,12 @@ const themeConfig = JSON.stringify({
   accent: style.accent,
   neutral: style.neutral,
   solid: style.solid,
-  'solid-style': style.solidStyle,
+  "solid-style": style.solidStyle,
   border: style.border,
   surface: style.surface,
   transition: style.transition,
   scaling: style.scaling,
-  'viz-style': dataStyle.variant,
+  "viz-style": dataStyle.variant,
 });
 
 export default async function RootLayout({
@@ -52,7 +59,11 @@ export default async function RootLayout({
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <script
           id="theme-init"
           dangerouslySetInnerHTML={{
@@ -63,7 +74,15 @@ export default async function RootLayout({
         />
       </head>
       <Providers>
-        <Column as="body" background="page" fillWidth style={{minHeight: "100vh"}} margin="0" padding="0" horizontal="center">
+        <Column
+          as="body"
+          background="page"
+          fillWidth
+          style={{ minHeight: "100vh" }}
+          margin="0"
+          padding="0"
+          horizontal="center"
+        >
           <Background
             position="fixed"
             mask={{
@@ -106,22 +125,14 @@ export default async function RootLayout({
             }}
           />
           <ConditionalHeaderFooter>
-            <Flex
-              zIndex={0}
-              fillWidth
-              padding="l"
-              horizontal="center"
-              flex={1}
-            >
+            <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
               <Flex horizontal="center" fillWidth minHeight="0">
-                <RouteGuard>
-                  {children}
-                </RouteGuard>
+                <RouteGuard>{children}</RouteGuard>
               </Flex>
             </Flex>
           </ConditionalHeaderFooter>
-          </Column>
-        </Providers>
-      </Flex>
+        </Column>
+      </Providers>
+    </Flex>
   );
 }

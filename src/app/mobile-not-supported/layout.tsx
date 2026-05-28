@@ -1,5 +1,5 @@
 import { Flex } from "@once-ui-system/core";
-import { RouteGuard } from '@/components';
+import { RouteGuard } from "@/components";
 
 export default async function MobileNotSupportedLayout({
   children,
@@ -7,17 +7,9 @@ export default async function MobileNotSupportedLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Flex
-      zIndex={0}
-      fillWidth
-      padding="l"
-      horizontal="center"
-      flex={1}
-    >
+    <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
       <Flex horizontal="center" fillWidth minHeight="0">
-        <RouteGuard>
-          {children}
-        </RouteGuard>
+        <RouteGuard>{children}</RouteGuard>
       </Flex>
     </Flex>
   );
