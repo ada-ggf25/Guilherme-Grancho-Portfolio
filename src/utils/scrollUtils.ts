@@ -80,14 +80,14 @@ export function scrollToSection(sectionId: string, headerOffset = 100): void {
 /**
  * Throttle function to limit how often a function can be called
  */
-function throttle<T extends (...args: any[]) => void>(
+function throttle<T extends (...args: unknown[]) => void>(
   func: T,
   limit: number
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean;
-  return function (this: any, ...args: Parameters<T>) {
+  return function (...args: Parameters<T>) {
     if (!inThrottle) {
-      func.apply(this, args);
+      func.apply(null, args);
       inThrottle = true;
       setTimeout(() => (inThrottle = false), limit);
     }
@@ -116,7 +116,6 @@ export function trackActiveSection(
   // Use Intersection Observer for better performance
   if ('IntersectionObserver' in window) {
     const observers: IntersectionObserver[] = [];
-    let currentActiveIndex = 0;
 
     sections.forEach((section, index) => {
       const element = document.getElementById(section.id);
@@ -154,7 +153,6 @@ export function trackActiveSection(
                   if (clickedElement) {
                     const rect = clickedElement.getBoundingClientRect();
                     if (rect.top < window.innerHeight && rect.bottom > 0) {
-                      currentActiveIndex = index;
                       callback(index);
                       return;
                     }
@@ -174,7 +172,6 @@ export function trackActiveSection(
               if (entry.isIntersecting && entry.intersectionRatio > minRatio) {
                 // Double-check we're not at the top before setting non-first section as active
                 if (index === 0 || window.scrollY >= 100) {
-                  currentActiveIndex = index;
                   callback(index);
                 }
               }
@@ -314,8 +311,7 @@ export function trackActiveSection(
           if (lastSectionElement) {
             const rect = lastSectionElement.getBoundingClientRect();
             const elementTop = rect.top + currentScrollY;
-            const elementBottom = elementTop + rect.height;
-            
+
             // If last section is visible in viewport and we're near bottom, highlight it
             const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
             if (isVisible && (currentScrollY >= elementTop - 300 || isNearBottom)) {
@@ -325,10 +321,9 @@ export function trackActiveSection(
             }
           }
         }
-        
+
         // Check all sections to find which one is currently active
         // This is important during fast scrolling when Intersection Observer might lag
-        const scrollPosition = currentScrollY + window.innerHeight / 3;
         let foundActive = false;
         
         // Check sections in reverse order (bottom to top) to find the most relevant one
@@ -448,8 +443,7 @@ export function trackActiveSection(
         if (lastSectionElement) {
           const rect = lastSectionElement.getBoundingClientRect();
           const elementTop = rect.top + currentScrollY;
-          const elementBottom = elementTop + rect.height;
-          
+
           // If last section is visible in viewport and we're near bottom, highlight it
           const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
           if (isVisible && (currentScrollY >= elementTop - 300 || isNearBottom)) {
@@ -459,8 +453,7 @@ export function trackActiveSection(
           }
         }
       }
-      
-      const scrollPosition = currentScrollY + window.innerHeight / 3;
+
       let foundActive = false;
       
       // Check sections in reverse order (bottom to top) to find the most relevant one
