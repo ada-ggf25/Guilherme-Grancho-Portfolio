@@ -11,7 +11,6 @@ import { scrollToSection, trackActiveSection } from "@/utils/scrollUtils";
 import styles from "./Header.module.scss";
 import navStyles from "./SectionNavigation.module.scss";
 
-
 export const Header = () => {
   const { sections, showInHeader, transitionProgress } = useNavigation();
   const [activeSection, setActiveSection] = useState(0);
@@ -34,27 +33,34 @@ export const Header = () => {
         ticking = true;
       }
     };
-    
+
     handleScroll(); // Initial check
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const shouldShow = showInHeader && sections.length > 0;
   const opacity = transitionProgress;
-  const scale = 0.85 + (transitionProgress * 0.15); // Scale from 0.85 to 1.0
+  const scale = 0.85 + transitionProgress * 0.15; // Scale from 0.85 to 1.0
   const translateY = (1 - transitionProgress) * -10; // Slide up from -10px to 0
 
   return (
     <>
-      <Fade fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
+      <Fade
+        fillWidth
+        position="fixed"
+        bottom="0"
+        to="top"
+        height="80"
+        zIndex={9}
+      />
       <Flex
         fitHeight
         position="unset"
-        className={`${styles.position} ${shouldShow ? styles.withNavigation : ''} ${styles.bar} ${scrollY > 0 ? styles.blurred : ''}`}
+        className={`${styles.position} ${shouldShow ? styles.withNavigation : ""} ${styles.bar} ${scrollY > 0 ? styles.blurred : ""}`}
         as="header"
         zIndex={9}
         fillWidth
@@ -62,8 +68,13 @@ export const Header = () => {
         horizontal="center"
         data-border="rounded"
       >
-        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          <Flex 
+        <Flex
+          paddingLeft="12"
+          fillWidth
+          vertical="center"
+          textVariant="body-default-s"
+        >
+          <Flex
             className="display-flex position-relative"
             gap="8"
             vertical="center"
@@ -102,21 +113,22 @@ export const Header = () => {
           </Flex>
         </Flex>
         {shouldShow && (
-          <Flex 
-            horizontal="center" 
-            vertical="center" 
-            style={{ 
+          <Flex
+            horizontal="center"
+            vertical="center"
+            style={{
               opacity: opacity,
               transform: `scale(${scale}) translateY(${translateY}px)`,
-              transition: 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-              pointerEvents: opacity > 0.3 ? 'auto' : 'none',
+              transition:
+                "opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+              pointerEvents: opacity > 0.3 ? "auto" : "none",
             }}
           >
             <nav className={navStyles.navigationInHeader}>
               {sections.map((section, index) => (
                 <button
                   key={section.id}
-                  className={`${navStyles.navItem} ${activeSection === index ? navStyles.active : ''}`}
+                  className={`${navStyles.navItem} ${activeSection === index ? navStyles.active : ""}`}
                   onClick={() => scrollToSection(section.id, 100)}
                 >
                   {section.label}

@@ -16,6 +16,48 @@ on:
       - main
 
 jobs:
+  code-linting:
+    name: Code Linting Check
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event.action != 'closed' || github.event.pull_request.merged == true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint checks
+        run: npm run lint:check
+
+  code-formatting:
+    name: Code Formatting Check
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event.action != 'closed' || github.event.pull_request.merged == true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Prettier formatting checks
+        run: npm run format:check
+
   american-english:
     name: American English Check
     runs-on: ubuntu-latest

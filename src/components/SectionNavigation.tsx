@@ -11,8 +11,11 @@ interface SectionNavigationProps {
   }>;
 }
 
-export const SectionNavigation: React.FC<SectionNavigationProps> = ({ sections }) => {
-  const { setSections, setShowInHeader, setTransitionProgress } = useNavigation();
+export const SectionNavigation: React.FC<SectionNavigationProps> = ({
+  sections,
+}) => {
+  const { setSections, setShowInHeader, setTransitionProgress } =
+    useNavigation();
 
   // Ensure header always shows navigation for these sections
   useEffect(() => {

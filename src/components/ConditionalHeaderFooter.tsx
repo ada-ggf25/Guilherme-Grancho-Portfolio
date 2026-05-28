@@ -3,9 +3,13 @@
 import { usePathname } from "next/navigation";
 import { Header, Footer } from "@/components";
 
-export function ConditionalHeaderFooter({ children }: { children: React.ReactNode }) {
+export function ConditionalHeaderFooter({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const pathname = usePathname();
-  const isMobileNotSupportedPage = pathname === '/mobile-not-supported';
+  const isMobileNotSupportedPage = pathname === "/mobile-not-supported";
 
   return (
     <>
@@ -15,4 +19,3 @@ export function ConditionalHeaderFooter({ children }: { children: React.ReactNod
     </>
   );
 }
-

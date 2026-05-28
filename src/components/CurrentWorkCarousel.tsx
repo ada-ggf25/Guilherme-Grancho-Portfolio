@@ -18,7 +18,9 @@ type CurrentWorkCarouselProps = {
   items: CurrentWorkItem[];
 };
 
-export const CurrentWorkCarousel: React.FC<CurrentWorkCarouselProps> = ({ items }) => {
+export const CurrentWorkCarousel: React.FC<CurrentWorkCarouselProps> = ({
+  items,
+}) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   if (!items.length) {
@@ -72,7 +74,12 @@ export const CurrentWorkCarousel: React.FC<CurrentWorkCarouselProps> = ({ items 
         {items.map((item) => (
           <article key={item.id} className={styles.card}>
             <div className={styles.cardTop}>
-              <Tag size="s" background="brand-alpha-weak" border="neutral-alpha-medium" onBackground="brand-weak">
+              <Tag
+                size="s"
+                background="brand-alpha-weak"
+                border="neutral-alpha-medium"
+                onBackground="brand-weak"
+              >
                 {item.category}
               </Tag>
               {item.timeframe && (
@@ -84,11 +91,19 @@ export const CurrentWorkCarousel: React.FC<CurrentWorkCarouselProps> = ({ items 
                 </div>
               )}
             </div>
-            <Heading as="h4" variant="heading-strong-m" className={styles.cardTitle}>
+            <Heading
+              as="h4"
+              variant="heading-strong-m"
+              className={styles.cardTitle}
+            >
               {item.title}
             </Heading>
             {item.subtitle && (
-              <Text variant="body-default-s" onBackground="neutral-weak" className={styles.subtitle}>
+              <Text
+                variant="body-default-s"
+                onBackground="neutral-weak"
+                className={styles.subtitle}
+              >
                 {item.subtitle}
               </Text>
             )}
@@ -103,5 +118,3 @@ export const CurrentWorkCarousel: React.FC<CurrentWorkCarouselProps> = ({ items 
     </section>
   );
 };
-
-

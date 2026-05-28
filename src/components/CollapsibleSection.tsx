@@ -11,63 +11,60 @@ interface CollapsibleSectionProps {
   className?: string;
 }
 
-export const CollapsibleSection: React.FC<CollapsibleSectionProps> = memo(({
-  header,
-  children,
-  defaultExpanded = false,
-  className = "",
-}) => {
-  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
+export const CollapsibleSection: React.FC<CollapsibleSectionProps> = memo(
+  ({ header, children, defaultExpanded = false, className = "" }) => {
+    const [isExpanded, setIsExpanded] = useState(defaultExpanded);
 
-  const toggleExpanded = () => {
-    setIsExpanded(!isExpanded);
-  };
+    const toggleExpanded = () => {
+      setIsExpanded(!isExpanded);
+    };
 
-  const handleHeaderClick = (e: React.MouseEvent) => {
-    // If clicking on a link, don't toggle
-    const target = e.target as HTMLElement;
-    if (target.closest('a')) {
-      return;
-    }
-    toggleExpanded();
-  };
+    const handleHeaderClick = (e: React.MouseEvent) => {
+      // If clicking on a link, don't toggle
+      const target = e.target as HTMLElement;
+      if (target.closest("a")) {
+        return;
+      }
+      toggleExpanded();
+    };
 
-  return (
-    <Column className={`${styles.collapsibleSection} ${className}`} style={{ width: "100%" }}>
-      <button
-        className={styles.headerButton}
-        onClick={handleHeaderClick}
-        aria-expanded={isExpanded}
-        type="button"
+    return (
+      <Column
+        className={`${styles.collapsibleSection} ${className}`}
+        style={{ width: "100%" }}
       >
-        <Flex
-          horizontal="between"
-          vertical="center"
-          style={{ width: "100%", gap: "12px" }}
+        <button
+          className={styles.headerButton}
+          onClick={handleHeaderClick}
+          aria-expanded={isExpanded}
+          type="button"
         >
-          <Flex style={{ flex: 1 }}>
-            {header}
+          <Flex
+            horizontal="between"
+            vertical="center"
+            style={{ width: "100%", gap: "12px" }}
+          >
+            <Flex style={{ flex: 1 }}>{header}</Flex>
+            <Icon
+              name={isExpanded ? "chevronUp" : "chevronDown"}
+              size="m"
+              onBackground="neutral-strong"
+              className={styles.chevron}
+              style={{
+                transition: "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
+              }}
+            />
           </Flex>
-          <Icon
-            name={isExpanded ? "chevronUp" : "chevronDown"}
-            size="m"
-            onBackground="neutral-strong"
-            className={styles.chevron}
-            style={{
-              transition: "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
-            }}
-          />
-        </Flex>
-      </button>
-      <div
-        className={`${styles.content} ${isExpanded ? styles.expanded : styles.collapsed}`}
-        aria-hidden={!isExpanded}
-      >
-        {children}
-      </div>
-    </Column>
-  );
-});
+        </button>
+        <div
+          className={`${styles.content} ${isExpanded ? styles.expanded : styles.collapsed}`}
+          aria-hidden={!isExpanded}
+        >
+          {children}
+        </div>
+      </Column>
+    );
+  },
+);
 
 CollapsibleSection.displayName = "CollapsibleSection";
-

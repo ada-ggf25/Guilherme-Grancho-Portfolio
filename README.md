@@ -50,7 +50,8 @@ Guilherme-Grancho-Portfolio/
 
 These steps ensure a reproducible Node runtime via Conda (Node and npm are provided by the Conda environment).
 
-1) Install Miniconda (Linux)
+1. Install Miniconda (Linux)
+
    ```bash
    cd /tmp
    wget -qO miniconda.sh "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
@@ -58,32 +59,36 @@ These steps ensure a reproducible Node runtime via Conda (Node and npm are provi
    rm -f miniconda.sh
    ```
 
-2) Initialize Conda for zsh and load it in your current shell
+2. Initialize Conda for zsh and load it in your current shell
+
    ```bash
    "$HOME/miniconda3/bin/conda" init zsh
    source "$HOME/miniconda3/etc/profile.d/conda.sh"
    conda config --set auto_activate_base false
    ```
 
-3) Create the environment from this repository’s file (uses conda-forge only)
+3. Create the environment from this repository’s file (uses conda-forge only)
+
    ```bash
    conda env create -f environment.yaml -y --override-channels \
      || conda env update -n "Guilherme-Grancho-Portfolio" -f environment.yaml --prune -y --override-channels
    ```
 
-4) Activate the environment and install dependencies
+4. Activate the environment and install dependencies
+
    ```bash
    conda activate "Guilherme-Grancho-Portfolio"
    npm install
    ```
 
-5) Start the development server
+5. Start the development server
    ```bash
    npm run dev
    ```
    The portfolio will be available at [http://localhost:3030](http://localhost:3030)
 
 Notes:
+
 - If you encounter Anaconda Terms of Service prompts, either accept them as instructed by Conda or use `--override-channels` to rely on conda-forge only.
 - If a new shell does not recognize `conda`, add this to your `~/.zshrc`:
   ```bash

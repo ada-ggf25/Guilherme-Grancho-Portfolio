@@ -13,7 +13,7 @@ const routes = {
 const display = {
   location: true,
   time: true,
-  themeSwitcher: true
+  themeSwitcher: true,
 };
 
 // Enable password protection on selected routes
@@ -73,7 +73,7 @@ const style = {
   border: "conservative", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
   transition: "all", // all | micro | macro
-  scaling: "100" // 90 | 95 | 100 | 105 | 110
+  scaling: "100", // 90 | 95 | 100 | 105 | 110
 };
 
 const dataStyle = {
@@ -86,7 +86,7 @@ const dataStyle = {
   tick: {
     fill: "var(--neutral-on-background-weak)",
     fontSize: 11,
-    line: false
+    line: false,
   },
 };
 
@@ -172,7 +172,7 @@ const mailchimp = {
       thickness: 1,
       angle: 90,
     },
-  }
+  },
 };
 
 // Professional schema data for Guilherme Grancho
@@ -185,13 +185,13 @@ const schema = {
   jobTitle: "AI Developer & Fintech Entrepreneur",
   worksFor: {
     "@type": "Organization",
-    "name": "Independent"
+    name: "Independent",
   },
   address: {
     "@type": "PostalAddress",
-    "addressLocality": "Lisbon",
-    "addressCountry": "PT"
-  }
+    addressLocality: "Lisbon",
+    addressCountry: "PT",
+  },
 };
 
 // Professional social links
@@ -201,7 +201,16 @@ const sameAs = {
   email: "mailto:guilhermegranchopro@gmail.com",
 };
 
-export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };
-
-
-
+export {
+  display,
+  mailchimp,
+  routes,
+  protectedRoutes,
+  baseURL,
+  fonts,
+  style,
+  schema,
+  sameAs,
+  effects,
+  dataStyle,
+};

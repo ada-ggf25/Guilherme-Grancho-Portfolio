@@ -5,8 +5,18 @@
  */
 function parseEndDate(timeframe: string): Date | null {
   const monthNames: Record<string, number> = {
-    "Jan": 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6,
-    "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12
+    Jan: 1,
+    Feb: 2,
+    Mar: 3,
+    Apr: 4,
+    May: 5,
+    Jun: 6,
+    Jul: 7,
+    Aug: 8,
+    Sep: 9,
+    Oct: 10,
+    Nov: 11,
+    Dec: 12,
   };
 
   if (!timeframe) {
@@ -71,8 +81,7 @@ export function isPresent(timeframe: string | undefined): boolean {
   const today = new Date();
   // Set today to start of day for accurate comparison
   today.setHours(0, 0, 0, 0);
-  
+
   // Compare dates (end date should be >= today)
   return endDate >= today;
 }
-
